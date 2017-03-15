@@ -1,0 +1,12 @@
+
+
+vioc-li02-bl01 will interface to : ==> ATCA Shelf: shm-li02-sp01 ==> (BZ11B) Slot 3 
+
+vioc-li02-bl02 will interface to : ==> ATCA Shelf: shm-li02-sp01 ==> (*BZC1) Slot 5
+
+vioc-li04-bl01 will interface to : ==> ATCA Shelf: shm-li04-sp01 ==> (BZ21B) Slot 4
+
+Where, shm == the ATCA crate's  shelf manager.
+The physical chassis or crate will follow the LCLS naming convention and be named
+crat-li02-sp01, crat-li04-sp01  accordingly.
+
