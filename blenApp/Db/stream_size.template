@@ -1,0 +1,37 @@
+record(ao, "$(P):A:DM0:DaqSize:St") {
+	field(SCAN, "Passive")
+	field(VAL, "5000000")
+	field(OUT, "$(P):A:DM:DaqSize.A PP")
+}
+
+record(ao, "$(P):A:DM1:DaqSize:St") {
+	field(SCAN, "Passive")
+	field(VAL, "5000000")
+	field(OUT, "$(P):A:DM:DaqSize.B PP")
+}
+
+record(aSub, "$(P):A:DM:DaqSize") {
+	field(SCAN, "Passive")
+	field(SNAM, "DaqSizeSub")
+	field(INPA, "$(P):A:DM0:DaqSize:St")
+	field(INPB, "$(P):A:DM1:DaqSize:St")
+	field(INPC, "$(P):C:ACBsa:BWE0:WEB:StartAddr:Rd NPP NMS")
+	field(INPD, "$(P):C:ACBsa:BWE1:WEB:StartAddr:Rd NPP NMS")
+	field(FTA,  "LONG")
+	field(FTB,  "LONG")
+	field(FTC,  "LONG")
+	field(FTD,  "LONG")
+	field(NOC,  "4") 
+	field(NOD,  "4") 
+	field(OUTA, "$(P):A:DM0:DataBufferSize:St PP")
+	field(OUTB, "$(P):A:DM1:DataBufferSize:St PP")
+	field(OUTC, "$(P):C:ACBsa:BWE0:WEB:EndAddr:St PP")
+	field(OUTD, "$(P):C:ACBsa:BWE1:WEB:EndAddr:St PP")
+	field(FTVA, "LONG")
+	field(FTVB, "LONG")
+	field(FTVC, "LONG")
+	field(FTVD, "LONG")
+	field(NOVC, "4")
+	field(NOVD, "4")
+}
+

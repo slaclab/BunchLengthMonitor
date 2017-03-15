@@ -1,0 +1,53 @@
+#
+# $(P):loadConfigStatus: 2 == "Loaded successfully"
+#
+record(calcout, "$(P):verifyLoad") {
+  field(SCAN, "1 second")
+  field(DESC, "Verify loadConfigStatus")
+  field(INPA, "$(P):loadConfigStatus")
+  field(B,    "2")
+  field(CALC, "A==B")
+  field(OUT,  "$(P):initSequence.PROC")
+  field(OOPT, "Transition To Non-zero")
+}
+
+record(calc, "$(P):TESTCALC1") {
+  field(INPA, "$(P):TESTCALC1")
+  field(CALC, "A+1")
+  field(SCAN, "Passive")
+}
+
+record(calc, "$(P):TESTCALC2") {
+  field(INPA, "$(P):TESTCALC2")
+  field(CALC, "A+1")
+  field(SCAN, "Passive")
+}
+
+record(calc, "$(P):TESTCALC3") {
+  field(INPA, "$(P):TESTCALC3")
+  field(CALC, "A+1")
+  field(SCAN, "Passive")
+}
+
+#
+# Init sequence:
+#
+#  1: $(P):A:GAD$(AMC):InitAmcCard:Ex.PROC = 1
+#     (wait 0.5 second)
+#  2: $(P):C:ACBsa:BWE$(AMC):WEB:Initialize:Ex.PROC = 1
+#     (wait 0.5 second)
+#  3: $(P):A:DM$(AMC):TriggerHwAutoRearm:St = 1
+#
+
+record(seq, "$(P):initSequence") {
+  field(SELM, "All")
+  field(DOL1, "1")
+  field(LNK1, "$(P):TESTCALC1.PROC")
+  field(DLY2, "0.5")
+  field(DOL2, "1")
+  field(LNK2, "$(P):TESTCALC2.PROC")
+  field(DLY3, "0.5")
+  field(DOL3, "1")
+  field(LNK3, "$(P):TESTCALC3.PROC")
+  field(SCAN, "Passive")
+}

@@ -1,0 +1,56 @@
+# FIXME use $(SCAN) macro
+record(compress, "$(P)$(R)CIRCBUF")
+{
+  field(DESC, "Time ordered circular buffer")
+  field(ALG, "Circular Buffer")
+  field(NSAM, $(NSAM))
+  field(INP, $(INP))
+  field(FLNK, "$(P)$(R)FANOUT PP")
+  field(SCAN, "1 second")
+}
+
+#
+record(fanout, "$(P)$(R)FANOUT")
+{
+  field(LNK1, "$(P)$(R)AVG")
+  field(LNK2, "$(P)$(R)STD")
+  field(LNK3, "$(P)$(R)COUNTER")
+  field(SCAN, "Passive")
+}
+
+#
+record(acalcout, "$(P)$(R)AVG")
+{
+  field(DESC, "Calculate average")
+  field(NELM, $(NSAM))
+  field(INAA, "$(P)$(R)CIRCBUF")
+  field(CALC, "AVG(AA)")
+  field(SCAN, "Passive")
+}
+
+#
+record(acalcout, "$(P)$(R)STD")
+{
+  field(DESC, "Calculate standard deviation")
+  field(NELM, $(NSAM))
+  field(INAA, "$(P)$(R)CIRCBUF")
+  field(CALC, "STD(AA)")
+  field(SCAN, "Passive")
+}
+
+#
+record(calc, "$(P)$(R)COUNTER")
+{
+  field(INPA, "$(P)$(R)COUNTER")
+  field(INPB, $(NSAM))
+  field(FLNK, "$(P)$(R)COUNTDOWN")
+  field(CALC, "(A<B)?A+1:A")
+}
+
+#
+record(calc, "$(P)$(R)COUNTDOWN")
+{
+  field(INPA, "$(P)$(R)COUNTER")
+  field(INPB, $(NSAM))
+  field(CALC, "B-A")
+}

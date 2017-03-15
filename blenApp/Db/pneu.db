@@ -1,0 +1,10 @@
+#
+record(mbbo, "$(P)$(R)$(DEVNAME)$(DEVUNIT)_PNEU"
+{
+  field(DESC,"Pneumatic State")
+  field(VAL, "0")
+  field(ZRVL,"0")
+  field(ZRST,"OUT")
+  field(ONVL,"1")
+  field(ONST,"IN")
+}

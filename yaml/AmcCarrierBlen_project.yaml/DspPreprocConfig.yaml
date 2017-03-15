@@ -1,0 +1,128 @@
+##############################################################################
+## This file is part of 'LCLS2 Common Carrier Core'.
+## It is subject to the license terms in the LICENSE.txt file found in the
+## top-level directory of this distribution and at:
+##    https://confluence.slac.stanford.edu/display/ppareg/LICENSE.html.
+## No part of 'LCLS2 Common Carrier Core', including this file,
+## may be copied, modified, propagated, or distributed except according to
+## the terms contained in the LICENSE.txt file.
+##############################################################################
+#schemaversion 3.0.0
+#once
+
+DspPreprocConfig: &DspPreprocConfig
+  description: "Sysgen preprocessing configuration and status registers"
+  class: MMIODev
+  configPrio: 1
+  size: 0x010000
+  #########
+  children:
+  #########
+    #########################################################
+    NumberSamples0:
+      class: IntField
+      at:
+        offset: 0x0000
+      sizeBits: 8
+      mode: RW
+      description: "Number of samples for the group 0 of averaging"
+    #########################################################
+    TrigDelay1:
+      class: IntField
+      at:
+        offset: 0x0004
+      sizeBits: 8
+      mode: RW
+      description: "Delay relatively to the group 0 for start the group 1 averaging"
+    #########################################################
+    NumberSamples1:
+      class: IntField
+      at:
+        offset: 0x0008
+      sizeBits: 8
+      mode: RW
+      description: "Number of samples for the group 1 of averaging"
+    #########################################################
+    TrigDelay2:
+      class: IntField
+      at:
+        offset: 0x000C
+      sizeBits: 8
+      mode: RW
+      description: "Delay relatively to the goup 1 for start the group 2 averaging"
+    #########################################################
+    NumberSamples2:
+      class: IntField
+      at:
+        offset: 0x0010
+      sizeBits: 8
+      mode: RW
+      description: "Number of samples for the group 2 of averaging"
+    #########################################################
+    SimAdcSumData0:
+      class: IntField
+      at:
+        offset: 0x0014
+      sizeBits: 32
+      mode: RW
+      description: "Simulated ADC sum 0 to DSP core"
+    #########################################################
+    SimAdcSumData1:
+      class: IntField
+      at:
+        offset: 0x0018
+      sizeBits: 32
+      mode: RW
+      description: "Simulated ADC sum 1 to DSP core"
+    #########################################################
+    SimAdcSumData2:
+      class: IntField
+      at:
+        offset: 0x001C
+      sizeBits: 32
+      mode: RW
+      description: "Simulated ADC sum 2 to DSP core"
+    #########################################################
+    SimTmit:
+      class: IntField
+      at:
+        offset: 0x0020
+      sizeBits: 32
+      mode: RW
+      description: "Simulated TMIT to DSP core"
+    #########################################################
+    TMITSimEn:
+      class: IntField
+      at:
+        offset: 0x0024
+      sizeBits: 1
+      lsBit: 0
+      mode: RW
+      description: "Enable insetion of Simulated TMIT value"
+    #########################################################
+    ADCSimEn:
+      class: IntField
+      at:
+        offset: 0x0024
+      sizeBits: 1
+      lsBit: 1
+      mode: RW
+      description: "Enable insetion of Simulated ADC sum values"
+    #########################################################
+    Mode:
+      class: IntField
+      at:
+        offset: 0x0024
+      sizeBits: 1
+      lsBit: 2
+      mode: RW
+      description: "Indicate that it is ready for DSP processing affter all configuration id completed"
+    #########################################################
+    TriggerRate:
+      class: IntField
+      at:
+        offset: 0x002C
+      sizeBits: 32
+      mode: RO
+      description: "Trigger rate over 1 second interval"
+    #########################################################

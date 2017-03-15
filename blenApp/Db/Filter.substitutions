@@ -1,0 +1,24 @@
+#==============================================================================
+#
+# Abs:  Filter substitutions file.
+#
+# Name: Filter.substitutions
+#
+# Note: Must follow the LCLS naming conventions.
+#
+#==============================================================================
+#
+file pneu.db
+{
+pattern   {P, R, DEVNAME, DEVUNIT}
+
+# P is the PV prefix
+# R is the PV instance
+# DEVNAME is the device name
+# DEVUNIT is the device instance
+
+          { $(P), $(R), FLT, 1}
+          { $(P), $(R), FLT, 2}
+          { $(P), $(R), FLT, 3}
+          { $(P), $(R), FLT, 4}
+}

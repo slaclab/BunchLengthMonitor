@@ -1,0 +1,93 @@
+##############################################################################
+## This file is part of 'LCLS2 Common Carrier Core'.
+## It is subject to the license terms in the LICENSE.txt file found in the
+## top-level directory of this distribution and at:
+##    https://confluence.slac.stanford.edu/display/ppareg/LICENSE.html.
+## No part of 'LCLS2 Common Carrier Core', including this file,
+## may be copied, modified, propagated, or distributed except according to
+## the terms contained in the LICENSE.txt file.
+##############################################################################
+#schemaversion 3.0.0
+#once
+
+TriggerLaneReg: &TriggerLaneReg
+  description: "To process timing and external signal for internal and external single line trigger generation"
+  class: MMIODev
+  configPrio: 1
+  size: 0x010000
+  #########
+  children:
+  #########
+    #########################################################
+    SelectSource:
+      at:
+        offset: 0x0000
+      class: IntField
+      name: SelectSource
+      sizeBits: 2
+      mode: RW
+      description: "Select trigger source: soft - b00,  timing - b01, ext.trig 0 - b10, ext trig 1 - b11"
+    #########################################################
+    SelectField:
+      at:
+        offset: 0x0004
+      class: IntField
+      name: SelectField
+      sizeBits: 3
+      mode: RW
+      description: "Select which fields to use for trigger message comparison:select fixedRate field -  bX1, select beamRequest field - b1X, b1xx - enable check of BSA done63-60 for fault"
+    #########################################################
+    fixedRate:
+      at:
+        offset: 0x0008
+      class: IntField
+      name: fixedRate
+      sizeBits: 10
+      mode: RW
+      description: "use field to only mask bit of interest for comparison against fixedRate field of trigger message"
+    #########################################################
+    beamRequest:
+      at:
+        offset: 0x000C
+      class: IntField
+      name: beamRequest
+      sizeBits: 32
+      mode: RW
+      description: "used field to only mask bit of interest for comparison against beamREquest field of timing"
+    #########################################################
+    trigDelay:
+      at:
+        offset: 0x0010
+      class: IntField
+      name: trigDelay
+      sizeBits: 8
+      mode: RW
+      description: "trigger delay in clock cycles"
+    #########################################################
+    trigStretch:
+      at:
+        offset: 0x0014
+      class: IntField
+      name: trigStretch
+      sizeBits: 8
+      mode: RW
+      description: "trigger stretch in clock cycles"
+    #########################################################
+    outPolarity:
+      at:
+        offset: 0x0018
+      class: IntField
+      name: outPolarity
+      sizeBits: 1
+      mode: RW
+      description: "trigger invert : normal polarity - b0, inverted polarity - b1"
+    #########################################################
+    SoftTrig:
+      at:
+        offset: 0x001C
+      class: IntField
+      name: SoftTrig
+      sizeBits: 1
+      mode: RW
+      description: "trigger software pulse, write generate 1 clock pulse when value of 1 written, to generate next need to write 0 and 1"
+    #########################################################

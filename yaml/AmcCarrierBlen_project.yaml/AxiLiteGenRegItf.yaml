@@ -1,0 +1,46 @@
+##############################################################################
+## This file is part of 'LCLS2 Common Carrier Core'.
+## It is subject to the license terms in the LICENSE.txt file found in the
+## top-level directory of this distribution and at:
+##    https://confluence.slac.stanford.edu/display/ppareg/LICENSE.html.
+## No part of 'LCLS2 Common Carrier Core', including this file,
+## may be copied, modified, propagated, or distributed except according to
+## the terms contained in the LICENSE.txt file.
+##############################################################################
+#schemaversion 3.0.0
+#once
+
+AxiLiteGenRegItf: &AxiLiteGenRegItf
+  description: "To configure DAC playout sequence"
+  class: MMIODev
+  configPrio: 1
+  size: 0x010000
+  #########
+  children:
+  #########
+    #########################################################
+    Enable:
+      class: IntField
+      at:
+        offset: 0x0000
+      sizeBits: 2
+      mode: RW
+      description: "Enable DAC signal generator lanes"
+    #########################################################
+    dspDiv:
+      class: IntField
+      at:
+        offset: 0x0004
+      sizeBits: 16
+      mode: RW
+      description: "Display rate divider(Not implemented - Reserved)"
+    #########################################################
+    periodSize:
+      class: IntField
+      at:
+        offset: 0x0008
+      sizeBits: 12
+      mode: RW
+      description: "Signal period size. In number of Block RAM offsetes (two samples per offset). Zero inclusive"
+    #########################################################
+

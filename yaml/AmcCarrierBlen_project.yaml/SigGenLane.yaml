@@ -1,0 +1,33 @@
+##############################################################################
+## This file is part of 'LCLS2 Common Carrier Core'.
+## It is subject to the license terms in the LICENSE.txt file found in the
+## top-level directory of this distribution and at:
+##    https://confluence.slac.stanford.edu/display/ppareg/LICENSE.html.
+## No part of 'LCLS2 Common Carrier Core', including this file,
+## may be copied, modified, propagated, or distributed except according to
+## the terms contained in the LICENSE.txt file.
+##############################################################################
+#schemaversion 3.0.0
+#once
+
+SigGenLane: &SigGenLane
+  description: "Dual port RAM to configure value for DAC playback"
+  class: MMIODev
+  configPrio: 1
+  size: 0x010000
+  #########
+  children:
+  #########
+    #########################################################
+    DacRam:
+      class: IntField
+      at:
+        offset: 0x0000
+        stride: 4
+        nelms: 1024
+      sizeBits: 32
+      mode: RW
+      description: "Enable DAC signal generator lanes"
+    #########################################################
+
+

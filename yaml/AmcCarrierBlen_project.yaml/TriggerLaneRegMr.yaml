@@ -1,0 +1,77 @@
+##############################################################################
+## This file is part of 'LCLS2 Common Carrier Core'.
+## It is subject to the license terms in the LICENSE.txt file found in the
+## top-level directory of this distribution and at:
+##    https://confluence.slac.stanford.edu/display/ppareg/LICENSE.html.
+## No part of 'LCLS2 Common Carrier Core', including this file,
+## may be copied, modified, propagated, or distributed except according to
+## the terms contained in the LICENSE.txt file.
+##############################################################################
+#schemaversion 3.0.0
+#once
+
+TriggerLaneRegMr: &TriggerLaneRegMr
+  description: "To process timing and external signal for internal and external single line trigger generation"
+  class: MMIODev
+  configPrio: 1
+  size: 0x010000
+  #########
+  children:
+  #########
+    #########################################################
+    SelectField:
+      at:
+        offset: 0x0000
+        stride: 0x0004
+        nelms: 7
+      class: IntField
+      name: SelectField
+      sizeBits: 32
+      mode: RW
+      description: "Select which fields to use for trigger message comparison:select 140 marker for normal operation"
+    #########################################################
+    trigDelay:
+      at:
+        offset: 0x0020
+      class: IntField
+      name: trigDelay
+      sizeBits: 8
+      mode: RW
+      description: "trigger delay in clock cycles"
+    #########################################################
+    trigStretch:
+      at:
+        offset: 0x0024
+      class: IntField
+      name: trigStretch
+      sizeBits: 8
+      mode: RW
+      description: "trigger stretch in clock cycles"
+    #########################################################
+    outPolarity:
+      at:
+        offset: 0x0028
+      class: IntField
+      name: outPolarity
+      sizeBits: 1
+      mode: RW
+      description: "trigger invert : normal polarity - b0, inverted polarity - b1"
+    #########################################################
+    SoftTrig:
+      at:
+        offset: 0x002C
+      class: IntField
+      name: SoftTrig
+      sizeBits: 1
+      mode: RW
+      description: "trigger software pulse, write generate 1 clock pulse when value of 1 written, to generate next need to write 0 and 1"
+    #########################################################
+    SelectSource:
+      at:
+        offset: 0x0030
+      class: IntField
+      name: SelectSource
+      sizeBits: 2
+      mode: RW
+      description: "Select trigger source: soft - b00,  timing - b01, ext.trig 0 - b10, ext trig 1 - b11"
+    #########################################################
