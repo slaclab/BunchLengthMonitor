@@ -1,0 +1,94 @@
+########################################################################################################################
+# Summary:             Mapping from YAML register path to Asyn parameter name
+# Author:              C. Ford <caf@slac.stanford.edu>
+# Date:                13-mar-2017 
+# YAML config version: AmcCarrierBcm_00000018
+########################################################################################################################
+
+########################################################################################################################
+# Register path                                                                                           Asyn parm name
+########################################################################################################################
+/mmio/DigFpga/ApplicationCore/SysGen[0]/DspCoreRes/Mult2                                                  CHRG
+/mmio/DigFpga/ApplicationCore/SysGen[0]/DspPreprocConfig[0]/TriggerRate                                   RATE
+/mmio/DigFpga/ApplicationCore/SysGen[0]/DspCoreConfig/TempTor                                             TempRef
+/mmio/DigFpga/ApplicationCore/SysGen[0]/DspCoreConfig/TempAmp                                             TempAmpRef
+/mmio/DigFpga/ApplicationCore/SysGen[0]/DspCoreConfig/TempElc                                             TempElcRef
+/mmio/DigFpga/ApplicationCore/AmcGenericAdcDacCore[0]/InitAmcCard                                         InitAmcCard
+/mmio/DigFpga/AmcCarrierCore/AmcCarrierBsa/BsaWaveformEngine[0]/WaveformEngineBuffers/Initialize          WEBInit
+/mmio/DigFpga/AmcCarrierCore/AxiVersion/BuildStamp                                                        BuildStamp
+/mmio/DigFpga/AmcCarrierCore/AxiVersion/FpgaVersion                                                       FpgaVersion
+/mmio/DigFpga/AmcCarrierCore/AxiVersion/DeviceDna                                                         DeviceDna
+/mmio/DigFpga/AmcCarrierCore/AxiVersion/ScratchPad                                                        ScratchPad
+/mmio/DigFpga/AmcCarrierCore/AxiVersion/UpTimeCnt                                                         UpTimeCnt
+/mmio/DigFpga/AmcCarrierCore/AxiVersion/DeviceId                                                          DeviceId
+/mmio/DigFpga/ApplicationCore/AmcGenericAdcDacCore[0]/AmcGenericAdcDacCtrl/AmcClkFreq                     AmcClkFreq
+/mmio/DigFpga/ApplicationCore/AmcGenericAdcDacCore[0]/AmcGenericAdcDacCtrl/AdcData                        AdcData
+/Stream0                                                                                                  Stream0
+/mmio/DigFpga/ApplicationCore/DaqMuxV2[0]/TrigCount                                                       MuxTrigCnt
+/mmio/DigFpga/ApplicationCore/DaqMuxV2[0]/FrameCnt                                                        MuxFrameCnt
+/mmio/DigFpga/ApplicationCore/DaqMuxV2[0]/FreezeStatus                                                    MuxFrzStat
+/mmio/DigFpga/ApplicationCore/DaqMuxV2[0]/InputDataValid                                                  MuxInDatVal
+/mmio/DigFpga/ApplicationCore/DaqMuxV2[0]/StreamEnabled                                                   MuxStrmEna
+/mmio/DigFpga/ApplicationCore/DaqMuxV2[0]/StreamError                                                     MuxStrmErr
+/mmio/DigFpga/ApplicationCore/DaqMuxV2[0]/StreamOverflow                                                  MuxStrmOflw
+/mmio/DigFpga/ApplicationCore/DaqMuxV2[0]/StreamPause                                                     MuxStrmPs
+/mmio/DigFpga/ApplicationCore/DaqMuxV2[0]/StreamReady                                                     MuxStrmRdy
+/mmio/DigFpga/ApplicationCore/DaqMuxV2[0]/Timestamp                                                       MuxTmstmp
+/mmio/DigFpga/ApplicationCore/DaqMuxV2[0]/TriggerCascStatus                                               MuxCascStat
+/mmio/DigFpga/ApplicationCore/DaqMuxV2[0]/TriggerHwArmed                                                  MuxTrigHwArm
+/mmio/DigFpga/ApplicationCore/DaqMuxV2[0]/TriggerHwStatus                                                 MuxTrigHwStat
+/mmio/DigFpga/ApplicationCore/DaqMuxV2[0]/TriggerStatus                                                   MuxTrigStat
+/mmio/DigFpga/ApplicationCore/DaqMuxV2[0]/TriggerSwStatus                                                 MuxTrigSwStat
+/mmio/DigFpga/AmcCarrierCore/AmcCarrierBsa/BsaWaveformEngine[0]/WaveformEngineBuffers/BurstSize           WEBBurstSz
+/mmio/DigFpga/AmcCarrierCore/AmcCarrierBsa/BsaWaveformEngine[0]/WaveformEngineBuffers/Done                WEBDone
+/mmio/DigFpga/AmcCarrierCore/AmcCarrierBsa/BsaWaveformEngine[0]/WaveformEngineBuffers/Empty               WEBEmpty
+/mmio/DigFpga/AmcCarrierCore/AmcCarrierBsa/BsaWaveformEngine[0]/WaveformEngineBuffers/Error               WEBError
+/mmio/DigFpga/AmcCarrierCore/AmcCarrierBsa/BsaWaveformEngine[0]/WaveformEngineBuffers/FramesSinceTrigger  WEBFSTrig
+/mmio/DigFpga/AmcCarrierCore/AmcCarrierBsa/BsaWaveformEngine[0]/WaveformEngineBuffers/Full                WEBFull
+/mmio/DigFpga/AmcCarrierCore/AmcCarrierBsa/BsaWaveformEngine[0]/WaveformEngineBuffers/TriggerAddr         WEBTrigAddr
+/mmio/DigFpga/AmcCarrierCore/AmcCarrierBsa/BsaWaveformEngine[0]/WaveformEngineBuffers/Triggered           WEBTrigd
+/mmio/DigFpga/AmcCarrierCore/AmcCarrierBsa/BsaWaveformEngine[0]/WaveformEngineBuffers/WrAddr              WEBWrAddr
+/mmio/DigFpga/ApplicationCore/TimingProc[0]/TriggerLaneReg[0]/SelectField                                 TLR0:SelFld
+/mmio/DigFpga/ApplicationCore/TimingProc[0]/TriggerLaneReg[0]/SelectSource                                TLR0:SelSrc
+/mmio/DigFpga/ApplicationCore/TimingProc[0]/TriggerLaneReg[0]/SoftTrig                                    TLR0:SftTrig
+/mmio/DigFpga/ApplicationCore/TimingProc[0]/TriggerLaneReg[0]/beamRequest                                 TLR0:BeamRq
+/mmio/DigFpga/ApplicationCore/TimingProc[0]/TriggerLaneReg[0]/fixedRate                                   TLR0:FxRate
+/mmio/DigFpga/ApplicationCore/TimingProc[0]/TriggerLaneReg[0]/outPolarity                                 TLR0:OutPol
+/mmio/DigFpga/ApplicationCore/TimingProc[0]/TriggerLaneReg[0]/trigDelay                                   TLR0:TrigDly
+/mmio/DigFpga/ApplicationCore/TimingProc[0]/TriggerLaneReg[0]/trigStretch                                 TLR0:TrigStr
+/mmio/DigFpga/ApplicationCore/TimingProc[0]/TriggerLaneReg[1]/SelectField                                 TLR1:SelFld
+/mmio/DigFpga/ApplicationCore/TimingProc[0]/TriggerLaneReg[1]/SelectSource                                TLR1:SelSrc
+/mmio/DigFpga/ApplicationCore/TimingProc[0]/TriggerLaneReg[1]/SoftTrig                                    TLR1:SftTrig
+/mmio/DigFpga/ApplicationCore/TimingProc[0]/TriggerLaneReg[1]/beamRequest                                 TLR1:BeamRq
+/mmio/DigFpga/ApplicationCore/TimingProc[0]/TriggerLaneReg[1]/fixedRate                                   TLR1:FxRate
+/mmio/DigFpga/ApplicationCore/TimingProc[0]/TriggerLaneReg[1]/outPolarity                                 TLR1:OutPol
+/mmio/DigFpga/ApplicationCore/TimingProc[0]/TriggerLaneReg[1]/trigDelay                                   TLR1:TrigDly
+/mmio/DigFpga/ApplicationCore/TimingProc[0]/TriggerLaneReg[1]/trigStretch                                 TLR1:TrigStr
+/mmio/DigFpga/ApplicationCore/TimingProc[0]/TriggerLaneReg[4]/SelectField                                 TLR4:SelFld
+/mmio/DigFpga/ApplicationCore/TimingProc[0]/TriggerLaneReg[4]/SelectSource                                TLR4:SelSrc
+/mmio/DigFpga/ApplicationCore/TimingProc[0]/TriggerLaneReg[4]/SoftTrig                                    TLR4:SftTrig
+/mmio/DigFpga/ApplicationCore/TimingProc[0]/TriggerLaneReg[4]/beamRequest                                 TLR4:BeamRq
+/mmio/DigFpga/ApplicationCore/TimingProc[0]/TriggerLaneReg[4]/fixedRate                                   TLR4:FxRate
+/mmio/DigFpga/ApplicationCore/TimingProc[0]/TriggerLaneReg[4]/outPolarity                                 TLR4:OutPol
+/mmio/DigFpga/ApplicationCore/TimingProc[0]/TriggerLaneReg[4]/trigDelay                                   TLR4:TrigDly
+/mmio/DigFpga/ApplicationCore/TimingProc[0]/TriggerLaneReg[4]/trigStretch                                 TLR4:TrigStr
+/mmio/DigFpga/ApplicationCore/TimingProc[0]/TriggerLaneReg[6]/SelectField                                 TLR6:SelFld
+/mmio/DigFpga/ApplicationCore/TimingProc[0]/TriggerLaneReg[6]/SelectSource                                TLR6:SelSrc
+/mmio/DigFpga/ApplicationCore/TimingProc[0]/TriggerLaneReg[6]/SoftTrig                                    TLR6:SftTrig
+/mmio/DigFpga/ApplicationCore/TimingProc[0]/TriggerLaneReg[6]/beamRequest                                 TLR6:BeamRq
+/mmio/DigFpga/ApplicationCore/TimingProc[0]/TriggerLaneReg[6]/fixedRate                                   TLR6:FxRate
+/mmio/DigFpga/ApplicationCore/TimingProc[0]/TriggerLaneReg[6]/outPolarity                                 TLR6:OutPol
+/mmio/DigFpga/ApplicationCore/TimingProc[0]/TriggerLaneReg[6]/trigDelay                                   TLR6:TrigDly
+/mmio/DigFpga/ApplicationCore/TimingProc[0]/TriggerLaneReg[6]/trigStretch                                 TLR6:TrigStr
+/mmio/DigFpga/ApplicationCore/SysGen[0]/DspCoreConfig/Version                                             DSPVers
+/mmio/DigFpga/ApplicationCore/SysGen[0]/DspCoreConfig/TempCoef0                                           CoefT0
+/mmio/DigFpga/ApplicationCore/SysGen[0]/DspCoreConfig/TempCoef1                                           CoefT1
+/mmio/DigFpga/ApplicationCore/SysGen[0]/DspCoreConfig/TempCoef2                                           CoefT2
+/mmio/DigFpga/ApplicationCore/SysGen[0]/DspCoreConfig/TempCalib                                           CoefTCal
+/mmio/DigFpga/ApplicationCore/SysGen[0]/DspCoreConfig/Coef_lnQcal                                         CoefLnQ
+/mmio/DigFpga/ApplicationCore/SysGen[0]/DspCoreConfig/CoefA0                                              CoefA0
+/mmio/DigFpga/ApplicationCore/SysGen[0]/DspCoreConfig/CoefA1                                              CoefA1
+/mmio/DigFpga/ApplicationCore/SysGen[0]/DspCoreConfig/CoefA2                                              CoefA2
+/mmio/DigFpga/ApplicationCore/SysGen[0]/DspPreprocConfig[0]/Mode                                          Mode
+/mmio/DigFpga/ApplicationCore/SysGen[0]/DspPreprocConfig[0]/NumberSamples0                                NumSamp0
+/mmio/DigFpga/ApplicationCore/DaqMuxV2[0]/TriggerHwAutoRearm                                              AutoRearm

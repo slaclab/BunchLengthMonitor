@@ -25,7 +25,30 @@ DB_INSTALLS += $(YCPSWASYN)/db/mbbo.template
 DB_INSTALLS += $(YCPSWASYN)/db/bo.template
 DB_INSTALLS += $(YCPSWASYN)/db/waveform_stream16.template
 DB_INSTALLS += $(YCPSWASYN)/db/waveform_stream32.template
-DB_INSTALLS += $(YCPSWASYN)/db/saveLoadConfig.template
+DB_INSTALLS += $(YCPSWASYN)/db/saveLoadConfig.db
+
+## For manually created record
+DB_INSTALLS += $(YCPSWASYN)/db/RegisterIn.template
+DB_INSTALLS += $(YCPSWASYN)/db/RegisterOut.template
+DB_INSTALLS += $(YCPSWASYN)/db/RegisterOutRBV.template
+DB_INSTALLS += $(YCPSWASYN)/db/RegisterArrayChar.template
+DB_INSTALLS += $(YCPSWASYN)/db/RegisterArrayIn.template
+DB_INSTALLS += $(YCPSWASYN)/db/RegisterArrayOut.template
+DB_INSTALLS += $(YCPSWASYN)/db/RegisterEnumBIn.template
+DB_INSTALLS += $(YCPSWASYN)/db/RegisterEnumMBBIn.template
+DB_INSTALLS += $(YCPSWASYN)/db/RegisterEnumBOut.template
+DB_INSTALLS += $(YCPSWASYN)/db/RegisterEnumBOutRBV.template
+DB_INSTALLS += $(YCPSWASYN)/db/RegisterEnumMBBOut.template
+DB_INSTALLS += $(YCPSWASYN)/db/RegisterEnumMBBOutRBV.template
+DB_INSTALLS += $(YCPSWASYN)/db/RegisterDoubleIn.template
+DB_INSTALLS += $(YCPSWASYN)/db/RegisterDoubleOut.template
+DB_INSTALLS += $(YCPSWASYN)/db/RegisterDoubleOutRBV.template
+DB_INSTALLS += $(YCPSWASYN)/db/RegisterCommand.template
+DB_INSTALLS += $(YCPSWASYN)/db/RegisterStream.template
+DB_INSTALLS += $(YCPSWASYN)/db/RegisterStream16.template
+DB_INSTALLS += $(YCPSWASYN)/db/example.substitutions
+
+
 
 # User-defined functions
 DB += stream_size.template

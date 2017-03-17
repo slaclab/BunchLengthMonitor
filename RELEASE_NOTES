@@ -9,5 +9,6 @@
 #  Auth: xx-Dec-2012, XXX         (xxx)
 #  Rev:  dd-mmm-yyyy, Reviewer's Name    (USERNAME)
 #--------------------------------------------------------------
+R1.0.1: Build with new ycpswasyn: version = R1.1.1
 R1.0.0: Initial import of the LCLS II BunchLengthMonitor IOC Application
         Built against EPICS R3.15.5-1.0

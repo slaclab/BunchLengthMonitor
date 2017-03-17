@@ -27,6 +27,18 @@ epicsEnvSet("EPICS_CA_MAX_ARRAY_BYTES", "21000000")
 epicsEnvSet("PREFIX","175-S6")
 epicsEnvSet("CPSW_PORT","S6")
 
+# Yaml File
+epicsEnvSet("YAML_FILE", "yaml/AmcCarrierBlen_project.yaml/000TopLevel.yaml")
+
+# FPGA IP address
+epicsEnvSet("FPGA_IP", "10.0.1.106")
+
+# Use Automatic generation of records from the YAML definition
+# 0 = No, 1 = Yes
+epicsEnvSet("AUTO_GEN", 1)
+
+# Dictionary file for manual (empty string if none)
+epicsEnvSet("DICT_FILE", "")
 
 # *********************************************
 # **** Environment variables for IOC Admin ****
@@ -60,9 +72,9 @@ blen_registerRecordDeviceDriver(pdbbase)
 #    IP Address,                # OPTIONAL: Target FPGA IP Address. If not given it is taken from the YAML file
 #    Record name Prefix,        # Record name prefix
 #    Record name Length Max,    # Record name maximum length (must be greater than lenght of prefix + 4)
-cd ${TOP}/iocBoot/vioc-li02-bl01
-YCPSWASYNConfig("${CPSW_PORT}", "../../yaml/AmcCarrierBlen_project.yaml/000TopLevel.yaml", "", "10.0.1.106", "${PREFIX}", 40)
-cd ${TOP}
+# ==========================================================================================================
+
+YCPSWASYNConfig("${CPSW_PORT}", "${YAML_FILE}", "", "${FPGA_IP}", "${PREFIX}", 40, "${AUTO_GEN}", "${DICT_FILE}")
 
 # =====================================================================
 # End: Configure YCPSW asyn port driver
@@ -176,9 +188,9 @@ create_monitor_set("info_settings.req" , 30 )
 # ************************
 # **** YCPSWAsyn dbpf ****
 
-cd ${TOP}/iocBoot/vioc-li02-bl01
-dbpf ${PREFIX}:loadConfigFile, "../../yaml/default_blen_float.yaml"
-cd ${TOP}
+#cd ${TOP}/iocBoot/vioc-li02-bl01
+#dbpf ${PREFIX}:loadConfigFile, "../../yaml/default_blen_float.yaml"
+#cd ${TOP}
 # =======================================================================
 
 # ************************************************************
