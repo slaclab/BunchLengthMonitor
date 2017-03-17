@@ -184,15 +184,6 @@ create_monitor_set("info_positions.req", 5 )
 create_monitor_set("info_settings.req" , 30 )
 
 
-# ========================================================================
-# ************************
-# **** YCPSWAsyn dbpf ****
-
-#cd ${TOP}/iocBoot/vioc-li02-bl01
-#dbpf ${PREFIX}:loadConfigFile, "../../yaml/default_blen_float.yaml"
-#cd ${TOP}
-# =======================================================================
-
 # ************************************************************
 # **** System command for Temperature Chassis on Ethercat ****
 # Setup Real-time priorities after iocInit for driver threads
