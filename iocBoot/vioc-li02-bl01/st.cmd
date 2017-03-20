@@ -1,6 +1,6 @@
 #!../../bin/linuxRT-x86_64/blen
 
-## You may have to change bcm to something else
+## You may have to change blen to something else
 ## everywhere it appears in this file
 
 < envPaths
@@ -24,7 +24,7 @@
 epicsEnvSet("EPICS_CA_MAX_ARRAY_BYTES", "21000000")
 
 # PV prefix
-epicsEnvSet("PREFIX","175-S6")
+epicsEnvSet("PREFIX","VIOC:LI02:BL01")
 epicsEnvSet("CPSW_PORT","S6")
 
 # Yaml File
@@ -33,12 +33,15 @@ epicsEnvSet("YAML_FILE", "yaml/AmcCarrierBlen_project.yaml/000TopLevel.yaml")
 # FPGA IP address
 epicsEnvSet("FPGA_IP", "10.0.1.106")
 
+# AMC slot (0 or 1)
+epicsEnvSet("AMC","1")
+
 # Use Automatic generation of records from the YAML definition
 # 0 = No, 1 = Yes
-epicsEnvSet("AUTO_GEN", 1)
+epicsEnvSet("AUTO_GEN", 0)
 
 # Dictionary file for manual (empty string if none)
-epicsEnvSet("DICT_FILE", "")
+epicsEnvSet("DICT_FILE", "yaml/blen_00000016.dict")
 
 # *********************************************
 # **** Environment variables for IOC Admin ****
@@ -100,8 +103,15 @@ YCPSWASYNConfig("${CPSW_PORT}", "${YAML_FILE}", "", "${FPGA_IP}", "${PREFIX}", 4
 # **** Load YCPSWAsyn db ****
 
 ## Load record instances
-dbLoadRecords("db/verifyDefaults.db", "P=${PREFIX}, KEY=3")
 
+# Save/Load configuration related records
+dbLoadRecords("db/saveLoadConfig.db", "P=${PREFIX}, PORT=${CPSW_PORT}, SAVE_FILE=/tmp/configDump.yaml, LOAD_FILE=yaml/default_blen_float.yaml")
+
+# Manually create records
+dbLoadRecords("db/blen.db", "P=${PREFIX}, PORT=${CPSW_PORT}, AMC=${AMC}")
+
+# Verify Configuration related records
+#dbLoadRecords("db/monitorFPGAReboot.db", "P=${PREFIX}, KEY=3")
 
 # **********************************************************************
 # **** Load iocAdmin databases to support IOC Health and monitoring ****
@@ -175,6 +185,7 @@ caPutLogShow(2)
 
 cd("/data/${IOC}/autosave-req")
 iocshCmd("makeAutosaveFiles")
+cd ${TOP}
 
 # Start the save_restore task
 # save changes on change, but no faster

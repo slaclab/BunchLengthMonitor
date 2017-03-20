@@ -1,0 +1,215 @@
+########################################################################################################################
+# Summary:             BLEN substitutions file to generate PVs for CPSW registers
+# Author:              C. Ford <caf@slac.stanford.edu>
+# Date:                19-mar-2017 
+# YAML config version: AmcCarrierBlen_00000016
+########################################################################################################################
+
+########################################################################################################################
+# Macros:
+#   P,R: The PV name as $(P):$(R)
+#   DESC, PINI, SCAN, NELM, etc.: The same fields on the records
+#   PORT: The asyn port name. It must match the port name given when calling "YCPSWASYNConfig" on st.cmd
+#   PARAM: The asyn paramter name. It must be defined in the dictionary file and assigned to a register
+#   AMC: The AMC hardware slot (0 or 1)
+########################################################################################################################
+
+#======================================
+# Registers with ScalVal_RO interfaces
+#======================================
+# Single register
+file "RegisterIn.template" { pattern
+{ P,          R,              DESC,                           PINI,   SCAN,       PORT, EGU,  PARAM         }
+# Shared
+{ $(P), DeviceDna,      "Xilinx Device DNA",            "YES",  "Passive",  $(PORT),   "",   DeviceDna     }
+{ $(P), FpgaVersion,    "FPGA Firmware Version Number", "YES",  "Passive",  $(PORT),   "",   FpgaVersion   }
+{ $(P), UpTimeCnt,      "Seconds since last reset",     "YES",  "1 second", $(PORT),   "s",  UpTimeCnt     }
+{ $(P), DeviceId,       "Device Identification",        "YES",  "Passive",  $(PORT),   "",   DeviceId      }
+# AMC specific
+{ $(P), RATE,           "Trigger rate over 1 sec",      "YES",  "1 second", $(PORT),   "Hz", AMC$(AMC):RATE          }
+{ $(P), AmcClkFreq,     "AMC Clock frequency",          "YES",  "1 second", $(PORT),   "Hz", AMC$(AMC):AmcClkFreq    }
+{ $(P), MuxTrigCnt,     "Valid DAQ triggers",           "YES",  "1 second", $(PORT),   "",   AMC$(AMC):MuxTrigCnt    }
+{ $(P), MuxFrzStat,     "Freeze buf status",            "YES",  "1 second", $(PORT),   "",   AMC$(AMC):MuxFrzStat    }
+{ $(P), MuxCascStat,    "Cascade trigger status",       "YES",  "1 second", $(PORT),   "",   AMC$(AMC):MuxCascStat   }
+{ $(P), MuxTrigHwArm,   "HW trigger armed status",      "YES",  "1 second", $(PORT),   "",   AMC$(AMC):MuxTrigHwArm  }
+{ $(P), MuxTrigHwStat,  "HW trigger status",            "YES",  "1 second", $(PORT),   "",   AMC$(AMC):MuxTrigHwStat }
+{ $(P), MuxTrigStat,    "Combined trigger status",      "YES",  "1 second", $(PORT),   "",   AMC$(AMC):MuxTrigStat   }
+{ $(P), MuxTrigSwStat,  "SW trigger status",            "YES",  "1 second", $(PORT),   "",   AMC$(AMC):MuxTrigSwStat }
+{ $(P), WEBBurstSz,     "Burst size",                   "YES",  "1 second", $(PORT),   "",   AMC$(AMC):WEBBurstSz    }
+{ $(P), DSPVers,        "System generator core vers",   "YES",  "1 second", $(PORT),   "",   AMC$(AMC):DSPVers       }
+}
+
+# Array of register
+file "RegisterArrayIn.template" { pattern
+{ P,          R,             DESC,                          NELM,   PINI,   SCAN,       PORT,  PARAM       }
+{ $(P), AdcData,       "ADC Data[3:0]",               4,     "YES",   "1 second", $(PORT),    AMC$(AMC):AdcData     }
+#
+{ $(P), MuxInDatVal,   "Incoming data valid",         4,     "YES",   "1 second", $(PORT),    AMC$(AMC):MuxInDatVal }
+{ $(P), MuxStrmEna,    "Output stream enabled",       4,     "YES",   "1 second", $(PORT),    AMC$(AMC):MuxStrmEna  }
+{ $(P), MuxStrmErr,    "Error during last acq",       4,     "YES",   "1 second", $(PORT),    AMC$(AMC):MuxStrmErr  }
+{ $(P), MuxStrmOflw,   "Raw diag stream ctrl oflw",   4,     "YES",   "1 second", $(PORT),    AMC$(AMC):MuxStrmOflw }
+{ $(P), MuxStrmPs,     "Raw diag stream ctrl pause",  4,     "YES",   "1 second", $(PORT),    AMC$(AMC):MuxStrmPs   }
+{ $(P), MuxStrmRdy,    "Raw diag stream ctrl ready",  4,     "YES",   "1 second", $(PORT),    AMC$(AMC):MuxStrmRdy  }
+{ $(P), MuxFrameCnt,    "4096 byte frames sent",      4,     "YES",   "1 second", $(PORT),    AMC$(AMC):MuxFrameCnt }
+#
+{ $(P), MuxTmstmp,     "Timestamp 63:0",              2,     "YES",   "1 second", $(PORT),    AMC$(AMC):MuxTmstmp   }
+#
+{ $(P), WEBDone        "",                            4,     "YES",   "1 second", $(PORT),    AMC$(AMC):WEBDone     }
+{ $(P), WEBEmpty       "",                            4,     "YES",   "1 second", $(PORT),    AMC$(AMC):WEBEmpty    }
+{ $(P), WEBError       "",                            4,     "YES",   "1 second", $(PORT),    AMC$(AMC):WEBError    }
+{ $(P), WEBFSTrig      "Frames since trigger",        4,     "YES",   "1 second", $(PORT),    AMC$(AMC):WEBFSTrig   }
+{ $(P), WEBFull        "",                            4,     "YES",   "1 second", $(PORT),    AMC$(AMC):WEBFull     }
+{ $(P), WEBTrigAddr    "",                            4,     "YES",   "1 second", $(PORT),    AMC$(AMC):WEBTrigAddr }
+{ $(P), WEBTrigd       "Triggered",                   4,     "YES",   "1 second", $(PORT),    AMC$(AMC):WEBTrigd    }
+{ $(P), WEBWrAddr      "",                            4,     "YES",   "1 second", $(PORT),    AMC$(AMC):WEBWrAddr   }
+}
+
+# Array of 8-bit register as a string
+file "RegisterArrayChar.template" { pattern
+{ P,        R,              DESC,                           NELM,   PINI,   SCAN,       PORT,  PARAM       }
+{ $(P), BuildStamp,     "Firmware Build String",        64,     "YES",  "Passive",  $(PORT),  BuildStamp }
+}
+
+# ENUM register
+file "RegisterEnumBIn.template" { pattern
+{ P,        R,              DESC,                    PINI,   ZNAM,       ONAM,       SCAN,      PORT, PARAM     }
+}
+
+#======================================
+# Register with ScalVal interfaces
+#======================================
+
+file "RegisterOut.template" { pattern
+{ P,        R,              DESC,                                       PINI,   SCAN,       PORT,  PARAM       }
+# Shared
+{ $(P), ScratchPad,     "Register to test R/W"                    "NO",   "Passive",  $(PORT),    ScratchPad }
+# AMC specific
+{ $(P), Mode,           "BLEN mode"                               "NO",   "Passive",  $(PORT),    AMC$(AMC):Mode }
+{ $(P), NumSamp0,       "Number of samples 0"                     "NO",   "Passive",  $(PORT),    AMC$(AMC):NumSamp0 }
+{ $(P), NumSamp1,       "Number of samples 1"                     "NO",   "Passive",  $(PORT),    AMC$(AMC):NumSamp1 }
+{ $(P), TrigDelay1,     ""                                        "NO",   "Passive",  $(PORT),    AMC$(AMC):TrigDelay1 }
+# Trigger to Waveforms (TLR4)
+{ $(P), TLR4:SelFld,    "fields to use for trig msg comparison",  "NO",   "Passive",  $(PORT),    AMC$(AMC):TLR4:SelFld }
+{ $(P), TLR4:SelSrc,    "soft-b0, tmg-b01, trig0-b10, trig1-b11", "NO",   "Passive",  $(PORT),    AMC$(AMC):TLR4:SelSrc }
+{ $(P), TLR4:SftTrig,   "used field to only mask bit of interest","NO",   "Passive",  $(PORT),    AMC$(AMC):TLR4:SftTrig }
+{ $(P), TLR4:BeamRq,    "used field to only mask bit of interest","NO",   "Passive",  $(PORT),    AMC$(AMC):TLR4:BeamRq }
+{ $(P), TLR4:FxRate,    "used field to only mask bit of interest","NO",   "Passive",  $(PORT),    AMC$(AMC):TLR4:FxRate }
+{ $(P), TLR4:OutPol,    "trigger invert: normal b0, inverted b1", "NO",   "Passive",  $(PORT),    AMC$(AMC):TLR4:OutPol }
+{ $(P), TLR4:TrigDly,   "trigger delay in clock cycles",          "NO",   "Passive",  $(PORT),    AMC$(AMC):TLR4:TrigDly }
+{ $(P), TLR4:TrigStr,   "trigger stretch in clock cycles",        "NO",   "Passive",  $(PORT),    AMC$(AMC):TLR4:TrigStr }
+# Trigger to Calculations (TLR6)
+{ $(P), TLR6:SelFld,    "fields to use for trig msg comparison",  "NO",   "Passive",  $(PORT),    AMC$(AMC):TLR6:SelFld }
+{ $(P), TLR6:SelSrc,    "soft-b0, tmg-b01, trig0-b10, trig1-b11", "NO",   "Passive",  $(PORT),    AMC$(AMC):TLR6:SelSrc }
+{ $(P), TLR6:SftTrig,   "used field to only mask bit of interest","NO",   "Passive",  $(PORT),    AMC$(AMC):TLR6:SftTrig }
+{ $(P), TLR6:BeamRq,    "used field to only mask bit of interest","NO",   "Passive",  $(PORT),    AMC$(AMC):TLR6:BeamRq }
+{ $(P), TLR6:FxRate,    "used field to only mask bit of interest","NO",   "Passive",  $(PORT),    AMC$(AMC):TLR6:FxRate }
+{ $(P), TLR6:OutPol,    "trigger invert: normal b0, inverted b1", "NO",   "Passive",  $(PORT),    AMC$(AMC):TLR6:OutPol }
+{ $(P), TLR6:TrigDly,   "trigger delay in clock cycles",          "NO",   "Passive",  $(PORT),    AMC$(AMC):TLR6:TrigDly }
+{ $(P), TLR6:TrigStr,   "trigger stretch in clock cycles",        "NO",   "Passive",  $(PORT),    AMC$(AMC):TLR6:TrigStr }
+}
+
+file "RegisterOutRBV.template" { pattern
+{ P,           R,                DESC,                                     PINI,   SCAN,        PORT,  PARAM       }
+# Shared
+{ $(P), ScratchPadRBV,     "Register to test R/W",                   "YES",  "1 second",  $(PORT),    ScratchPad }
+# AMC specific
+{ $(P), ModeRBV,           "BLEN mode"                               "YES",  "1 second",  $(PORT),    AMC$(AMC):Mode }
+{ $(P), NumSamp0RBV,       "Number of samples 0"                     "YES",  "1 second",  $(PORT),    AMC$(AMC):NumSamp0 }
+{ $(P), NumSamp1RBV,       "Number of samples 1"                     "YES",  "1 second",  $(PORT),    AMC$(AMC):NumSamp1 }
+{ $(P), TrigDelay1RBV,     ""                                        "YES",  "1 second",  $(PORT),    AMC$(AMC):TrigDelay1 }
+# Trigger to Waveforms (TLR4)
+{ $(P), TLR4:SelFldRBV,    "fields to use for trig msg comparison",  "YES",  "1 second",  $(PORT),    AMC$(AMC):TLR4:SelFld }
+{ $(P), TLR4:SelSrcRBV,    "soft-b0, tmg-b01, trig0-b10, trig1-b11", "YES",  "1 second",  $(PORT),    AMC$(AMC):TLR4:SelSrc }
+{ $(P), TLR4:SftTrigRBV,   "used field to only mask bit of interest","YES",  "1 second",  $(PORT),    AMC$(AMC):TLR4:SftTrig }
+{ $(P), TLR4:BeamRqRBV,    "used field to only mask bit of interest","YES",  "1 second",  $(PORT),    AMC$(AMC):TLR4:BeamRq }
+{ $(P), TLR4:FxRateRBV,    "used field to only mask bit of interest","YES",  "1 second",  $(PORT),    AMC$(AMC):TLR4:FxRate }
+{ $(P), TLR4:OutPolRBV,    "trigger invert: normal b0, inverted b1", "YES",  "1 second",  $(PORT),    AMC$(AMC):TLR4:OutPol }
+{ $(P), TLR4:TrigDlyRBV,   "trigger delay in clock cycles",          "YES",  "1 second",  $(PORT),    AMC$(AMC):TLR4:TrigDly }
+{ $(P), TLR4:TrigStrRBV,   "trigger stretch in clock cycles",        "YES",  "1 second",  $(PORT),    AMC$(AMC):TLR4:TrigStr }
+# Trigger to Calculations (TLR6)
+{ $(P), TLR6:SelFldRBV,    "fields to use for trig msg comparison",  "YES",  "1 second",  $(PORT),    AMC$(AMC):TLR6:SelFld }
+{ $(P), TLR6:SelSrcRBV,    "soft-b0, tmg-b01, trig0-b10, trig1-b11", "YES",  "1 second",  $(PORT),    AMC$(AMC):TLR6:SelSrc }
+{ $(P), TLR6:SftTrigRBV,   "used field to only mask bit of interest","YES",  "1 second",  $(PORT),    AMC$(AMC):TLR6:SftTrig }
+{ $(P), TLR6:BeamRqRBV,    "used field to only mask bit of interest","YES",  "1 second",  $(PORT),    AMC$(AMC):TLR6:BeamRq }
+{ $(P), TLR6:FxRateRBV,    "used field to only mask bit of interest","YES",  "1 second",  $(PORT),    AMC$(AMC):TLR6:FxRate }
+{ $(P), TLR6:OutPolRBV,    "trigger invert: normal b0, inverted b1", "YES",  "1 second",  $(PORT),    AMC$(AMC):TLR6:OutPol }
+{ $(P), TLR6:TrigDlyRBV,   "trigger delay in clock cycles",          "YES",  "1 second",  $(PORT),    AMC$(AMC):TLR6:TrigDly }
+{ $(P), TLR6:TrigStrRBV,   "trigger stretch in clock cycles",        "YES",  "1 second",  $(PORT),    AMC$(AMC):TLR6:TrigStr }
+}
+
+# ENUM register
+file "RegisterEnumBOut.template" { pattern
+{ P,        R,              DESC,        PINI   ZNAM,        ONAM,     SCAN,       PORT, PARAM     }
+{ $(P), AutoRearm,   "Auto rearm", "NO",  "Disabled", "Enabled", "Passive",  $(PORT),   AMC$(AMC):AutoRearm }
+}
+
+file "RegisterEnumBOutRBV.template" { pattern
+{ P,        R,              DESC,         PINI    ZNAM,        ONAM,     SCAN,        PORT, PARAM     }
+{ $(P), AutoRearmRBV, "Auto rearm", "YES",  "Disabled", "Enabled", ".5 second",  $(PORT),   AMC$(AMC):AutoRearm }
+}
+
+#======================================
+# Register with DoubleVal_RO interfaces
+#======================================
+
+file "RegisterDoubleIn.template" { pattern
+{ P,        R,            DESC,                 PINI,   SCAN,         PORT,       EGU,        PARAM             }
+# AMC specific
+{ $(P),     SUM,          "",                   "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):SUM     }
+{ $(P),     TMIT,         "",                   "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):TMIT    }
+{ $(P),     IMAX,         "",                   "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):IMAX    }
+}
+
+#======================================
+# Register with DoubleVal interfaces
+#======================================
+
+file "RegisterDoubleOut.template" { pattern
+{ P,              R,            DESC,                         PINI,  SCAN,        PORT,   EGU,    PARAM   }
+# AMC specific
+{ $(P),     CoefA0,       "Coef A0 for 1st group",      "NO",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefA0 }
+{ $(P),     CoefA1,       "Coef A1 for 2nd group",      "NO",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefA1 }
+{ $(P),     CoefA2,       "Coef A2 for 3rd group",      "NO",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefA2 }
+}
+
+file "RegisterDoubleOutRBV.template" { pattern
+{ P,              R,            DESC,                         PINI,   SCAN,       PORT,   EGU,    PARAM   }
+# AMC specific
+{ $(P),     CoefA0RBV,    "Coef A0 for 1st group",      "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefA0 }
+{ $(P),     CoefA1RBV,    "Coef A1 for 2nd group",      "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefA1 }
+{ $(P),     CoefA2RBV,    "Coef A2 for 3rd group",      "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefA2 }
+}
+
+#======================================
+# Register with Command interfaces
+#======================================
+file "RegisterCommand.template" { pattern
+{ P,            R,            DESC,                            PINI,   SCAN,       PORT,   PARAM   }
+# AMC specific
+{ $(P),   WEBInit,      "Waveform engine buf init",      "NO",  "Passive",   $(PORT),     AMC$(AMC):WEBInit }
+{ $(P),   InitAmcCard,  "Init JESD modules",             "NO",  "Passive",   $(PORT),     AMC$(AMC):InitAmcCard }
+}
+
+
+#======================================
+# Register with Stream interfaces
+#======================================
+
+file "RegisterStream.template" {pattern
+{ P,            R,          DESC,               NELM,       PINI,   PORT,   PARAM       }
+# Shared
+{ $(P),   Stream0,    "Stream channel 0", 5000000,    "NO",   $(PORT),     STREAM_CH0  }
+{ $(P),   Stream4,    "Stream channel 4", 5000000,    "NO",   $(PORT),     STREAM_CH4  }
+}
+
+# For Stream interfaces, an additional parameter is automatically created
+# and the name is generated adding ":16" to the original parameter name
+# This gives access to the same stream data, but as 16-bit words which
+# is the case for ADC samples for example. Note that the NELM is 2x
+
+file "RegisterStream16.template" {pattern
+{ P,            R,          DESC,                           NELM,        PINI,  PORT,  PARAM         }
+# Shared
+{ $(P),     Stream0_16, "Stream channel 0 (16-bit)",  10000000,    "NO",  $(PORT),    STREAM_CH0:16 }
+{ $(P),     Stream4_16, "Stream channel 4 (16-bit)",  10000000,    "NO",  $(PORT),    STREAM_CH4:16 }
+}

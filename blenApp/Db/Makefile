@@ -58,12 +58,15 @@ DB += Shutter.db
 # For temperature transfer
 DB += xfer.db
 
+# For CPSW PVs
+DB += blen.db
+
 # For statistics
 DB += acalcStats.db
 
 # For automatic initialization
 DB += verifyDefaults.db
-DB += initSequence.db
+# DB += initSequence.db
 
 # Install Common databases needed by All IOCs
 # ========================================================
