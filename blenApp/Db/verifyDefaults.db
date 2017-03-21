@@ -1,9 +1,0 @@
-record(calcout, "$(P):verifyDefaults") {
-  field(SCAN, "10 second")
-  field(DESC, "Verify AxiVersion Scratchpad")
-  field(INPA, "$(P):C:AV:ScratchPad:Rd")
-  field(B,    "$(KEY)")
-  field(CALC, "A!=B")
-  field(OUT,  "$(P):loadConfig.PROC")
-  field(OOPT, "When Non-zero")
-}

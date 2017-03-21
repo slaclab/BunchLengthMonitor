@@ -64,9 +64,11 @@ DB += blen.db
 # For statistics
 DB += acalcStats.db
 
-# For automatic initialization
-DB += verifyDefaults.db
-# DB += initSequence.db
+# For saving and loading yaml configuration
+DB += saveLoadConfig.db
+
+# For automatic initialization (requires saveLoadConfig.db)
+DB += monitorFPGAReboot.db
 
 # Install Common databases needed by All IOCs
 # ========================================================
