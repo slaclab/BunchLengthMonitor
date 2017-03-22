@@ -15,9 +15,9 @@
 /mmio/DigFpga/AmcCarrierCore/AxiVersion/ScratchPad                                                        ScratchPad
 /mmio/DigFpga/AmcCarrierCore/AxiVersion/UpTimeCnt                                                         UpTimeCnt
 /mmio/DigFpga/AmcCarrierCore/AxiVersion/DeviceId                                                          DeviceId
-/Stream0                                                                                                  Stream0
-/Stream4                                                                                                  Stream4
 # AMC specific registers
+/Stream0                                                                                                  AMC0:Stream0
+/Stream4                                                                                                  AMC1:Stream0
 /mmio/DigFpga/ApplicationCore/SysGen[0]/DspCoreRes/AddSums1                                               AMC0:SUM
 /mmio/DigFpga/ApplicationCore/SysGen[1]/DspCoreRes/AddSums1                                               AMC1:SUM
 /mmio/DigFpga/ApplicationCore/SysGen[0]/DspPreprocConfig[0]/TriggerRate                                   AMC0:RATE

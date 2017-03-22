@@ -33,12 +33,23 @@ epicsEnvSet("YAML_FILE", "yaml/AmcCarrierBlen_project.yaml/000TopLevel.yaml")
 # FPGA IP address
 epicsEnvSet("FPGA_IP", "10.0.1.106")
 
-# AMC slot (0 or 1)
-epicsEnvSet("AMC","1")
-
 # Use Automatic generation of records from the YAML definition
 # 0 = No, 1 = Yes
 epicsEnvSet("AUTO_GEN", 0)
+
+# Automatically generated record prefix
+#epicsEnvSet("PREFIX","LI02:IM02")
+
+epicsEnvSet("AREA","LI02")
+
+# BLEN attached to AMC0
+epicsEnvSet("AMC0_PREFIX","BLEN:$(AREA):212")
+
+# BLEN attached to AMC1
+epicsEnvSet("AMC1_PREFIX","BLEN:$(AREA):898")
+
+# AMCC in crate 1, slot 6
+epicsEnvSet("AMC_CARRIER_PREFIX","AMCC:$(AREA):16")
 
 # Dictionary file for manual (empty string if none)
 epicsEnvSet("DICT_FILE", "yaml/blen_00000016.dict")
@@ -46,7 +57,7 @@ epicsEnvSet("DICT_FILE", "yaml/blen_00000016.dict")
 # *********************************************
 # **** Environment variables for IOC Admin ****
 
-epicsEnvSet(IOC_NAME,"VIOC:LI02:BL01")
+epicsEnvSet(IOC_NAME,"VIOC:$(AREA):BL01")
 
 
 cd ${TOP}
@@ -77,7 +88,7 @@ blen_registerRecordDeviceDriver(pdbbase)
 #    Record name Length Max,    # Record name maximum length (must be greater than lenght of prefix + 4)
 # ==========================================================================================================
 
-YCPSWASYNConfig("${CPSW_PORT}", "${YAML_FILE}", "", "${FPGA_IP}", "${PREFIX}", 40, "${AUTO_GEN}", "${DICT_FILE}")
+YCPSWASYNConfig("${CPSW_PORT}", "${YAML_FILE}", "", "${FPGA_IP}", "", 40, "${AUTO_GEN}", "${DICT_FILE}")
 
 # =====================================================================
 # End: Configure YCPSW asyn port driver
@@ -105,13 +116,15 @@ YCPSWASYNConfig("${CPSW_PORT}", "${YAML_FILE}", "", "${FPGA_IP}", "${PREFIX}", 4
 ## Load record instances
 
 # Save/Load configuration related records
-dbLoadRecords("db/saveLoadConfig.db", "P=${PREFIX}, PORT=${CPSW_PORT}, SAVE_FILE=/tmp/configDump.yaml, LOAD_FILE=yaml/default_blen_float.yaml")
+dbLoadRecords("db/saveLoadConfig.db", "P=${AMC_CARRIER_PREFIX}, PORT=${CPSW_PORT}, SAVE_FILE=/tmp/configDump.yaml, LOAD_FILE=yaml/default_blen_float.yaml")
 
 # Manually create records
-dbLoadRecords("db/blen.db", "P=${PREFIX}, PORT=${CPSW_PORT}, AMC=${AMC}")
+dbLoadRecords("db/blen.db", "P=${AMC0_PREFIX}, PORT=${CPSW_PORT}, AMC=0")
+dbLoadRecords("db/blen.db", "P=${AMC1_PREFIX}, PORT=${CPSW_PORT}, AMC=1")
+dbLoadRecords("db/carrier.db", "P=${AMC_CARRIER_PREFIX}, PORT=${CPSW_PORT}")
 
 # Automatic initialization
-dbLoadRecords("db/monitorFPGAReboot.db", "P=${PREFIX}, KEY=-66686157")
+dbLoadRecords("db/monitorFPGAReboot.db", "P=${AMC_CARRIER_PREFIX}, KEY=-66686157")
 
 # **********************************************************************
 # **** Load iocAdmin databases to support IOC Health and monitoring ****

@@ -20,12 +20,6 @@
 # Single register
 file "RegisterIn.template" { pattern
 { P,          R,              DESC,                           PINI,   SCAN,       PORT, EGU,  PARAM         }
-# Shared
-{ $(P), DeviceDna,      "Xilinx Device DNA",            "YES",  "Passive",  $(PORT),   "",   DeviceDna     }
-{ $(P), FpgaVersion,    "FPGA Firmware Version Number", "YES",  "Passive",  $(PORT),   "",   FpgaVersion   }
-{ $(P), UpTimeCnt,      "Seconds since last reset",     "YES",  "1 second", $(PORT),   "s",  UpTimeCnt     }
-{ $(P), DeviceId,       "Device Identification",        "YES",  "Passive",  $(PORT),   "",   DeviceId      }
-# AMC specific
 { $(P), RATE,           "Trigger rate over 1 sec",      "YES",  "1 second", $(PORT),   "Hz", AMC$(AMC):RATE          }
 { $(P), AmcClkFreq,     "AMC Clock frequency",          "YES",  "1 second", $(PORT),   "Hz", AMC$(AMC):AmcClkFreq    }
 { $(P), MuxTrigCnt,     "Valid DAQ triggers",           "YES",  "1 second", $(PORT),   "",   AMC$(AMC):MuxTrigCnt    }
@@ -43,7 +37,6 @@ file "RegisterIn.template" { pattern
 file "RegisterArrayIn.template" { pattern
 { P,          R,             DESC,                          NELM,   PINI,   SCAN,       PORT,  PARAM       }
 { $(P), AdcData,       "ADC Data[3:0]",               4,     "YES",   "1 second", $(PORT),    AMC$(AMC):AdcData     }
-#
 { $(P), MuxInDatVal,   "Incoming data valid",         4,     "YES",   "1 second", $(PORT),    AMC$(AMC):MuxInDatVal }
 { $(P), MuxStrmEna,    "Output stream enabled",       4,     "YES",   "1 second", $(PORT),    AMC$(AMC):MuxStrmEna  }
 { $(P), MuxStrmErr,    "Error during last acq",       4,     "YES",   "1 second", $(PORT),    AMC$(AMC):MuxStrmErr  }
@@ -51,9 +44,7 @@ file "RegisterArrayIn.template" { pattern
 { $(P), MuxStrmPs,     "Raw diag stream ctrl pause",  4,     "YES",   "1 second", $(PORT),    AMC$(AMC):MuxStrmPs   }
 { $(P), MuxStrmRdy,    "Raw diag stream ctrl ready",  4,     "YES",   "1 second", $(PORT),    AMC$(AMC):MuxStrmRdy  }
 { $(P), MuxFrameCnt,    "4096 byte frames sent",      4,     "YES",   "1 second", $(PORT),    AMC$(AMC):MuxFrameCnt }
-#
 { $(P), MuxTmstmp,     "Timestamp 63:0",              2,     "YES",   "1 second", $(PORT),    AMC$(AMC):MuxTmstmp   }
-#
 { $(P), WEBDone        "",                            4,     "YES",   "1 second", $(PORT),    AMC$(AMC):WEBDone     }
 { $(P), WEBEmpty       "",                            4,     "YES",   "1 second", $(PORT),    AMC$(AMC):WEBEmpty    }
 { $(P), WEBError       "",                            4,     "YES",   "1 second", $(PORT),    AMC$(AMC):WEBError    }
@@ -81,9 +72,6 @@ file "RegisterEnumBIn.template" { pattern
 
 file "RegisterOut.template" { pattern
 { P,        R,              DESC,                                       PINI,   SCAN,       PORT,  PARAM       }
-# Shared
-{ $(P), ScratchPad,     "Register to test R/W"                    "NO",   "Passive",  $(PORT),    ScratchPad }
-# AMC specific
 { $(P), Mode,           "BLEN mode"                               "NO",   "Passive",  $(PORT),    AMC$(AMC):Mode }
 { $(P), NumSamp0,       "Number of samples 0"                     "NO",   "Passive",  $(PORT),    AMC$(AMC):NumSamp0 }
 { $(P), NumSamp1,       "Number of samples 1"                     "NO",   "Passive",  $(PORT),    AMC$(AMC):NumSamp1 }
@@ -110,9 +98,6 @@ file "RegisterOut.template" { pattern
 
 file "RegisterOutRBV.template" { pattern
 { P,           R,                DESC,                                     PINI,   SCAN,        PORT,  PARAM       }
-# Shared
-{ $(P), ScratchPadRBV,     "Register to test R/W",                   "YES",  "1 second",  $(PORT),    ScratchPad }
-# AMC specific
 { $(P), ModeRBV,           "BLEN mode"                               "YES",  "1 second",  $(PORT),    AMC$(AMC):Mode }
 { $(P), NumSamp0RBV,       "Number of samples 0"                     "YES",  "1 second",  $(PORT),    AMC$(AMC):NumSamp0 }
 { $(P), NumSamp1RBV,       "Number of samples 1"                     "YES",  "1 second",  $(PORT),    AMC$(AMC):NumSamp1 }
@@ -197,9 +182,7 @@ file "RegisterCommand.template" { pattern
 
 file "RegisterStream.template" {pattern
 { P,            R,          DESC,               NELM,       PINI,   PORT,   PARAM       }
-# Shared
-{ $(P),   Stream0,    "Stream channel 0", 5000000,    "NO",   $(PORT),     STREAM_CH0  }
-{ $(P),   Stream4,    "Stream channel 4", 5000000,    "NO",   $(PORT),     STREAM_CH4  }
+{ $(P),   Stream0,    "Stream channel 0", 5000000,    "NO",   $(PORT),     AMC$(AMC):Stream0  }
 }
 
 # For Stream interfaces, an additional parameter is automatically created
@@ -209,7 +192,5 @@ file "RegisterStream.template" {pattern
 
 file "RegisterStream16.template" {pattern
 { P,            R,          DESC,                           NELM,        PINI,  PORT,  PARAM         }
-# Shared
-{ $(P),     Stream0_16, "Stream channel 0 (16-bit)",  10000000,    "NO",  $(PORT),    STREAM_CH0:16 }
-{ $(P),     Stream4_16, "Stream channel 4 (16-bit)",  10000000,    "NO",  $(PORT),    STREAM_CH4:16 }
+{ $(P),     Stream0_16, "Stream channel 0 (16-bit)",  10000000,    "NO",  $(PORT),    AMC$(AMC):Stream0:16 }
 }

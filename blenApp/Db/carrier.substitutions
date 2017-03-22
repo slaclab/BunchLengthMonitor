@@ -1,0 +1,112 @@
+########################################################################################################################
+# Summary:             Carrier substitutions file to generate PVs for CPSW registers
+# Author:              C. Ford <caf@slac.stanford.edu>
+# Date:                21-mar-2017 
+# YAML config version: AmcCarrierBcm_00000018
+########################################################################################################################
+
+########################################################################################################################
+# Macros:
+#   P,R: The PV name as $(P):$(R)
+#   DESC, PINI, SCAN, NELM, etc.: The same fields on the records
+#   PORT: The asyn port name. It must match the port name given when calling "YCPSWASYNConfig" on st.cmd
+#   PARAM: The asyn paramter name. It must be defined in the dictionary file and assigned to a register
+########################################################################################################################
+
+#======================================
+# Registers with ScalVal_RO interfaces
+#======================================
+# Single register
+file "RegisterIn.template" { pattern
+{ P,          R,              DESC,                           PINI,   SCAN,       PORT, EGU,  PARAM         }
+{ $(P), DeviceDna,      "Xilinx Device DNA",            "YES",  "Passive",  $(PORT),   "",   DeviceDna     }
+{ $(P), FpgaVersion,    "FPGA Firmware Version Number", "YES",  "Passive",  $(PORT),   "",   FpgaVersion   }
+{ $(P), UpTimeCnt,      "Seconds since last reset",     "YES",  "1 second", $(PORT),   "s",  UpTimeCnt     }
+{ $(P), DeviceId,       "Device Identification",        "YES",  "Passive",  $(PORT),   "",   DeviceId      }
+}
+
+# Array of register
+file "RegisterArrayIn.template" { pattern
+{ P,          R,             DESC,                          NELM,   PINI,   SCAN,       PORT,  PARAM       }
+}
+
+# Array of 8-bit register as a string
+file "RegisterArrayChar.template" { pattern
+{ P,        R,              DESC,                           NELM,   PINI,   SCAN,       PORT,  PARAM       }
+# Shared
+{ $(P), BuildStamp,     "Firmware Build String",        64,     "YES",  "Passive",  $(PORT),  BuildStamp }
+}
+
+# ENUM register
+file "RegisterEnumBIn.template" { pattern
+{ P,        R,              DESC,                    PINI,   ZNAM,       ONAM,       SCAN,      PORT, PARAM     }
+}
+
+#======================================
+# Register with ScalVal interfaces
+#======================================
+
+file "RegisterOut.template" { pattern
+{ P,        R,              DESC,                                       PINI,   SCAN,       PORT,  PARAM       }
+{ $(P), ScratchPad,     "Register to test R/W"                    "NO",   "Passive",  $(PORT),    ScratchPad }
+}
+
+file "RegisterOutRBV.template" { pattern
+{ P,           R,                DESC,                                     PINI,   SCAN,        PORT,  PARAM       }
+# Shared
+{ $(P), ScratchPadRBV,     "Register to test R/W",                   "YES",  "1 second",  $(PORT),    ScratchPad }
+}
+
+# ENUM register
+file "RegisterEnumBOut.template" { pattern
+{ P,        R,              DESC,        PINI   ZNAM,        ONAM,     SCAN,       PORT, PARAM     }
+}
+
+file "RegisterEnumBOutRBV.template" { pattern
+{ P,        R,              DESC,         PINI    ZNAM,        ONAM,     SCAN,        PORT, PARAM     }
+}
+
+#======================================
+# Register with DoubleVal_RO interfaces
+#======================================
+
+file "RegisterDoubleIn.template" { pattern
+{ P,              R,            DESC,                         PINI,   SCAN,        PORT,   EGU,    PARAM    }
+}
+
+#======================================
+# Register with DoubleVal interfaces
+#======================================
+
+file "RegisterDoubleOut.template" { pattern
+{ P,              R,            DESC,                         PINI,  SCAN,        PORT,   EGU,    PARAM   }
+}
+
+file "RegisterDoubleOutRBV.template" { pattern
+{ P,              R,            DESC,                         PINI,   SCAN,       PORT,   EGU,    PARAM   }
+}
+
+#======================================
+# Register with Command interfaces
+#======================================
+file "RegisterCommand.template" { pattern
+{ P,            R,            DESC,                            PINI,   SCAN,       PORT,   PARAM   }
+}
+
+
+#======================================
+# Register with Stream interfaces
+#======================================
+
+file "RegisterStream.template" {pattern
+{ P,            R,          DESC,               NELM,       PINI,   PORT,   PARAM       }
+}
+
+# For Stream interfaces, an additional parameter is automatically created
+# and the name is generated adding ":16" to the original parameter name
+# This gives access to the same stream data, but as 16-bit words which
+# is the case for ADC samples for example. Note that the NELM is 2x
+
+file "RegisterStream16.template" {pattern
+{ P,            R,          DESC,                           NELM,        PINI,  PORT,  PARAM         }
+}

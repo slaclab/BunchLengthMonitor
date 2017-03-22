@@ -60,6 +60,7 @@ DB += xfer.db
 
 # For CPSW PVs
 DB += blen.db
+DB += carrier.db
 
 # For statistics
 DB += acalcStats.db
