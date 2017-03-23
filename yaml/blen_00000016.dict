@@ -130,3 +130,5 @@
 /mmio/DigFpga/ApplicationCore/SysGen[1]/DspPreprocConfig[0]/NumberSamples1                                AMC1:NumSamp1
 /mmio/DigFpga/ApplicationCore/DaqMuxV2[0]/TriggerHwAutoRearm                                              AMC0:AutoRearm
 /mmio/DigFpga/ApplicationCore/DaqMuxV2[1]/TriggerHwAutoRearm                                              AMC1:AutoRearm
+/mmio/DigFpga/ApplicationCore/SysGen[0]/DspPreprocConfig[0]/TrigDelay1                                    AMC0:TrigDelay1
+/mmio/DigFpga/ApplicationCore/SysGen[1]/DspPreprocConfig[0]/TrigDelay1                                    AMC1:TrigDelay1
