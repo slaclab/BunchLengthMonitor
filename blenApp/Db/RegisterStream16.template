@@ -1,0 +1,26 @@
+#============================================================================
+# Record example for an IntField Stream port.
+# For Stream ports, an additional parameter is automatically created
+# and the name is generated adding ":16" to the original parameter name
+# This gives access to the same stream data, but as 16-bit words which
+# is the case for ADC samples for example.
+# For this case it is a waveform record with type asynInt16ArrayIn
+# The INP field has the form @asyn(PORT,ADDR)PARAM where:
+#  - PORT  : The asyn port name. It must match the port name given 
+#            when calling "YCPSWASYNConfig" on st.cmd
+#  - PARM  : The asyn paramter name. It must be defined in the 
+#            dictionary file and assigned to a register. In this case it is
+#            the original paramater name with a sufix ":16".
+#  - ADDR  : Addrres based on the type of register.
+#            For an stream it is 5.
+#============================================================================
+
+record(waveform,    "$(P):$(R)") {
+    field(DTYP,     "asynInt16ArrayIn")
+    field(DESC,     "$(DESC)")
+    field(PINI,     "NO")
+    field(SCAN,     "I/O Intr")
+    field(NELM,     "$(NELM)")
+    field(FTVL,     "SHORT")
+    field(INP,      "@asyn($(PORT),5)$(PARAM)")
+}

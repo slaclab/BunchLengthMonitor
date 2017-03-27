@@ -1,0 +1,21 @@
+#==================================================================
+# Record example for an IntField, RO, N elements, no encoding register.
+# It is a waveform record with type asynInt32ArrayIn.
+# The INP field has the form @asyn(PORT,ADDR)PARAM where:
+#  - PORT  : The asyn port name. It must match the port name given 
+#            when calling "YCPSWASYNConfig" on st.cmd
+#  - PARAM : The asyn paramter name. It must be defined in the 
+#            dictionary file and assigned to a register. 
+#  - ADDR  : Addrres based on the type of register.
+#            For IntField, RO, without encoding is 0.
+#==================================================================
+
+record(waveform,    "$(P):$(R)") {
+    field(DTYP,     "asynInt32ArrayIn")
+    field(DESC,     "$(DESC)")
+    field(PINI,     "$(PINI)")
+    field(SCAN,     "$(SCAN)")
+    field(NELM,     "$(NELM)")
+    field(FTVL,     "LONG")
+    field(INP,      "@asyn($(PORT),0)$(PARAM)")
+}
