@@ -138,11 +138,10 @@ file "RegisterEnumBOutRBV.template" { pattern
 #======================================
 
 file "RegisterDoubleIn.template" { pattern
-{ P,        R,            DESC,                 PINI,   SCAN,         PORT,       EGU,        PARAM             }
-# AMC specific
-{ $(P),     SUM,          "",                   "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):SUM     }
-{ $(P),     TMIT,         "",                   "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):TMIT    }
-{ $(P),     IMAX,         "",                   "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):IMAX    }
+{ P,        R,        DESC,                     PINI,   SCAN,         PORT,       EGU,        PARAM             }
+{ $(P),     SUM,      "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):SUM     }
+{ $(P),     TMIT,     "Transmitted intensity",  "YES",  ".5 second",  $(PORT),    "Nel",      AMC$(AMC):TMIT    }
+{ $(P),     IMAX,     "",                       "YES",  ".5 second",  $(PORT),    "A",        AMC$(AMC):IMAX    }
 }
 
 #======================================
@@ -151,7 +150,6 @@ file "RegisterDoubleIn.template" { pattern
 
 file "RegisterDoubleOut.template" { pattern
 { P,              R,            DESC,                         PINI,  SCAN,        PORT,   EGU,    PARAM   }
-# AMC specific
 { $(P),     CoefA0,       "Coef A0 for 1st group",      "NO",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefA0 }
 { $(P),     CoefA1,       "Coef A1 for 2nd group",      "NO",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefA1 }
 { $(P),     CoefA2,       "Coef A2 for 3rd group",      "NO",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefA2 }
@@ -159,7 +157,6 @@ file "RegisterDoubleOut.template" { pattern
 
 file "RegisterDoubleOutRBV.template" { pattern
 { P,              R,            DESC,                         PINI,   SCAN,       PORT,   EGU,    PARAM   }
-# AMC specific
 { $(P),     CoefA0RBV,    "Coef A0 for 1st group",      "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefA0 }
 { $(P),     CoefA1RBV,    "Coef A1 for 2nd group",      "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefA1 }
 { $(P),     CoefA2RBV,    "Coef A2 for 3rd group",      "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefA2 }
@@ -170,7 +167,6 @@ file "RegisterDoubleOutRBV.template" { pattern
 #======================================
 file "RegisterCommand.template" { pattern
 { P,            R,            DESC,                            PINI,   SCAN,       PORT,   PARAM   }
-# AMC specific
 { $(P),   WEBInit,      "Waveform engine buf init",      "NO",  "Passive",   $(PORT),     AMC$(AMC):WEBInit }
 { $(P),   InitAmcCard,  "Init JESD modules",             "NO",  "Passive",   $(PORT),     AMC$(AMC):InitAmcCard }
 }
