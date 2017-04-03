@@ -25,7 +25,6 @@ DB_INSTALLS += $(YCPSWASYN)/db/mbbo.template
 DB_INSTALLS += $(YCPSWASYN)/db/bo.template
 DB_INSTALLS += $(YCPSWASYN)/db/waveform_stream16.template
 DB_INSTALLS += $(YCPSWASYN)/db/waveform_stream32.template
-DB_INSTALLS += $(YCPSWASYN)/db/saveLoadConfig.db
 
 # User-defined functions
 DB += stream_size.template

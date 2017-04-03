@@ -15,6 +15,6 @@ record(calcout, "$(P):FPGARebootMon") {
   field(INPA, "$(P):ScratchPadRBV")
   field(B,    "$(KEY)")
   field(CALC, "A!=B")
-  field(OUT,  "$(P):loadConfig.PROC")
+  field(OUT,  "$(P):LoadCfg.PROC")
   field(OOPT, "When Non-zero")
 }

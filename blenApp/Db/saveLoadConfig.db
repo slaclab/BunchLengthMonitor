@@ -8,7 +8,7 @@
 #     CONFIG_LOAD_STATUS : Status of the configuration loading proccess 
 #     CONFIG_SAVE_STATUS : Status of the configuration saving process
 
-record(ao, "$(P):loadConfig") {
+record(ao, "$(P):LoadCfg") {
   field(DESC, "Load configuration from YAML")
   field(DTYP, "asynInt32")
   field(SCAN, "Passive")
@@ -16,7 +16,7 @@ record(ao, "$(P):loadConfig") {
   info(asyn:READBACK, "1")
 }
 
-record(ao, "$(P):saveConfig") {
+record(ao, "$(P):SaveCfg") {
   field(DESC, "Save configuration on YAML")
   field(DTYP, "asynInt32")
   field(SCAN, "Passive")
@@ -24,7 +24,7 @@ record(ao, "$(P):saveConfig") {
   info(asyn:READBACK, "1")
 }
 
-record(stringout, "$(P):saveConfigFile") {
+record(stringout, "$(P):SaveCfgFile") {
   field(DESC, "Save configuration file name")
   field(DTYP, "asynOctetWrite")
   field(SCAN, "Passive")
@@ -33,7 +33,7 @@ record(stringout, "$(P):saveConfigFile") {
   field(PINI, "YES")
 }
 
-record(stringout, "$(P):loadConfigFile") {
+record(stringout, "$(P):LoadCfgFile") {
   field(DESC, "Load configuration file name")
   field(DTYP, "asynOctetWrite")
   field(SCAN, "Passive")
@@ -42,7 +42,7 @@ record(stringout, "$(P):loadConfigFile") {
   field(PINI, "YES")
 }
 
-record(mbbi, "$(P):loadConfigStatus") {
+record(mbbi, "$(P):LoadCfgStat") {
   field(DESC, "Load configuration status")
   field(DTYP, "asynUInt32Digital")
   field(SCAN, "I/O Intr")
@@ -60,7 +60,7 @@ record(mbbi, "$(P):loadConfigStatus") {
   field(PINI, "YES")
 }
 
-record(mbbi, "$(P):saveConfigStatus") {
+record(mbbi, "$(P):SaveCfgStat") {
   field(DESC, "Load configuration status")
   field(DTYP, "asynUInt32Digital")
   field(SCAN, "I/O Intr")
