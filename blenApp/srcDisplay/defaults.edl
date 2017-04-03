@@ -1,0 +1,291 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 871
+y 193
+w 365
+h 291
+font "helvetica-medium-r-18.0"
+ctlFont "helvetica-medium-r-12.0"
+btnFont "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 4
+textColor index 14
+ctlFgColor1 index 30
+ctlFgColor2 index 32
+ctlBgColor1 index 34
+ctlBgColor2 index 35
+topShadowColor index 37
+botShadowColor index 44
+title "DAQ"
+showGrid
+snapToGrid
+gridSize 5
+endScreenProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 10
+y 100
+w 86
+h 40
+font "helvetica-bold-r-12.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Status"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 10
+y 50
+w 86
+h 40
+font "helvetica-bold-r-12.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "File name"
+}
+endObjectProperties
+
+# (Button)
+object activeButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 285
+y 100
+w 70
+h 40
+fgColor index 14
+onColor index 7
+offColor index 7
+inconsistentColor index 35
+topShadowColor index 37
+botShadowColor index 44
+controlPv "$(carrier_prefix):SaveCfg"
+onLabel "Save"
+offLabel "Save"
+labelType "literal"
+font "helvetica-medium-r-18.0"
+objType "controls"
+controlBitPos 0
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 10
+y 10
+w 270
+h 40
+font "helvetica-bold-r-14.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Save $(MAD) configuration"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 10
+y 240
+w 86
+h 40
+font "helvetica-bold-r-12.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Status"
+}
+endObjectProperties
+
+# (Button)
+object activeButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 285
+y 240
+w 70
+h 40
+fgColor index 14
+onColor index 7
+offColor index 7
+inconsistentColor index 35
+topShadowColor index 37
+botShadowColor index 44
+controlPv "$(carrier_prefix):LoadCfg"
+onLabel "Load"
+offLabel "Load"
+labelType "literal"
+font "helvetica-medium-r-18.0"
+objType "controls"
+controlBitPos 0
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 10
+y 190
+w 86
+h 40
+font "helvetica-bold-r-12.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "File name"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 10
+y 150
+w 270
+h 40
+font "helvetica-bold-r-14.0"
+fontAlign "center"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Load $(MAD) configuration"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 80
+y 60
+w 275
+h 24
+controlPv "$(carrier_prefix):SaveCfgFile"
+format "string"
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 34
+useDisplayBg
+editable
+autoHeight
+motifWidget
+nullColor index 32
+changeValOnLoseFocus
+newPos
+objType "controls"
+characterMode
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 80
+y 200
+w 275
+h 24
+controlPv "$(carrier_prefix):LoadCfgFile"
+format "string"
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 34
+useDisplayBg
+editable
+autoHeight
+motifWidget
+nullColor index 32
+changeValOnLoseFocus
+newPos
+objType "controls"
+characterMode
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 75
+y 110
+w 200
+h 20
+controlPv "$(carrier_prefix):SaveCfgStat"
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 34
+useDisplayBg
+autoHeight
+limitsFromDb
+nullColor index 32
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 80
+y 250
+w 195
+h 20
+controlPv "$(carrier_prefix):LoadCfgStat"
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 34
+useDisplayBg
+autoHeight
+limitsFromDb
+nullColor index 32
+useHexPrefix
+newPos
+objType "controls"
+endObjectProperties
+

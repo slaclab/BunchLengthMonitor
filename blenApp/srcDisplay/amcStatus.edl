@@ -1,0 +1,207 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 2999
+y 233
+w 732
+h 500
+font "helvetica-medium-r-18.0"
+ctlFont "helvetica-medium-r-18.0"
+btnFont "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 4
+textColor index 14
+ctlFgColor1 index 14
+ctlFgColor2 index 0
+ctlBgColor1 index 0
+ctlBgColor2 index 14
+topShadowColor index 0
+botShadowColor index 14
+endScreenProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 30
+y 81
+w 639
+h 71
+lineColor index 2
+fill
+fillColor index 2
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 115
+y 84
+w 2
+h 0
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+visPv "CALC\\LABELVIS($(amc),0)"
+visMin "1"
+visMax "2"
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 196
+y 27
+w 255
+h 27
+font "helvetica-bold-r-24.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "$(MADX) AMC Status"
+}
+autoSize
+endObjectProperties
+
+# (X-Y Graph)
+object xyGraphClass
+beginObjectProperties
+major 4
+minor 8
+release 0
+# Geometry
+x 30
+y 170
+w 638
+h 268
+# Appearance
+border
+graphTitle "Stream$(stream)_16"
+fgColor index 14
+bgColor index 2
+gridColor index 14
+font "helvetica-medium-r-18.0"
+# Operating Modes
+nPts 1000
+# X axis properties
+showXAxis
+xAxisSrc "fromUser"
+xMin 0
+xMax 1000
+xLabelIntervals 3
+# Y axis properties
+showYAxis
+yAxisSrc "AutoScale"
+yMin -1000
+yMax 66000
+yLabelIntervals 3
+# Y2 axis properties
+y2AxisSrc "AutoScale"
+y2Max 1
+# Trace Properties
+numTraces 1
+yPv {
+  0 "$(prefix):Stream$(stream)_16"
+}
+plotUpdateMode {
+  0 "y"
+}
+plotColor {
+  0 index 21
+}
+endObjectProperties
+
+# (Text Update)
+object TextupdateClass
+beginObjectProperties
+major 10
+minor 0
+release 0
+x 266
+y 85
+w 377
+h 34
+controlPv "$(prefix):AmcClkFreq"
+fgColor index 14
+bgColor index 2
+font "helvetica-medium-r-18.0"
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 266
+y 123
+w 307
+h 20
+controlPv "$(prefix):AdcData"
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+autoHeight
+limitsFromDb
+fieldLen "4"
+nullColor index 0
+useHexPrefix
+newPos
+objType "monitors"
+id "AdcData"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 97
+y 123
+w 106
+h 20
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "AdcData:Rd"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 97
+y 91
+w 105
+h 20
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "AmcClkFreq"
+}
+autoSize
+endObjectProperties
+
