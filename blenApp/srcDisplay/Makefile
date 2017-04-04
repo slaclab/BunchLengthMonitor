@@ -8,7 +8,11 @@ include $(TOP)/configure/CONFIG
 # You can override the default installation path.
 #INSTALL_LOCATION=
 
-EDL += example.edl
+EDL += BunchLength_diode.edl  amcStatus.edl       blenExpert.edl
+EDL += blenTrigger.edl        defaults.edl        version.edl
+EDL += BunchLength_pyro.edl   blenCoef.edl        blenMode.edl
+EDL += daqmuxV2Status.edl     webStatus.edl
+EDL += startEdm_diode.sh      startEdm_pyro.sh
 
 # Install images to be used by EDM (Gif and Png are supported)
 # PNG is better and preferred.
