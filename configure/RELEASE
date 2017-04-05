@@ -31,7 +31,7 @@ SEQ_MODULE_VERSION=R2.2.4-1.0
 CAPUTLOG_MODULE_VERSION=R3.5-0.1.0
 SSCAN_MODULE_VERSION=R2.10.2-0.1.0
 CALC_MODULE_VERSION=R3.6.1-0.1.0
-YCPSWASYN_MODULE_VERSION=R1.1.2
+YCPSWASYN_MODULE_VERSION=R1.1.3
 
 # ==========================================================
 # Define module paths using pattern
