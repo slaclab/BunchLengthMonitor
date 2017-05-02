@@ -34,7 +34,7 @@ file "RegisterArrayIn.template" { pattern
 file "RegisterArrayChar.template" { pattern
 { P,        R,              DESC,                           NELM,   PINI,   SCAN,       PORT,  PARAM       }
 # Shared
-{ $(P), BuildStamp,     "Firmware Build String",        64,     "YES",  "Passive",  $(PORT),  BuildStamp }
+{ $(P), BuildStamp,     "Firmware Build String",        256,     "YES",  "Passive",  $(PORT),  BuildStamp }
 }
 
 # ENUM register
