@@ -1,0 +1,61 @@
+##############################################################################
+## This file is part of 'LCLS2 Common Carrier Core'.
+## It is subject to the license terms in the LICENSE.txt file found in the
+## top-level directory of this distribution and at:
+##    https://confluence.slac.stanford.edu/display/ppareg/LICENSE.html.
+## No part of 'LCLS2 Common Carrier Core', including this file,
+## may be copied, modified, propagated, or distributed except according to
+## the terms contained in the LICENSE.txt file.
+##############################################################################
+#schemaversion 3.0.0
+#once ApplicationCore.yaml
+#include AmcGenericAdcDacCore.yaml
+#include DaqMuxV2.yaml
+#include DacSigGeneration.yaml
+#include SysGen.yaml
+#include TimingProc.yaml
+
+ApplicationCore: &ApplicationCore
+  name: ApplicationCore
+  class: MMIODev
+  configPrio: 1
+  description: "Application Core"
+  size: 0x80000000
+  ########
+  children:
+  ########
+    AmcGenericAdcDacCore:
+      <<: *AmcGenericAdcDacCore
+      at:
+        offset: 0x00000000
+        stride: 0x00800000
+        nelms: 2
+    ##################################################
+    DaqMuxV2:
+      <<: *DaqMuxV2
+      at:
+        offset: 0x01000000
+        stride: 0x01000000
+        nelms: 2
+    ##################################################
+    SysGen:
+      <<: *SysGen
+      at:
+        offset: 0x05000000
+        stride: 0x01000000
+        nelms: 2
+    ##################################################
+    TimingProc:
+      <<: *TimingProc
+      at:
+        offset: 0x07000000
+        stride: 0x01000000
+        nelms: 2
+    #################################################
+    DacSigGeneration:
+      <<: *DacSigGeneration
+      at:
+        offset: 0x03000000
+        stride: 0x01000000
+        nelms: 2
+    ##################################################

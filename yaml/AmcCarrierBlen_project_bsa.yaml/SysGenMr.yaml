@@ -1,0 +1,46 @@
+##############################################################################
+## This file is part of 'LCLS2 Common Carrier Core'.
+## It is subject to the license terms in the LICENSE.txt file found in the
+## top-level directory of this distribution and at:
+##    https://confluence.slac.stanford.edu/display/ppareg/LICENSE.html.
+## No part of 'LCLS2 Common Carrier Core', including this file,
+## may be copied, modified, propagated, or distributed except according to
+## the terms contained in the LICENSE.txt file.
+##############################################################################
+#schemaversion 3.0.0
+#once SysGenMr.yaml
+#include AxiEmpty.yaml
+#include DspCoreConfigMr.yaml
+#include DspCoreResMr.yaml
+#include DspPreprocConfigMr.yaml
+
+
+SysGenMr: &SysGenMr
+  name: SysGenMr
+  description: "To process ADC values using system generator with preprocessing to simplify drawing"
+  class: MMIODev
+  configPrio: 1
+  size: 0x01000000 #
+  #########
+  children:
+  #########
+    DspCoreConfigMr:
+      <<: *DspCoreConfigMr
+      at:
+        offset: 0x00000000
+        nelms: 1
+        stride: 0x00010000
+    ##################################################
+    DspCoreResMr:
+      <<: *DspCoreResMr
+      at:
+        offset: 0x00010000
+        nelms: 1
+        stride: 0x00010000
+    DspPreprocConfigMr:
+      <<: *DspPreprocConfigMr
+      at:
+        offset: 0x00040000
+        nelms:  4
+        stride: 0x00010000
+   ##################################################

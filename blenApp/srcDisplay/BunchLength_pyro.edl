@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 2378
-y 262
+x 1098
+y 271
 w 776
 h 860
 font "helvetica-medium-r-12.0"
@@ -136,12 +136,12 @@ gridColor index 14
 font "helvetica-medium-r-12.0"
 # Operating Modes
 plotMode "plotLastNPts"
-nPts 1000
+nPts 400
 # X axis properties
 showXAxis
 xAxisSrc "fromUser"
 xMin 0
-xMax 1000
+xMax 400
 xLabelIntervals 200
 # Y axis properties
 showYAxis
@@ -190,12 +190,12 @@ gridColor index 14
 font "helvetica-medium-r-12.0"
 # Operating Modes
 plotMode "plotLastNPts"
-nPts 1000
+nPts 400
 # X axis properties
 showXAxis
 xAxisSrc "fromUser"
 xMin 0
-xMax 1000
+xMax 400
 # Y axis properties
 showYAxis
 yAxisSrc "AutoScale"
@@ -251,7 +251,7 @@ minor 1
 release 1
 x 464
 y 776
-w 54
+w 55
 h 13
 font "helvetica-bold-r-12.0"
 fgColor index 14
@@ -271,7 +271,7 @@ minor 1
 release 1
 x 464
 y 800
-w 53
+w 54
 h 13
 font "helvetica-bold-r-12.0"
 fgColor index 19
@@ -390,7 +390,7 @@ minor 1
 release 1
 x 536
 y 752
-w 23
+w 24
 h 13
 font "helvetica-medium-r-12.0"
 fgColor index 14
@@ -780,87 +780,6 @@ endGroup
 
 endObjectProperties
 
-# (X-Y Graph)
-object xyGraphClass
-beginObjectProperties
-major 4
-minor 8
-release 0
-# Geometry
-x 88
-y 488
-w 328
-h 208
-# Appearance
-border
-graphTitle "Integration Window"
-fgColor index 14
-bgColor index 0
-gridColor index 14
-font "helvetica-medium-r-12.0"
-# Operating Modes
-plotMode "plotLastNPts"
-nPts 1000
-# X axis properties
-showXAxis
-xAxisSrc "fromUser"
-xMin 0
-xMax 1000
-xLabelIntervals 200
-# Y axis properties
-showYAxis
-yAxisSrc "fromUser"
-yMin -0.2
-yMax 1.2
-# Y2 axis properties
-y2AxisSrc "AutoScale"
-y2Max 1
-# Trace Properties
-numTraces 0
-plotColor {
-}
-endObjectProperties
-
-# (X-Y Graph)
-object xyGraphClass
-beginObjectProperties
-major 4
-minor 8
-release 0
-# Geometry
-x 432
-y 488
-w 328
-h 208
-# Appearance
-border
-graphTitle "Integration Window"
-fgColor index 19
-bgColor index 0
-gridColor index 14
-font "helvetica-medium-r-12.0"
-# Operating Modes
-plotMode "plotLastNPts"
-nPts 1000
-# X axis properties
-showXAxis
-xAxisSrc "fromUser"
-xMin 0
-xMax 1000
-# Y axis properties
-showYAxis
-yAxisSrc "fromUser"
-yMin -0.2
-yMax 1.2
-# Y2 axis properties
-y2AxisSrc "AutoScale"
-y2Max 1
-# Trace Properties
-numTraces 0
-plotColor {
-}
-endObjectProperties
-
 # (Static Text)
 object activeXTextClass
 beginObjectProperties
@@ -972,7 +891,7 @@ minor 1
 release 1
 x 632
 y 752
-w 29
+w 31
 h 13
 font "helvetica-medium-r-12.0"
 fgColor index 14
@@ -1257,6 +1176,113 @@ menuLabel {
 symbols {
   0 "prefix=$(amc0_prefix),amc=0,MADX=$(MAD)A"
   1 "prefix=$(amc1_prefix),amc=1,MADX=$(MAD)B"
+}
+endObjectProperties
+
+# (X-Y Graph)
+object xyGraphClass
+beginObjectProperties
+major 4
+minor 8
+release 0
+# Geometry
+x 88
+y 488
+w 328
+h 208
+# Appearance
+border
+graphTitle "$(MAD)A"
+fgColor index 14
+bgColor index 0
+gridColor index 14
+font "helvetica-medium-r-12.0"
+# Operating Modes
+plotMode "plotLastNPts"
+nPts 400
+# X axis properties
+showXAxis
+xAxisSrc "fromUser"
+xMin 0
+xMax 400
+xLabelIntervals 200
+# Y axis properties
+showYAxis
+yAxisSrc "AutoScale"
+yMin -1000
+yMax 66000
+# Y2 axis properties
+y2AxisSrc "AutoScale"
+y2Max 1
+# Trace Properties
+numTraces 1
+yPv {
+  0 "$(amc0_prefix):Stream3_16"
+}
+lineThickness {
+  0 2
+}
+plotUpdateMode {
+  0 "y"
+}
+ySigned {
+  0 1
+}
+plotColor {
+  0 index 14
+}
+endObjectProperties
+
+# (X-Y Graph)
+object xyGraphClass
+beginObjectProperties
+major 4
+minor 8
+release 0
+# Geometry
+x 432
+y 488
+w 328
+h 208
+# Appearance
+border
+graphTitle "$(MAD)B"
+fgColor index 19
+bgColor index 0
+gridColor index 14
+font "helvetica-medium-r-12.0"
+# Operating Modes
+plotMode "plotLastNPts"
+nPts 400
+# X axis properties
+showXAxis
+xAxisSrc "fromUser"
+xMin 0
+xMax 400
+# Y axis properties
+showYAxis
+yAxisSrc "AutoScale"
+yMin -1000
+yMax 66000
+# Y2 axis properties
+y2AxisSrc "AutoScale"
+y2Max 1
+# Trace Properties
+numTraces 1
+yPv {
+  0 "$(amc1_prefix):Stream3_16"
+}
+lineThickness {
+  0 2
+}
+plotUpdateMode {
+  0 "y"
+}
+ySigned {
+  0 1
+}
+plotColor {
+  0 index 19
 }
 endObjectProperties
 

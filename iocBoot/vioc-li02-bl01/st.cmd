@@ -28,7 +28,7 @@ epicsEnvSet("PREFIX","VIOC:LI02:BL01")
 epicsEnvSet("CPSW_PORT","S6")
 
 # Yaml File
-epicsEnvSet("YAML_FILE", "yaml/AmcCarrierBlen_project.yaml/000TopLevel.yaml")
+epicsEnvSet("YAML_FILE", "yaml/AmcCarrierBlen_project_bsa.yaml/000TopLevel.yaml")
 
 # FPGA IP address
 epicsEnvSet("FPGA_IP", "10.0.1.106")
@@ -52,7 +52,7 @@ epicsEnvSet("AMC1_PREFIX","BLEN:$(AREA):898")
 epicsEnvSet("AMC_CARRIER_PREFIX","AMCC:$(AREA):16")
 
 # Dictionary file for manual (empty string if none)
-epicsEnvSet("DICT_FILE", "yaml/blen_00000016.dict")
+epicsEnvSet("DICT_FILE", "yaml/blen_00000002.dict")
 
 # *********************************************
 # **** Environment variables for IOC Admin ****
@@ -116,7 +116,7 @@ YCPSWASYNConfig("${CPSW_PORT}", "${YAML_FILE}", "", "${FPGA_IP}", "", 40, "${AUT
 ## Load record instances
 
 # Save/Load configuration related records
-dbLoadRecords("db/saveLoadConfig.db", "P=${AMC_CARRIER_PREFIX}, PORT=${CPSW_PORT}, SAVE_FILE=/tmp/configDump.yaml, LOAD_FILE=yaml/defaultsPyro4-26-17a.yaml")
+dbLoadRecords("db/saveLoadConfig.db", "P=${AMC_CARRIER_PREFIX}, PORT=${CPSW_PORT}, SAVE_FILE=/tmp/configDump.yaml, LOAD_FILE=yaml/defaultsPyro4-26-17b.yaml")
 
 # Manually create records
 dbLoadRecords("db/blen.db", "P=${AMC0_PREFIX}, PORT=${CPSW_PORT}, AMC=0")

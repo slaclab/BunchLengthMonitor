@@ -1,0 +1,226 @@
+##############################################################################
+## This file is part of 'LCLS2 Common Carrier Core'.
+## It is subject to the license terms in the LICENSE.txt file found in the
+## top-level directory of this distribution and at:
+##    https://confluence.slac.stanford.edu/display/ppareg/LICENSE.html.
+## No part of 'LCLS2 Common Carrier Core', including this file,
+## may be copied, modified, propagated, or distributed except according to
+## the terms contained in the LICENSE.txt file.
+##############################################################################
+#schemaversion 3.0.0
+#once DspCoreResMr.yaml
+
+DspCoreResMr: &DspCoreResMr
+  description: "Sysgen configuration and status registers"
+  class: MMIODev
+  configPrio: 1
+  size: 0x010000
+  #########
+  children:
+  #########
+    #########################################################
+    MultResultA0:
+      class: IntField
+      at:
+        offset: 0x0100
+      encoding: IEEE_754
+      sizeBits: 32
+      mode: RO
+      description: "Floating - Result of multiplication of ADC average 0 and A0 coef"
+    #########################################################
+    MultResultA1:
+      class: IntField
+      at:
+        offset: 0x0104
+      encoding: IEEE_754
+      sizeBits: 32
+      mode: RO
+      description: "Floating - Result of multiplication of ADC average 1 and A1 coef"
+    #########################################################
+    MultResultA2:
+      class: IntField
+      at:
+        offset: 0x0108
+      encoding: IEEE_754
+      sizeBits: 32
+      mode: RO
+      description: "Floating - Result of multiplication of ADC average 2 and A2 coef"
+    #########################################################
+    MultResultH:
+      class: IntField
+      at:
+        offset: 0x010C
+      encoding: IEEE_754
+      sizeBits: 32
+      mode: RO
+      description: "Floating - Result of multiplication of TMIT value and H coef"
+    #########################################################
+    AddSums0:
+      class: IntField
+      at:
+        offset: 0x0110
+      encoding: IEEE_754
+      sizeBits: 32
+      mode: RO
+      description: "Floating - Result of addition of MultResultA0 and A1"
+    #########################################################
+    AddSums1:
+      class: IntField
+      at:
+        offset: 0x0114
+      encoding: IEEE_754
+      sizeBits: 32
+      mode: RO
+      description: "Floating - Result of addition of MultResultA0_A1 and A3- BRaw"
+    #########################################################
+    LnOfBRaw:
+      class: IntField
+      at:
+        offset: 0x0118
+      encoding: IEEE_754
+      sizeBits: 32
+      mode: RO
+      description: "Floating - Result of Ln function of Braw"
+    #########################################################
+    MultLnBrawD:
+      class: IntField
+      at:
+        offset: 0x011C
+      encoding: IEEE_754
+      sizeBits: 32
+      mode: RO
+      description: "Floating - Result of muliplication of Ln(BRaw) by  Dcoef"
+    #########################################################
+    LnOfTMIT:
+      class: IntField
+      at:
+        offset: 0x0120
+      encoding: IEEE_754
+      sizeBits: 32
+      mode: RO
+      description: "Floating - Result of Ln function of TMIT"
+    #########################################################
+    MultLnTmitC:
+      class: IntField
+      at:
+        offset: 0x0124
+      encoding: IEEE_754
+      sizeBits: 32
+      mode: RO
+      description: "Floating - Result of muliplication of Ln(TMIT) by  Ccoef"
+    #########################################################
+    AddSums2:
+      class: IntField
+      at:
+        offset: 0x0128
+      encoding: IEEE_754
+      sizeBits: 32
+      mode: RO
+      description: "Floating - Result of addition MultLnTmitC and MultLnBrawD"
+    #########################################################
+    AddSums3:
+      class: IntField
+      at:
+        offset: 0x012C
+      encoding: IEEE_754
+      sizeBits: 32
+      mode: RO
+      description: "loating - Result of addition AddSums2 and CoefB"
+    #########################################################
+    ExpResult0:
+      class: IntField
+      at:
+        offset: 0x0130
+      encoding: IEEE_754
+      sizeBits: 32
+      mode: RO
+      description: "Floating - Result of exponent of AddSums3"
+    #########################################################
+    LnOfBRaw2:
+      class: IntField
+      at:
+        offset: 0x0134
+      encoding: IEEE_754
+      sizeBits: 32
+      mode: RO
+      description: "Floating - Result 2 of Ln function of Braw"
+    #########################################################
+    MultLnBrawG:
+      class: IntField
+      at:
+        offset: 0x0138
+      encoding: IEEE_754
+      sizeBits: 32
+      mode: RO
+      description: "Floating - Result of muliplication of Ln(BRaw) by  Gcoef"
+    #########################################################
+    LnOfTMIT2:
+      class: IntField
+      at:
+        offset: 0x013C
+      encoding: IEEE_754
+      sizeBits: 32
+      mode: RO
+      description: "Floating - Result 2 of Ln function of TMIT"
+    #########################################################
+    MultLnTmitF:
+      class: IntField
+      at:
+        offset: 0x0140
+      encoding: IEEE_754
+      sizeBits: 32
+      mode: RO
+      description: "Floating - Result of muliplication of Ln(TMIT) by  Fcoef"
+    #########################################################
+    AddSums4:
+      class: IntField
+      at:
+        offset: 0x0144
+      encoding: IEEE_754
+      sizeBits: 32
+      mode: RO
+      description: "Floating - Result of addition MultLnTmitF and MultLnBrawG"
+    #########################################################
+    AddSums5:
+      class: IntField
+      at:
+        offset: 0x0148
+      encoding: IEEE_754
+      sizeBits: 32
+      mode: RO
+      description: "Floating - Result of addition AddSums4 and CoefE"
+    #########################################################
+    ExpResult1:
+      class: IntField
+      at:
+        offset: 0x014C
+      encoding: IEEE_754
+      sizeBits: 32
+      mode: RO
+      description: "Floating - Result of exponent of AddSums5"
+    #########################################################
+    FinalSum:
+      class: IntField
+      at:
+        offset: 0x0150
+      encoding: IEEE_754
+      sizeBits: 32
+      mode: RO
+      description: "Floating - Result of calculation - Sum of ExpResult0 and ExpResult1"
+    #########################################################
+    InpSum0:
+      class: IntField
+      at:
+        offset: 0x0154
+      sizeBits: 32
+      mode: RO
+      description: "For debug only, sum 0 input"
+    #########################################################
+    Scratch:
+      class: IntField
+      at:
+        offset: 0x0FFC
+      sizeBits: 32
+      mode: RW
+      description: "Scratch register"
+    #########################################################

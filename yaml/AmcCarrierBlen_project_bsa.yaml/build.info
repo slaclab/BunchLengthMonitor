@@ -1,0 +1,32 @@
+tag build-AmcCarrierBlen-0x00000002-20170502175506-leosap
+Tagger: “Leonid <“leosap@slac.stanford.edu”>
+Date:   Tue May 2 19:47:13 2017 -0700
+
+PROJECT: AmcCarrierBlen
+
+FW_VERSION: 0x00000002
+
+BUILD_STRING: AmcCarrierBlen: Vivado v2016.4, x86_64, Built Tue May  2 17:55:06 PDT 2017 by leosap
+
+commit a59e3e79380d02ad22f06033228c4f2c70a38129
+Author: “Leonid <“leosap@slac.stanford.edu”>
+Date:   Tue May 2 17:54:50 2017 -0700
+
+    Fix state machine for alinment to prevent stop when TMIT go away
+
+diff --git a/firmware/common/DspCoreLib/SysGenCore/rtl/BLEN_BPMdataAlignment.vhd b/firmware/common/DspCoreLib/SysGenCore/rtl/BLEN_BPMdataAlignment.vhd
+index 875f131..fb8b128 100644
+--- a/firmware/common/DspCoreLib/SysGenCore/rtl/BLEN_BPMdataAlignment.vhd
++++ b/firmware/common/DspCoreLib/SysGenCore/rtl/BLEN_BPMdataAlignment.vhd
+@@ -321,6 +321,11 @@ begin
+                     v.TmitReady := '0';
+                     v.state := AlIGNED_OPER;
+                 end if;
++		    elsif (AdcSumData_pempty = '0')  then  -- something wrong, overflowing storage but need MPS output for energy to detector, so start over
++                v.rd_en := '1';
++                v.TmitValid := '1';
++				v.TmitReady := '0';
++                v.state := READ_ONE_ENTRY;
+             end if;
+  --        when Others => null;
+       end case;

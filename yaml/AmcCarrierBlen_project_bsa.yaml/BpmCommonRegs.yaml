@@ -1,0 +1,235 @@
+##############################################################################
+## This file is part of 'LCLS2 BPM'
+## It is subject to the license terms in the LICENSE.txt file found in the 
+## top-level directory of this distribution and at: 
+##    https://confluence.slac.stanford.edu/display/ppareg/LICENSE.html. 
+## No part of 'LCLS2 BPM', including this file, 
+## may be copied, modified, propagated, or distributed except according to 
+## the terms contained in the LICENSE.txt file.
+##############################################################################
+#schemaversion 3.0.0
+#once          BpmCommonRegs.yaml
+
+# We just list the registers; the
+# caller/user can either include
+# them in a separate MMIO or use
+# a single MMIO for common and specific
+# (Stripl/Cavity) registers.
+BpmCommonRegs: &BpmCommonRegs
+    Status:
+      class:       IntField
+      description: "Status (all bits)"
+      mode:        RO
+      at:
+        { offset:  0x00}
+    ReadingInvalid:
+      class:       IntField
+      description: "X/Y/TMIT Invalid"
+      sizeBits:    1
+      lsBit:       7
+      mode:        RO
+      at:
+        { offset:  0x01}
+    CalGRN:
+      class:       IntField
+      description: "'Green' calibration data"
+      sizeBits:    1
+      lsBit:    4
+      mode:        RO
+      at:
+        { offset:  0x01}
+    CalRED:
+      class:       IntField
+      description: "'Red' calibration data"
+      sizeBits:    1
+      lsBit:    3
+      mode:        RO
+      at:
+        { offset:  0x01}
+    SoftCycle:
+      class:       IntField
+      description: "Result of a software-triggered cycle"
+      sizeBits:    1
+      lsBit:    2
+      mode:        RO
+      at:
+        { offset:  0x01}
+    Tmit:
+      class:       IntField
+      description: "Sum of amplitude Channels A+B+C+D"
+      mode:        RO
+      at:
+        { offset:  0x04}
+    X:
+      class:       IntField
+      description: "X position"
+      mode:        RO
+      isSigned:    true
+      at:
+        { offset:  0x08}
+    Y:
+      class:       IntField
+      description: "Y position"
+      mode:        RO
+      isSigned:    true
+      at:
+        { offset:  0x0C}
+    U:
+      class:       IntField
+      description: "U position"
+      mode:        RO
+      isSigned:    true
+      at:
+        { offset:  0x10}
+    V:
+      class:       IntField
+      description: "V position"
+      mode:        RO
+      isSigned:    true
+      at:
+        { offset:  0x14}
+    TMIT_U:
+      class:       IntField
+      description: "A+C"
+      mode:        RO
+      at:
+        { offset:  0x18}
+    TMIT_V:
+      class:       IntField
+      description: "B+D"
+      mode:        RO
+      at:
+        { offset:  0x1C}
+    TrigCount:
+      class:       IntField
+      description: "# of triggers processed"
+      mode:        RO
+      at:
+        { offset:  0x20}
+#
+    NumSamples:
+      class:       IntField
+      sizeBits:    12
+      description: "Processing window size (370MHz samples)"
+      at:
+        { offset:  0x40}
+    SoftTrig:
+      class:       IntField
+      sizeBits:    1
+      lsBit:    0
+      description: "Soft-trigger an processing cycle"
+      at:
+        { offset:  0x44}
+    MuxGRN:
+      class:       IntField
+      sizeBits:    2
+      lsBit:       0
+      description: "Input mux to map 'Green' channel"
+      enums:
+        - name: Ch0
+          value:  0
+        - name: Ch1
+          value:  1
+        - name: Ch2
+          value:  2
+        - name: Ch3
+          value:  3
+      at:
+        { offset:  0x48}
+    MuxRED:
+      class:       IntField
+      sizeBits:    2
+      lsBit:       2
+      description: "Input mux to map 'Red' channel"
+      enums:
+        - name: Ch0
+          value:  0
+        - name: Ch1
+          value:  1
+        - name: Ch2
+          value:  2
+        - name: Ch3
+          value:  3
+      at:
+        { offset:  0x48}
+    MuxBLU:
+      class:       IntField
+      sizeBits:    2
+      lsBit:       4
+      description: "Input mux to map 'Blue' channel"
+      enums:
+        - name: Ch0
+          value:  0
+        - name: Ch1
+          value:  1
+        - name: Ch2
+          value:  2
+        - name: Ch3
+          value:  3
+      at:
+        { offset:  0x48}
+    MuxYLO:
+      class:       IntField
+      sizeBits:    2
+      lsBit:       6
+      description: "Input mux to map 'Yellow' channel"
+      enums:
+        - name: Ch0
+          value:  0
+        - name: Ch1
+          value:  1
+        - name: Ch2
+          value:  2
+        - name: Ch3
+          value:  3
+      at:
+        { offset:  0x48}
+    TmitScl:
+      class:       IntField
+      sizeBits:    17
+      description: "Scale for TMIT (end result must fit into 18-bit signed); scaled to 2^16"
+      at:
+        { offset:  0x4C}
+#
+    A11:
+      class:       IntField
+      description: "Matrix coefficient A11 for mapping (X;Y) => A*(U;V) + O"
+      sizeBits:    25
+      isSigned:    true
+      at:
+        { offset:  0x400}
+    A12:
+      class:       IntField
+      description: "Matrix coefficient A12 for mapping (X;Y) => A*(U;V) + O"
+      sizeBits:    25
+      isSigned:    true
+      at:
+        { offset:  0x404}
+    A21:
+      class:       IntField
+      description: "Matrix coefficient A21 for mapping (X;Y) => A*(U;V) + O"
+      sizeBits:    25
+      isSigned:    true
+      at:
+        { offset:  0x408}
+    A22:
+      class:       IntField
+      description: "Matrix coefficient A22 for mapping (X;Y) => A*(U;V) + O"
+      sizeBits:    25
+      isSigned:    true
+      at:
+        { offset:  0x40C}
+    O_1:
+      class:       IntField
+      description: "Offset O1 for mapping (X;Y) => A*(U;V) + O"
+      sizeBits:    31
+      isSigned:    true
+      at:
+        { offset:  0x410}
+    O_2:
+      class:       IntField
+      description: "Offset O2 for mapping (X;Y) => A*(U;V) + O"
+      sizeBits:    31
+      isSigned:    true
+      at:
+        { offset:  0x414}

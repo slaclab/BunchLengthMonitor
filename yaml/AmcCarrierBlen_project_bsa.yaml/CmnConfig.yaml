@@ -1,0 +1,125 @@
+##############################################################################
+## This file is part of 'LCLS2 Common Carrier Core'.
+## It is subject to the license terms in the LICENSE.txt file found in the
+## top-level directory of this distribution and at:
+##    https://confluence.slac.stanford.edu/display/ppareg/LICENSE.html.
+## No part of 'LCLS2 Common Carrier Core', including this file,
+## may be copied, modified, propagated, or distributed except according to
+## the terms contained in the LICENSE.txt file.
+##############################################################################
+#schemaversion 3.0.0
+#once CmnConfig.yaml
+
+CmnConfig: &CmnConfig
+  description: "Common configuration"
+  class: MMIODev
+  configPrio: 1
+  size: 0x010000
+  #########
+  children:
+  #########
+    #########################################################
+    CalibEnable:
+      class: IntField
+      at:
+        offset: 0x0000
+      sizeBits: 1
+      mode: RW
+      description: "1 - calibration enabled, 0 - normal mode"
+    #########################################################
+    AppType:
+      class: IntField
+      at:
+        offset: 0x0004
+      sizeBits: 1
+      mode: RW
+      description: "1 - Gap Diode, 0 - Pyro Detector"
+    #########################################################
+    Location:
+      class: IntField
+      at:
+        offset: 0x0008
+      sizeBits: 1
+      mode: RW
+      description: "If Gap: 0 - Injector, 1 - BC1; if Pypro - 0 - BC1, 1 - BC2"
+    #########################################################
+    SelBpm:
+      class: IntField
+      at:
+        offset: 0x000C
+      sizeBits: 1
+      mode: RW
+      description: "0 - BPM 0 in incomming stream, 1 - BPM 2 in incomming stream"
+    #########################################################
+    TreshTmit:
+      class: IntField
+      at:
+        offset: 0x0010
+      sizeBits: 32
+      mode: RW
+      description: "To analyze TMIT for low value to report to BSA, if lower then reported as Major Error"
+    #########################################################
+    TmitTimeUp:
+      class: IntField
+      at:
+        offset: 0x0014
+      sizeBits: 32
+      mode: RO
+      description: "Received TMIT Time Stamp Upper Part"
+    #########################################################
+    TmitTimeLow:
+      class: IntField
+      at:
+        offset: 0x0018
+      sizeBits: 32
+      mode: RO
+      description: "Received TMIT Time Stamp Lower Part"
+    #########################################################
+    TmitStatus0:
+      class: IntField
+      at:
+        offset: 0x001C
+      sizeBits: 32
+      mode: RO
+      description: "Status from BPM 0"
+    #########################################################
+    TmitStatus1:
+      class: IntField
+      at:
+        offset: 0x0020
+      sizeBits: 32
+      mode: RO
+      description: "Status from BPM 1"
+    #########################################################
+    TmitTmit0:
+      class: IntField
+      at:
+        offset: 0x0024
+      sizeBits: 32
+      mode: RO
+      description: "TMIT from BPM 0"
+    #########################################################
+    TmitTmit1:
+      class: IntField
+      at:
+        offset: 0x0028
+      sizeBits: 32
+      mode: RO
+      description: "TMIT from BPM 1"
+    #########################################################
+    LclTimeUp:
+      class: IntField
+      at:
+        offset: 0x002C
+      sizeBits: 32
+      mode: RO
+      description: "Local Time Stamp Upper Part"
+    #########################################################
+    LclTimeLow:
+      class: IntField
+      at:
+        offset: 0x0030
+      sizeBits: 32
+      mode: RO
+      description: "Local Time Stamp Lower Part"
+    #########################################################
