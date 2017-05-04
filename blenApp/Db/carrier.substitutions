@@ -23,6 +23,15 @@ file "RegisterIn.template" { pattern
 { $(P), FpgaVersion,    "FPGA Firmware Version Number", "YES",  "Passive",  $(PORT),   "",   FpgaVersion   }
 { $(P), UpTimeCnt,      "Seconds since last reset",     "YES",  "1 second", $(PORT),   "s",  UpTimeCnt     }
 { $(P), DeviceId,       "Device Identification",        "YES",  "Passive",  $(PORT),   "",   DeviceId      }
+# BSA status
+{ $(P), SofCount,       "",                             "YES",  "1 second", $(PORT),   "",   sofCount      }
+{ $(P), EofCount,       "",                             "YES",  "1 second", $(PORT),   "",   eofCount      }
+{ $(P), CrcErrCount,    "",                             "YES",  "1 second", $(PORT),   "",   CrcErrCount   }
+{ $(P), RxClkCount,     "",                             "YES",  "1 second", $(PORT),   "",   RxClkCount    }
+{ $(P), RxRstCount,     "",                             "YES",  "1 second", $(PORT),   "",   RxRstCount    }
+{ $(P), RxDecErrCount,  "",                             "YES",  "1 second", $(PORT),   "",   RxDecErrCount }
+{ $(P), RxDspErrCount,  "",                             "YES",  "1 second", $(PORT),   "",   RxDspErrCount }
+{ $(P), RxLinkUp,       "",                             "YES",  "1 second", $(PORT),   "",   RxLinkUp      }
 }
 
 # Array of register
@@ -49,12 +58,19 @@ file "RegisterEnumBIn.template" { pattern
 file "RegisterOut.template" { pattern
 { P,        R,              DESC,                                       PINI,   SCAN,       PORT,  PARAM       }
 { $(P), ScratchPad,     "Register to test R/W"                    "NO",   "Passive",  $(PORT),    ScratchPad }
+# BSA
+{ $(P), RxPolarity,     ""                                        "NO",   "Passive",  $(PORT),    RxPolarity }
+{ $(P), PhaseTarget,    ""                                        "NO",   "Passive",  $(PORT),    PhaseTarget }
 }
 
 file "RegisterOutRBV.template" { pattern
 { P,           R,                DESC,                                     PINI,   SCAN,        PORT,  PARAM       }
 # Shared
 { $(P), ScratchPadRBV,     "Register to test R/W",                   "YES",  "1 second",  $(PORT),    ScratchPad }
+# BSA
+{ $(P), ClkSelRBV,  ""                                               "YES",  "1 second",  $(PORT),    ClkSel }
+{ $(P), RxPolarityRBV,  ""                                           "YES",  "1 second",  $(PORT),    RxPolarity }
+{ $(P), PhaseTargetRBV, ""                                           "YES",  "1 second",  $(PORT),    PhaseTarget }
 }
 
 # ENUM register
