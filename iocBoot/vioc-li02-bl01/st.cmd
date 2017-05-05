@@ -11,7 +11,7 @@
 # ===========================================
 
 # ****************************************************
-# **** Environment variables for BCM on YCPSWAsyn ****
+# **** Environment variables for BLEN on YCPSWAsyn ****
 
 # Support Large Arrays/Waveforms; Number in Bytes
 # Please calculate the size of the largest waveform
@@ -78,6 +78,43 @@ blen_registerRecordDeviceDriver(pdbbase)
 # Driver setup and initialization for YCPSWAsyn
 # ===================================================================================================================
 
+## Configure the Yaml Loader Driver
+# cpswLoadYamlFile(
+#    Yaml Doc,                  # Path to the YAML hierarchy description file
+#    Root Device,               # Root Device Name (optional; default = 'root')
+#    YAML Path,                 #directory where YAML includes can be found (optional)
+#    IP Address,                # OPTIONAL: Target FPGA IP Address. If not given it is taken from the YAML file
+# ==========================================================================================================
+cpswLoadYamlFile("${YAML_FILE}", "NetIODev", "", "${FPGA_IP}")
+
+# ====================================
+# Setup BSA Driver
+# ====================================
+# add BSA PVs
+addBsa("AMC0:SUM",        "double")
+addBsa("AMC0:IMAX",       "double")
+addBsa("AMC0:TMIT",       "double")
+addBsa("AMC0:IMAXFLOAT",  "double")
+addBsa("AMC0:SUMFLOAT",   "double")
+addBsa("AMC0:BLSTATUS",   "double")
+addBsa("SKIP6",           "double")
+addBsa("SKIP7",           "double")
+addBsa("SKIP8",           "double")
+addBsa("SKIP9",           "double")
+addBsa("SKIP10",          "double")
+addBsa("SKIP11",          "double")
+addBsa("SKIP12",          "double")
+addBsa("SKIP13",          "double")
+addBsa("AMC1:SUM",        "double")
+addBsa("AMC1:IMAX",       "double")
+addBsa("AMC1:TMIT",       "double")
+addBsa("AMC1:IMAXFLOAT",  "double")
+addBsa("AMC1:SUMFLOAT",   "double")
+addBsa("AMC1:BLSTATUS",   "double")
+
+# BSA driver for yaml
+bsaAsynDriverConfigure("bsaPort", "mmio/AmcCarrierCore/AmcCarrierBsa","strm/AmcCarrierDRAM/dram")
+
 ## Configure asyn port driver
 # YCPSWASYNConfig(
 #    Port Name,                 # the name given to this port driver
@@ -125,6 +162,12 @@ dbLoadRecords("db/carrier.db", "P=${AMC_CARRIER_PREFIX}, PORT=${CPSW_PORT}")
 
 # Automatic initialization
 dbLoadRecords("db/monitorFPGAReboot.db", "P=${AMC_CARRIER_PREFIX}, KEY=-66686157")
+
+# ****************************
+# **** Load BSA driver DB ****
+
+dbLoadRecords("db/bsa.db", "DEV=$(AMC0_PREFIX),PORT=bsaPort,MAXLENGTH=20000,BSAKEY=AMC0:SUM,SECN=SUM")
+dbLoadRecords("db/bsa.db", "DEV=$(AMC1_PREFIX),PORT=bsaPort,MAXLENGTH=20000,BSAKEY=AMC1:SUM,SECN=SUM")
 
 # **********************************************************************
 # **** Load iocAdmin databases to support IOC Health and monitoring ****

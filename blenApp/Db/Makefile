@@ -26,6 +26,9 @@ DB_INSTALLS += $(YCPSWASYN)/db/bo.template
 DB_INSTALLS += $(YCPSWASYN)/db/waveform_stream16.template
 DB_INSTALLS += $(YCPSWASYN)/db/waveform_stream32.template
 
+# For BSA
+DB_INSTALLS += $(BSADRIVER)/db/bsa.db
+
 # User-defined functions
 DB += stream_size.template
 DB += Filter.db

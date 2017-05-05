@@ -58,6 +58,8 @@ blen_DBD += sscanSupport.dbd
 blen_DBD += calcSupport.dbd
 
 blen_DBD += ycpswasyn.dbd
+blen_DBD += bsaAsynDriver.dbd
+blen_DBD += yamlLoader.dbd
 
 # ================================================================================
 # The system command will be mainly used by linux hosted IOCs
@@ -86,6 +88,7 @@ blen_SRCS += DaqSizeSub.c
 # Link in the libraries from other EPICS modules
 # =====================================================
 blen_LIBS += ycpswasyn
+blen_LIBS += yamlLoader
 blen_LIBS += seq pv
 
 # Needed to link in iocAdmin support
@@ -103,6 +106,11 @@ blen_LIBS += $(CEXP_LIBS)
 # caf: Needed to link in aCalcout support
 blen_LIBS += sscan
 blen_LIBS += calc
+
+# Needed to link bsaDriver support
+blen_LIBS += bsaDriver
+bsa_DIR = $(BSA_LIB)
+blen_LIBS += bsa
 
 # Link Asyn library support.
 # Should be last for othe modules that depend on asyn

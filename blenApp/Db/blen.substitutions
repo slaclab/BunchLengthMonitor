@@ -20,7 +20,7 @@
 # Single register
 file "RegisterIn.template" { pattern
 { P,          R,              DESC,                           PINI,   SCAN,       PORT, EGU,  PARAM         }
-{ $(P), RATE,           "Trigger rate over 1 sec",      "YES",  "1 second", $(PORT),   "Hz", AMC$(AMC):RATE          }
+{ $(P), RATE,           "Trigger rate over 1 sec",      "YES",  "1 second", $(PORT),   "Hz", AMC$(AMC):SENS0:RATE          }
 { $(P), AmcClkFreq,     "AMC Clock frequency",          "YES",  "1 second", $(PORT),   "Hz", AMC$(AMC):AmcClkFreq    }
 { $(P), MuxTrigCnt,     "Valid DAQ triggers",           "YES",  "1 second", $(PORT),   "",   AMC$(AMC):MuxTrigCnt    }
 { $(P), MuxFrzStat,     "Freeze buf status",            "YES",  "1 second", $(PORT),   "",   AMC$(AMC):MuxFrzStat    }
@@ -71,10 +71,16 @@ file "RegisterEnumBIn.template" { pattern
 
 file "RegisterOut.template" { pattern
 { P,        R,              DESC,                                       PINI,   SCAN,       PORT,  PARAM       }
-{ $(P), Mode,           "BLEN mode"                               "NO",   "Passive",  $(PORT),    AMC$(AMC):Mode }
-{ $(P), NumSamp0,       "Number of samples 0"                     "NO",   "Passive",  $(PORT),    AMC$(AMC):NumSamp0 }
-{ $(P), NumSamp1,       "Number of samples 1"                     "NO",   "Passive",  $(PORT),    AMC$(AMC):NumSamp1 }
-{ $(P), TrigDelay1,     ""                                        "NO",   "Passive",  $(PORT),    AMC$(AMC):TrigDelay1 }
+{ $(P), SENS0:Mode,           "BLEN mode"                         "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS0:Mode }
+{ $(P), SENS1:Mode,           "BLEN mode"                         "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS1:Mode }
+{ $(P), SENS0:NumSamp0,       "Number of samples 0"               "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS0:NumSamp0 }
+{ $(P), SENS1:NumSamp0,       "Number of samples 0"               "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS1:NumSamp0 }
+{ $(P), SENS0:NumSamp1,       "Number of samples 1"               "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS0:NumSamp1 }
+{ $(P), SENS1:NumSamp1,       "Number of samples 1"               "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS1:NumSamp1 }
+{ $(P), SENS0:TrigDelay1,     ""                                  "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS0:TrigDelay1 }
+{ $(P), SENS1:TrigDelay1,     ""                                  "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS1:TrigDelay1 }
+{ $(P), SENS0:TrigDelay2,     ""                                  "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS0:TrigDelay2 }
+{ $(P), SENS1:TrigDelay2,     ""                                  "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS1:TrigDelay2 }
 # Trigger to Waveforms (TLR4)
 { $(P), TLR4:SelFld,    "fields to use for trig msg comparison",  "NO",   "Passive",  $(PORT),    AMC$(AMC):TLR4:SelFld }
 { $(P), TLR4:SelSrc,    "soft-b0, tmg-b01, trig0-b10, trig1-b11", "NO",   "Passive",  $(PORT),    AMC$(AMC):TLR4:SelSrc }
@@ -97,10 +103,16 @@ file "RegisterOut.template" { pattern
 
 file "RegisterOutRBV.template" { pattern
 { P,           R,                DESC,                                     PINI,   SCAN,        PORT,  PARAM       }
-{ $(P), ModeRBV,           "BLEN mode"                               "YES",  "1 second",  $(PORT),    AMC$(AMC):Mode }
-{ $(P), NumSamp0RBV,       "Number of samples 0"                     "YES",  "1 second",  $(PORT),    AMC$(AMC):NumSamp0 }
-{ $(P), NumSamp1RBV,       "Number of samples 1"                     "YES",  "1 second",  $(PORT),    AMC$(AMC):NumSamp1 }
-{ $(P), TrigDelay1RBV,     ""                                        "YES",  "1 second",  $(PORT),    AMC$(AMC):TrigDelay1 }
+{ $(P), SENS0:ModeRBV,           "BLEN mode"                               "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS0:Mode }
+{ $(P), SENS1:ModeRBV,           "BLEN mode"                               "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS1:Mode }
+{ $(P), SENS0:NumSamp0RBV,       "Number of samples 0"                     "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS0:NumSamp0 }
+{ $(P), SENS1:NumSamp0RBV,       "Number of samples 0"                     "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS1:NumSamp0 }
+{ $(P), SENS0:NumSamp1RBV,       "Number of samples 1"                     "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS0:NumSamp1 }
+{ $(P), SENS1:NumSamp1RBV,       "Number of samples 1"                     "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS1:NumSamp1 }
+{ $(P), SENS0:TrigDelay1RBV,     ""                                  "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS0:TrigDelay1 }
+{ $(P), SENS1:TrigDelay1RBV,     ""                                  "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS1:TrigDelay1 }
+{ $(P), SENS0:TrigDelay2RBV,     ""                                  "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS0:TrigDelay2 }
+{ $(P), SENS1:TrigDelay2RBV,     ""                                  "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS1:TrigDelay2 }
 # Trigger to Waveforms (TLR4)
 { $(P), TLR4:SelFldRBV,    "fields to use for trig msg comparison",  "YES",  "1 second",  $(PORT),    AMC$(AMC):TLR4:SelFld }
 { $(P), TLR4:SelSrcRBV,    "soft-b0, tmg-b01, trig0-b10, trig1-b11", "YES",  "1 second",  $(PORT),    AMC$(AMC):TLR4:SelSrc }
