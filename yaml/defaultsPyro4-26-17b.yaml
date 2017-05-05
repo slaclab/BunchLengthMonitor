@@ -183,7 +183,7 @@
       - AxiSy56040:
           - OutputConfig: !<value>
               - 0x0
-              - 0x1
+              - 0x2
               - 0x0
               - 0x0
       - AppMps:

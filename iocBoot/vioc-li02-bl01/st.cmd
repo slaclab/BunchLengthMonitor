@@ -167,7 +167,18 @@ dbLoadRecords("db/monitorFPGAReboot.db", "P=${AMC_CARRIER_PREFIX}, KEY=-66686157
 # **** Load BSA driver DB ****
 
 dbLoadRecords("db/bsa.db", "DEV=$(AMC0_PREFIX),PORT=bsaPort,MAXLENGTH=20000,BSAKEY=AMC0:SUM,SECN=SUM")
+dbLoadRecords("db/bsa.db", "DEV=$(AMC0_PREFIX),PORT=bsaPort,MAXLENGTH=20000,BSAKEY=AMC0:IMAX,SECN=IMAX")
+dbLoadRecords("db/bsa.db", "DEV=$(AMC0_PREFIX),PORT=bsaPort,MAXLENGTH=20000,BSAKEY=AMC0:TMIT,SECN=TMIT")
+dbLoadRecords("db/bsa.db", "DEV=$(AMC0_PREFIX),PORT=bsaPort,MAXLENGTH=20000,BSAKEY=AMC0:IMAXFLOAT,SECN=IMAXFLOAT")
+dbLoadRecords("db/bsa.db", "DEV=$(AMC0_PREFIX),PORT=bsaPort,MAXLENGTH=20000,BSAKEY=AMC0:SUMFLOAT,SECN=SUMFLOAT")
+dbLoadRecords("db/bsa.db", "DEV=$(AMC0_PREFIX),PORT=bsaPort,MAXLENGTH=20000,BSAKEY=AMC0:BLSTATUS,SECN=BLSTATUS")
+
 dbLoadRecords("db/bsa.db", "DEV=$(AMC1_PREFIX),PORT=bsaPort,MAXLENGTH=20000,BSAKEY=AMC1:SUM,SECN=SUM")
+dbLoadRecords("db/bsa.db", "DEV=$(AMC1_PREFIX),PORT=bsaPort,MAXLENGTH=20000,BSAKEY=AMC1:IMAX,SECN=IMAX")
+dbLoadRecords("db/bsa.db", "DEV=$(AMC1_PREFIX),PORT=bsaPort,MAXLENGTH=20000,BSAKEY=AMC1:TMIT,SECN=TMIT")
+dbLoadRecords("db/bsa.db", "DEV=$(AMC1_PREFIX),PORT=bsaPort,MAXLENGTH=20000,BSAKEY=AMC1:IMAXFLOAT,SECN=IMAXFLOAT")
+dbLoadRecords("db/bsa.db", "DEV=$(AMC1_PREFIX),PORT=bsaPort,MAXLENGTH=20000,BSAKEY=AMC1:SUMFLOAT,SECN=SUMFLOAT")
+dbLoadRecords("db/bsa.db", "DEV=$(AMC1_PREFIX),PORT=bsaPort,MAXLENGTH=20000,BSAKEY=AMC1:BLSTATUS,SECN=BLSTATUS")
 
 # **********************************************************************
 # **** Load iocAdmin databases to support IOC Health and monitoring ****
