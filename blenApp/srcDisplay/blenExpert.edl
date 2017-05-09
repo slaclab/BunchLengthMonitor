@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 1972
-y 441
+x 1976
+y 465
 w 563
 h 685
 font "helvetica-medium-r-10.0"
@@ -178,7 +178,7 @@ release 0
 x 80
 y 330
 w 460
-h 50
+h 90
 lineColor index 2
 fill
 fillColor index 2
@@ -226,7 +226,7 @@ major 4
 minor 0
 release 0
 x 80
-y 410
+y 480
 w 460
 h 50
 lineColor index 2
@@ -241,7 +241,7 @@ major 4
 minor 0
 release 0
 x 90
-y 400
+y 470
 w 70
 h 30
 lineColor index 2
@@ -256,7 +256,7 @@ major 4
 minor 1
 release 1
 x 100
-y 400
+y 470
 w 53
 h 16
 font "helvetica-medium-r-14.0"
@@ -302,7 +302,7 @@ major 4
 minor 4
 release 0
 x 90
-y 420
+y 490
 w 90
 h 30
 fgColor index 14
@@ -328,7 +328,7 @@ major 4
 minor 4
 release 0
 x 290
-y 420
+y 490
 w 100
 h 30
 fgColor index 14
@@ -354,7 +354,7 @@ major 4
 minor 0
 release 0
 x 90
-y 480
+y 550
 w 70
 h 30
 lineColor index 2
@@ -369,7 +369,7 @@ major 4
 minor 0
 release 0
 x 80
-y 490
+y 560
 w 460
 h 50
 lineColor index 2
@@ -384,7 +384,7 @@ major 4
 minor 1
 release 1
 x 100
-y 480
+y 550
 w 46
 h 16
 font "helvetica-medium-r-14.0"
@@ -404,7 +404,7 @@ major 4
 minor 4
 release 0
 x 90
-y 500
+y 570
 w 80
 h 30
 fgColor index 14
@@ -427,7 +427,7 @@ major 4
 minor 4
 release 0
 x 190
-y 500
+y 570
 w 70
 h 30
 fgColor index 14
@@ -780,6 +780,52 @@ numPvs 4
 numDsps 1
 displayFileName {
   0 "bsaStatus.edl"
+}
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 90
+y 380
+w 90
+h 30
+fgColor index 14
+bgColor index 7
+topShadowColor index 7
+botShadowColor index 7
+font "helvetica-bold-r-14.0"
+buttonLabel "CmnConfig"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "cmnConfig.edl"
+}
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 4
+release 0
+x 190
+y 380
+w 90
+h 30
+fgColor index 14
+bgColor index 7
+topShadowColor index 7
+botShadowColor index 7
+font "helvetica-bold-r-14.0"
+buttonLabel "MoverCntl"
+numPvs 4
+numDsps 1
+displayFileName {
+  0 "moverCntl.edl"
 }
 endObjectProperties
 

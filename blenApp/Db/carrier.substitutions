@@ -34,6 +34,19 @@ file "RegisterIn.template" { pattern
 { $(P), RxDecErrCount,  "",                             "YES",  "1 second", $(PORT),   "",   RxDecErrCount }
 { $(P), RxDspErrCount,  "",                             "YES",  "1 second", $(PORT),   "",   RxDspErrCount }
 { $(P), RxLinkUp,       "",                             "YES",  "1 second", $(PORT),   "",   RxLinkUp      }
+# CmnConfig status
+{ $(P), TmitTimeUp,     "",                             "YES",  "1 second", $(PORT),   "",   TmitTimeUp    }
+{ $(P), TmitTimeLow,    "",                             "YES",  "1 second", $(PORT),   "",   TmitTimeLow   }
+{ $(P), TmitStatus0,    "",                             "YES",  "1 second", $(PORT),   "",   TmitStatus0   }
+{ $(P), TmitStatus1,    "",                             "YES",  "1 second", $(PORT),   "",   TmitStatus1   }
+{ $(P), TmitTmit0,      "",                             "YES",  "1 second", $(PORT),   "",   TmitTmit0     }
+{ $(P), TmitTmit1,      "",                             "YES",  "1 second", $(PORT),   "",   TmitTmit1     }
+{ $(P), LclTimeUp,      "",                             "YES",  "1 second", $(PORT),   "",   LclTimeUp     }
+{ $(P), LclTimeLow,     "",                             "YES",  "1 second", $(PORT),   "",   LclTimeLow    }
+# MoverCntl status
+{ $(P), StatusLimitSw,  "",                             "YES",  "1 second", $(PORT),   "",   StatusLimitSwitches }
+{ $(P), Inserted,       "",                             "YES",  "1 second", $(PORT),   "",   Inserted      }
+{ $(P), Removed,        "",                             "YES",  "1 second", $(PORT),   "",   Removed       }
 }
 
 # Array of register
@@ -63,6 +76,15 @@ file "RegisterOut.template" { pattern
 # BSA
 { $(P), RxPolarity,     ""                                        "NO",   "Passive",  $(PORT),    RxPolarity }
 { $(P), PhaseTarget,    ""                                        "NO",   "Passive",  $(PORT),    PhaseTarget }
+# CmnConfig
+{ $(P), AppType,        ""                                        "NO",   "Passive",  $(PORT),    AppType }
+{ $(P), CalibEnable,    ""                                        "NO",   "Passive",  $(PORT),    CalibEnable }
+{ $(P), Location,       ""                                        "NO",   "Passive",  $(PORT),    Location }
+{ $(P), SelBpm,         ""                                        "NO",   "Passive",  $(PORT),    SelBpm }
+{ $(P), TreshTmit,      ""                                        "NO",   "Passive",  $(PORT),    TreshTmit }
+# MoverCntl
+{ $(P), MoverOnOff,     ""                                        "NO",   "Passive",  $(PORT),    MoverOnOff }
+{ $(P), IgnoreMover,    ""                                        "NO",   "Passive",  $(PORT),    IgnoreMover }
 }
 
 file "RegisterOutRBV.template" { pattern
@@ -73,6 +95,15 @@ file "RegisterOutRBV.template" { pattern
 { $(P), ClkSelRBV,  ""                                               "YES",  "1 second",  $(PORT),    ClkSel }
 { $(P), RxPolarityRBV,  ""                                           "YES",  "1 second",  $(PORT),    RxPolarity }
 { $(P), PhaseTargetRBV, ""                                           "YES",  "1 second",  $(PORT),    PhaseTarget }
+# CmnConfig
+{ $(P), AppTypeRBV,     ""                                        "YES",  "1 second",  $(PORT),    AppType }
+{ $(P), CalibEnableRBV, ""                                        "YES",  "1 second",  $(PORT),    CalibEnable }
+{ $(P), LocationRBV,    ""                                        "YES",  "1 second",  $(PORT),    Location }
+{ $(P), SelBpmRBV,      ""                                        "YES",  "1 second",  $(PORT),    SelBpm }
+{ $(P), TreshTmitRBV,   ""                                        "YES",  "1 second",  $(PORT),    TreshTmit }
+# MoverCntl
+{ $(P), MoverOnOffRBV,  ""                                        "YES",  "1 second",  $(PORT),    MoverOnOff }
+{ $(P), IgnoreMoverRBV, ""                                        "YES",  "1 second",  $(PORT),    IgnoreMover }
 }
 
 # ENUM register
@@ -97,11 +128,43 @@ file "RegisterDoubleIn.template" { pattern
 #======================================
 
 file "RegisterDoubleOut.template" { pattern
-{ P,              R,            DESC,                         PINI,  SCAN,        PORT,   EGU,    PARAM   }
+{ P,              R,         DESC,                            PINI,  SCAN,        PORT,     EGU,    PARAM   }
+{ $(P), Attenuation0,        ""                               "NO",  "Passive",   $(PORT),  "",     Attenuation0 }
+{ $(P), Attenuation1,        ""                               "NO",  "Passive",   $(PORT),  "",     Attenuation1 }
+{ $(P), Attenuation2,        ""                               "NO",  "Passive",   $(PORT),  "",     Attenuation2 }
+{ $(P), Attenuation3,        ""                               "NO",  "Passive",   $(PORT),  "",     Attenuation3 }
+{ $(P), Attenuation4,        ""                               "NO",  "Passive",   $(PORT),  "",     Attenuation4 }
+{ $(P), Attenuation5,        ""                               "NO",  "Passive",   $(PORT),  "",     Attenuation5 }
+{ $(P), Attenuation6,        ""                               "NO",  "Passive",   $(PORT),  "",     Attenuation6 }
+{ $(P), Attenuation7,        ""                               "NO",  "Passive",   $(PORT),  "",     Attenuation7 }
+{ $(P), Attenuation8,        ""                               "NO",  "Passive",   $(PORT),  "",     Attenuation8 }
+{ $(P), Attenuation9,        ""                               "NO",  "Passive",   $(PORT),  "",     Attenuation9 }
+{ $(P), Attenuation10,       ""                               "NO",  "Passive",   $(PORT),  "",     Attenuation10 }
+{ $(P), Attenuation11,       ""                               "NO",  "Passive",   $(PORT),  "",     Attenuation11 }
+{ $(P), Attenuation12,       ""                               "NO",  "Passive",   $(PORT),  "",     Attenuation12 }
+{ $(P), Attenuation13,       ""                               "NO",  "Passive",   $(PORT),  "",     Attenuation13 }
+{ $(P), Attenuation14,       ""                               "NO",  "Passive",   $(PORT),  "",     Attenuation14 }
+{ $(P), Attenuation15,       ""                               "NO",  "Passive",   $(PORT),  "",     Attenuation15 }
 }
 
 file "RegisterDoubleOutRBV.template" { pattern
-{ P,              R,            DESC,                         PINI,   SCAN,       PORT,   EGU,    PARAM   }
+{ P,              R,         DESC,                            PINI,   SCAN,       PORT,     EGU,    PARAM   }
+{ $(P), Attenuation0RBV,     ""                               "YES",  "1 second", $(PORT),  "",     Attenuation0 }
+{ $(P), Attenuation1RBV,     ""                               "YES",  "1 second", $(PORT),  "",     Attenuation1 }
+{ $(P), Attenuation2RBV,     ""                               "YES",  "1 second", $(PORT),  "",     Attenuation2 }
+{ $(P), Attenuation3RBV,     ""                               "YES",  "1 second", $(PORT),  "",     Attenuation3 }
+{ $(P), Attenuation4RBV,     ""                               "YES",  "1 second", $(PORT),  "",     Attenuation4 }
+{ $(P), Attenuation5RBV,     ""                               "YES",  "1 second", $(PORT),  "",     Attenuation5 }
+{ $(P), Attenuation6RBV,     ""                               "YES",  "1 second", $(PORT),  "",     Attenuation6 }
+{ $(P), Attenuation7RBV,     ""                               "YES",  "1 second", $(PORT),  "",     Attenuation7 }
+{ $(P), Attenuation8RBV,     ""                               "YES",  "1 second", $(PORT),  "",     Attenuation8 }
+{ $(P), Attenuation9RBV,     ""                               "YES",  "1 second", $(PORT),  "",     Attenuation9 }
+{ $(P), Attenuation10RBV,    ""                               "YES",  "1 second", $(PORT),  "",     Attenuation10 }
+{ $(P), Attenuation11RBV,    ""                               "YES",  "1 second", $(PORT),  "",     Attenuation11 }
+{ $(P), Attenuation12RBV,    ""                               "YES",  "1 second", $(PORT),  "",     Attenuation12 }
+{ $(P), Attenuation13RBV,    ""                               "YES",  "1 second", $(PORT),  "",     Attenuation13 }
+{ $(P), Attenuation14RBV,    ""                               "YES",  "1 second", $(PORT),  "",     Attenuation14 }
+{ $(P), Attenuation15RBV,    ""                               "YES",  "1 second", $(PORT),  "",     Attenuation15 }
 }
 
 #======================================
