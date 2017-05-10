@@ -4,11 +4,15 @@
 #  Name: RELEASE_NOTES
 #
 #  Rem:  This files describes release notes for
-#        the XXX IOC Application.
+#        the BunchLengthMonitor IOC Application.
 #
-#  Auth: xx-Dec-2012, XXX         (xxx)
+#  Auth: 10-May-2017 C. Ford         (caf)
 #  Rev:  dd-mmm-yyyy, Reviewer's Name    (USERNAME)
 #--------------------------------------------------------------
+R1.0.2: Build with: ycpswasyn R1.1.6
+                    bsaDriver R0.9.9
+                    yamlLoader R1.0.3
+                    bsa API R1.0.1
 R1.0.1: Build with new ycpswasyn: version = R1.1.1
 R1.0.0: Initial import of the LCLS II BunchLengthMonitor IOC Application
         Built against EPICS R3.15.5-1.0
