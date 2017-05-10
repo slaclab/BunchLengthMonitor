@@ -12,6 +12,7 @@ EDL += BunchLength_diode.edl  amcStatus.edl       blenExpert.edl
 EDL += blenTrigger.edl        defaults.edl        version.edl
 EDL += BunchLength_pyro.edl   blenCoef.edl        blenMode.edl
 EDL += daqmuxV2Status.edl     webStatus.edl
+EDL += cmnConfig.edl          moverCntl.edl       dspCoreRes.edl
 EDL += startEdm_diode.sh      startEdm_pyro.sh
 
 # Install images to be used by EDM (Gif and Png are supported)
