@@ -1,0 +1,20 @@
+#==============================================================================
+#
+# Abs:  IP address substitutions file.
+#
+# Name: ipAddr.substitutions
+#
+# Note: Must follow the LCLS naming conventions.
+#
+#==============================================================================
+#
+file ipAddrParse.db
+{
+pattern   {P, SRC, SCAN}
+
+# P is the PV prefix
+# SRC is the source PV attribute
+# SCAN is the SCAN field
+
+          { $(P), $(SRC), "10 second"}
+}

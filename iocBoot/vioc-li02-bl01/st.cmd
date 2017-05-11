@@ -161,7 +161,7 @@ dbLoadRecords("db/blen.db", "P=${AMC1_PREFIX}, PORT=${CPSW_PORT}, AMC=1")
 dbLoadRecords("db/carrier.db", "P=${AMC_CARRIER_PREFIX}, PORT=${CPSW_PORT}")
 
 # Parse IP address
-dbLoadRecords("db/ipABCD.db", "P=${AMC_CARRIER_PREFIX}, SRC=SrvRemoteIp")
+dbLoadRecords("db/ipAddr.db", "P=${AMC_CARRIER_PREFIX}, SRC=SrvRemoteIp")
 dbLoadRecords("db/swap.db",   "P=${AMC_CARRIER_PREFIX}, SRC=SrvRemotePortSwap, DEST=SrvRemotePort")
 
 # Automatic initialization

@@ -33,6 +33,7 @@ DB_INSTALLS += $(BSADRIVER)/db/bsa.db
 DB += stream_size.template
 DB += Filter.db
 DB += Shutter.db
+DB += ipAddr.db
 
 # For temperature transfer
 DB += xfer.db
@@ -41,8 +42,7 @@ DB += xfer.db
 DB += blen.db
 DB += carrier.db
 
-# For parsing IP address
-DB += ipABCD.db
+# For byte swapping
 DB += swap.db
 
 # For saving and loading yaml configuration

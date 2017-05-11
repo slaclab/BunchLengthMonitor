@@ -1,0 +1,74 @@
+#==============================================================================
+#
+# Abs:  IP address parsing database file.
+#
+# Name: ipAddrParse.db
+#
+# Note: Must follow the LCLS naming conventions.
+#
+#==============================================================================
+
+#
+# Enable display of IPv4 addresses in dotted quad notation
+#
+# For example:
+#
+#   $ caget -0x AMCC:LI02:16:SrvRemoteIp                                                                                                        
+#   AMCC:LI02:16:SrvRemoteIp       0x6801000A
+#   $ caget AMCC:LI02:16:SrvRemoteIpA AMCC:LI02:16:SrvRemoteIpB AMCC:LI02:16:SrvRemoteIpC AMCC:LI02:16:SrvRemoteIpD
+#   AMCC:LI02:16:SrvRemoteIpA      10
+#   AMCC:LI02:16:SrvRemoteIpB      0
+#   AMCC:LI02:16:SrvRemoteIpC      1
+#   AMCC:LI02:16:SrvRemoteIpD      104
+#
+
+#
+# $(P):$(SRC)A -- byte 0 of $(P):$(SRC)
+#
+record(calc, "$(P):$(SRC)A")
+{
+  field(DESC, "byte 0")
+  field(INPA, "$(P):$(SRC)")
+  field(INPB, "0xff")
+  field(CALC, "(A&B)")
+  field(SCAN, "$(SCAN)")
+}
+
+#
+# $(P):$(SRC)B -- byte 1 of $(P):$(SRC)
+#
+record(calc, "$(P):$(SRC)B")
+{
+  field(DESC, "byte 1")
+  field(INPA, "$(P):$(SRC)")
+  field(INPB, "0xff00")
+  field(INPC, "8")
+  field(CALC, "(A&B)>>C")
+  field(SCAN, "$(SCAN)")
+}
+
+#
+# $(P):$(SRC)C -- byte 2 of $(P):$(SRC)
+#
+record(calc, "$(P):$(SRC)C")
+{
+  field(DESC, "byte 2")
+  field(INPA, "$(P):$(SRC)")
+  field(INPB, "0xff0000")
+  field(INPC, "16")
+  field(CALC, "(A&B)>>C")
+  field(SCAN, "$(SCAN)")
+}
+
+#
+# $(P):$(SRC)D -- byte 3 of $(P):$(SRC)
+#
+record(calc, "$(P):$(SRC)D")
+{
+  field(DESC, "byte 3")
+  field(INPA, "$(P):$(SRC)")
+  field(INPB, "0xff000000")
+  field(INPC, "24")
+  field(CALC, "(A&B)>>C")
+  field(SCAN, "$(SCAN)")
+}
