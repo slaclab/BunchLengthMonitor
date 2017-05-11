@@ -3,10 +3,10 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 2604
-y 444
+x 2836
+y 522
 w 617
-h 539
+h 674
 font "helvetica-medium-r-18.0"
 ctlFont "helvetica-medium-r-18.0"
 btnFont "helvetica-medium-r-18.0"
@@ -68,7 +68,7 @@ major 4
 minor 1
 release 1
 x 210
-y 60
+y 160
 w 34
 h 16
 font "helvetica-medium-i-14.0"
@@ -88,7 +88,7 @@ major 4
 minor 1
 release 1
 x 420
-y 60
+y 160
 w 64
 h 16
 font "helvetica-medium-i-14.0"
@@ -108,7 +108,7 @@ major 4
 minor 0
 release 0
 x 30
-y 130
+y 230
 w 546
 h 20
 
@@ -121,7 +121,7 @@ major 4
 minor 7
 release 0
 x 420
-y 130
+y 230
 w 156
 h 20
 controlPv "$(carrier_prefix):TmitTimeLow"
@@ -146,7 +146,7 @@ major 4
 minor 1
 release 1
 x 30
-y 130
+y 230
 w 116
 h 20
 font "helvetica-medium-r-18.0"
@@ -170,7 +170,7 @@ major 4
 minor 0
 release 0
 x 30
-y 100
+y 200
 w 546
 h 20
 
@@ -183,7 +183,7 @@ major 4
 minor 7
 release 0
 x 420
-y 100
+y 200
 w 156
 h 20
 controlPv "$(carrier_prefix):TmitTimeUp"
@@ -208,7 +208,7 @@ major 4
 minor 1
 release 1
 x 30
-y 100
+y 200
 w 105
 h 20
 font "helvetica-medium-r-18.0"
@@ -232,7 +232,7 @@ major 4
 minor 0
 release 0
 x 30
-y 370
+y 470
 w 546
 h 24
 
@@ -245,7 +245,7 @@ major 4
 minor 7
 release 0
 x 420
-y 370
+y 470
 w 156
 h 20
 controlPv "$(carrier_prefix):AppTypeRBV"
@@ -270,7 +270,7 @@ major 4
 minor 7
 release 0
 x 210
-y 370
+y 470
 w 170
 h 24
 controlPv "$(carrier_prefix):AppType"
@@ -297,7 +297,7 @@ major 4
 minor 1
 release 1
 x 30
-y 370
+y 470
 w 78
 h 20
 font "helvetica-medium-r-18.0"
@@ -321,7 +321,7 @@ major 4
 minor 0
 release 0
 x 30
-y 160
+y 260
 w 546
 h 20
 
@@ -334,7 +334,7 @@ major 4
 minor 7
 release 0
 x 420
-y 160
+y 260
 w 156
 h 20
 controlPv "$(carrier_prefix):TmitStatus0"
@@ -359,7 +359,7 @@ major 4
 minor 1
 release 1
 x 30
-y 160
+y 260
 w 103
 h 20
 font "helvetica-medium-r-18.0"
@@ -383,7 +383,7 @@ major 4
 minor 0
 release 0
 x 30
-y 220
+y 320
 w 546
 h 20
 
@@ -396,7 +396,7 @@ major 4
 minor 7
 release 0
 x 420
-y 220
+y 320
 w 156
 h 20
 controlPv "$(carrier_prefix):TmitTmit0"
@@ -421,7 +421,7 @@ major 4
 minor 1
 release 1
 x 30
-y 220
+y 320
 w 86
 h 20
 font "helvetica-medium-r-18.0"
@@ -445,7 +445,7 @@ major 4
 minor 0
 release 0
 x 30
-y 280
+y 380
 w 546
 h 20
 
@@ -458,7 +458,7 @@ major 4
 minor 7
 release 0
 x 420
-y 280
+y 380
 w 156
 h 20
 controlPv "$(carrier_prefix):LclTimeUp"
@@ -483,7 +483,7 @@ major 4
 minor 1
 release 1
 x 30
-y 280
+y 380
 w 92
 h 20
 font "helvetica-medium-r-18.0"
@@ -507,7 +507,7 @@ major 4
 minor 0
 release 0
 x 30
-y 190
+y 290
 w 546
 h 20
 
@@ -520,7 +520,7 @@ major 4
 minor 7
 release 0
 x 420
-y 190
+y 290
 w 156
 h 20
 controlPv "$(carrier_prefix):TmitStatus1"
@@ -545,7 +545,7 @@ major 4
 minor 1
 release 1
 x 30
-y 190
+y 290
 w 103
 h 20
 font "helvetica-medium-r-18.0"
@@ -569,7 +569,7 @@ major 4
 minor 0
 release 0
 x 30
-y 250
+y 350
 w 546
 h 20
 
@@ -582,7 +582,7 @@ major 4
 minor 7
 release 0
 x 420
-y 250
+y 350
 w 156
 h 20
 controlPv "$(carrier_prefix):TmitTmit1"
@@ -607,7 +607,7 @@ major 4
 minor 1
 release 1
 x 30
-y 250
+y 350
 w 86
 h 20
 font "helvetica-medium-r-18.0"
@@ -631,7 +631,7 @@ major 4
 minor 0
 release 0
 x 30
-y 310
+y 410
 w 546
 h 20
 
@@ -644,7 +644,7 @@ major 4
 minor 7
 release 0
 x 420
-y 310
+y 410
 w 156
 h 20
 controlPv "$(carrier_prefix):LclTimeLow"
@@ -669,7 +669,7 @@ major 4
 minor 1
 release 1
 x 30
-y 310
+y 410
 w 103
 h 20
 font "helvetica-medium-r-18.0"
@@ -693,7 +693,7 @@ major 4
 minor 0
 release 0
 x 30
-y 400
+y 500
 w 546
 h 24
 
@@ -706,7 +706,7 @@ major 4
 minor 7
 release 0
 x 420
-y 400
+y 500
 w 156
 h 20
 controlPv "$(carrier_prefix):CalibEnableRBV"
@@ -731,7 +731,7 @@ major 4
 minor 7
 release 0
 x 210
-y 400
+y 500
 w 170
 h 24
 controlPv "$(carrier_prefix):CalibEnable"
@@ -758,7 +758,7 @@ major 4
 minor 1
 release 1
 x 30
-y 400
+y 500
 w 103
 h 20
 font "helvetica-medium-r-18.0"
@@ -782,7 +782,7 @@ major 4
 minor 0
 release 0
 x 30
-y 430
+y 530
 w 546
 h 24
 
@@ -795,7 +795,7 @@ major 4
 minor 7
 release 0
 x 420
-y 430
+y 530
 w 156
 h 20
 controlPv "$(carrier_prefix):LocationRBV"
@@ -820,7 +820,7 @@ major 4
 minor 7
 release 0
 x 210
-y 430
+y 530
 w 170
 h 24
 controlPv "$(carrier_prefix):Location"
@@ -847,7 +847,7 @@ major 4
 minor 1
 release 1
 x 30
-y 430
+y 530
 w 74
 h 20
 font "helvetica-medium-r-18.0"
@@ -871,7 +871,7 @@ major 4
 minor 0
 release 0
 x 30
-y 460
+y 560
 w 546
 h 24
 
@@ -884,7 +884,7 @@ major 4
 minor 7
 release 0
 x 420
-y 460
+y 560
 w 156
 h 20
 controlPv "$(carrier_prefix):SelBpmRBV"
@@ -909,7 +909,7 @@ major 4
 minor 7
 release 0
 x 210
-y 460
+y 560
 w 170
 h 24
 controlPv "$(carrier_prefix):SelBpm"
@@ -936,7 +936,7 @@ major 4
 minor 1
 release 1
 x 30
-y 460
+y 560
 w 67
 h 20
 font "helvetica-medium-r-18.0"
@@ -960,7 +960,7 @@ major 4
 minor 0
 release 0
 x 30
-y 490
+y 590
 w 546
 h 24
 
@@ -973,11 +973,11 @@ major 4
 minor 7
 release 0
 x 420
-y 490
+y 590
 w 156
 h 20
 controlPv "$(carrier_prefix):TreshTmitRBV"
-format "hex"
+format "gfloat"
 font "helvetica-medium-r-18.0"
 fgColor index 14
 bgColor index 0
@@ -985,7 +985,6 @@ useDisplayBg
 autoHeight
 precision 5
 nullColor index 0
-useHexPrefix
 newPos
 objType "monitors"
 id "TreshTmit"
@@ -998,11 +997,11 @@ major 4
 minor 7
 release 0
 x 210
-y 490
+y 590
 w 170
 h 24
 controlPv "$(carrier_prefix):TreshTmit"
-format "hex"
+format "gfloat"
 font "helvetica-medium-r-18.0"
 fgColor index 14
 bgColor index 0
@@ -1013,7 +1012,6 @@ motifWidget
 precision 5
 nullColor index 0
 changeValOnLoseFocus
-useHexPrefix
 newPos
 objType "controls"
 endObjectProperties
@@ -1025,7 +1023,7 @@ major 4
 minor 1
 release 1
 x 30
-y 490
+y 590
 w 85
 h 20
 font "helvetica-medium-r-18.0"
@@ -1040,5 +1038,225 @@ endObjectProperties
 
 endGroup
 
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 210
+y 90
+w 20
+h 20
+controlPv "$(carrier_prefix):SrvRemoteIpA"
+format "decimal"
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+autoHeight
+precision 0
+nullColor index 0
+newPos
+objType "monitors"
+id "A"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 30
+y 90
+w 156
+h 20
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Remote Server IP:"
+}
+autoSize
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 240
+y 90
+w 20
+h 20
+controlPv "$(carrier_prefix):SrvRemoteIpB"
+format "decimal"
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+autoHeight
+precision 0
+nullColor index 0
+newPos
+objType "monitors"
+id "B"
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 270
+y 90
+w 20
+h 20
+controlPv "$(carrier_prefix):SrvRemoteIpC"
+format "decimal"
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+autoHeight
+precision 0
+nullColor index 0
+newPos
+objType "monitors"
+id "C"
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 300
+y 90
+w 30
+h 20
+controlPv "$(carrier_prefix):SrvRemoteIpD"
+format "decimal"
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+autoHeight
+precision 0
+nullColor index 0
+newPos
+objType "monitors"
+id "D"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 350
+y 90
+w 41
+h 20
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Port:"
+}
+autoSize
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 400
+y 90
+w 40
+h 20
+controlPv "$(carrier_prefix):SrvRemotePort"
+format "decimal"
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+autoHeight
+precision 0
+nullColor index 0
+newPos
+objType "monitors"
+id "A"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 230
+y 90
+w 5
+h 20
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "."
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 260
+y 90
+w 5
+h 20
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "."
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 290
+y 90
+w 5
+h 20
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "."
+}
+autoSize
 endObjectProperties
 

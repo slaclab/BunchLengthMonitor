@@ -23,8 +23,8 @@ file "RegisterIn.template" { pattern
 { $(P), FpgaVersion,    "FPGA Firmware Version Number", "YES",  "Passive",  $(PORT),   "",   FpgaVersion   }
 { $(P), UpTimeCnt,      "Seconds since last reset",     "YES",  "1 second", $(PORT),   "s",  UpTimeCnt     }
 { $(P), DeviceId,       "Device Identification",        "YES",  "Passive",  $(PORT),   "",   DeviceId      }
-{ $(P), ServerRemotePort, "big-Endian configuration",   "YES",  "Passive",  $(PORT),   "",   ServerRemotePort }
-{ $(P), ServerRemoteIp, "big-Endian configuration",     "YES",  "Passive",  $(PORT),   "",   ServerRemoteIp }
+{ $(P), SrvRemotePortSwap, "big-Endian configuration",  "YES",  "Passive",  $(PORT),   "",   ServerRemotePort }
+{ $(P), SrvRemoteIp,    "big-Endian configuration",     "YES",  "Passive",  $(PORT),   "",   ServerRemoteIp }
 # BSA status
 { $(P), SofCount,       "",                             "YES",  "1 second", $(PORT),   "",   sofCount      }
 { $(P), EofCount,       "",                             "YES",  "1 second", $(PORT),   "",   eofCount      }
