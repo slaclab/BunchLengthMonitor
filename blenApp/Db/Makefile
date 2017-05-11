@@ -41,8 +41,9 @@ DB += xfer.db
 DB += blen.db
 DB += carrier.db
 
-# For statistics
-DB += acalcStats.db
+# For parsing IP address
+DB += ipABCD.db
+DB += swap.db
 
 # For saving and loading yaml configuration
 DB += saveLoadConfig.db

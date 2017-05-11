@@ -1,0 +1,39 @@
+
+#
+record(calc, "$(P):$(SRC)A")
+{
+  field(INPA, "$(P):$(SRC)")
+  field(INPB, "0xff")
+  field(CALC, "(A&B)")
+  field(SCAN, "10 second")
+}
+
+#
+record(calc, "$(P):$(SRC)B")
+{
+  field(INPA, "$(P):$(SRC)")
+  field(INPB, "0xff00")
+  field(INPC, "8")
+  field(CALC, "(A&B)>>C")
+  field(SCAN, "10 second")
+}
+
+#
+record(calc, "$(P):$(SRC)C")
+{
+  field(INPA, "$(P):$(SRC)")
+  field(INPB, "0xff0000")
+  field(INPC, "16")
+  field(CALC, "(A&B)>>C")
+  field(SCAN, "10 second")
+}
+
+#
+record(calc, "$(P):$(SRC)D")
+{
+  field(INPA, "$(P):$(SRC)")
+  field(INPB, "0xff000000")
+  field(INPC, "24")
+  field(CALC, "(A&B)>>C")
+  field(SCAN, "10 second")
+}

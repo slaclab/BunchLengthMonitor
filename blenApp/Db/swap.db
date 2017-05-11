@@ -1,0 +1,12 @@
+
+#
+record(calc, "$(P):$(DEST)")
+{
+  field(INPA, "$(P):$(SRC)")
+  field(INPB, "0xff00")
+  field(INPC, "8")
+  field(INPD, "0xff")
+  field(CALC, "((A&B)>>C)+((A&D)<<C)")
+  field(SCAN, "10 second")
+}
+
