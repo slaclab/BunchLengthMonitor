@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 2836
-y 522
+x 1929
+y 68
 w 617
 h 674
 font "helvetica-medium-r-18.0"
@@ -217,95 +217,6 @@ bgColor index 0
 useDisplayBg
 value {
   "TmitTimeUp"
-}
-autoSize
-endObjectProperties
-
-endGroup
-
-endObjectProperties
-
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 30
-y 470
-w 546
-h 24
-
-beginGroup
-
-# (Text Monitor)
-object activeXTextDspClass:noedit
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 420
-y 470
-w 156
-h 20
-controlPv "$(carrier_prefix):AppTypeRBV"
-format "hex"
-font "helvetica-medium-r-18.0"
-fgColor index 14
-bgColor index 0
-useDisplayBg
-autoHeight
-precision 5
-nullColor index 0
-useHexPrefix
-newPos
-objType "monitors"
-id "AppType"
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 210
-y 470
-w 170
-h 24
-controlPv "$(carrier_prefix):AppType"
-format "hex"
-font "helvetica-medium-r-18.0"
-fgColor index 14
-bgColor index 0
-useDisplayBg
-editable
-autoHeight
-motifWidget
-precision 5
-nullColor index 0
-changeValOnLoseFocus
-useHexPrefix
-newPos
-objType "controls"
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 30
-y 470
-w 78
-h 20
-font "helvetica-medium-r-18.0"
-fgColor index 14
-bgColor index 0
-useDisplayBg
-value {
-  "AppType"
 }
 autoSize
 endObjectProperties
@@ -693,7 +604,7 @@ major 4
 minor 0
 release 0
 x 30
-y 500
+y 620
 w 546
 h 24
 
@@ -706,7 +617,7 @@ major 4
 minor 7
 release 0
 x 420
-y 500
+y 620
 w 156
 h 20
 controlPv "$(carrier_prefix):CalibEnableRBV"
@@ -731,7 +642,7 @@ major 4
 minor 7
 release 0
 x 210
-y 500
+y 620
 w 170
 h 24
 controlPv "$(carrier_prefix):CalibEnable"
@@ -758,7 +669,7 @@ major 4
 minor 1
 release 1
 x 30
-y 500
+y 620
 w 103
 h 20
 font "helvetica-medium-r-18.0"
@@ -767,95 +678,6 @@ bgColor index 0
 useDisplayBg
 value {
   "CalibEnable"
-}
-autoSize
-endObjectProperties
-
-endGroup
-
-endObjectProperties
-
-# (Group)
-object activeGroupClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 30
-y 530
-w 546
-h 24
-
-beginGroup
-
-# (Text Monitor)
-object activeXTextDspClass:noedit
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 420
-y 530
-w 156
-h 20
-controlPv "$(carrier_prefix):LocationRBV"
-format "hex"
-font "helvetica-medium-r-18.0"
-fgColor index 14
-bgColor index 0
-useDisplayBg
-autoHeight
-precision 5
-nullColor index 0
-useHexPrefix
-newPos
-objType "monitors"
-id "Location"
-endObjectProperties
-
-# (Text Control)
-object activeXTextDspClass
-beginObjectProperties
-major 4
-minor 7
-release 0
-x 210
-y 530
-w 170
-h 24
-controlPv "$(carrier_prefix):Location"
-format "hex"
-font "helvetica-medium-r-18.0"
-fgColor index 14
-bgColor index 0
-useDisplayBg
-editable
-autoHeight
-motifWidget
-precision 5
-nullColor index 0
-changeValOnLoseFocus
-useHexPrefix
-newPos
-objType "controls"
-endObjectProperties
-
-# (Static Text)
-object activeXTextClass
-beginObjectProperties
-major 4
-minor 1
-release 1
-x 30
-y 530
-w 74
-h 20
-font "helvetica-medium-r-18.0"
-fgColor index 14
-bgColor index 0
-useDisplayBg
-value {
-  "Location"
 }
 autoSize
 endObjectProperties
@@ -1256,6 +1078,318 @@ bgColor index 0
 useDisplayBg
 value {
   "."
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 490
+y 470
+w 40
+h 20
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 15
+visPv "$(carrier_prefix):AppTypeRBV"
+visInvert
+visMin "1"
+visMax "3"
+value {
+  "Pyro"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 490
+y 470
+w 92
+h 20
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 15
+visPv "$(carrier_prefix):AppTypeRBV"
+visMin "1"
+visMax "3"
+value {
+  "Gap Diode"
+}
+autoSize
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 30
+y 530
+w 546
+h 20
+
+beginGroup
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 420
+y 530
+w 156
+h 20
+controlPv "$(carrier_prefix):IMAXScale"
+format "decimal"
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+autoHeight
+precision 1
+nullColor index 0
+newPos
+objType "monitors"
+id "IMAXScale"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 30
+y 530
+w 96
+h 20
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "IMAXScale"
+}
+autoSize
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 490
+y 500
+w 37
+h 20
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 15
+visPv "$(carrier_prefix):IMAXScale"
+visMin "64"
+visMax "65"
+value {
+  "BC1"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 490
+y 500
+w 37
+h 20
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 15
+visPv "$(carrier_prefix):IMAXScale"
+visMin "8"
+visMax "9"
+value {
+  "BC2"
+}
+autoSize
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 490
+y 500
+w 63
+h 20
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 15
+visPv "$(carrier_prefix):IMAXScale"
+visMin "1024"
+visMax "1025"
+value {
+  "Injector"
+}
+autoSize
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 420
+y 470
+w 60
+h 20
+controlPv "$(carrier_prefix):AppTypeRBV"
+format "decimal"
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+autoHeight
+precision 5
+nullColor index 0
+newPos
+objType "monitors"
+id "AppType"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 210
+y 470
+w 170
+h 24
+controlPv "$(carrier_prefix):AppType"
+format "decimal"
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+editable
+autoHeight
+motifWidget
+precision 5
+nullColor index 0
+changeValOnLoseFocus
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 30
+y 470
+w 78
+h 20
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "AppType"
+}
+autoSize
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 420
+y 500
+w 60
+h 20
+controlPv "$(carrier_prefix):LocationRBV"
+format "decimal"
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+autoHeight
+precision 5
+nullColor index 0
+newPos
+objType "monitors"
+id "Location"
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 210
+y 500
+w 170
+h 24
+controlPv "$(carrier_prefix):Location"
+format "decimal"
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+editable
+autoHeight
+motifWidget
+precision 5
+nullColor index 0
+changeValOnLoseFocus
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 30
+y 500
+w 74
+h 20
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "Location"
 }
 autoSize
 endObjectProperties
