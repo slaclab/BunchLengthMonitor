@@ -31,9 +31,9 @@ DB_INSTALLS += $(BSADRIVER)/db/bsa.db
 
 # User-defined functions
 DB += stream_size.template
-DB += Filter.db
-DB += Shutter.db
 DB += ipAddr.db
+DB += statusBit.db
+DB += IMAXScale.db
 
 # For temperature transfer
 DB += xfer.db

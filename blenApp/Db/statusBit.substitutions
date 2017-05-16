@@ -1,0 +1,22 @@
+#==============================================================================
+#
+# Abs:  Status bit substitutions file.
+#
+# Name: statusBit.substitutions
+#
+# Note: Must follow the LCLS naming conventions.
+#
+#==============================================================================
+#
+file statusBitDecode.db
+{
+pattern   {P, SRC1, SRC2, DEST, SCAN}
+
+# P is the PV prefix
+# SRC1 is the first PV to be decoded into Shut1, Shut2, Filt1, Filt2, Filt3, Filt4
+# SRC2 is the second PV to be decoded into Shut1, Shut2, Filt1, Filt2, Filt3, Filt4
+# DEST is (SRC1 NOR SRC2) decoded into Shut1, Shut2, Filt1, Filt2, Filt3, Filt4
+# SCAN is the SCAN field
+
+          { $(P), "Inserted", "Removed", "Moving", "1 second"}
+}

@@ -1,0 +1,378 @@
+#==============================================================================
+#
+# Abs:  Status bit decode database file.
+#
+# Name: statusBitDecode.db
+#
+# Note: Must follow the LCLS naming conventions.
+#
+#==============================================================================
+
+#
+# $(P):$(SRC1)Shut1 -- bit 0 of $(P):$(SRC1)
+#
+record(calc, "$(P):$(SRC1)Shut1")
+{
+  field(INPA, "$(P):$(SRC1)")
+  field(INPB, "0x1")
+  field(CALC, "(A&B)")
+  field(SCAN, "$(SCAN)")
+  field(FLNK, "$(P):$(SRC2)Shut1")
+}
+
+#
+# $(P):$(SRC1)Shut2 -- bit 1 of $(P):$(SRC1)
+#
+record(calc, "$(P):$(SRC1)Shut2")
+{
+  field(INPA, "$(P):$(SRC1)")
+  field(INPB, "0x2")
+  field(INPC, "1")
+  field(CALC, "(A&B)>>C")
+  field(SCAN, "$(SCAN)")
+  field(FLNK, "$(P):$(SRC2)Shut2")
+}
+
+#
+# $(P):$(SRC1)Filt1 -- bit 2 of $(P):$(SRC1)
+#
+record(calc, "$(P):$(SRC1)Filt1")
+{
+  field(INPA, "$(P):$(SRC1)")
+  field(INPB, "0x4")
+  field(INPC, "2")
+  field(CALC, "(A&B)>>C")
+  field(SCAN, "$(SCAN)")
+  field(FLNK, "$(P):$(SRC2)Filt1")
+}
+
+#
+# $(P):$(SRC1)Filt2 -- bit 3 of $(P):$(SRC1)
+#
+record(calc, "$(P):$(SRC1)Filt2")
+{
+  field(INPA, "$(P):$(SRC1)")
+  field(INPB, "0x8")
+  field(INPC, "3")
+  field(CALC, "(A&B)>>C")
+  field(SCAN, "$(SCAN)")
+  field(FLNK, "$(P):$(SRC2)Filt2")
+}
+
+#
+# $(P):$(SRC1)Filt3 -- bit 4 of $(P):$(SRC1)
+#
+record(calc, "$(P):$(SRC1)Filt3")
+{
+  field(INPA, "$(P):$(SRC1)")
+  field(INPB, "0x10")
+  field(INPC, "4")
+  field(CALC, "(A&B)>>C")
+  field(SCAN, "$(SCAN)")
+  field(FLNK, "$(P):$(SRC2)Filt3")
+}
+
+#
+# $(P):$(SRC1)Filt4 -- bit 5 of $(P):$(SRC1)
+#
+record(calc, "$(P):$(SRC1)Filt4")
+{
+  field(INPA, "$(P):$(SRC1)")
+  field(INPB, "0x20")
+  field(INPC, "5")
+  field(CALC, "(A&B)>>C")
+  field(SCAN, "$(SCAN)")
+  field(FLNK, "$(P):$(SRC2)Filt4")
+}
+
+#
+# $(P):$(SRC2)Shut1 -- bit 0 of $(P):$(SRC2)
+#
+record(calc, "$(P):$(SRC2)Shut1")
+{
+  field(INPA, "$(P):$(SRC2)")
+  field(INPB, "0x1")
+  field(CALC, "(A&B)")
+  field(FLNK, "$(P):$(DEST)Shut1")
+}
+
+#
+# $(P):$(SRC2)Shut2 -- bit 1 of $(P):$(SRC2)
+#
+record(calc, "$(P):$(SRC2)Shut2")
+{
+  field(INPA, "$(P):$(SRC2)")
+  field(INPB, "0x2")
+  field(INPC, "1")
+  field(CALC, "(A&B)>>C")
+  field(FLNK, "$(P):$(DEST)Shut2")
+}
+
+#
+# $(P):$(SRC2)Filt1 -- bit 2 of $(P):$(SRC2)
+#
+record(calc, "$(P):$(SRC2)Filt1")
+{
+  field(INPA, "$(P):$(SRC2)")
+  field(INPB, "0x4")
+  field(INPC, "2")
+  field(CALC, "(A&B)>>C")
+  field(FLNK, "$(P):$(DEST)Filt1")
+}
+
+#
+# $(P):$(SRC2)Filt2 -- bit 3 of $(P):$(SRC2)
+#
+record(calc, "$(P):$(SRC2)Filt2")
+{
+  field(INPA, "$(P):$(SRC2)")
+  field(INPB, "0x8")
+  field(INPC, "3")
+  field(CALC, "(A&B)>>C")
+  field(FLNK, "$(P):$(DEST)Filt2")
+}
+
+#
+# $(P):$(SRC2)Filt3 -- bit 4 of $(P):$(SRC2)
+#
+record(calc, "$(P):$(SRC2)Filt3")
+{
+  field(INPA, "$(P):$(SRC2)")
+  field(INPB, "0x10")
+  field(INPC, "4")
+  field(CALC, "(A&B)>>C")
+  field(FLNK, "$(P):$(DEST)Filt3")
+}
+
+#
+# $(P):$(SRC2)Filt4 -- bit 5 of $(P):$(SRC2)
+#
+record(calc, "$(P):$(SRC2)Filt4")
+{
+  field(INPA, "$(P):$(SRC2)")
+  field(INPB, "0x20")
+  field(INPC, "5")
+  field(FLNK, "$(P):$(DEST)Filt4")
+}
+
+#
+# $(P):$(DEST)Shut1 -- bit 0 of $(P):$(SRC1) NOR $(P):$(SRC2)
+#
+record(calc, "$(P):$(DEST)Shut1")
+{
+  field(INPA, "$(P):$(SRC1)Shut1")
+  field(INPB, "$(P):$(SRC2)Shut1")
+  field(INPC, "1")
+  field(CALC, "(~(A OR B))&C")
+}
+
+#
+# $(P):$(DEST)Shut2 -- bit 1 of $(P):$(SRC1) NOR $(P):$(SRC2)
+#
+record(calc, "$(P):$(DEST)Shut2")
+{
+  field(INPA, "$(P):$(SRC1)Shut2")
+  field(INPB, "$(P):$(SRC2)Shut2")
+  field(INPC, "1")
+  field(CALC, "(~(A OR B))&C")
+}
+
+#
+# $(P):$(DEST)Filt1 -- bit 2 of $(P):$(SRC1) NOR $(P):$(SRC2)
+#
+record(calc, "$(P):$(DEST)Filt1")
+{
+  field(INPA, "$(P):$(SRC1)Filt1")
+  field(INPB, "$(P):$(SRC2)Filt1")
+  field(INPC, "1")
+  field(CALC, "(~(A OR B))&C")
+}
+
+#
+# $(P):$(DEST)Filt2 -- bit 3 of $(P):$(SRC1) NOR $(P):$(SRC2)
+#
+record(calc, "$(P):$(DEST)Filt2")
+{
+  field(INPA, "$(P):$(SRC1)Filt2")
+  field(INPB, "$(P):$(SRC2)Filt2")
+  field(INPC, "1")
+  field(CALC, "(~(A OR B))&C")
+}
+
+#
+# $(P):$(DEST)Filt3 -- bit 4 of $(P):$(SRC1) NOR $(P):$(SRC2)
+#
+record(calc, "$(P):$(DEST)Filt3")
+{
+  field(INPA, "$(P):$(SRC1)Filt3")
+  field(INPB, "$(P):$(SRC2)Filt3")
+  field(INPC, "1")
+  field(CALC, "(~(A OR B))&C")
+}
+
+#
+# $(P):$(DEST)Filt4 -- bit 5 of $(P):$(SRC1) NOR $(P):$(SRC2)
+#
+record(calc, "$(P):$(DEST)Filt4")
+{
+  field(INPA, "$(P):$(SRC1)Filt4")
+  field(INPB, "$(P):$(SRC2)Filt4")
+  field(INPC, "1")
+  field(CALC, "(~(A OR B))&C")
+}
+
+#
+record(mbbo, "$(P):ChoiceShut1")
+{
+  field(VAL, "0")
+  field(ZRVL,"0")
+  field(ZRST,"OUT")
+  field(ONVL,"1")
+  field(ONST,"IN")
+  field(FLNK, "$(P):MoveShut1")
+}
+
+#
+record(mbbo, "$(P):ChoiceShut2")
+{
+  field(VAL, "0")
+  field(ZRVL,"0")
+  field(ZRST,"OUT")
+  field(ONVL,"1")
+  field(ONST,"IN")
+  field(FLNK, "$(P):MoveShut2")
+}
+
+#
+record(mbbo, "$(P):ChoiceFilt1")
+{
+  field(VAL, "0")
+  field(ZRVL,"0")
+  field(ZRST,"OUT")
+  field(ONVL,"1")
+  field(ONST,"IN")
+  field(FLNK, "$(P):MoveFilt1")
+}
+
+#
+record(mbbo, "$(P):ChoiceFilt2")
+{
+  field(VAL, "0")
+  field(ZRVL,"0")
+  field(ZRST,"OUT")
+  field(ONVL,"1")
+  field(ONST,"IN")
+  field(FLNK, "$(P):MoveFilt2")
+}
+
+#
+record(mbbo, "$(P):ChoiceFilt3")
+{
+  field(VAL, "0")
+  field(ZRVL,"0")
+  field(ZRST,"OUT")
+  field(ONVL,"1")
+  field(ONST,"IN")
+  field(FLNK, "$(P):MoveFilt3")
+}
+
+#
+record(mbbo, "$(P):ChoiceFilt4")
+{
+  field(VAL, "0")
+  field(ZRVL,"0")
+  field(ZRST,"OUT")
+  field(ONVL,"1")
+  field(ONST,"IN")
+  field(FLNK, "$(P):MoveFilt4")
+}
+
+#
+record(calcout, "$(P):MoveShut1")
+{
+  field(OUT, "$(P):MoverOnOff PP")
+  field(OOPT, "Every Time")
+  field(DOPT, "Use CALC")
+  field(INPA, "$(P):ChoiceShut1")
+  field(INPB, "$(P):MoverOnOff")
+  field(INPC, "1")
+  field(INPD, "0x1")
+  field(INPE, "0x3e")
+  field(CALC, "(A = C) ? B|D : B&E")
+  field(SCAN, "Passive")
+}
+
+#
+record(calcout, "$(P):MoveShut2")
+{
+  field(OUT, "$(P):MoverOnOff PP")
+  field(OOPT, "Every Time")
+  field(DOPT, "Use CALC")
+  field(INPA, "$(P):ChoiceShut2")
+  field(INPB, "$(P):MoverOnOff")
+  field(INPC, "1")
+  field(INPD, "0x2")
+  field(INPE, "0x3d")
+  field(CALC, "(A = C) ? B|D : B&E")
+  field(SCAN, "Passive")
+}
+
+#
+record(calcout, "$(P):MoveFilt1")
+{
+  field(OUT, "$(P):MoverOnOff PP")
+  field(OOPT, "Every Time")
+  field(DOPT, "Use CALC")
+  field(INPA, "$(P):ChoiceFilt1")
+  field(INPB, "$(P):MoverOnOff")
+  field(INPC, "1")
+  field(INPD, "0x4")
+  field(INPE, "0x3b")
+  field(CALC, "(A = C) ? B|D : B&E")
+  field(SCAN, "Passive")
+}
+
+#
+record(calcout, "$(P):MoveFilt2")
+{
+  field(OUT, "$(P):MoverOnOff PP")
+  field(OOPT, "Every Time")
+  field(DOPT, "Use CALC")
+  field(INPA, "$(P):ChoiceFilt2")
+  field(INPB, "$(P):MoverOnOff")
+  field(INPC, "1")
+  field(INPD, "0x8")
+  field(INPE, "0x37")
+  field(CALC, "(A = C) ? B|D : B&E")
+  field(SCAN, "Passive")
+}
+
+#
+record(calcout, "$(P):MoveFilt3")
+{
+  field(OUT, "$(P):MoverOnOff PP")
+  field(OOPT, "Every Time")
+  field(DOPT, "Use CALC")
+  field(INPA, "$(P):ChoiceFilt3")
+  field(INPB, "$(P):MoverOnOff")
+  field(INPC, "1")
+  field(INPD, "0x10")
+  field(INPE, "0x2f")
+  field(CALC, "(A = C) ? B|D : B&E")
+  field(SCAN, "Passive")
+}
+
+#
+record(calcout, "$(P):MoveFilt4")
+{
+  field(OUT, "$(P):MoverOnOff PP")
+  field(OOPT, "Every Time")
+  field(DOPT, "Use CALC")
+  field(INPA, "$(P):ChoiceFilt4")
+  field(INPB, "$(P):MoverOnOff")
+  field(INPC, "1")
+  field(INPD, "0x20")
+  field(INPE, "0x1f")
+  field(CALC, "(A = C) ? B|D : B&E")
+  field(SCAN, "Passive")
+}

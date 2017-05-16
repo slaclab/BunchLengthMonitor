@@ -1,0 +1,21 @@
+#==============================================================================
+#
+# Abs:  IMAX scale calculation database file.
+#
+# Name: IMAXScaleCalc.db
+#
+# Note: Must follow the LCLS naming conventions.
+#
+#==============================================================================
+
+record(calc, "$(P):IMAXScale")
+{
+  field(DESC, "IMAX scale factor")
+  field(INPA, "$(P):AppTypeRBV")
+  field(INPB, "$(P):LocationRBV")
+  field(INPC, "64")
+  field(INPD, "8")
+  field(INPE, "1024")
+  field(CALC, "(A==B)?C:(B?D:E)")
+  field(SCAN, "$(SCAN)")
+}
