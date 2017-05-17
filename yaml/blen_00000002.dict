@@ -26,8 +26,8 @@
 /mmio/AmcCarrierCore/AmcCarrierTiming/TimingFrameRx/ClkSel                                                ClkSel
 /mmio/AmcCarrierCore/AmcCarrierTiming/TimingFrameRx/RxPolarity                                            RxPolarity
 /mmio/AmcCarrierCore/AmcCarrierTiming/GthRxAlignCheck/PhaseTarget                                         PhaseTarget
-/mmio/AmcCarrierCore/UdpEngineServer[3]/ServerRemotePort                                                  ServerRemotePort
-/mmio/AmcCarrierCore/UdpEngineServer[3]/ServerRemoteIp                                                    ServerRemoteIp
+/mmio/AmcCarrierCore/BpUdpServer/ServerRemotePort                                                         ServerRemotePort
+/mmio/AmcCarrierCore/BpUdpServer/ServerRemoteIp                                                           ServerRemoteIp
 /mmio/AppTop/AppCore/CmnConfig/CalibEnable                                                                CalibEnable
 /mmio/AppTop/AppCore/CmnConfig/AppType                                                                    AppType
 /mmio/AppTop/AppCore/CmnConfig/Location                                                                   Location

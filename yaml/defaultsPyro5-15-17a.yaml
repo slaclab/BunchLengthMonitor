@@ -190,7 +190,7 @@
           - AppMpsSalt:
               - CntRst: !<value> 0x0
               - RollOverEn: !<value> 0x0000
-      - RssiServerSw:
+      - SwRssiServer:
           - MaxOutOfSeq: !<value> 0x00
           - MaxCumAck: !<value> 0x03
           - MaxNumRetrans: !<value> 0x02
@@ -247,7 +247,7 @@
               - TxLoopback: !<value> 0x0
               - TxPolarity: !<value> 0x0
               - TxReset: !<value> 0x0
-      - UdpEngineClient:
+      - BpUdpClient:
           - ClientRemoteIp: !<value> 0x00000000
           - ClientRemotePort: !<value> 0x0000
       # - AxiCdcm6208:
@@ -354,12 +354,12 @@
               - FormatSignWidth: !<value> 0x00
               - InputMuxSel: !<value>
                   - Ch0
-                  - Ch0
                   - Ch1
+                  - Ch2
                   - Ch3
                   - Ch0
-                  - Ch0
                   - Ch1
+                  - Ch2
                   - Ch3
               - DecimationRateDiv: !<value> 0x0000
               - DataBufferSize: !<value> 0x00001000
@@ -3114,7 +3114,7 @@
                       - 0
                       - 0
                   - CoefA0: !<value>
-                      - 2.338169906579424e-06
+                      - 4.338169906579424e-03
                       - 0
 
                                   

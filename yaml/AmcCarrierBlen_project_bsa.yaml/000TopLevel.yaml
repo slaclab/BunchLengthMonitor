@@ -31,6 +31,8 @@ mmio: &mmio
       at:
         offset: 0x80000000
       children: 
+        DacSigGen:
+          instantiate: true               
         AppTopJesd:
           children:
             JesdRx:
