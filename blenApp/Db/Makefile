@@ -35,9 +35,6 @@ DB += ipAddr.db
 DB += statusBit.db
 DB += IMAXScale.db
 
-# For temperature transfer
-DB += xfer.db
-
 # For CPSW PVs
 DB += blen.db
 DB += carrier.db
