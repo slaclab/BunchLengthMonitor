@@ -18,5 +18,5 @@ pattern   {P, SRC1, SRC2, DEST, SCAN}
 # DEST is (SRC1 NOR SRC2) decoded into Shut1, Shut2, Filt1, Filt2, Filt3, Filt4
 # SCAN is the SCAN field
 
-          { $(P), "Inserted", "Removed", "Moving", "1 second"}
+          { $(P), "Inserted", "Removed", "Moving", ".5 second"}
 }
