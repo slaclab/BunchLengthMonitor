@@ -30,7 +30,6 @@ DB_INSTALLS += $(YCPSWASYN)/db/waveform_stream32.template
 DB_INSTALLS += $(BSADRIVER)/db/bsa.db
 
 # User-defined functions
-DB += stream_size.template
 DB += ipAddr.db
 DB += statusBit.db
 DB += IMAXScale.db
