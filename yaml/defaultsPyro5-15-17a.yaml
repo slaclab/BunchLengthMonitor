@@ -155,22 +155,22 @@
                   - Mode: !<value> DoneWhenFull
                   - Enabled: !<value>
                       - 0x1
+                      - 0x0
+                      - 0x0
                       - 0x1
                       - 0x1
+                      - 0x0
+                      - 0x0
                       - 0x1
-                      - 0x0
-                      - 0x0
-                      - 0x0
-                      - 0x0
                   - EndAddr: !<value>
-                      - 0x0000000080004000
-                      - 0x0000000090004000
-                      - 0x00000000a0004000
-                      - 0x00000000b0004000
-                      - 0x00000000c0004000
-                      - 0x00000000d0004000
-                      - 0x00000000e0004000
-                      - 0x00000000f0004000
+                      - 0x0000000080000800
+                      - 0x0000000090000800
+                      - 0x00000000a0000800
+                      - 0x00000000b0000800
+                      - 0x00000000c0000800
+                      - 0x00000000d0000800
+                      - 0x00000000e0000800
+                      - 0x00000000f0000800
                   - StartAddr: !<value>
                       - 0x0000000080000000
                       - 0x0000000090000000
@@ -354,15 +354,15 @@
               - FormatSignWidth: !<value> 0x00
               - InputMuxSel: !<value>
                   - Ch0
-                  - Ch1
-                  - Ch2
+                  - Disabled
+                  - Disabled
                   - Ch3
                   - Ch0
-                  - Ch1
-                  - Ch2
+                  - Disabled
+                  - Disabled
                   - Ch3
               - DecimationRateDiv: !<value> 0x0000
-              - DataBufferSize: !<value> 0x00001000
+              - DataBufferSize: !<value> 0x00000200
               - FreezeHwMask: !<value>
                   - Disabled
                   - Disabled
