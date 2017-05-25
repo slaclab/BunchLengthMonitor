@@ -10,13 +10,13 @@
 #
 file statusBitDecode.db
 {
-pattern   {P, SRC1, SRC2, DEST, SCAN}
+pattern   {P, INSERTED, REMOVED, STATUS, SCAN}
 
 # P is the PV prefix
-# SRC1 is the first PV to be decoded into Shut1, Shut2, Filt1, Filt2, Filt3, Filt4
-# SRC2 is the second PV to be decoded into Shut1, Shut2, Filt1, Filt2, Filt3, Filt4
-# DEST is (SRC1 NOR SRC2) decoded into Shut1, Shut2, Filt1, Filt2, Filt3, Filt4
+# INSERTED is attribute of PV providing status bits input
+# REMOVED  is attribute of PV providing status bits input
+# STATUS is base of attributes providing calc record outputs
 # SCAN is the SCAN field
 
-          { $(P), "Inserted", "Removed", "Moving", ".5 second"}
+          { $(P), "Inserted", "Removed", "Status", ".5 second"}
 }
