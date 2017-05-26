@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 2861
-y 464
+x 3143
+y 598
 w 615
 h 519
 font "helvetica-medium-r-18.0"
@@ -43,16 +43,16 @@ beginObjectProperties
 major 4
 minor 1
 release 1
-x 230
+x 200
 y 20
-w 108
+w 136
 h 21
 font "helvetica-bold-r-18.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
 value {
-  "BLEN Mode"
+  "$(MADX) Mode"
 }
 autoSize
 endObjectProperties
