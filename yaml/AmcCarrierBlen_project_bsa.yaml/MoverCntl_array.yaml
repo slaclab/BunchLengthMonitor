@@ -56,7 +56,6 @@ MoverCntl: &MoverCntl
       at:
         offset: 0x0010
         nelms: 16
-        stride: 4
       encoding: IEEE_754
       sizeBits: 32
       mode: RW
