@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 2766
-y 250
+x 2782
+y 336
 w 776
 h 860
 font "helvetica-medium-r-12.0"
@@ -548,108 +548,6 @@ fill
 fillColor index 3
 endObjectProperties
 
-# (X-Y Graph)
-object xyGraphClass
-beginObjectProperties
-major 4
-minor 8
-release 0
-# Geometry
-x 88
-y 264
-w 328
-h 208
-# Appearance
-border
-graphTitle "$(MAD)A"
-fgColor index 14
-bgColor index 0
-gridColor index 14
-font "helvetica-medium-r-12.0"
-# Operating Modes
-plotMode "plotLastNPts"
-nPts 400
-# X axis properties
-showXAxis
-xAxisSrc "fromUser"
-xMin 0
-xMax 400
-xLabelIntervals 3
-# Y axis properties
-showYAxis
-yAxisSrc "AutoScale"
-yMin -1000
-yMax 66000
-yLabelIntervals 3
-# Y2 axis properties
-y2AxisSrc "AutoScale"
-y2Max 1
-# Trace Properties
-numTraces 1
-yPv {
-  0 "$(amc0_prefix):Stream0_16"
-}
-lineThickness {
-  0 2
-}
-plotUpdateMode {
-  0 "y"
-}
-plotColor {
-  0 index 14
-}
-endObjectProperties
-
-# (X-Y Graph)
-object xyGraphClass
-beginObjectProperties
-major 4
-minor 8
-release 0
-# Geometry
-x 432
-y 264
-w 328
-h 208
-# Appearance
-border
-graphTitle "$(MAD)B"
-fgColor index 19
-bgColor index 0
-gridColor index 14
-font "helvetica-medium-r-12.0"
-# Operating Modes
-plotMode "plotLastNPts"
-nPts 400
-# X axis properties
-showXAxis
-xAxisSrc "fromUser"
-xMin 0
-xMax 400
-# Y axis properties
-showYAxis
-yAxisSrc "AutoScale"
-yMin -1000
-yMax 66000
-# Y2 axis properties
-y2AxisSrc "AutoScale"
-y2Max 1
-# Trace Properties
-numTraces 1
-yPv {
-  0 "$(amc1_prefix):Stream0_16"
-}
-lineThickness {
-  0 2
-}
-plotUpdateMode {
-  0 "y"
-}
-plotColor {
-  0 index 19
-}
-endObjectProperties
-
 # (Static Text)
 object activeXTextClass
 beginObjectProperties
@@ -1156,107 +1054,6 @@ symbols {
 }
 endObjectProperties
 
-# (X-Y Graph)
-object xyGraphClass
-beginObjectProperties
-major 4
-minor 8
-release 0
-# Geometry
-x 88
-y 488
-w 328
-h 208
-# Appearance
-border
-graphTitle "$(MAD)A"
-fgColor index 14
-bgColor index 0
-gridColor index 14
-font "helvetica-medium-r-12.0"
-# Operating Modes
-plotMode "plotLastNPts"
-nPts 400
-# X axis properties
-showXAxis
-xAxisSrc "fromUser"
-xMin 0
-xMax 400
-xLabelIntervals 200
-# Y axis properties
-showYAxis
-yAxisSrc "AutoScale"
-yMin -1000
-yMax 66000
-# Y2 axis properties
-y2AxisSrc "AutoScale"
-y2Max 1
-# Trace Properties
-numTraces 1
-yPv {
-  0 "$(amc0_prefix):Stream3_16"
-}
-lineThickness {
-  0 2
-}
-plotUpdateMode {
-  0 "y"
-}
-plotColor {
-  0 index 14
-}
-endObjectProperties
-
-# (X-Y Graph)
-object xyGraphClass
-beginObjectProperties
-major 4
-minor 8
-release 0
-# Geometry
-x 432
-y 488
-w 328
-h 208
-# Appearance
-border
-graphTitle "$(MAD)B"
-fgColor index 19
-bgColor index 0
-gridColor index 14
-font "helvetica-medium-r-12.0"
-# Operating Modes
-plotMode "plotLastNPts"
-nPts 400
-# X axis properties
-showXAxis
-xAxisSrc "fromUser"
-xMin 0
-xMax 400
-# Y axis properties
-showYAxis
-yAxisSrc "AutoScale"
-yMin -1000
-yMax 66000
-# Y2 axis properties
-y2AxisSrc "AutoScale"
-y2Max 1
-# Trace Properties
-numTraces 1
-yPv {
-  0 "$(amc1_prefix):Stream3_16"
-}
-lineThickness {
-  0 2
-}
-plotUpdateMode {
-  0 "y"
-}
-plotColor {
-  0 index 19
-}
-endObjectProperties
-
 # (Choice Button)
 object activeChoiceButtonClass
 beginObjectProperties
@@ -1407,5 +1204,392 @@ displayFileName {
 menuLabel {
   0 "$(MAD)A"
 }
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 88
+y 264
+w 328
+h 432
+
+beginGroup
+
+# (X-Y Graph)
+object xyGraphClass
+beginObjectProperties
+major 4
+minor 8
+release 0
+# Geometry
+x 88
+y 488
+w 328
+h 208
+# Appearance
+border
+graphTitle "$(MAD)A"
+fgColor index 14
+bgColor index 0
+gridColor index 14
+font "helvetica-medium-r-12.0"
+# Operating Modes
+plotMode "plotLastNPts"
+nPts 400
+# X axis properties
+showXAxis
+xAxisSrc "fromUser"
+xMin 0
+xMax 400
+xLabelIntervals 200
+# Y axis properties
+showYAxis
+yAxisSrc "AutoScale"
+yMin -1000
+yMax 66000
+# Y2 axis properties
+y2AxisSrc "AutoScale"
+y2Max 1
+# Trace Properties
+numTraces 1
+yPv {
+  0 "$(amc0_prefix):Stream3_16"
+}
+lineThickness {
+  0 2
+}
+plotUpdateMode {
+  0 "y"
+}
+plotColor {
+  0 index 14
+}
+endObjectProperties
+
+# (X-Y Graph)
+object xyGraphClass
+beginObjectProperties
+major 4
+minor 8
+release 0
+# Geometry
+x 88
+y 264
+w 328
+h 208
+# Appearance
+border
+graphTitle "$(MAD)A"
+fgColor index 14
+bgColor index 0
+gridColor index 14
+font "helvetica-medium-r-12.0"
+# Operating Modes
+plotMode "plotLastNPts"
+nPts 400
+# X axis properties
+showXAxis
+xAxisSrc "fromUser"
+xMin 0
+xMax 400
+xLabelIntervals 3
+# Y axis properties
+showYAxis
+yAxisSrc "AutoScale"
+yMin -1000
+yMax 66000
+yLabelIntervals 3
+# Y2 axis properties
+y2AxisSrc "AutoScale"
+y2Max 1
+# Trace Properties
+numTraces 1
+yPv {
+  0 "$(amc0_prefix):Stream0_16"
+}
+lineThickness {
+  0 2
+}
+plotUpdateMode {
+  0 "y"
+}
+plotColor {
+  0 index 14
+}
+endObjectProperties
+
+endGroup
+
+visPv "$(amc0_prefix):AutoRearmRBV"
+visMin "1"
+visMax "2"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 432
+y 264
+w 328
+h 432
+
+beginGroup
+
+# (X-Y Graph)
+object xyGraphClass
+beginObjectProperties
+major 4
+minor 8
+release 0
+# Geometry
+x 432
+y 264
+w 328
+h 208
+# Appearance
+border
+graphTitle "$(MAD)B"
+fgColor index 19
+bgColor index 0
+gridColor index 14
+font "helvetica-medium-r-12.0"
+# Operating Modes
+plotMode "plotLastNPts"
+nPts 400
+# X axis properties
+showXAxis
+xAxisSrc "fromUser"
+xMin 0
+xMax 400
+# Y axis properties
+showYAxis
+yAxisSrc "AutoScale"
+yMin -1000
+yMax 66000
+# Y2 axis properties
+y2AxisSrc "AutoScale"
+y2Max 1
+# Trace Properties
+numTraces 1
+yPv {
+  0 "$(amc1_prefix):Stream0_16"
+}
+lineThickness {
+  0 2
+}
+plotUpdateMode {
+  0 "y"
+}
+plotColor {
+  0 index 19
+}
+endObjectProperties
+
+# (X-Y Graph)
+object xyGraphClass
+beginObjectProperties
+major 4
+minor 8
+release 0
+# Geometry
+x 432
+y 488
+w 328
+h 208
+# Appearance
+border
+graphTitle "$(MAD)B"
+fgColor index 19
+bgColor index 0
+gridColor index 14
+font "helvetica-medium-r-12.0"
+# Operating Modes
+plotMode "plotLastNPts"
+nPts 400
+# X axis properties
+showXAxis
+xAxisSrc "fromUser"
+xMin 0
+xMax 400
+# Y axis properties
+showYAxis
+yAxisSrc "AutoScale"
+yMin -1000
+yMax 66000
+# Y2 axis properties
+y2AxisSrc "AutoScale"
+y2Max 1
+# Trace Properties
+numTraces 1
+yPv {
+  0 "$(amc1_prefix):Stream3_16"
+}
+lineThickness {
+  0 2
+}
+plotUpdateMode {
+  0 "y"
+}
+plotColor {
+  0 index 19
+}
+endObjectProperties
+
+endGroup
+
+visPv "$(amc1_prefix):AutoRearmRBV"
+visMin "1"
+visMax "2"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 192
+y 288
+w 136
+h 24
+
+beginGroup
+
+# (Button)
+object activeButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 192
+y 288
+w 136
+h 24
+fgColor index 14
+onColor index 4
+offColor index 4
+inconsistentColor index 12
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(amc0_prefix):AutoRearm"
+indicatorPv "$(amc0_prefix):AutoRearmRBV"
+onLabel "On"
+offLabel "Off"
+labelType "literal"
+3d
+invisible
+font "helvetica-medium-r-12.0"
+objType "controls"
+visMin "0"
+visMax "1"
+controlBitPos 0
+readBitPos 0
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 200
+y 296
+w 109
+h 13
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 4
+useDisplayBg
+value {
+  "Enable Waveform A"
+}
+autoSize
+endObjectProperties
+
+endGroup
+
+visPv "$(amc0_prefix):AutoRearmRBV"
+visInvert
+visMin "1"
+visMax "2"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 520
+y 288
+w 136
+h 24
+
+beginGroup
+
+# (Button)
+object activeButtonClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 520
+y 288
+w 136
+h 24
+fgColor index 14
+onColor index 4
+offColor index 4
+inconsistentColor index 12
+topShadowColor index 1
+botShadowColor index 11
+controlPv "$(amc1_prefix):AutoRearm"
+indicatorPv "$(amc1_prefix):AutoRearmRBV"
+onLabel "On"
+offLabel "Off"
+labelType "literal"
+3d
+invisible
+font "helvetica-medium-r-12.0"
+objType "controls"
+visMin "0"
+visMax "1"
+controlBitPos 0
+readBitPos 0
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 528
+y 296
+w 109
+h 13
+font "helvetica-medium-r-12.0"
+fgColor index 14
+bgColor index 4
+useDisplayBg
+value {
+  "Enable Waveform B"
+}
+autoSize
+endObjectProperties
+
+endGroup
+
+visPv "$(amc1_prefix):AutoRearmRBV"
+visInvert
+visMin "1"
+visMax "2"
 endObjectProperties
 
