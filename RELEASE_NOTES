@@ -9,6 +9,8 @@
 #  Auth: 10-May-2017 C. Ford         (caf)
 #  Rev:  dd-mmm-yyyy, Reviewer's Name    (USERNAME)
 #--------------------------------------------------------------
+R1.0.4: Add buttons to top-level screen for enabling waveform display.
+        Update YAML files to support V3 firmware. 
 R1.0.3: Update YAML files to support new firmware, upstream bug fixes.
 R1.0.2: Build with: ycpswasyn R1.1.6
                     bsaDriver R0.9.9
