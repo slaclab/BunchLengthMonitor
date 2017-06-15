@@ -123,3 +123,53 @@ CmnConfig: &CmnConfig
       mode: RO
       description: "Local Time Stamp Lower Part"
     #########################################################
+    TmitInvalid:
+      class: IntField
+      at:
+        offset: 0x0034
+      sizeBits: 1
+      lsBit: 1
+      mode: RO
+      description: "Indicate TMIT is invalid"
+    #########################################################
+    TmitSmall:
+      class: IntField
+      at:
+        offset: 0x0034
+      sizeBits: 1
+      lsBit: 0
+      mode: RO
+      description: "Indicate TMIT is too small"
+    #########################################################
+    BsaWait:
+      class: IntField
+      at:
+        offset: 0x0038
+      sizeBits: 5
+      mode: RW
+      description: "Specify number of timing messages to wait for BP communication"
+    #########################################################
+    StatusOfBSA0:
+      class: IntField
+      at:
+        offset: 0x003C
+      sizeBits: 32
+      mode: RO
+      description: "Reflect BSA status health 0 "
+    #########################################################
+    StatusOfBSA1:
+      class: IntField
+      at:
+        offset: 0x0040
+      sizeBits: 32
+      mode: RO
+      description: "Reflect BSA status health 1 "
+    #########################################################
+    StatusOfBSA2:
+      class: IntField
+      at:
+        offset: 0x0044
+      sizeBits: 32
+      mode: RO
+      description: "Reflect BSA status health 2 "
+    #########################################################

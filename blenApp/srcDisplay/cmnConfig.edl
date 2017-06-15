@@ -3,10 +3,10 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 2642
-y 254
-w 702
-h 691
+x 1983
+y 194
+w 696
+h 776
 font "helvetica-medium-r-18.0"
 ctlFont "helvetica-medium-r-18.0"
 btnFont "helvetica-medium-r-18.0"
@@ -328,7 +328,7 @@ major 4
 minor 1
 release 1
 x 520
-y 450
+y 590
 w 40
 h 20
 font "helvetica-medium-r-18.0"
@@ -351,8 +351,8 @@ major 4
 minor 1
 release 1
 x 520
-y 450
-w 90
+y 590
+w 92
 h 20
 font "helvetica-medium-r-18.0"
 fgColor index 14
@@ -373,8 +373,8 @@ major 4
 minor 1
 release 1
 x 520
-y 480
-w 40
+y 620
+w 37
 h 20
 font "helvetica-medium-r-18.0"
 fgColor index 14
@@ -395,8 +395,8 @@ major 4
 minor 1
 release 1
 x 520
-y 480
-w 40
+y 620
+w 37
 h 20
 font "helvetica-medium-r-18.0"
 fgColor index 14
@@ -417,8 +417,8 @@ major 4
 minor 1
 release 1
 x 520
-y 480
-w 60
+y 620
+w 63
 h 20
 font "helvetica-medium-r-18.0"
 fgColor index 14
@@ -439,7 +439,7 @@ major 4
 minor 7
 release 0
 x 450
-y 450
+y 590
 w 60
 h 20
 controlPv "$(carrier_prefix):AppTypeRBV"
@@ -463,7 +463,7 @@ major 4
 minor 7
 release 0
 x 250
-y 450
+y 590
 w 170
 h 24
 controlPv "$(carrier_prefix):AppType"
@@ -489,7 +489,7 @@ major 4
 minor 1
 release 1
 x 30
-y 450
+y 590
 w 142
 h 20
 font "helvetica-medium-r-18.0"
@@ -509,7 +509,7 @@ major 4
 minor 7
 release 0
 x 450
-y 480
+y 620
 w 60
 h 20
 controlPv "$(carrier_prefix):LocationRBV"
@@ -533,7 +533,7 @@ major 4
 minor 7
 release 0
 x 250
-y 480
+y 620
 w 170
 h 24
 controlPv "$(carrier_prefix):Location"
@@ -559,7 +559,7 @@ major 4
 minor 1
 release 1
 x 30
-y 480
+y 620
 w 138
 h 20
 font "helvetica-medium-r-18.0"
@@ -579,7 +579,7 @@ major 4
 minor 7
 release 0
 x 450
-y 600
+y 740
 w 160
 h 20
 controlPv "$(carrier_prefix):CalibEnableRBV"
@@ -603,7 +603,7 @@ major 4
 minor 7
 release 0
 x 250
-y 600
+y 740
 w 170
 h 24
 controlPv "$(carrier_prefix):CalibEnable"
@@ -629,7 +629,7 @@ major 4
 minor 1
 release 1
 x 30
-y 600
+y 740
 w 167
 h 20
 font "helvetica-medium-r-18.0"
@@ -649,7 +649,7 @@ major 4
 minor 7
 release 0
 x 450
-y 570
+y 710
 w 160
 h 20
 controlPv "$(carrier_prefix):TreshTmitRBV"
@@ -673,7 +673,7 @@ major 4
 minor 7
 release 0
 x 250
-y 570
+y 710
 w 170
 h 24
 controlPv "$(carrier_prefix):TreshTmit"
@@ -699,7 +699,7 @@ major 4
 minor 1
 release 1
 x 30
-y 570
+y 710
 w 85
 h 20
 font "helvetica-medium-r-18.0"
@@ -719,7 +719,7 @@ major 4
 minor 7
 release 0
 x 450
-y 540
+y 680
 w 160
 h 20
 controlPv "$(carrier_prefix):SelBpmRBV"
@@ -743,7 +743,7 @@ major 4
 minor 7
 release 0
 x 250
-y 540
+y 680
 w 170
 h 24
 controlPv "$(carrier_prefix):SelBpm"
@@ -769,7 +769,7 @@ major 4
 minor 1
 release 1
 x 30
-y 540
+y 680
 w 131
 h 20
 font "helvetica-medium-r-18.0"
@@ -789,7 +789,7 @@ major 4
 minor 7
 release 0
 x 450
-y 510
+y 650
 w 160
 h 20
 controlPv "$(carrier_prefix):IMAXScale"
@@ -813,7 +813,7 @@ major 4
 minor 1
 release 1
 x 30
-y 510
+y 650
 w 96
 h 20
 font "helvetica-medium-r-18.0"
@@ -836,7 +836,7 @@ x 450
 y 410
 w 156
 h 20
-controlPv "$(carrier_prefix):LclTimeLow"
+controlPv "$(carrier_prefix):TmitSmall"
 format "float"
 font "helvetica-medium-r-18.0"
 fgColor index 14
@@ -859,14 +859,14 @@ minor 1
 release 1
 x 30
 y 410
-w 103
+w 86
 h 20
 font "helvetica-medium-r-18.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
 value {
-  "LclTimeLow"
+  "TmitSmall"
 }
 autoSize
 endObjectProperties
@@ -881,7 +881,7 @@ x 450
 y 380
 w 156
 h 20
-controlPv "$(carrier_prefix):LclTimeUp"
+controlPv "$(carrier_prefix):TmitInvalid"
 format "float"
 font "helvetica-medium-r-18.0"
 fgColor index 14
@@ -904,14 +904,14 @@ minor 1
 release 1
 x 30
 y 380
-w 92
+w 94
 h 20
 font "helvetica-medium-r-18.0"
 fgColor index 14
 bgColor index 0
 useDisplayBg
 value {
-  "LclTimeUp"
+  "TmitInvalid"
 }
 autoSize
 endObjectProperties
@@ -1329,5 +1329,230 @@ endObjectProperties
 
 endGroup
 
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 450
+y 440
+w 156
+h 20
+controlPv "$(carrier_prefix):StatusOfBsa0"
+format "hex"
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+autoHeight
+precision 5
+nullColor index 0
+useHexPrefix
+newPos
+objType "monitors"
+id "LclTimeLow"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 30
+y 440
+w 119
+h 20
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "StatusOfBsa0"
+}
+autoSize
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 450
+y 470
+w 156
+h 20
+controlPv "$(carrier_prefix):StatusOfBsa1"
+format "hex"
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+autoHeight
+precision 5
+nullColor index 0
+useHexPrefix
+newPos
+objType "monitors"
+id "LclTimeLow"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 30
+y 470
+w 119
+h 20
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "StatusOfBsa1"
+}
+autoSize
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 450
+y 500
+w 156
+h 20
+controlPv "$(carrier_prefix):StatusOfBsa2"
+format "hex"
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+autoHeight
+precision 5
+nullColor index 0
+useHexPrefix
+newPos
+objType "monitors"
+id "LclTimeLow"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 30
+y 500
+w 119
+h 20
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "StatusOfBsa2"
+}
+autoSize
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 450
+y 530
+w 156
+h 20
+controlPv "$(carrier_prefix):LclTimeUp"
+format "float"
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+autoHeight
+precision 5
+nullColor index 0
+useHexPrefix
+newPos
+objType "monitors"
+id "LclTimeLow"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 30
+y 530
+w 92
+h 20
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "LclTimeUp"
+}
+autoSize
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 450
+y 560
+w 156
+h 20
+controlPv "$(carrier_prefix):LclTimeLow"
+format "float"
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+autoHeight
+precision 5
+nullColor index 0
+useHexPrefix
+newPos
+objType "monitors"
+id "LclTimeLow"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 30
+y 560
+w 103
+h 20
+font "helvetica-medium-r-18.0"
+fgColor index 14
+bgColor index 0
+useDisplayBg
+value {
+  "LclTimeLow"
+}
+autoSize
 endObjectProperties
 

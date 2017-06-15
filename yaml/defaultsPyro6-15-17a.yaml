@@ -3162,4 +3162,9 @@
       - AmcCarrierBsa:
           - BsaWaveformEngine:
               - WaveformEngineBuffers:   
-                - Initialize: !<value> 0x1   
+                - Initialize: !<value> 0x1  
+  ## Reset  backplane synchronization 
+  - AppTop:                    
+      - AppCore:
+          - SysGen:
+              - RestartBpSync: !<value> 0x1              

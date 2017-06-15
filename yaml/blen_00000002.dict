@@ -41,6 +41,11 @@
 /mmio/AppTop/AppCore/CmnConfig/TmitStatus1                                                                TmitStatus1
 /mmio/AppTop/AppCore/CmnConfig/TmitTmit0                                                                  TmitTmit0
 /mmio/AppTop/AppCore/CmnConfig/TmitTmit1                                                                  TmitTmit1
+/mmio/AppTop/AppCore/CmnConfig/TmitInvalid                                                                TmitInvalid
+/mmio/AppTop/AppCore/CmnConfig/TmitSmall                                                                  TmitSmall
+/mmio/AppTop/AppCore/CmnConfig/StatusOfBSA0                                                               StatusOfBsa0
+/mmio/AppTop/AppCore/CmnConfig/StatusOfBSA1                                                               StatusOfBsa1
+/mmio/AppTop/AppCore/CmnConfig/StatusOfBSA2                                                               StatusOfBsa2
 /mmio/AppTop/AppCore/MoverCntl/MoverOnOff                                                                 MoverOnOff
 /mmio/AppTop/AppCore/MoverCntl/Inserted                                                                   Inserted
 /mmio/AppTop/AppCore/MoverCntl/Removed                                                                    Removed

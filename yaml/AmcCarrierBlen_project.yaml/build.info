@@ -1,0 +1,38 @@
+tag build-AmcCarrierBlen-0x00000005-20170615121341-leosap
+Tagger: Leonid Sapozhnikov <leosap@slac.stanford.edu>
+Date:   Thu Jun 15 14:04:41 2017 -0700
+
+PROJECT: AmcCarrierBlen
+
+FW_VERSION: 0x00000005
+
+BUILD_STRING: AmcCarrierBlen: Vivado v2016.4, x86_64, Built Thu Jun 15 12:13:41 PDT 2017 by leosap
+
+commit 7a29b4aba51e43481e67c10e2c0924fb359a034c
+Author: Leonid Sapozhnikov <leosap@slac.stanford.edu>
+Date:   Thu Jun 15 12:13:32 2017 -0700
+
+    Add BP link sync command to yaml
+
+diff --git a/firmware/common/AppLib/yaml/SysGen.yaml b/firmware/common/AppLib/yaml/SysGen.yaml
+index e96392b..617068e 100644
+--- a/firmware/common/AppLib/yaml/SysGen.yaml
++++ b/firmware/common/AppLib/yaml/SysGen.yaml
+@@ -52,14 +52,14 @@ SysGen: &SysGen
+       sequence:
+                     
+         # Disable mode bit
+-        - entry: DspPreprocConfig[0]/Mode
++        - entry: DspPreprocConfig/Mode
+           value: 0x0       
+         # 0.001 ms sleep
+         - entry: usleep
+           value: 1       
+ 
+-        # Disable mode bit
+-        - entry: DspPreprocConfig[0]/Mode
++        # Enable mode bit
++        - entry: DspPreprocConfig/Mode
+           value: 0x1       
+         # 0.1 ms sleep
+         - entry: usleep

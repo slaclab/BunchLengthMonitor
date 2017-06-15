@@ -56,7 +56,7 @@ BpmCommonRegs: &BpmCommonRegs
         { offset:  0x01}
     Tmit:
       class:       IntField
-      description: "Sum of amplitude Channels A+B+C+D"
+      description: "Sum of amplitude Channels GRN+RED+BLU+YLO"
       mode:        RO
       at:
         { offset:  0x04}
@@ -90,13 +90,13 @@ BpmCommonRegs: &BpmCommonRegs
         { offset:  0x14}
     TMIT_U:
       class:       IntField
-      description: "A+C"
+      description: "GRN+BLU"
       mode:        RO
       at:
         { offset:  0x18}
     TMIT_V:
       class:       IntField
-      description: "B+D"
+      description: "RED+YLO"
       mode:        RO
       at:
         { offset:  0x1C}

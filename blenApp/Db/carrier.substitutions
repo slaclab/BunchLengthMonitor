@@ -43,6 +43,11 @@ file "RegisterIn.template" { pattern
 { $(P), TmitTmit1,      "",                             "YES",  "1 second", $(PORT),   "",   TmitTmit1     }
 { $(P), LclTimeUp,      "",                             "YES",  "1 second", $(PORT),   "",   LclTimeUp     }
 { $(P), LclTimeLow,     "",                             "YES",  "1 second", $(PORT),   "",   LclTimeLow    }
+{ $(P), TmitInvalid,    "",                             "YES",  "1 second", $(PORT),   "",   TmitInvalid   }
+{ $(P), TmitSmall,      "",                             "YES",  "1 second", $(PORT),   "",   TmitSmall     }
+{ $(P), StatusOfBsa0,   "",                             "YES",  "1 second", $(PORT),   "",   StatusOfBsa0  }
+{ $(P), StatusOfBsa1,   "",                             "YES",  "1 second", $(PORT),   "",   StatusOfBsa1  }
+{ $(P), StatusOfBsa2,   "",                             "YES",  "1 second", $(PORT),   "",   StatusOfBsa2  }
 # MoverCntl status
 { $(P), StatusLimitSw,  "",                             "YES",  "1 second", $(PORT),   "",   StatusLimitSwitches }
 { $(P), Inserted,       "",                             "YES",  "1 second", $(PORT),   "",   Inserted      }

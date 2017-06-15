@@ -44,3 +44,25 @@ SysGen: &SysGen
         nelms:  4
         stride: 0x00010000
    ##################################################
+    RestartBpSync:
+      description: "Restart BP sync SM after configuration complete"
+      at:
+        offset: 0x0
+      class: SequenceCommand
+      sequence:
+                    
+        # Disable mode bit
+        - entry: DspPreprocConfig/Mode
+          value: 0x0       
+        # 0.001 ms sleep
+        - entry: usleep
+          value: 1       
+
+        # Enable mode bit
+        - entry: DspPreprocConfig/Mode
+          value: 0x1       
+        # 0.1 ms sleep
+        - entry: usleep
+          value: 100  
+          
+
