@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 2220
-y 305
+x 2224
+y 329
 w 780
 h 696
 font "helvetica-medium-r-12.0"
@@ -514,7 +514,7 @@ y2Max 1
 # Trace Properties
 numTraces 1
 yPv {
-  0 "$(amc0_prefix):Stream3_16"
+  0 "$(amc0_prefix):IWFS"
 }
 lineThickness {
   0 2
@@ -566,7 +566,7 @@ y2Max 1
 # Trace Properties
 numTraces 1
 yPv {
-  0 "$(amc0_prefix):Stream0_16"
+  0 "$(amc0_prefix):RWFS"
 }
 lineThickness {
   0 2
@@ -636,7 +636,7 @@ y2Max 1
 # Trace Properties
 numTraces 1
 yPv {
-  0 "$(amc1_prefix):Stream0_16"
+  0 "$(amc1_prefix):RWFS"
 }
 lineThickness {
   0 2
@@ -686,7 +686,7 @@ y2Max 1
 # Trace Properties
 numTraces 1
 yPv {
-  0 "$(amc1_prefix):Stream3_16"
+  0 "$(amc1_prefix):IWFS"
 }
 lineThickness {
   0 2

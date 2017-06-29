@@ -218,9 +218,9 @@ file "RegisterCommand.template" { pattern
 #======================================
 
 file "RegisterStream.template" {pattern
-{ P,            R,          DESC,               NELM,       PINI,   PORT,   PARAM       }
-{ $(P),   Stream0,    "Stream channel 0", 1000,    "NO",   $(PORT),     AMC$(AMC):Stream0  }
-{ $(P),   Stream3,    "Stream channel 3", 1000,    "NO",   $(PORT),     AMC$(AMC):Stream3  }
+{ P,      R,      DESC,                                   NELM,    PINI,   PORT,     PARAM       }
+{ $(P),   RWF,    "Raw waveform (32-bit)",                1000,    "NO",   $(PORT),  AMC$(AMC):Stream0  }
+{ $(P),   IWF,    "Integration window waveform (32-bit)", 1000,    "NO",   $(PORT),  AMC$(AMC):Stream3  }
 }
 
 # For Stream interfaces, an additional parameter is automatically created
@@ -229,7 +229,7 @@ file "RegisterStream.template" {pattern
 # is the case for ADC samples for example. Note that the NELM is 2x
 
 file "RegisterStream16.template" {pattern
-{ P,            R,          DESC,                           NELM,        PINI,  PORT,  PARAM         }
-{ $(P),     Stream0_16, "Stream channel 0 (16-bit)",  2000,    "NO",  $(PORT),    AMC$(AMC):Stream0:16 }
-{ $(P),     Stream3_16, "Stream channel 3 (16-bit)",  2000,    "NO",  $(PORT),    AMC$(AMC):Stream3:16 }
+{ P,      R,      DESC,                                   NELM,    PINI,   PORT,     PARAM       }
+{ $(P),   RWFS,   "Raw waveform (16-bit)",                2000,    "NO",   $(PORT),  AMC$(AMC):Stream0:16  }
+{ $(P),   IWFS,   "Integration window waveform (16-bit)", 2000,    "NO",   $(PORT),  AMC$(AMC):Stream3:16  }
 }
