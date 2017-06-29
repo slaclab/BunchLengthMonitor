@@ -1,38 +1,23 @@
-tag build-AmcCarrierBlen-0x00000005-20170615121341-leosap
+tag build-AmcCarrierBlen-0x00000005-20170623001051-leosap
 Tagger: Leonid Sapozhnikov <leosap@slac.stanford.edu>
-Date:   Thu Jun 15 14:04:41 2017 -0700
+Date:   Fri Jun 23 02:01:34 2017 -0700
 
 PROJECT: AmcCarrierBlen
 
 FW_VERSION: 0x00000005
 
-BUILD_STRING: AmcCarrierBlen: Vivado v2016.4, x86_64, Built Thu Jun 15 12:13:41 PDT 2017 by leosap
+BUILD_STRING: AmcCarrierBlen: Vivado v2016.4, x86_64, Built Fri Jun 23 00:10:51 PDT 2017 by leosap
 
-commit 7a29b4aba51e43481e67c10e2c0924fb359a034c
+commit 50d11784f565eeb1412ec69e24b76df970a6ad2a
 Author: Leonid Sapozhnikov <leosap@slac.stanford.edu>
-Date:   Thu Jun 15 12:13:32 2017 -0700
+Date:   Fri Jun 23 00:09:31 2017 -0700
 
-    Add BP link sync command to yaml
+    Update to the latest releases
 
-diff --git a/firmware/common/AppLib/yaml/SysGen.yaml b/firmware/common/AppLib/yaml/SysGen.yaml
-index e96392b..617068e 100644
---- a/firmware/common/AppLib/yaml/SysGen.yaml
-+++ b/firmware/common/AppLib/yaml/SysGen.yaml
-@@ -52,14 +52,14 @@ SysGen: &SysGen
-       sequence:
-                     
-         # Disable mode bit
--        - entry: DspPreprocConfig[0]/Mode
-+        - entry: DspPreprocConfig/Mode
-           value: 0x0       
-         # 0.001 ms sleep
-         - entry: usleep
-           value: 1       
- 
--        # Disable mode bit
--        - entry: DspPreprocConfig[0]/Mode
-+        # Enable mode bit
-+        - entry: DspPreprocConfig/Mode
-           value: 0x1       
-         # 0.1 ms sleep
-         - entry: usleep
+Submodule firmware/submodules/lcls-bpm-core 9372c87..b8ecfe1:
+  > Update to the latest releases
+Submodule firmware/submodules/ruckus f063592..da1bf41:
+  > updating 'make test' prinout
+Submodule firmware/submodules/surf 0ac3e2e6..eeeeaf93:
+  > Merge pull request #33 from slaclab/cryo-det-dev
+  > bug fix for Vivado 2017.1 support

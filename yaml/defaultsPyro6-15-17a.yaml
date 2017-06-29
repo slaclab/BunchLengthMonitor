@@ -224,8 +224,7 @@
               - BsaNtoAvg: !<value> 0x0000
               - BsaDestSel: !<value> 0x00000
               - BsaRateSel: !<value> 0x0000
-              - BsaCompleteU: !<value> 0x00000000
-              - BsaCompleteL: !<value> 0x00000000
+              - BsaCompleteWr: !<value> 0x0000000000000000
               - RateReload: !<value> 0x0
               - FixedRateDiv: !<value>
                   - 0x00000001
@@ -238,11 +237,9 @@
                   - 0x00000000
                   - 0x00000000
                   - 0x00000000
-              - TStampU: !<value> 0x0003ed69
-              - TStampL: !<value> 0x01d5b05f
-              - PulseIdL: !<value> 0x70b47580
+              - TStampWr: !<value> 0x000006c50a74bcaf
+              - PulseIdWr: !<value> 0x000000005ffb5278
               - BaseControl: !<value> 0x00c8
-              - PulseIdU: !<value> 0x00000041
               - TxInhibit: !<value> 0x0
               - TxLoopback: !<value> 0x0
               - TxPolarity: !<value> 0x0

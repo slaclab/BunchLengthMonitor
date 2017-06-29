@@ -15,6 +15,8 @@ TPGMiniCore: &TPGMiniCore
   configPrio: 1
   description: Embedded timing pattern generator
   size: 0x10000
+  metadata:
+    NARRAYSBSA: &NARRAYSBSA 2
   children:
     TxReset:
       at:
@@ -23,7 +25,7 @@ TPGMiniCore: &TPGMiniCore
       name: TxReset
       sizeBits: 1
       lsBit: 0
-      mode: RW
+      mode: WO
       description: Reset transmit link
     TxPolarity:
     #########################################################
@@ -65,42 +67,42 @@ TPGMiniCore: &TPGMiniCore
       lsBit: 0
       mode: RW
       description: Base rate trigger divisor
-    PulseIdL:
+    PulseIdWr:
     #########################################################
       at:
         offset: 0x0008
       class: IntField
-      name: PulseIdL
-      sizeBits: 32
-      mode: RW
-      description: Pulse ID lower word
-    PulseIdU:
+      name: PulseIdWr
+      sizeBits: 64
+      mode: WO
+      description: Pulse ID write
+    PulseIdRd:
     #########################################################
       at:
-        offset: 0x000C
+        offset: 0x0008
       class: IntField
-      name: PulseIdU
-      sizeBits: 32
-      mode: RW
-      description: Pulse ID upper word
-    TStampL:
+      name: PulseIdRd
+      sizeBits: 64
+      mode: RO
+      description: Pulse ID read
+    TStampWr:
     #########################################################
       at:
         offset: 0x0010
       class: IntField
-      name: TStampL
-      sizeBits: 32
-      mode: RW
-      description: Time stamp lower word
-    TStampU:
+      name: TStampWr
+      sizeBits: 64
+      mode: WO
+      description: Time stamp write
+    TStampRd:
     #########################################################
       at:
-        offset: 0x0014
+        offset: 0x0010
       class: IntField
-      name: TStampU
-      sizeBits: 32
-      mode: RW
-      description: Time stamp upper word
+      name: TStampRd
+      sizeBits: 64
+      mode: RO
+      description: Time stamp read
     FixedRateDiv:
     #########################################################
       at:
@@ -171,30 +173,30 @@ TPGMiniCore: &TPGMiniCore
       lsBit: 4
       mode: RO
       description: Number of beam allow engines
-    BsaCompleteL:
+    BsaCompleteWr:
     #########################################################
       at:
         offset: 0x0050
       class: IntField
-      name: BsaCompleteL
-      sizeBits: 32
-      mode: RW
-      description: BSA complete lower word
-    BsaCompleteU:
+      name: BsaCompleteWr
+      sizeBits: 64
+      mode: WO
+      description: BSA complete write
+    BsaCompleteRd:
     #########################################################
       at:
-        offset: 0x0054
+        offset: 0x0050
       class: IntField
-      name: BsaCompleteU
-      sizeBits: 32
-      mode: RW
-      description: BSA complete upper word
+      name: BsaCompleteRd
+      sizeBits: 64
+      mode: RO
+      description: BSA complete read
     BsaRateSel:
     #########################################################
       at:
         offset: 0x0200
         stride: 8
-        nelms: 64
+        nelms: *NARRAYSBSA
       class: IntField
       name: BsaRateSel
       sizeBits: 13
@@ -206,7 +208,7 @@ TPGMiniCore: &TPGMiniCore
       at:
         offset: 0x0201
         stride: 8
-        nelms: 64
+        nelms: *NARRAYSBSA
       class: IntField
       name: BsaDestSel
       sizeBits: 19
@@ -218,7 +220,7 @@ TPGMiniCore: &TPGMiniCore
       at:
         offset: 0x0204
         stride: 8
-        nelms: 64
+        nelms: *NARRAYSBSA
       class: IntField
       name: BsaNtoAvg
       sizeBits: 16
@@ -230,7 +232,7 @@ TPGMiniCore: &TPGMiniCore
       at:
         offset: 0x0206
         stride: 8
-        nelms: 64
+        nelms: *NARRAYSBSA
       class: IntField
       name: BsaAvgToWr
       sizeBits: 16

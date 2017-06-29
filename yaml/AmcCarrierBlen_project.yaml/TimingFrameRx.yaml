@@ -181,6 +181,16 @@ TimingFrameRx: &TimingFrameRx
       mode: RW
       description: LCLS-II timing frame pipeline delay (186MHz clks)
     #########################################################
+    MsgDelayRst:
+      at:
+        offset: 0x0027
+      class: IntField
+      name: MsgDelayRst
+      sizeBits: 1
+      lsBit: 7
+      mode: RW
+      description: Reset timing frame pipeline with new value
+    #########################################################
     TxClkCount:
       at:
         offset: 0x0028

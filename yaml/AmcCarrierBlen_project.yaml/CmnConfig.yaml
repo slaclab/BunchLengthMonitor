@@ -141,14 +141,6 @@ CmnConfig: &CmnConfig
       mode: RO
       description: "Indicate TMIT is too small"
     #########################################################
-    BsaWait:
-      class: IntField
-      at:
-        offset: 0x0038
-      sizeBits: 5
-      mode: RW
-      description: "Specify number of timing messages to wait for BP communication"
-    #########################################################
     StatusOfBSA0:
       class: IntField
       at:
