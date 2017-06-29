@@ -71,66 +71,66 @@ file "RegisterEnumBIn.template" { pattern
 
 file "RegisterOut.template" { pattern
 { P,        R,              DESC,                                       PINI,   SCAN,       PORT,  PARAM       }
-{ $(P), SENS0:Mode,           "BLEN mode"                         "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS0:Mode }
-{ $(P), SENS1:Mode,           "BLEN mode"                         "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS1:Mode }
-{ $(P), SENS0:NumSamp0,       "Number of samples 0"               "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS0:NumSamp0 }
-{ $(P), SENS1:NumSamp0,       "Number of samples 0"               "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS1:NumSamp0 }
-{ $(P), SENS0:NumSamp1,       "Number of samples 1"               "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS0:NumSamp1 }
-{ $(P), SENS1:NumSamp1,       "Number of samples 1"               "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS1:NumSamp1 }
-{ $(P), SENS0:TrigDelay1,     ""                                  "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS0:TrigDelay1 }
-{ $(P), SENS1:TrigDelay1,     ""                                  "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS1:TrigDelay1 }
-{ $(P), SENS0:TrigDelay2,     ""                                  "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS0:TrigDelay2 }
-{ $(P), SENS1:TrigDelay2,     ""                                  "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS1:TrigDelay2 }
+{ $(P), ModeS0,             "BLEN mode, sensor 0"               "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS0:Mode }
+{ $(P), ModeS1,             "BLEN mode, sensor 1"               "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS1:Mode }
+{ $(P), NumSamp0S0,         "Number of samples 0, sensor 0"     "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS0:NumSamp0 }
+{ $(P), NumSamp0S1,         "Number of samples 0, sensor 1"     "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS1:NumSamp0 }
+{ $(P), NumSamp1S0,         "Number of samples 1, sensor 0"     "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS0:NumSamp1 }
+{ $(P), NumSamp1S1,         "Number of samples 1, sensor 1"     "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS1:NumSamp1 }
+{ $(P), TrigDelay1S0,       ""                                  "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS0:TrigDelay1 }
+{ $(P), TrigDelay1S1,       ""                                  "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS1:TrigDelay1 }
+{ $(P), TrigDelay2S0,       ""                                  "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS0:TrigDelay2 }
+{ $(P), TrigDelay2S1,       ""                                  "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS1:TrigDelay2 }
 # Trigger to Waveforms (TLR4)
-{ $(P), TLR4:SelFld,    "fields to use for trig msg comparison",  "NO",   "Passive",  $(PORT),    AMC$(AMC):TLR4:SelFld }
-{ $(P), TLR4:SelSrc,    "soft-b0, tmg-b01, trig0-b10, trig1-b11", "NO",   "Passive",  $(PORT),    AMC$(AMC):TLR4:SelSrc }
-{ $(P), TLR4:SftTrig,   "used field to only mask bit of interest","NO",   "Passive",  $(PORT),    AMC$(AMC):TLR4:SftTrig }
-{ $(P), TLR4:BeamRq,    "used field to only mask bit of interest","NO",   "Passive",  $(PORT),    AMC$(AMC):TLR4:BeamRq }
-{ $(P), TLR4:FxRate,    "used field to only mask bit of interest","NO",   "Passive",  $(PORT),    AMC$(AMC):TLR4:FxRate }
-{ $(P), TLR4:OutPol,    "trigger invert: normal b0, inverted b1", "NO",   "Passive",  $(PORT),    AMC$(AMC):TLR4:OutPol }
-{ $(P), TLR4:TrigDly,   "trigger delay in clock cycles",          "NO",   "Passive",  $(PORT),    AMC$(AMC):TLR4:TrigDly }
-{ $(P), TLR4:TrigStr,   "trigger stretch in clock cycles",        "NO",   "Passive",  $(PORT),    AMC$(AMC):TLR4:TrigStr }
+{ $(P), SelFld4,    "fields to use for trig msg comparison",  "NO",   "Passive",  $(PORT),    AMC$(AMC):TLR4:SelFld }
+{ $(P), SelSrc4,    "soft-b0, tmg-b01, trig0-b10, trig1-b11", "NO",   "Passive",  $(PORT),    AMC$(AMC):TLR4:SelSrc }
+{ $(P), SftTrig4,   "used field to only mask bit of interest","NO",   "Passive",  $(PORT),    AMC$(AMC):TLR4:SftTrig }
+{ $(P), BeamRq4,    "used field to only mask bit of interest","NO",   "Passive",  $(PORT),    AMC$(AMC):TLR4:BeamRq }
+{ $(P), FxRate4,    "used field to only mask bit of interest","NO",   "Passive",  $(PORT),    AMC$(AMC):TLR4:FxRate }
+{ $(P), OutPol4,    "trigger invert: normal b0, inverted b1", "NO",   "Passive",  $(PORT),    AMC$(AMC):TLR4:OutPol }
+{ $(P), TrigDly4,   "trigger delay in clock cycles",          "NO",   "Passive",  $(PORT),    AMC$(AMC):TLR4:TrigDly }
+{ $(P), TrigStr4,   "trigger stretch in clock cycles",        "NO",   "Passive",  $(PORT),    AMC$(AMC):TLR4:TrigStr }
 # Trigger to Calculations (TLR6)
-{ $(P), TLR6:SelFld,    "fields to use for trig msg comparison",  "NO",   "Passive",  $(PORT),    AMC$(AMC):TLR6:SelFld }
-{ $(P), TLR6:SelSrc,    "soft-b0, tmg-b01, trig0-b10, trig1-b11", "NO",   "Passive",  $(PORT),    AMC$(AMC):TLR6:SelSrc }
-{ $(P), TLR6:SftTrig,   "used field to only mask bit of interest","NO",   "Passive",  $(PORT),    AMC$(AMC):TLR6:SftTrig }
-{ $(P), TLR6:BeamRq,    "used field to only mask bit of interest","NO",   "Passive",  $(PORT),    AMC$(AMC):TLR6:BeamRq }
-{ $(P), TLR6:FxRate,    "used field to only mask bit of interest","NO",   "Passive",  $(PORT),    AMC$(AMC):TLR6:FxRate }
-{ $(P), TLR6:OutPol,    "trigger invert: normal b0, inverted b1", "NO",   "Passive",  $(PORT),    AMC$(AMC):TLR6:OutPol }
-{ $(P), TLR6:TrigDly,   "trigger delay in clock cycles",          "NO",   "Passive",  $(PORT),    AMC$(AMC):TLR6:TrigDly }
-{ $(P), TLR6:TrigStr,   "trigger stretch in clock cycles",        "NO",   "Passive",  $(PORT),    AMC$(AMC):TLR6:TrigStr }
+{ $(P), SelFld6,    "fields to use for trig msg comparison",  "NO",   "Passive",  $(PORT),    AMC$(AMC):TLR6:SelFld }
+{ $(P), SelSrc6,    "soft-b0, tmg-b01, trig0-b10, trig1-b11", "NO",   "Passive",  $(PORT),    AMC$(AMC):TLR6:SelSrc }
+{ $(P), SftTrig6,   "used field to only mask bit of interest","NO",   "Passive",  $(PORT),    AMC$(AMC):TLR6:SftTrig }
+{ $(P), BeamRq6,    "used field to only mask bit of interest","NO",   "Passive",  $(PORT),    AMC$(AMC):TLR6:BeamRq }
+{ $(P), FxRate6,    "used field to only mask bit of interest","NO",   "Passive",  $(PORT),    AMC$(AMC):TLR6:FxRate }
+{ $(P), OutPol6,    "trigger invert: normal b0, inverted b1", "NO",   "Passive",  $(PORT),    AMC$(AMC):TLR6:OutPol }
+{ $(P), TrigDly6,   "trigger delay in clock cycles",          "NO",   "Passive",  $(PORT),    AMC$(AMC):TLR6:TrigDly }
+{ $(P), TrigStr6,   "trigger stretch in clock cycles",        "NO",   "Passive",  $(PORT),    AMC$(AMC):TLR6:TrigStr }
 }
 
 file "RegisterOutRBV.template" { pattern
-{ P,           R,                DESC,                                     PINI,   SCAN,        PORT,  PARAM       }
-{ $(P), SENS0:ModeRBV,           "BLEN mode"                               "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS0:Mode }
-{ $(P), SENS1:ModeRBV,           "BLEN mode"                               "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS1:Mode }
-{ $(P), SENS0:NumSamp0RBV,       "Number of samples 0"                     "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS0:NumSamp0 }
-{ $(P), SENS1:NumSamp0RBV,       "Number of samples 0"                     "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS1:NumSamp0 }
-{ $(P), SENS0:NumSamp1RBV,       "Number of samples 1"                     "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS0:NumSamp1 }
-{ $(P), SENS1:NumSamp1RBV,       "Number of samples 1"                     "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS1:NumSamp1 }
-{ $(P), SENS0:TrigDelay1RBV,     ""                                  "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS0:TrigDelay1 }
-{ $(P), SENS1:TrigDelay1RBV,     ""                                  "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS1:TrigDelay1 }
-{ $(P), SENS0:TrigDelay2RBV,     ""                                  "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS0:TrigDelay2 }
-{ $(P), SENS1:TrigDelay2RBV,     ""                                  "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS1:TrigDelay2 }
+{ P,    R,                   DESC,                               PINI,   SCAN,        PORT,       PARAM       }
+{ $(P), ModeS0RBV,           "BLEN mode, sensor 0"               "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS0:Mode }
+{ $(P), ModeS1RBV,           "BLEN mode, sensor 1"               "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS1:Mode }
+{ $(P), NumSamp0S0RBV,       "Number of samples 0, sensor 0"     "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS0:NumSamp0 }
+{ $(P), NumSamp0S1RBV,       "Number of samples 0, sensor 1"     "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS1:NumSamp0 }
+{ $(P), NumSamp1S0RBV,       "Number of samples 1, sensor 0"     "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS0:NumSamp1 }
+{ $(P), NumSamp1S1RBV,       "Number of samples 1, sensor 1"     "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS1:NumSamp1 }
+{ $(P), TrigDelay1S0RBV,     ""                                  "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS0:TrigDelay1 }
+{ $(P), TrigDelay1S1RBV,     ""                                  "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS1:TrigDelay1 }
+{ $(P), TrigDelay2S0RBV,     ""                                  "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS0:TrigDelay2 }
+{ $(P), TrigDelay2S1RBV,     ""                                  "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS1:TrigDelay2 }
 # Trigger to Waveforms (TLR4)
-{ $(P), TLR4:SelFldRBV,    "fields to use for trig msg comparison",  "YES",  "1 second",  $(PORT),    AMC$(AMC):TLR4:SelFld }
-{ $(P), TLR4:SelSrcRBV,    "soft-b0, tmg-b01, trig0-b10, trig1-b11", "YES",  "1 second",  $(PORT),    AMC$(AMC):TLR4:SelSrc }
-{ $(P), TLR4:SftTrigRBV,   "used field to only mask bit of interest","YES",  "1 second",  $(PORT),    AMC$(AMC):TLR4:SftTrig }
-{ $(P), TLR4:BeamRqRBV,    "used field to only mask bit of interest","YES",  "1 second",  $(PORT),    AMC$(AMC):TLR4:BeamRq }
-{ $(P), TLR4:FxRateRBV,    "used field to only mask bit of interest","YES",  "1 second",  $(PORT),    AMC$(AMC):TLR4:FxRate }
-{ $(P), TLR4:OutPolRBV,    "trigger invert: normal b0, inverted b1", "YES",  "1 second",  $(PORT),    AMC$(AMC):TLR4:OutPol }
-{ $(P), TLR4:TrigDlyRBV,   "trigger delay in clock cycles",          "YES",  "1 second",  $(PORT),    AMC$(AMC):TLR4:TrigDly }
-{ $(P), TLR4:TrigStrRBV,   "trigger stretch in clock cycles",        "YES",  "1 second",  $(PORT),    AMC$(AMC):TLR4:TrigStr }
+{ $(P), SelFld4RBV,    "fields to use for trig msg comparison",  "YES",  "1 second",  $(PORT),    AMC$(AMC):TLR4:SelFld }
+{ $(P), SelSrc4RBV,    "soft-b0, tmg-b01, trig0-b10, trig1-b11", "YES",  "1 second",  $(PORT),    AMC$(AMC):TLR4:SelSrc }
+{ $(P), SftTrig4RBV,   "used field to only mask bit of interest","YES",  "1 second",  $(PORT),    AMC$(AMC):TLR4:SftTrig }
+{ $(P), BeamRq4RBV,    "used field to only mask bit of interest","YES",  "1 second",  $(PORT),    AMC$(AMC):TLR4:BeamRq }
+{ $(P), FxRate4RBV,    "used field to only mask bit of interest","YES",  "1 second",  $(PORT),    AMC$(AMC):TLR4:FxRate }
+{ $(P), OutPol4RBV,    "trigger invert: normal b0, inverted b1", "YES",  "1 second",  $(PORT),    AMC$(AMC):TLR4:OutPol }
+{ $(P), TrigDly4RBV,   "trigger delay in clock cycles",          "YES",  "1 second",  $(PORT),    AMC$(AMC):TLR4:TrigDly }
+{ $(P), TrigStr4RBV,   "trigger stretch in clock cycles",        "YES",  "1 second",  $(PORT),    AMC$(AMC):TLR4:TrigStr }
 # Trigger to Calculations (TLR6)
-{ $(P), TLR6:SelFldRBV,    "fields to use for trig msg comparison",  "YES",  "1 second",  $(PORT),    AMC$(AMC):TLR6:SelFld }
-{ $(P), TLR6:SelSrcRBV,    "soft-b0, tmg-b01, trig0-b10, trig1-b11", "YES",  "1 second",  $(PORT),    AMC$(AMC):TLR6:SelSrc }
-{ $(P), TLR6:SftTrigRBV,   "used field to only mask bit of interest","YES",  "1 second",  $(PORT),    AMC$(AMC):TLR6:SftTrig }
-{ $(P), TLR6:BeamRqRBV,    "used field to only mask bit of interest","YES",  "1 second",  $(PORT),    AMC$(AMC):TLR6:BeamRq }
-{ $(P), TLR6:FxRateRBV,    "used field to only mask bit of interest","YES",  "1 second",  $(PORT),    AMC$(AMC):TLR6:FxRate }
-{ $(P), TLR6:OutPolRBV,    "trigger invert: normal b0, inverted b1", "YES",  "1 second",  $(PORT),    AMC$(AMC):TLR6:OutPol }
-{ $(P), TLR6:TrigDlyRBV,   "trigger delay in clock cycles",          "YES",  "1 second",  $(PORT),    AMC$(AMC):TLR6:TrigDly }
-{ $(P), TLR6:TrigStrRBV,   "trigger stretch in clock cycles",        "YES",  "1 second",  $(PORT),    AMC$(AMC):TLR6:TrigStr }
+{ $(P), SelFld6RBV,    "fields to use for trig msg comparison",  "YES",  "1 second",  $(PORT),    AMC$(AMC):TLR6:SelFld }
+{ $(P), SelSrc6RBV,    "soft-b0, tmg-b01, trig0-b10, trig1-b11", "YES",  "1 second",  $(PORT),    AMC$(AMC):TLR6:SelSrc }
+{ $(P), SftTrig6RBV,   "used field to only mask bit of interest","YES",  "1 second",  $(PORT),    AMC$(AMC):TLR6:SftTrig }
+{ $(P), BeamRq6RBV,    "used field to only mask bit of interest","YES",  "1 second",  $(PORT),    AMC$(AMC):TLR6:BeamRq }
+{ $(P), FxRate6RBV,    "used field to only mask bit of interest","YES",  "1 second",  $(PORT),    AMC$(AMC):TLR6:FxRate }
+{ $(P), OutPol6RBV,    "trigger invert: normal b0, inverted b1", "YES",  "1 second",  $(PORT),    AMC$(AMC):TLR6:OutPol }
+{ $(P), TrigDly6RBV,   "trigger delay in clock cycles",          "YES",  "1 second",  $(PORT),    AMC$(AMC):TLR6:TrigDly }
+{ $(P), TrigStr6RBV,   "trigger stretch in clock cycles",        "YES",  "1 second",  $(PORT),    AMC$(AMC):TLR6:TrigStr }
 }
 
 # ENUM register

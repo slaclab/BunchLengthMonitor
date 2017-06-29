@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 3143
-y 598
+x 3147
+y 622
 w 615
 h 519
 font "helvetica-medium-r-18.0"
@@ -242,7 +242,7 @@ x 420
 y 280
 w 156
 h 20
-controlPv "$(prefix):SENS0:TrigDelay2RBV"
+controlPv "$(prefix):TrigDelay2S0RBV"
 font "helvetica-medium-r-18.0"
 fgColor index 14
 bgColor index 0
@@ -266,7 +266,7 @@ x 420
 y 250
 w 156
 h 20
-controlPv "$(prefix):SENS0:TrigDelay1RBV"
+controlPv "$(prefix):TrigDelay1S0RBV"
 font "helvetica-medium-r-18.0"
 fgColor index 14
 bgColor index 0
@@ -290,7 +290,7 @@ x 420
 y 220
 w 156
 h 20
-controlPv "$(prefix):SENS0:NumSamp1RBV"
+controlPv "$(prefix):NumSamp1S0RBV"
 font "helvetica-medium-r-18.0"
 fgColor index 14
 bgColor index 0
@@ -314,7 +314,7 @@ x 420
 y 190
 w 156
 h 20
-controlPv "$(prefix):SENS0:NumSamp0RBV"
+controlPv "$(prefix):NumSamp0S0RBV"
 font "helvetica-medium-r-18.0"
 fgColor index 14
 bgColor index 0
@@ -338,7 +338,7 @@ x 420
 y 160
 w 156
 h 20
-controlPv "$(prefix):SENS0:ModeRBV"
+controlPv "$(prefix):ModeS0RBV"
 font "helvetica-medium-r-18.0"
 fgColor index 14
 bgColor index 0
@@ -362,7 +362,7 @@ x 230
 y 160
 w 170
 h 24
-controlPv "$(prefix):SENS0:Mode"
+controlPv "$(prefix):ModeS0"
 font "helvetica-medium-r-18.0"
 fgColor index 14
 bgColor index 0
@@ -388,7 +388,7 @@ x 230
 y 190
 w 170
 h 24
-controlPv "$(prefix):SENS0:NumSamp0"
+controlPv "$(prefix):NumSamp0S0"
 font "helvetica-medium-r-18.0"
 fgColor index 14
 bgColor index 0
@@ -414,7 +414,7 @@ x 230
 y 220
 w 170
 h 24
-controlPv "$(prefix):SENS0:NumSamp1"
+controlPv "$(prefix):NumSamp1S0"
 font "helvetica-medium-r-18.0"
 fgColor index 14
 bgColor index 0
@@ -440,7 +440,7 @@ x 230
 y 250
 w 170
 h 24
-controlPv "$(prefix):SENS0:TrigDelay1"
+controlPv "$(prefix):TrigDelay1S0"
 font "helvetica-medium-r-18.0"
 fgColor index 14
 bgColor index 0
@@ -466,7 +466,7 @@ x 230
 y 280
 w 170
 h 24
-controlPv "$(prefix):SENS0:TrigDelay2"
+controlPv "$(prefix):TrigDelay2S0"
 font "helvetica-medium-r-18.0"
 fgColor index 14
 bgColor index 0
@@ -643,7 +643,7 @@ x 420
 y 470
 w 156
 h 20
-controlPv "$(prefix):SENS1:TrigDelay2RBV"
+controlPv "$(prefix):TrigDelay2S1RBV"
 font "helvetica-medium-r-18.0"
 fgColor index 14
 bgColor index 0
@@ -667,7 +667,7 @@ x 420
 y 440
 w 156
 h 20
-controlPv "$(prefix):SENS1:TrigDelay1RBV"
+controlPv "$(prefix):TrigDelay1S1RBV"
 font "helvetica-medium-r-18.0"
 fgColor index 14
 bgColor index 0
@@ -691,7 +691,7 @@ x 420
 y 410
 w 156
 h 20
-controlPv "$(prefix):SENS1:NumSamp1RBV"
+controlPv "$(prefix):NumSamp1S1RBV"
 font "helvetica-medium-r-18.0"
 fgColor index 14
 bgColor index 0
@@ -715,7 +715,7 @@ x 420
 y 380
 w 156
 h 20
-controlPv "$(prefix):SENS1:NumSamp0RBV"
+controlPv "$(prefix):NumSamp0S1RBV"
 font "helvetica-medium-r-18.0"
 fgColor index 14
 bgColor index 0
@@ -739,7 +739,7 @@ x 420
 y 350
 w 156
 h 20
-controlPv "$(prefix):SENS1:ModeRBV"
+controlPv "$(prefix):ModeS1RBV"
 font "helvetica-medium-r-18.0"
 fgColor index 14
 bgColor index 0
@@ -763,7 +763,7 @@ x 230
 y 350
 w 170
 h 24
-controlPv "$(prefix):SENS1:Mode"
+controlPv "$(prefix):ModeS1"
 font "helvetica-medium-r-18.0"
 fgColor index 14
 bgColor index 0
@@ -789,7 +789,7 @@ x 230
 y 380
 w 170
 h 24
-controlPv "$(prefix):SENS1:NumSamp0"
+controlPv "$(prefix):NumSamp0S1"
 font "helvetica-medium-r-18.0"
 fgColor index 14
 bgColor index 0
@@ -815,7 +815,7 @@ x 230
 y 410
 w 170
 h 24
-controlPv "$(prefix):SENS1:NumSamp1"
+controlPv "$(prefix):NumSamp1S1"
 font "helvetica-medium-r-18.0"
 fgColor index 14
 bgColor index 0
@@ -841,7 +841,7 @@ x 230
 y 440
 w 170
 h 24
-controlPv "$(prefix):SENS1:TrigDelay1"
+controlPv "$(prefix):TrigDelay1S1"
 font "helvetica-medium-r-18.0"
 fgColor index 14
 bgColor index 0
@@ -867,7 +867,7 @@ x 230
 y 470
 w 170
 h 24
-controlPv "$(prefix):SENS1:TrigDelay2"
+controlPv "$(prefix):TrigDelay2S1"
 font "helvetica-medium-r-18.0"
 fgColor index 14
 bgColor index 0

@@ -41,15 +41,16 @@ epicsEnvSet("AUTO_GEN", 0)
 #epicsEnvSet("PREFIX","LI02:IM02")
 
 epicsEnvSet("AREA","LI02")
+epicsEnvSet("POS","212")
 
 # BLEN attached to AMC0
-epicsEnvSet("AMC0_PREFIX","BLEN:$(AREA):212")
+epicsEnvSet("AMC0_PREFIX","BLEN:$(AREA):$(POS):DETR1")
 
 # BLEN attached to AMC1
-epicsEnvSet("AMC1_PREFIX","BLEN:$(AREA):898")
+epicsEnvSet("AMC1_PREFIX","BLEN:$(AREA):$(POS):DETR2")
 
 # AMCC in crate 1, slot 6
-epicsEnvSet("AMC_CARRIER_PREFIX","AMCC:$(AREA):16")
+epicsEnvSet("AMC_CARRIER_PREFIX","BLEN:$(AREA):$(POS)")
 
 # Dictionary file for manual (empty string if none)
 epicsEnvSet("DICT_FILE", "yaml/blen_00000002.dict")

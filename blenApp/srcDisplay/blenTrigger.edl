@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 973
-y 667
+x 977
+y 691
 w 548
 h 346
 font "helvetica-medium-r-18.0"
@@ -212,7 +212,7 @@ x 170
 y 100
 w 170
 h 24
-controlPv "$(prefix):TLR$(tlr):SelFld"
+controlPv "$(prefix):SelFld$(tlr)"
 format "hex"
 font "helvetica-medium-r-18.0"
 fgColor index 14
@@ -239,7 +239,7 @@ x 170
 y 130
 w 170
 h 24
-controlPv "$(prefix):TLR$(tlr):SelSrc"
+controlPv "$(prefix):SelSrc$(tlr)"
 format "hex"
 font "helvetica-medium-r-18.0"
 fgColor index 14
@@ -266,7 +266,7 @@ x 170
 y 160
 w 170
 h 24
-controlPv "$(prefix):TLR$(tlr):SftTrig"
+controlPv "$(prefix):SftTrig$(tlr)"
 format "hex"
 font "helvetica-medium-r-18.0"
 fgColor index 14
@@ -293,7 +293,7 @@ x 170
 y 190
 w 170
 h 24
-controlPv "$(prefix):TLR$(tlr):BeamRq"
+controlPv "$(prefix):BeamRq$(tlr)"
 format "hex"
 font "helvetica-medium-r-18.0"
 fgColor index 14
@@ -320,7 +320,7 @@ x 170
 y 220
 w 170
 h 24
-controlPv "$(prefix):TLR$(tlr):FxRate"
+controlPv "$(prefix):FxRate$(tlr)"
 format "hex"
 font "helvetica-medium-r-18.0"
 fgColor index 14
@@ -347,7 +347,7 @@ x 170
 y 250
 w 170
 h 24
-controlPv "$(prefix):TLR$(tlr):OutPol"
+controlPv "$(prefix):OutPol$(tlr)"
 format "hex"
 font "helvetica-medium-r-18.0"
 fgColor index 14
@@ -374,7 +374,7 @@ x 170
 y 280
 w 170
 h 24
-controlPv "$(prefix):TLR$(tlr):TrigDly"
+controlPv "$(prefix):TrigDly$(tlr)"
 format "hex"
 font "helvetica-medium-r-18.0"
 fgColor index 14
@@ -401,7 +401,7 @@ x 170
 y 310
 w 170
 h 24
-controlPv "$(prefix):TLR$(tlr):TrigStr"
+controlPv "$(prefix):TrigStr$(tlr)"
 format "hex"
 font "helvetica-medium-r-18.0"
 fgColor index 14
@@ -447,7 +447,7 @@ x 360
 y 100
 w 170
 h 20
-controlPv "$(prefix):TLR$(tlr):SelFldRBV"
+controlPv "$(prefix):SelFld$(tlr)RBV"
 format "hex"
 font "helvetica-medium-r-18.0"
 fgColor index 14
@@ -471,7 +471,7 @@ x 360
 y 160
 w 170
 h 20
-controlPv "$(prefix):TLR$(tlr):SftTrigRBV"
+controlPv "$(prefix):SftTrig$(tlr)RBV"
 format "hex"
 font "helvetica-medium-r-18.0"
 fgColor index 14
@@ -495,7 +495,7 @@ x 360
 y 190
 w 170
 h 20
-controlPv "$(prefix):TLR$(tlr):BeamRqRBV"
+controlPv "$(prefix):BeamRq$(tlr)RBV"
 format "hex"
 font "helvetica-medium-r-18.0"
 fgColor index 14
@@ -519,7 +519,7 @@ x 360
 y 220
 w 170
 h 20
-controlPv "$(prefix):TLR$(tlr):FxRateRBV"
+controlPv "$(prefix):FxRate$(tlr)RBV"
 format "hex"
 font "helvetica-medium-r-18.0"
 fgColor index 14
@@ -543,7 +543,7 @@ x 360
 y 250
 w 170
 h 20
-controlPv "$(prefix):TLR$(tlr):OutPolRBV"
+controlPv "$(prefix):OutPol$(tlr)RBV"
 format "hex"
 font "helvetica-medium-r-18.0"
 fgColor index 14
@@ -567,7 +567,7 @@ x 360
 y 130
 w 170
 h 20
-controlPv "$(prefix):TLR$(tlr):SelSrcRBV"
+controlPv "$(prefix):SelSrc$(tlr)RBV"
 format "hex"
 font "helvetica-medium-r-18.0"
 fgColor index 14
@@ -591,7 +591,7 @@ x 360
 y 280
 w 170
 h 20
-controlPv "$(prefix):TLR$(tlr):TrigDlyRBV"
+controlPv "$(prefix):TrigDly$(tlr)RBV"
 format "hex"
 font "helvetica-medium-r-18.0"
 fgColor index 14
@@ -615,7 +615,7 @@ x 360
 y 310
 w 170
 h 20
-controlPv "$(prefix):TLR$(tlr):TrigStrRBV"
+controlPv "$(prefix):TrigStr$(tlr)RBV"
 format "hex"
 font "helvetica-medium-r-18.0"
 fgColor index 14
