@@ -166,7 +166,7 @@ dbLoadRecords("db/ipAddr.db", "P=${AMC_CARRIER_PREFIX}, SRC=SrvRemoteIp")
 dbLoadRecords("db/swap.db",   "P=${AMC_CARRIER_PREFIX}, SRC=SrvRemotePortSwap, DEST=SrvRemotePort")
 
 # Decode status bits
-dbLoadRecords("db/statusBit.db", "P=${AMC_CARRIER_PREFIX}")
+dbLoadRecords("db/statusBit.db", "P=${AMC_CARRIER_PREFIX}, P0=${AMC0_PREFIX}, P1=${AMC1_PREFIX}")
 
 # Calculate IMAX scale factor
 dbLoadRecords("db/IMAXScale.db", "P=${AMC_CARRIER_PREFIX}")

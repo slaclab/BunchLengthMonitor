@@ -9,16 +9,17 @@
 #==============================================================================
 
 #
-# Status values:
+# Status (STS) values:
 #  0 = OUT
 #  1 = IN
 #  2 = MOVING
+#  3 = INCONSISTENT
 #
 
 #
-# $(P):$(STATUS)Shut1 -- status of shutter 1
+# $(P0):SHT_STS -- status of shutter for AMC0
 #
-record(calc, "$(P):$(STATUS)Shut1")
+record(calc, "$(P0):SHT_STS")
 {
   field(INPA, "$(P):$(INSERTED)")
   field(INPB, "$(P):$(REMOVED)")
@@ -26,13 +27,13 @@ record(calc, "$(P):$(STATUS)Shut1")
   field(INPD, "2")    # MOVING value
   field(CALC, "((~(A|B))&C) ? D : A&C")
   field(SCAN, "$(SCAN)")
-  field(DESC, "Status: 0=OUT, 1=IN, 2=MOVING")
+  field(DESC, "Status: 0=OUT, 1=IN, 2=MOVING, 3=INCONSISTENT")
 }
 
 #
-# $(P):$(STATUS)Shut2 -- status of shutter 2
+# $(P1):SHT_STS -- status of shutter for AMC1
 #
-record(calc, "$(P):$(STATUS)Shut2")
+record(calc, "$(P1):SHT_STS")
 {
   field(INPA, "$(P):$(INSERTED)")
   field(INPB, "$(P):$(REMOVED)")
@@ -41,13 +42,13 @@ record(calc, "$(P):$(STATUS)Shut2")
   field(INPE, "1")    # shift
   field(CALC, "((~(A|B))&C) ? D : (A&C) >> E")
   field(SCAN, "$(SCAN)")
-  field(DESC, "Status: 0=OUT, 1=IN, 2=MOVING")
+  field(DESC, "Status: 0=OUT, 1=IN, 2=MOVING, 3=INCONSISTENT")
 }
 
 #
-# $(P):$(STATUS)Filt1 -- status of filter 1
+# status of filter 1
 #
-record(calc, "$(P):$(STATUS)Filt1")
+record(calc, "$(P):FLT1_STS")
 {
   field(INPA, "$(P):$(INSERTED)")
   field(INPB, "$(P):$(REMOVED)")
@@ -56,13 +57,13 @@ record(calc, "$(P):$(STATUS)Filt1")
   field(INPE, "2")    # shift
   field(CALC, "((~(A|B))&C) ? D : (A&C) >> E")
   field(SCAN, "$(SCAN)")
-  field(DESC, "Status: 0=OUT, 1=IN, 2=MOVING")
+  field(DESC, "Status: 0=OUT, 1=IN, 2=MOVING, 3=INCONSISTENT")
 }
 
 #
-# $(P):$(STATUS)Filt2 -- status of filter 2
+# status of filter 2
 #
-record(calc, "$(P):$(STATUS)Filt2")
+record(calc, "$(P):FLT2_STS")
 {
   field(INPA, "$(P):$(INSERTED)")
   field(INPB, "$(P):$(REMOVED)")
@@ -71,13 +72,13 @@ record(calc, "$(P):$(STATUS)Filt2")
   field(INPE, "3")    # shift
   field(CALC, "((~(A|B))&C) ? D : (A&C) >> E")
   field(SCAN, "$(SCAN)")
-  field(DESC, "Status: 0=OUT, 1=IN, 2=MOVING")
+  field(DESC, "Status: 0=OUT, 1=IN, 2=MOVING, 3=INCONSISTENT")
 }
 
 #
-# $(P):$(STATUS)Filt3 -- status of filter 3
+# status of filter 3
 #
-record(calc, "$(P):$(STATUS)Filt3")
+record(calc, "$(P):FLT3_STS")
 {
   field(INPA, "$(P):$(INSERTED)")
   field(INPB, "$(P):$(REMOVED)")
@@ -86,13 +87,13 @@ record(calc, "$(P):$(STATUS)Filt3")
   field(INPE, "4")    # shift
   field(CALC, "((~(A|B))&C) ? D : (A&C) >> E")
   field(SCAN, "$(SCAN)")
-  field(DESC, "Status: 0=OUT, 1=IN, 2=MOVING")
+  field(DESC, "Status: 0=OUT, 1=IN, 2=MOVING, 3=INCONSISTENT")
 }
 
 #
-# $(P):$(STATUS)Filt4 -- status of filter 4
+# status of filter 4
 #
-record(calc, "$(P):$(STATUS)Filt4")
+record(calc, "$(P):FLT4_STS")
 {
   field(INPA, "$(P):$(INSERTED)")
   field(INPB, "$(P):$(REMOVED)")
@@ -101,81 +102,81 @@ record(calc, "$(P):$(STATUS)Filt4")
   field(INPE, "5")    # shift
   field(CALC, "((~(A|B))&C) ? D : (A&C) >> E")
   field(SCAN, "$(SCAN)")
-  field(DESC, "Status: 0=OUT, 1=IN, 2=MOVING")
+  field(DESC, "Status: 0=OUT, 1=IN, 2=MOVING, 3=INCONSISTENT")
 }
 
 #
-# Choice values:
+# Control (CTRL) values:
 #  0 = OUT
 #  1 = IN
 #
 
-record(mbbo, "$(P):ChoiceShut1")
+record(mbbo, "$(P0):SHT_CTRL")
 {
   field(VAL, "0")
   field(ZRVL,"0")
   field(ZRST,"OUT")
   field(ONVL,"1")
   field(ONST,"IN")
-  field(FLNK, "$(P):MoveShut1")
+  field(FLNK, "$(P0):SHT_MOVE")
 }
 
-record(mbbo, "$(P):ChoiceShut2")
+record(mbbo, "$(P1):SHT_CTRL")
 {
   field(VAL, "0")
   field(ZRVL,"0")
   field(ZRST,"OUT")
   field(ONVL,"1")
   field(ONST,"IN")
-  field(FLNK, "$(P):MoveShut2")
+  field(FLNK, "$(P1):SHT_MOVE")
 }
 
-record(mbbo, "$(P):ChoiceFilt1")
+record(mbbo, "$(P):FLT1_CTRL")
 {
   field(VAL, "0")
   field(ZRVL,"0")
   field(ZRST,"OUT")
   field(ONVL,"1")
   field(ONST,"IN")
-  field(FLNK, "$(P):MoveFilt1")
+  field(FLNK, "$(P):FLT1_MOVE")
 }
 
-record(mbbo, "$(P):ChoiceFilt2")
+record(mbbo, "$(P):FLT2_CTRL")
 {
   field(VAL, "0")
   field(ZRVL,"0")
   field(ZRST,"OUT")
   field(ONVL,"1")
   field(ONST,"IN")
-  field(FLNK, "$(P):MoveFilt2")
+  field(FLNK, "$(P):FLT2_MOVE")
 }
 
-record(mbbo, "$(P):ChoiceFilt3")
+record(mbbo, "$(P):FLT3_CTRL")
 {
   field(VAL, "0")
   field(ZRVL,"0")
   field(ZRST,"OUT")
   field(ONVL,"1")
   field(ONST,"IN")
-  field(FLNK, "$(P):MoveFilt3")
+  field(FLNK, "$(P):FLT3_MOVE")
 }
 
-record(mbbo, "$(P):ChoiceFilt4")
+record(mbbo, "$(P):FLT4_CTRL")
 {
   field(VAL, "0")
   field(ZRVL,"0")
   field(ZRST,"OUT")
   field(ONVL,"1")
   field(ONST,"IN")
-  field(FLNK, "$(P):MoveFilt4")
+  field(FLNK, "$(P):FLT4_MOVE")
 }
 
-record(calcout, "$(P):MoveShut1")
+record(calcout, "$(P0):SHT_MOVE")
 {
   field(OUT, "$(P):MoverOnOff PP")
   field(OOPT, "Every Time")
   field(DOPT, "Use CALC")
-  field(INPA, "$(P):ChoiceShut1")
+  field(INPA, "$(P0):SHT_CTRL")
   field(INPB, "$(P):MoverOnOffRBV")
   field(INPC, "1")
   field(INPD, "0x1")
@@ -184,12 +185,12 @@ record(calcout, "$(P):MoveShut1")
   field(SCAN, "Passive")
 }
 
-record(calcout, "$(P):MoveShut2")
+record(calcout, "$(P1):SHT_MOVE")
 {
   field(OUT, "$(P):MoverOnOff PP")
   field(OOPT, "Every Time")
   field(DOPT, "Use CALC")
-  field(INPA, "$(P):ChoiceShut2")
+  field(INPA, "$(P1):SHT_CTRL")
   field(INPB, "$(P):MoverOnOffRBV")
   field(INPC, "1")
   field(INPD, "0x2")
@@ -198,12 +199,12 @@ record(calcout, "$(P):MoveShut2")
   field(SCAN, "Passive")
 }
 
-record(calcout, "$(P):MoveFilt1")
+record(calcout, "$(P):FLT1_MOVE")
 {
   field(OUT, "$(P):MoverOnOff PP")
   field(OOPT, "Every Time")
   field(DOPT, "Use CALC")
-  field(INPA, "$(P):ChoiceFilt1")
+  field(INPA, "$(P):FLT1_CTRL")
   field(INPB, "$(P):MoverOnOffRBV")
   field(INPC, "1")
   field(INPD, "0x4")
@@ -212,12 +213,12 @@ record(calcout, "$(P):MoveFilt1")
   field(SCAN, "Passive")
 }
 
-record(calcout, "$(P):MoveFilt2")
+record(calcout, "$(P):FLT2_MOVE")
 {
   field(OUT, "$(P):MoverOnOff PP")
   field(OOPT, "Every Time")
   field(DOPT, "Use CALC")
-  field(INPA, "$(P):ChoiceFilt2")
+  field(INPA, "$(P):FLT2_CTRL")
   field(INPB, "$(P):MoverOnOffRBV")
   field(INPC, "1")
   field(INPD, "0x8")
@@ -226,12 +227,12 @@ record(calcout, "$(P):MoveFilt2")
   field(SCAN, "Passive")
 }
 
-record(calcout, "$(P):MoveFilt3")
+record(calcout, "$(P):FLT3_MOVE")
 {
   field(OUT, "$(P):MoverOnOff PP")
   field(OOPT, "Every Time")
   field(DOPT, "Use CALC")
-  field(INPA, "$(P):ChoiceFilt3")
+  field(INPA, "$(P):FLT3_CTRL")
   field(INPB, "$(P):MoverOnOffRBV")
   field(INPC, "1")
   field(INPD, "0x10")
@@ -240,12 +241,12 @@ record(calcout, "$(P):MoveFilt3")
   field(SCAN, "Passive")
 }
 
-record(calcout, "$(P):MoveFilt4")
+record(calcout, "$(P):FLT4_MOVE")
 {
   field(OUT, "$(P):MoverOnOff PP")
   field(OOPT, "Every Time")
   field(DOPT, "Use CALC")
-  field(INPA, "$(P):ChoiceFilt4")
+  field(INPA, "$(P):FLT4_CTRL")
   field(INPB, "$(P):MoverOnOffRBV")
   field(INPC, "1")
   field(INPD, "0x20")

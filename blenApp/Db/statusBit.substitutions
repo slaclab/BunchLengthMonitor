@@ -10,13 +10,14 @@
 #
 file statusBitDecode.db
 {
-pattern   {P, INSERTED, REMOVED, STATUS, SCAN}
+pattern   {P, P0, P1, INSERTED, REMOVED, SCAN}
 
-# P is the PV prefix
+# P is the PV prefix for AMCC
+# P0 is the PV prefix for AMC0
+# P1 is the PV prefix for AMC1
 # INSERTED is attribute of PV providing status bits input
 # REMOVED  is attribute of PV providing status bits input
-# STATUS is base of attributes providing calc record outputs
 # SCAN is the SCAN field
 
-          { $(P), "Inserted", "Removed", "Status", ".5 second"}
+          { $(P), $(P0), $(P1), "Inserted", "Removed", ".5 second"}
 }

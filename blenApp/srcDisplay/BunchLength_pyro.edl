@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 2786
-y 336
+x 2935
+y 455
 w 776
 h 860
 font "helvetica-medium-r-12.0"
@@ -24,6 +24,108 @@ showGrid
 snapToGrid
 gridSize 8
 endScreenProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 80
+y 168
+w 336
+h 72
+lineColor index 3
+fill
+fillColor index 3
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 432
+y 168
+w 336
+h 72
+lineColor index 3
+fill
+fillColor index 3
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 608
+y 200
+w 24
+h 24
+lineColor index 15
+fill
+fillColor index 15
+visPv "$(amc1_prefix):SHT_STS"
+visMin "1"
+visMax "2"
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 528
+y 200
+w 24
+h 24
+lineColor index 14
+fill
+fillColor index 14
+visPv "$(amc1_prefix):SHT_STS"
+visMin "0"
+visMax "1"
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 280
+y 200
+w 24
+h 24
+lineColor index 15
+fill
+fillColor index 15
+visPv "$(amc0_prefix):SHT_STS"
+visMin "1"
+visMax "2"
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 200
+y 200
+w 24
+h 24
+lineColor index 14
+fill
+fillColor index 14
+visPv "$(amc0_prefix):SHT_STS"
+visMin "0"
+visMax "1"
+endObjectProperties
 
 # (Rectangle)
 object activeRectangleClass
@@ -328,21 +430,6 @@ visMin "0"
 visMax "1"
 endObjectProperties
 
-# (Rectangle)
-object activeRectangleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 432
-y 168
-w 336
-h 72
-lineColor index 3
-fill
-fillColor index 3
-endObjectProperties
-
 # (Circle)
 object activeCircleClass
 beginObjectProperties
@@ -356,9 +443,9 @@ h 24
 lineColor index 36
 fill
 fillColor index 36
-visPv "$(carrier_prefix):StatusShut2"
+visPv "$(amc1_prefix):SHT_STS"
 visMin "2"
-visMax "3"
+visMax "5"
 endObjectProperties
 
 # (Circle)
@@ -374,24 +461,9 @@ h 24
 lineColor index 36
 fill
 fillColor index 36
-visPv "$(carrier_prefix):StatusShut2"
+visPv "$(amc1_prefix):SHT_STS"
 visMin "2"
-visMax "3"
-endObjectProperties
-
-# (Rectangle)
-object activeRectangleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 80
-y 168
-w 336
-h 72
-lineColor index 3
-fill
-fillColor index 3
+visMax "5"
 endObjectProperties
 
 # (Circle)
@@ -407,9 +479,9 @@ h 24
 lineColor index 36
 fill
 fillColor index 36
-visPv "$(carrier_prefix):StatusShut1"
+visPv "$(amc0_prefix):SHT_STS"
 visMin "2"
-visMax "3"
+visMax "5"
 endObjectProperties
 
 # (Circle)
@@ -425,81 +497,9 @@ h 24
 lineColor index 36
 fill
 fillColor index 36
-visPv "$(carrier_prefix):StatusShut1"
+visPv "$(amc0_prefix):SHT_STS"
 visMin "2"
-visMax "3"
-endObjectProperties
-
-# (Circle)
-object activeCircleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 280
-y 200
-w 24
-h 24
-lineColor index 15
-fill
-fillColor index 15
-visPv "$(carrier_prefix):StatusShut1"
-visMin "1"
-visMax "2"
-endObjectProperties
-
-# (Circle)
-object activeCircleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 200
-y 200
-w 24
-h 24
-lineColor index 14
-fill
-fillColor index 14
-visPv "$(carrier_prefix):StatusShut1"
-visMin "0"
-visMax "1"
-endObjectProperties
-
-# (Circle)
-object activeCircleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 608
-y 200
-w 24
-h 24
-lineColor index 15
-fill
-fillColor index 15
-visPv "$(carrier_prefix):StatusShut2"
-visMin "1"
-visMax "2"
-endObjectProperties
-
-# (Circle)
-object activeCircleClass
-beginObjectProperties
-major 4
-minor 0
-release 0
-x 528
-y 200
-w 24
-h 24
-lineColor index 14
-fill
-fillColor index 14
-visPv "$(carrier_prefix):StatusShut2"
-visMin "0"
-visMax "1"
+visMax "5"
 endObjectProperties
 
 # (Rectangle)
@@ -1070,7 +1070,7 @@ selectColor index 4
 inconsistentColor index 4
 topShadowColor index 1
 botShadowColor index 11
-controlPv "$(carrier_prefix):ChoiceFilt1"
+controlPv "$(carrier_prefix):FLT1_CTRL"
 font "helvetica-medium-r-12.0"
 orientation "horizontal"
 endObjectProperties
@@ -1091,7 +1091,7 @@ selectColor index 4
 inconsistentColor index 4
 topShadowColor index 1
 botShadowColor index 11
-controlPv "$(carrier_prefix):ChoiceFilt2"
+controlPv "$(carrier_prefix):FLT2_CTRL"
 font "helvetica-medium-r-12.0"
 orientation "horizontal"
 endObjectProperties
@@ -1112,7 +1112,7 @@ selectColor index 4
 inconsistentColor index 4
 topShadowColor index 1
 botShadowColor index 11
-controlPv "$(carrier_prefix):ChoiceFilt3"
+controlPv "$(carrier_prefix):FLT3_CTRL"
 font "helvetica-medium-r-12.0"
 orientation "horizontal"
 endObjectProperties
@@ -1133,7 +1133,7 @@ selectColor index 4
 inconsistentColor index 4
 topShadowColor index 1
 botShadowColor index 11
-controlPv "$(carrier_prefix):ChoiceFilt4"
+controlPv "$(carrier_prefix):FLT4_CTRL"
 font "helvetica-medium-r-12.0"
 orientation "horizontal"
 endObjectProperties
@@ -1154,7 +1154,7 @@ selectColor index 4
 inconsistentColor index 4
 topShadowColor index 1
 botShadowColor index 11
-controlPv "$(carrier_prefix):ChoiceShut1"
+controlPv "$(amc0_prefix):SHT_CTRL"
 font "helvetica-medium-r-12.0"
 orientation "horizontal"
 endObjectProperties
@@ -1175,7 +1175,7 @@ selectColor index 4
 inconsistentColor index 4
 topShadowColor index 1
 botShadowColor index 11
-controlPv "$(carrier_prefix):ChoiceShut2"
+controlPv "$(amc1_prefix):SHT_CTRL"
 font "helvetica-medium-r-12.0"
 orientation "horizontal"
 endObjectProperties
