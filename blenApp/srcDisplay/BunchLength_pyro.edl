@@ -155,7 +155,7 @@ h 24
 lineColor index 36
 fill
 fillColor index 36
-visPv "$(carrier_prefix):StatusFilt4"
+visPv "$(carrier_prefix):FLT4_STS"
 visMin "2"
 visMax "3"
 endObjectProperties
@@ -173,7 +173,7 @@ h 24
 lineColor index 36
 fill
 fillColor index 36
-visPv "$(carrier_prefix):StatusFilt4"
+visPv "$(carrier_prefix):FLT4_STS"
 visMin "2"
 visMax "3"
 endObjectProperties
@@ -191,7 +191,7 @@ h 24
 lineColor index 14
 fill
 fillColor index 14
-visPv "$(carrier_prefix):StatusFilt4"
+visPv "$(carrier_prefix):FLT4_STS"
 visMin "0"
 visMax "1"
 endObjectProperties
@@ -209,7 +209,7 @@ h 24
 lineColor index 15
 fill
 fillColor index 15
-visPv "$(carrier_prefix):StatusFilt4"
+visPv "$(carrier_prefix):FLT4_STS"
 visMin "1"
 visMax "2"
 endObjectProperties
@@ -227,7 +227,7 @@ h 24
 lineColor index 36
 fill
 fillColor index 36
-visPv "$(carrier_prefix):StatusFilt3"
+visPv "$(carrier_prefix):FLT3_STS"
 visMin "2"
 visMax "3"
 endObjectProperties
@@ -245,7 +245,7 @@ h 24
 lineColor index 36
 fill
 fillColor index 36
-visPv "$(carrier_prefix):StatusFilt3"
+visPv "$(carrier_prefix):FLT3_STS"
 visMin "2"
 visMax "3"
 endObjectProperties
@@ -263,7 +263,7 @@ h 24
 lineColor index 14
 fill
 fillColor index 14
-visPv "$(carrier_prefix):StatusFilt3"
+visPv "$(carrier_prefix):FLT3_STS"
 visMin "0"
 visMax "1"
 endObjectProperties
@@ -281,7 +281,7 @@ h 24
 lineColor index 15
 fill
 fillColor index 15
-visPv "$(carrier_prefix):StatusFilt3"
+visPv "$(carrier_prefix):FLT3_STS"
 visMin "1"
 visMax "2"
 endObjectProperties
@@ -299,7 +299,7 @@ h 24
 lineColor index 36
 fill
 fillColor index 36
-visPv "$(carrier_prefix):StatusFilt2"
+visPv "$(carrier_prefix):FLT2_STS"
 visMin "2"
 visMax "3"
 endObjectProperties
@@ -317,7 +317,7 @@ h 24
 lineColor index 36
 fill
 fillColor index 36
-visPv "$(carrier_prefix):StatusFilt2"
+visPv "$(carrier_prefix):FLT2_STS"
 visMin "2"
 visMax "3"
 endObjectProperties
@@ -335,7 +335,7 @@ h 24
 lineColor index 14
 fill
 fillColor index 14
-visPv "$(carrier_prefix):StatusFilt2"
+visPv "$(carrier_prefix):FLT2_STS"
 visMin "0"
 visMax "1"
 endObjectProperties
@@ -353,7 +353,7 @@ h 24
 lineColor index 15
 fill
 fillColor index 15
-visPv "$(carrier_prefix):StatusFilt2"
+visPv "$(carrier_prefix):FLT2_STS"
 visMin "1"
 visMax "2"
 endObjectProperties
@@ -371,7 +371,7 @@ h 24
 lineColor index 36
 fill
 fillColor index 36
-visPv "$(carrier_prefix):StatusFilt1"
+visPv "$(carrier_prefix):FLT1_STS"
 visMin "2"
 visMax "3"
 endObjectProperties
@@ -389,7 +389,7 @@ h 24
 lineColor index 36
 fill
 fillColor index 36
-visPv "$(carrier_prefix):StatusFilt1"
+visPv "$(carrier_prefix):FLT1_STS"
 visMin "2"
 visMax "3"
 endObjectProperties
@@ -407,7 +407,7 @@ h 24
 lineColor index 15
 fill
 fillColor index 15
-visPv "$(carrier_prefix):StatusFilt1"
+visPv "$(carrier_prefix):FLT1_STS"
 visMin "1"
 visMax "2"
 endObjectProperties
@@ -425,7 +425,7 @@ h 24
 lineColor index 14
 fill
 fillColor index 14
-visPv "$(carrier_prefix):StatusFilt1"
+visPv "$(carrier_prefix):FLT1_STS"
 visMin "0"
 visMax "1"
 endObjectProperties
