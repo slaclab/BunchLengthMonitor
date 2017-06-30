@@ -54,7 +54,7 @@ epicsEnvSet("DICT_FILE", "yaml/blen_00000002.dict")
 # *********************************************
 # **** Environment variables for IOC Admin ****
 
-epicsEnvSet(IOC_NAME,"VIOC:$(AREA):BL01")
+epicsEnvSet(IOC_NAME,"SIOC:$(AREA):BL01")
 
 
 cd ${TOP}
