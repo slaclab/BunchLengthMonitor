@@ -9,6 +9,10 @@
 #  Auth: 10-May-2017 C. Ford         (caf)
 #  Rev:  dd-mmm-yyyy, Reviewer's Name    (USERNAME)
 #--------------------------------------------------------------
+R1.0.5: Update YAML files to support new firmware.
+        Adjust PV names to follow LCLS naming conventions.
+        Create sioc-* directories under iocBoot.
+        Define new PVs for 5 new regs related to status of TMIT and BSA.
 R1.0.4: Add buttons to top-level screen for enabling waveform display.
         Update YAML files to support V3 firmware. 
 R1.0.3: Update YAML files to support new firmware, upstream bug fixes.
