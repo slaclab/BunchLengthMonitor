@@ -3,13 +3,13 @@ During development on LCLSDEV we will use cpu-b084-hp03
 
 *************************************************************************************
 Rack ==> L2KG02-22
-vioc-li02-bl01 will interface to : ==> ATCA Shelf: shm-li02-sp01 ==> (BZ11B) Slot 3 
-vioc-li02-bl02 will interface to : ==> ATCA Shelf: shm-li02-sp01 ==> (*BZC1) Slot 5
+sioc-li02-bl01 will interface to : ==> ATCA Shelf: shm-li02-sp01 ==> (BZ11B) Slot 3 
+sioc-li02-bl02 will interface to : ==> ATCA Shelf: shm-li02-sp01 ==> (*BZC1) Slot 5
 *************************************************************************************
 
 *************************************************************************************
 Rack ==> L2KG04-26
-vioc-li04-bl01 will interface to : ==> ATCA Shelf: shm-li04-sp01 ==> (BZ21B) Slot 4
+sioc-li04-bl01 will interface to : ==> ATCA Shelf: shm-li04-sp01 ==> (BZ21B) Slot 4
 *************************************************************************************
 
 Where, shm == the ATCA crate's  shelf manager.
