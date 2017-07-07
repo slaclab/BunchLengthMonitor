@@ -3,8 +3,8 @@ beginScreenProperties
 major 4
 minor 0
 release 1
-x 2999
-y 233
+x 3003
+y 257
 w 732
 h 500
 font "helvetica-medium-r-18.0"
@@ -89,7 +89,7 @@ w 638
 h 268
 # Appearance
 border
-graphTitle "Stream$(stream)_16"
+graphTitle "Raw Waveform (16-bit)"
 fgColor index 14
 bgColor index 2
 gridColor index 14
@@ -114,7 +114,7 @@ y2Max 1
 # Trace Properties
 numTraces 1
 yPv {
-  0 "$(prefix):Stream$(stream)_16"
+  0 "$(prefix):RWFS"
 }
 plotUpdateMode {
   0 "y"
