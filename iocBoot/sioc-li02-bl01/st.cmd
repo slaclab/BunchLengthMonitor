@@ -36,6 +36,10 @@ epicsEnvSet("FPGA_IP", "10.0.1.106")
 # 0 = No, 1 = Yes
 epicsEnvSet("AUTO_GEN", 0)
 
+# Temperature xfer: ESLO, EOFF
+epicsEnvSet("ESLO","$(ESLO=0.01)")
+epicsEnvSet("EOFF","$(EOFF=273.15)")
+
 epicsEnvSet("AREA","LI02")
 epicsEnvSet("POS","212")
 
@@ -166,6 +170,13 @@ dbLoadRecords("db/statusBit.db", "P=${AMC_CARRIER_PREFIX}, P0=${AMC0_PREFIX}, P1
 
 # Calculate IMAX scale factor
 dbLoadRecords("db/IMAXScale.db", "P=${AMC_CARRIER_PREFIX}")
+
+# Create PVs to hold temperatures
+dbLoadRecords("db/temperature.db", "P=${AMC0_PREFIX}")
+dbLoadRecords("db/temperature.db", "P=${AMC1_PREFIX}")
+
+# Monitor temperatures
+dbLoadRecords("db/TempMonitoring_PYRO.db", "P0=${AMC0_PREFIX},P1=${AMC1_PREFIX},ESLO=${ESLO},EOFF=${EOFF}")
 
 # Automatic initialization
 dbLoadRecords("db/monitorFPGAReboot.db", "P=${AMC_CARRIER_PREFIX}, KEY=-66686157")

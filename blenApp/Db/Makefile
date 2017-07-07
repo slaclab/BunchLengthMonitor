@@ -33,6 +33,8 @@ DB_INSTALLS += $(BSADRIVER)/db/bsa.db
 DB += ipAddr.db
 DB += statusBit.db
 DB += IMAXScale.db
+DB += temperature.db
+DB += TempMonitoring_PYRO.db
 
 # For CPSW PVs
 DB += blen.db

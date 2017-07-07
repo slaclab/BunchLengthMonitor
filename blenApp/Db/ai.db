@@ -1,0 +1,7 @@
+# analog input
+
+record(ai,      "$(P):$(R)") {
+    field(DESC, "$(DESC)")
+    field(EGU,  "$(EGU)")
+    field(SCAN,  "$(SCAN)")
+}
