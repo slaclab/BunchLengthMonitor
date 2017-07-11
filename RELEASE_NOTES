@@ -9,6 +9,11 @@
 #  Auth: 10-May-2017 C. Ford         (caf)
 #  Rev:  dd-mmm-yyyy, Reviewer's Name    (USERNAME)
 #--------------------------------------------------------------
+R1.0.6: Add support for INCONSISTENT shutter and filter state.
+        INCONSISTENT means both limit switches are active.
+        Create BpmStatus and TmitStatus PVs and add to expert display.
+        Create temperature PVs and add to top-level display. 
+        Remove vioc-* startup script, as sioc-* is now used instead.
 R1.0.5: Update YAML files to support new firmware.
         Adjust PV names to follow LCLS naming conventions.
         Create sioc-* directories under iocBoot.
