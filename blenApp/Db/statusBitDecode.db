@@ -25,7 +25,7 @@ record(calc, "$(P0):SHT_STS")
   field(INPB, "$(P):$(REMOVED)")
   field(INPC, "0x1")  # bit mask
   field(INPD, "0")    # shift
-  field(CALC, "A&B&C?3:(((~(A|B))&C)?2:(A&C)>>D)")
+  field(CALC, "(A&B&C)?3:(((~(A|B))&C)?2:(A&C)>>D)")
   field(SCAN, "$(SCAN)")
   field(DESC, "0=OUT, 1=IN, 2=MOVING, 3=INCONSISTENT")
 }
@@ -39,7 +39,7 @@ record(calc, "$(P1):SHT_STS")
   field(INPB, "$(P):$(REMOVED)")
   field(INPC, "0x2")  # bit mask
   field(INPD, "1")    # shift
-  field(CALC, "A&B&C?3:(((~(A|B))&C)?2:(A&C)>>D)")
+  field(CALC, "(A&B&C)?3:(((~(A|B))&C)?2:(A&C)>>D)")
   field(SCAN, "$(SCAN)")
   field(DESC, "0=OUT, 1=IN, 2=MOVING, 3=INCONSISTENT")
 }
@@ -53,7 +53,7 @@ record(calc, "$(P):FLT1_STS")
   field(INPB, "$(P):$(REMOVED)")
   field(INPC, "0x4")  # bit mask
   field(INPD, "2")    # shift
-  field(CALC, "A&B&C?3:(((~(A|B))&C)?2:(A&C)>>D)")
+  field(CALC, "(A&B&C)?3:(((~(A|B))&C)?2:(A&C)>>D)")
   field(SCAN, "$(SCAN)")
   field(DESC, "0=OUT, 1=IN, 2=MOVING, 3=INCONSISTENT")
 }
@@ -67,7 +67,7 @@ record(calc, "$(P):FLT2_STS")
   field(INPB, "$(P):$(REMOVED)")
   field(INPC, "0x8")  # bit mask
   field(INPD, "3")    # shift
-  field(CALC, "A&B&C?3:(((~(A|B))&C)?2:(A&C)>>D)")
+  field(CALC, "(A&B&C)?3:(((~(A|B))&C)?2:(A&C)>>D)")
   field(SCAN, "$(SCAN)")
   field(DESC, "0=OUT, 1=IN, 2=MOVING, 3=INCONSISTENT")
 }
@@ -81,7 +81,7 @@ record(calc, "$(P):FLT3_STS")
   field(INPB, "$(P):$(REMOVED)")
   field(INPC, "0x10") # bit mask
   field(INPD, "4")    # shift
-  field(CALC, "A&B&C?3:(((~(A|B))&C)?2:(A&C)>>D)")
+  field(CALC, "(A&B&C)?3:(((~(A|B))&C)?2:(A&C)>>D)")
   field(SCAN, "$(SCAN)")
   field(DESC, "0=OUT, 1=IN, 2=MOVING, 3=INCONSISTENT")
 }
@@ -95,7 +95,7 @@ record(calc, "$(P):FLT4_STS")
   field(INPB, "$(P):$(REMOVED)")
   field(INPC, "0x20") # bit mask
   field(INPD, "5")    # shift
-  field(CALC, "A&B&C?3:(((~(A|B))&C)?2:(A&C)>>D)")
+  field(CALC, "(A&B&C)?3:(((~(A|B))&C)?2:(A&C)>>D)")
   field(SCAN, "$(SCAN)")
   field(DESC, "0=OUT, 1=IN, 2=MOVING, 3=INCONSISTENT")
 }
