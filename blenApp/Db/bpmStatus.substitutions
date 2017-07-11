@@ -1,0 +1,22 @@
+#==============================================================================
+#
+# Abs:  BPM Status substitutions file.
+#
+# Name: bpmStatus.substitutions
+#
+# Note: Must follow the LCLS naming conventions.
+#
+#==============================================================================
+#
+file bitStatus.db
+{
+pattern   {P, RESULT, STATUS, BIT, SCAN}
+
+# P is the PV prefix
+# RESULT is the PV attribute
+# STATUS is attribute of PV providing status
+# BIT is the bit number within STATUS (0-31)
+# SCAN is the SCAN field
+
+          { $(P), "BpmStatus", "StatusOfBsa2", "31", ".5 second"}
+}

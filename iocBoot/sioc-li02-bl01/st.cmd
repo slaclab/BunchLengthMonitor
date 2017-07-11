@@ -178,6 +178,12 @@ dbLoadRecords("db/temperature.db", "P=${AMC1_PREFIX}")
 # Monitor temperatures
 dbLoadRecords("db/TempMonitoring_PYRO.db", "P0=${AMC0_PREFIX},P1=${AMC1_PREFIX},ESLO=${ESLO},EOFF=${EOFF}")
 
+# Calc TMIT status
+dbLoadRecords("db/tmitStatus.db", "P=${AMC_CARRIER_PREFIX}")
+
+# Calc BPM status
+dbLoadRecords("db/bpmStatus.db", "P=${AMC_CARRIER_PREFIX}")
+
 # Automatic initialization
 dbLoadRecords("db/monitorFPGAReboot.db", "P=${AMC_CARRIER_PREFIX}, KEY=-66686157")
 

@@ -35,6 +35,8 @@ DB += statusBit.db
 DB += IMAXScale.db
 DB += temperature.db
 DB += TempMonitoring_PYRO.db
+DB += tmitStatus.db
+DB += bpmStatus.db
 
 # For CPSW PVs
 DB += blen.db

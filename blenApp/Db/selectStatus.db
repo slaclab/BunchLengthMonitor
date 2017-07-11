@@ -1,0 +1,23 @@
+#==============================================================================
+#
+# Abs:  Select status database file.
+#
+# Name: selectStatus.db
+#
+# Note: Must follow the LCLS naming conventions.
+#
+#==============================================================================
+
+#
+# $(P):$(RESULT)
+#
+record(calc, "$(P):$(RESULT)")
+{
+  field(INPA, "$(P):$(STATUS0)")
+  field(INPB, "$(P):$(STATUS1)")
+  field(INPC, "$(P):$(SELECT)")
+  field(INPD, "1")
+  field(CALC, "(C=D) ? B : A")
+  field(SCAN, "$(SCAN)")
+  field(DESC, "$(SELECT): $(STATUS0) or $(STATUS1)")
+}

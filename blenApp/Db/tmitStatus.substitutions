@@ -1,0 +1,23 @@
+#==============================================================================
+#
+# Abs:  TMIT Status substitutions file.
+#
+# Name: tmitStatus.substitutions
+#
+# Note: Must follow the LCLS naming conventions.
+#
+#==============================================================================
+#
+file selectStatus.db
+{
+pattern   {P, RESULT, STATUS0, STATUS1, SELECT, SCAN}
+
+# P is the PV prefix
+# RESULT is the PV attribute
+# STATUS0 is attribute of PV providing status0
+# STATUS1 is attribute of PV providing status1
+# SELECT is attribute of PV selecting 0 or 1
+# SCAN is the SCAN field
+
+          { $(P), "TmitStatus", "TmitStatus0", "TmitStatus1", "SelBpm", ".5 second"}
+}
