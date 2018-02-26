@@ -135,12 +135,12 @@ file "RegisterOutRBV.template" { pattern
 
 # ENUM register
 file "RegisterEnumBOut.template" { pattern
-{ P,        R,              DESC,        PINI   ZNAM,        ONAM,     SCAN,       PORT, PARAM     }
+{ P,        R,              DESC,        PINI,  ZNAM,        ONAM,     SCAN,       PORT, PARAM     }
 { $(P), AutoRearm,   "Auto rearm", "NO",  "Disabled", "Enabled", "Passive",  $(PORT),   AMC$(AMC):AutoRearm }
 }
 
 file "RegisterEnumBOutRBV.template" { pattern
-{ P,        R,              DESC,         PINI    ZNAM,        ONAM,     SCAN,        PORT, PARAM     }
+{ P,        R,              DESC,         PINI,   ZNAM,        ONAM,     SCAN,        PORT, PARAM     }
 { $(P), AutoRearmRBV, "Auto rearm", "YES",  "Disabled", "Enabled", ".5 second",  $(PORT),   AMC$(AMC):AutoRearm }
 }
 
