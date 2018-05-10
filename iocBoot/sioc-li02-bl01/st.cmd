@@ -1,4 +1,4 @@
-#!../../bin/linuxRT-x86_64/blen
+#!iocSpecificRelease/bin/linuxRT-x86_64/blen
 
 ## You may have to change blen to something else
 ## everywhere it appears in this file
@@ -92,26 +92,18 @@ cpswLoadYamlFile("${YAML_FILE}", "NetIODev", "", "${FPGA_IP}")
 # Setup BSA Driver
 # ====================================
 # add BSA PVs
-addBsa("AMC0:SUM",        "double")
-addBsa("AMC0:IMAX",       "double")
-addBsa("AMC0:TMIT",       "double")
-addBsa("AMC0:IMAXFLOAT",  "double")
-addBsa("AMC0:SUMFLOAT",   "double")
-addBsa("AMC0:BLSTATUS",   "double")
-addBsa("SKIP6",           "double")
-addBsa("SKIP7",           "double")
-addBsa("SKIP8",           "double")
-addBsa("SKIP9",           "double")
-addBsa("SKIP10",          "double")
-addBsa("SKIP11",          "double")
-addBsa("SKIP12",          "double")
-addBsa("SKIP13",          "double")
-addBsa("AMC1:SUM",        "double")
-addBsa("AMC1:IMAX",       "double")
-addBsa("AMC1:TMIT",       "double")
-addBsa("AMC1:IMAXFLOAT",  "double")
-addBsa("AMC1:SUMFLOAT",   "double")
-addBsa("AMC1:BLSTATUS",   "double")
+addBsa("AMC0:SUM",        "int32")
+addBsa("AMC0:IMAX",       "int32")
+addBsa("AMC0:TMIT",       "int32")
+addBsa("AMC0:IMAXFLOAT",  "float32")
+addBsa("AMC0:SUMFLOAT",   "float32")
+addBsa("AMC0:BLSTATUS",   "uint32")
+addBsa("AMC1:SUM",        "int32")
+addBsa("AMC1:IMAX",       "int32")
+addBsa("AMC1:TMIT",       "int32")
+addBsa("AMC1:IMAXFLOAT",  "float32")
+addBsa("AMC1:SUMFLOAT",   "float32")
+addBsa("AMC1:BLSTATUS",   "uint32")
 
 # BSA driver for yaml
 bsaAsynDriverConfigure("bsaPort", "mmio/AmcCarrierCore/AmcCarrierBsa","strm/AmcCarrierDRAM/dram")
@@ -154,7 +146,7 @@ YCPSWASYNConfig("${CPSW_PORT}", "${YAML_FILE}", "", "${FPGA_IP}", "", 40, "${AUT
 ## Load record instances
 
 # Save/Load configuration related records
-dbLoadRecords("db/saveLoadConfig.db", "P=${AMC_CARRIER_PREFIX}, PORT=${CPSW_PORT}, SAVE_FILE=/tmp/configDump.yaml, LOAD_FILE=yaml/defaultsPyro6-15-17a.yaml")
+dbLoadRecords("db/saveLoadConfig.db", "P=${AMC_CARRIER_PREFIX}, PORT=${CPSW_PORT}, SAVE_FILE=/tmp/configDump.yaml, LOAD_FILE=yaml/defaultsPyro04-24-18a.yaml")
 
 # Manually create records
 dbLoadRecords("db/blen.db", "P=${AMC0_PREFIX}, PORT=${CPSW_PORT}, AMC=0")
@@ -190,19 +182,19 @@ dbLoadRecords("db/monitorFPGAReboot.db", "P=${AMC_CARRIER_PREFIX}, KEY=-66686157
 # ****************************
 # **** Load BSA driver DB ****
 
-dbLoadRecords("db/bsa.db", "DEV=$(AMC0_PREFIX),PORT=bsaPort,MAXLENGTH=20000,BSAKEY=AMC0:SUM,SECN=SUM")
-dbLoadRecords("db/bsa.db", "DEV=$(AMC0_PREFIX),PORT=bsaPort,MAXLENGTH=20000,BSAKEY=AMC0:IMAX,SECN=IMAX")
-dbLoadRecords("db/bsa.db", "DEV=$(AMC0_PREFIX),PORT=bsaPort,MAXLENGTH=20000,BSAKEY=AMC0:TMIT,SECN=TMIT")
-dbLoadRecords("db/bsa.db", "DEV=$(AMC0_PREFIX),PORT=bsaPort,MAXLENGTH=20000,BSAKEY=AMC0:IMAXFLOAT,SECN=IMAXFLOAT")
-dbLoadRecords("db/bsa.db", "DEV=$(AMC0_PREFIX),PORT=bsaPort,MAXLENGTH=20000,BSAKEY=AMC0:SUMFLOAT,SECN=SUMFLOAT")
-dbLoadRecords("db/bsa.db", "DEV=$(AMC0_PREFIX),PORT=bsaPort,MAXLENGTH=20000,BSAKEY=AMC0:BLSTATUS,SECN=BLSTATUS")
+dbLoadRecords("db/bsa.db", "DEV=$(AMC0_PREFIX),PORT=bsaPort,BSAKEY=AMC0:SUM,SECN=SUM")
+dbLoadRecords("db/bsa.db", "DEV=$(AMC0_PREFIX),PORT=bsaPort,BSAKEY=AMC0:IMAX,SECN=IMAX")
+dbLoadRecords("db/bsa.db", "DEV=$(AMC0_PREFIX),PORT=bsaPort,BSAKEY=AMC0:TMIT,SECN=TMIT")
+dbLoadRecords("db/bsa.db", "DEV=$(AMC0_PREFIX),PORT=bsaPort,BSAKEY=AMC0:IMAXFLOAT,SECN=IMAXFLOAT")
+dbLoadRecords("db/bsa.db", "DEV=$(AMC0_PREFIX),PORT=bsaPort,BSAKEY=AMC0:SUMFLOAT,SECN=SUMFLOAT")
+dbLoadRecords("db/bsa.db", "DEV=$(AMC0_PREFIX),PORT=bsaPort,BSAKEY=AMC0:BLSTATUS,SECN=BLSTATUS")
 
-dbLoadRecords("db/bsa.db", "DEV=$(AMC1_PREFIX),PORT=bsaPort,MAXLENGTH=20000,BSAKEY=AMC1:SUM,SECN=SUM")
-dbLoadRecords("db/bsa.db", "DEV=$(AMC1_PREFIX),PORT=bsaPort,MAXLENGTH=20000,BSAKEY=AMC1:IMAX,SECN=IMAX")
-dbLoadRecords("db/bsa.db", "DEV=$(AMC1_PREFIX),PORT=bsaPort,MAXLENGTH=20000,BSAKEY=AMC1:TMIT,SECN=TMIT")
-dbLoadRecords("db/bsa.db", "DEV=$(AMC1_PREFIX),PORT=bsaPort,MAXLENGTH=20000,BSAKEY=AMC1:IMAXFLOAT,SECN=IMAXFLOAT")
-dbLoadRecords("db/bsa.db", "DEV=$(AMC1_PREFIX),PORT=bsaPort,MAXLENGTH=20000,BSAKEY=AMC1:SUMFLOAT,SECN=SUMFLOAT")
-dbLoadRecords("db/bsa.db", "DEV=$(AMC1_PREFIX),PORT=bsaPort,MAXLENGTH=20000,BSAKEY=AMC1:BLSTATUS,SECN=BLSTATUS")
+dbLoadRecords("db/bsa.db", "DEV=$(AMC1_PREFIX),PORT=bsaPort,BSAKEY=AMC1:SUM,SECN=SUM")
+dbLoadRecords("db/bsa.db", "DEV=$(AMC1_PREFIX),PORT=bsaPort,BSAKEY=AMC1:IMAX,SECN=IMAX")
+dbLoadRecords("db/bsa.db", "DEV=$(AMC1_PREFIX),PORT=bsaPort,BSAKEY=AMC1:TMIT,SECN=TMIT")
+dbLoadRecords("db/bsa.db", "DEV=$(AMC1_PREFIX),PORT=bsaPort,BSAKEY=AMC1:IMAXFLOAT,SECN=IMAXFLOAT")
+dbLoadRecords("db/bsa.db", "DEV=$(AMC1_PREFIX),PORT=bsaPort,BSAKEY=AMC1:SUMFLOAT,SECN=SUMFLOAT")
+dbLoadRecords("db/bsa.db", "DEV=$(AMC1_PREFIX),PORT=bsaPort,BSAKEY=AMC1:BLSTATUS,SECN=BLSTATUS")
 
 # **********************************************************************
 # **** Load iocAdmin databases to support IOC Health and monitoring ****
@@ -289,4 +281,4 @@ create_monitor_set("info_settings.req" , 30 )
 # ************************************************************
 # **** System command for Temperature Chassis on Ethercat ****
 # Setup Real-time priorities after iocInit for driver threads
-system("/bin/su root -c `pwd`/rtPrioritySetup.cmd")
+#system("/bin/su root -c `pwd`/rtPrioritySetup.cmd")
