@@ -25,6 +25,6 @@ TimingProc: &TimingProc
       at:
         offset: 0x00010000
         stride: 0x00010000
-        nelms: 11
+        nelms: 10
     ##################################################
 

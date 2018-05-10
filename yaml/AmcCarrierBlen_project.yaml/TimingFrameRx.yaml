@@ -171,6 +171,16 @@ TimingFrameRx: &TimingFrameRx
       mode: RO
       description: Version check error
     #########################################################
+    MsgNoDelay:
+      at:
+        offset: 0x0023
+      class: IntField
+      name: MsgNoDelay
+      sizeBits: 1
+      lsBit: 0
+      mode: RW
+      description: Transfer EDEF data promptly - 3 fiducials ahead of eventcode data
+    #########################################################
     MsgDelay:
       at:
         offset: 0x0024
@@ -255,4 +265,5 @@ TimingFrameRx: &TimingFrameRx
         value: 1000
       - entry: RxCountReset
         value: 0 
-
+    #########################################################
+    

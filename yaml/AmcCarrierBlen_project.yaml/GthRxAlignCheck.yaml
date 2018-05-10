@@ -68,3 +68,4 @@ GthRxAlignCheck: &GthRxAlignCheck
       lsBit: 0
       mode: RO
       description: Last timing frame phase seen
+    #########################################################

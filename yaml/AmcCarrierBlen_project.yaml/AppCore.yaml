@@ -61,4 +61,24 @@ AppCore: &AppCore
         stride: 0x01000000
         nelms: 1
     ###################################################    
-    
+    ClrDiagCnt:
+      description: "Clear diagnostic counter"
+      at:
+        offset: 0x0
+      class: SequenceCommand
+      sequence:
+                    
+        # Insert clear
+        - entry: CmnConfig/CntReset
+          value: 0x1       
+        # 0.001 ms sleep
+        - entry: usleep
+          value: 1       
+
+        # Remove clear
+        - entry: CmnConfig/CntReset
+          value: 0x0       
+        # 0.001 ms sleep
+        - entry: usleep
+          value: 1
+          

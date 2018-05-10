@@ -11,7 +11,7 @@
 #once EvrV2PulsegenRegs.yaml
 
 EvrV2PulsegenRegs: &EvrV2PulsegenRegs
-    #########################################################:
+    #########################################################
     LinkAddr:
       class: IntField
       sizeBits: 16
@@ -19,7 +19,7 @@ EvrV2PulsegenRegs: &EvrV2PulsegenRegs
       description: Physical link address
       at:
          offset: 0x08
-    #########################################################:
+    #########################################################
     GtxDebug:
       class: IntField
       sizeBits: 8
@@ -27,7 +27,7 @@ EvrV2PulsegenRegs: &EvrV2PulsegenRegs
       description: Debug bits from link
       at:
          offset: 0x0C
-        #########################################################:
+    #########################################################
     CountReset:
       class: IntField
       sizeBits: 1
@@ -35,7 +35,7 @@ EvrV2PulsegenRegs: &EvrV2PulsegenRegs
       description: Counter reset
       at:
          offset: 0x10
-        #########################################################:
+    #########################################################
     ModeSel:
       class: IntField
       sizeBits: 1
@@ -43,7 +43,7 @@ EvrV2PulsegenRegs: &EvrV2PulsegenRegs
       description: Select LCLS-I/LCLS-II Trigger outputs (0/1)
       at:
          offset: 0x14
-        #########################################################:
+    #########################################################
     ChannelEnable:
       class: IntField
       sizeBits: 1
@@ -54,7 +54,7 @@ EvrV2PulsegenRegs: &EvrV2PulsegenRegs
          offset: 0x20
          nelms:  12
          stride: 32
-        #########################################################:
+    #########################################################
     ChannelRateSel:
       class: IntField
       sizeBits: 13
@@ -64,7 +64,7 @@ EvrV2PulsegenRegs: &EvrV2PulsegenRegs
          offset: 0x24
          nelms:  12
          stride: 32
-        #########################################################:
+    #########################################################
     ChannelDestSel:
       class: IntField
       sizeBits: 18
@@ -75,7 +75,7 @@ EvrV2PulsegenRegs: &EvrV2PulsegenRegs
          offset: 0x25
          nelms:  12
          stride: 32
-        #########################################################:
+    #########################################################
     ChannelEventCnt:
       class: IntField
       sizeBits: 32
@@ -85,7 +85,7 @@ EvrV2PulsegenRegs: &EvrV2PulsegenRegs
          offset: 0x28
          nelms:  12
          stride: 32
-        #########################################################:
+    #########################################################
     GlobalEventCnt:
       class: IntField
       sizeBits: 32
@@ -93,7 +93,7 @@ EvrV2PulsegenRegs: &EvrV2PulsegenRegs
       description: Global Event count
       at:
          offset: 0x1A8
-        #########################################################:
+    #########################################################
     TriggerChannel:
       class: IntField
       sizeBits: 4
@@ -103,7 +103,7 @@ EvrV2PulsegenRegs: &EvrV2PulsegenRegs
          offset: 0x200
          nelms:  12
          stride: 16
-        #########################################################:
+    #########################################################
     TriggerPolarity:
       class: IntField
       sizeBits: 1
@@ -114,7 +114,7 @@ EvrV2PulsegenRegs: &EvrV2PulsegenRegs
          offset: 0x202
          nelms:  12
          stride: 16
-        #########################################################:
+    #########################################################
     TriggerEnable:
       class: IntField
       sizeBits: 1
@@ -125,7 +125,7 @@ EvrV2PulsegenRegs: &EvrV2PulsegenRegs
          offset: 0x203
          nelms:  12
          stride: 16
-        #########################################################:
+    #########################################################
     TriggerDelay:
       class: IntField
       sizeBits: 28
@@ -135,7 +135,7 @@ EvrV2PulsegenRegs: &EvrV2PulsegenRegs
          offset: 0x204
          nelms:  12
          stride: 16
-        #########################################################:
+    #########################################################
     TriggerWidth:
       class: IntField
       sizeBits: 28
@@ -145,7 +145,7 @@ EvrV2PulsegenRegs: &EvrV2PulsegenRegs
          offset: 0x208
          nelms:  12
          stride: 16
-        #########################################################:
+    #########################################################
     TriggerFineDelay:
       class: IntField
       sizeBits: 6
@@ -155,3 +155,4 @@ EvrV2PulsegenRegs: &EvrV2PulsegenRegs
          offset: 0x20C
          nelms:  12
          stride: 16
+    #########################################################

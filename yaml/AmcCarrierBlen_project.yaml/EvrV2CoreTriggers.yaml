@@ -8,32 +8,32 @@
 ## the terms contained in the LICENSE.txt file.
 ##############################################################################
 #schemaversion 3.0.0
-#once UdpEngineClient.yaml
+#once EvrV2CoreTriggers.yaml
+#include EvrV2ChannelReg.yaml
+#include EvrV2TriggerReg.yaml
 
-UdpEngineClient: &UdpEngineClient 
-  description: UdpEngineClient 
+EvrV2CoreTriggers: &EvrV2CoreTriggers
   class: MMIODev
   configPrio: 1
-  size: 0x8
-  #########
+  description: Core trigger control
+  size: 0x40000
+  metadata:
+    numTriggers: &numTriggers 16
+  ############
   children:
-  #########
+  ############
     #########################################################
-    ClientRemotePort:
+    EvrV2ChannelReg:
+      <<: *EvrV2ChannelReg
       at:
-        offset: 0x00
-        byteOrder: BE
-      class: IntField
-      sizeBits: 16      
-      mode: RW
-      description: ClientRemotePort
+        offset: 0x00000
+        nelms: *numTriggers
+        stride: 0x1000
     #########################################################
-    ClientRemoteIp:
+    EvrV2TriggerReg:
+      <<: *EvrV2TriggerReg
       at:
-        offset: 0x04
-        byteOrder: BE
-      class: IntField
-      sizeBits: 32      
-      mode: RW
-      description: ClientRemoteIp
+        offset: 0x20000
+        nelms: *numTriggers
+        stride: 0x1000
     #########################################################

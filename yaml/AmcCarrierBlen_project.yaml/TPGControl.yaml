@@ -16,6 +16,7 @@ TPGControl: &TPGControl
   description: Timing pattern generator control
   size: 0x400
   children:
+    #########################################################
     NBeamSeq:
       at:
         offset: 0x0000
@@ -25,8 +26,8 @@ TPGControl: &TPGControl
       lsBit: 0
       mode: RO
       description: Number of beam control sequences
-    NControlSeq:
     #########################################################
+    NControlSeq:
       at:
         offset: 0x0001
       class: IntField
@@ -35,8 +36,8 @@ TPGControl: &TPGControl
       lsBit: 0
       mode: RO
       description: Number of experiment control sequences
-    NArraysBSA:
     #########################################################
+    NArraysBSA:
       at:
         offset: 0x0002
       class: IntField
@@ -45,8 +46,8 @@ TPGControl: &TPGControl
       lsBit: 0
       mode: RO
       description: Number of BSA arrays
-    SeqAddrLen:
     #########################################################
+    SeqAddrLen:
       at:
         offset: 0x0003
       class: IntField
@@ -56,8 +57,8 @@ TPGControl: &TPGControl
       mode: RO
       description: Sequence instruction at:
         offset bus width
-    NAllowSeq:
     #########################################################
+    NAllowSeq:
       at:
         offset: 0x0003
       class: IntField
@@ -66,8 +67,8 @@ TPGControl: &TPGControl
       lsBit: 4
       mode: RO
       description: Number of allow table sequences
-    ClockPeriod:
     #########################################################
+    ClockPeriod:
       at:
         offset: 0x0004
       class: IntField
@@ -76,8 +77,8 @@ TPGControl: &TPGControl
       lsBit: 0
       mode: RW
       description: Period of beam synchronous clock (ns/cycle)
-    BaseControl:
     #########################################################
+    BaseControl:
       at:
         offset: 0x0008
       class: IntField
@@ -85,8 +86,8 @@ TPGControl: &TPGControl
       sizeBits: 16
       mode: RW
       description: Base rate control divisor
-    ACDelay:
     #########################################################
+    ACDelay:
       at:
         offset: 0x000C
       class: IntField
@@ -103,8 +104,8 @@ TPGControl: &TPGControl
       sizeBits: 32
       mode: RW
       description: Pulse ID lower word
-    PulseIdU:
     #########################################################
+    PulseIdU:
       at:
         offset: 0x0014
       class: IntField
@@ -112,8 +113,8 @@ TPGControl: &TPGControl
       sizeBits: 32
       mode: RW
       description: Pulse ID upper word
-    TStampL:
     #########################################################
+    TStampL:
       at:
         offset: 0x0018
       class: IntField
@@ -121,8 +122,8 @@ TPGControl: &TPGControl
       sizeBits: 32
       mode: RW
       description: Time stamp lower word
-    TStampU:
     #########################################################
+    TStampU:
       at:
         offset: 0x001C
       class: IntField
@@ -130,8 +131,8 @@ TPGControl: &TPGControl
       sizeBits: 32
       mode: RW
       description: Time stamp upper word
-    ACRateDiv:
     #########################################################
+    ACRateDiv:
       at:
         offset: 0x0020
         stride: 1
@@ -141,8 +142,8 @@ TPGControl: &TPGControl
       sizeBits: 8
       mode: RW
       description: Power line synch rate marker divisors
-    FixedRateDiv:
     #########################################################
+    FixedRateDiv:
       at:
         offset: 0x0040
         stride: 4
@@ -152,8 +153,8 @@ TPGControl: &TPGControl
       sizeBits: 32
       mode: RW
       description: Fixed rate marker divisors
-    RateReload:
     #########################################################
+    RateReload:
       at:
         offset: 0x0068
       class: IntField
@@ -161,8 +162,8 @@ TPGControl: &TPGControl
       sizeBits: 1
       mode: WO
       description: Loads cached ac/fixed rate marker divisors
-    Sync:
     #########################################################
+    Sync:
       at:
         offset: 0x0070
       class: IntField
@@ -171,8 +172,8 @@ TPGControl: &TPGControl
       lsBit: 0
       mode: RW
       description: Sync status with 71kHz
-    IrqFifoEnable:
     #########################################################
+    IrqFifoEnable:
       at:
         offset: 0x0074
       class: IntField
@@ -181,8 +182,8 @@ TPGControl: &TPGControl
       lsBit: 0
       mode: RW
       description: Enable sequence checkpoint interrupt
-    IrqIntvEnable:
     #########################################################
+    IrqIntvEnable:
       at:
         offset: 0x0074
       class: IntField
@@ -191,8 +192,8 @@ TPGControl: &TPGControl
       lsBit: 1
       mode: RW
       description: Enable interval counter interrupt
-    IrqBsaEnable:
     #########################################################
+    IrqBsaEnable:
       at:
         offset: 0x0074
       class: IntField
@@ -201,8 +202,8 @@ TPGControl: &TPGControl
       lsBit: 2
       mode: RW
       description: Enable BSA complete interrupt
-    IrqEnable:
     #########################################################
+    IrqEnable:
       at:
         offset: 0x0077
       class: IntField
@@ -211,8 +212,8 @@ TPGControl: &TPGControl
       lsBit: 7
       mode: RW
       description: Enable interrupts
-    IrqIntvStatus:
     #########################################################
+    IrqIntvStatus:
       at:
         offset: 0x0078
       class: IntField
@@ -221,8 +222,8 @@ TPGControl: &TPGControl
       lsBit: 0
       mode: RW
       description: Interval counters updated
-    IrqBsaStatus:
     #########################################################
+    IrqBsaStatus:
       at:
         offset: 0x0078
       class: IntField
@@ -231,8 +232,8 @@ TPGControl: &TPGControl
       lsBit: 1
       mode: RO
       description: BSA complete updated
-    SeqFifoData:
     #########################################################
+    SeqFifoData:
       at:
         offset: 0x007C
       class: IntField
@@ -240,8 +241,8 @@ TPGControl: &TPGControl
       sizeBits: 32
       mode: RO
       description: Sequence checkpoint data
-    BeamSeqCntl:
     #########################################################
+    BeamSeqCntl:
       at:
         offset: 0x0080
         nelms: 16
@@ -250,8 +251,8 @@ TPGControl: &TPGControl
       sizeBits: 32
       mode: RW
       description: Beam sequence arbitration control
-    SeqResetL:
     #########################################################
+    SeqResetL:
       at:
         offset: 0x0100
       class: IntField
@@ -259,8 +260,8 @@ TPGControl: &TPGControl
       sizeBits: 32
       mode: WO
       description: Sequence restart lower word
-    SeqResetU:
     #########################################################
+    SeqResetU:
       at:
         offset: 0x0104
       class: IntField
@@ -268,8 +269,8 @@ TPGControl: &TPGControl
       sizeBits: 32
       mode: WO
       description: Sequence restart upper word
-    BeamEnergy:
     #########################################################
+    BeamEnergy:
       at:
         offset: 0x0120
       class: IntField
@@ -278,8 +279,8 @@ TPGControl: &TPGControl
         nelms: 4
       mode: RW
       description: Beam energy meta data
-    BeamDiagCntl:
     #########################################################
+    BeamDiagCntl:
       at:
         offset: 0x01E4
       class: IntField
@@ -287,8 +288,8 @@ TPGControl: &TPGControl
       sizeBits: 32
       mode: WO
       description: Beam diagnostic buffer control
-    BeamDiagStat:
     #########################################################
+    BeamDiagStat:
       at:
         offset: 0x01E8
         stride: 4
@@ -298,8 +299,8 @@ TPGControl: &TPGControl
       sizeBits: 32
       mode: RO
       description: Beam diagnostic latched status
-    BsaCompleteL:
     #########################################################
+    BsaCompleteL:
       at:
         offset: 0x01F8
       class: IntField
@@ -307,8 +308,8 @@ TPGControl: &TPGControl
       sizeBits: 32
       mode: RW
       description: Bsa buffers complete lower word
-    BsaCompleteU:
     #########################################################
+    BsaCompleteU:
       at:
         offset: 0x01FC
       class: IntField
@@ -316,8 +317,8 @@ TPGControl: &TPGControl
       sizeBits: 32
       mode: RW
       description: Bsa buffers complete upper word
-    BsaEventSel:
     #########################################################
+    BsaEventSel:
       at:
         offset: 0x0200
         stride: 8
@@ -328,8 +329,8 @@ TPGControl: &TPGControl
       lsbit: 0
       mode: RW
       description: Bsa definition rate/destination selection
-    BsaStatSel:
     #########################################################
+    BsaStatSel:
       at:
         offset: 0x0204
         stride: 8
@@ -340,7 +341,5 @@ TPGControl: &TPGControl
       lsbit: 0
       mode: RW
       description: Bsa definition samples to average/acquire
-
-
-
-
+    #########################################################
+    

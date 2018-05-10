@@ -8,32 +8,39 @@
 ## the terms contained in the LICENSE.txt file.
 ##############################################################################
 #schemaversion 3.0.0
-#once UdpEngineClient.yaml
+#once RtmMpsLinkNode.yaml
 
-UdpEngineClient: &UdpEngineClient 
-  description: UdpEngineClient 
-  class: MMIODev
-  configPrio: 1
-  size: 0x8
-  #########
+RtmMpsLinkNode: &RtmMpsLinkNode
+  name: RtmMpsLinkNode
+  description: MPS Link Node RTM
+  class: MMIODev 
+  size: 0x10 
   children:
-  #########
     #########################################################
-    ClientRemotePort:
+    RtmDin:
       at:
-        offset: 0x00
-        byteOrder: BE
+        offset: 0x0
       class: IntField
-      sizeBits: 16      
-      mode: RW
-      description: ClientRemotePort
+      name: RtmDin
+      sizeBits: 32
+      mode: RO
+      description: Digital Inputs   
     #########################################################
-    ClientRemoteIp:
+    RtmDout:
       at:
-        offset: 0x04
-        byteOrder: BE
+        offset: 0x4
       class: IntField
-      sizeBits: 32      
+      name: RtmDout
+      sizeBits: 8
+      mode: RO
+      description: Digital Outputs    
+    #########################################################
+    RtmDoutMask:
+      at:
+        offset: 0x8
+      class: IntField
+      name: RtmDoutMask
+      sizeBits: 8
       mode: RW
-      description: ClientRemoteIp
+      description: Digital Outputs Mask          
     #########################################################

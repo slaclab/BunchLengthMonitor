@@ -22,6 +22,19 @@ BpmCommonRegs: &BpmCommonRegs
       mode:        RO
       at:
         { offset:  0x00}
+    FirmwareConfiguration:
+      class:       IntField
+      description: "Mode for which FW was built"
+      sizeBits:    1
+      lsBit:       0
+      mode:        RO
+      at:
+        { offset:  0x00}
+      enums:
+        - name:  "StriplineBpm"
+          value: 0
+        - name:  "CavityBpm"
+          value: 1
     ReadingInvalid:
       class:       IntField
       description: "X/Y/TMIT Invalid"
@@ -30,11 +43,27 @@ BpmCommonRegs: &BpmCommonRegs
       mode:        RO
       at:
         { offset:  0x01}
+    VInvalid:
+      class:       IntField
+      description: "Y Invalid"
+      sizeBits:    1
+      lsBit:       6
+      mode:        RO
+      at:
+        { offset:  0x01}
+    UInvalid:
+      class:       IntField
+      description: "U Invalid"
+      sizeBits:    1
+      lsBit:       5
+      mode:        RO
+      at:
+        { offset:  0x01}
     CalGRN:
       class:       IntField
       description: "'Green' calibration data"
       sizeBits:    1
-      lsBit:    4
+      lsBit:       4
       mode:        RO
       at:
         { offset:  0x01}
@@ -42,7 +71,7 @@ BpmCommonRegs: &BpmCommonRegs
       class:       IntField
       description: "'Red' calibration data"
       sizeBits:    1
-      lsBit:    3
+      lsBit:       3
       mode:        RO
       at:
         { offset:  0x01}
@@ -50,7 +79,23 @@ BpmCommonRegs: &BpmCommonRegs
       class:       IntField
       description: "Result of a software-triggered cycle"
       sizeBits:    1
-      lsBit:    2
+      lsBit:       2
+      mode:        RO
+      at:
+        { offset:  0x01}
+    TmitLow:
+      class:       IntField
+      description: "TMIT below threshold for determining position"
+      sizeBits:    1
+      lsBit:       1
+      mode:        RO
+      at:
+        { offset:  0x01}
+    TmitInvalid:
+      class:       IntField
+      description: "TMIT Invalid"
+      sizeBits:    1
+      lsBit:       0
       mode:        RO
       at:
         { offset:  0x01}
@@ -106,6 +151,17 @@ BpmCommonRegs: &BpmCommonRegs
       mode:        RO
       at:
         { offset:  0x20}
+    TrigActive:
+      class:       IntField
+      description: "State of Trigger Arbiter"
+      mode:        RO
+      sizeBits:    1
+      lsBit:       0
+      enums:
+        - { name: "Idle",   value: 0 }
+        - { name: "Active", value: 1 }
+      at:
+        { offset:  0x24}
 #
     NumSamples:
       class:       IntField
@@ -118,6 +174,13 @@ BpmCommonRegs: &BpmCommonRegs
       sizeBits:    1
       lsBit:    0
       description: "Soft-trigger an processing cycle"
+      at:
+        { offset:  0x44}
+    ForceUnlock:
+      class:       IntField
+      sizeBits:    1
+      lsBit:    1
+      description: "Unlock a hung trigger arbiter (DEBUG ONLY)"
       at:
         { offset:  0x44}
     MuxGRN:
@@ -190,6 +253,12 @@ BpmCommonRegs: &BpmCommonRegs
       description: "Scale for TMIT (end result must fit into 18-bit signed); scaled to 2^16"
       at:
         { offset:  0x4C}
+    TmitThreshold:
+      class:       IntField
+      sizeBits:    32
+      description: "Threshold for TMIT below which position is flagged invalid"
+      at:
+        { offset:  0x50}
 #
     A11:
       class:       IntField

@@ -16,6 +16,7 @@ EvrV2Core: &EvrV2Core
   description: LCLS-II Timing Receiver module
   size:        0x800
   children:
+    #########################################################:
     IrqEnable:
       class: IntField
       sizeBits: 1

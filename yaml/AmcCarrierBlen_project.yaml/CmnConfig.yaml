@@ -165,3 +165,92 @@ CmnConfig: &CmnConfig
       mode: RO
       description: "Reflect BSA status health 2 "
     #########################################################
+    MpsThreshOnly:
+      class: IntField
+      at:
+        offset: 0x0048
+      sizeBits: 1
+      mode: RW
+      description: "1 - to test MPS threshold ignore other error for severity reporting, 0 - normal operation"
+    #########################################################
+    AmcNotPresent:
+      class: IntField
+      at:
+        offset: 0x004C
+      sizeBits: 2
+      mode: RW
+      description: "1 - AMC not installed, 0 - installed"
+    #########################################################
+    #########################################################
+    CntReset:
+      class: IntField
+      at:
+        offset: 0x0050
+      sizeBits: 1
+      mode: RW
+      description: "1 - reset counters"
+    #########################################################
+    BpTimAlignErrCnt:
+      class: IntField
+      at:
+        offset: 0x0054
+      sizeBits: 32
+      mode: RO
+      description: "Counts when error conditions observed in BSA/MPS message building"
+    #########################################################
+    BpTmitIntMax:
+      class: IntField
+      at:
+        offset: 0x0058
+      sizeBits: 32
+      mode: RO
+      description: "Report maximum delay between TMIT arrival times in 6.4ns counts"
+    #########################################################
+    BpTimingIntMax:
+      class: IntField
+      at:
+        offset: 0x005C
+      sizeBits: 64
+      mode: RO
+      description: "Report Maximum time timing stamp differences between timing stamps of two sequencial TMITs. Check for missing messages"
+    #########################################################
+    BpTimingInt:
+      class: IntField
+      at:
+        offset: 0x0064
+      sizeBits: 64
+      mode: RO
+      description: "Report Current time timing stamp differences between timing stamps of two sequencial TMITs. Check for missing messages"
+    #########################################################
+    CntDiag:
+      class: IntField
+      at:
+        offset: 0x006C
+      sizeBits: 32
+      mode: RO
+      description: "Report  delay between output diags in 6.4ns counts"
+    #########################################################
+    CntDiagMin:
+      class: IntField
+      at:
+        offset: 0x0070
+      sizeBits: 32
+      mode: RO
+      description: "Report min delay between output diags in 6.4ns counts"
+    #########################################################
+    CntDiagMax:
+      class: IntField
+      at:
+        offset: 0x0074
+      sizeBits: 32
+      mode: RO
+      description: "Report Maximium delay between output diags in 6.4ns counts"
+    #########################################################
+    DiagnosticDelay:
+      class: IntField
+      at:
+        offset: 0x0078
+      sizeBits: 32
+      mode: RW
+      description: "Specify minimum delay between output diagnostics pulses, need to be less then 1mSec but more then TBD requirements of MPS and BSA"
+    #########################################################

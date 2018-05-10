@@ -42,13 +42,7 @@ mmio: &mmio
             JesdTx:
               instantiate: true              
               metadata: 
-                numTxLanes: &numTxLanes 2              
-        AppTopTrig:
-          children:
-            EvrV1Reg:
-              instantiate: false 
-            EvrV1Isr:
-              instantiate: false               
+                numTxLanes: &numTxLanes 2                        
     ################################################## 
   
 stream: &stream

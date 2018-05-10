@@ -1,23 +1,42 @@
-tag build-AmcCarrierBlen-0x00000005-20170623001051-leosap
+tag build-AmcCarrierBlen-0x00000007-20180423183443-leosap
 Tagger: Leonid Sapozhnikov <leosap@slac.stanford.edu>
-Date:   Fri Jun 23 02:01:34 2017 -0700
+Date:   Mon Apr 23 20:22:31 2018 -0700
 
 PROJECT: AmcCarrierBlen
 
-FW_VERSION: 0x00000005
+FW_VERSION: 0x00000007
 
-BUILD_STRING: AmcCarrierBlen: Vivado v2016.4, x86_64, Built Fri Jun 23 00:10:51 PDT 2017 by leosap
+BUILD_STRING: AmcCarrierBlen: Vivado v2016.4, rdsrv223 (x86_64), Built Mon Apr 23 18:34:43 PDT 2018 by leosap
 
-commit 50d11784f565eeb1412ec69e24b76df970a6ad2a
+commit 2bc5a7f0d6cb6a9126f7b727b9034723e0663c37
 Author: Leonid Sapozhnikov <leosap@slac.stanford.edu>
-Date:   Fri Jun 23 00:09:31 2017 -0700
+Date:   Mon Apr 23 18:34:24 2018 -0700
 
-    Update to the latest releases
+    Updating to the latest CPFW releases v2.4.1 and v1.11.2
 
-Submodule firmware/submodules/lcls-bpm-core 9372c87..b8ecfe1:
-  > Update to the latest releases
-Submodule firmware/submodules/ruckus f063592..da1bf41:
-  > updating 'make test' prinout
-Submodule firmware/submodules/surf 0ac3e2e6..eeeeaf93:
-  > Merge pull request #33 from slaclab/cryo-det-dev
-  > bug fix for Vivado 2017.1 support
+Submodule firmware/submodules/amc-carrier-core 5d7db8f..ae08947:
+  > Merge pull request #149 from slaclab/pre-release
+  > Merge pull request #148 from slaclab/pre-release
+  > Merge pull request #146 from slaclab/pre-release
+  > Merge pull request #145 from slaclab/pre-release
+  > Merge pull request #144 from slaclab/pre-release
+  > Merge pull request #141 from slaclab/pre-release
+Submodule firmware/submodules/lcls-bpm-core e5d51af..3d4c09b:
+  > Merge commit '1ca511ab9e689a6ef4a4be9beaef679dfc723ee3'
+Submodule firmware/submodules/lcls-timing-core 4de46d3..9dccdc4:
+  > Merge pull request #54 from slaclab/pre-release
+  > Merge pull request #50 from slaclab/pre-release
+  > adding releaseNotes.py
+  > Merge pull request #47 from slaclab/pre-release
+Submodule firmware/submodules/ruckus 53d19d2..c94ad3f:
+  > bug fix
+  > Merge pull request #66 from slaclab/pre-release
+  > Merge pull request #65 from slaclab/pre-release
+Submodule firmware/submodules/surf 73289c19..058604c6:
+  > Merge pull request #204 from slaclab/pre-release
+  > Merge pull request #200 from slaclab/pre-release
+  > PR Template tweak - Smaller headings
+  > More PR template tweaks
+  > Fixed incorrect markdown
+  > Added Pull Request template
+  > Merge pull request #194 from slaclab/udp-link-var

@@ -28,33 +28,6 @@ TriggerLaneReg: &TriggerLaneReg
       mode: RW
       description: "Select trigger source: soft - b00,  timing - b01, ext.trig 0 - b10, ext trig 1 - b11"
     #########################################################
-    SelectField:
-      at:
-        offset: 0x0004
-      class: IntField
-      name: SelectField
-      sizeBits: 3
-      mode: RW
-      description: "Select which fields to use for trigger message comparison:select fixedRate field -  bX1, select beamRequest field - b1X, b1xx - enable check of BSA done63-60 for fault"
-    #########################################################
-    fixedRate:
-      at:
-        offset: 0x0008
-      class: IntField
-      name: fixedRate
-      sizeBits: 10
-      mode: RW
-      description: "use field to only mask bit of interest for comparison against fixedRate field of trigger message"
-    #########################################################
-    beamRequest:
-      at:
-        offset: 0x000C
-      class: IntField
-      name: beamRequest
-      sizeBits: 32
-      mode: RW
-      description: "used field to only mask bit of interest for comparison against beamREquest field of timing"
-    #########################################################
     trigDelay:
       at:
         offset: 0x0010
