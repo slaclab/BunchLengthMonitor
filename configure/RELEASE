@@ -31,7 +31,7 @@ SEQ_MODULE_VERSION=R2.2.4-1.0
 CAPUTLOG_MODULE_VERSION=R3.5-0.1.0
 SSCAN_MODULE_VERSION=R2.10.2-0.1.0
 CALC_MODULE_VERSION=R3.6.1-0.1.0
-YCPSWASYN_MODULE_VERSION=R2.0.1
+YCPSWASYN_MODULE_VERSION=R2.0.4
 
 # ==========================================================
 # Define module paths using pattern
@@ -49,8 +49,8 @@ CAPUTLOG=$(EPICS_MODULES)/caPutLog/$(CAPUTLOG_MODULE_VERSION)
 SSCAN=$(EPICS_MODULES)/sscan/$(SSCAN_MODULE_VERSION)
 CALC=$(EPICS_MODULES)/calc/$(CALC_MODULE_VERSION)
 YCPSWASYN=$(EPICS_MODULES)/ycpswasyn/$(YCPSWASYN_MODULE_VERSION)
-YAMLLOADER=$(EPICS_MODULES)/yamlLoader/R1.0.3
-BSADRIVER=$(EPICS_MODULES)/bsaDriver/R1.1.0
+YAMLLOADER=$(EPICS_MODULES)/yamlLoader/R1.1.0
+BSADRIVER=$(EPICS_MODULES)/bsaDriver/R1.5.0
 
 # =====================================================================
 # Set EPICS_BASE last so it appears last in the DB, DBD, INCLUDE, and LIB search paths
