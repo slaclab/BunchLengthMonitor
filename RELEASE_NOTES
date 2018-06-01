@@ -10,10 +10,20 @@
 #  Rev:  dd-mmm-yyyy, Reviewer's Name    (USERNAME)
 #--------------------------------------------------------------
 
-R1.1.0: 10-May-2018, C. Bianchini   (carolina)
+R1.1.0: 15-May-2018, C. Bianchini   (carolina)
+        Integrating Timing Triggers.	
+	TPRPATTERN_MODULE_VERSION=R1.0.0
+	TPRTRIGGER_MODULE_VERSION=R1.1.0
+	CROSSBARCONTROL_MODULE_VERSION=R1.0.3
+	TIMINGAPI_MODULE_VERSION=R0.6
+
+R1.1.0: 11-May-2018, C. Bianchini   (carolina)
 	Update new firmware, new configuration file, updated modules 
 	 version, updated API version, updated st.cmd to use proprerly
 	 dbLoadRecords for BSA and data type for addBsa() calls.
+	BSADRIVER  = R1.4.0
+	YAMLLOADER = R1.0.3
+	YCPSWASYN  = R2.0.4
 
 R1.0.6: Add support for INCONSISTENT shutter and filter state.
         INCONSISTENT means both limit switches are active.

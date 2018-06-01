@@ -26,7 +26,7 @@ yaml-cpp_DIR = $(YAML_LIB)
 # ======================================================
 # LINK "NON EPICS" EXTERNAL PACKAGE LIBRARIES STATICALLY
 #=======================================================
-USR_LIBS_Linux += cpsw boost_system yaml-cpp
+USR_LIBS_Linux += cpsw boost_system yaml-cpp hpstpr
 
 #======================================================
 
@@ -50,6 +50,8 @@ blen_DBD += drvAsynIPPort.dbd
 blen_DBD += drvAsynSerialPort.dbd
 blen_DBD += caPutLog.dbd
 blen_DBD += $(CEXP_DBDS)
+blen_DBD += crossbarControl.dbd
+blen_DBD += tprPatternAsynDriver.dbd
 
 blen_DBD += blenSupport.dbd
 
@@ -112,6 +114,12 @@ blen_LIBS += bsaDriver
 bsa_DIR = $(BSA_LIB)
 blen_LIBS += bsa
 
+#Needed for Crossbar control-TprPattern and TprTrigger
+blen_LIBS += crossbarControl
+blen_LIBS += tprPattern
+# API for tprPattern
+hpstpr_DIR = $(HPSTPR_LIB)
+#blen_LIBS += hpsTpr
 # Link Asyn library support.
 # Should be last for othe modules that depend on asyn
 blen_LIBS += asyn
