@@ -1,0 +1,66 @@
+# Control stream from sensor A 
+record (mbbo, "BLEN:$(AREA):$(POS):$(INST)A_ACCESS") {
+  field(DESC, "Stream from ATCA control")
+  field(DTYP, "Raw Soft Channel")
+  field(ZRVL, "1")
+  field(ZRST, "Running")
+  field(ZRSV, "NO_ALARM")
+  field(ONVL, "1")
+  field(ONST, "Maintenance")
+  field(ONSV, "MINOR")
+  field(TWVL, "1")
+  field(TWST, "Test")
+  field(TWSV, "MINOR")
+  field(THVL, "0")
+  field(THST, "OFFLINE")
+  field(THSV, "MAJOR")
+  field(PINI, "YES")
+  field(OUT, "BLEN:$(AREA):$(POS):$(INST)A_AutoRearm PP")
+  info(autosaveFields, "VAL")
+}
+
+# Control stream from sensor B 
+record (mbbo, "BLEN:$(AREA):$(POS):$(INST)B_ACCESS") {
+  field(DESC, "Stream from ATCA control")
+  field(DTYP, "Raw Soft Channel")
+  field(ZRVL, "1")
+  field(ZRST, "Running")
+  field(ZRSV, "NO_ALARM")
+  field(ONVL, "1")
+  field(ONST, "Maintenance")
+  field(ONSV, "MINOR")
+  field(TWVL, "1")
+  field(TWST, "Test")
+  field(TWSV, "MINOR")
+  field(THVL, "0")
+  field(THST, "OFFLINE")
+  field(THSV, "MAJOR")
+  field(PINI, "YES")
+  field(OUT, "BLEN:$(AREA):$(POS):$(INST)B_AutoRearm PP")
+  info(autosaveFields, "VAL")
+}
+
+# Control stream for both sensors at the same time
+record (mbbo, "BLEN:$(AREA):$(POS):$(INST)_ACCESS") {
+  field(DESC, "Stream from ATCA control")
+  field(DTYP, "Raw Soft Channel")
+  field(ZRVL, "0")
+  field(ZRST, "Running")
+  field(ZRSV, "NO_ALARM")
+  field(ONVL, "1")
+  field(ONST, "Maintenance")
+  field(ONSV, "MINOR")
+  field(TWVL, "2")
+  field(TWST, "Test")
+  field(TWSV, "MINOR")
+  field(THVL, "3")
+  field(THST, "OFFLINE")
+  field(THSV, "MAJOR")
+  field(OUT, "BLEN:$(AREA):$(POS):$(INST)_F_ACCESS PP")
+}
+
+# Distribute data to both sensors
+record (dfanout, "BLEN:$(AREA):$(POS):$(INST)_F_ACCESS") {
+  field(OUTA, "BLEN:$(AREA):$(POS):$(INST)A_ACCESS PP")
+  field(OUTB, "BLEN:$(AREA):$(POS):$(INST)B_ACCESS PP")
+}

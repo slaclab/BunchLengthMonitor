@@ -55,6 +55,16 @@ blen_DBD += tprPatternAsynDriver.dbd
 
 blen_DBD += blenSupport.dbd
 
+# BSA
+blen_DBD += bsaCore.dbd
+blen_DBD += bsa.dbd
+
+# For FCOM
+blen_DBD += fcomIocshSupport.dbd
+blen_DBD += fcomUtil.dbd
+blen_DBD += devFcom.dbd
+blen_DBD += drvAsynIPPort.dbd
+
 # caf: aCalcout record support
 blen_DBD += sscanSupport.dbd
 blen_DBD += calcSupport.dbd
@@ -73,6 +83,12 @@ blen_DBD += system.dbd
 # <name>_registerRecordDeviceDriver.cpp will be created from <name>.dbd
 blen_SRCS += blen_registerRecordDeviceDriver.cpp
 
+blen_SRCS += blenIOCFunctions.cpp
+blen_SRCS += cpswStreamBSA.cpp
+blen_SRCS += blenBSA.cpp
+blen_SRCS += blenFcom.cpp
+blen_SRCS += asubWeightXAxis.c
+
 blen_SRCS_DEFAULT += blenMain.cpp
 
 blen_SRCS_vxWorks += -nil-
@@ -87,11 +103,19 @@ blen_SRCS_vxWorks += -nil-
 blen_SRCS += DaqSizeSub.c
 
 # =====================================================
-# Link in the libraries from other EPICS modules
+# Link in the libraries other EPICS modules
 # =====================================================
+blen_LIBS += yamlDownloader
 blen_LIBS += ycpswasyn
 blen_LIBS += yamlLoader
-blen_LIBS += seq pv
+
+# caf: Needed to link in aCalcout support
+blen_LIBS += calc
+blen_LIBS += sscan
+
+# For FCOM
+blen_LIBS += fcomUtil fcomIocshSupport fcom
+blen_LIBS += udpCommBSD 
 
 # Needed to link in iocAdmin support
 blen_LIBS += devIocStats
@@ -101,18 +125,18 @@ blen_LIBS += autosave
 
 # Needed to link caPutLog support
 blen_LIBS += caPutLog
+blen_LIBS += seq pv
 
 # Needed to link cexpsh() support
 blen_LIBS += $(CEXP_LIBS)
-
-# caf: Needed to link in aCalcout support
-blen_LIBS += sscan
-blen_LIBS += calc
+blen_SYS_LIBS += $(CEXP_SYS_LIBS)
 
 # Needed to link bsaDriver support
 blen_LIBS += bsaDriver
 bsa_DIR = $(BSA_LIB)
 blen_LIBS += bsa
+blen_LIBS += eventBsaSupport
+blen_LIBS += BsaCore
 
 #Needed for Crossbar control-TprPattern and TprTrigger
 blen_LIBS += crossbarControl

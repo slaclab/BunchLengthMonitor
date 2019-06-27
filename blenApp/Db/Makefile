@@ -7,6 +7,8 @@ include $(TOP)/configure/CONFIG
 #  Optimization of db files using dbst (DEFAULT: NO)
 #DB_OPT = YES
 
+REQ += manual.req
+
 #----------------------------------------------------
 # Create and install (or just install)
 # databases, templates, substitutions like this
@@ -26,11 +28,26 @@ DB_INSTALLS += $(YCPSWASYN)/db/bo.template
 DB_INSTALLS += $(YCPSWASYN)/db/waveform_stream16.template
 DB_INSTALLS += $(YCPSWASYN)/db/waveform_stream32.template
 
+# For weight function and final result waveforms
+DB += calculatedWF.db
+
+DB += blenMR.db
+DB += blenFilters.db
+DB += blenFilterDecoders.db
+DB += weightFunctionXAxis.db
+DB += streamControl.db
+DB += processRawWFHeader.db
+
+# Install Database for tprTrigger module
+DB_INSTALLS += $(TPRTRIGGER)/db/tprTrig.db
+DB_INSTALLS += $(TPRTRIGGER)/db/tprDeviceNamePV.db
+
 # Install Database for tprPattern module
 DB_INSTALLS += $(TPRPATTERN)/db/tprPattern.db
 DB_INSTALL += $(CROSSBARCONTROL)/db/crossbarCtrl.db
 
 # For BSA
+DB_INSTALLS += $(EVENT)/db/Bsa.db
 DB_INSTALLS += $(BSADRIVER)/db/bsa.db
 
 # User-defined functions
