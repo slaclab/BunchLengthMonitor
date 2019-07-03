@@ -10,6 +10,10 @@
 #  Rev:  dd-mmm-yyyy, Reviewer's Name    (USERNAME)
 #--------------------------------------------------------------
 
+R2.0.1: 03-Jul-2019, Marcio Donadio (marcio)
+        - Downgrading modules because the newest ones were incompatible with
+          our yaml file
+
 R2.0.0: 03-Jul-2019, Carolina Bianchini (carolina) and Marcio Donadio (marcio)
         - Merge of BunchLengthMonitor_MR and BunchLengthMonitor (From LCLS-II)
         - Upgraded to EPICS V7, changed: configure/RELEASE, configure/CONFIG_SITE
