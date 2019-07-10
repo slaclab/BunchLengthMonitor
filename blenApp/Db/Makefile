@@ -44,7 +44,7 @@ DB_INSTALLS += $(TPRTRIGGER)/db/tprDeviceNamePV.db
 
 # Install Database for tprPattern module
 DB_INSTALLS += $(TPRPATTERN)/db/tprPattern.db
-DB_INSTALL += $(CROSSBARCONTROL)/db/crossbarCtrl.db
+DB_INSTALLS += $(CROSSBARCONTROL)/db/crossbarCtrl.db
 
 # For BSA
 DB_INSTALLS += $(EVENT)/db/Bsa.db
