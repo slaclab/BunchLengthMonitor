@@ -115,7 +115,7 @@ dbLoadRecords("db/Bsa.db", "DEVICE=BLEN:${AREA}:${POS},ATRB=ARAW")
 dbLoadRecords("db/Bsa.db", "DEVICE=BLEN:${AREA}:${POS},ATRB=BRAW")
 
 #Save/Load configuration related records
-dbLoadRecords("db/saveLoadConfig.db", "P=BLEN:${AREA}:${POS}:, PORT=cpsw")
+dbLoadRecords("db/saveLoadConfig.db", "P=BLEN:${AREA}:${POS}:, PORT=cpsw, SAVE_FILE=/tmp/configDump.yaml, LOAD_FILE=$IOC_DATA/${IOC_NAME}/firmware/yaml/config/defaults.yaml")
 
 # Automatic initialization
 #dbLoadRecords("db/monitorFPGAReboot.db", "P=BLEN:${AREA}:${POS}, KEY=840202")
