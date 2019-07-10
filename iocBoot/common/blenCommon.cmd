@@ -105,7 +105,7 @@ epicsEnvSet("PART_PV", "${AREA}:BL01")
 
 # Timing crossbar, pattern, and trigger
 dbLoadRecords("db/tprTrig.db",     "LOCA=${AREA}, IOC_UNIT=BL01, INST=2, PORT=trig")
-dbLoadRecords("db/tprPattern.db", "DEV=${IOC_NAME}, PORT=pattern")
+dbLoadRecords("db/tprPattern.db",  "LOCA=${AREA}, IOC_UNIT=BL01, INST=2, PORT=pattern")
 dbLoadRecords("db/crossbarCtrl.db", "DEV=EVR:${PART_PV}, PORT=crossbar")
 
 # BSA records
