@@ -8,9 +8,10 @@ include $(TOP)/configure/CONFIG
 #==================================================================================
 # Path to "NON EPICS" External PACKAGES: USER INCLUDES
 #==================================================================================
-
 # Support for CPSW
 USR_INCLUDES = -I$(BOOST_INCLUDE) -I$(CPSW_FRAMEWORK_INCLUDE) -I$(YAML_INCLUDE)
+USR_INCLUDES += -I$(CPSW_DEVICE_LIBRARY_INCLUDE)
+USR_INCLUDES += -I$(YAMLREADER_INCLUDE)
 #==================================================================================
 
 #======================================================
@@ -18,16 +19,22 @@ USR_INCLUDES = -I$(BOOST_INCLUDE) -I$(CPSW_FRAMEWORK_INCLUDE) -I$(YAML_INCLUDE)
 #======================================================
 # Support for CPSW
 cpsw_DIR = $(CPSW_FRAMEWORK_LIB)
+deviceLib_DIR = $(CPSW_DEVICE_LIBRARY_LIB)
 boost_system_DIR = $(BOOST_LIB)
 yaml-cpp_DIR = $(YAML_LIB)
-
+hpstpr_DIR = $(HPSTPR_LIB)
+yamlReader_DIR = $(YAMLREADER_LIB)
 # =====================================================
 
 # ======================================================
 # LINK "NON EPICS" EXTERNAL PACKAGE LIBRARIES STATICALLY
 #=======================================================
-USR_LIBS_Linux += cpsw boost_system yaml-cpp hpstpr
-
+USR_LIBS_Linux += yamlReader
+USR_LIBS_Linux += deviceLib
+USR_LIBS_Linux += cpsw
+USR_LIBS_Linux += yaml-cpp
+USR_LIBS_Linux += boost_system
+USR_LIBS_Linux += hpstpr
 #======================================================
 
 # ================================================
@@ -41,6 +48,7 @@ PROD_IOC = blen
 DBD += blen.dbd
 
 # blen.dbd will be made up from these files:
+blen_DBD += blenDrv.dbd
 blen_DBD += base.dbd
 blen_DBD += devIocStats.dbd
 blen_DBD += asSupport.dbd
@@ -51,6 +59,7 @@ blen_DBD += drvAsynSerialPort.dbd
 blen_DBD += caPutLog.dbd
 blen_DBD += $(CEXP_DBDS)
 blen_DBD += crossbarControl.dbd
+blen_DBD += tprTriggerAsynDriver.dbd
 blen_DBD += tprPatternAsynDriver.dbd
 
 blen_DBD += blenSupport.dbd
@@ -58,6 +67,9 @@ blen_DBD += blenSupport.dbd
 # BSA
 blen_DBD += bsaCore.dbd
 blen_DBD += bsa.dbd
+
+# For calculated waveforms
+blen_DBD += calc.dbd
 
 # For FCOM
 blen_DBD += fcomIocshSupport.dbd
@@ -72,6 +84,7 @@ blen_DBD += calcSupport.dbd
 blen_DBD += ycpswasyn.dbd
 blen_DBD += bsaAsynDriver.dbd
 blen_DBD += yamlLoader.dbd
+blen_DBD += yamlDownloader.dbd
 
 # ================================================================================
 # The system command will be mainly used by linux hosted IOCs
@@ -140,6 +153,7 @@ blen_LIBS += BsaCore
 
 #Needed for Crossbar control-TprPattern and TprTrigger
 blen_LIBS += crossbarControl
+blen_LIBS += tprTrigger
 blen_LIBS += tprPattern
 # API for tprPattern
 hpstpr_DIR = $(HPSTPR_LIB)
