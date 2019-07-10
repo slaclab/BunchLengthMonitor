@@ -1,0 +1,11 @@
+$(IOC):UPTIME		3600	scan
+$(IOC):IOC_CPU_LOAD	10	monitor
+$(IOC):START_CNT	1	monitor
+$(IOC):HEARTBEAT	1	monitor
+$(IOC):CA_CLNT_CNT 	15 	monitor
+$(IOC):CA_CONN_CNT 	15 	monitor
+$(IOC):FD_FREE 		20 	monitor
+$(IOC):MEM_FREE 	10	monitor
+$(IOC):LOAD 		10	monitor
+$(IOC):SUSP_TASK_CNT 	86400 	monitor
+$(IOC):STARTTOD 	10 	monitor
