@@ -19,7 +19,7 @@ save_restoreSet_Debug(0)
 
 # Specify where request and save_restore files can be found
 set_requestfile_path("${IOC_DATA}/${IOC}/autosave-req")
-set_requestfile_path("${TOP}/restore", "")
+set_requestfile_path("${TOP}/autosave", "")
 set_requestfile_path("${TOP}/iocBoot/${IOC}", "")
 set_savefile_path("${IOC_DATA}/${IOC}/autosave")
 
