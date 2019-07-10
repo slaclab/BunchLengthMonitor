@@ -83,8 +83,8 @@ fcomInit("${FCOM_NETWORK}", "20")
 # ===========================================
 
 # Manually created yCPSWasyn records
-dbLoadRecords("db/blenMR.db", "AREA=${AREA}, POS=${POS}:, INST=${INST}A, INST_NUM=A, PORT=cpsw, AMC=0")
-dbLoadRecords("db/blenMR.db", "AREA=${AREA}, POS=${POS}:, INST=${INST}B, INST_NUM=B, PORT=cpsw, AMC=1")
+dbLoadRecords("db/blenMR.db", "AREA=${AREA}, POS=${POS}, INST=${INST}A, INST_NUM=A, PORT=cpsw, AMC=0")
+dbLoadRecords("db/blenMR.db", "AREA=${AREA}, POS=${POS}, INST=${INST}B, INST_NUM=B, PORT=cpsw, AMC=1")
 
 # Switch on/off stream data from FPGA
 dbLoadRecords("db/streamControl.db", "AREA=${AREA}, POS=${POS}, INST=${INST}")
@@ -109,10 +109,10 @@ dbLoadRecords("db/tprPattern.db",  "LOCA=${AREA}, IOC_UNIT=BL01, INST=2, PORT=pa
 dbLoadRecords("db/crossbarCtrl.db", "DEV=EVR:${PART_PV}, PORT=crossbar")
 
 # BSA records
-dbLoadRecords("db/Bsa.db", "DEVICE=BLEN:${AREA}:${POS},ATRB=AIMAX")
-dbLoadRecords("db/Bsa.db", "DEVICE=BLEN:${AREA}:${POS},ATRB=BIMAX")
-dbLoadRecords("db/Bsa.db", "DEVICE=BLEN:${AREA}:${POS},ATRB=ARAW")
-dbLoadRecords("db/Bsa.db", "DEVICE=BLEN:${AREA}:${POS},ATRB=BRAW")
+dbLoadRecords("db/Bsa.db", "DEVICE=BLEN:${AREA}:${POS},ATRB=AIMAX, SINK_SIZE=1")
+dbLoadRecords("db/Bsa.db", "DEVICE=BLEN:${AREA}:${POS},ATRB=BIMAX, SINK_SIZE=1")
+dbLoadRecords("db/Bsa.db", "DEVICE=BLEN:${AREA}:${POS},ATRB=ARAW, SINK_SIZE=1")
+dbLoadRecords("db/Bsa.db", "DEVICE=BLEN:${AREA}:${POS},ATRB=BRAW, SINK_SIZE=1")
 
 #Save/Load configuration related records
 dbLoadRecords("db/saveLoadConfig.db", "P=BLEN:${AREA}:${POS}:, PORT=cpsw, SAVE_FILE=/tmp/configDump.yaml, LOAD_FILE=${IOC_DATA}/${IOC}/firmware/yaml/config/defaults.yaml")
