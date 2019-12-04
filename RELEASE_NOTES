@@ -10,6 +10,19 @@
 #  Rev:  dd-mmm-yyyy, Reviewer's Name    (USERNAME)
 #--------------------------------------------------------------
 
+R2.1.0: 04-Dez-2019, Marcio Donadio (marcio)
+        - Updated to newest versions of modules.
+        - Added some files that were missing in Makefile.
+        - Added missing blenMR.dict.
+        - Fixed typo that prevented crossbarCtrl.db to be installed.
+        - Now saveLoadConfig.db requires macros SAVE_FILE and LOAD_FILE.
+        - tprPattern.db now uses a different macro structure.
+        - Added fixes that where missing from the copy of mission readiness
+          application from an old version.
+        - Added support for auto-archiving PVs.
+        - Removed ycpswAsyn database files that must come from the module and
+          not be maintained as local files.
+
 R2.0.1: 03-Jul-2019, Marcio Donadio (marcio)
         - Downgrading modules because the newest ones were incompatible with
           our yaml file
