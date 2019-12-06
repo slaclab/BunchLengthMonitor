@@ -10,6 +10,10 @@
 #  Rev:  dd-mmm-yyyy, Reviewer's Name    (USERNAME)
 #--------------------------------------------------------------
 
+R2.1.1: 06-Dez-2019, Marcio Donadio (marcio)
+        - Downgrading some modules because the firmware in production must be
+          changed first before new module versions can be used
+
 R2.1.0: 04-Dez-2019, Marcio Donadio (marcio)
         - Updated to newest versions of modules.
         - Added some files that were missing in Makefile.
