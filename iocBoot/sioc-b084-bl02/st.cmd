@@ -10,15 +10,15 @@
 # ===========================================
 
 # Area, position, and instrument names to be used in record names
-epicsEnvSet("AREA", "LI21")
-epicsEnvSet("POS", "265")
-epicsEnvSet("INST", "BL11")
+epicsEnvSet("AREA", "LI24")
+epicsEnvSet("POS", "886")
+epicsEnvSet("INST", "BL21")
 
 # Address of the FCOM network
 epicsEnvSet("FCOM_NETWORK", "239.219.248.0")
 
 # TMIT PV to read the value from, by using FCOM
-epicsEnvSet("TMIT_PV", "BPMS:LI21:278:TMIT")
+epicsEnvSet("TMIT_PV", "BPMS:LI24:901:TMIT")
 
 # FPGA IP address for CPSW
 epicsEnvSet("FPGA_IP", "10.0.1.102")
@@ -60,36 +60,6 @@ iocInit()
 
 # Enforce RTM timing
 crossbarControl "FPGA" "LCLS1"
-
-# This is just for test purposes. Must be deleted before first release.
-dbpf BLEN:${AREA}:${POS}:${INST}:TCORE:MODE LCLS1
-dbpf BLEN:${AREA}:${POS}:${INST}:CHN0:EVENTCODE 40
-dbpf BLEN:${AREA}:${POS}:${INST}:CHN0:LCLS1ENABLE Enabled
-dbpf BLEN:${AREA}:${POS}:${INST}:CHN1:EVENTCODE 40
-dbpf BLEN:${AREA}:${POS}:${INST}:CHN1:LCLS1ENABLE Enabled
-dbpf BLEN:${AREA}:${POS}:${INST}:TRG8:LCLS1DELAY 542
-dbpf BLEN:${AREA}:${POS}:${INST}:TRG8:SOURCE "Channel 0"
-dbpf BLEN:${AREA}:${POS}:${INST}:TRG7:SOURCE "Channel 0"
-dbpf BLEN:${AREA}:${POS}:${INST}:TRG1:SOURCE "Channel 0"
-dbpf BLEN:${AREA}:${POS}:${INST}:TRGA:SOURCE "Channel 0"
-dbpf BLEN:${AREA}:${POS}:${INST}:TRGD:SOURCE "Channel 0"
-dbpf BLEN:${AREA}:${POS}:${INST}:TRG7:LCLS1WIDTH 0
-dbpf BLEN:${AREA}:${POS}:${INST}:TRG8:LCLS1WIDTH 0
-dbpf BLEN:${AREA}:${POS}:${INST}:TRG1:LCLS1WIDTH 0
-dbpf BLEN:${AREA}:${POS}:${INST}:TRGA:LCLS1WIDTH 0
-dbpf BLEN:${AREA}:${POS}:${INST}:TRGD:LCLS1WIDTH 0
-dbpf BLEN:${AREA}:${POS}:${INST}:TRG8:LCLS1ENABLE Enabled
-dbpf BLEN:${AREA}:${POS}:${INST}:TRG7:LCLS1ENABLE Enabled
-dbpf BLEN:${AREA}:${POS}:${INST}:TRG1:LCLS1ENABLE Enabled
-dbpf BLEN:${AREA}:${POS}:${INST}:TRGA:LCLS1ENABLE Enabled
-dbpf BLEN:${AREA}:${POS}:${INST}:TRGD:LCLS1ENABLE Enabled
-dbpf BLEN:${AREA}:${POS}:${INST}:TRG6:SOURCE "Channel 1"
-dbpf BLEN:${AREA}:${POS}:${INST}:TRG6:LCLS1WIDTH 0
-dbpf BLEN:${AREA}:${POS}:${INST}:TRG6:LCLS1ENABLE Enabled
-dbpf BLEN:${AREA}:${POS}:${INST}A_AutoRearm 1
-dbpf BLEN:${AREA}:${POS}:${INST}B_AutoRearm 1
-dbpf BLEN:${AREA}:${POS}:${INST}:SOFTEVSEL0_EVENTCODE 40
-dbpf BLEN:${AREA}:${POS}:${INST}:SOFTEVSEL0_ENABLE Enabled
 
 # Turn on caPutLogging:
 # Log values only on change to the iocLogServer:
