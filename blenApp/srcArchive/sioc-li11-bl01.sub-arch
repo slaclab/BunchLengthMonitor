@@ -1,0 +1,20 @@
+# ============
+# for iocAdmin
+# ============
+file blenIOC.tpl-arch
+{
+pattern   { IOC }
+          { SIOC:LI11:BL01 }
+}
+
+file blen.tpl-arch
+{
+pattern   { P,             INST }
+          { BLEN:LI11:356, BL11356 }
+}
+
+file tpr.tpl-arch
+{
+pattern   { R,         NUM }
+          { LI11:BL01,  2 }
+}
