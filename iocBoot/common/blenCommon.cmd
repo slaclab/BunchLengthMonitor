@@ -11,12 +11,9 @@
 # The default maximum size for a channel access array is
 # 16K bytes.
 # ========================================================
-# Uncomment and set appropriate size for your application:
+# New in EPICS 7: Auto!
 
-# This IOC provides waveforms with the maximum size of 2800 DBR_TIME_DOUBLE
-# itens. For 64 bits systems it corresponds to 12 bytes per item.
-# 2800 * 12 = 33600.
-epicsEnvSet("EPICS_CA_MAX_ARRAY_BYTES","34000")
+epicsEnvSet("EPICS_CA_MAX_ARRAY_BYTES","AUTO")
 
 # YAML directory
 epicsEnvSet("YAML_DIR","${IOC_DATA}/${IOC}/firmware/yaml")
