@@ -28,6 +28,9 @@ epicsEnvSet("IP_PORT_TMIT", "8195")
 # IOC name for IOC admin
 epicsEnvSet(IOC_NAME,"SIOC:$(AREA):BL01")
 
+# Which version of the Application to use - "MR" or "LCLS2"
+epicsEnvSet(BLEN_VERSION, "MR")
+
 cd ${TOP}
 
 < iocBoot/common/blenCommon.cmd

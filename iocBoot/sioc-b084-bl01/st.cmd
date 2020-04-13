@@ -28,6 +28,9 @@ epicsEnvSet("IP_PORT_TMIT", "8195")
 # IOC name for IOC admin
 epicsEnvSet(IOC_NAME,"SIOC:$(AREA):BL01")
 
+# Which version of the Application to use - "MR" or "LCLS2"
+epicsEnvSet(BLEN_VERSION, "MR")
+
 cd ${TOP}
 
 < iocBoot/common/blenCommon.cmd
@@ -43,15 +46,6 @@ cd ${TOP}
 #asynSetTraceMask(crossbar, -1, 9)
 #asynSetTraceMask(trig, -1, 9)
 #asynSetTraceMask(pattern, -1, 9)
-
-# ===========================================
-#               DB LOADING
-# ===========================================
-
-
-# ===========================================
-#           SETUP AUTOSAVE/RESTORE
-# ===========================================
 
 # ===========================================
 #               IOC INIT
