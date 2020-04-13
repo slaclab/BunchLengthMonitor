@@ -45,6 +45,22 @@ blen_registerRecordDeviceDriver(pdbbase)
 #              DRIVER SETUP
 # ===========================================
 
+## Yaml Downloader
+DownloadYamlFile("${FPGA_IP}", "${YAML_DIR}")
+
+# Load yaml files do CPSW
+cpswLoadYamlFile("${TOP_YAML}", "NetIODev", "", "${FPGA_IP}")
+cpswLoadConfigFile("${YAML_CONFIG_FILE}", "mmio", "")
+
+# Driver setup for YCPSWAsyn
+# YCPSWASYNConfig(
+#    Port Name,                 # the name given to this port driver
+#    Root Path                  # OPTIONAL: Root path to start the generation. If empty, the Yaml root will be used
+#    Record name Prefix,        # Record name prefix
+#    Use DB Autogeneration,     # Set to 1 for autogeneration of records from the YAML definition. Set to 0 to disable it
+#    Load dictionary,           # Dictionary file path with registers to load. An empty string will disable this function
+YCPSWASYNConfig("cpsw", "", "${PREFIX}", "${AUTO_GEN}", "${DICT_FILE}")
+
 # Load drivers for TPR trigger and crossbar control
 crossbarControlAsynDriverConfigure("crossbar", "mmio/AmcCarrierCore/AxiSy56040")
 tprTriggerAsynDriverConfigure("trig", "mmio/AmcCarrierCore")
