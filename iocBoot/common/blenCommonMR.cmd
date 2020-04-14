@@ -29,7 +29,7 @@ dbLoadRecords("db/blenMR.db", "AREA=${AREA}, POS=${POS}, INST=${INST}B, INST_NUM
 # Switch on/off stream data from FPGA
 dbLoadRecords("db/streamControl.db", "AREA=${AREA}, POS=${POS}, INST=${INST}")
 
-dbLoadRecords("db/tprPattern.db",  "LOCA=${AREA}, IOC_UNIT=BL01, INST=2, PORT=pattern")
+dbLoadRecords("db/tprPattern.db",  "LOCA=${AREA}, IOC_UNIT=${IOC_UNIT}, INST=2, PORT=pattern")
 
 # BSA records
 dbLoadRecords("db/Bsa.db", "DEVICE=BLEN:${AREA}:${POS},ATRB=AIMAX, SINK_SIZE=1")

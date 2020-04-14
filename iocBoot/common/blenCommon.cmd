@@ -22,6 +22,9 @@ epicsEnvSet("YAML_DIR","${IOC_DATA}/${IOC}/firmware/yaml")
 epicsEnvSet("TOP_YAML","${YAML_DIR}/000TopLevel.yaml")
 epicsEnvSet("YAML_CONFIG_FILE", "${YAML_DIR}/config/defaults.yaml")
 
+# For crossbarControl DB prefix
+epicsEnvSet("PART_PV", "${AREA}:${IOC_UNIT}")
+
 
 # *********************************************
 # **** Environment variables for YCPSWASYN ****
@@ -82,10 +85,9 @@ dbLoadRecords("db/weightFunctionXAxis.db", "AREA=${AREA}, POS=${POS}, INST=${INS
 dbLoadRecords("db/blenFilterDecoders.db", "AREA=${AREA}, POS=${POS}")
 dbLoadRecords("db/blenFilters.db", "AREA=${AREA}, POS=${POS}, INST=${INST}")
 
-epicsEnvSet("PART_PV", "${AREA}:BL01")
 
 # Timing crossbar and trigger
-dbLoadRecords("db/tprTrig.db",     "LOCA=${AREA}, IOC_UNIT=BL01, INST=2, PORT=trig")
+dbLoadRecords("db/tprTrig.db",     "LOCA=${AREA}, IOC_UNIT=${IOC_UNIT}, INST=2, PORT=trig")
 dbLoadRecords("db/crossbarCtrl.db", "DEV=EVR:${PART_PV}, PORT=crossbar")
 
 
