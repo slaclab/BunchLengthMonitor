@@ -3,6 +3,9 @@
 # Author:              C. Ford <caf@slac.stanford.edu>
 # Date:                21-mar-2017 
 # YAML config version: AmcCarrierBcm_00000018
+# Modified:
+#                      R. Reno <rreno@slac.stanford.edu>
+#                      20-Apr-2020
 ########################################################################################################################
 
 ########################################################################################################################
@@ -49,9 +52,9 @@ file "RegisterIn.template" { pattern
 { $(P), StatusOfBsa1,   "",                             "YES",  "1 second", $(PORT),   "",   StatusOfBsa1  }
 { $(P), StatusOfBsa2,   "",                             "YES",  "1 second", $(PORT),   "",   StatusOfBsa2  }
 # MoverCntl status
-{ $(P), StatusLimitSw,  "",                             "YES",  "1 second", $(PORT),   "",   StatusLimitSwitches }
-{ $(P), Inserted,       "",                             "YES",  "1 second", $(PORT),   "",   Inserted      }
-{ $(P), Removed,        "",                             "YES",  "1 second", $(PORT),   "",   Removed       }
+{ $(P), StatusLimitSw,  "",                             "YES",  "1 second", $(PORT),   "",   MVR:StatusLimitSw }
+{ $(P), Inserted,       "",                             "YES",  "1 second", $(PORT),   "",   MVR:Inserted      }
+{ $(P), Removed,        "",                             "YES",  "1 second", $(PORT),   "",   MVR:Removed       }
 }
 
 # Array of register
@@ -85,11 +88,11 @@ file "RegisterOut.template" { pattern
 { $(P), AppType,        ""                                        "NO",   "Passive",  $(PORT),    AppType }
 { $(P), CalibEnable,    ""                                        "NO",   "Passive",  $(PORT),    CalibEnable }
 { $(P), Location,       ""                                        "NO",   "Passive",  $(PORT),    Location }
-{ $(P), SelBpm,         ""                                        "NO",   "Passive",  $(PORT),    SelBpm }
-{ $(P), TreshTmit,      ""                                        "NO",   "Passive",  $(PORT),    TreshTmit }
+{ $(P), SelBpm,         ""                                        "NO",   "Passive",  $(PORT),    Conf:SelBpm }
+{ $(P), TreshTmit,      ""                                        "NO",   "Passive",  $(PORT),    Conf:TreshTmit }
 # MoverCntl
-{ $(P), MoverOnOff,     ""                                        "NO",   "Passive",  $(PORT),    MoverOnOff }
-{ $(P), IgnoreMover,    ""                                        "NO",   "Passive",  $(PORT),    IgnoreMover }
+{ $(P), MoverOnOff,     ""                                        "NO",   "Passive",  $(PORT),   MVR:MoverOnOff }
+{ $(P), IgnoreMover,    ""                                        "NO",   "Passive",  $(PORT),   MVR:IgnoreMover }
 }
 
 file "RegisterOutRBV.template" { pattern
@@ -104,11 +107,11 @@ file "RegisterOutRBV.template" { pattern
 { $(P), AppTypeRBV,     ""                                        "YES",  "1 second",  $(PORT),    AppType }
 { $(P), CalibEnableRBV, ""                                        "YES",  "1 second",  $(PORT),    CalibEnable }
 { $(P), LocationRBV,    ""                                        "YES",  "1 second",  $(PORT),    Location }
-{ $(P), SelBpmRBV,      ""                                        "YES",  "1 second",  $(PORT),    SelBpm }
-{ $(P), TreshTmitRBV,   ""                                        "YES",  "1 second",  $(PORT),    TreshTmit }
+{ $(P), SelBpmRBV,      ""                                        "YES",  "1 second",  $(PORT),    Conf:SelBpm }
+{ $(P), TreshTmitRBV,   ""                                        "YES",  "1 second",  $(PORT),    Conf:TreshTmit }
 # MoverCntl
-{ $(P), MoverOnOffRBV,  ""                                        "YES",  "1 second",  $(PORT),    MoverOnOff }
-{ $(P), IgnoreMoverRBV, ""                                        "YES",  "1 second",  $(PORT),    IgnoreMover }
+{ $(P), MoverOnOffRBV,  ""                                        "YES",  "1 second",  $(PORT),    MVR:MoverOnOff }
+{ $(P), IgnoreMoverRBV, ""                                        "YES",  "1 second",  $(PORT),    MVR:IgnoreMover }
 }
 
 # ENUM register

@@ -5,9 +5,6 @@
 # BSA stream name must be identical to definition in yaml file
 epicsEnvSet("BSA_STREAM_YAML_NAME", "MrBlenBsaStream")
 
-# Dictionary file for manually defined records
-epicsEnvSet("DICT_FILE", "yaml/blenMR.dict")
-
 # ===========================================
 #              DRIVER SETUP
 # ===========================================
@@ -25,6 +22,10 @@ fcomInit("${FCOM_NETWORK}", "20")
 # Manually created yCPSWasyn records
 dbLoadRecords("db/blenMR.db", "AREA=${AREA}, POS=${POS}, INST=${INST}A, INST_NUM=A, PORT=cpsw, AMC=0")
 dbLoadRecords("db/blenMR.db", "AREA=${AREA}, POS=${POS}, INST=${INST}B, INST_NUM=B, PORT=cpsw, AMC=1")
+
+# Filter control
+dbLoadRecords("db/blenFilterDecoders.db", "AREA=${AREA}, POS=${POS}")
+dbLoadRecords("db/blenFilters.db", "AREA=${AREA}, POS=${POS}, INST=${INST}")
 
 # Switch on/off stream data from FPGA
 dbLoadRecords("db/streamControl.db", "AREA=${AREA}, POS=${POS}, INST=${INST}")

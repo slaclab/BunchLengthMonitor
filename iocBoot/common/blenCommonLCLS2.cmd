@@ -1,17 +1,13 @@
 # ===========================================
-#            ENVIRONMENT VARIABLES
-# ===========================================
-
-# Dictionary file for manually defined records
-epicsEnvSet("DICT_FILE", "yaml/blenLCLS2.dict")
-
-# ===========================================
 #               DB LOADING
 # ===========================================
 
 # Manually created yCPSWasyn records
 dbLoadRecords("db/blenLCLS2.db", "AREA=${AREA}, POS=${POS}, INST=${INST}A, INST_NUM=A, PORT=cpsw, AMC=0")
 dbLoadRecords("db/blenLCLS2.db", "AREA=${AREA}, POS=${POS}, INST=${INST}B, INST_NUM=B, PORT=cpsw, AMC=1")
+
+# Filter control
+dbLoadRecords("db/statusBit.db", "P=$(AREA):$(POS), P0=$(AREA)$(POS):AMC0, P1=$(AREA):$(POS):AMC1")
 
 # BSA records
 dbLoadRecords("db/Bsa.db", "DEVICE=BLEN:${AREA}:${POS},ATRB=AIMAX, SINK_SIZE=1")

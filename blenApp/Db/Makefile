@@ -53,6 +53,7 @@ DB_INSTALLS += $(YCPSWASYN)/db/example.substitutions
 DB += calculatedWF.db
 
 DB += blenMR.db
+DB += blenLCLS2.db
 DB += blenFilters.db
 DB += blenFilterDecoders.db
 DB += weightFunctionXAxis.db
@@ -82,7 +83,6 @@ DB += bpmStatus.db
 
 # For CPSW PVs
 DB += blen.db
-DB += carrier.db
 
 # For byte swapping
 DB += swap.db

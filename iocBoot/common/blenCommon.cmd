@@ -81,10 +81,6 @@ dbLoadRecords("db/processRawWFHeader.db", "AREA=${AREA}, POS=${POS}, INST=${INST
 dbLoadRecords("db/weightFunctionXAxis.db", "AREA=${AREA}, POS=${POS}, INST=${INST}A")
 dbLoadRecords("db/weightFunctionXAxis.db", "AREA=${AREA}, POS=${POS}, INST=${INST}B")
 
-# Filter control
-dbLoadRecords("db/blenFilterDecoders.db", "AREA=${AREA}, POS=${POS}")
-dbLoadRecords("db/blenFilters.db", "AREA=${AREA}, POS=${POS}, INST=${INST}")
-
 
 # Timing crossbar and trigger
 dbLoadRecords("db/tprTrig.db",     "LOCA=${AREA}, IOC_UNIT=${IOC_UNIT}, INST=2, PORT=trig")
