@@ -21,36 +21,36 @@
 #======================================
 # Single register
 file "RegisterIn.template" { pattern
-{ P,          R,              DESC,                           PINI,   SCAN,       PORT, EGU,  PARAM         }
-{ $(P), DeviceDna,      "Xilinx Device DNA",            "YES",  "Passive",  $(PORT),   "",   DeviceDna     }
-{ $(P), FpgaVersion,    "FPGA Firmware Version Number", "YES",  "Passive",  $(PORT),   "",   FpgaVersion   }
-{ $(P), UpTimeCnt,      "Seconds since last reset",     "YES",  "1 second", $(PORT),   "s",  UpTimeCnt     }
-{ $(P), DeviceId,       "Device Identification",        "YES",  "Passive",  $(PORT),   "",   DeviceId      }
-{ $(P), SrvRemotePortSwap, "big-Endian configuration",  "YES",  "Passive",  $(PORT),   "",   ServerRemotePort }
-{ $(P), SrvRemoteIp,    "big-Endian configuration",     "YES",  "Passive",  $(PORT),   "",   ServerRemoteIp }
+{ P,          R,              DESC,                           PINI,   SCAN,       PORT, EGU,  PARAM            }
+{ $(P), DeviceDna,      "Xilinx Device DNA",            "YES",  "Passive",  $(PORT),   "",   Conf:DeviceDna    }
+{ $(P), FpgaVersion,    "FPGA Firmware Version Number", "YES",  "Passive",  $(PORT),   "",   Conf:FpgaVersion  }
+{ $(P), UpTimeCnt,      "Seconds since last reset",     "YES",  "1 second", $(PORT),   "s",  UpTimeCnt         }
+{ $(P), DeviceId,       "Device Identification",        "YES",  "Passive",  $(PORT),   "",   DeviceId          }
+{ $(P), SrvRemotePortSwap, "big-Endian configuration",  "YES",  "Passive",  $(PORT),   "",   ServerRemotePort  }
+{ $(P), SrvRemoteIp,    "big-Endian configuration",     "YES",  "Passive",  $(PORT),   "",   ServerRemoteIp    }
 # BSA status
-{ $(P), SofCount,       "",                             "YES",  "1 second", $(PORT),   "",   sofCount      }
-{ $(P), EofCount,       "",                             "YES",  "1 second", $(PORT),   "",   eofCount      }
-{ $(P), CrcErrCount,    "",                             "YES",  "1 second", $(PORT),   "",   CrcErrCount   }
-{ $(P), RxClkCount,     "",                             "YES",  "1 second", $(PORT),   "",   RxClkCount    }
-{ $(P), RxRstCount,     "",                             "YES",  "1 second", $(PORT),   "",   RxRstCount    }
-{ $(P), RxDecErrCount,  "",                             "YES",  "1 second", $(PORT),   "",   RxDecErrCount }
-{ $(P), RxDspErrCount,  "",                             "YES",  "1 second", $(PORT),   "",   RxDspErrCount }
-{ $(P), RxLinkUp,       "",                             "YES",  "1 second", $(PORT),   "",   RxLinkUp      }
+{ $(P), SofCount,       "",                             "YES",  "1 second", $(PORT),   "",   sofCount          }
+{ $(P), EofCount,       "",                             "YES",  "1 second", $(PORT),   "",   eofCount          }
+{ $(P), CrcErrCount,    "",                             "YES",  "1 second", $(PORT),   "",   CrcErrCount       }
+{ $(P), RxClkCount,     "",                             "YES",  "1 second", $(PORT),   "",   RxClkCount        }
+{ $(P), RxRstCount,     "",                             "YES",  "1 second", $(PORT),   "",   RxRstCount        }
+{ $(P), RxDecErrCount,  "",                             "YES",  "1 second", $(PORT),   "",   RxDecErrCount     }
+{ $(P), RxDspErrCount,  "",                             "YES",  "1 second", $(PORT),   "",   RxDspErrCount     }
+{ $(P), RxLinkUp,       "",                             "YES",  "1 second", $(PORT),   "",   RxLinkUp          }
 # CmnConfig status
-{ $(P), TmitTimeUp,     "",                             "YES",  "1 second", $(PORT),   "",   TmitTimeUp    }
-{ $(P), TmitTimeLow,    "",                             "YES",  "1 second", $(PORT),   "",   TmitTimeLow   }
-{ $(P), TmitStatus0,    "",                             "YES",  "1 second", $(PORT),   "",   TmitStatus0   }
-{ $(P), TmitStatus1,    "",                             "YES",  "1 second", $(PORT),   "",   TmitStatus1   }
-{ $(P), TmitTmit0,      "",                             "YES",  "1 second", $(PORT),   "",   TmitTmit0     }
-{ $(P), TmitTmit1,      "",                             "YES",  "1 second", $(PORT),   "",   TmitTmit1     }
-{ $(P), LclTimeUp,      "",                             "YES",  "1 second", $(PORT),   "",   LclTimeUp     }
-{ $(P), LclTimeLow,     "",                             "YES",  "1 second", $(PORT),   "",   LclTimeLow    }
-{ $(P), TmitInvalid,    "",                             "YES",  "1 second", $(PORT),   "",   TmitInvalid   }
-{ $(P), TmitSmall,      "",                             "YES",  "1 second", $(PORT),   "",   TmitSmall     }
-{ $(P), StatusOfBsa0,   "",                             "YES",  "1 second", $(PORT),   "",   StatusOfBsa0  }
-{ $(P), StatusOfBsa1,   "",                             "YES",  "1 second", $(PORT),   "",   StatusOfBsa1  }
-{ $(P), StatusOfBsa2,   "",                             "YES",  "1 second", $(PORT),   "",   StatusOfBsa2  }
+{ $(P), TmitTimeUp,     "",                             "YES",  "1 second", $(PORT),   "",   TmitTimeUp        }
+{ $(P), TmitTimeLow,    "",                             "YES",  "1 second", $(PORT),   "",   TmitTimeLow       }
+{ $(P), TmitStatus0,    "",                             "YES",  "1 second", $(PORT),   "",   TmitStatus0       }
+{ $(P), TmitStatus1,    "",                             "YES",  "1 second", $(PORT),   "",   TmitStatus1       }
+{ $(P), TmitTmit0,      "",                             "YES",  "1 second", $(PORT),   "",   TmitTmit0         }
+{ $(P), TmitTmit1,      "",                             "YES",  "1 second", $(PORT),   "",   TmitTmit1         }
+{ $(P), LclTimeUp,      "",                             "YES",  "1 second", $(PORT),   "",   LclTimeUp         }
+{ $(P), LclTimeLow,     "",                             "YES",  "1 second", $(PORT),   "",   LclTimeLow        }
+{ $(P), TmitInvalid,    "",                             "YES",  "1 second", $(PORT),   "",   TmitInvalid       }
+{ $(P), TmitSmall,      "",                             "YES",  "1 second", $(PORT),   "",   TmitSmall         }
+{ $(P), StatusOfBsa0,   "",                             "YES",  "1 second", $(PORT),   "",   StatusOfBsa0      }
+{ $(P), StatusOfBsa1,   "",                             "YES",  "1 second", $(PORT),   "",   StatusOfBsa1      }
+{ $(P), StatusOfBsa2,   "",                             "YES",  "1 second", $(PORT),   "",   StatusOfBsa2      }
 # MoverCntl status
 { $(P), StatusLimitSw,  "",                             "YES",  "1 second", $(PORT),   "",   MVR:StatusLimitSw }
 { $(P), Inserted,       "",                             "YES",  "1 second", $(PORT),   "",   MVR:Inserted      }

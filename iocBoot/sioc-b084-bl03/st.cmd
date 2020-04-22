@@ -10,7 +10,7 @@
 # ===========================================
 
 # Area, position, and instrument names to be used in record names
-epicsEnvSet("AREA", "LI24")
+epicsEnvSet("AREA", "B084")
 epicsEnvSet("POS", "886")
 epicsEnvSet("INST", "BL21")
 epicsEnvSet("IOC_UNIT", "BL03")

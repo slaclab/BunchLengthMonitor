@@ -106,14 +106,16 @@
 /mmio/AppTop/AppCore/SysGen[1]/DspCoreConfig/CoefI                   AMC1:CoefI
 
 # Common Configuration
+/mmio/AmcCarrierCore/AxiVersion/DeviceDna                            Conf:DeviceDna
+/mmio/AmcCarrierCore/AxiVersion/FpgaVersion                          Conf:FpgaVersion
 /mmio/AppTop/AppCore/CmnConfig/CalibEnable                           Conf:CalibEnable
 /mmio/AppTop/AppCore/CmnConfig/SelBpm                                Conf:SelBpm
 
 
 # TMIT
 /mmio/AppTop/AppCore/CmnConfig/TreshTmit	                         Conf:TreshTmit
-/mmio/AppTop/AppCore/SysGenMr[0]/DspPreprocConfigMr[0]/TMITSimEn     AMC0:SENS0:TMITSim
-/mmio/AppTop/AppCore/SysGenMr[1]/DspPreprocConfigMr[0]/TMITSimEn     AMC1:SENS0:TMITSim
+/mmio/AppTop/AppCore/SysGen[0]/DspPreprocConfig[0]/TMITSimEn     AMC0:SENS0:TMITSim
+/mmio/AppTop/AppCore/SysGen[1]/DspPreprocConfig[0]/TMITSimEn     AMC1:SENS0:TMITSim
 
 # Filter control
 /mmio/AppTop/AppCore/MoverCntl/StatusLimitSwitches                   MVR:StatusLimitSw
