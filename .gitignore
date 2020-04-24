@@ -20,3 +20,6 @@ tags
 startup/
 autosave/
 archive/
+
+blenApp/ui/fontconfig/
+*.pyc
