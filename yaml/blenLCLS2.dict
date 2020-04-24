@@ -16,7 +16,10 @@
 /mmio/AmcCarrierCore/AxiVersion/BuildStamp                           STAT:BuildStamp
 /mmio/AmcCarrierCore/AxiVersion/UpTimeCnt                            STAT:UpTimeCnt
 /mmio/AmcCarrierCore/AxiVersion/ScratchPad                           :ScratchPad 
-/mmio/AppTop/AppCore/CmnConfig/Location                              STAT:Location
+/mmio/AppTop/AppCore/CmnConfig/AppType                               CONF:AppType
+/mmio/AppTop/AppCore/CmnConfig/Location                              CONF:Location
+/mmio/AppTop/AppCore/SysGen[0]/DspCoreConfig/Version                 AMC0:Version
+/mmio/AppTop/AppCore/SysGen[1]/DspCoreConfig/Version                 AMC1:Version
 
 # BPM & TMIT 
 /mmio/AppTop/AppCore/CmnConfig/CalibEnable                           CONF:CalibEnable
@@ -42,6 +45,10 @@
 /mmio/AmcCarrierCore/AmcCarrierTiming/TimingFrameRx/RxDecErrCount    BSA:RxDecErrCount
 /mmio/AmcCarrierCore/AmcCarrierTiming/TimingFrameRx/RxDspErrCount    BSA:RxDspErrCount
 /mmio/AmcCarrierCore/AmcCarrierTiming/TimingFrameRx/RxLinkUp         BSA:RxLinkUp     
+/mmio/AmcCarrierCore/AmcCarrierTiming/TimingFrameRx/RxPolarity       BSA:RxPolarity
+
+/mmio/AmcCarrierCore/AmcCarrierTiming/GthRxAlignCheck/PhaseTarget    BSA:PhaseTarget
+
 /mmio/AppTop/AppCore/CmnConfig/StatusOfBSA0	                         STAT:Bsa0
 /mmio/AppTop/AppCore/CmnConfig/StatusOfBSA1	                         STAT:Bsa1
 /mmio/AppTop/AppCore/CmnConfig/StatusOfBSA2	                         STAT:Bsa2
@@ -55,6 +62,8 @@
 /mmio/AppTop/AppCore/AmcGenericAdcDacCore[1]/AmcGenericAdcDacCtrl/AmcClkFreq   AMC1:AmcClkFreq
 /mmio/AppTop/AppCore/AmcGenericAdcDacCore[0]/AmcGenericAdcDacCtrl/AdcData      AMC0:AdcData
 /mmio/AppTop/AppCore/AmcGenericAdcDacCore[1]/AmcGenericAdcDacCtrl/AdcData      AMC1:AdcData
+/mmio/AppTop/AppCore/AmcGenericAdcDacCore[0]/InitAmcCard                       AMC0:InitAmcCard
+/mmio/AppTop/AppCore/AmcGenericAdcDacCore[1]/InitAmcCard                       AMC1:InitAmcCard
 
 # iMax calculation results
 /mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/AddSums1                   AMC0:SUM
@@ -65,44 +74,62 @@
 /mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/MultResultH                AMC1:TMIT
 
 # Intermediary calculation results
-/mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/AddSums0Gap                AMC0:AddSums0Gap
-/mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/AddSums0Gap                AMC1:AddSums0Gap
-/mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/LnOfBRaw                   AMC0:LnOfBRaw
-/mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/LnOfBRaw                   AMC1:LnOfBRaw
-/mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/MultLnBrawD                AMC0:MultLnBrawD
-/mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/MultLnBrawD                AMC1:MultLnBrawD
-/mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/LnOfTMIT                   AMC0:LnOfTMIT
-/mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/LnOfTMIT                   AMC1:LnOfTMIT
-/mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/MultLnTmitC                AMC0:MultLnTmitC
-/mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/MultLnTmitC                AMC1:MultLnTmitC
+/mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/AddSums0                   AMC0:AddSums0
+/mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/AddSums0                   AMC1:AddSums0
 /mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/AddSums2                   AMC0:AddSums2
 /mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/AddSums2                   AMC1:AddSums2
 /mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/AddSums3                   AMC0:AddSums3
 /mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/AddSums3                   AMC1:AddSums3
-/mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/ExpResult0                 AMC0:ExpResult0
-/mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/ExpResult0                 AMC1:ExpResult0
-/mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/LnOfBRaw2                  AMC0:LnOfBRaw2
-/mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/LnOfBRaw2                  AMC1:LnOfBRaw2
-/mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/MultLnBrawG                AMC0:MultLnBrawG
-/mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/MultLnBrawG                AMC1:MultLnBrawG
-/mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/LnOfTMIT2                  AMC0:LnOfTMIT2
-/mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/LnOfTMIT2                  AMC1:LnOfTMIT2
-/mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/MultLnTmitF                AMC0:MultLnTmitF
-/mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/MultLnTmitF                AMC1:MultLnTmitF
 /mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/AddSums4                   AMC0:AddSums4
 /mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/AddSums4                   AMC1:AddSums4
 /mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/AddSums5                   AMC0:AddSums5
 /mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/AddSums5                   AMC1:AddSums5
+
+/mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/AddSums0Gap                AMC0:AddSums0Gap
+/mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/AddSums0Gap                AMC1:AddSums0Gap
+/mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/AddSums1Gap                AMC0:AddSums1Gap
+/mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/AddSums1Gap                AMC1:AddSums1Gap
+
+/mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/AddSums2Sensors            AMC0:AddSums2Sensors
+/mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/AddSums2Sensors            AMC1:AddSums2Sensors
+
+/mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/LnOfBRaw                   AMC0:LnOfBRaw
+/mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/LnOfBRaw                   AMC1:LnOfBRaw
+
+/mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/MultLnBrawD                AMC0:MultLnBrawD
+/mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/MultLnBrawD                AMC1:MultLnBrawD
+
+/mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/LnOfTMIT                   AMC0:LnOfTMIT
+/mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/LnOfTMIT                   AMC1:LnOfTMIT
+
+/mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/MultLnTmitC                AMC0:MultLnTmitC
+/mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/MultLnTmitC                AMC1:MultLnTmitC
+
+/mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/ExpResult0                 AMC0:ExpResult0
+/mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/ExpResult0                 AMC1:ExpResult0
+
+/mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/LnOfBRaw2                  AMC0:LnOfBRaw2
+/mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/LnOfBRaw2                  AMC1:LnOfBRaw2
+
+/mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/MultLnBrawG                AMC0:MultLnBrawG
+/mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/MultLnBrawG                AMC1:MultLnBrawG
+
+/mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/LnOfTMIT2                  AMC0:LnOfTMIT2
+/mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/LnOfTMIT2                  AMC1:LnOfTMIT2
+
+/mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/MultLnTmitF                AMC0:MultLnTmitF
+/mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/MultLnTmitF                AMC1:MultLnTmitF
+
 /mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/ExpResult1                 AMC0:ExpResult1
 /mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/ExpResult1                 AMC1:ExpResult1
+
 /mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/MultResultA0               AMC0:MultResultA0
 /mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/MultResultA0               AMC1:MultResultA0
 /mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/MultResultA1               AMC0:MultResultA1
 /mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/MultResultA1               AMC1:MultResultA1
 /mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/MultResultA2               AMC0:MultResultA2
 /mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/MultResultA2               AMC1:MultResultA2
-/mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/AddSums0                   AMC0:AddSums0
-/mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/AddSums0                   AMC1:AddSums0
+
 /mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/FinalRawSum                AMC0:FinalRawSum
 /mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/FinalRawSum                AMC1:FinalRawSum
 
@@ -113,20 +140,53 @@
 /mmio/AppTop/DaqMuxV2[1]/PacketHeaderEn                              AMC1:PacketHeaderEn
 
 # Control of the weight function
+/mmio/AppTop/AppCore/SysGen[0]/DspPreprocConfig[0]/Mode              AMC0:SENS0:Mode
+/mmio/AppTop/AppCore/SysGen[1]/DspPreprocConfig[0]/Mode              AMC1:SENS0:Mode
+/mmio/AppTop/AppCore/SysGen[0]/DspPreprocConfig[1]/Mode              AMC0:SENS1:Mode
+/mmio/AppTop/AppCore/SysGen[1]/DspPreprocConfig[1]/Mode              AMC1:SENS1:Mode
+
 /mmio/AppTop/AppCore/SysGen[0]/DspPreprocConfig[0]/NumberSamples0    AMC0:SENS0:NumSamp0
 /mmio/AppTop/AppCore/SysGen[1]/DspPreprocConfig[0]/NumberSamples0    AMC1:SENS0:NumSamp0
 /mmio/AppTop/AppCore/SysGen[0]/DspPreprocConfig[0]/NumberSamples1    AMC0:SENS0:NumSamp1
 /mmio/AppTop/AppCore/SysGen[1]/DspPreprocConfig[0]/NumberSamples1    AMC1:SENS0:NumSamp1
+
+/mmio/AppTop/AppCore/SysGen[0]/DspPreprocConfig[1]/NumberSamples0    AMC0:SENS1:NumSamp0
+/mmio/AppTop/AppCore/SysGen[1]/DspPreprocConfig[1]/NumberSamples0    AMC1:SENS1:NumSamp0
+/mmio/AppTop/AppCore/SysGen[0]/DspPreprocConfig[1]/NumberSamples1    AMC0:SENS1:NumSamp1
+/mmio/AppTop/AppCore/SysGen[1]/DspPreprocConfig[1]/NumberSamples1    AMC1:SENS1:NumSamp1
+
+/mmio/AppTop/AppCore/SysGen[0]/DspPreprocConfig[0]/TriggerRate       AMC0:SENS0:RATE
+/mmio/AppTop/AppCore/SysGen[1]/DspPreprocConfig[0]/TriggerRate       AMC1:SENS0:RATE
+
 /mmio/AppTop/AppCore/SysGen[0]/DspPreprocConfig[0]/TrigDelay1        AMC0:SENS0:TrigDelay1
 /mmio/AppTop/AppCore/SysGen[1]/DspPreprocConfig[0]/TrigDelay1        AMC1:SENS0:TrigDelay1
+/mmio/AppTop/AppCore/SysGen[0]/DspPreprocConfig[0]/TrigDelay2        AMC0:SENS0:TrigDelay2
+/mmio/AppTop/AppCore/SysGen[1]/DspPreprocConfig[0]/TrigDelay2        AMC1:SENS0:TrigDelay2
+
+/mmio/AppTop/AppCore/SysGen[0]/DspPreprocConfig[1]/TrigDelay1        AMC0:SENS1:TrigDelay1
+/mmio/AppTop/AppCore/SysGen[1]/DspPreprocConfig[1]/TrigDelay1        AMC1:SENS1:TrigDelay1
+/mmio/AppTop/AppCore/SysGen[0]/DspPreprocConfig[1]/TrigDelay2        AMC0:SENS1:TrigDelay2
+/mmio/AppTop/AppCore/SysGen[1]/DspPreprocConfig[1]/TrigDelay2        AMC1:SENS1:TrigDelay2
 
 # Parameters of the equation to calculate iMax
 /mmio/AppTop/AppCore/SysGen[0]/DspCoreConfig/CoefA0                  AMC0:CoefA0
 /mmio/AppTop/AppCore/SysGen[1]/DspCoreConfig/CoefA0                  AMC1:CoefA0
+
 /mmio/AppTop/AppCore/SysGen[0]/DspCoreConfig/CoefA1                  AMC0:CoefA1
 /mmio/AppTop/AppCore/SysGen[1]/DspCoreConfig/CoefA1                  AMC1:CoefA1
+
 /mmio/AppTop/AppCore/SysGen[0]/DspCoreConfig/CoefA2                  AMC0:CoefA2
 /mmio/AppTop/AppCore/SysGen[1]/DspCoreConfig/CoefA2                  AMC1:CoefA2
+
+/mmio/AppTop/AppCore/SysGen[0]/DspCoreConfig/CoefA3                  AMC0:CoefA3
+/mmio/AppTop/AppCore/SysGen[1]/DspCoreConfig/CoefA3                  AMC1:CoefA3
+
+/mmio/AppTop/AppCore/SysGen[0]/DspCoreConfig/CoefA4                  AMC0:CoefA4
+/mmio/AppTop/AppCore/SysGen[1]/DspCoreConfig/CoefA4                  AMC1:CoefA4
+
+/mmio/AppTop/AppCore/SysGen[0]/DspCoreConfig/CoefA5                  AMC0:CoefA5
+/mmio/AppTop/AppCore/SysGen[1]/DspCoreConfig/CoefA5                  AMC1:CoefA5
+
 /mmio/AppTop/AppCore/SysGen[0]/DspCoreConfig/CoefB                   AMC0:CoefB
 /mmio/AppTop/AppCore/SysGen[1]/DspCoreConfig/CoefB                   AMC1:CoefB
 /mmio/AppTop/AppCore/SysGen[0]/DspCoreConfig/CoefC                   AMC0:CoefC

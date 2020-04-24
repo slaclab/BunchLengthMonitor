@@ -80,13 +80,13 @@ file "RegisterOut.template" { pattern
 { P,        R,              DESC,                                       PINI,   SCAN,       PORT,  PARAM       }
 { $(P), ScratchPad,     "Register to test R/W"                    "NO",   "Passive",  $(PORT),    :ScratchPad }
 # BSA
-{ $(P), ClkSel,         "Select between LCLS-I/II timing",        "YES",  "1 second", $(PORT),    TIME:ClkSel }
-{ $(P), RxPolarity,     "",                                        "NO",   "Passive",  $(PORT),    RxPolarity }
-{ $(P), PhaseTarget,    "",                                        "NO",   "Passive",  $(PORT),    PhaseTarget }
+{ $(P), ClkSel,         "Select between LCLS-I/II timing",        "YES",  "1 second", $(PORT),     TIME:ClkSel }
+{ $(P), RxPolarity,     "",                                        "NO",   "Passive",  $(PORT),    BSA:RxPolarity }
+{ $(P), PhaseTarget,    "",                                        "NO",   "Passive",  $(PORT),    BSA:PhaseTarget }
 # CmnConfig
-{ $(P), AppType,        "",                                        "NO",   "Passive",  $(PORT),    AppType }
+{ $(P), AppType,        "",                                        "NO",   "Passive",  $(PORT),    CONF:AppType }
 { $(P), CalibEnable,    "",                                        "NO",   "Passive",  $(PORT),    CONF:CalibEnable }
-{ $(P), Location,       "",                                        "NO",   "Passive",  $(PORT),    STAT:Location }
+{ $(P), Location,       "",                                        "NO",   "Passive",  $(PORT),    CONF:Location }
 { $(P), SelBpm,         "BPM0/BPM1 Incoming Stream",               "YES",  "1 second", $(PORT),    CONF:SelBpm }
 { $(P), TreshTmit,      "",                                        "NO",   "Passive",  $(PORT),    CONF:TreshTmit }
 # MoverCntl
@@ -100,12 +100,12 @@ file "RegisterOutRBV.template" { pattern
 { $(P), ScratchPadRBV,     "Register to test R/W",    "YES",  "1 second",  $(PORT),    :ScratchPad }
 # BSA
 { $(P), ClkSelRBV,  "",                                "YES",  "1 second",  $(PORT),    TIME:ClkSel }
-{ $(P), RxPolarityRBV,  "",                            "YES",  "1 second",  $(PORT),    RxPolarity }
-{ $(P), PhaseTargetRBV, "",                            "YES",  "1 second",  $(PORT),    PhaseTarget }
+{ $(P), RxPolarityRBV,  "",                            "YES",  "1 second",  $(PORT),    BSA:RxPolarity }
+{ $(P), PhaseTargetRBV, "",                            "YES",  "1 second",  $(PORT),    BSA:PhaseTarget }
 # CmnConfig
-{ $(P), AppTypeRBV,     "",                            "YES",  "1 second",  $(PORT),    AppType }
+{ $(P), AppTypeRBV,     "",                            "YES",  "1 second",  $(PORT),    CONF:AppType }
 { $(P), CalibEnableRBV, "",                            "YES",  "1 second",  $(PORT),    CONF:CalibEnable }
-{ $(P), LocationRBV,    "",                            "YES",  "1 second",  $(PORT),    STAT:Location }
+{ $(P), LocationRBV,    "",                            "YES",  "1 second",  $(PORT),    CONF:Location }
 { $(P), SelBpmRBV,      "BPM0/BPM1 Incoming Stream",   "YES",  "1 second",  $(PORT),    CONF:SelBpm }
 { $(P), TreshTmitRBV,   "",                            "YES",  "1 second",  $(PORT),    CONF:TreshTmit }
 # MoverCntl
@@ -135,13 +135,13 @@ file "RegisterDoubleIn.template" { pattern
 #======================================
 
 file "RegisterDoubleOut.template" { pattern
-{ P,              R,         DESC,                            PINI,  SCAN,        PORT,     EGU,    PARAM   }
-{ $(P), MoverAttenuation,    "",                              "NO",   "Passive",  $(PORT),   MVR:Attenuation }
+{ P,              R,         DESC,                            PINI,  SCAN,        PORT,     EGU,      PARAM       }
+{ $(P), MoverAttenuation,    "",                              "NO",   "Passive",  $(PORT),   "",  MVR:Attenuation }
 }
 
 file "RegisterDoubleOutRBV.template" { pattern
-{ P,              R,         DESC,                            PINI,   SCAN,       PORT,     EGU,    PARAM   }
-{ $(P), MoverAttenuationRBV,    "",                           "NO",   "Passive",  $(PORT),   MVR:Attenuation }
+{ P,              R,           DESC,                            PINI,  SCAN,        PORT,      EGU,      PARAM       }
+{ $(P), MoverAttenuationRBV,    "",                              "NO",   "Passive",  $(PORT),   "",  MVR:Attenuation }
 }
 
 #======================================

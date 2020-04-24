@@ -13,7 +13,7 @@
 # ========================================================
 # New in EPICS 7: Auto!
 
-epicsEnvSet("EPICS_CA_MAX_ARRAY_BYTES","AUTO")
+#epicsEnvSet("EPICS_CA_AUTO_ARRAY_BYTES", "YES")
 
 # YAML directory
 epicsEnvSet("YAML_DIR","${IOC_DATA}/${IOC}/firmware/yaml")
@@ -72,6 +72,10 @@ tprTriggerAsynDriverConfigure("trig", "mmio/AmcCarrierCore")
 # ===========================================
 #               DB LOADING
 # ===========================================
+
+# main blen database
+dbLoadRecords("db/blen.db", "P=BLEN:$(AREA):$(POS), PORT=cpsw, AMC=0")
+dbLoadRecords("db/blen.db", "P=BLEN:$(AREA):$(POS), PORT=cpsw, AMC=1")
 
 # Records to manipulate waveforms from detectors
 dbLoadRecords("db/calculatedWF.db", "AREA=${AREA}, POS=${POS}, INST=${INST}A")
