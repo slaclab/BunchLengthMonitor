@@ -94,7 +94,7 @@
              </property>
             </widget>
            </item>
-           <item row="2" column="2" rowspan="2">
+           <item row="4" column="2" rowspan="2">
             <widget class="QFrame" name="frame_4">
              <property name="minimumSize">
               <size>
@@ -113,7 +113,7 @@
              </property>
             </widget>
            </item>
-           <item row="1" column="1">
+           <item row="2" column="1">
             <widget class="QFrame" name="frame_9">
              <property name="minimumSize">
               <size>
@@ -135,7 +135,7 @@
              </property>
             </widget>
            </item>
-           <item row="7" column="2">
+           <item row="9" column="2">
             <widget class="PyDMWaveformPlot" name="wfpBRawTimesWeight">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
@@ -221,7 +221,7 @@
              </property>
             </widget>
            </item>
-           <item row="7" column="0">
+           <item row="9" column="0">
             <widget class="PyDMWaveformPlot" name="wfpARawTimesWeight">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
@@ -300,125 +300,7 @@
              </property>
             </widget>
            </item>
-           <item row="1" column="2">
-            <layout class="QHBoxLayout" name="horizontalLayout_3">
-             <property name="spacing">
-              <number>23</number>
-             </property>
-             <property name="leftMargin">
-              <number>15</number>
-             </property>
-             <property name="rightMargin">
-              <number>15</number>
-             </property>
-             <item>
-              <widget class="QLabel" name="label_8">
-               <property name="maximumSize">
-                <size>
-                 <width>60</width>
-                 <height>16777215</height>
-                </size>
-               </property>
-               <property name="font">
-                <font>
-                 <pointsize>11</pointsize>
-                </font>
-               </property>
-               <property name="text">
-                <string>Stream</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="PyDMByteIndicator" name="PyDMByteIndicator_2">
-               <property name="maximumSize">
-                <size>
-                 <width>35</width>
-                 <height>16777215</height>
-                </size>
-               </property>
-               <property name="toolTip">
-                <string/>
-               </property>
-               <property name="whatsThis">
-                <string>
-    Widget for graphical representation of bits from an integer number
-    with support for Channels and more from PyDM
-
-    Parameters
-    ----------
-    parent : QWidget
-        The parent widget for the Label
-    init_channel : str, optional
-        The channel to be used by the widget.
-    </string>
-               </property>
-               <property name="channel" stdset="0">
-                <string>ca://BLEN:${AREA}:${POS}:${INST}B_AutoRearm_RBV</string>
-               </property>
-               <property name="onColor" stdset="0">
-                <color>
-                 <red>0</red>
-                 <green>170</green>
-                 <blue>0</blue>
-                </color>
-               </property>
-               <property name="showLabels" stdset="0">
-                <bool>false</bool>
-               </property>
-               <property name="circles" stdset="0">
-                <bool>false</bool>
-               </property>
-               <property name="labels" stdset="0">
-                <stringlist>
-                 <string>off</string>
-                 <string>on</string>
-                </stringlist>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="PyDMEnumComboBox" name="PyDMEnumComboBox_2">
-               <property name="font">
-                <font>
-                 <pointsize>11</pointsize>
-                </font>
-               </property>
-               <property name="toolTip">
-                <string/>
-               </property>
-               <property name="whatsThis">
-                <string>
-    A QComboBox with support for Channels and more from PyDM
-
-    Parameters
-    ----------
-    parent : QWidget
-        The parent widget for the Label
-    init_channel : str, optional
-        The channel to be used by the widget.
-
-    Signals
-    -------
-    send_value_signal : int, float, str, bool or np.ndarray
-        Emitted when the user changes the value.
-    activated : int, str
-        Emitted when the user chooses an item in the combobox.
-    currentIndexChanged : int, str
-        Emitted when the index is changed in the combobox.
-    highlighted : int, str
-        Emitted when an item in the combobox popup list is highlighted
-        by the user.
-    </string>
-               </property>
-               <property name="channel" stdset="0">
-                <string>ca://BLEN:${AREA}:${POS}:${INST}B_ACCESS</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-           <item row="7" column="1">
+           <item row="9" column="1">
             <widget class="QFrame" name="frame_7">
              <property name="minimumSize">
               <size>
@@ -440,7 +322,7 @@
              </property>
             </widget>
            </item>
-           <item row="2" column="0" rowspan="2">
+           <item row="4" column="0" rowspan="2">
             <widget class="QFrame" name="frame_2">
              <property name="minimumSize">
               <size>
@@ -462,7 +344,7 @@
              </property>
             </widget>
            </item>
-           <item row="6" column="1">
+           <item row="8" column="1">
             <widget class="QFrame" name="frame_5">
              <property name="minimumSize">
               <size>
@@ -484,124 +366,6 @@
              </property>
             </widget>
            </item>
-           <item row="1" column="0">
-            <layout class="QHBoxLayout" name="horizontalLayout_2">
-             <property name="spacing">
-              <number>23</number>
-             </property>
-             <property name="leftMargin">
-              <number>15</number>
-             </property>
-             <property name="rightMargin">
-              <number>15</number>
-             </property>
-             <item>
-              <widget class="QLabel" name="label_7">
-               <property name="maximumSize">
-                <size>
-                 <width>60</width>
-                 <height>16777215</height>
-                </size>
-               </property>
-               <property name="font">
-                <font>
-                 <pointsize>11</pointsize>
-                </font>
-               </property>
-               <property name="text">
-                <string>Stream</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="PyDMByteIndicator" name="PyDMByteIndicator">
-               <property name="maximumSize">
-                <size>
-                 <width>35</width>
-                 <height>16777215</height>
-                </size>
-               </property>
-               <property name="toolTip">
-                <string/>
-               </property>
-               <property name="whatsThis">
-                <string>
-    Widget for graphical representation of bits from an integer number
-    with support for Channels and more from PyDM
-
-    Parameters
-    ----------
-    parent : QWidget
-        The parent widget for the Label
-    init_channel : str, optional
-        The channel to be used by the widget.
-    </string>
-               </property>
-               <property name="channel" stdset="0">
-                <string>ca://BLEN:${AREA}:${POS}:${INST}A_AutoRearm_RBV</string>
-               </property>
-               <property name="onColor" stdset="0">
-                <color>
-                 <red>0</red>
-                 <green>170</green>
-                 <blue>0</blue>
-                </color>
-               </property>
-               <property name="showLabels" stdset="0">
-                <bool>false</bool>
-               </property>
-               <property name="circles" stdset="0">
-                <bool>false</bool>
-               </property>
-               <property name="labels" stdset="0">
-                <stringlist>
-                 <string>off</string>
-                 <string>on</string>
-                </stringlist>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="PyDMEnumComboBox" name="PyDMEnumComboBox">
-               <property name="font">
-                <font>
-                 <pointsize>11</pointsize>
-                </font>
-               </property>
-               <property name="toolTip">
-                <string/>
-               </property>
-               <property name="whatsThis">
-                <string>
-    A QComboBox with support for Channels and more from PyDM
-
-    Parameters
-    ----------
-    parent : QWidget
-        The parent widget for the Label
-    init_channel : str, optional
-        The channel to be used by the widget.
-
-    Signals
-    -------
-    send_value_signal : int, float, str, bool or np.ndarray
-        Emitted when the user changes the value.
-    activated : int, str
-        Emitted when the user chooses an item in the combobox.
-    currentIndexChanged : int, str
-        Emitted when the index is changed in the combobox.
-    highlighted : int, str
-        Emitted when an item in the combobox popup list is highlighted
-        by the user.
-    </string>
-               </property>
-               <property name="channel" stdset="0">
-                <string>ca://BLEN:${AREA}:${POS}:${INST}A_ACCESS</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
            <item row="0" column="2">
             <widget class="QLabel" name="label_2">
              <property name="text">
@@ -612,7 +376,7 @@
              </property>
             </widget>
            </item>
-           <item row="6" column="0">
+           <item row="8" column="0">
             <widget class="QFrame" name="frame_19">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -1436,7 +1200,7 @@
              </property>
             </widget>
            </item>
-           <item row="6" column="2">
+           <item row="8" column="2">
             <widget class="QFrame" name="frame_20">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -2249,7 +2013,7 @@
              </layout>
             </widget>
            </item>
-           <item row="5" column="0">
+           <item row="7" column="0">
             <layout class="QGridLayout" name="gridLayout_4">
              <item row="2" column="1">
               <layout class="QHBoxLayout" name="horizontalLayout_7">
@@ -2571,7 +2335,7 @@
              </item>
             </layout>
            </item>
-           <item row="5" column="2">
+           <item row="7" column="2">
             <layout class="QGridLayout" name="gridLayout_5">
              <item row="0" column="1">
               <widget class="QLabel" name="label_12">
@@ -2887,7 +2651,7 @@
              </item>
             </layout>
            </item>
-           <item row="4" column="0">
+           <item row="6" column="0">
             <spacer name="verticalSpacer_2">
              <property name="orientation">
               <enum>Qt::Vertical</enum>
@@ -2903,7 +2667,7 @@
              </property>
             </spacer>
            </item>
-           <item row="4" column="2">
+           <item row="6" column="2">
             <spacer name="verticalSpacer_3">
              <property name="orientation">
               <enum>Qt::Vertical</enum>
@@ -2919,7 +2683,7 @@
              </property>
             </spacer>
            </item>
-           <item row="5" column="1">
+           <item row="7" column="1">
             <widget class="QFrame" name="frame_10">
              <property name="minimumSize">
               <size>
@@ -2941,7 +2705,7 @@
              </property>
             </widget>
            </item>
-           <item row="4" column="1">
+           <item row="6" column="1">
             <widget class="QFrame" name="frame_11">
              <property name="minimumSize">
               <size>
@@ -2963,7 +2727,7 @@
              </property>
             </widget>
            </item>
-           <item row="8" column="0">
+           <item row="10" column="0">
             <widget class="QGroupBox" name="groupBox">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
@@ -2985,13 +2749,19 @@
                <rect>
                 <x>10</x>
                 <y>30</y>
-                <width>371</width>
+                <width>506</width>
                 <height>80</height>
                </rect>
               </property>
               <layout class="QGridLayout" name="gridLayout_2" columnstretch="0,30,30,30">
                <item row="2" column="0" alignment="Qt::AlignRight">
                 <widget class="QLabel" name="label_4">
+                 <property name="font">
+                  <font>
+                   <weight>75</weight>
+                   <bold>true</bold>
+                  </font>
+                 </property>
                  <property name="text">
                   <string>${INST}B</string>
                  </property>
@@ -2999,6 +2769,12 @@
                </item>
                <item row="0" column="2" alignment="Qt::AlignHCenter">
                 <widget class="QLabel" name="label_6">
+                 <property name="font">
+                  <font>
+                   <weight>75</weight>
+                   <bold>true</bold>
+                  </font>
+                 </property>
                  <property name="text">
                   <string>IMAX</string>
                  </property>
@@ -3012,8 +2788,8 @@
                  <property name="whatsThis">
                   <string/>
                  </property>
-                 <property name="precisionFromPV" stdset="0">
-                  <bool>false</bool>
+                 <property name="text">
+                  <string>${INST}B:SUM</string>
                  </property>
                  <property name="precision" stdset="0">
                   <number>3</number>
@@ -3021,8 +2797,11 @@
                  <property name="showUnits" stdset="0">
                   <bool>true</bool>
                  </property>
+                 <property name="precisionFromPV" stdset="0">
+                  <bool>false</bool>
+                 </property>
                  <property name="channel" stdset="0">
-                  <string>ca://BLEN:${AREA}:${POS}:${INST}B_S_SUM</string>
+                  <string>ca://BLEN:${AREA}:${POS}:${INST}B:SUM</string>
                  </property>
                 </widget>
                </item>
@@ -3034,8 +2813,8 @@
                  <property name="whatsThis">
                   <string/>
                  </property>
-                 <property name="precisionFromPV" stdset="0">
-                  <bool>false</bool>
+                 <property name="text">
+                  <string>${INST}A:SUM</string>
                  </property>
                  <property name="precision" stdset="0">
                   <number>3</number>
@@ -3043,8 +2822,11 @@
                  <property name="showUnits" stdset="0">
                   <bool>true</bool>
                  </property>
+                 <property name="precisionFromPV" stdset="0">
+                  <bool>false</bool>
+                 </property>
                  <property name="channel" stdset="0">
-                  <string>ca://BLEN:${AREA}:${POS}:${INST}A_S_SUM</string>
+                  <string>ca://BLEN:${AREA}:${POS}:${INST}A:SUM</string>
                  </property>
                 </widget>
                </item>
@@ -3056,8 +2838,8 @@
                  <property name="whatsThis">
                   <string/>
                  </property>
-                 <property name="precisionFromPV" stdset="0">
-                  <bool>false</bool>
+                 <property name="text">
+                  <string>${INST}B:IMAX</string>
                  </property>
                  <property name="precision" stdset="0">
                   <number>3</number>
@@ -3065,13 +2847,22 @@
                  <property name="showUnits" stdset="0">
                   <bool>true</bool>
                  </property>
+                 <property name="precisionFromPV" stdset="0">
+                  <bool>false</bool>
+                 </property>
                  <property name="channel" stdset="0">
-                  <string>ca://BLEN:${AREA}:${POS}:BIMAX1H</string>
+                  <string>ca://BLEN:${AREA}:${POS}:${INST}B:IMAX</string>
                  </property>
                 </widget>
                </item>
                <item row="0" column="1" alignment="Qt::AlignHCenter">
                 <widget class="QLabel" name="label_5">
+                 <property name="font">
+                  <font>
+                   <weight>75</weight>
+                   <bold>true</bold>
+                  </font>
+                 </property>
                  <property name="text">
                   <string>Sum</string>
                  </property>
@@ -3079,6 +2870,12 @@
                </item>
                <item row="1" column="0" alignment="Qt::AlignRight">
                 <widget class="QLabel" name="label_3">
+                 <property name="font">
+                  <font>
+                   <weight>75</weight>
+                   <bold>true</bold>
+                  </font>
+                 </property>
                  <property name="text">
                   <string>${INST}A</string>
                  </property>
@@ -3092,8 +2889,8 @@
                  <property name="whatsThis">
                   <string/>
                  </property>
-                 <property name="precisionFromPV" stdset="0">
-                  <bool>false</bool>
+                 <property name="text">
+                  <string>${INST}A:IMAX</string>
                  </property>
                  <property name="precision" stdset="0">
                   <number>3</number>
@@ -3101,8 +2898,11 @@
                  <property name="showUnits" stdset="0">
                   <bool>true</bool>
                  </property>
+                 <property name="precisionFromPV" stdset="0">
+                  <bool>false</bool>
+                 </property>
                  <property name="channel" stdset="0">
-                  <string>ca://BLEN:${AREA}:${POS}:AIMAX1H</string>
+                  <string>ca://BLEN:${AREA}:${POS}:${INST}A:IMAX</string>
                  </property>
                 </widget>
                </item>
@@ -3149,7 +2949,7 @@
              </widget>
             </widget>
            </item>
-           <item row="8" column="2">
+           <item row="10" column="2">
             <layout class="QVBoxLayout" name="verticalLayout">
              <item>
               <widget class="PyDMRelatedDisplayButton" name="PyDMRelatedDisplayButton">
@@ -3177,7 +2977,9 @@
                 <string>blen_expert.py</string>
                </property>
                <property name="macros" stdset="0">
-                <string>{&quot;AREA&quot;:&quot;${AREA}&quot;,&quot;POS&quot;:&quot;${POS}&quot;,&quot;INST&quot;:&quot;${INST}&quot;}</string>
+                <stringlist>
+                 <string>{&quot;AREA&quot;:&quot;${AREA}&quot;,&quot;POS&quot;:&quot;${POS}&quot;,&quot;INST&quot;:&quot;${INST}&quot;}</string>
+                </stringlist>
                </property>
                <property name="openInNewWindow" stdset="0">
                 <bool>true</bool>
@@ -3210,7 +3012,9 @@
                 <string>blen_equation_params.ui</string>
                </property>
                <property name="macros" stdset="0">
-                <string>{&quot;AREA&quot;:&quot;${AREA}&quot;,&quot;POS&quot;:&quot;${POS}&quot;,&quot;INST&quot;:&quot;${INST}&quot;}</string>
+                <stringlist>
+                 <string>{&quot;AREA&quot;:&quot;${AREA}&quot;,&quot;POS&quot;:&quot;${POS}&quot;,&quot;INST&quot;:&quot;${INST}&quot;}</string>
+                </stringlist>
                </property>
                <property name="openInNewWindow" stdset="0">
                 <bool>true</bool>
@@ -3243,7 +3047,9 @@
                 <string>blen_triggers.ui</string>
                </property>
                <property name="macros" stdset="0">
-                <string>{&quot;AREA&quot;:&quot;${AREA}&quot;,&quot;NUM&quot;:&quot;2&quot;,&quot;IOC_UNIT&quot;:&quot;${IOC_UNIT}&quot;}</string>
+                <stringlist>
+                 <string>{&quot;AREA&quot;:&quot;${AREA}&quot;,&quot;NUM&quot;:&quot;2&quot;,&quot;IOC_UNIT&quot;:&quot;${IOC_UNIT}&quot;}</string>
+                </stringlist>
                </property>
                <property name="openInNewWindow" stdset="0">
                 <bool>true</bool>
@@ -3276,7 +3082,9 @@
                 <string>blen_loadSaveConfigFiles.ui</string>
                </property>
                <property name="macros" stdset="0">
-                <string>{&quot;AREA&quot;:&quot;${AREA}&quot;,&quot;POS&quot;:&quot;${POS}&quot;,&quot;INST&quot;:&quot;${INST}&quot;}</string>
+                <stringlist>
+                 <string>{&quot;AREA&quot;:&quot;${AREA}&quot;,&quot;POS&quot;:&quot;${POS}&quot;,&quot;INST&quot;:&quot;${INST}&quot;}</string>
+                </stringlist>
                </property>
                <property name="openInNewWindow" stdset="0">
                 <bool>true</bool>
@@ -3284,6 +3092,277 @@
               </widget>
              </item>
             </layout>
+           </item>
+           <item row="3" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout_Shutter1">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>5</number>
+             </property>
+             <property name="bottomMargin">
+              <number>5</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="lblAShutter">
+               <property name="font">
+                <font>
+                 <pointsize>11</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="text">
+                <string>Shutter</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="PyDMByteIndicator" name="pydmByte_Shutter1">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>10</width>
+                 <height>10</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>40</width>
+                 <height>40</height>
+                </size>
+               </property>
+               <property name="toolTip">
+                <string/>
+               </property>
+               <property name="channel" stdset="0">
+                <string>ca://BLEN:${AREA}:${POS}:${INST}A:Inserted</string>
+               </property>
+               <property name="onColor" stdset="0">
+                <color>
+                 <red>255</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </property>
+               <property name="offColor" stdset="0">
+                <color>
+                 <red>0</red>
+                 <green>255</green>
+                 <blue>0</blue>
+                </color>
+               </property>
+               <property name="showLabels" stdset="0">
+                <bool>false</bool>
+               </property>
+               <property name="circles" stdset="0">
+                <bool>false</bool>
+               </property>
+               <property name="labelPosition" stdset="0">
+                <enum>QTabWidget::North</enum>
+               </property>
+               <property name="labels" stdset="0">
+                <stringlist/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeType">
+                <enum>QSizePolicy::Fixed</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>60</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="PyDMPushButton" name="pydmBtn_Shutter1">
+               <property name="toolTip">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer_3">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeType">
+                <enum>QSizePolicy::Fixed</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>25</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </item>
+           <item row="3" column="2">
+            <layout class="QHBoxLayout" name="horizontalLayout_shutter2">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>5</number>
+             </property>
+             <property name="bottomMargin">
+              <number>5</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="lblBShutter">
+               <property name="font">
+                <font>
+                 <pointsize>11</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="text">
+                <string>Shutter</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="PyDMByteIndicator" name="pydmByte_Shutter2">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>10</width>
+                 <height>10</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>40</width>
+                 <height>40</height>
+                </size>
+               </property>
+               <property name="toolTip">
+                <string/>
+               </property>
+               <property name="channel" stdset="0">
+                <string>ca://BLEN:${AREA}:${POS}:${INST}B:Inserted</string>
+               </property>
+               <property name="onColor" stdset="0">
+                <color>
+                 <red>255</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </property>
+               <property name="offColor" stdset="0">
+                <color>
+                 <red>0</red>
+                 <green>255</green>
+                 <blue>0</blue>
+                </color>
+               </property>
+               <property name="showLabels" stdset="0">
+                <bool>false</bool>
+               </property>
+               <property name="circles" stdset="0">
+                <bool>false</bool>
+               </property>
+               <property name="labelPosition" stdset="0">
+                <enum>QTabWidget::North</enum>
+               </property>
+               <property name="labels" stdset="0">
+                <stringlist/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer_2">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeType">
+                <enum>QSizePolicy::Fixed</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>60</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="PyDMPushButton" name="pydmBtn_Shutter2">
+               <property name="toolTip">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer_4">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeType">
+                <enum>QSizePolicy::Fixed</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>25</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </item>
+           <item row="3" column="1">
+            <widget class="QFrame" name="frame_12">
+             <property name="minimumSize">
+              <size>
+               <width>10</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::VLine</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <property name="lineWidth">
+              <number>2</number>
+             </property>
+             <property name="midLineWidth">
+              <number>0</number>
+             </property>
+            </widget>
            </item>
           </layout>
          </item>
@@ -3300,6 +3379,11 @@
    <class>PyDMLabel</class>
    <extends>QLabel</extends>
    <header>pydm.widgets.label</header>
+  </customwidget>
+  <customwidget>
+   <class>PyDMPushButton</class>
+   <extends>QPushButton</extends>
+   <header>pydm.widgets.pushbutton</header>
   </customwidget>
   <customwidget>
    <class>PyDMWaveformPlot</class>
