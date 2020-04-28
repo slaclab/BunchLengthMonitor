@@ -10,7 +10,7 @@ dbLoadRecords("db/blenLCLS2.db", "P=BLEN:${AREA}:${POS}:${INST}A, PORT=cpsw, AMC
 dbLoadRecords("db/blenLCLS2.db", "P=BLEN:${AREA}:${POS}:${INST}B, PORT=cpsw, AMC=1")
 
 # Filter control
-dbLoadRecords("db/statusBit.db", "P=$(AREA):$(POS), P0=$(AREA)$(POS):AMC0, P1=$(AREA):$(POS):AMC1")
+dbLoadRecords("db/statusBit.db", "P=BLEN:$(AREA):$(POS), P0=BLEN:$(AREA):$(POS):$(INST)A, P1=BLEN:$(AREA):$(POS):$(INST)B")
 
 # BSA records
 dbLoadRecords("db/Bsa.db", "DEVICE=BLEN:${AREA}:${POS},ATRB=AIMAX, SINK_SIZE=1, LNK=''")

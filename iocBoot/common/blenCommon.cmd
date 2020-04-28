@@ -2,25 +2,6 @@
 #            ENVIRONMENT VARIABLES
 # ===========================================
 
-# ========================================================
-# Support Large Arrays/Waveforms; Number in Bytes
-# Please calculate the size of the largest waveform
-# that you support in your IOC.  Do not just copy numbers
-# from other apps.  This will only lead to an exhaustion
-# of resources and problems with your IOC.
-# The default maximum size for a channel access array is
-# 16K bytes.
-# ========================================================
-# New in EPICS 7: Auto!
-
-#epicsEnvSet("EPICS_CA_AUTO_ARRAY_BYTES", "YES")
-
-# YAML directory
-epicsEnvSet("YAML_DIR","${IOC_DATA}/${IOC}/firmware/yaml")
-
-# Yaml File
-epicsEnvSet("TOP_YAML","${YAML_DIR}/000TopLevel.yaml")
-epicsEnvSet("YAML_CONFIG_FILE", "${YAML_DIR}/config/defaults.yaml")
 
 # For crossbarControl DB prefix
 epicsEnvSet("PART_PV", "${AREA}:${IOC_UNIT}")
