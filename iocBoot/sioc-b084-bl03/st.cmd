@@ -15,6 +15,13 @@ epicsEnvSet("POS", "886")
 epicsEnvSet("INST", "BL21")
 epicsEnvSet("IOC_UNIT", "BL03")
 
+# YAML directory
+epicsEnvSet("YAML_DIR","${IOC_DATA}/${IOC}/firmware/yaml")
+
+# Yaml File
+epicsEnvSet("TOP_YAML","${YAML_DIR}/000TopLevel.yaml")
+epicsEnvSet("YAML_CONFIG_FILE", "${YAML_DIR}/config/defaultsPyro.yaml")
+
 # FPGA IP address for CPSW
 epicsEnvSet("FPGA_IP", "10.0.1.107")
 
