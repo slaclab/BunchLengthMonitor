@@ -6,8 +6,8 @@
 dbLoadRecords("db/blen.db", "P=BLEN:${AREA}:${POS}:${INST}A, PORT=cpsw, AMC=0")
 dbLoadRecords("db/blen.db", "P=BLEN:${AREA}:${POS}:${INST}B, PORT=cpsw, AMC=1")
 
-dbLoadRecords("db/blenLCLS2.db", "P=BLEN:${AREA}:${POS}:${INST}A, PORT=cpsw, AMC=0")
-dbLoadRecords("db/blenLCLS2.db", "P=BLEN:${AREA}:${POS}:${INST}B, PORT=cpsw, AMC=1")
+dbLoadRecords("db/blenLCLS2.db", "P=BLEN:${AREA}:${POS}, PORT=cpsw")
+dbLoadRecords("db/blenLCLS2.db", "P=BLEN:${AREA}:${POS}, PORT=cpsw")
 
 # Filter control
 dbLoadRecords("db/statusBit.db", "P=BLEN:$(AREA):$(POS), P0=BLEN:$(AREA):$(POS):$(INST)A, P1=BLEN:$(AREA):$(POS):$(INST)B")
