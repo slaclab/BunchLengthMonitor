@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 #include <registryFunction.h>
 #include <epicsExport.h>
 #include <aSubRecord.h>
@@ -7,7 +5,6 @@
 static long calcTimeArray(aSubRecord *pasub) {
     long i, *clkFreq;
     double sum = 0, timeNs;
-    //double xAxis[1024];
 
     pasub->pact = 1;
 
@@ -19,9 +16,7 @@ static long calcTimeArray(aSubRecord *pasub) {
 
     // Build array with the relative time for each sample since the first one
     for (i=0; i < pasub->nova; ++i) {
-        //printf("i=%d\n", i);
         ((double *)pasub->vala)[i] = sum;
-        //xAxis[i] = sum;
         sum += timeNs;
     }
 
