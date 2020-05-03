@@ -69,16 +69,15 @@ void BlenFcom::registerArawId(std::string pvName) {
 
 // Receives IP address and port in the format <IP>:<port>
 void BlenFcom::registerAtcaIpToSendTMIT(std::string ipColonPort) {
-    char* auxStr;
-    // Sufficient space for a full IPv4 IP address 
-    // plus a 5 digit port and a colon
-    char ipColonPort_C[INET_ADDRSTRLEN + 6];
-    // This string copy brings the C++ string format to C format
-    strncpy(ipColonPort_C, ipColonPort.c_str(), sizeof(ipColonPort_C));
-
-    // Extract the IP address information from the function parameter
+    // Get a C-style string of the IP:PORT for later tokenization.
+    char *auxStr, *ipColonPort_C;
+    ipColonPort_C = strdup(ipColonPort.c_str());
+    if (NULL == ipColonPort_C) {
+        errlogPrintf("Insufficient memory to allocate IP:PORT string!\n");
+        return; // TODO: make the error handling more useful. This is slightly
+                // better than a segfault
+    }
     auxStr = strtok(ipColonPort_C, ":");
-
 
     // Clean sockaddr_in structure
     memset((char *)&atcaIpToSendTMIT, 0, sizeof(atcaIpToSendTMIT));
@@ -103,6 +102,8 @@ void BlenFcom::registerAtcaIpToSendTMIT(std::string ipColonPort) {
     // Try to create socket and register if success or not
     socketFd = socket(PF_INET, SOCK_DGRAM, 0);
     blenStats.cannotCreateSocket = (socketFd < 0);
+
+    free(ipColonPort_C);
 }
 
 int BlenFcom::fireFcomTask() {
