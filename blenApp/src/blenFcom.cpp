@@ -194,8 +194,6 @@ void BlenFcom::fcomTask() {
         st = fcomGetBlob( tmitId, &bpmBlob, blmFcomTimeoutMs /* ms */ );
         if ( 0 == st ) {
             if ( bpmBlob->fc_stat ) {
-                // Commented due to the number of messages on the IOC console
-                //errlogPrintf("Blob status flag %d indicates a problem with the data.\n", bpmBlob->fc_stat);
                 blenStats.fcomStatErrors++;
             } else {
                 /* Everything OK */
