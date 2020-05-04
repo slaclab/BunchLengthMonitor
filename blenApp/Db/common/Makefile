@@ -1,20 +1,16 @@
-TOP=../..
+TOP=../../..
 include $(TOP)/configure/CONFIG
-#----------------------------------------
-#  ADD MACRO DEFINITIONS AFTER THIS LINE
 
-DIRS += common
-DIRS += mr lcls2
+# ==================================================
+# BLEN DBs common to both MR and LCLS2 platforms
+# ==================================================
 
-#----------------------------------------------------
-#  Optimization of db files using dbst (DEFAULT: NO)
-#DB_OPT = YES
+# ==================================================
+# External Dependencies
+# ==================================================
 
-REQ += manual.req
-
-#----------------------------------------------------
-# Create and install (or just install)
-# databases, templates, substitutions like this
+# YCPSWAsyn 
+# --------------------------------------------------
 DB_INSTALLS += $(YCPSWASYN)/db/ai.template
 DB_INSTALLS += $(YCPSWASYN)/db/ao.template
 DB_INSTALLS += $(YCPSWASYN)/db/longin.template
@@ -31,7 +27,6 @@ DB_INSTALLS += $(YCPSWASYN)/db/bo.template
 DB_INSTALLS += $(YCPSWASYN)/db/waveform_stream16.template
 DB_INSTALLS += $(YCPSWASYN)/db/waveform_stream32.template
 
-## For manually created record
 DB_INSTALLS += $(YCPSWASYN)/db/RegisterIn.template
 DB_INSTALLS += $(YCPSWASYN)/db/RegisterOut.template
 DB_INSTALLS += $(YCPSWASYN)/db/RegisterOutRBV.template
@@ -52,75 +47,45 @@ DB_INSTALLS += $(YCPSWASYN)/db/RegisterStream.template
 DB_INSTALLS += $(YCPSWASYN)/db/RegisterStream16.template
 DB_INSTALLS += $(YCPSWASYN)/db/example.substitutions
 
-# For weight function and final result waveforms
-DB += calculatedWF.db
+DB_INSTALLS += $(YCPSWASYN)/db/saveLoadConfig.db
 
-DB += blenMR.db
-DB += blenFilters.db
-DB += blenFilterDecoders.db
-DB += weightFunctionXAxis.db
-DB += streamControl.db
-DB += processRawWFHeader.db
-
-# Install Database for tprTrigger module
+# Timing (tprTrigger, tprPatter, crossbarControl, event, BSA) 
+# --------------------------------------------------
 DB_INSTALLS += $(TPRTRIGGER)/db/tprTrig.db
 DB_INSTALLS += $(TPRTRIGGER)/db/tprDeviceNamePV.db
 
-# Install Database for tprPattern module
 DB_INSTALLS += $(TPRPATTERN)/db/tprPattern.db
 DB_INSTALLS += $(CROSSBARCONTROL)/db/crossbarCtrl.db
 
-# For BSA
 DB_INSTALLS += $(EVENT)/db/Bsa.db
 DB_INSTALLS += $(BSADRIVER)/db/bsa.db
 
-# User-defined functions
-DB += ipAddr.db
-DB += statusBit.db
-DB += IMAXScale.db
-DB += temperature.db
-DB += TempMonitoring_PYRO.db
-DB += tmitStatus.db
-DB += bpmStatus.db
-
-# For CPSW PVs
-DB += blen.db
-DB += carrier.db
-
-# For byte swapping
-DB += swap.db
-
-# For saving and loading yaml configuration
-DB_INSTALLS += $(YCPSWASYN)/db/saveLoadConfig.db
-
-# For automatic initialization (requires saveLoadConfig.db)
-DB += monitorFPGAReboot.db
-
-# Install Common databases needed by All IOCs
-# ========================================================
-# Install databases from iocAdmin package
-# These databases support IOC Health and Monitoring
-# ========================================================
-# HardIOC using RTEMS
-#DB_INSTALLS += $(IOCADMIN)/db/iocAdminRTEMS.db
-# SoftIOC
+# IOCAdmin 
+# --------------------------------------------------
 DB_INSTALLS += $(IOCADMIN)/db/iocAdminSoft.db
 
 DB_INSTALLS += $(IOCADMIN)/db/iocAdminScanMon.db
 DB_INSTALLS += $(IOCADMIN)/db/iocScanMonSum.db
 DB_INSTALLS += $(IOCADMIN)/db/iocScanMon.db
+
 IOCRELEASE_DB += iocRelease.db
 
-# Install Database to support reading the status of the autosave package:
+# Autosave 
+# --------------------------------------------------
 DB_INSTALLS += $(AUTOSAVE)/db/save_restoreStatus.db
 
-# =======================================================================
+# ==================================================
+# BLEN Application DBs 
+# ==================================================
 
-#----------------------------------------------------
-# If <anyname>.db template is not named <anyname>*.template add
-# <anyname>_TEMPLATE = <templatename>
+# Main User-visible PVs 
+# --------------------------------------------------
+DB += blen.db
+
+# DBs containing Expert PVs and other routines
+# --------------------------------------------------
+DB += monitorFPGAReboot.db
+DB += weightFunctionXAxis.db
+DB += calculatedWF.db
 
 include $(TOP)/configure/RULES
-#----------------------------------------
-#  ADD RULES AFTER THIS LINE
-
