@@ -15,8 +15,8 @@ DB += blenLCLS2.db
 
 # DBs containing Expert PVs and other routines
 # --------------------------------------------------
-DB += statusBit.db
-DB += statusBitDecode.db
+DB += fpgaRegisters.db
+DB += pyroFilters.db
 
 include $(TOP)/configure/RULES
 #----------------------------------------

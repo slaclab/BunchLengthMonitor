@@ -9,16 +9,14 @@
 # YAML config version: configPyro.yaml - using lcls2-blen HEAD (5cceabf330d511aed0a40ce3bf7ac772edf494cd)
 ########################################################################################################################
 
-# Registers in this file represent the non-public or expert interface. Registers that appear on user screens are located
-# in the public API defined in common/blen.substitutions and lcls2/blenLCLS2.substitutions
-# These registers are used for intermediate calculation or in expert screens.
+# Registers in this file represent the non-public or expert interface.
 
 ########################################################################################################################
 # Macros:
 #   P,R: The PV name as $(P):$(R)
 #   DESC, PINI, SCAN, NELM, etc.: The same fields on the records
 #   PORT: The asyn port name. It must match the port name given when calling "YCPSWASYNConfig" on st.cmd
-#   PARAM: The asyn paramter name. It must be defined in the dictionary file and assigned to a register
+#   PARAM: The asyn paramter name. It must be defined in the dictionary file blenLCLS2.dict and assigned to a register
 ########################################################################################################################
 
 #======================================
