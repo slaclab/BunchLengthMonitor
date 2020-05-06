@@ -45,9 +45,6 @@ DB_INSTALLS += $(YCPSWASYN)/db/RegisterDoubleOutRBV.template
 DB_INSTALLS += $(YCPSWASYN)/db/RegisterCommand.template
 DB_INSTALLS += $(YCPSWASYN)/db/RegisterStream.template
 DB_INSTALLS += $(YCPSWASYN)/db/RegisterStream16.template
-DB_INSTALLS += $(YCPSWASYN)/db/example.substitutions
-
-DB_INSTALLS += $(YCPSWASYN)/db/saveLoadConfig.db
 
 # Timing (tprTrigger, tprPatter, crossbarControl, event, BSA) 
 # --------------------------------------------------

@@ -1,13 +1,17 @@
-# Database to monitor FPGA reboots and 
-# reload the configuration values after it.
+# Database to monitor FPGA reboots 
 # 
-# It monitors a specific register and it the
-# read value if different for what it is expected
-# then it will call the load configuration PV.
+# FPGARebootMon monitors the ScratchPad register. If the value read 
+# differs from the expected value, it calls cpswLoadConfig via the 
+# LoadFPGAConfig record
 #
-# INPA points to the register you are monitoring
-# KEY is the value set in the config defaults{Device}.yaml
-# OUT points to the load configuration PV
+
+#
+# Macros:
+#     P:            the PV prefix
+#     KEY:          the value set for the ScratchPad register in the config
+#     PORT:         the ASYN port name specified when loading the cpsw driver
+#     FPGA_CONFIG:  the FPGA config yaml file name
+#
 
 record(calcout, "$(P):FPGARebootMon") {
   field(SCAN, "10 second")
@@ -15,6 +19,14 @@ record(calcout, "$(P):FPGARebootMon") {
   field(INPA, "$(P):ScratchPadRBV")
   field(B,    "$(KEY)")
   field(CALC, "A != B")
-  field(OUT,  "$(P):LoadCfg.PROC")
+  field(OUT,  "$(P):LoadFPGAConfig.PROC")
   field(OOPT, "When Non-zero")
+}
+
+record(ao, "$(P):LoadFPGAConfig") {
+  field(DESC, "Load YAML configuration"),
+  field(DTYP, "asynInt32")
+  field(SCAN, "Passive")
+  field(OUT, "@asyn($(PORT),6)$(FPGA_CONFIG_FILE)")
+  field(asyn:READBACK, "1")
 }
