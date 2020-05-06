@@ -84,6 +84,7 @@ DB += blen.db
 
 # DBs containing Expert PVs and other routines
 # --------------------------------------------------
+DB += commonFPGA.db
 DB += monitorFPGAReboot.db
 DB += weightFunctionXAxis.db
 DB += calculatedWF.db

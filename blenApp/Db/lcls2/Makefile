@@ -15,7 +15,7 @@ DB += blenLCLS2.db
 
 # DBs containing Expert PVs and other routines
 # --------------------------------------------------
-DB += fpgaRegisters.db
+DB += lcls2FPGA.db
 DB += pyroFilters.db
 
 include $(TOP)/configure/RULES

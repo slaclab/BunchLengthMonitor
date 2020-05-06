@@ -151,7 +151,6 @@ file "RegisterEnumBOutRBV.template" { pattern
 file "RegisterDoubleIn.template" { pattern
 { P,        R,                DESC,                     PINI,   SCAN,         PORT,       EGU,        PARAM                     }
 { $(P),     AddSums0,         "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):AddSums0        }
-{ $(P),     SUM,              "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):SUM             }
 { $(P),     AddSums2,         "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):AddSums2        }
 { $(P),     AddSums3,         "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):AddSums3        }
 { $(P),     AddSums4,         "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):AddSums4        }
@@ -159,8 +158,6 @@ file "RegisterDoubleIn.template" { pattern
 { $(P),     AddSums0Gap,      "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):AddSums0Gap     }
 { $(P),     AddSums1Gap,      "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):AddSums1Gap     }
 { $(P),     AddSums2Sensors,  "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):AddSums2Sensors }
-{ $(P),     TMIT,             "Transmitted intensity",  "YES",  ".5 second",  $(PORT),    "pC",       AMC$(AMC):TMIT            }
-{ $(P),     IMAX,             "",                       "YES",  ".5 second",  $(PORT),    "A",        AMC$(AMC):IMAX            }
 }
 
 #======================================

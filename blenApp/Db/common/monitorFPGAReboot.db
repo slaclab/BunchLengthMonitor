@@ -6,7 +6,7 @@
 # then it will call the load configuration PV.
 #
 # INPA points to the register you are monitoring
-# The macro KEY is the expected value
+# KEY is the value set in the config defaults{Device}.yaml
 # OUT points to the load configuration PV
 
 record(calcout, "$(P):FPGARebootMon") {
@@ -14,7 +14,7 @@ record(calcout, "$(P):FPGARebootMon") {
   field(DESC, "Verify AxiVersion Scratchpad")
   field(INPA, "$(P):ScratchPadRBV")
   field(B,    "$(KEY)")
-  field(CALC, "A!=B")
+  field(CALC, "A != B")
   field(OUT,  "$(P):LoadCfg.PROC")
   field(OOPT, "When Non-zero")
 }

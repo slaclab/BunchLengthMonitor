@@ -1,0 +1,34 @@
+########################################################################################################################
+# Summary:             BLEN substitutions file to generate common public interface 
+# Author:              Ryan Reno <rreno@slac.stanford.edu> 
+# Date:                05-May-2020 
+# YAML config version: configPyro.yaml - using lcls2-blen HEAD (5cceabf330d511aed0a40ce3bf7ac772edf494cd)
+########################################################################################################################
+
+
+########################################################################################################################
+# Macros:
+#   P,R: The PV name as $(P):$(R)
+#   DESC, PINI, SCAN, NELM, etc.: The same fields on the records
+#   PORT: The asyn port name. It must match the port name given when calling "YCPSWASYNConfig" on st.cmd
+#   PARAM: The asyn paramter name. It must be defined in the dictionary file and assigned to a register
+#   AMC: The AMC hardware slot (0 or 1)
+########################################################################################################################
+
+#=============================
+# Direct (RO) Register Access
+#=============================
+
+file "RegisterDoubleIn.template" { pattern
+{ P,        R,                DESC,                     PINI,   SCAN,         PORT,       EGU,            PARAM        }
+{ $(P),     SUM,              "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):SUM    }
+{ $(P),     IMAX,             "",                       "YES",  ".5 second",  $(PORT),    "A",        AMC$(AMC):IMAX   }
+{ $(P),     TMIT,             "Transmitted intensity",  "YES",  ".5 second",  $(PORT),    "pC",       AMC$(AMC):TMIT   }
+}
+
+file "blenWaveforms.template" { pattern
+{P,         R,                DESC} 
+}
+
+file "temperatureSensors.template" { pattern
+}
