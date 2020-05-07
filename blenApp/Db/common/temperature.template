@@ -1,7 +1,7 @@
-# analog input
+# User-facing temperature sensor PV template
 
 record(ai,      "$(P):$(R)") {
     field(DESC, "$(DESC)")
-    field(EGU,  "$(EGU)")
+    field(EGU,  "K")
     field(SCAN,  "$(SCAN)")
 }

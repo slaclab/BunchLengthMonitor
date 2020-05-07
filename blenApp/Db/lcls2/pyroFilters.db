@@ -1,0 +1,106 @@
+#===============================================================================
+#
+# Pyrodetector (LCLS-II) Filter and Shutter Controls
+#
+#===============================================================================
+#
+# These records interface between the user control layer and the FPGA.
+# The FPGA expects the MoverOnOff control register to have specific bits set for
+# each of the filters and shutters. These records take as input the _CTRL PV and
+# the state of the MoverOnOff register to determine what number should be
+# written out. 
+# 
+# Accurate as of commit 5cceabf330d511aed0a40ce3bf7ac772edf494cd to the
+# lcls2-blen firmware repo:
+# ------------------------------------------------------------------------------
+# The MoverOnOff register is 6 bits wide with the following layout
+#
+# BIT       5          4          3          2          1          0
+# DEV  | - FLT4 - | - FLT3 - | - FLT2 - | - FLT1 - | - SHT1 - | - SHT0 - |
+#  
+# For any of the 5 bits, 0 = Mover Removed, 1 = Mover Inserted
+
+
+record(calcout, "$(P0):SHT_MOVE")
+{
+  field(OUT, "$(P):MoverOnOff PP")
+  field(OOPT, "Every Time")
+  field(DOPT, "Use CALC")
+  field(INPA, "$(P0):SHT_CTRL")
+  field(INPB, "$(P):MoverOnOffRBV")
+  field(INPC, "1")
+  field(INPD, "0x1")  # bit 0 set
+  field(INPE, "0x3e") # bit 0 unset
+  field(CALC, "(A = C) ? B|D : B&E")
+  field(SCAN, "Passive")
+}
+
+record(calcout, "$(P1):SHT_MOVE")
+{
+  field(OUT, "$(P):MoverOnOff PP")
+  field(OOPT, "Every Time")
+  field(DOPT, "Use CALC")
+  field(INPA, "$(P1):SHT_CTRL")
+  field(INPB, "$(P):MoverOnOffRBV")
+  field(INPC, "1")
+  field(INPD, "0x2")  # bit 1 set
+  field(INPE, "0x3d") # bit 1 unset
+  field(CALC, "(A = C) ? B|D : B&E")
+  field(SCAN, "Passive")
+}
+
+record(calcout, "$(P):FLT1_MOVE")
+{
+  field(OUT, "$(P):MoverOnOff PP")
+  field(OOPT, "Every Time")
+  field(DOPT, "Use CALC")
+  field(INPA, "$(P):FLT1_CTRL")
+  field(INPB, "$(P):MoverOnOffRBV")
+  field(INPC, "1")
+  field(INPD, "0x4")  # bit 2 set
+  field(INPE, "0x3b") # bit 2 unset
+  field(CALC, "(A = C) ? B|D : B&E")
+  field(SCAN, "Passive")
+}
+
+record(calcout, "$(P):FLT2_MOVE")
+{
+  field(OUT, "$(P):MoverOnOff PP")
+  field(OOPT, "Every Time")
+  field(DOPT, "Use CALC")
+  field(INPA, "$(P):FLT2_CTRL")
+  field(INPB, "$(P):MoverOnOffRBV")
+  field(INPC, "1")
+  field(INPD, "0x8")  # bit 3 set
+  field(INPE, "0x37") # bit 3 unset
+  field(CALC, "(A = C) ? B|D : B&E")
+  field(SCAN, "Passive")
+}
+
+record(calcout, "$(P):FLT3_MOVE")
+{
+  field(OUT, "$(P):MoverOnOff PP")
+  field(OOPT, "Every Time")
+  field(DOPT, "Use CALC")
+  field(INPA, "$(P):FLT3_CTRL")
+  field(INPB, "$(P):MoverOnOffRBV")
+  field(INPC, "1")
+  field(INPD, "0x10") # bit 4 set
+  field(INPE, "0x2f") # bit 4 unset
+  field(CALC, "(A = C) ? B|D : B&E")
+  field(SCAN, "Passive")
+}
+
+record(calcout, "$(P):FLT4_MOVE")
+{
+  field(OUT, "$(P):MoverOnOff PP")
+  field(OOPT, "Every Time")
+  field(DOPT, "Use CALC")
+  field(INPA, "$(P):FLT4_CTRL")
+  field(INPB, "$(P):MoverOnOffRBV")
+  field(INPC, "1")
+  field(INPD, "0x20") # bit 5 set
+  field(INPE, "0x1f") # bit 5 unset
+  field(CALC, "(A = C) ? B|D : B&E")
+  field(SCAN, "Passive")
+}

@@ -1,0 +1,249 @@
+###################################################################################################
+# Summary:             Public API/PV Interface to BLEN (LCLS-II Configuration)
+# Author:              Ryan Reno <rreno@slac.stanford.edu>
+#                        Adapted from work by Chris Ford <caf@> and Marcio Paduan <marcio@>
+# Date:                05-May-2020
+###################################################################################################
+###################################################################################################
+# Macros:
+#   P:        The PV name as BLEN:$(AREA):$(POS)
+#   P0/1:     The PV name as BLEN:$(AREA):$(POS):$(INST)A/B
+#   INSERTED: The PV for the Mover Inserted register
+#   REMOVED:  The PV for the Mover Removed register
+#   SCAN:     Scan rate for PVs. Should keep below 1Hz, 2Hz max rate
+###################################################################################################
+
+
+# --------------------------------------------------------------------------------------------------
+#
+# Filters and Shutters (Pyrodetector Configuration Only)
+#
+# --------------------------------------------------------------------------------------------------
+
+# Status Values:
+# 0 = OUT
+# 1 = IN
+# 2 = MOVING
+# 3 = INCONSISTENT  - Due to both limit switches being activated at the same time.
+
+#
+#  $(PX):SHT_STS -- status of shutter for AMCX
+#
+
+record(calc, "$(P0):SHT_STS")
+{
+  field(INPA, "$(P):$(INSERTED)")
+  field(INPB, "$(P):$(REMOVED)")
+  field(INPC, "0x1")  # Bit Mask
+  field(INPD, "0")    # Bit Shift 
+  field(CALC, "(A&B&C) ? 3 : (((~(A|B)) & C) ? 2 : (A&C) >> D)")
+  field(SCAN, "$(SCAN)")
+  field(DESC, "0=OUT, 1=IN, 2=MOVING, 3=INCONSISTENT")
+}
+
+record(calc, "$(P0):SHT_STS")
+{
+  field(INPA, "$(P):$(INSERTED)")
+  field(INPB, "$(P):$(REMOVED)")
+  field(INPC, "0x2")  # Bit Mask
+  field(INPD, "1")    # Bit Shift 
+  field(CALC, "(A&B&C) ? 3 : (((~(A|B)) & C) ? 2 : (A&C) >> D)")
+  field(SCAN, "$(SCAN)")
+  field(DESC, "0=OUT, 1=IN, 2=MOVING, 3=INCONSISTENT")
+}
+
+#
+# $(P):FLTX_STS  -- status of Filter X
+#
+
+record(calc, "$(P):FLT1_STS")
+{
+  field(INPA, "$(P):$(INSERTED)")
+  field(INPB, "$(P):$(REMOVED)")
+  field(INPC, "0x4")  # Bit Mask
+  field(INPD, "2")    # Bit Shift 
+  field(CALC, "(A&B&C) ? 3 : (((~(A|B)) & C) ? 2 : (A&C) >> D)")
+  field(SCAN, "$(SCAN)")
+  field(DESC, "0=OUT, 1=IN, 2=MOVING, 3=INCONSISTENT")
+}
+
+record(calc, "$(P):FLT2_STS")
+{
+  field(INPA, "$(P):$(INSERTED)")
+  field(INPB, "$(P):$(REMOVED)")
+  field(INPC, "0x8")  # Bit Mask
+  field(INPD, "3")    # Bit Shift 
+  field(CALC, "(A&B&C) ? 3 : (((~(A|B)) & C) ? 2 : (A&C) >> D)")
+  field(SCAN, "$(SCAN)")
+  field(DESC, "0=OUT, 1=IN, 2=MOVING, 3=INCONSISTENT")
+}
+record(calc, "$(P):FLT3_STS")
+{
+  field(INPA, "$(P):$(INSERTED)")
+  field(INPB, "$(P):$(REMOVED)")
+  field(INPC, "0x10")  # Bit Mask
+  field(INPD, "4")    # Bit Shift 
+  field(CALC, "(A&B&C) ? 3 : (((~(A|B)) & C) ? 2 : (A&C) >> D)")
+  field(SCAN, "$(SCAN)")
+  field(DESC, "0=OUT, 1=IN, 2=MOVING, 3=INCONSISTENT")
+}
+
+record(calc, "$(P):FLT4_STS")
+{
+  field(INPA, "$(P):$(INSERTED)")
+  field(INPB, "$(P):$(REMOVED)")
+  field(INPC, "0x20")  # Bit Mask
+  field(INPD, "5")    # Bit Shift 
+  field(CALC, "(A&B&C) ? 3 : (((~(A|B)) & C) ? 2 : (A&C) >> D)")
+  field(SCAN, "$(SCAN)")
+  field(DESC, "0=OUT, 1=IN, 2=MOVING, 3=INCONSISTENT")
+}
+
+#
+# Control (CTRL) values:
+# 0 = OUT
+# 1 = IN
+#
+# $(PX):SHT_CTRL  -- AMCX Shutter Control
+# $(P):FLTX_CTRL  -- FilterX Control
+#
+
+record(mbbo, "$(P0):SHT_CTRL")
+{
+  field(VAL,   "0")
+  field(ZRVL,  "0")
+  field(ZRST,  "OUT")
+  field(ONVL,  "1")
+  field(ONST,  "IN")
+  field(FLINK, "$(P0):SHT_MOVE") 
+}
+
+record(mbbo, "$(P1):SHT_CTRL")
+{
+  field(VAL,   "0")
+  field(ZRVL,  "0")
+  field(ZRST,  "OUT")
+  field(ONVL,  "1")
+  field(ONST,  "IN")
+  field(FLINK, "$(P1):SHT_MOVE") 
+}
+
+record(mbbo, "$(P):FLT1_CTRL")
+{
+  field(VAL,   "0")
+  field(ZRVL,  "0")
+  field(ZRST,  "OUT")
+  field(ONVL,  "1")
+  field(ONST,  "IN")
+  field(FLINK, "$(P):FLT1_MOVE")
+}
+
+record(mbbo, "$(P):FLT2_CTRL")
+{
+  field(VAL,   "0")
+  field(ZRVL,  "0")
+  field(ZRST,  "OUT")
+  field(ONVL,  "1")
+  field(ONST,  "IN")
+  field(FLINK, "$(P):FLT2_MOVE")
+}
+
+record(mbbo, "$(P):FLT3_CTRL")
+{
+  field(VAL,   "0")
+  field(ZRVL,  "0")
+  field(ZRST,  "OUT")
+  field(ONVL,  "1")
+  field(ONST,  "IN")
+  field(FLINK, "$(P):FLT3_MOVE")
+}
+
+record(mbbo, "$(P):FLT4_CTRL")
+{
+  field(VAL,   "0")
+  field(ZRVL,  "0")
+  field(ZRST,  "OUT")
+  field(ONVL,  "1")
+  field(ONST,  "IN")
+  field(FLINK, "$(P):FLT4_MOVE")
+}
+
+#
+# Error (ERR) Values:
+#   0 = OK
+#   1 = Mismatch of CTRL and STS
+#
+
+#
+# $(PX):SHT_ERR -- AMCX Shutter Error State
+#
+
+record(calc, "$(P0):SHT_ERR")
+{
+  field(INPA, "$(P0):SHT_STS")
+  field(INPB, "$(P0):SHT_CTRL")
+  field(INPC, "0")    # OK Value
+  field(INPD, "1")    # Error Value
+  field(CALC, "(A = B) ? C : D")
+  field(SCAN, "$(SCAN)")
+  field(DESC, "0 = OK 1 = Mismatch of STS and CTRL")
+}
+
+record(calc, "$(P1):SHT_ERR")
+{
+  field(INPA, "$(P1):SHT_STS")
+  field(INPB, "$(P1):SHT_CTRL")
+  field(INPC, "0")    # OK Value
+  field(INPD, "1")    # Error Value
+  field(CALC, "(A = B) ? C : D")
+  field(SCAN, "$(SCAN)")
+  field(DESC, "0 = OK 1 = Mismatch of STS and CTRL")
+}
+
+#
+# $(P):FLTX_ERR -- FilterX Error State
+#
+
+record(calc, "$(P):FLT1_ERR")
+{
+  field(INPA, "$(P):FLT1_STS")
+  field(INPB, "$(P):FLT1_CTRL")
+  field(INPC, "0")    # OK Value
+  field(INPD, "1")    # Error Value
+  field(CALC, "(A = B) ? C : D")
+  field(SCAN, "$(SCAN)")
+  field(DESC, "0 = OK 1 = Mismatch of STS and CTRL")
+}
+
+record(calc, "$(P):FLT2_ERR")
+{
+  field(INPA, "$(P):FLT2_STS")
+  field(INPB, "$(P):FLT2_CTRL")
+  field(INPC, "0")    # OK Value
+  field(INPD, "1")    # Error Value
+  field(CALC, "(A = B) ? C : D")
+  field(SCAN, "$(SCAN)")
+  field(DESC, "0 = OK 1 = Mismatch of STS and CTRL")
+}
+
+record(calc, "$(P):FLT3_ERR")
+{
+  field(INPA, "$(P):FLT3_STS")
+  field(INPB, "$(P):FLT3_CTRL")
+  field(INPC, "0")    # OK Value
+  field(INPD, "1")    # Error Value
+  field(CALC, "(A = B) ? C : D")
+  field(SCAN, "$(SCAN)")
+  field(DESC, "0 = OK 1 = Mismatch of STS and CTRL")
+}
+
+record(calc, "$(P):FLT4_ERR")
+{
+  field(INPA, "$(P):FLT4_STS")
+  field(INPB, "$(P):FLT4_CTRL")
+  field(INPC, "0")    # OK Value
+  field(INPD, "1")    # Error Value
+  field(CALC, "(A = B) ? C : D")
+  field(SCAN, "$(SCAN)")
+  field(DESC, "0 = OK 1 = Mismatch of STS and CTRL")
+}

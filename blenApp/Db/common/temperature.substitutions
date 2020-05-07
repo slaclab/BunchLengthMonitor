@@ -8,7 +8,7 @@
 #
 #==============================================================================
 #
-file ai.db
+file temperature.template
 {
 pattern   {P, R, DESC, EGU, SCAN}
 

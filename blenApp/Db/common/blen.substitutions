@@ -1,0 +1,63 @@
+########################################################################################################################
+# Summary:             BLEN substitutions file to generate common public interface 
+# Author:              Ryan Reno <rreno@slac.stanford.edu> 
+# Date:                05-May-2020 
+# Firmware Revision:   lcls2-blen commit 5cceabf330d511aed0a40ce3bf7ac772edf494cd
+########################################################################################################################
+
+########################################################################################################################
+# Direct (RO) Register Access
+# Macros:
+#   P, INST, R: The PV name as $(P):$(INST):$(R)
+#   DESC, PINI, SCAN, NELM, etc.: The same fields on the records
+#   PORT: The asyn port name. It must match the port name given when calling "YCPSWASYNConfig" on st.cmd
+#   PARAM: The asyn paramter name. It must be defined in the dictionary file and assigned to a register
+#   AMC: The AMC hardware slot (0 or 1)
+########################################################################################################################
+
+file "RegisterDoubleIn.template" { pattern
+{ P,                R,                DESC,                     PINI,   SCAN,         PORT,       EGU,            PARAM        }
+{ $(P):$(INST)A,     SUM,              "",                       "YES",  ".5 second",  $(PORT),    "",         AMC0:SUM    }
+{ $(P):$(INST)A,     IMAX,             "",                       "YES",  ".5 second",  $(PORT),    "A",        AMC0:IMAX   }
+{ $(P):$(INST)A,     TMIT,             "Transmitted intensity",  "YES",  ".5 second",  $(PORT),    "pC",       AMC0:TMIT   }
+
+{ $(P):$(INST)B,     SUM,              "",                       "YES",  ".5 second",  $(PORT),    "",         AMC1:SUM    }
+{ $(P):$(INST)B,     IMAX,             "",                       "YES",  ".5 second",  $(PORT),    "A",        AMC1:IMAX   }
+{ $(P):$(INST)B,     TMIT,             "Transmitted intensity",  "YES",  ".5 second",  $(PORT),    "pC",       AMC1:TMIT   }
+}
+
+########################################################################################################################
+# Waveforms 
+# Macros:
+#   P, INST, R: The PV name as $(P):$(INST):$(R)
+#   DESC: The Waveform Description
+#   FTVL: The Type of the waveform elements (short, long, double, etc.)
+#   NELM: The number of elements in each waveform array
+#   INP:  The PV that provides the input (probably either an acalcout or an aSub record)
+########################################################################################################################
+
+file "blenWaveforms.template" { pattern
+{   P,                  R,          DESC,                                     FTVL,     NELM,     INP                  }
+{  $(P):$(INST)A,      "RWF",      "Raw waveform, 32 bits",                  "LONG",    1024,     $(P):$(INST)A        }
+{  $(P):$(INST)A,      "RWFS",     "Raw waveform, 16 bits",                  "SHORT",   2048,     $(P):$(INST)A        }
+{  $(P):$(INST)A,      "IWF",      "Integration Window waveform, 32 bits",   "LONG",    1024,     $(P):$(INST)A        }
+{  $(P):$(INST)A,      "IWFS",     "Integration Window waveform, 16 bits",   "SHORT",   2048,     $(P):$(INST)A        }
+
+{  $(P):$(INST)B,      "RWF",      "Raw waveform, 32 bits",                  "LONG",    1024,     $(P):$(INST)B        }
+{  $(P):$(INST)B,      "RWFS",     "Raw waveform, 16 bits",                  "SHORT",   2048,     $(P):$(INST)B        }
+{  $(P):$(INST)B,      "IWF",      "Integration Window waveform, 32 bits",   "LONG",    1024,     $(P):$(INST)B        }
+{  $(P):$(INST)B,      "IWFS",     "Integration Window waveform, 16 bits",   "SHORT",   2048,     $(P):$(INST)B        }
+}
+
+########################################################################################################################
+# Temperature Sensors 
+# Macros:
+#   P, INST, R: The PV name as $(P):$(INST):$(R)
+#   DESC, SCAN: The same fields on the records
+########################################################################################################################
+
+file "temperature.template" { pattern
+{  P,      R,                       DESC,                 SCAN     }
+{ $(P), "Temp0",        "Temperature of sensor 0",     "10 second" }
+{ $(P), "Temp1",        "Temperature of sensor 1",     "10 second" }
+}

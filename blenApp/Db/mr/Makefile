@@ -1,17 +1,23 @@
-TOP=../..
+TOP=../../..
 include $(TOP)/configure/CONFIG
 #----------------------------------------
 #  ADD MACRO DEFINITIONS AFTER THIS LINE
 
-DIRS += common
-DIRS += lcls2
-DIRS += mr
 
 #----------------------------------------------------
 #  Optimization of db files using dbst (DEFAULT: NO)
 #DB_OPT = YES
 
-REQ += manual.req
+# Main User-visible PVs 
+# --------------------------------------------------
+DB += blenMR.db
+
+
+# DBs containing Expert PVs and other routines
+# --------------------------------------------------
+DB += blenFilters.db
+DB += blenFilterDecoders.db
+DB += streamControl.db
 
 include $(TOP)/configure/RULES
 #----------------------------------------
