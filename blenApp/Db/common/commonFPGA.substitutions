@@ -28,7 +28,6 @@ file "RegisterIn.template" { pattern
 # Array of register
 file "RegisterArrayIn.template" { pattern
 { P,          R,             DESC,                          NELM,   PINI,   SCAN,       PORT,  PARAM       }
-{ $(P), AdcData,       "ADC Data[3:0]",               4,     "YES",   "1 second", $(PORT),    AMC$(AMC):AdcData     }
 }
 
 # Array of 8-bit register as a string
