@@ -54,9 +54,14 @@ tprTriggerAsynDriverConfigure("trig", "mmio/AmcCarrierCore")
 #               DB LOADING
 # ===========================================
 
-# main blen database
-dbLoadRecords("db/blen.db", "P=BLEN:$(AREA):$(POS), PORT=cpsw, AMC=0")
-dbLoadRecords("db/blen.db", "P=BLEN:$(AREA):$(POS), PORT=cpsw, AMC=1")
+# main blen database - user facing PVs
+dbLoadRecords("db/blen.db", "P=BLEN:$(AREA):$(POS), INST=$(INST), PORT=cpsw")
+
+# FPGA-related records
+dbLoadRecords("db/commonFPGA.db", "P=BLEN:$(AREA):$(POS):$(INST)A, PORT=cpsw, AMC=0")
+dbLoadRecords("db/commonFPGA.db", "P=BLEN:$(AREA):$(POS):$(INST)B, PORT=cpsw, AMC=1")
+dbLoadRecords("db/monitorFPGAReboot.db", "P=BLEN:$(AREA):$(POS), PORT=cpsw, KEY=0xFC067333, FPGA_CONFIG_FILE=$(YAML_CONFIG_FILE)")
+
 
 # Records to manipulate waveforms from detectors
 dbLoadRecords("db/calculatedWF.db", "AREA=${AREA}, POS=${POS}, INST=${INST}A")
@@ -70,12 +75,6 @@ dbLoadRecords("db/weightFunctionXAxis.db", "AREA=${AREA}, POS=${POS}, INST=${INS
 # Timing crossbar and trigger
 dbLoadRecords("db/tprTrig.db",     "LOCA=${AREA}, IOC_UNIT=${IOC_UNIT}, INST=2, PORT=trig")
 dbLoadRecords("db/crossbarCtrl.db", "DEV=EVR:${PART_PV}, PORT=crossbar")
-
-
-#Save/Load configuration and Monitor FPGA reboots
-dbLoadRecords("db/saveLoadConfig.db", "P=BLEN:${AREA}:${POS}:, PORT=cpsw, SAVE_FILE=/tmp/configDump.yaml, LOAD_FILE=${IOC_DATA}/${IOC}/firmware/yaml/config/defaults.yaml")
-
-dbLoadRecords("db/monitorFPGAReboot.db", "P=BLEN:${AREA}:${POS}, KEY=0xFC067333")
 
 # **********************************************************************
 # **** Load iocAdmin databases to support IOC Health and monitoring ****
