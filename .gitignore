@@ -2,6 +2,7 @@
 O.*
 *.log
 *.swp
+*.swo
 *.bak
 bin/
 cfg/
