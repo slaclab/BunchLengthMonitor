@@ -62,7 +62,7 @@
             <number>1</number>
            </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}A_TIME_POS</string>
+            <string>ca://BLEN:${AREA}:${POS}:${INST}A:TIME_POS</string>
            </property>
            <property name="showLimitLabels" stdset="0">
             <bool>false</bool>
@@ -105,7 +105,7 @@
             <number>1</number>
            </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}A_TIME_PRE</string>
+            <string>ca://BLEN:${AREA}:${POS}:${INST}A:TIME_PRE</string>
            </property>
            <property name="showLimitLabels" stdset="0">
             <bool>false</bool>
@@ -151,7 +151,7 @@
             <number>1</number>
            </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}A_TIME_MID</string>
+            <string>ca://BLEN:${AREA}:${POS}:${INST}A:TIME_MID</string>
            </property>
            <property name="showLimitLabels" stdset="0">
             <bool>false</bool>
@@ -243,7 +243,7 @@
             <number>1</number>
            </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}B_TIME_PRE</string>
+            <string>ca://BLEN:${AREA}:${POS}:${INST}B:TIME_PRE</string>
            </property>
            <property name="showLimitLabels" stdset="0">
             <bool>false</bool>
@@ -319,7 +319,7 @@
             <number>1</number>
            </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}B_TIME_MID</string>
+            <string>ca://BLEN:${AREA}:${POS}:${INST}B:TIME_MID</string>
            </property>
            <property name="showLimitLabels" stdset="0">
             <bool>false</bool>
@@ -380,7 +380,7 @@
             <number>1</number>
            </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}B_TIME_POS</string>
+            <string>ca://BLEN:${AREA}:${POS}:${INST}B:TIME_POS</string>
            </property>
            <property name="showLimitLabels" stdset="0">
             <bool>false</bool>
@@ -560,7 +560,9 @@
           <bool>false</bool>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(0, 0, 0);</string>
+          <string notr="true">QFrame #frame_2 {
+    background-color: rgb(0, 0, 0);
+}</string>
          </property>
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
@@ -1316,7 +1318,9 @@
           <bool>false</bool>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(0, 0, 0);</string>
+          <string notr="true">QFrame #frame {
+    background-color: rgb(0, 0, 0);
+}</string>
          </property>
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
