@@ -103,7 +103,7 @@ record (calcout, "BLEN:$(AREA):$(POS):$(INST):NumSamp1_CLC") {
 
 # Create a waveform with the sampling time. This will be the X axis of the
 # waveform.
-record (aSub, "BLEN:$(AREA):$(POS):$(INST):WF_TIME") {
+record (aSub, "BLEN:$(AREA):$(POS):$(INST):SampTime") {
   field(SNAM, "calcTimeArray")
   field(FTA, "LONG")
   field(FTVA, "DOUBLE")

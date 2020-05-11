@@ -150,7 +150,7 @@
              </property>
              <property name="curves">
               <stringlist>
-               <string>{&quot;y_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}A_S_P_WF&quot;, &quot;x_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}A_WF_TIME.VALA&quot;, &quot;name&quot;: &quot;BL11A Process Waveform&quot;, &quot;color&quot;: &quot;white&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;redraw_mode&quot;: 2}</string>
+               <string>{&quot;y_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}A_S_P_WF&quot;, &quot;x_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}A:SampTime.VALA&quot;, &quot;name&quot;: &quot;BL11A Process Waveform&quot;, &quot;color&quot;: &quot;white&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;redraw_mode&quot;: 2}</string>
               </stringlist>
              </property>
              <property name="autoRangeX">
@@ -302,7 +302,7 @@
              </property>
              <property name="curves">
               <stringlist>
-               <string>{&quot;y_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}B_S_P_WF&quot;, &quot;x_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}A_WF_TIME.VALA&quot;, &quot;name&quot;: &quot;BL11B Process Waveform&quot;, &quot;color&quot;: &quot;#00aa00&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;redraw_mode&quot;: 2}</string>
+               <string>{&quot;y_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}B_S_P_WF&quot;, &quot;x_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}A:SampTime.VALA&quot;, &quot;name&quot;: &quot;BL11B Process Waveform&quot;, &quot;color&quot;: &quot;#00aa00&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;redraw_mode&quot;: 2}</string>
               </stringlist>
              </property>
              <property name="autoRangeX">
@@ -428,7 +428,9 @@
               <bool>false</bool>
              </property>
              <property name="styleSheet">
-              <string notr="true">background-color: rgb(0, 0, 0);</string>
+              <string notr="true">QFrame #frame_19 {
+    background-color: rgb(0, 0, 0);
+}</string>
              </property>
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
@@ -498,8 +500,8 @@
                   </property>
                   <property name="curves">
                    <stringlist>
-                    <string>{&quot;y_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}A_S_R_WF&quot;, &quot;x_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}A_WF_TIME.VALA&quot;, &quot;name&quot;: &quot;${INST}A Raw Waveform&quot;, &quot;color&quot;: &quot;white&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;redraw_mode&quot;: 2}</string>
-                    <string>{&quot;y_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}A_SCL_VWF.AVAL&quot;, &quot;x_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}A_WF_TIME.VALA&quot;, &quot;name&quot;: &quot;${INST}A Weight Function&quot;, &quot;color&quot;: &quot;cyan&quot;, &quot;lineStyle&quot;: 2, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;redraw_mode&quot;: 2}</string>
+                    <string>{&quot;y_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}A:S_R_WF&quot;, &quot;x_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}A:SampTime.VALA&quot;, &quot;name&quot;: &quot;${INST}A Raw Waveform&quot;, &quot;color&quot;: &quot;white&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;redraw_mode&quot;: 2}</string>
+                    <string>{&quot;y_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}A_SCL_VWF.AVAL&quot;, &quot;x_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}A:SampTime.VALA&quot;, &quot;name&quot;: &quot;${INST}A Weight Function&quot;, &quot;color&quot;: &quot;cyan&quot;, &quot;lineStyle&quot;: 2, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;redraw_mode&quot;: 2}</string>
                    </stringlist>
                   </property>
                   <property name="autoRangeX">
@@ -1261,7 +1263,9 @@
               <bool>false</bool>
              </property>
              <property name="styleSheet">
-              <string notr="true">background-color: rgb(0, 0, 0);</string>
+              <string notr="true">QFrame #frame_20 {
+    background-color: rgb(0, 0, 0);
+}</string>
              </property>
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
@@ -1338,8 +1342,8 @@
                   </property>
                   <property name="curves">
                    <stringlist>
-                    <string>{&quot;y_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}B_S_R_WF&quot;, &quot;x_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}B_WF_TIME.VALA&quot;, &quot;name&quot;: &quot;${INST}B Raw Waveform&quot;, &quot;color&quot;: &quot;#00aa00&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;redraw_mode&quot;: 2}</string>
-                    <string>{&quot;y_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}B_SCL_VWF.AVAL&quot;, &quot;x_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}B_WF_TIME.VALA&quot;, &quot;name&quot;: &quot;${INST}B Weight Function&quot;, &quot;color&quot;: &quot;cyan&quot;, &quot;lineStyle&quot;: 2, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;redraw_mode&quot;: 2}</string>
+                    <string>{&quot;y_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}B_S_R_WF&quot;, &quot;x_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}B:SampTime.VALA&quot;, &quot;name&quot;: &quot;${INST}B Raw Waveform&quot;, &quot;color&quot;: &quot;#00aa00&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;redraw_mode&quot;: 2}</string>
+                    <string>{&quot;y_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}B_SCL_VWF.AVAL&quot;, &quot;x_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}B:SampTime.VALA&quot;, &quot;name&quot;: &quot;${INST}B Weight Function&quot;, &quot;color&quot;: &quot;cyan&quot;, &quot;lineStyle&quot;: 2, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;redraw_mode&quot;: 2}</string>
                    </stringlist>
                   </property>
                   <property name="autoRangeX">
