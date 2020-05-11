@@ -1,6 +1,8 @@
 TOP=../../..
 include $(TOP)/configure/CONFIG
 
+REQ += manual.req
+
 # ==================================================
 # BLEN DBs common to both MR and LCLS2 platforms
 # ==================================================

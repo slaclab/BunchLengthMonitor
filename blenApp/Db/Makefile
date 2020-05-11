@@ -4,16 +4,14 @@ include $(TOP)/configure/CONFIG
 #  ADD MACRO DEFINITIONS AFTER THIS LINE
 
 DIRS += common
-DIRS += lcls2
-DIRS += mr
+DIRS += lcls2 mr
 
 #----------------------------------------------------
 #  Optimization of db files using dbst (DEFAULT: NO)
 #DB_OPT = YES
 
-REQ += manual.req
 
-include $(TOP)/configure/RULES
+include $(TOP)/configure/RULES_DIRS
 #----------------------------------------
 #  ADD RULES AFTER THIS LINE
 
