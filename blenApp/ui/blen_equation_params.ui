@@ -129,14 +129,14 @@
            <property name="whatsThis">
             <string/>
            </property>
-           <property name="precisionFromPV" stdset="0">
-            <bool>false</bool>
-           </property>
            <property name="precision" stdset="0">
             <number>7</number>
            </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}A_CoefCRBV</string>
+            <string>ca://BLEN:${AREA}:${POS}:${INST}A:CoefCRBV</string>
            </property>
            <property name="displayFormat" stdset="0">
             <enum>PyDMLabel::Default</enum>
@@ -158,14 +158,14 @@
            <property name="whatsThis">
             <string/>
            </property>
-           <property name="precisionFromPV" stdset="0">
-            <bool>false</bool>
-           </property>
            <property name="precision" stdset="0">
             <number>7</number>
            </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}A_CoefA1RBV</string>
+            <string>ca://BLEN:${AREA}:${POS}:${INST}A:CoefA1RBV</string>
            </property>
            <property name="displayFormat" stdset="0">
             <enum>PyDMLabel::Default</enum>
@@ -180,14 +180,14 @@
            <property name="whatsThis">
             <string/>
            </property>
-           <property name="precisionFromPV" stdset="0">
-            <bool>false</bool>
-           </property>
            <property name="precision" stdset="0">
             <number>7</number>
            </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}A_CoefB</string>
+            <string>ca://BLEN:${AREA}:${POS}:${INST}A:CoefB</string>
            </property>
           </widget>
          </item>
@@ -200,7 +200,7 @@
             <string/>
            </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}A_CoefIRBV</string>
+            <string>ca://BLEN:${AREA}:${POS}:${INST}A:CoefIRBV</string>
            </property>
           </widget>
          </item>
@@ -247,14 +247,14 @@
            <property name="whatsThis">
             <string/>
            </property>
-           <property name="precisionFromPV" stdset="0">
-            <bool>false</bool>
-           </property>
            <property name="precision" stdset="0">
             <number>7</number>
            </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}A_CoefFRBV</string>
+            <string>ca://BLEN:${AREA}:${POS}:${INST}A:CoefFRBV</string>
            </property>
            <property name="displayFormat" stdset="0">
             <enum>PyDMLabel::Default</enum>
@@ -269,14 +269,14 @@
            <property name="whatsThis">
             <string/>
            </property>
-           <property name="precisionFromPV" stdset="0">
-            <bool>false</bool>
-           </property>
            <property name="precision" stdset="0">
             <number>7</number>
            </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}A_CoefDRBV</string>
+            <string>ca://BLEN:${AREA}:${POS}:${INST}A:CoefDRBV</string>
            </property>
            <property name="displayFormat" stdset="0">
             <enum>PyDMLabel::Default</enum>
@@ -291,14 +291,14 @@
            <property name="whatsThis">
             <string/>
            </property>
-           <property name="precisionFromPV" stdset="0">
-            <bool>false</bool>
-           </property>
            <property name="precision" stdset="0">
             <number>7</number>
            </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}A_CoefBRBV</string>
+            <string>ca://BLEN:${AREA}:${POS}:${INST}A:CoefBRBV</string>
            </property>
            <property name="displayFormat" stdset="0">
             <enum>PyDMLabel::Default</enum>
@@ -313,14 +313,14 @@
            <property name="whatsThis">
             <string/>
            </property>
-           <property name="precisionFromPV" stdset="0">
-            <bool>false</bool>
-           </property>
            <property name="precision" stdset="0">
             <number>7</number>
            </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}A_CoefC</string>
+            <string>ca://BLEN:${AREA}:${POS}:${INST}A:CoefC</string>
            </property>
           </widget>
          </item>
@@ -332,14 +332,14 @@
            <property name="whatsThis">
             <string/>
            </property>
-           <property name="precisionFromPV" stdset="0">
-            <bool>false</bool>
-           </property>
            <property name="precision" stdset="0">
             <number>7</number>
            </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}A_CoefH</string>
+            <string>ca://BLEN:${AREA}:${POS}:${INST}A:CoefH</string>
            </property>
            <property name="displayFormat" stdset="0">
             <enum>PyDMLineEdit::Default</enum>
@@ -354,14 +354,14 @@
            <property name="whatsThis">
             <string/>
            </property>
-           <property name="precisionFromPV" stdset="0">
-            <bool>false</bool>
-           </property>
            <property name="precision" stdset="0">
             <number>7</number>
            </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}A_CoefG</string>
+            <string>ca://BLEN:${AREA}:${POS}:${INST}A:CoefG</string>
            </property>
           </widget>
          </item>
@@ -373,14 +373,14 @@
            <property name="whatsThis">
             <string/>
            </property>
-           <property name="precisionFromPV" stdset="0">
-            <bool>false</bool>
-           </property>
            <property name="precision" stdset="0">
             <number>7</number>
            </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}A_CoefHRBV</string>
+            <string>ca://BLEN:${AREA}:${POS}:${INST}A:CoefHRBV</string>
            </property>
            <property name="displayFormat" stdset="0">
             <enum>PyDMLabel::Default</enum>
@@ -402,14 +402,14 @@
            <property name="whatsThis">
             <string/>
            </property>
-           <property name="precisionFromPV" stdset="0">
-            <bool>false</bool>
-           </property>
            <property name="precision" stdset="0">
             <number>7</number>
            </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}A_CoefERBV</string>
+            <string>ca://BLEN:${AREA}:${POS}:${INST}A:CoefERBV</string>
            </property>
            <property name="displayFormat" stdset="0">
             <enum>PyDMLabel::Default</enum>
@@ -431,14 +431,14 @@
            <property name="whatsThis">
             <string/>
            </property>
-           <property name="precisionFromPV" stdset="0">
-            <bool>false</bool>
-           </property>
            <property name="precision" stdset="0">
             <number>7</number>
            </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}A_CoefF</string>
+            <string>ca://BLEN:${AREA}:${POS}:${INST}A:CoefF</string>
            </property>
           </widget>
          </item>
@@ -450,14 +450,14 @@
            <property name="whatsThis">
             <string/>
            </property>
-           <property name="precisionFromPV" stdset="0">
-            <bool>false</bool>
-           </property>
            <property name="precision" stdset="0">
             <number>7</number>
            </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}A_CoefD</string>
+            <string>ca://BLEN:${AREA}:${POS}:${INST}A:CoefD</string>
            </property>
           </widget>
          </item>
@@ -469,14 +469,14 @@
            <property name="whatsThis">
             <string/>
            </property>
-           <property name="precisionFromPV" stdset="0">
-            <bool>false</bool>
-           </property>
            <property name="precision" stdset="0">
             <number>7</number>
            </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}A_CoefA0RBV</string>
+            <string>ca://BLEN:${AREA}:${POS}:${INST}A:CoefA0RBV</string>
            </property>
            <property name="displayFormat" stdset="0">
             <enum>PyDMLabel::Default</enum>
@@ -491,14 +491,14 @@
            <property name="whatsThis">
             <string/>
            </property>
-           <property name="precisionFromPV" stdset="0">
-            <bool>false</bool>
-           </property>
            <property name="precision" stdset="0">
             <number>7</number>
            </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}A_CoefE</string>
+            <string>ca://BLEN:${AREA}:${POS}:${INST}A:CoefE</string>
            </property>
           </widget>
          </item>
@@ -532,7 +532,7 @@
             <string/>
            </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}A_CoefI</string>
+            <string>ca://BLEN:${AREA}:${POS}:${INST}A:CoefI</string>
            </property>
            <property name="displayFormat" stdset="0">
             <enum>PyDMLineEdit::Default</enum>
@@ -547,14 +547,14 @@
            <property name="whatsThis">
             <string/>
            </property>
-           <property name="precisionFromPV" stdset="0">
-            <bool>false</bool>
-           </property>
            <property name="precision" stdset="0">
             <number>7</number>
            </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}A_CoefGRBV</string>
+            <string>ca://BLEN:${AREA}:${POS}:${INST}A:CoefGRBV</string>
            </property>
            <property name="displayFormat" stdset="0">
             <enum>PyDMLabel::Default</enum>
@@ -659,14 +659,14 @@
            <property name="whatsThis">
             <string/>
            </property>
-           <property name="precisionFromPV" stdset="0">
-            <bool>false</bool>
-           </property>
            <property name="precision" stdset="0">
             <number>7</number>
            </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}B_CoefCRBV</string>
+            <string>ca://BLEN:${AREA}:${POS}:${INST}B:CoefCRBV</string>
            </property>
           </widget>
          </item>
@@ -686,7 +686,7 @@
             <string/>
            </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}B_CoefI</string>
+            <string>ca://BLEN:${AREA}:${POS}:${INST}B:CoefI</string>
            </property>
            <property name="displayFormat" stdset="0">
             <enum>PyDMLineEdit::Default</enum>
@@ -701,14 +701,14 @@
            <property name="whatsThis">
             <string/>
            </property>
-           <property name="precisionFromPV" stdset="0">
-            <bool>false</bool>
-           </property>
            <property name="precision" stdset="0">
             <number>7</number>
            </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}B_CoefGRBV</string>
+            <string>ca://BLEN:${AREA}:${POS}:${INST}B:CoefGRBV</string>
            </property>
           </widget>
          </item>
@@ -727,14 +727,14 @@
            <property name="whatsThis">
             <string/>
            </property>
-           <property name="precisionFromPV" stdset="0">
-            <bool>false</bool>
-           </property>
            <property name="precision" stdset="0">
             <number>7</number>
            </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}B_CoefB</string>
+            <string>ca://BLEN:${AREA}:${POS}:${INST}B:CoefB</string>
            </property>
           </widget>
          </item>
@@ -747,7 +747,7 @@
             <string/>
            </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}B_CoefIRBV</string>
+            <string>ca://BLEN:${AREA}:${POS}:${INST}B:CoefIRBV</string>
            </property>
           </widget>
          </item>
@@ -773,14 +773,14 @@
            <property name="whatsThis">
             <string/>
            </property>
-           <property name="precisionFromPV" stdset="0">
-            <bool>false</bool>
-           </property>
            <property name="precision" stdset="0">
             <number>7</number>
            </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}B_CoefDRBV</string>
+            <string>ca://BLEN:${AREA}:${POS}:${INST}B:CoefDRBV</string>
            </property>
           </widget>
          </item>
@@ -792,14 +792,14 @@
            <property name="whatsThis">
             <string/>
            </property>
-           <property name="precisionFromPV" stdset="0">
-            <bool>false</bool>
-           </property>
            <property name="precision" stdset="0">
             <number>7</number>
            </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}B_CoefFRBV</string>
+            <string>ca://BLEN:${AREA}:${POS}:${INST}B:CoefFRBV</string>
            </property>
           </widget>
          </item>
@@ -832,14 +832,14 @@
            <property name="whatsThis">
             <string/>
            </property>
-           <property name="precisionFromPV" stdset="0">
-            <bool>false</bool>
-           </property>
            <property name="precision" stdset="0">
             <number>7</number>
            </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}B_CoefA1RBV</string>
+            <string>ca://BLEN:${AREA}:${POS}:${INST}B:CoefA1RBV</string>
            </property>
           </widget>
          </item>
@@ -851,14 +851,14 @@
            <property name="whatsThis">
             <string/>
            </property>
-           <property name="precisionFromPV" stdset="0">
-            <bool>false</bool>
-           </property>
            <property name="precision" stdset="0">
             <number>7</number>
            </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}B_CoefE</string>
+            <string>ca://BLEN:${AREA}:${POS}:${INST}B:CoefE</string>
            </property>
           </widget>
          </item>
@@ -870,14 +870,14 @@
            <property name="whatsThis">
             <string/>
            </property>
-           <property name="precisionFromPV" stdset="0">
-            <bool>false</bool>
-           </property>
            <property name="precision" stdset="0">
             <number>7</number>
            </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}B_CoefG</string>
+            <string>ca://BLEN:${AREA}:${POS}:${INST}B:CoefG</string>
            </property>
           </widget>
          </item>
@@ -889,14 +889,14 @@
            <property name="whatsThis">
             <string/>
            </property>
-           <property name="precisionFromPV" stdset="0">
-            <bool>false</bool>
-           </property>
            <property name="precision" stdset="0">
             <number>7</number>
            </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}B_CoefHRBV</string>
+            <string>ca://BLEN:${AREA}:${POS}:${INST}B:CoefHRBV</string>
            </property>
            <property name="displayFormat" stdset="0">
             <enum>PyDMLabel::Default</enum>
@@ -911,14 +911,14 @@
            <property name="whatsThis">
             <string/>
            </property>
-           <property name="precisionFromPV" stdset="0">
-            <bool>false</bool>
-           </property>
            <property name="precision" stdset="0">
             <number>7</number>
            </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}B_CoefC</string>
+            <string>ca://BLEN:${AREA}:${POS}:${INST}B:CoefC</string>
            </property>
           </widget>
          </item>
@@ -930,14 +930,14 @@
            <property name="whatsThis">
             <string/>
            </property>
-           <property name="precisionFromPV" stdset="0">
-            <bool>false</bool>
-           </property>
            <property name="precision" stdset="0">
             <number>7</number>
            </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}B_CoefH</string>
+            <string>ca://BLEN:${AREA}:${POS}:${INST}B:CoefH</string>
            </property>
            <property name="displayFormat" stdset="0">
             <enum>PyDMLineEdit::Default</enum>
@@ -952,14 +952,14 @@
            <property name="whatsThis">
             <string/>
            </property>
-           <property name="precisionFromPV" stdset="0">
-            <bool>false</bool>
-           </property>
            <property name="precision" stdset="0">
             <number>7</number>
            </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}B_CoefF</string>
+            <string>ca://BLEN:${AREA}:${POS}:${INST}B:CoefF</string>
            </property>
           </widget>
          </item>
@@ -971,14 +971,14 @@
            <property name="whatsThis">
             <string/>
            </property>
-           <property name="precisionFromPV" stdset="0">
-            <bool>false</bool>
-           </property>
            <property name="precision" stdset="0">
             <number>7</number>
            </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}B_CoefBRBV</string>
+            <string>ca://BLEN:${AREA}:${POS}:${INST}B:CoefBRBV</string>
            </property>
           </widget>
          </item>
@@ -997,14 +997,14 @@
            <property name="whatsThis">
             <string/>
            </property>
-           <property name="precisionFromPV" stdset="0">
-            <bool>false</bool>
-           </property>
            <property name="precision" stdset="0">
             <number>7</number>
            </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}B_CoefERBV</string>
+            <string>ca://BLEN:${AREA}:${POS}:${INST}B:CoefERBV</string>
            </property>
           </widget>
          </item>
@@ -1030,14 +1030,14 @@
            <property name="whatsThis">
             <string/>
            </property>
-           <property name="precisionFromPV" stdset="0">
-            <bool>false</bool>
-           </property>
            <property name="precision" stdset="0">
             <number>7</number>
            </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}B_CoefD</string>
+            <string>ca://BLEN:${AREA}:${POS}:${INST}B:CoefD</string>
            </property>
           </widget>
          </item>
@@ -1049,14 +1049,14 @@
            <property name="whatsThis">
             <string/>
            </property>
-           <property name="precisionFromPV" stdset="0">
-            <bool>false</bool>
-           </property>
            <property name="precision" stdset="0">
             <number>7</number>
            </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}B_CoefA0RBV</string>
+            <string>ca://BLEN:${AREA}:${POS}:${INST}B:CoefA0RBV</string>
            </property>
           </widget>
          </item>
