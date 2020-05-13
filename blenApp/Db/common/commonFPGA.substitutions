@@ -48,10 +48,8 @@ file "RegisterOut.template" { pattern
 { P,        R,              DESC,                                       PINI,   SCAN,       PORT,  PARAM       }
 { $(P), ModeS0,             "BLEN mode, sensor 0"               "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS0:Mode }
 { $(P), ModeS1,             "BLEN mode, sensor 1"               "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS1:Mode }
-{ $(P), NumSamp0S0,         "Number of samples 0, sensor 0"     "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS0:NumSamp0 }
-{ $(P), NumSamp0S1,         "Number of samples 0, sensor 1"     "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS1:NumSamp0 }
-{ $(P), NumSamp1S0,         "Number of samples 1, sensor 0"     "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS0:NumSamp1 }
-{ $(P), NumSamp1S1,         "Number of samples 1, sensor 1"     "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS1:NumSamp1 }
+{ $(P), NumSamp0,           "Number of samples 0, sensor 0"     "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS0:NumSamp0 }
+{ $(P), NumSamp1,           "Number of samples 1, sensor 0"     "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS0:NumSamp1 }
 { $(P), TrigDelay1S0,       ""                                  "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS0:TrigDelay1 }
 { $(P), TrigDelay1S1,       ""                                  "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS1:TrigDelay1 }
 { $(P), TrigDelay2S0,       ""                                  "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS0:TrigDelay2 }
@@ -62,10 +60,8 @@ file "RegisterOutRBV.template" { pattern
 { P,    R,                   DESC,                               PINI,   SCAN,        PORT,       PARAM       }
 { $(P), ModeS0RBV,           "BLEN mode, sensor 0"               "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS0:Mode }
 { $(P), ModeS1RBV,           "BLEN mode, sensor 1"               "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS1:Mode }
-{ $(P), NumSamp0S0RBV,       "Number of samples 0, sensor 0"     "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS0:NumSamp0 }
-{ $(P), NumSamp0S1RBV,       "Number of samples 0, sensor 1"     "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS1:NumSamp0 }
-{ $(P), NumSamp1S0RBV,       "Number of samples 1, sensor 0"     "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS0:NumSamp1 }
-{ $(P), NumSamp1S1RBV,       "Number of samples 1, sensor 1"     "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS1:NumSamp1 }
+{ $(P), NumSamp0RBV,         "Number of samples 0, sensor 0"     "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS0:NumSamp0 }
+{ $(P), NumSamp1RBV,         "Number of samples 1, sensor 0"     "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS0:NumSamp1 }
 { $(P), TrigDelay1S0RBV,     ""                                  "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS0:TrigDelay1 }
 { $(P), TrigDelay1S1RBV,     ""                                  "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS1:TrigDelay1 }
 { $(P), TrigDelay2S0RBV,     ""                                  "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS0:TrigDelay2 }
@@ -105,20 +101,20 @@ file "RegisterDoubleIn.template" { pattern
 
 file "RegisterDoubleOut.template" { pattern
 { P,              R,            DESC,                   PINI,  SCAN,        PORT,        EGU,          PARAM      }
-{ $(P),     CoefA0,       "Coef A0 for 1st group",      "NO",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefA0 }
-{ $(P),     CoefA1,       "Coef A1 for 2nd group",      "NO",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefA1 }
-{ $(P),     CoefA2,       "Coef A2 for 3rd group",      "NO",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefA2 }
-{ $(P),     CoefA3,       "Coef A3 Scale 1st group",    "NO",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefA3 }
-{ $(P),     CoefA4,       "Coef A4 Scale 2nd group",    "NO",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefA4 }
-{ $(P),     CoefA5,       "Coef A5 Scale 3rd group",    "NO",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefA5 }
-{ $(P),     CoefB,        "Coef B",                     "NO",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefB  }
-{ $(P),     CoefC,        "Coef C",                     "NO",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefC  }
-{ $(P),     CoefD,        "Coef D",                     "NO",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefD  }
-{ $(P),     CoefE,        "Coef E",                     "NO",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefE  }
-{ $(P),     CoefF,        "Coef F",                     "NO",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefF  }
-{ $(P),     CoefG,        "Coef G",                     "NO",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefG  }
-{ $(P),     CoefH,        "Coef H",                     "NO",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefH  }
-{ $(P),     CoefI,        "Coef I",                     "NO",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefI  }
+{ $(P),     CoefA0,       "Coef A0 for 1st group",      "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefA0 }
+{ $(P),     CoefA1,       "Coef A1 for 2nd group",      "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefA1 }
+{ $(P),     CoefA2,       "Coef A2 for 3rd group",      "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefA2 }
+{ $(P),     CoefA3,       "Coef A3 Scale 1st group",    "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefA3 }
+{ $(P),     CoefA4,       "Coef A4 Scale 2nd group",    "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefA4 }
+{ $(P),     CoefA5,       "Coef A5 Scale 3rd group",    "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefA5 }
+{ $(P),     CoefB,        "Coef B",                     "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefB  }
+{ $(P),     CoefC,        "Coef C",                     "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefC  }
+{ $(P),     CoefD,        "Coef D",                     "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefD  }
+{ $(P),     CoefE,        "Coef E",                     "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefE  }
+{ $(P),     CoefF,        "Coef F",                     "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefF  }
+{ $(P),     CoefG,        "Coef G",                     "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefG  }
+{ $(P),     CoefH,        "Coef H",                     "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefH  }
+{ $(P),     CoefI,        "Coef I - Offset",            "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefI  }
 }
 
 file "RegisterDoubleOutRBV.template" { pattern
@@ -136,7 +132,7 @@ file "RegisterDoubleOutRBV.template" { pattern
 { $(P),     CoefFRBV,     "Coef F",                     "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefF  }
 { $(P),     CoefGRBV,     "Coef G",                     "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefG  }
 { $(P),     CoefHRBV,     "Coef H",                     "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefH  }
-{ $(P),     CoefIRBV,     "Coef I",                     "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefI  }
+{ $(P),     CoefIRBV,     "Coef I - Offset",            "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefI  }
 }
 
 #======================================
@@ -145,4 +141,16 @@ file "RegisterDoubleOutRBV.template" { pattern
 file "RegisterCommand.template" { pattern
 { P,            R,            DESC,                      PINI,   SCAN,         PORT,             PARAM          }
 { $(P),   InitAmcCard,  "Init JESD modules",             "NO",  "Passive",   $(PORT),     AMC$(AMC):InitAmcCard }
+}
+
+#======================================
+# Register with Stream interfaces
+#======================================
+
+
+# Note: NELM is 2x actual number of elements
+file "RegisterStream16.template" { pattern
+{ P,           R,             DESC,                                NELM,   PINI,         PORT,            PARAM                   }
+{ $(P),       S_R_WF          "Raw data (16-bit)",                 2048,   "NO",         $(PORT),        AMC$(AMC):StreamRaw      } 
+{ $(P),       IWF             "Integration Window (16-bit)",       2048,   "NO",         $(PORT),        AMC$(AMC):WeightFunction } 
 }

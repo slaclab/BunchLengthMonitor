@@ -8,7 +8,7 @@
 ########################################################################################################################
 # Direct (RO) Register Access
 # Macros:
-#   P, INST, R: The PV name as $(P):$(INST):$(R)
+#   P, R: The PV name as $(P):$(R)
 #   DESC, PINI, SCAN, NELM, etc.: The same fields on the records
 #   PORT: The asyn port name. It must match the port name given when calling "YCPSWASYNConfig" on st.cmd
 #   PARAM: The asyn paramter name. It must be defined in the dictionary file and assigned to a register
@@ -16,14 +16,14 @@
 ########################################################################################################################
 
 file "RegisterDoubleIn.template" { pattern
-{ P,                R,                DESC,                     PINI,   SCAN,         PORT,       EGU,            PARAM        }
-{ $(P):$(INST)A,     SUM,              "",                       "YES",  ".5 second",  $(PORT),    "",         AMC0:SUM    }
-{ $(P):$(INST)A,     IMAX,             "",                       "YES",  ".5 second",  $(PORT),    "A",        AMC0:IMAX   }
-{ $(P):$(INST)A,     TMIT,             "Transmitted intensity",  "YES",  ".5 second",  $(PORT),    "pC",       AMC0:TMIT   }
+{ P,        R,                DESC,                     PINI,   SCAN,         PORT,       EGU,         PARAM      }
+{ $(P),     SUM,              "",                       "YES",  ".5 second",  $(PORT),    "",         AMC0:SUM    }
+{ $(P),     IMAX,             "",                       "YES",  ".5 second",  $(PORT),    "A",        AMC0:IMAX   }
+{ $(P),     TMIT,             "Transmitted intensity",  "YES",  ".5 second",  $(PORT),    "pC",       AMC0:TMIT   }
 
-{ $(P):$(INST)B,     SUM,              "",                       "YES",  ".5 second",  $(PORT),    "",         AMC1:SUM    }
-{ $(P):$(INST)B,     IMAX,             "",                       "YES",  ".5 second",  $(PORT),    "A",        AMC1:IMAX   }
-{ $(P):$(INST)B,     TMIT,             "Transmitted intensity",  "YES",  ".5 second",  $(PORT),    "pC",       AMC1:TMIT   }
+{ $(P),     SUM,              "",                       "YES",  ".5 second",  $(PORT),    "",         AMC1:SUM    }
+{ $(P),     IMAX,             "",                       "YES",  ".5 second",  $(PORT),    "A",        AMC1:IMAX   }
+{ $(P),     TMIT,             "Transmitted intensity",  "YES",  ".5 second",  $(PORT),    "pC",       AMC1:TMIT   }
 }
 
 ########################################################################################################################
@@ -36,18 +36,18 @@ file "RegisterDoubleIn.template" { pattern
 #   INP:  The PV that provides the input (probably either an acalcout or an aSub record)
 ########################################################################################################################
 
-file "blenWaveforms.template" { pattern
-{   P,                  R,          DESC,                                     FTVL,     NELM,     INP                  }
-{  $(P):$(INST)A,      "RWF",      "Raw waveform, 32 bits",                  "LONG",    1024,     $(P):$(INST)A        }
-{  $(P):$(INST)A,      "RWFS",     "Raw waveform, 16 bits",                  "SHORT",   2048,     $(P):$(INST)A        }
-{  $(P):$(INST)A,      "IWF",      "Integration Window waveform, 32 bits",   "LONG",    1024,     $(P):$(INST)A        }
-{  $(P):$(INST)A,      "IWFS",     "Integration Window waveform, 16 bits",   "SHORT",   2048,     $(P):$(INST)A        }
-
-{  $(P):$(INST)B,      "RWF",      "Raw waveform, 32 bits",                  "LONG",    1024,     $(P):$(INST)B        }
-{  $(P):$(INST)B,      "RWFS",     "Raw waveform, 16 bits",                  "SHORT",   2048,     $(P):$(INST)B        }
-{  $(P):$(INST)B,      "IWF",      "Integration Window waveform, 32 bits",   "LONG",    1024,     $(P):$(INST)B        }
-{  $(P):$(INST)B,      "IWFS",     "Integration Window waveform, 16 bits",   "SHORT",   2048,     $(P):$(INST)B        }
-}
+#file "blenWaveforms.template" { pattern
+#{   P,          R,          DESC,                                     FTVL,     NELM,     INP   }
+#{  $(P),      "RWF",      "Raw waveform, 32 bits",                  "LONG",    1024,     "$(P)"   }
+#{  $(P),      "RWFS",     "Raw waveform, 16 bits",                  "SHORT",   2048,     "$(P)"   }
+#{  $(P),      "IWF",      "Integration Window waveform, 32 bits",   "LONG",    1024,     "$(P)"   }
+#{  $(P),      "IWFS",     "Integration Window waveform, 16 bits",   "SHORT",   2048,     "$(P)"   }
+#
+#{  $(P),      "RWF",      "Raw waveform, 32 bits",                  "LONG",    1024,     "$(P)"   }
+#{  $(P),      "RWFS",     "Raw waveform, 16 bits",                  "SHORT",   2048,     "$(P)"   }
+#{  $(P),      "IWF",      "Integration Window waveform, 32 bits",   "LONG",    1024,     "$(P)"   }
+#{  $(P),      "IWFS",     "Integration Window waveform, 16 bits",   "SHORT",   2048,     "$(P)"   }
+#}
 
 ########################################################################################################################
 # Temperature Sensors 

@@ -6,10 +6,8 @@
 ###################################################################################################
 ###################################################################################################
 # Macros:
-#   P:        The PV name as BLEN:$(AREA):$(POS)
-#   P0/1:     The PV name as BLEN:$(AREA):$(POS):$(INST)A/B
-#   INSERTED: The PV for the Mover Inserted register
-#   REMOVED:  The PV for the Mover Removed register
+#   P:        The PV name as BLEN:(AREA):(POS)
+#   P0/1:     The PV name as BLEN:(AREA):(POS):(INST)A/B
 #   SCAN:     Scan rate for PVs. Should keep below 1Hz, 2Hz max rate
 ###################################################################################################
 
@@ -27,13 +25,13 @@
 # 3 = INCONSISTENT  - Due to both limit switches being activated at the same time.
 
 #
-#  $(PX):SHT_STS -- status of shutter for AMCX
+#  (PX):SHT_STS -- status of shutter for AMCX
 #
 
-record(calc, "$(P0):SHT_STS")
+record(calc, "$(P):$(P0):SHT_STS")
 {
-  field(INPA, "$(P):$(INSERTED)")
-  field(INPB, "$(P):$(REMOVED)")
+  field(INPA, "$(P):Inserted")
+  field(INPB, "$(P):Removed")
   field(INPC, "0x1")  # Bit Mask
   field(INPD, "0")    # Bit Shift 
   field(CALC, "(A&B&C) ? 3 : (((~(A|B)) & C) ? 2 : (A&C) >> D)")
@@ -41,10 +39,10 @@ record(calc, "$(P0):SHT_STS")
   field(DESC, "0=OUT, 1=IN, 2=MOVING, 3=INCONSISTENT")
 }
 
-record(calc, "$(P0):SHT_STS")
+record(calc, "$(P):$(P1):SHT_STS")
 {
-  field(INPA, "$(P):$(INSERTED)")
-  field(INPB, "$(P):$(REMOVED)")
+  field(INPA, "$(P):Inserted")
+  field(INPB, "$(P):Removed")
   field(INPC, "0x2")  # Bit Mask
   field(INPD, "1")    # Bit Shift 
   field(CALC, "(A&B&C) ? 3 : (((~(A|B)) & C) ? 2 : (A&C) >> D)")
@@ -53,13 +51,13 @@ record(calc, "$(P0):SHT_STS")
 }
 
 #
-# $(P):FLTX_STS  -- status of Filter X
+# (P):FLTX_STS  -- status of Filter X
 #
 
 record(calc, "$(P):FLT1_STS")
 {
-  field(INPA, "$(P):$(INSERTED)")
-  field(INPB, "$(P):$(REMOVED)")
+  field(INPA, "$(P):Inserted")
+  field(INPB, "$(P):Removed")
   field(INPC, "0x4")  # Bit Mask
   field(INPD, "2")    # Bit Shift 
   field(CALC, "(A&B&C) ? 3 : (((~(A|B)) & C) ? 2 : (A&C) >> D)")
@@ -69,8 +67,8 @@ record(calc, "$(P):FLT1_STS")
 
 record(calc, "$(P):FLT2_STS")
 {
-  field(INPA, "$(P):$(INSERTED)")
-  field(INPB, "$(P):$(REMOVED)")
+  field(INPA, "$(P):Inserted")
+  field(INPB, "$(P):Removed")
   field(INPC, "0x8")  # Bit Mask
   field(INPD, "3")    # Bit Shift 
   field(CALC, "(A&B&C) ? 3 : (((~(A|B)) & C) ? 2 : (A&C) >> D)")
@@ -79,8 +77,8 @@ record(calc, "$(P):FLT2_STS")
 }
 record(calc, "$(P):FLT3_STS")
 {
-  field(INPA, "$(P):$(INSERTED)")
-  field(INPB, "$(P):$(REMOVED)")
+  field(INPA, "$(P):Inserted")
+  field(INPB, "$(P):Removed")
   field(INPC, "0x10")  # Bit Mask
   field(INPD, "4")    # Bit Shift 
   field(CALC, "(A&B&C) ? 3 : (((~(A|B)) & C) ? 2 : (A&C) >> D)")
@@ -90,8 +88,8 @@ record(calc, "$(P):FLT3_STS")
 
 record(calc, "$(P):FLT4_STS")
 {
-  field(INPA, "$(P):$(INSERTED)")
-  field(INPB, "$(P):$(REMOVED)")
+  field(INPA, "$(P):Inserted")
+  field(INPB, "$(P):Removed")
   field(INPC, "0x20")  # Bit Mask
   field(INPD, "5")    # Bit Shift 
   field(CALC, "(A&B&C) ? 3 : (((~(A|B)) & C) ? 2 : (A&C) >> D)")
@@ -104,28 +102,28 @@ record(calc, "$(P):FLT4_STS")
 # 0 = OUT
 # 1 = IN
 #
-# $(PX):SHT_CTRL  -- AMCX Shutter Control
-# $(P):FLTX_CTRL  -- FilterX Control
+# (PX):SHT_CTRL  -- AMCX Shutter Control
+# (P):FLTX_CTRL  -- FilterX Control
 #
 
-record(mbbo, "$(P0):SHT_CTRL")
+record(mbbo, "$(P):$(P0):SHT_CTRL")
 {
   field(VAL,   "0")
   field(ZRVL,  "0")
   field(ZRST,  "OUT")
   field(ONVL,  "1")
   field(ONST,  "IN")
-  field(FLINK, "$(P0):SHT_MOVE") 
+  field(OUT, "$(P):$(P0):SHT_MOVE") 
 }
 
-record(mbbo, "$(P1):SHT_CTRL")
+record(mbbo, "$(P):$(P1):SHT_CTRL")
 {
   field(VAL,   "0")
   field(ZRVL,  "0")
   field(ZRST,  "OUT")
   field(ONVL,  "1")
   field(ONST,  "IN")
-  field(FLINK, "$(P1):SHT_MOVE") 
+  field(OUT, "$(P):$(P1):SHT_MOVE") 
 }
 
 record(mbbo, "$(P):FLT1_CTRL")
@@ -135,7 +133,7 @@ record(mbbo, "$(P):FLT1_CTRL")
   field(ZRST,  "OUT")
   field(ONVL,  "1")
   field(ONST,  "IN")
-  field(FLINK, "$(P):FLT1_MOVE")
+  field(OUT, "$(P):FLT1_MOVE")
 }
 
 record(mbbo, "$(P):FLT2_CTRL")
@@ -145,7 +143,7 @@ record(mbbo, "$(P):FLT2_CTRL")
   field(ZRST,  "OUT")
   field(ONVL,  "1")
   field(ONST,  "IN")
-  field(FLINK, "$(P):FLT2_MOVE")
+  field(OUT, "$(P):FLT2_MOVE")
 }
 
 record(mbbo, "$(P):FLT3_CTRL")
@@ -155,7 +153,7 @@ record(mbbo, "$(P):FLT3_CTRL")
   field(ZRST,  "OUT")
   field(ONVL,  "1")
   field(ONST,  "IN")
-  field(FLINK, "$(P):FLT3_MOVE")
+  field(OUT, "$(P):FLT3_MOVE")
 }
 
 record(mbbo, "$(P):FLT4_CTRL")
@@ -165,7 +163,7 @@ record(mbbo, "$(P):FLT4_CTRL")
   field(ZRST,  "OUT")
   field(ONVL,  "1")
   field(ONST,  "IN")
-  field(FLINK, "$(P):FLT4_MOVE")
+  field(OUT, "$(P):FLT4_MOVE")
 }
 
 #
@@ -175,13 +173,13 @@ record(mbbo, "$(P):FLT4_CTRL")
 #
 
 #
-# $(PX):SHT_ERR -- AMCX Shutter Error State
+# (PX):SHT_ERR -- AMCX Shutter Error State
 #
 
-record(calc, "$(P0):SHT_ERR")
+record(calc, "$(P):$(P0):SHT_ERR")
 {
-  field(INPA, "$(P0):SHT_STS")
-  field(INPB, "$(P0):SHT_CTRL")
+  field(INPA, "$(P):$(P0):SHT_STS")
+  field(INPB, "$(P):$(P0):SHT_CTRL")
   field(INPC, "0")    # OK Value
   field(INPD, "1")    # Error Value
   field(CALC, "(A = B) ? C : D")
@@ -189,10 +187,10 @@ record(calc, "$(P0):SHT_ERR")
   field(DESC, "0 = OK 1 = Mismatch of STS and CTRL")
 }
 
-record(calc, "$(P1):SHT_ERR")
+record(calc, "$(P):$(P1):SHT_ERR")
 {
-  field(INPA, "$(P1):SHT_STS")
-  field(INPB, "$(P1):SHT_CTRL")
+  field(INPA, "$(P):$(P1):SHT_STS")
+  field(INPB, "$(P):$(P1):SHT_CTRL")
   field(INPC, "0")    # OK Value
   field(INPD, "1")    # Error Value
   field(CALC, "(A = B) ? C : D")
@@ -201,7 +199,7 @@ record(calc, "$(P1):SHT_ERR")
 }
 
 #
-# $(P):FLTX_ERR -- FilterX Error State
+# (P):FLTX_ERR -- FilterX Error State
 #
 
 record(calc, "$(P):FLT1_ERR")

@@ -3,9 +3,9 @@ record (acalcout, "BLEN:$(AREA):$(POS):$(INST)_SCL_WF_CLC") {
   field(DESC, "Weight function")
   field(CALC, "ARR(1){0,A-1} + ARR(-1){B*2,B*2+C-1}")
   field(NELM, "2020")
-  field(INPA, "BLEN:$(AREA):$(POS):$(INST)_NumSamp0 CP")
-  field(INPB, "BLEN:$(AREA):$(POS):$(INST)_TrigDelay1 CP")
-  field(INPC, "BLEN:$(AREA):$(POS):$(INST)_NumSamp1 CP")
+  field(INPA, "BLEN:$(AREA):$(POS):$(INST):NumSamp0 CP")
+  field(INPB, "BLEN:$(AREA):$(POS):$(INST):TrigDelay1 CP")
+  field(INPC, "BLEN:$(AREA):$(POS):$(INST):NumSamp1 CP")
 }
 
 # Transform an acalcout AVAL info into an waveform VAL, just to maintain
@@ -71,7 +71,7 @@ record (acalcout, "BLEN:$(AREA):$(POS):$(INST)_SCL_VWF_PRE") {
   field(CALC, "ARR(E){0,A-1}")
   field(NELM, "2020")
   # Number of samples pre-edge
-  field(INPA, "BLEN:$(AREA):$(POS):$(INST)_NumSamp0 CP")
+  field(INPA, "BLEN:$(AREA):$(POS):$(INST):NumSamp0 CP")
   field(INPE, "BLEN:$(AREA):$(POS):$(INST)_WF_MAX CP")
   # Raw waveform 16 bits.
   field(INAA, "BLEN:$(AREA):$(POS):$(INST)_S_R_WF CP")
@@ -85,11 +85,11 @@ record (acalcout, "BLEN:$(AREA):$(POS):$(INST)_SCL_VWF_POS") {
   field(CALC, "ARR(D){B*2,B*2+C-1}")
   field(NELM, "2020")
   # Number of samples pre-edge
-  field(INPA, "BLEN:$(AREA):$(POS):$(INST)_NumSamp0 CP")
+  field(INPA, "BLEN:$(AREA):$(POS):$(INST):NumSamp0 CP")
   # Number of samples of the edge
-  field(INPB, "BLEN:$(AREA):$(POS):$(INST)_TrigDelay1 CP")
+  field(INPB, "BLEN:$(AREA):$(POS):$(INST):TrigDelay1 CP")
   # Number of samples pos-edge
-  field(INPC, "BLEN:$(AREA):$(POS):$(INST)_NumSamp1 CP")
+  field(INPC, "BLEN:$(AREA):$(POS):$(INST):NumSamp1 CP")
   field(INPD, "BLEN:$(AREA):$(POS):$(INST)_WF_MIN CP")
   # Raw waveform 16 bits.
   field(INAA, "BLEN:$(AREA):$(POS):$(INST)_S_R_WF CP")
@@ -104,9 +104,9 @@ record (acalcout, "BLEN:$(AREA):$(POS):$(INST)_SCL_VWF_MID") {
   field(CALC, "ARR((D+E)/2){A,B*2-1}")
   field(NELM, "2020")
   # Number of samples pre-edge
-  field(INPA, "BLEN:$(AREA):$(POS):$(INST)_NumSamp0 CP")
+  field(INPA, "BLEN:$(AREA):$(POS):$(INST):NumSamp0 CP")
   # Number of samples of the edge
-  field(INPB, "BLEN:$(AREA):$(POS):$(INST)_TrigDelay1 CP")
+  field(INPB, "BLEN:$(AREA):$(POS):$(INST):TrigDelay1 CP")
   field(INPD, "BLEN:$(AREA):$(POS):$(INST)_WF_MAX CP")
   field(INPE, "BLEN:$(AREA):$(POS):$(INST)_WF_MIN CP")
   # Raw waveform 16 bits.
@@ -121,11 +121,11 @@ record (acalcout, "BLEN:$(AREA):$(POS):$(INST)_SCL_VWF_FINAL") {
   field(CALC, "ARR((D+E)/2){B*2+C,-1}")
   field(NELM, "2020")
   # Number of samples pre-edge
-  field(INPA, "BLEN:$(AREA):$(POS):$(INST)_NumSamp0 CP")
+  field(INPA, "BLEN:$(AREA):$(POS):$(INST):NumSamp0 CP")
   # Number of samples of the edge
-  field(INPB, "BLEN:$(AREA):$(POS):$(INST)_TrigDelay1 CP")
+  field(INPB, "BLEN:$(AREA):$(POS):$(INST):TrigDelay1 CP")
   # Number of samples pos-edge
-  field(INPC, "BLEN:$(AREA):$(POS):$(INST)_NumSamp1 CP")
+  field(INPC, "BLEN:$(AREA):$(POS):$(INST):NumSamp1 CP")
   field(INPD, "BLEN:$(AREA):$(POS):$(INST)_WF_MAX CP")
   field(INPE, "BLEN:$(AREA):$(POS):$(INST)_WF_MIN CP")
   # Raw waveform 16 bits.
@@ -167,7 +167,7 @@ record (waveform, "BLEN:$(AREA):$(POS):$(INST)_S_P_WF") {
 # We need to maintain the ratio A0 = ConstantA0/NumberSamples0.
 record (calcout, "BLEN:$(AREA):$(POS):$(INST)_A0_NS0") {
   field(DESC, "Change A0, when NumSamp0 changes")
-  field(INPA, "BLEN:$(AREA):$(POS):$(INST)_NumSamp0 CP")
+  field(INPA, "BLEN:$(AREA):$(POS):$(INST):NumSamp0 CP")
   field(INPB, "BLEN:$(AREA):$(POS):$(INST)_A0_CONST CP")
   field(CALC, "A=0? B : B/A")
   field(DOPT, "Use CALC")
@@ -178,7 +178,7 @@ record (calcout, "BLEN:$(AREA):$(POS):$(INST)_A0_NS0") {
 # We need to maintain the ratio A1 = ConstantA1/NumberSamples1.
 record (calcout, "BLEN:$(AREA):$(POS):$(INST)_A1_NS1") {
   field(DESC, "Change A1, when NumSamp1 changes")
-  field(INPA, "BLEN:$(AREA):$(POS):$(INST)_NumSamp1 CP")
+  field(INPA, "BLEN:$(AREA):$(POS):$(INST):NumSamp1 CP")
   field(INPB, "BLEN:$(AREA):$(POS):$(INST)_A1_CONST CP")
   field(CALC, "A=0? B : B/A")
   field(DOPT, "Use CALC")
@@ -213,7 +213,7 @@ record (ao, "BLEN:$(AREA):$(POS):$(INST)_Reset_A1") {
 # Number Samples 0, in a way that the coefficient A0 hits the desired target.
 record (calcout, "BLEN:$(AREA):$(POS):$(INST)_CALC_Const_A0") {
   field(DESC, "Change Const A0, when target A0 changes")
-  field(INPA, "BLEN:$(AREA):$(POS):$(INST)_NumSamp0")
+  field(INPA, "BLEN:$(AREA):$(POS):$(INST):NumSamp0")
   field(INPB, "BLEN:$(AREA):$(POS):$(INST)_Reset_A0 CP")
   field(CALC, "A * B")
   field(DOPT, "Use CALC")
@@ -225,7 +225,7 @@ record (calcout, "BLEN:$(AREA):$(POS):$(INST)_CALC_Const_A0") {
 # Number Samples 1, in a way that the coefficient A1 hits the desired target.
 record (calcout, "BLEN:$(AREA):$(POS):$(INST)_CALC_Const_A1") {
   field(DESC, "Change Cons A1, when target A1 changes")
-  field(INPA, "BLEN:$(AREA):$(POS):$(INST)_NumSamp1")
+  field(INPA, "BLEN:$(AREA):$(POS):$(INST):NumSamp1")
   field(INPB, "BLEN:$(AREA):$(POS):$(INST)_Reset_A1 CP")
   field(CALC, "A * B")
   field(DOPT, "Use CALC")

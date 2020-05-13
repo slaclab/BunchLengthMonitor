@@ -24,9 +24,9 @@ record(calcout, "$(P):FPGARebootMon") {
 }
 
 record(ao, "$(P):LoadFPGAConfig") {
-  field(DESC, "Load YAML configuration"),
+  field(DESC, "Load YAML configuration")
   field(DTYP, "asynInt32")
   field(SCAN, "Passive")
   field(OUT, "@asyn($(PORT),6)$(FPGA_CONFIG_FILE)")
-  field(asyn:READBACK, "1")
+  info(asyn:READBACK, "1")
 }
