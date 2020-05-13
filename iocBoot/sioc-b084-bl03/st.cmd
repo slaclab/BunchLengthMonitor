@@ -16,23 +16,23 @@ epicsEnvSet("INST", "BL21")
 epicsEnvSet("IOC_UNIT", "BL03")
 
 # YAML directory
-epicsEnvSet("YAML_DIR","${IOC_DATA}/${IOC}/firmware/yaml")
+epicsEnvSet("YAML_DIR","$(IOC_DATA)/$(IOC)/firmware/yaml")
 
 # Yaml File
-epicsEnvSet("TOP_YAML","${YAML_DIR}/000TopLevel.yaml")
-epicsEnvSet("YAML_CONFIG_FILE", "${YAML_DIR}/config/defaultsPyro.yaml")
+epicsEnvSet("TOP_YAML","$(YAML_DIR)/000TopLevel.yaml")
+epicsEnvSet("YAML_CONFIG_FILE", "$(YAML_DIR)/config/defaultsPyro.yaml")
 
 # FPGA IP address for CPSW
 epicsEnvSet("FPGA_IP", "10.0.1.107")
 
 # IOC name for IOC admin
-epicsEnvSet(IOC_NAME,"SIOC:$(AREA):${IOC_UNIT}")
+epicsEnvSet(IOC_NAME,"SIOC:$(AREA):$(IOC_UNIT)")
 
 # Which version of the Application to use - "MR" or "LCLS2"
 epicsEnvSet("BLEN_VERSION", "LCLS2")
 epicsEnvSet("DICT_FILE", "yaml/blenLCLS2.dict")
 
-cd ${TOP}
+cd $(TOP)
 
 < iocBoot/common/blenCommon.cmd
 
@@ -63,9 +63,9 @@ cd ${TOP}
 iocInit()
 
 # Enforce RTM timing
-crossbarControl "FPGA" "${BLEN_VERSION}"
+crossbarControl "FPGA" "$(BLEN_VERSION)"
 
 # Turn on caPutLogging:
 # Log values only on change to the iocLogServer:
-caPutLogInit("${EPICS_CA_PUT_LOG_ADDR}")
+caPutLogInit("$(EPICS_CA_PUT_LOG_ADDR)")
 caPutLogShow(2)
