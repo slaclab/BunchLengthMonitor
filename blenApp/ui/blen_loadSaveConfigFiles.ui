@@ -150,6 +150,9 @@
        <property name="whatsThis">
         <string/>
        </property>
+       <property name="text">
+        <string>LoadConfigStatus</string>
+       </property>
        <property name="channel" stdset="0">
         <string>ca://BLEN:${AREA}:${POS}:loadConfigStatus</string>
        </property>
@@ -305,6 +308,9 @@
        </property>
        <property name="whatsThis">
         <string/>
+       </property>
+       <property name="text">
+        <string>SaveConfigStatus</string>
        </property>
        <property name="channel" stdset="0">
         <string>ca://BLEN:${AREA}:${POS}:saveConfigStatus</string>
