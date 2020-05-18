@@ -60,8 +60,7 @@ dbLoadRecords("db/blen.db", "P=BLEN:$(AREA):$(POS), INST=$(INST), PORT=cpsw")
 # FPGA-related records
 dbLoadRecords("db/commonFPGA.db", "P=BLEN:$(AREA):$(POS):$(INST)A, PORT=cpsw, AMC=0")
 dbLoadRecords("db/commonFPGA.db", "P=BLEN:$(AREA):$(POS):$(INST)B, PORT=cpsw, AMC=1")
-dbLoadRecords("db/saveLoadConfig.db", "P=BLEN:$(AREA):$(POS):$(INST)A, PORT=cpsw")
-dbLoadRecords("db/saveLoadConfig.db", "P=BLEN:$(AREA):$(POS):$(INST)B, PORT=cpsw")
+dbLoadRecords("db/saveLoadConfig.db", "P=BLEN:$(AREA):$(POS), PORT=cpsw")
 dbLoadRecords("db/monitorFPGAReboot.db", "P=BLEN:$(AREA):$(POS), PORT=cpsw, KEY=0xFC067333")
 
 
