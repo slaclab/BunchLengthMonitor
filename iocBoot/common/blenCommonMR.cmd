@@ -9,8 +9,9 @@ epicsEnvSet("BSA_STREAM_YAML_NAME", "MrBlenBsaStream")
 #              DRIVER SETUP
 # ===========================================
 
-# Load drivers for TPR pattern
+# Load drivers for TPR pattern and crossbarControl
 tprPatternAsynDriverConfigure("pattern", "mmio/AmcCarrierCore", "tstream")
+crossbarControlAsynDriverConfigure("crossbar", "mmio/AmcCarrierCore/AxiSy56040")
 
 # FCOM network address and number of buffers
 fcomInit("${FCOM_NETWORK}", "20")

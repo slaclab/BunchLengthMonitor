@@ -45,8 +45,7 @@ cpswLoadConfigFile("$(YAML_CONFIG_FILE)", "mmio", "")
 #    Load dictionary,           # Dictionary file path with registers to load. An empty string will disable this function
 YCPSWASYNConfig("cpsw", "", "$(PREFIX)", "$(AUTO_GEN)", "$(DICT_FILE)")
 
-# Load drivers for TPR trigger and crossbar control
-crossbarControlAsynDriverConfigure("crossbar", "mmio/AmcCarrierCore/AxiSy56040")
+# Load drivers for TPR trigger
 tprTriggerAsynDriverConfigure("trig", "mmio/AmcCarrierCore")
 
 

@@ -55,9 +55,6 @@ DB_INSTALLS += $(YCPSWASYN)/db/saveLoadConfig.db
 DB_INSTALLS += $(TPRTRIGGER)/db/tprTrig.db
 DB_INSTALLS += $(TPRTRIGGER)/db/tprDeviceNamePV.db
 
-DB_INSTALLS += $(TPRPATTERN)/db/tprPattern.db
-DB_INSTALLS += $(CROSSBARCONTROL)/db/crossbarCtrl.db
-
 DB_INSTALLS += $(EVENT)/db/Bsa.db
 DB_INSTALLS += $(BSADRIVER)/db/bsa.db
 
