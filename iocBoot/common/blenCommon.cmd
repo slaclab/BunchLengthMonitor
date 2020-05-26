@@ -74,7 +74,6 @@ dbLoadRecords("db/weightFunctionXAxis.db", "AREA=$(AREA), POS=$(POS), INST=$(INS
 
 # Timing crossbar and trigger
 dbLoadRecords("db/tprTrig.db",     "LOCA=$(AREA), IOC_UNIT=$(IOC_UNIT), INST=2, PORT=trig")
-dbLoadRecords("db/crossbarCtrl.db", "DEV=EVR:$(PART_PV), PORT=crossbar")
 
 # **********************************************************************
 # **** Load iocAdmin databases to support IOC Health and monitoring ****

@@ -10,8 +10,8 @@ epicsEnvSet("BSA_STREAM_YAML_NAME", "MrBlenBsaStream")
 # ===========================================
 
 # Load drivers for TPR pattern and crossbarControl
-tprPatternAsynDriverConfigure("pattern", "mmio/AmcCarrierCore", "tstream")
 crossbarControlAsynDriverConfigure("crossbar", "mmio/AmcCarrierCore/AxiSy56040")
+tprPatternAsynDriverConfigure("pattern", "mmio/AmcCarrierCore", "tstream")
 
 # FCOM network address and number of buffers
 fcomInit("${FCOM_NETWORK}", "20")
@@ -31,6 +31,7 @@ dbLoadRecords("db/blenFilters.db", "AREA=${AREA}, POS=${POS}, INST=${INST}")
 # Switch on/off stream data from FPGA
 dbLoadRecords("db/streamControl.db", "AREA=${AREA}, POS=${POS}, INST=${INST}")
 
+dbLoadRecords("db/crossbarCtrl.db", "DEV=EVR:$(PART_PV), PORT=crossbar")
 dbLoadRecords("db/tprPattern.db",  "LOCA=${AREA}, IOC_UNIT=${IOC_UNIT}, INST=2, PORT=pattern")
 
 # BSA records
