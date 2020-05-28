@@ -2747,37 +2747,22 @@
               </widget>
              </item>
              <item>
-              <widget class="PyDMRelatedDisplayButton" name="PyDMRelatedDisplayButton_4">
+              <widget class="PyDMEDMDisplayButton" name="triggerBtn">
                <property name="toolTip">
                 <string/>
-               </property>
-               <property name="whatsThis">
-                <string>
-    A QPushButton capable of opening a new Display at the same of at a
-    new window.
-
-    Parameters
-    ----------
-    init_channel : str, optional
-        The channel to be used by the widget.
-
-    filename : str, optional
-        The file to be opened
-    </string>
                </property>
                <property name="text">
                 <string>Bunch Length ${INST} Triggers</string>
                </property>
-               <property name="displayFilename" stdset="0">
-                <string>blen_triggers.ui</string>
+               <property name="filenames" stdset="0">
+                <stringlist>
+                 <string>/afs/slac/g/lcls/epics/R7.0.3.1-1.0/modules/tprTrigger/R1.5.0/tprTriggerApp/edm/tprMain_final.edl</string>
+                </stringlist>
                </property>
                <property name="macros" stdset="0">
                 <stringlist>
-                 <string>{&quot;AREA&quot;:&quot;${AREA}&quot;,&quot;NUM&quot;:&quot;2&quot;,&quot;IOC_UNIT&quot;:&quot;${IOC_UNIT}&quot;}</string>
+                 <string>DEVICE=SIOC:B084:BL03:,LOCA=B084,IOC_UNIT=BL03,INST=1</string>
                 </stringlist>
-               </property>
-               <property name="openInNewWindow" stdset="0">
-                <bool>true</bool>
                </property>
               </widget>
              </item>
@@ -3117,6 +3102,12 @@
   </layout>
  </widget>
  <customwidgets>
+  <customwidget>
+   <class>PyDMEDMDisplayButton</class>
+   <extends>PyDMRelatedDisplayButton</extends>
+   <header>edmbutton.edm_button</header>
+   <container>1</container>
+  </customwidget>
   <customwidget>
    <class>PyDMLabel</class>
    <extends>QLabel</extends>
