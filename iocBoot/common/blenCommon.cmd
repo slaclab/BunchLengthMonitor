@@ -72,8 +72,9 @@ dbLoadRecords("db/weightFunctionXAxis.db", "AREA=$(AREA), POS=$(POS), INST=$(INS
 dbLoadRecords("db/weightFunctionXAxis.db", "AREA=$(AREA), POS=$(POS), INST=$(INST)B, AMC=1")
 
 
-# Timing crossbar and trigger
-dbLoadRecords("db/tprTrig.db",     "LOCA=$(AREA), IOC_UNIT=$(IOC_UNIT), INST=2, PORT=trig")
+# Timing trigger
+# INST = Instance Number (for multiple instances of tprTrigger in an IOC)
+dbLoadRecords("db/tprTrig.db",     "LOCA=$(AREA), IOC_UNIT=$(IOC_UNIT), INST=1, PORT=trig")
 
 # **********************************************************************
 # **** Load iocAdmin databases to support IOC Health and monitoring ****
