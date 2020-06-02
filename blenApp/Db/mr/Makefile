@@ -19,7 +19,6 @@ DB += blenMR.db
 # --------------------------------------------------
 DB += blenFilters.db
 DB += blenFilterDecoders.db
-DB += streamControl.db
 
 include $(TOP)/configure/RULES
 #----------------------------------------

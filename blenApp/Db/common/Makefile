@@ -86,5 +86,6 @@ DB += commonFPGA.db
 DB += monitorFPGAReboot.db
 DB += weightFunctionXAxis.db
 DB += calculatedWF.db
+DB += streamControl.db
 
 include $(TOP)/configure/RULES
