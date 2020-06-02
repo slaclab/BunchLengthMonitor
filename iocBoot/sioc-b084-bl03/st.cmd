@@ -69,3 +69,5 @@ crossbarControl "FPGA" "$(BLEN_VERSION)"
 # Log values only on change to the iocLogServer:
 caPutLogInit("$(EPICS_CA_PUT_LOG_ADDR)")
 caPutLogShow(2)
+
+< iocBoot/common/start_restore_soft.cmd

@@ -28,9 +28,6 @@ dbLoadRecords("db/blenMR.db", "AREA=${AREA}, POS=${POS}, INST=${INST}B, INST_NUM
 dbLoadRecords("db/blenFilterDecoders.db", "AREA=${AREA}, POS=${POS}")
 dbLoadRecords("db/blenFilters.db", "AREA=${AREA}, POS=${POS}, INST=${INST}")
 
-# Switch on/off stream data from FPGA
-dbLoadRecords("db/streamControl.db", "AREA=${AREA}, POS=${POS}, INST=${INST}")
-
 dbLoadRecords("db/crossbarCtrl.db", "DEV=EVR:$(PART_PV), PORT=crossbar")
 dbLoadRecords("db/tprPattern.db",  "LOCA=${AREA}, IOC_UNIT=${IOC_UNIT}, INST=2, PORT=pattern")
 
