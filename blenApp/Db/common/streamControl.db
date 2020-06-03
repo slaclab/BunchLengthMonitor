@@ -15,7 +15,7 @@ record (mbbo, "BLEN:$(AREA):$(POS):$(INSTA):ACCESS") {
   field(THST, "OFFLINE")
   field(THSV, "MAJOR")
   field(PINI, "YES")
-  field(OUT, "BLEN:$(AREA):$(POS):$(INST)A:LAutoRearm PP")
+  field(OUT, "BLEN:$(AREA):$(POS):$(INST)A:AutoRearm PP")
   info(autosaveFields, "VAL")
 }
 
