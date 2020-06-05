@@ -62,7 +62,7 @@
           <string/>
          </property>
          <property name="channel" stdset="0">
-          <string>ca://BLEN:${AREA}:${POS}:${INST}A:AutoRearmRBV</string>
+          <string>ca://BLEN:${AREA}:${POS}:${INST}B:AutoRearmRBV</string>
          </property>
          <property name="showLabels" stdset="0">
           <bool>false</bool>
