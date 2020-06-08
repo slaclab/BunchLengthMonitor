@@ -236,7 +236,7 @@ record (calcout, "BLEN:$(AREA):$(POS):$(INST)_CALC_Const_A1") {
 # Slow raw waveform
 record (waveform, "BLEN:$(AREA):$(POS):$(INST)_S_R_WF") {
   field(DESC, "Slow raw waveform")
-  field(INP, "BLEN:$(AREA):$(POS):$(INST)_R_WF")
+  field(INP, "BLEN:$(AREA):$(POS):$(INST):R_WF")
   field(NELM, "2020")
   field(FTVL, "SHORT")
   field(SCAN, "1 second")

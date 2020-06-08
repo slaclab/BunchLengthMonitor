@@ -150,7 +150,7 @@ file "RegisterCommand.template" { pattern
 
 # Note: NELM is 2x actual number of elements
 file "RegisterStream16.template" { pattern
-{ P,           R,             DESC,                                NELM,   PINI,         PORT,            PARAM                   }
-{ $(P),       S_R_WF          "Raw data (16-bit)",                 2048,   "NO",         $(PORT),        AMC$(AMC):StreamRaw      } 
-{ $(P),       IWF             "Integration Window (16-bit)",       2048,   "NO",         $(PORT),        AMC$(AMC):WeightFunction } 
+{ P,           R,             DESC,                                NELM,   PINI,         PORT,            PARAM                      }
+{ $(P),       R_WF            "Raw data (16-bit)",                 2048,   "YES",        $(PORT),        AMC$(AMC):StreamRaw:16      } 
+{ $(P),       IWF             "Integration Window (16-bit)",       2048,   "NO",         $(PORT),        AMC$(AMC):WeightFunction:16 } 
 }
