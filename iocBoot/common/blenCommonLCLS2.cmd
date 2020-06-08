@@ -6,7 +6,8 @@
 dbLoadRecords("db/blen.db", "P=BLEN:$(AREA):$(POS):$(INST)A, PORT=cpsw, AMC=0")
 dbLoadRecords("db/blen.db", "P=BLEN:$(AREA):$(POS):$(INST)B, PORT=cpsw, AMC=1")
 
-dbLoadRecords("db/blenLCLS2.db", "P=BLEN:$(AREA):$(POS), P0=$(INST)A, P1=$(INST)B, SCAN=1 second")
+dbLoadRecords("db/blenLCLS2.db", "P=BLEN:$(AREA):$(POS), INST0=$(INST)A, INST1=$(INST)B, SCAN=1 second")
+dbLoadRecords("db/pyroFilters.db", "P=BLEN:$(AREA):$(POS), INST0=$(INST)A, INST1=$(INST)B")
 dbLoadRecords("db/lcls2FPGA.db", "P=BLEN:$(AREA):$(POS), PORT=cpsw") 
 
 # BSA records

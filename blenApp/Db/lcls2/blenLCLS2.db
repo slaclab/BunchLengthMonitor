@@ -25,10 +25,10 @@
 # 3 = INCONSISTENT  - Due to both limit switches being activated at the same time.
 
 #
-#  (PX):SHT_STS -- status of shutter for AMCX
+#  (P)(INSTX):SHT_STS -- status of shutter for AMCX
 #
 
-record(calc, "$(P):$(P0):SHT_STS")
+record(calc, "$(P):$(INST0):SHT_STS")
 {
   field(INPA, "$(P):Inserted")
   field(INPB, "$(P):Removed")
@@ -39,7 +39,7 @@ record(calc, "$(P):$(P0):SHT_STS")
   field(DESC, "0=OUT, 1=IN, 2=MOVING, 3=INCONSISTENT")
 }
 
-record(calc, "$(P):$(P1):SHT_STS")
+record(calc, "$(P):$(INST1):SHT_STS")
 {
   field(INPA, "$(P):Inserted")
   field(INPB, "$(P):Removed")
@@ -102,29 +102,30 @@ record(calc, "$(P):FLT4_STS")
 # 0 = OUT
 # 1 = IN
 #
-# (PX):SHT_CTRL  -- AMCX Shutter Control
+# (P):(INSTX):SHT_CTRL  -- AMCX Shutter Control
 # (P):FLTX_CTRL  -- FilterX Control
 #
 
-record(mbbo, "$(P):$(P0):SHT_CTRL")
+record(mbbo, "$(P):$(INST0):SHT_CTRL")
 {
   field(VAL,   "0")
   field(ZRVL,  "0")
   field(ZRST,  "OUT")
   field(ONVL,  "1")
   field(ONST,  "IN")
-  field(OUT, "$(P):$(P0):SHT_MOVE") 
+  field(OUT, "$(P):$(INST0):SHT_MOVE") 
 }
 
-record(mbbo, "$(P):$(P1):SHT_CTRL")
+record(mbbo, "$(P):$(INST1):SHT_CTRL")
 {
   field(VAL,   "0")
   field(ZRVL,  "0")
   field(ZRST,  "OUT")
   field(ONVL,  "1")
   field(ONST,  "IN")
-  field(OUT, "$(P):$(P1):SHT_MOVE") 
+  field(OUT, "$(P):$(INST1):SHT_MOVE") 
 }
+
 
 record(mbbo, "$(P):FLT1_CTRL")
 {
@@ -176,10 +177,10 @@ record(mbbo, "$(P):FLT4_CTRL")
 # (PX):SHT_ERR -- AMCX Shutter Error State
 #
 
-record(calc, "$(P):$(P0):SHT_ERR")
+record(calc, "$(P):$(INST0):SHT_ERR")
 {
-  field(INPA, "$(P):$(P0):SHT_STS")
-  field(INPB, "$(P):$(P0):SHT_CTRL")
+  field(INPA, "$(P):$(INST0):SHT_STS")
+  field(INPB, "$(P):$(INST0):SHT_CTRL")
   field(INPC, "0")    # OK Value
   field(INPD, "1")    # Error Value
   field(CALC, "(A = B) ? C : D")
@@ -187,10 +188,10 @@ record(calc, "$(P):$(P0):SHT_ERR")
   field(DESC, "0 = OK 1 = Mismatch of STS and CTRL")
 }
 
-record(calc, "$(P):$(P1):SHT_ERR")
+record(calc, "$(P):$(INST1):SHT_ERR")
 {
-  field(INPA, "$(P):$(P1):SHT_STS")
-  field(INPB, "$(P):$(P1):SHT_CTRL")
+  field(INPA, "$(P):$(INST1):SHT_STS")
+  field(INPB, "$(P):$(INST1):SHT_CTRL")
   field(INPC, "0")    # OK Value
   field(INPD, "1")    # Error Value
   field(CALC, "(A = B) ? C : D")

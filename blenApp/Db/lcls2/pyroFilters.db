@@ -21,12 +21,12 @@
 # For any of the 5 bits, 0 = Mover Removed, 1 = Mover Inserted
 
 
-record(calcout, "$(P0):SHT_MOVE")
+record(calcout, "$(P):$(INST0):SHT_MOVE")
 {
   field(OUT, "$(P):MoverOnOff PP")
   field(OOPT, "Every Time")
   field(DOPT, "Use CALC")
-  field(INPA, "$(P0):SHT_CTRL")
+  field(INPA, "$(P):$(INST0):SHT_CTRL")
   field(INPB, "$(P):MoverOnOffRBV")
   field(INPC, "1")
   field(INPD, "0x1")  # bit 0 set
@@ -35,12 +35,12 @@ record(calcout, "$(P0):SHT_MOVE")
   field(SCAN, "Passive")
 }
 
-record(calcout, "$(P1):SHT_MOVE")
+record(calcout, "$(P):$(INST1):SHT_MOVE")
 {
   field(OUT, "$(P):MoverOnOff PP")
   field(OOPT, "Every Time")
   field(DOPT, "Use CALC")
-  field(INPA, "$(P1):SHT_CTRL")
+  field(INPA, "$(P):$(INST1):SHT_CTRL")
   field(INPB, "$(P):MoverOnOffRBV")
   field(INPC, "1")
   field(INPD, "0x2")  # bit 1 set
