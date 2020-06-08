@@ -113,7 +113,7 @@ record(mbbo, "$(P):$(INST0):SHT_CTRL")
   field(ZRST,  "OUT")
   field(ONVL,  "1")
   field(ONST,  "IN")
-  field(OUT, "$(P):$(INST0):SHT_MOVE") 
+  field(OUT, "$(P):$(INST0):SHT_MOVE PP") 
 }
 
 record(mbbo, "$(P):$(INST1):SHT_CTRL")
@@ -123,7 +123,7 @@ record(mbbo, "$(P):$(INST1):SHT_CTRL")
   field(ZRST,  "OUT")
   field(ONVL,  "1")
   field(ONST,  "IN")
-  field(OUT, "$(P):$(INST1):SHT_MOVE") 
+  field(OUT, "$(P):$(INST1):SHT_MOVE PP") 
 }
 
 
@@ -134,7 +134,7 @@ record(mbbo, "$(P):FLT1_CTRL")
   field(ZRST,  "OUT")
   field(ONVL,  "1")
   field(ONST,  "IN")
-  field(OUT, "$(P):FLT1_MOVE")
+  field(OUT, "$(P):FLT1_MOVE PP")
 }
 
 record(mbbo, "$(P):FLT2_CTRL")
@@ -144,7 +144,7 @@ record(mbbo, "$(P):FLT2_CTRL")
   field(ZRST,  "OUT")
   field(ONVL,  "1")
   field(ONST,  "IN")
-  field(OUT, "$(P):FLT2_MOVE")
+  field(OUT, "$(P):FLT2_MOVE PP")
 }
 
 record(mbbo, "$(P):FLT3_CTRL")
@@ -154,7 +154,7 @@ record(mbbo, "$(P):FLT3_CTRL")
   field(ZRST,  "OUT")
   field(ONVL,  "1")
   field(ONST,  "IN")
-  field(OUT, "$(P):FLT3_MOVE")
+  field(OUT, "$(P):FLT3_MOVE PP")
 }
 
 record(mbbo, "$(P):FLT4_CTRL")
@@ -164,7 +164,7 @@ record(mbbo, "$(P):FLT4_CTRL")
   field(ZRST,  "OUT")
   field(ONVL,  "1")
   field(ONST,  "IN")
-  field(OUT, "$(P):FLT4_MOVE")
+  field(OUT, "$(P):FLT4_MOVE PP")
 }
 
 #
