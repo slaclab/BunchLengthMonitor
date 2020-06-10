@@ -54,7 +54,8 @@ tprTriggerAsynDriverConfigure("trig", "mmio/AmcCarrierCore")
 # ===========================================
 
 # main blen database - user facing PVs
-dbLoadRecords("db/blen.db", "P=BLEN:$(AREA):$(POS), INST=$(INST), PORT=cpsw")
+dbLoadRecords("db/blen.db", "P=BLEN:$(AREA):$(POS):$(INST)A, PORT=cpsw, AMC=0")
+dbLoadRecords("db/blen.db", "P=BLEN:$(AREA):$(POS):$(INST)B, PORT=cpsw, AMC=1")
 
 # FPGA-related records
 dbLoadRecords("db/commonFPGA.db", "P=BLEN:$(AREA):$(POS):$(INST)A, PORT=cpsw, AMC=0")
