@@ -644,7 +644,7 @@
                <bool>false</bool>
               </property>
               <property name="minYRange">
-               <double>29500.000000000000000</double>
+               <double>-1000.000000000000000</double>
               </property>
               <property name="maxYRange">
                <double>32400.000000000000000</double>
@@ -1395,7 +1395,7 @@
                <bool>false</bool>
               </property>
               <property name="minYRange">
-               <double>29500.000000000000000</double>
+               <double>-1000.000000000000000</double>
               </property>
               <property name="maxYRange">
                <double>32400.000000000000000</double>

@@ -77,13 +77,13 @@
            </property>
            <property name="minimumSize">
             <size>
-             <width>1024</width>
+             <width>512</width>
              <height>180</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>300</width>
+             <width>99999</width>
              <height>180</height>
             </size>
            </property>
@@ -1117,7 +1117,7 @@
                    <double>-100.000000000000000</double>
                   </property>
                   <property name="maxXRange">
-                   <double>1100.000000000000000</double>
+                   <double>500.000000000000000</double>
                   </property>
                   <property name="autoRangeY">
                    <bool>false</bool>
@@ -1925,6 +1925,12 @@
                </item>
                <item row="0" column="3" alignment="Qt::AlignHCenter">
                 <widget class="QLabel" name="label_9">
+                 <property name="font">
+                  <font>
+                   <weight>75</weight>
+                   <bold>true</bold>
+                  </font>
+                 </property>
                  <property name="text">
                   <string>TMIT</string>
                  </property>
@@ -2060,13 +2066,13 @@
               <double>-100.000000000000000</double>
              </property>
              <property name="maxXRange">
-              <double>11100.000000000000000</double>
+              <double>500.000000000000000</double>
              </property>
              <property name="autoRangeY">
               <bool>false</bool>
              </property>
              <property name="minYRange">
-              <double>-1000.000000000000000</double>
+              <double>-35000.000000000000000</double>
              </property>
              <property name="maxYRange">
               <double>37000.000000000000000</double>
