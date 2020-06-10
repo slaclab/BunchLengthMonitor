@@ -171,7 +171,7 @@ record (calcout, "BLEN:$(AREA):$(POS):$(INST)_A0_NS0") {
   field(INPB, "BLEN:$(AREA):$(POS):$(INST)_A0_CONST CP")
   field(CALC, "A=0? B : B/A")
   field(DOPT, "Use CALC")
-  field(OUT, "BLEN:$(AREA):$(POS):$(INST)_CoefA0 PP")
+  field(OUT, "BLEN:$(AREA):$(POS):$(INST):CoefA0 PP")
 }
 
 # NumberSamples1 follows a linear proportionality with the coefficient A1.
@@ -182,7 +182,7 @@ record (calcout, "BLEN:$(AREA):$(POS):$(INST)_A1_NS1") {
   field(INPB, "BLEN:$(AREA):$(POS):$(INST)_A1_CONST CP")
   field(CALC, "A=0? B : B/A")
   field(DOPT, "Use CALC")
-  field(OUT, "BLEN:$(AREA):$(POS):$(INST)_CoefA1 PP")
+  field(OUT, "BLEN:$(AREA):$(POS):$(INST):CoefA1 PP")
 }
 
 # Constant A0, used by A0_NS0, can be changed in runtime, if needed.
