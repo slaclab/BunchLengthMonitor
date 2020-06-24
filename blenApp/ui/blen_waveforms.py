@@ -3,6 +3,8 @@ import os
 import pydm
 from pydm import Display
 
+left_lbl = 'ADC Counts / 2'
+btm_lbl = 'nanoseconds'
 
 class BLENWaveforms(Display):
 
@@ -12,24 +14,22 @@ class BLENWaveforms(Display):
         self.setup_plots()
 
     def setup_plots(self):
-        self.ui.wfpARawPlusWeight.plotItem.setLabels(
-        left='ADC counts',
-        bottom='nanoseconds')
 
-        self.ui.wfpARawPlusWeight.addChannel(y_channel="BLEN:B084:886:BL21A:RWF")
+        self.ui.wfpARawPlusWeight.plotItem.setLabels(
+        left = left_lbl,
+        bottom = btm_lbl)
 
         self.ui.wfpBRawPlusWeight.plotItem.setLabels(
-        left='ADC counts',
-        bottom='nanoseconds')
-        self.ui.wfpARawPlusWeight.addChannel(y_channel="BLEN:B084:886:BL21B:RWF")
+        left = left_lbl,
+        bottom = btm_lbl)
 
         self.ui.wfpARawTimesWeight.plotItem.setLabels(
-        left='ADC counts',
-        bottom='nanoseconds')
+        left = left_lbl,
+        bottom = btm_lbl)
 
         self.ui.wfpBRawTimesWeight.plotItem.setLabels(
-        left='ADC counts',
-        bottom='nanoseconds')
+        left = left_lbl,
+        bottom = btm_lbl)
 
     def ui_filename(self):
         return 'blen_waveforms.ui'

@@ -298,12 +298,12 @@
                   </property>
                   <property name="curves">
                    <stringlist>
-                    <string>{&quot;y_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}B_S_R_WF&quot;, &quot;x_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}B:SampTime.VALA&quot;, &quot;name&quot;: &quot;${INST}B Raw Waveform&quot;, &quot;color&quot;: &quot;#00aa00&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;redraw_mode&quot;: 2}</string>
+                    <string>{&quot;y_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}B:RWF_U16.VALA&quot;, &quot;x_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}B:SampTime.VALA&quot;, &quot;name&quot;: &quot;${INST}B Raw Waveform&quot;, &quot;color&quot;: &quot;#00aa00&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;redraw_mode&quot;: 2}</string>
                     <string>{&quot;y_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}B_SCL_VWF.AVAL&quot;, &quot;x_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}B:SampTime.VALA&quot;, &quot;name&quot;: &quot;${INST}B Weight Function&quot;, &quot;color&quot;: &quot;cyan&quot;, &quot;lineStyle&quot;: 2, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;redraw_mode&quot;: 2}</string>
                    </stringlist>
                   </property>
                   <property name="autoRangeX">
-                   <bool>false</bool>
+                   <bool>true</bool>
                   </property>
                   <property name="minXRange">
                    <double>-100.000000000000000</double>
@@ -312,7 +312,7 @@
                    <double>1100.000000000000000</double>
                   </property>
                   <property name="autoRangeY">
-                   <bool>false</bool>
+                   <bool>true</bool>
                   </property>
                   <property name="minYRange">
                    <double>-1000.000000000000000</double>
@@ -1106,12 +1106,12 @@
                   </property>
                   <property name="curves">
                    <stringlist>
-                    <string>{&quot;y_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}A_S_R_WF&quot;, &quot;x_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}A:SampTime.VALA&quot;, &quot;name&quot;: &quot;${INST}A Raw Waveform&quot;, &quot;color&quot;: &quot;white&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;redraw_mode&quot;: 2}</string>
+                    <string>{&quot;y_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}A:RWF_U16.VALA&quot;, &quot;x_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}A:SampTime.VALA&quot;, &quot;name&quot;: &quot;${INST}A Raw Waveform&quot;, &quot;color&quot;: &quot;white&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;redraw_mode&quot;: 2}</string>
                     <string>{&quot;y_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}A_SCL_VWF.AVAL&quot;, &quot;x_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}A:SampTime.VALA&quot;, &quot;name&quot;: &quot;${INST}A Weight Function&quot;, &quot;color&quot;: &quot;cyan&quot;, &quot;lineStyle&quot;: 2, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;redraw_mode&quot;: 2}</string>
                    </stringlist>
                   </property>
                   <property name="autoRangeX">
-                   <bool>false</bool>
+                   <bool>true</bool>
                   </property>
                   <property name="minXRange">
                    <double>-100.000000000000000</double>
@@ -1120,7 +1120,7 @@
                    <double>500.000000000000000</double>
                   </property>
                   <property name="autoRangeY">
-                   <bool>false</bool>
+                   <bool>true</bool>
                   </property>
                   <property name="minYRange">
                    <double>-1000.000000000000000</double>
@@ -2060,7 +2060,7 @@
               </stringlist>
              </property>
              <property name="autoRangeX">
-              <bool>false</bool>
+              <bool>true</bool>
              </property>
              <property name="minXRange">
               <double>-100.000000000000000</double>
@@ -2069,7 +2069,7 @@
               <double>500.000000000000000</double>
              </property>
              <property name="autoRangeY">
-              <bool>false</bool>
+              <bool>true</bool>
              </property>
              <property name="minYRange">
               <double>-35000.000000000000000</double>
@@ -2146,7 +2146,7 @@
               </stringlist>
              </property>
              <property name="autoRangeX">
-              <bool>false</bool>
+              <bool>true</bool>
              </property>
              <property name="minXRange">
               <double>-100.000000000000000</double>
@@ -2155,7 +2155,7 @@
               <double>1100.000000000000000</double>
              </property>
              <property name="autoRangeY">
-              <bool>false</bool>
+              <bool>true</bool>
              </property>
              <property name="minYRange">
               <double>-1000.000000000000000</double>
@@ -2252,7 +2252,7 @@
                </property>
                <property name="macros" stdset="0">
                 <stringlist>
-                 <string>DEVICE=SIOC:B084:BL03,LOCA=B084,IOC_UNIT=BL03,INST=1</string>
+                 <string>DEVICE=SIOC:${AREA}:BL03,LOCA=${AREA},IOC_UNIT=BL03,INST=1</string>
                 </stringlist>
                </property>
               </widget>
