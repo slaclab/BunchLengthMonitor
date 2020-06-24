@@ -107,7 +107,6 @@ record (aSub, "BLEN:$(AREA):$(POS):$(INST):SampTime") {
   field(SNAM, "calcTimeArray")
   field(FTA, "LONG")
   field(FTVA, "DOUBLE")
-  field(NOA, "2020")
-  field(NOVA, "2020")
+  field(NOVA, "1024")
   field(INPA, "BLEN:$(AREA):$(POS):$(INST):AmcClkFreq CP")
 }
