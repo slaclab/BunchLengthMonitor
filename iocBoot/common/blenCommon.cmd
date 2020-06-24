@@ -108,6 +108,6 @@ dbLoadRecords("db/iocRelease.db","IOC=$(IOC_NAME)")
 system("cp $(TOP)/archive/$(IOC).archive $(IOC_DATA)/$(IOC)/archive")
 
 # ===========================================
-#          LOAD MR or LCLS2 CONFIG 
+#       LOAD LCLS1 (MR) or LCLS2 CONFIG 
 # ===========================================
 < iocBoot/common/blenCommon$(BLEN_VERSION).cmd
