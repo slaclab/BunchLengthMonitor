@@ -236,7 +236,7 @@ record (calcout, "BLEN:$(AREA):$(POS):$(INST)_CALC_Const_A1") {
 record (aSub, "BLEN:$(AREA):$(POS):$(INST):RWF_U16") {
   field(DESC, "Slow raw waveform, unsigned 16 bit")
   field(SNAM, "calcRWF16")
-  field(INP, "BLEN:$(AREA):$(POS):$(INST):R_WF")
+  field(INPA, "BLEN:$(AREA):$(POS):$(INST):R_WF")
   field(NOA, "1024")
   field(NOVA, "1024")
   field(FTA, "SHORT")
