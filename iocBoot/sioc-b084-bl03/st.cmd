@@ -13,7 +13,7 @@
 epicsEnvSet("AREA", "BC2B")
 epicsEnvSet("POS", "950")
 epicsEnvSet("INST", "BZ21B")
-epicsEnvSet("IOC_UNIT", "BL01")
+epicsEnvSet("IOC_UNIT", "BL03")
 
 # YAML directory
 epicsEnvSet("YAML_DIR","$(IOC_DATA)/$(IOC)/firmware/yaml")
