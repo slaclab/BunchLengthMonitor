@@ -10,10 +10,10 @@
 # ===========================================
 
 # Area, position, and instrument names to be used in record names
-epicsEnvSet("AREA", "B084")
-epicsEnvSet("POS", "886")
-epicsEnvSet("INST", "BL21")
-epicsEnvSet("IOC_UNIT", "BL03")
+epicsEnvSet("AREA", "BC2B")
+epicsEnvSet("POS", "950")
+epicsEnvSet("INST", "BZ21B")
+epicsEnvSet("IOC_UNIT", "BL01")
 
 # YAML directory
 epicsEnvSet("YAML_DIR","$(IOC_DATA)/$(IOC)/firmware/yaml")
@@ -28,7 +28,7 @@ epicsEnvSet("FPGA_IP", "10.0.1.107")
 # IOC name for IOC admin
 epicsEnvSet(IOC_NAME,"SIOC:$(AREA):$(IOC_UNIT)")
 
-# Which version of the Application to use - "MR" or "LCLS2"
+# Which version of the Application to use - "LCLS1" or "LCLS2"
 epicsEnvSet("BLEN_VERSION", "LCLS2")
 epicsEnvSet("DICT_FILE", "yaml/blenLCLS2.dict")
 
