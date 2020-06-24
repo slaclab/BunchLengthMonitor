@@ -101,6 +101,7 @@ blen_SRCS += cpswStreamBSA.cpp
 blen_SRCS += blenBSA.cpp
 blen_SRCS += blenFcom.cpp
 blen_SRCS += asubWeightXAxis.c
+blen_SRCS += asubRWF.c
 
 blen_SRCS_DEFAULT += blenMain.cpp
 

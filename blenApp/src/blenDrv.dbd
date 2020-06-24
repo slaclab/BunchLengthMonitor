@@ -1,2 +1,3 @@
 registrar(BlenIOCFunctionsRegistrar)
 function(calcTimeArray)
+function(calcRWF16)
