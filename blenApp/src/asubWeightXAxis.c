@@ -3,24 +3,20 @@
 #include <aSubRecord.h>
 
 static long calcTimeArray(aSubRecord *pasub) {
-    long i, clkFreq;
-    double sum = 0, timeNs;
+    long i;
+    double clkFreq, sum = 0.0, timeNs;
 
-    pasub->pact = 1;
+    clkFreq = (double)(*(long *)pasub->a);
 
-    clkFreq = *((long *)pasub->a);
+    /* Calculate the time in ns between each sample */
+    timeNs = 1000000000.0 / (2.0 * clkFreq);
 
-    // Calculate the time in ns between each sample, giving the clock
-    // frequency in Hertz
-    timeNs = 1000000000 / (2.0 * clkFreq);
-
-    // Build array with the relative time for each sample since the first one
-    for (i=0; i < pasub->nova; ++i) {
+    /* Then make an array with each element a distance of `timeNs` apart */
+    for (i = 0; i < pasub->nova; i++) {
         ((double *)pasub->vala)[i] = sum;
         sum += timeNs;
     }
 
-    pasub->pact = 0;
 
     return 0; /* process output links */
 }
