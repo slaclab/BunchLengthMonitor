@@ -244,6 +244,17 @@ record (aSub, "BLEN:$(AREA):$(POS):$(INST):RWF_U16") {
   field(SCAN, "1 second") 
 }
 
+record (aSub, "BLEN:$(AREA):$(POS):$(INST):IWF_U16") {
+  field(DESC, "Slow integration window waveform, unsigned 16 bit")
+  field(SNAM, "calcRWF16")
+  field(INPA, "BLEN:$(AREA):$(POS):$(INST):IWF")
+  field(NOA, "1024")
+  field(NOVA, "1024")
+  field(FTA, "SHORT")
+  field(FTVA, "SHORT")
+  field(SCAN, "1 second") 
+}
+
 # Transform Nel in pC
 record (calc, "BLEN:$(AREA):$(POS):$(INST)_TMIT") {
   field(DESC, "Transform Nel in pC")
