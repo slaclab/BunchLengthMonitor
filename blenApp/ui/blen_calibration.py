@@ -24,6 +24,7 @@ class CalPlotCtxBox(pg.ViewBox, QObject):
     """ Implements a custom right click menu for Calibration plots """
     y_src_changed = Signal(int, int)
     int_window_changed = Signal(int)
+    reset_view = Signal()
 
     def __init__(self, plot, menuItems=None, parent=None):
         super(CalPlotCtxBox, self).__init__(parent)
@@ -37,8 +38,8 @@ class CalPlotCtxBox(pg.ViewBox, QObject):
             self.view_all = QAction("View All", self)
             self.view_all.triggered.connect(self.autoRange)
 
-            self.view_one = QAction("View 1 us", self)
-            self.view_one.triggered.connect(self.range_one)
+            self.reset = QAction("Reset View (1 us)", self)
+            self.reset.triggered.connect(self.reset_view.emit)
 
             self.show_int_window = QAction("Show Integration Window")
             self.show_int_window.setCheckable(True)
@@ -46,7 +47,7 @@ class CalPlotCtxBox(pg.ViewBox, QObject):
             self.show_int_window.triggered.connect(self.emit_int_window_changed)
 
 
-            self.y_datasrc = QMenu("Y Data Source")
+            self.y_datasrc = QMenu("Data Source")
             try:
                 inst = self.plot.macros["INST"]
                 self.instA_menu = QMenu("{}A".format(inst))
@@ -73,7 +74,7 @@ class CalPlotCtxBox(pg.ViewBox, QObject):
             self.instB_menu.addAction(iwfB)
 
             self.menu.addAction(self.view_all)
-            self.menu.addAction(self.view_one)
+            self.menu.addAction(self.reset)
             self.menu.addSeparator()
 
             self.menu.addMenu(self.y_datasrc)
@@ -90,9 +91,6 @@ class CalPlotCtxBox(pg.ViewBox, QObject):
 
     def emit_int_window_changed(self):
         self.int_window_changed.emit(self.show_int_window.isChecked())
-
-    def range_one(self):
-        self.plot.setXRange(0, 1000)
 
 
 class BlenCalPlot(pg.PlotWidget):
@@ -112,6 +110,7 @@ class BlenCalPlot(pg.PlotWidget):
         self.plotItem.hideButtons()
         self.plotItem.vb.y_src_changed.connect(self.y_changed)
         self.plotItem.vb.int_window_changed.connect(self.show_int_window)
+        self.plotItem.vb.reset_view.connect(self.reset_view)
 
         self.macros = macros
         self.inst = inst       # which instrument we are (A or B)
@@ -138,6 +137,7 @@ class BlenCalPlot(pg.PlotWidget):
         self.label_plot()
         self._set_data_src()
         self.redraw_plot()
+        self.reset_view()
 
     def show_int_window(self, state):
         self.addItem(self.window_curve) if state else self.removeItem(self.window_curve)
@@ -185,13 +185,28 @@ class BlenCalPlot(pg.PlotWidget):
         self.curve.redrawCurve()
         self.window_curve.redrawCurve()
 
+    def reset_view(self):
+        # y range might have got a little weird.
+        self.enableAutoRange(axis=pg.ViewBox.YAxis)
+        self.setXRange(0, 1000)
+
 
 
 class BlenPyDMSlider(PyDMSlider):
     """ A PyDM Slider where the value label is a PyDMLineEdit """
-    def __init__(self, parent=None, init_channel=None):
-        super(BlenPyDMSlider, self).__init__(parent, init_channel)
-        self.value_label = PyDMLineEdit(self, init_channel)
+    def __init__(self, macros, parent=None, ch=None):
+        super(BlenPyDMSlider, self).__init__(parent)
+        self.macros = macros
+        self.inst = ch.split(":")[0]
+        self.window_edge = ch.split(":")[-1]
+        self.pv = "BLEN:{}:{}:{}{}:{}".format(\
+                self.macros["AREA"],
+                self.macros["POS"],
+                self.macros["INST"],
+                self.inst,
+                self.window_edge)
+
+        self.value_label = PyDMLineEdit(self)
         self.value_label.setAlignment(Qt.AlignHCenter | Qt.AlignVCenter)
 
         self.orientation = Qt.Horizontal
@@ -201,14 +216,27 @@ class BlenPyDMSlider(PyDMSlider):
         self.userMaximum = 1000
         self.num_steps = 100
 
-        # call setup again to put our label in the right place
+        # call PyDMSlider's setup again to put our label in the right place
         self.setup_widgets_for_orientation(self.orientation)
         self.reset_slider_limits()
 
+        self._change_channel()
+
     def plot_src_changed(self, wf, inst):
         print("plt_src_changed: {}".format(self))
-        # self.channel = ...
-        # self.value_label.channel = ...
+        self.inst = "A" if inst == INSTA else "B"
+        self.pv = "BLEN:{}:{}:{}{}:{}".format(\
+                self.macros["AREA"],
+                self.macros["POS"],
+                self.macros["INST"],
+                self.inst,
+                self.window_edge)
+
+        self._change_channel()
+
+    def _change_channel(self):
+        self.value_label.channel = self.pv
+        self.channel = self.pv
 
 
 
@@ -223,15 +251,10 @@ class BlenWeightFnSliders(QWidget):
 
         self.macros = macros
         self.inst = inst
-        pv_prefix = "BLEN:{}:{}:{}{}".format(\
-                macros["AREA"],
-                macros["POS"],
-                macros["INST"],
-                self.inst)
 
-        self.pre_slider = BlenPyDMSlider(self, init_channel="{}:TIME_PRE".format(pv_prefix))
-        self.mid_slider = BlenPyDMSlider(self, init_channel="{}:TIME_MID".format(pv_prefix))
-        self.pos_slider = BlenPyDMSlider(self, init_channel="{}:TIME_POS".format(pv_prefix))
+        self.pre_slider = BlenPyDMSlider(macros, self, ch="{}:TIME_PRE".format(self.inst))
+        self.mid_slider = BlenPyDMSlider(macros, self, ch="{}:TIME_MID".format(self.inst))
+        self.pos_slider = BlenPyDMSlider(macros, self, ch="{}:TIME_POS".format(self.inst))
 
         self.pre_label = QLabel("Duration Pre-Edge (ns)")
         self.mid_label = QLabel("Duration Inter-Edge (ns)")
