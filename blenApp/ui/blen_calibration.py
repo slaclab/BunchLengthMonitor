@@ -3,11 +3,13 @@ from __future__ import print_function
 import os
 
 import pyqtgraph as pg
-from qtpy.QtCore import Signal, QObject, QPoint
+from qtpy.QtCore import Signal, QObject, QPoint, Qt
 from qtpy.QtGui import QColor
-from qtpy.QtWidgets import QAction, QHBoxLayout, QMenu, QVBoxLayout, QWidget
+from qtpy.QtWidgets import (QAction, QGridLayout, QHBoxLayout, QLabel, QMenu,
+                            QTextEdit, QVBoxLayout, QWidget)
 
 from pydm import Display
+from pydm.widgets import PyDMLineEdit, PyDMSlider
 from pydm.widgets.waveformplot import WaveformCurveItem
 
 left_lbl = 'ADC Counts / 2'
@@ -35,6 +37,9 @@ class CalPlotCtxBox(pg.ViewBox, QObject):
             self.view_all = QAction("View All", self)
             self.view_all.triggered.connect(self.autoRange)
 
+            self.view_one = QAction("View 1 us", self)
+            self.view_one.triggered.connect(self.range_one)
+
             self.show_int_window = QAction("Show Integration Window")
             self.show_int_window.setCheckable(True)
             self.show_int_window.setChecked(True)
@@ -59,14 +64,18 @@ class CalPlotCtxBox(pg.ViewBox, QObject):
             iwfA.triggered.connect(lambda: self.emit_ychange(INT, INSTA))
             iwfB.triggered.connect(lambda: self.emit_ychange(INT, INSTB))
 
+            self.y_datasrc.addMenu(self.instA_menu)
+            self.y_datasrc.addMenu(self.instB_menu)
+
             self.instA_menu.addAction(rwfA)
             self.instB_menu.addAction(rwfB)
             self.instA_menu.addAction(iwfA)
             self.instB_menu.addAction(iwfB)
 
             self.menu.addAction(self.view_all)
-            self.y_datasrc.addMenu(self.instA_menu)
-            self.y_datasrc.addMenu(self.instB_menu)
+            self.menu.addAction(self.view_one)
+            self.menu.addSeparator()
+
             self.menu.addMenu(self.y_datasrc)
             self.menu.addAction(self.show_int_window)
         return self.menu
@@ -82,10 +91,13 @@ class CalPlotCtxBox(pg.ViewBox, QObject):
     def emit_int_window_changed(self):
         self.int_window_changed.emit(self.show_int_window.isChecked())
 
+    def range_one(self):
+        self.plot.setXRange(0, 1000)
 
-class BlenCalPlot(pg.PlotWidget, QObject):
+
+class BlenCalPlot(pg.PlotWidget):
     """
-    BlenCalPlot implements features useful only for BLEN Calibration.
+    BlenCalPlot is a waveform plot with extra features useful calibration.
 
     The PyDMWaveformPlot doesn't have the flexibility needed to make a more
     interactive experience.
@@ -115,7 +127,7 @@ class BlenCalPlot(pg.PlotWidget, QObject):
         self.setXRange(0, 1000)
 
         self.label_plot()
-        self.set_data_src()
+        self._set_data_src()
 
 
     def y_changed(self, wf, inst):
@@ -124,7 +136,7 @@ class BlenCalPlot(pg.PlotWidget, QObject):
         self.inst = inst
         self.wf = wf
         self.label_plot()
-        self.set_data_src()
+        self._set_data_src()
         self.redraw_plot()
 
     def show_int_window(self, state):
@@ -139,7 +151,7 @@ class BlenCalPlot(pg.PlotWidget, QObject):
                                  "A" if self.inst == INSTA else "B",
                                  "Integration Window" if self.wf == INT else "Raw"))
 
-    def set_data_src(self):
+    def _set_data_src(self):
         src_pv_prefix = "ca://BLEN:{}:{}:{}{}".format(
                 self.macros["AREA"],
                 self.macros["POS"],
@@ -173,22 +185,85 @@ class BlenCalPlot(pg.PlotWidget, QObject):
         self.curve.redrawCurve()
         self.window_curve.redrawCurve()
 
+
+
+class BlenPyDMSlider(PyDMSlider):
+    """ A PyDM Slider where the value label is a PyDMLineEdit """
+    def __init__(self, parent=None, init_channel=None):
+        super(BlenPyDMSlider, self).__init__(parent, init_channel)
+        self.value_label = PyDMLineEdit(self, init_channel)
+        self.value_label.setAlignment(Qt.AlignHCenter | Qt.AlignVCenter)
+
+        self.orientation = Qt.Horizontal
+        self.userDefinedLimits = True
+        self.showLimitLabels = False
+        self.userMinimum = 0
+        self.userMaximum = 1000
+        self.num_steps = 100
+
+        # call setup again to put our label in the right place
+        self.setup_widgets_for_orientation(self.orientation)
+        self.reset_slider_limits()
+
+    def plot_src_changed(self, wf, inst):
+        print("plt_src_changed: {}".format(self))
+        # self.channel = ...
+        # self.value_label.channel = ...
+
+
+
 class BlenWeightFnSliders(QWidget):
     """ A widget with sliders to control the weight function edges + offset """
 
-    def __init__(self, macros, parent=None):
+    def __init__(self, macros, parent=None, inst=None):
         super(BlenWeightFnSliders, self).__init__(parent)
+
+        if not inst:
+            raise TypeError("Must provide inst A or B")
+
         self.macros = macros
+        self.inst = inst
+        pv_prefix = "BLEN:{}:{}:{}{}".format(\
+                macros["AREA"],
+                macros["POS"],
+                macros["INST"],
+                self.inst)
+
+        self.pre_slider = BlenPyDMSlider(self, init_channel="{}:TIME_PRE".format(pv_prefix))
+        self.mid_slider = BlenPyDMSlider(self, init_channel="{}:TIME_MID".format(pv_prefix))
+        self.pos_slider = BlenPyDMSlider(self, init_channel="{}:TIME_POS".format(pv_prefix))
+
+        self.pre_label = QLabel("Duration Pre-Edge (ns)")
+        self.mid_label = QLabel("Duration Inter-Edge (ns)")
+        self.pos_label = QLabel("Duration Pos-Edge (ns)")
+
+        self.sliders = [self.pre_slider, self.mid_slider, self.pos_slider]
+        self.labels = [self.pre_label, self.mid_label, self.pos_label]
+
 
         self.setup_ui()
 
     def setup_ui(self):
-        self.layout = QVBoxLayout()
+        # set label fonts
+        lbl_font = self.pre_label.font()
+        lbl_font.setPointSize(11)
+
+        self.layout = QHBoxLayout()
+        slider_layouts = [QVBoxLayout() for i in range(3)]
+
+        for lo, label, slider in zip(slider_layouts, self.labels, self.sliders):
+            label.setFont(lbl_font)
+            label.setAlignment(Qt.AlignHCenter | Qt.AlignVCenter)
+            lo.addWidget(label)
+            lo.addWidget(slider)
+            self.layout.addLayout(lo)
+
+        self.setLayout(self.layout)
 
 
     def plot_src_changed(self, wf, inst):
-        print("Plot source changed!\n\twf: {}\n\tinst: {}".format("Integration Window" if wf == INT else "RAW",
-            "A" if inst == INSTA else "B"))
+        for slider in self.sliders:
+            slider.plot_src_changed(wf, inst)
 
 
 
@@ -197,9 +272,7 @@ class BLENExpert(Display):
     def __init__(self, parent=None, args=None, macros=None):
         super(BLENExpert, self).__init__(parent=parent, args=args, macros=macros)
         self.setWindowTitle(\
-                "BLEN:{}:{}:{} Calibration".format(self.macros()["AREA"],
-                                                   self.macros()["POS"],
-                                                   self.macros()["INST"]))
+                "Bunch Length {} Calibration".format(self.macros()["INST"]))
 
         self.setFixedSize(1500, 500)
         self.setup_plots()
@@ -212,9 +285,9 @@ class BLENExpert(Display):
         self.wfp0 = BlenCalPlot(self.macros(), INSTA, RAW)
         self.wfp1 = BlenCalPlot(self.macros(), INSTB, RAW)
 
-        self.wfp0_sliders = BlenWeightFnSliders(self.macros())
+        self.wfp0_sliders = BlenWeightFnSliders(macros=self.macros(), parent=self, inst="A")
         self.wfp0.src_changed.connect(self.wfp0_sliders.plot_src_changed)
-        self.wfp1_sliders = BlenWeightFnSliders(self.macros())
+        self.wfp1_sliders = BlenWeightFnSliders(macros=self.macros(), parent=self, inst="B")
         self.wfp1.src_changed.connect(self.wfp1_sliders.plot_src_changed)
 
         plot_layout.addWidget(self.wfp0)
@@ -224,8 +297,8 @@ class BLENExpert(Display):
         weight_fn_layout.addWidget(self.wfp1_sliders)
 
         self.setLayout(main_layout)
-        main_layout.addLayout(plot_layout)
         main_layout.addLayout(weight_fn_layout)
+        main_layout.addLayout(plot_layout)
 
     def ui_filepath(self):
         return None
