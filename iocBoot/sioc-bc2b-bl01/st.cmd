@@ -23,7 +23,7 @@ epicsEnvSet("TOP_YAML","$(YAML_DIR)/000TopLevel.yaml")
 epicsEnvSet("YAML_CONFIG_FILE", "$(YAML_DIR)/config/defaultsPyro.yaml")
 
 # FPGA IP address for CPSW
-epicsEnvSet("FPGA_IP", "10.0.1.103")
+epicsEnvSet("FPGA_IP", "10.1.1.104")
 
 # IOC name for IOC admin
 epicsEnvSet(IOC_NAME,"SIOC:$(AREA):$(IOC_UNIT)")
