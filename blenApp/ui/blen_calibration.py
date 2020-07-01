@@ -2,6 +2,9 @@ from __future__ import print_function
 
 import os
 
+import attr
+import ipdb
+
 import pyqtgraph as pg
 from qtpy.QtCore import Signal, QObject, QPoint, Qt
 from qtpy.QtGui import QColor
@@ -15,14 +18,21 @@ from pydm.widgets.waveformplot import WaveformCurveItem
 left_lbl = 'ADC Counts / 2'
 btm_lbl = 'nanoseconds'
 
-RAW = 0
-INT = 1
-INSTA = 0
-INSTB = 1
+class WaveformType:
+    RAW = "Raw"
+    INT = "Integration Window"
+    RAW_TIMES = "Raw times Weight Fn"
+
+class Sensor:
+    A = "A"
+    B = "B"
+
+blen_pv = { "x": ":SampTime.VALA", WaveformType.RAW: ":RWF_U16.VALA", WaveformType.INT: ":IWF_U16.VALA",
+        WaveformType.RAW_TIMES: "_S_P_WF", "window": "_SCL_VWF.AVAL"}
 
 class CalPlotCtxBox(pg.ViewBox, QObject):
     """ Implements a custom right click menu for Calibration plots """
-    y_src_changed = Signal(int, int)
+    y_src_changed = Signal(str, str)
     int_window_changed = Signal(int)
     reset_view = Signal()
 
@@ -41,7 +51,7 @@ class CalPlotCtxBox(pg.ViewBox, QObject):
             self.reset = QAction("Reset View (1 us)", self)
             self.reset.triggered.connect(self.reset_view.emit)
 
-            self.show_int_window = QAction("Show Integration Window")
+            self.show_int_window = QAction("Show Weight Function")
             self.show_int_window.setCheckable(True)
             self.show_int_window.setChecked(True)
             self.show_int_window.triggered.connect(self.emit_int_window_changed)
@@ -55,21 +65,27 @@ class CalPlotCtxBox(pg.ViewBox, QObject):
             except KeyError:
                 raise KeyError("'INST' macro was not defined! Please start this screen with the 'INST' macro!")
 
-            rwfA = QAction("Raw Waveform", self.y_datasrc)
-            rwfB = QAction("Raw Waveform", self.y_datasrc)
-            iwfA = QAction("Integration Window Waveform", self.y_datasrc)
-            iwfB = QAction("Integration Window Waveform", self.y_datasrc)
+            rwfA = QAction("Raw Waveform (Stream0)", self.y_datasrc)
+            rwfB = QAction("Raw Waveform (Stream4)", self.y_datasrc)
+            rwf_mult_A = QAction("Raw Waveform times Weight Function", self.y_datasrc)
+            rwf_mult_B = QAction("Raw Waveform times Weight Function", self.y_datasrc)
+            iwfA = QAction("Integration Window Waveform (Stream3)", self.y_datasrc)
+            iwfB = QAction("Integration Window Waveform (Stream7)", self.y_datasrc)
             # these lambdas are a workaround for passing arguments to slots
-            rwfA.triggered.connect(lambda: self.emit_ychange(RAW, INSTA))
-            rwfB.triggered.connect(lambda: self.emit_ychange(RAW, INSTB))
-            iwfA.triggered.connect(lambda: self.emit_ychange(INT, INSTA))
-            iwfB.triggered.connect(lambda: self.emit_ychange(INT, INSTB))
+            rwfA.triggered.connect(lambda: self.emit_ychange(WaveformType.RAW, Sensor.A))
+            rwfB.triggered.connect(lambda: self.emit_ychange(WaveformType.RAW, Sensor.B))
+            rwf_mult_A.triggered.connect(lambda: self.emit_ychange(WaveformType.RAW_TIMES, Sensor.A))
+            rwf_mult_B.triggered.connect(lambda: self.emit_ychange(WaveformType.RAW_TIMES, Sensor.B))
+            iwfA.triggered.connect(lambda: self.emit_ychange(WaveformType.INT, Sensor.A))
+            iwfB.triggered.connect(lambda: self.emit_ychange(WaveformType.INT, Sensor.B))
 
             self.y_datasrc.addMenu(self.instA_menu)
             self.y_datasrc.addMenu(self.instB_menu)
 
             self.instA_menu.addAction(rwfA)
+            self.instA_menu.addAction(rwf_mult_A)
             self.instB_menu.addAction(rwfB)
+            self.instB_menu.addAction(rwf_mult_B)
             self.instA_menu.addAction(iwfA)
             self.instB_menu.addAction(iwfB)
 
@@ -86,8 +102,8 @@ class CalPlotCtxBox(pg.ViewBox, QObject):
         pos = ev.screenPos()
         menu.popup(QPoint(pos.x(), pos.y()))
 
-    def emit_ychange(self, wf, inst):
-        self.y_src_changed.emit(wf, inst)
+    def emit_ychange(self, wf, sensor):
+        self.y_src_changed.emit(wf, sensor)
 
     def emit_int_window_changed(self):
         self.int_window_changed.emit(self.show_int_window.isChecked())
@@ -102,9 +118,9 @@ class BlenCalPlot(pg.PlotWidget):
     We directly subclass pyqtgraph PlotWidget to create our own custom context menu.
     """
 
-    src_changed = Signal(int, int)
+    src_changed = Signal(str, str)
 
-    def __init__(self, macros, inst, wf, parent=None):
+    def __init__(self, macros, sensor, wf, parent=None):
         super(BlenCalPlot, self).__init__(parent, viewBox=CalPlotCtxBox(self))
         self.plotItem = self.getPlotItem()
         self.plotItem.hideButtons()
@@ -113,8 +129,8 @@ class BlenCalPlot(pg.PlotWidget):
         self.plotItem.vb.reset_view.connect(self.reset_view)
 
         self.macros = macros
-        self.inst = inst       # which instrument we are (A or B)
-        self.wf = wf           # which waveform we are to display (RWF or IWF)
+        self.sensor = sensor       # Sensor 
+        self.wf = wf               # WaveformType 
         self.curve = WaveformCurveItem()
         self.window_curve = WaveformCurveItem(color=QColor("#00ffff"))
         self.curve.data_changed.connect(self.redraw_plot)
@@ -129,10 +145,10 @@ class BlenCalPlot(pg.PlotWidget):
         self._set_data_src()
 
 
-    def y_changed(self, wf, inst):
-        if self.wf == wf and self.inst == inst:
+    def y_changed(self, wf, sensor):
+        if self.wf == wf and self.sensor == sensor:
             return
-        self.inst = inst
+        self.sensor = sensor
         self.wf = wf
         self.label_plot()
         self._set_data_src()
@@ -148,25 +164,26 @@ class BlenCalPlot(pg.PlotWidget):
                 bottom = btm_lbl)
         self.plotItem.setTitle(
                 "{}{} {}".format(self.macros["INST"],
-                                 "A" if self.inst == INSTA else "B",
-                                 "Integration Window" if self.wf == INT else "Raw"))
+                                 self.sensor,
+                                 self.wf))
 
     def _set_data_src(self):
         src_pv_prefix = "ca://BLEN:{}:{}:{}{}".format(
                 self.macros["AREA"],
                 self.macros["POS"],
                 self.macros["INST"],
-                "A" if self.inst == INSTA else "B")
+                self.sensor)
 
-        x_pv = "{}:{}.VALA".format(src_pv_prefix, "SampTime")
-        y_pv = "{}:{}.VALA".format(src_pv_prefix, "IWF_U16" if self.wf == INT else "RWF_U16")
-        window_pv = "{}_{}.AVAL".format(src_pv_prefix, "SCL_VWF")
+        x_pv = "{}{}".format(src_pv_prefix, blen_pv["x"])
+        y_pv = "{}{}".format(src_pv_prefix, blen_pv[self.wf])
+        window_pv = "{}{}".format(src_pv_prefix, blen_pv["window"])
 
-        for curve_ch, window_ch in zip(self.curve.channels(), self.window_curve.channels()):
-            if curve_ch:
+        for curve_ch, window_ch in (self.curve.channels(), self.window_curve.channels()):
+            try:
                 curve_ch.disconnect()
-            if window_ch:
                 window_ch.disconnect()
+            except AttributeError:
+                continue
 
         self.curve.x_address = x_pv
         self.curve.y_address = y_pv
@@ -178,7 +195,8 @@ class BlenCalPlot(pg.PlotWidget):
             curve_ch.connect()
             window_ch.connect()
 
-        self.src_changed.emit(self.wf, self.inst)
+
+        self.src_changed.emit(self.wf, self.sensor)
 
 
     def redraw_plot(self):
@@ -197,13 +215,13 @@ class BlenPyDMSlider(PyDMSlider):
     def __init__(self, macros, parent=None, ch=None):
         super(BlenPyDMSlider, self).__init__(parent)
         self.macros = macros
-        self.inst = ch.split(":")[0]
+        self.sensor = ch.split(":")[0]
         self.window_edge = ch.split(":")[-1]
         self.pv = "BLEN:{}:{}:{}{}:{}".format(\
                 self.macros["AREA"],
                 self.macros["POS"],
                 self.macros["INST"],
-                self.inst,
+                self.sensor,
                 self.window_edge)
 
         self.value_label = PyDMLineEdit(self)
@@ -214,22 +232,21 @@ class BlenPyDMSlider(PyDMSlider):
         self.showLimitLabels = False
         self.userMinimum = 0
         self.userMaximum = 1000
-        self.num_steps = 100
+        self.num_steps = self.userMaximum - self.userMinimum + 1
 
         # call PyDMSlider's setup again to put our label in the right place
         self.setup_widgets_for_orientation(self.orientation)
-        self.reset_slider_limits()
+        #self.reset_slider_limits()
 
         self._change_channel()
 
-    def plot_src_changed(self, wf, inst):
-        print("plt_src_changed: {}".format(self))
-        self.inst = "A" if inst == INSTA else "B"
+    def plot_src_changed(self, wf, sensor):
+        self.sensor = sensor
         self.pv = "BLEN:{}:{}:{}{}:{}".format(\
                 self.macros["AREA"],
                 self.macros["POS"],
                 self.macros["INST"],
-                self.inst,
+                self.sensor,
                 self.window_edge)
 
         self._change_channel()
@@ -243,18 +260,15 @@ class BlenPyDMSlider(PyDMSlider):
 class BlenWeightFnSliders(QWidget):
     """ A widget with sliders to control the weight function edges + offset """
 
-    def __init__(self, macros, parent=None, inst=None):
+    def __init__(self, macros, parent=None, sensor=None):
         super(BlenWeightFnSliders, self).__init__(parent)
 
-        if not inst:
-            raise TypeError("Must provide inst A or B")
-
         self.macros = macros
-        self.inst = inst
+        self.sensor = sensor
 
-        self.pre_slider = BlenPyDMSlider(macros, self, ch="{}:TIME_PRE".format(self.inst))
-        self.mid_slider = BlenPyDMSlider(macros, self, ch="{}:TIME_MID".format(self.inst))
-        self.pos_slider = BlenPyDMSlider(macros, self, ch="{}:TIME_POS".format(self.inst))
+        self.pre_slider = BlenPyDMSlider(macros, self, ch="{}:TIME_PRE".format(self.sensor))
+        self.mid_slider = BlenPyDMSlider(macros, self, ch="{}:TIME_MID".format(self.sensor))
+        self.pos_slider = BlenPyDMSlider(macros, self, ch="{}:TIME_POS".format(self.sensor))
 
         self.pre_label = QLabel("Duration Pre-Edge (ns)")
         self.mid_label = QLabel("Duration Inter-Edge (ns)")
@@ -305,12 +319,12 @@ class BLENExpert(Display):
         plot_layout = QHBoxLayout()
         weight_fn_layout = QHBoxLayout()
 
-        self.wfp0 = BlenCalPlot(self.macros(), INSTA, RAW)
-        self.wfp1 = BlenCalPlot(self.macros(), INSTB, RAW)
+        self.wfp0 = BlenCalPlot(self.macros(), Sensor.A, WaveformType.RAW)
+        self.wfp1 = BlenCalPlot(self.macros(), Sensor.B, WaveformType.RAW)
 
-        self.wfp0_sliders = BlenWeightFnSliders(macros=self.macros(), parent=self, inst="A")
+        self.wfp0_sliders = BlenWeightFnSliders(macros=self.macros(), parent=self, sensor=Sensor.A)
         self.wfp0.src_changed.connect(self.wfp0_sliders.plot_src_changed)
-        self.wfp1_sliders = BlenWeightFnSliders(macros=self.macros(), parent=self, inst="B")
+        self.wfp1_sliders = BlenWeightFnSliders(macros=self.macros(), parent=self, sensor=Sensor.B)
         self.wfp1.src_changed.connect(self.wfp1_sliders.plot_src_changed)
 
         plot_layout.addWidget(self.wfp0)
