@@ -306,19 +306,19 @@
                    <bool>true</bool>
                   </property>
                   <property name="minXRange">
-                   <double>-100.000000000000000</double>
+                   <double>0.000000000000000</double>
                   </property>
                   <property name="maxXRange">
-                   <double>1100.000000000000000</double>
+                   <double>1.000000000000000</double>
                   </property>
                   <property name="autoRangeY">
                    <bool>true</bool>
                   </property>
                   <property name="minYRange">
-                   <double>-1000.000000000000000</double>
+                   <double>0.000000000000000</double>
                   </property>
                   <property name="maxYRange">
-                   <double>32400.000000000000000</double>
+                   <double>1.000000000000000</double>
                   </property>
                  </widget>
                 </item>
@@ -1114,19 +1114,19 @@
                    <bool>true</bool>
                   </property>
                   <property name="minXRange">
-                   <double>-100.000000000000000</double>
+                   <double>0.000000000000000</double>
                   </property>
                   <property name="maxXRange">
-                   <double>500.000000000000000</double>
+                   <double>1.000000000000000</double>
                   </property>
                   <property name="autoRangeY">
                    <bool>true</bool>
                   </property>
                   <property name="minYRange">
-                   <double>-1000.000000000000000</double>
+                   <double>0.000000000000000</double>
                   </property>
                   <property name="maxYRange">
-                   <double>32400.000000000000000</double>
+                   <double>1.000000000000000</double>
                   </property>
                  </widget>
                 </item>
@@ -2063,19 +2063,19 @@
               <bool>true</bool>
              </property>
              <property name="minXRange">
-              <double>-100.000000000000000</double>
+              <double>0.000000000000000</double>
              </property>
              <property name="maxXRange">
-              <double>500.000000000000000</double>
+              <double>1.000000000000000</double>
              </property>
              <property name="autoRangeY">
               <bool>true</bool>
              </property>
              <property name="minYRange">
-              <double>-35000.000000000000000</double>
+              <double>0.000000000000000</double>
              </property>
              <property name="maxYRange">
-              <double>37000.000000000000000</double>
+              <double>1.000000000000000</double>
              </property>
             </widget>
            </item>
@@ -2149,19 +2149,19 @@
               <bool>true</bool>
              </property>
              <property name="minXRange">
-              <double>-100.000000000000000</double>
+              <double>0.000000000000000</double>
              </property>
              <property name="maxXRange">
-              <double>1100.000000000000000</double>
+              <double>1.000000000000000</double>
              </property>
              <property name="autoRangeY">
               <bool>true</bool>
              </property>
              <property name="minYRange">
-              <double>-1000.000000000000000</double>
+              <double>0.000000000000000</double>
              </property>
              <property name="maxYRange">
-              <double>37000.000000000000000</double>
+              <double>1.000000000000000</double>
              </property>
             </widget>
            </item>
@@ -2277,14 +2277,19 @@
     </string>
                </property>
                <property name="text">
-                <string>Bunch Length ${INST} FGPA configuration</string>
+                <string>Bunch Length ${INST} FPGA Configuration</string>
+               </property>
+               <property name="filenames" stdset="0">
+                <stringlist>
+                 <string>fpga_config.py</string>
+                </stringlist>
                </property>
                <property name="displayFilename" stdset="0">
-                <string>blen_loadSaveConfigFiles.ui</string>
+                <string>fpga_config.py</string>
                </property>
                <property name="macros" stdset="0">
                 <stringlist>
-                 <string>{&quot;AREA&quot;:&quot;${AREA}&quot;,&quot;POS&quot;:&quot;${POS}&quot;,&quot;INST&quot;:&quot;${INST}&quot;}</string>
+                 <string>{&quot;AREA&quot;:&quot;${AREA}&quot;,&quot;POS&quot;:&quot;${POS}&quot;,&quot;INST&quot;:&quot;${INST}&quot;, &quot;IOC_UNIT&quot;:&quot;${IOC_UNIT}&quot;}</string>
                 </stringlist>
                </property>
                <property name="openInNewWindow" stdset="0">

@@ -3,8 +3,10 @@ import os
 import pydm
 from pydm import Display
 
+
 left_lbl = 'ADC Counts / 2'
 btm_lbl = 'nanoseconds'
+
 
 class BLENWaveforms(Display):
 
