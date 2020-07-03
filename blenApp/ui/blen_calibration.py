@@ -211,7 +211,7 @@ class BlenCalPlot(pg.PlotWidget):
 
 
 class BlenPyDMSlider(PyDMSlider):
-    """ A PyDM Slider where the value label is a PyDMLineEdit """
+    """ PyDMSlider with a PyDMLineEdit instead of label and only even values """
     def __init__(self, macros, parent=None, ch=None):
         super(BlenPyDMSlider, self).__init__(parent)
         self.macros = macros
