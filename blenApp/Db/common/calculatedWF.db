@@ -234,7 +234,7 @@ record (calcout, "BLEN:$(AREA):$(POS):$(INST)_CALC_Const_A1") {
 }
 
 record (aSub, "BLEN:$(AREA):$(POS):$(INST):RWF_U16") {
-  field(DESC, "Slow raw waveform, unsigned 16 bit")
+  field(DESC, "Slow raw waveform")
   field(SNAM, "calcRWF16")
   field(INPA, "BLEN:$(AREA):$(POS):$(INST):R_WF")
   field(NOA, "1024")
@@ -245,7 +245,7 @@ record (aSub, "BLEN:$(AREA):$(POS):$(INST):RWF_U16") {
 }
 
 record (aSub, "BLEN:$(AREA):$(POS):$(INST):IWF_U16") {
-  field(DESC, "Slow integration window waveform, unsigned 16 bit")
+  field(DESC, "Slow integration window waveform")
   field(SNAM, "calcRWF16")
   field(INPA, "BLEN:$(AREA):$(POS):$(INST):IWF")
   field(NOA, "1024")
