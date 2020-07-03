@@ -2187,10 +2187,15 @@
     </string>
                </property>
                <property name="text">
-                <string>Bunch Length ${INST} Weight Function</string>
+                <string>Bunch Length ${INST} Calibration</string>
+               </property>
+               <property name="filenames" stdset="0">
+                <stringlist>
+                 <string>blen_calibration.py</string>
+                </stringlist>
                </property>
                <property name="displayFilename" stdset="0">
-                <string>blen_expert.py</string>
+                <string>blen_calibration.py</string>
                </property>
                <property name="macros" stdset="0">
                 <stringlist>
@@ -2281,6 +2286,7 @@
                </property>
                <property name="filenames" stdset="0">
                 <stringlist>
+                 <string>fpga_config.py</string>
                  <string>fpga_config.py</string>
                 </stringlist>
                </property>
