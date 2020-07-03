@@ -22,7 +22,6 @@ epicsEnvSet("YAML_DIR","$(IOC_DATA)/$(IOC)/firmware/yaml")
 epicsEnvSet("TOP_YAML","$(YAML_DIR)/000TopLevel.yaml")
 epicsEnvSet("YAML_CONFIG_FILE", "$(YAML_DIR)/config/defaultsPyro.yaml")
 
-# FPGA IP address for CPSW
 epicsEnvSet("FPGA_IP", "10.0.1.107")
 
 # IOC name for IOC admin

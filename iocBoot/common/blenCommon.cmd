@@ -53,6 +53,9 @@ tprTriggerAsynDriverConfigure("trig", "mmio/AmcCarrierCore")
 #               DB LOADING
 # ===========================================
 
+# metadata about the IOC
+dbLoadRecords("db/iocMeta.db", "AREA=$(AREA),IOC_UNIT=$(IOC_UNIT)")
+
 # main blen database - user facing PVs
 dbLoadRecords("db/blen.db", "P=BLEN:$(AREA):$(POS):$(INST)A, PORT=cpsw, AMC=0")
 dbLoadRecords("db/blen.db", "P=BLEN:$(AREA):$(POS):$(INST)B, PORT=cpsw, AMC=1")
