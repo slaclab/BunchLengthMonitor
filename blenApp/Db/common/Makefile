@@ -87,5 +87,6 @@ DB += monitorFPGAReboot.db
 DB += weightFunctionXAxis.db
 DB += calculatedWF.db
 DB += streamControl.db
+DB += iocMeta.db
 
 include $(TOP)/configure/RULES

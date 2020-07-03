@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>512</width>
-    <height>224</height>
+    <height>227</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -25,12 +25,15 @@
         <string/>
        </property>
        <property name="text">
-        <string>File to load configuration to FPGA:</string>
+        <string>Upload FPGA Config From:</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="PyDMLineEdit" name="PyDMLineEdit">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="toolTip">
         <string/>
        </property>
@@ -64,6 +67,9 @@
      </item>
      <item>
       <widget class="PyDMLineEdit" name="PyDMLineEdit_3">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="toolTip">
         <string/>
        </property>
@@ -84,6 +90,9 @@
     <layout class="QHBoxLayout" name="horizontalLayout_3">
      <item>
       <widget class="PyDMPushButton" name="PyDMPushButton">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="maximumSize">
         <size>
          <width>212</width>
@@ -132,10 +141,16 @@
     </string>
        </property>
        <property name="text">
-        <string>Load configuration to FPGA</string>
+        <string>Upload</string>
        </property>
        <property name="channel" stdset="0">
         <string>ca://BLEN:${AREA}:${POS}:loadConfig</string>
+       </property>
+       <property name="showConfirmDialog" stdset="0">
+        <bool>true</bool>
+       </property>
+       <property name="confirmMessage" stdset="0">
+        <string>Are you sure you want to upload a new configuration to the FPGA?</string>
        </property>
        <property name="pressValue" stdset="0">
         <string>1</string>
@@ -184,7 +199,7 @@
         <string/>
        </property>
        <property name="text">
-        <string>File to read configuration from FPGA:</string>
+        <string>Save FPGA config to:</string>
        </property>
       </widget>
      </item>
@@ -291,7 +306,7 @@
     </string>
        </property>
        <property name="text">
-        <string>Read configuration from FPGA</string>
+        <string>Save</string>
        </property>
        <property name="channel" stdset="0">
         <string>ca://BLEN:${AREA}:${POS}:saveConfig</string>
@@ -314,6 +329,36 @@
        </property>
        <property name="channel" stdset="0">
         <string>ca://BLEN:${AREA}:${POS}:saveConfigStatus</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_8">
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>275</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="tree_gui_btn">
+       <property name="toolTip">
+        <string/>
+       </property>
+       <property name="text">
+        <string>Launch TreeGUI</string>
        </property>
       </widget>
      </item>
