@@ -9,7 +9,42 @@ class FPGAConfig(Display):
     def __init__(self, parent=None, args=None, macros=None):
         super(FPGAConfig, self).__init__(parent, args, macros)
 
+        self.connect_pvs()
+
+        self.ui.upload_btn.clicked.connect(self.handle_upload)
+        self.ui.save_btn.clicked.connect(self.handle_save)
         self.ui.tree_gui_btn.clicked.connect(self.handle_tree_gui)
+
+    def connect_pvs(self):
+        self.sioc_pv_prefix = 'SIOC:{}:{}'.format(\
+                self.macros()['AREA'],
+                self.macros()['IOC_UNIT'])
+
+        self.blen_pv_prefix = 'BLEN:{}:{}'.format(\
+                self.macros()['AREA'],
+                self.macros()['POS'])
+
+        self.cpu = PV('{}:CPU'.format(self.sioc_pv_prefix))
+        self.shm = PV('{}:SHM'.format(self.sioc_pv_prefix))
+        self.atca_slot = PV('{}:ATCA_SLOT'.format(self.sioc_pv_prefix))
+
+        self.load_config = PV('{}:loadConfig'.format(self.blen_pv_prefix))
+        self.load_config_file = PV('{}:loadConfigFile'.format(self.blen_pv_prefix))
+        self.load_config_root = PV('{}:loadConfigRoot'.format(self.blen_pv_prefix))
+
+        self.save_config = PV('{}:saveConfig'.format(self.blen_pv_prefix))
+        self.save_config_file = PV('{}:saveConfigFile'.format(self.blen_pv_prefix))
+        self.save_config_root = PV('{}:saveConfigRoot'.format(self.blen_pv_prefix))
+
+    def handle_upload(self):
+        self.load_config_file.put(self.ui.load_config_path.text())
+        self.load_config_root.put(self.ui.load_yaml_root.text())
+        self.load_config.put(1)
+
+    def handle_save(self):
+        self.save_config_file.put(self.ui.save_config_path.text())
+        self.save_config_root.put(self.ui.save_yaml_root.text())
+        self.save_config.put(1)
 
     def handle_tree_gui(self):
         try:
@@ -22,21 +57,10 @@ class FPGAConfig(Display):
     def _command(self):
         """ Creates the TreeGUI command from macros and the environment """
         command = []
-        pv_prefix = "SIOC:{}:{}".format(\
-                self.macros()["AREA"],
-                self.macros()["IOC_UNIT"])
-        if self.macros()["IOC_UNIT"] != "BL01":
-            # BL03 is used in dev
-            sioc = "sioc-b084-{}".format(\
-                    self.macros()["IOC_UNIT"].lower())
-        else:
-            sioc = "sioc-{}-{}".format(\
-                    self.macros()["AREA"].lower(),
-                    self.macros()["IOC_UNIT"].lower())
 
-        cpu = PV("{}:CPU".format(pv_prefix)).get()
-        shm = PV("{}:SHM".format(pv_prefix)).get()
-        slot = PV("{}:ATCA_SLOT".format(pv_prefix)).get()
+        cpu = self.cpu.get()
+        shm = self.shm.get()
+        atca_slot = self.atca_slot.get()
 
         p_top = os.environ["PACKAGE_TOP"]
         ioc_data = os.environ["IOC"]
@@ -47,17 +71,24 @@ class FPGAConfig(Display):
         command.append(tree_gui)
         command.extend(['-c', cpu])
         command.extend(['-S', shm])
-        command.extend(['-N', str(slot)])
+        command.extend(['-N', str(atca_slot)])
         command.extend(['-t', backdoor])
         command.extend(['-L', '512'])
-        cmd = " ".join(command)
-        print(cmd)
+
+        print("=" * 64)
+        print("Launching cpswTreeGUI with following parameters:")
+        # Python slice stride `x::y` take element x and increment iterator by y 
+        # We're skipping element 0 since it's the path to TreeGUI's start.sh
+        for param, val in zip(command[1::2], command[2::2]):
+            print("{}:\t{}".format(param, val))
+
+        print("=" * 64)
 
         return " ".join(command)
 
 
     def ui_filename(self):
-        return "blen_loadSaveConfigFiles.ui"
+        return "fpga_config.ui"
 
     def ui_filepath(self):
         self.path = os.path.dirname(os.path.realpath(__file__))
