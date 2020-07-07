@@ -2192,6 +2192,7 @@
                <property name="filenames" stdset="0">
                 <stringlist>
                  <string>blen_calibration.py</string>
+                 <string>blen_calibration.py</string>
                 </stringlist>
                </property>
                <property name="displayFilename" stdset="0">
@@ -2286,7 +2287,6 @@
                </property>
                <property name="filenames" stdset="0">
                 <stringlist>
-                 <string>fpga_config.py</string>
                  <string>fpga_config.py</string>
                 </stringlist>
                </property>
