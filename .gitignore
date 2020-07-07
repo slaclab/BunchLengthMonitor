@@ -23,4 +23,5 @@ autosave/
 archive/
 
 blenApp/ui/fontconfig/
+blenApp/ui/gmon.out
 *.pyc
