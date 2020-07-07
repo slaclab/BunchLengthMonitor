@@ -17,7 +17,9 @@ R4.0.0b0: 5/18/2020, Ryan Reno (rreno):
           - IOC st.cmd must specify BLEN_VERSION to either LCLS2 or MR.
         * Db/ split into common, mr, lcls2 flavors
         * YAML is fetched from FPGA on IOC boot and does not rely on local copy
-        * PV prefixes changed to $(P): from $(P)_
+        * (Some) PV prefixes changed to $(P): from $(P)_
+        * Significant updates to PyDM screens
+        * Removed old viocs
 
 R3.0.1: 04/4/2020, Janos Vamosi (jvamosi)
 	- Added FACET-II devices
