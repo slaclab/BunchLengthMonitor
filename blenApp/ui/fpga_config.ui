@@ -17,7 +17,7 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="PyDMLabel" name="PyDMLabel">
+      <widget class="PyDMLabel" name="upload_lbl">
        <property name="toolTip">
         <string/>
        </property>
@@ -30,21 +30,9 @@
       </widget>
      </item>
      <item>
-      <widget class="PyDMLineEdit" name="PyDMLineEdit">
+      <widget class="QLineEdit" name="load_config_path">
        <property name="enabled">
         <bool>false</bool>
-       </property>
-       <property name="toolTip">
-        <string/>
-       </property>
-       <property name="whatsThis">
-        <string/>
-       </property>
-       <property name="channel" stdset="0">
-        <string>ca://BLEN:${AREA}:${POS}:loadConfigFile</string>
-       </property>
-       <property name="displayFormat" stdset="0">
-        <enum>PyDMLineEdit::String</enum>
        </property>
       </widget>
      </item>
@@ -53,7 +41,7 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_5">
      <item>
-      <widget class="PyDMLabel" name="PyDMLabel_5">
+      <widget class="PyDMLabel" name="upload_yaml_lbl">
        <property name="toolTip">
         <string/>
        </property>
@@ -66,21 +54,9 @@
       </widget>
      </item>
      <item>
-      <widget class="PyDMLineEdit" name="PyDMLineEdit_3">
+      <widget class="QLineEdit" name="load_yaml_root">
        <property name="enabled">
         <bool>false</bool>
-       </property>
-       <property name="toolTip">
-        <string/>
-       </property>
-       <property name="whatsThis">
-        <string/>
-       </property>
-       <property name="channel" stdset="0">
-        <string>ca://BLEN:${AREA}:${POS}:loadConfigRoot</string>
-       </property>
-       <property name="displayFormat" stdset="0">
-        <enum>PyDMLineEdit::String</enum>
        </property>
       </widget>
      </item>
@@ -89,7 +65,7 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_3">
      <item>
-      <widget class="PyDMPushButton" name="PyDMPushButton">
+      <widget class="QPushButton" name="upload_btn">
        <property name="enabled">
         <bool>false</bool>
        </property>
@@ -143,18 +119,6 @@
        <property name="text">
         <string>Upload</string>
        </property>
-       <property name="channel" stdset="0">
-        <string>ca://BLEN:${AREA}:${POS}:loadConfig</string>
-       </property>
-       <property name="showConfirmDialog" stdset="0">
-        <bool>true</bool>
-       </property>
-       <property name="confirmMessage" stdset="0">
-        <string>Are you sure you want to upload a new configuration to the FPGA?</string>
-       </property>
-       <property name="pressValue" stdset="0">
-        <string>1</string>
-       </property>
       </widget>
      </item>
      <item>
@@ -204,20 +168,7 @@
       </widget>
      </item>
      <item>
-      <widget class="PyDMLineEdit" name="PyDMLineEdit_2">
-       <property name="toolTip">
-        <string/>
-       </property>
-       <property name="whatsThis">
-        <string/>
-       </property>
-       <property name="channel" stdset="0">
-        <string>ca://BLEN:${AREA}:${POS}:saveConfigFile</string>
-       </property>
-       <property name="displayFormat" stdset="0">
-        <enum>PyDMLineEdit::String</enum>
-       </property>
-      </widget>
+      <widget class="QLineEdit" name="save_config_path"/>
      </item>
     </layout>
    </item>
@@ -237,27 +188,14 @@
       </widget>
      </item>
      <item>
-      <widget class="PyDMLineEdit" name="PyDMLineEdit_4">
-       <property name="toolTip">
-        <string/>
-       </property>
-       <property name="whatsThis">
-        <string/>
-       </property>
-       <property name="channel" stdset="0">
-        <string>ca://BLEN:${AREA}:${POS}:saveConfigRoot</string>
-       </property>
-       <property name="displayFormat" stdset="0">
-        <enum>PyDMLineEdit::String</enum>
-       </property>
-      </widget>
+      <widget class="QLineEdit" name="save_yaml_root"/>
      </item>
     </layout>
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_4">
      <item>
-      <widget class="PyDMPushButton" name="PyDMPushButton_2">
+      <widget class="QPushButton" name="save_btn">
        <property name="maximumSize">
         <size>
          <width>212</width>
@@ -307,12 +245,6 @@
        </property>
        <property name="text">
         <string>Save</string>
-       </property>
-       <property name="channel" stdset="0">
-        <string>ca://BLEN:${AREA}:${POS}:saveConfig</string>
-       </property>
-       <property name="pressValue" stdset="0">
-        <string>1</string>
        </property>
       </widget>
      </item>
@@ -371,16 +303,6 @@
    <class>PyDMLabel</class>
    <extends>QLabel</extends>
    <header>pydm.widgets.label</header>
-  </customwidget>
-  <customwidget>
-   <class>PyDMLineEdit</class>
-   <extends>QLineEdit</extends>
-   <header>pydm.widgets.line_edit</header>
-  </customwidget>
-  <customwidget>
-   <class>PyDMPushButton</class>
-   <extends>QPushButton</extends>
-   <header>pydm.widgets.pushbutton</header>
   </customwidget>
  </customwidgets>
  <resources/>
