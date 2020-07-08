@@ -2193,6 +2193,7 @@
                 <stringlist>
                  <string>blen_calibration.py</string>
                  <string>blen_calibration.py</string>
+                 <string>blen_calibration.py</string>
                 </stringlist>
                </property>
                <property name="displayFilename" stdset="0">
@@ -2258,7 +2259,7 @@
                </property>
                <property name="macros" stdset="0">
                 <stringlist>
-                 <string>DEVICE=SIOC:${AREA}:BL03,LOCA=${AREA},IOC_UNIT=BL03,INST=1</string>
+                 <string>DEVICE=SIOC:${AREA}:BL03,LOCA=${AREA},IOC_UNIT=${IOC_UNIT},INST=1</string>
                 </stringlist>
                </property>
               </widget>
@@ -2287,6 +2288,7 @@
                </property>
                <property name="filenames" stdset="0">
                 <stringlist>
+                 <string>fpga_config.py</string>
                  <string>fpga_config.py</string>
                 </stringlist>
                </property>
