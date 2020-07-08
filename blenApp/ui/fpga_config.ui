@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>512</width>
-    <height>227</height>
+    <height>231</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -168,7 +168,7 @@
       </widget>
      </item>
      <item>
-      <widget class="PyDMLineEdit" name="PyDMLineEdit_2">
+      <widget class="PyDMLineEdit" name="save_config_path">
        <property name="toolTip">
         <string/>
        </property>
@@ -201,7 +201,7 @@
       </widget>
      </item>
      <item>
-      <widget class="PyDMLineEdit" name="PyDMLineEdit_4">
+      <widget class="PyDMLineEdit" name="save_yaml_root">
        <property name="toolTip">
         <string/>
        </property>
