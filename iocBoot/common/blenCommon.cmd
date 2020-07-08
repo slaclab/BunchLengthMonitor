@@ -79,7 +79,8 @@ dbLoadRecords("db/weightFunctionXAxis.db", "AREA=$(AREA), POS=$(POS), INST=$(INS
 
 # Timing trigger
 # INST = Instance Number (for multiple instances of tprTrigger in an IOC)
-dbLoadRecords("db/tprTrig.db",     "LOCA=$(AREA), IOC_UNIT=$(IOC_UNIT), INST=1, PORT=trig")
+# The convention adopted is to set INST to the ATCA slot
+dbLoadRecords("db/tprTrig.db",     "LOCA=$(AREA), IOC_UNIT=$(IOC_UNIT), INST=${ATCA_SLOT}, PORT=trig")
 
 # **********************************************************************
 # **** Load iocAdmin databases to support IOC Health and monitoring ****
