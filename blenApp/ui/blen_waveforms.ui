@@ -2260,7 +2260,7 @@
                </property>
                <property name="macros" stdset="0">
                 <stringlist>
-                 <string>DEVICE=SIOC:${AREA}:${IOC_UNIT},LOCA=${AREA},IOC_UNIT=${IOC_UNIT},INST=1</string>
+                 <string>DEVICE=SIOC:${AREA}:${IOC_UNIT},LOCA=${AREA},IOC_UNIT=${IOC_UNIT},INST=${ATCA_SLOT}</string>
                 </stringlist>
                </property>
               </widget>
