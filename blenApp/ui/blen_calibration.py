@@ -2,9 +2,6 @@ from __future__ import print_function
 
 import os
 
-import attr
-import ipdb
-
 import pyqtgraph as pg
 from qtpy.QtCore import Signal, QObject, QPoint, Qt
 from qtpy.QtGui import QColor
