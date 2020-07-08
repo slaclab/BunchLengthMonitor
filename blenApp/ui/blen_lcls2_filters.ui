@@ -395,7 +395,7 @@ QFrame#shtFrame {
                <set>Qt::AlignCenter</set>
               </property>
               <property name="rules" stdset="0">
-               <string>[{&quot;channels&quot;: [{&quot;trigger&quot;: true, &quot;channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:FLT3_STS&quot;}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;\&quot;{}\&quot;.format(\&quot;OUT\&quot; if ch[0] == 0 else (\&quot;IN\&quot; if ch[0] == 1 else (\&quot;MOVING\&quot; if ch[0] == 2 else \&quot;ERROR\&quot;)))&quot;, &quot;name&quot;: &quot;Label Based on Filter Status&quot;}]</string>
+               <string>[{&quot;channels&quot;: [{&quot;trigger&quot;: true, &quot;channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:FLT4_STS&quot;}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;\&quot;{}\&quot;.format(\&quot;OUT\&quot; if ch[0] == 0 else (\&quot;IN\&quot; if ch[0] == 1 else (\&quot;MOVING\&quot; if ch[0] == 2 else \&quot;ERROR\&quot;)))&quot;, &quot;name&quot;: &quot;Label Based on Filter Status&quot;}]</string>
               </property>
              </widget>
             </item>
