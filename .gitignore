@@ -2,6 +2,7 @@
 O.*
 *.log
 *.swp
+*.swo
 *.bak
 bin/
 cfg/
@@ -20,3 +21,6 @@ tags
 startup/
 autosave/
 archive/
+
+blenApp/ui/fontconfig/
+*.pyc

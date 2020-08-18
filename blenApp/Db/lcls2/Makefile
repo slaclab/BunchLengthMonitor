@@ -1,17 +1,24 @@
-TOP=../..
+TOP=../../..
 include $(TOP)/configure/CONFIG
 #----------------------------------------
 #  ADD MACRO DEFINITIONS AFTER THIS LINE
 
-DIRS += common
-DIRS += lcls2 mr
 
 #----------------------------------------------------
 #  Optimization of db files using dbst (DEFAULT: NO)
 #DB_OPT = YES
 
+# Main User-visible PVs 
+# --------------------------------------------------
+DB += blenLCLS2.db
 
-include $(TOP)/configure/RULES_DIRS
+
+# DBs containing Expert PVs and other routines
+# --------------------------------------------------
+DB += lcls2FPGA.db
+DB += pyroFilters.db
+
+include $(TOP)/configure/RULES
 #----------------------------------------
 #  ADD RULES AFTER THIS LINE
 

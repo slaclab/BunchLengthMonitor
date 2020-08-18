@@ -10,28 +10,29 @@
 # ===========================================
 
 # Area, position, and instrument names to be used in record names
-epicsEnvSet("AREA", "LI24")
+epicsEnvSet("AREA", "B084")
 epicsEnvSet("POS", "886")
 epicsEnvSet("INST", "BL21")
+epicsEnvSet("IOC_UNIT", "BL03")
 
-# Address of the FCOM network
-epicsEnvSet("FCOM_NETWORK", "239.219.248.0")
+# YAML directory
+epicsEnvSet("YAML_DIR","$(IOC_DATA)/$(IOC)/firmware/yaml")
 
-# TMIT PV to read the value from, by using FCOM
-epicsEnvSet("TMIT_PV", "BPMS:LI24:901:TMIT")
+# Yaml File
+epicsEnvSet("TOP_YAML","$(YAML_DIR)/000TopLevel.yaml")
+epicsEnvSet("YAML_CONFIG_FILE", "$(YAML_DIR)/config/defaultsPyro.yaml")
 
 # FPGA IP address for CPSW
-epicsEnvSet("FPGA_IP", "10.0.1.102")
-# Port number to send TMIT data to the FPGA
-epicsEnvSet("IP_PORT_TMIT", "8195")
+epicsEnvSet("FPGA_IP", "10.0.1.107")
 
 # IOC name for IOC admin
-epicsEnvSet(IOC_NAME,"SIOC:$(AREA):BL01")
+epicsEnvSet(IOC_NAME,"SIOC:$(AREA):$(IOC_UNIT)")
 
 # Which version of the Application to use - "MR" or "LCLS2"
-epicsEnvSet(BLEN_VERSION, "MR")
+epicsEnvSet("BLEN_VERSION", "LCLS2")
+epicsEnvSet("DICT_FILE", "yaml/blenLCLS2.dict")
 
-cd ${TOP}
+cd $(TOP)
 
 < iocBoot/common/blenCommon.cmd
 
@@ -62,16 +63,9 @@ cd ${TOP}
 iocInit()
 
 # Enforce RTM timing
-crossbarControl "FPGA" "LCLS1"
+crossbarControl "FPGA" "$(BLEN_VERSION)"
 
 # Turn on caPutLogging:
 # Log values only on change to the iocLogServer:
-caPutLogInit("${EPICS_CA_PUT_LOG_ADDR}")
+caPutLogInit("$(EPICS_CA_PUT_LOG_ADDR)")
 caPutLogShow(2)
-
-# blenConfigure parameters:
-# 1 - Station name
-# 2 - BSA stream name must be identical to definition in yaml file
-# 3 - PV used to get TMIT from FCOM
-# 4 - IP address and port to send TMIT information to ATCA
-blenConfigure "BLEN:${AREA}:${POS}" "${BSA_STREAM_YAML_NAME}" "${TMIT_PV}" "${FPGA_IP}:${IP_PORT_TMIT}"
