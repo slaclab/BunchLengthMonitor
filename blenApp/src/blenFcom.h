@@ -14,7 +14,7 @@
 #define NUM_BLEN_PARAM 4
 
 // Statistics related to FCOM in bunch length
-struct tBlenStats {
+struct BlenStats {
     // Last TMIT, X, and Y values read from the BPM through FCOM
     float lastTmit;
     float lastX;
@@ -60,38 +60,45 @@ struct tTmitPacket {
 };
 
 class BlenFcom {
-private:
-    FcomID tmitId;
-    FcomID aRawId;
-    struct tBlenStats blenStats;
-    struct sockaddr_in atcaIpToSendTMIT;
-    int socketFd;
-    // Blob to be sent to FCOM
-    FcomBlob blenTxBlob;
-    // Data inside blob that is sent to FCOM
-    float blenTxData[NUM_BLEN_PARAM];
-    // Singleton design pattern: here is the pointer for the only instance of
-    // this class.
-    static BlenFcom* instance;
-    // Private constructor for Singleton design pattern
-    BlenFcom();
-    // Private copy constructor and copy assignment operator, to avoid someone
-    // to clone the object (we want only one instance)
-    BlenFcom(const BlenFcom&);
-    BlenFcom& operator=(const BlenFcom&);
-    void processBlob(FcomBlobRef tmitBlob);
 public:
+    // Singleton so we don't want copy or move operations
+    BlenFcom(const BlenFcom&) = delete;
+    BlenFcom(BlenFcom&&) = delete;
+
+    BlenFcom& operator=(const BlenFcom&) = delete;
+    BlenFcom& operator=(BlenFcom&&) = delete;
+
     ~BlenFcom();
-    // Singleton method to retrieve pointer to the only object that can be
-    // instantiated from this class.
+
     static BlenFcom* getInstance();
-    void registerTmitId(std::string pvName);
-    void registerArawId(std::string pvName);
-    void registerAtcaIpToSendTMIT(std::string ipColonPort);
+    const BlenStats& getStats() const;
+
+    void registerTmitId(std::string);
+    void registerArawId(std::string);
+    void registerAtcaIpToSendTMIT(std::string);
+
     int fireFcomTask();
     void fcomTask();
-    void sendData(bsaData_t* bsaData);
-    struct tBlenStats getStats();
+    void sendData(bsaData_t *);
+
+private:
+    // Private constructor for Singleton design pattern
+    BlenFcom();
+
+    void processBlob(FcomBlobRef);
+
+    FcomID tmitId;
+    FcomID aRawId;
+    BlenStats blenStats;
+
+    struct sockaddr_in atcaIpToSendTMIT;
+    int socketFd;
+
+    FcomBlob blenTxBlob;
+    float blenTxData[NUM_BLEN_PARAM];
+
+    static BlenFcom* instance;
+
 };
 
 #endif // BLEN_FCOM_H
