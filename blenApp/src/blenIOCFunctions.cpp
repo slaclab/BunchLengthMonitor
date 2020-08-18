@@ -5,63 +5,67 @@
 #include "blenBSA.h"
 #include "blenFcom.h"
 
-static int blenConfigure(const char *stationName, 
-                         const char *streamName,
-                         const char *tmitPvName,
-                         const char *atcaIpToSendTMIT) {
-    // Create and configure object responsible to send BSA data.
-    class BlenBSA* pBlenBSA;
-    pBlenBSA = BlenBSA::getInstance();
-    pBlenBSA->createChannels(stationName);
+/*
+ * blenConfigureMR
+ * 
+ * Args:
+ * Station Name (station):    The name of the installation. Eg: BLEN:LI24:887
+ * BSA stream name (stream):  Must be identical to YAML definition
+ * FCOM TMIT PV (tmit):       PV name of source of TMIT data
+ * ATCA IP:PORT (atcaIP):     IP:PORT in 32 bit ipv4 format to send TMIT to FPGA
+ *
+ */ 
 
-    // Create and configure object responsible for monitoring the arrival of
-    // BSA stream message and parsing it.
-    class CpswStreamBSA* pStreamBSA;
-    pStreamBSA = CpswStreamBSA::getInstance();
-    pStreamBSA->setStreamName(streamName);
-    // Fire the thread that will take care of the message receiving
-    pStreamBSA->fireStreamTask();
+static const iocshArg blenConfigureMRArg0 = { "Station name", iocshArgString };
+static const iocshArg blenConfigureMRArg1 = { "BSA stream name", iocshArgString };
+static const iocshArg blenConfigureMRArg2 = { "FCOM TMIT PV", iocshArgString };
+static const iocshArg blenConfigureMRArg3 = { "ATCA IP:port to send TMIT", iocshArgString };
 
+static const iocshArg * const blenConfigureMRArgs[] = { 
+        &blenConfigureMRArg0,
+        &blenConfigureMRArg1, 
+        &blenConfigureMRArg2,
+        &blenConfigureMRArg3
+};
+static const iocshFuncDef blenConfigureMRFuncDef = { "blenConfigureMR", 4, blenConfigureMRArgs };
+
+static int
+blenConfigureMR(const char *station, const char *stream, const char *tmit, const char *atcaIP)
+{
+    auto blenBSA = BlenBSA::getInstance();
+    blenBSA->createChannels(station);
+
+    auto streamBSA = CpswStreamBSA::getInstance();
+    streamBSA->setStreamName(stream);
+    streamBSA->fireStreamTask();
+
+    auto blenFcom = BlenFcom::getInstance();
+    blenFcom->registerTmitId(tmit);
     
-    // Create and configure object responsible to deal with FCOM messages
-    class BlenFcom* pBlenFcom;
-    pBlenFcom = BlenFcom::getInstance();
-    pBlenFcom->registerTmitId(tmitPvName);
-    // ARAW PV is, for example, BLEN:LI21:265:ARAW. stationName parameter comes
-    // as BLEN:LI21:265.
-    std::string aRawPv(stationName);
-    aRawPv += ":ARAW";
-    pBlenFcom->registerArawId(aRawPv);
-    pBlenFcom->registerAtcaIpToSendTMIT(atcaIpToSendTMIT);
-    pBlenFcom->fireFcomTask();
+    /* ARAW PV is, for example, BLEN:LI21:265:ARAW. station parameter comes
+     * as BLEN:LI21:265.
+     */
+    std::string aRawPv { station + ":ARAW" };
+    blenFcom->registerArawId(aRawPv);
+    blenFcom->registerAtcaIpToSendTMIT(atcaIP);
+    blenFcom->fireFcomTask();
 
     return 0;
 }
 
-/* epics ioc shell command for blenConfigure */
-
-static const iocshArg blenConfigureArg0 = { "Station name", iocshArgString };
-static const iocshArg blenConfigureArg1 = {"BSA stream name", iocshArgString};
-static const iocshArg blenConfigureArg2 = {"FCOM TMIT PV", iocshArgString};
-static const iocshArg blenConfigureArg3 = 
-                                {"ATCA IP:port to send TMIT", iocshArgString};
-static const iocshArg * const blenConfigureArgs[] = 
-                    { &blenConfigureArg0, &blenConfigureArg1, 
-                      &blenConfigureArg2, &blenConfigureArg3 };
-static const iocshFuncDef blenConfigureFuncDef = 
-                    { "blenConfigure", 4, blenConfigureArgs };
-static void blenConfigureCallFunc(const iocshArgBuf * args)
+static void
+blenConfigureMRCallFunc(const iocshArgBuf * args)
 {
-    blenConfigure(args[0].sval, args[1].sval, args[2].sval, args[3].sval);
+    blenConfigureMR(args[0].sval, args[1].sval, args[2].sval, args[3].sval);
 }
 
-static int blenReport() {
-    struct tBlenStats blenStats;
-    class BlenFcom* pBlenFcom;
+static const iocshArg * const blenReportMRArgs[] = { };
+static const iocshFuncDef blenReportFuncDef = { "blenReportMR", 0, blenReportMRArgs };
 
-    pBlenFcom = BlenFcom::getInstance();
-
-    blenStats = pBlenFcom->getStats();
+static int
+blenReportMR(void)
+{
+    const auto const& blenStats = BlenFcom::getInstance()->getStats();
 
     printf("------- FCOM report -------\n");
     printf("\n-- Rx --\n");
@@ -103,9 +107,6 @@ static int blenReport() {
 
 /* epics ioc shell command for blenReport */
 
-static const iocshArg * const blenReportArgs[] = {};
-static const iocshFuncDef blenReportFuncDef =
-                    { "blenReport", 0, blenReportArgs };
 static void blenReportCallFunc(const iocshArgBuf * args)
 {
     blenReport();
@@ -118,32 +119,30 @@ static void blenReportCallFunc(const iocshArgBuf * args)
  * Input: number of packets. This is the number of sequential packets that will
  * be dumped.
 ******************************************************************************/
-void blen_dumpBSAStream(int numberOfPackets)
+
+static const iocshArg blenDumpBSAStreamMRArg0 = { "Number of packets to print", iocshArgInt };
+static const iocshArg *const blenDumpBSAStreamMRArgs[] = { &blenDumpBSAStreamMRArg0 };
+static const iocshFuncDef blen_dumpBSAStreamFuncDef = { "blenDumpBSAStreamMR", 1, blenDumpBSAStreamMRArgs };
+
+void 
+blenDumpBSAStreamMR(int numberOfPackets)
 {
     // Get instance of the stream BSA class
-    class CpswStreamBSA* pStreamBSA;
-    pStreamBSA = CpswStreamBSA::getInstance();
-    pStreamBSA->setNumberPacketsToDump(numberOfPackets);
+    auto streamBSA = CpswStreamBSA::getInstance();
+    streamBSA->setNumberPacketsToDump(numberOfPackets);
 }
 
-static const iocshArg blen_dumpBSAStreamArg0 = { "Number of packets to print",
-                                                iocshArgInt };
-static const iocshArg *const blen_dumpBSAStreamArgs[] = {&blen_dumpBSAStreamArg0};
-static const iocshFuncDef blen_dumpBSAStreamFuncDef = {"blen_dumpBSAStream", 1,
-                                                       blen_dumpBSAStreamArgs };
-
-static void blen_dumpBSAStreamCallFunc(const iocshArgBuf * args)
+static void blenDumpBSAStreamMRCallFunc(const iocshArgBuf * args)
 {
-    blen_dumpBSAStream(args[0].ival);
+    blenDumpBSAStreamMR(args[0].ival);
 }
-
 
 
 void BlenIOCFunctionsRegistrar(void)
 {
-    iocshRegister(&blenConfigureFuncDef, blenConfigureCallFunc);
-    iocshRegister(&blenReportFuncDef, blenReportCallFunc);
-    iocshRegister(&blen_dumpBSAStreamFuncDef, blen_dumpBSAStreamCallFunc);
+    iocshRegister(&blenConfigureMRFuncDef, blenConfigureMRCallFunc);
+    iocshRegister(&blenReportMRFuncDef, blenReportMRCallFunc);
+    iocshRegister(&blenDumpBSAStreamMRFuncDef, blenDumpBSAStreamMRCallFunc);
 }
 
 epicsExportRegistrar(BlenIOCFunctionsRegistrar);
