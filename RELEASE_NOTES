@@ -9,7 +9,9 @@
 #  Auth: 10-May-2017 C. Ford         (caf)
 #  Rev:  dd-mmm-yyyy, Reviewer's Name    (USERNAME)
 #--------------------------------------------------------------
-R4.0.0b0: 5/18/2020, Ryan Reno (rreno):
+
+
+R4.0.0b0: 5/18/2020 - 8/18/2020, Ryan Reno (rreno):
     - WIP dev build for LCLS-II.
         Significant changes from R3 (MR) series of releases:
         * overall application structure changed to allow for LCLS-II/MR to live in same app
