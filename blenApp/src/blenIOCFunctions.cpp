@@ -45,7 +45,7 @@ blenConfigureMR(const char *station, const char *stream, const char *tmit, const
     /* ARAW PV is, for example, BLEN:LI21:265:ARAW. station parameter comes
      * as BLEN:LI21:265.
      */
-    std::string aRawPv { station + ":ARAW" };
+    auto aRawPv = std::string { station }.append(":ARAW");
     blenFcom->registerArawId(aRawPv);
     blenFcom->registerAtcaIpToSendTMIT(atcaIP);
     blenFcom->fireFcomTask();
@@ -59,13 +59,12 @@ blenConfigureMRCallFunc(const iocshArgBuf * args)
     blenConfigureMR(args[0].sval, args[1].sval, args[2].sval, args[3].sval);
 }
 
-static const iocshArg * const blenReportMRArgs[] = { };
-static const iocshFuncDef blenReportFuncDef = { "blenReportMR", 0, blenReportMRArgs };
+static const iocshFuncDef blenReportMRFuncDef = { "blenReportMR", 0, nullptr };
 
 static int
 blenReportMR(void)
 {
-    const auto const& blenStats = BlenFcom::getInstance()->getStats();
+    const auto& blenStats = BlenFcom::getInstance()->getStats();
 
     printf("------- FCOM report -------\n");
     printf("\n-- Rx --\n");
@@ -107,9 +106,9 @@ blenReportMR(void)
 
 /* epics ioc shell command for blenReport */
 
-static void blenReportCallFunc(const iocshArgBuf * args)
+static void blenReportMRCallFunc(const iocshArgBuf * args)
 {
-    blenReport();
+    blenReportMR();
 }
 
 /******************************************************************************
@@ -122,7 +121,7 @@ static void blenReportCallFunc(const iocshArgBuf * args)
 
 static const iocshArg blenDumpBSAStreamMRArg0 = { "Number of packets to print", iocshArgInt };
 static const iocshArg *const blenDumpBSAStreamMRArgs[] = { &blenDumpBSAStreamMRArg0 };
-static const iocshFuncDef blen_dumpBSAStreamFuncDef = { "blenDumpBSAStreamMR", 1, blenDumpBSAStreamMRArgs };
+static const iocshFuncDef blenDumpBSAStreamMRFuncDef = { "blenDumpBSAStreamMR", 1, blenDumpBSAStreamMRArgs };
 
 void 
 blenDumpBSAStreamMR(int numberOfPackets)
