@@ -50,10 +50,8 @@ file "RegisterOut.template" { pattern
 { $(P), ModeS1,             "BLEN mode, sensor 1"               "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS1:Mode }
 { $(P), NumSamp0,           "Number of samples 0, sensor 0"     "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS0:NumSamp0 }
 { $(P), NumSamp1,           "Number of samples 1, sensor 0"     "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS0:NumSamp1 }
-{ $(P), TrigDelay1S0,       ""                                  "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS0:TrigDelay1 }
-{ $(P), TrigDelay1S1,       ""                                  "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS1:TrigDelay1 }
-{ $(P), TrigDelay2S0,       ""                                  "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS0:TrigDelay2 }
-{ $(P), TrigDelay2S1,       ""                                  "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS1:TrigDelay2 }
+{ $(P), TrigDelay1,       ""                                  "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS0:TrigDelay1 }
+{ $(P), TrigDelay2,       ""                                  "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS0:TrigDelay2 }
 }
 
 file "RegisterOutRBV.template" { pattern
@@ -62,10 +60,8 @@ file "RegisterOutRBV.template" { pattern
 { $(P), ModeS1RBV,           "BLEN mode, sensor 1"               "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS1:Mode }
 { $(P), NumSamp0RBV,         "Number of samples 0, sensor 0"     "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS0:NumSamp0 }
 { $(P), NumSamp1RBV,         "Number of samples 1, sensor 0"     "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS0:NumSamp1 }
-{ $(P), TrigDelay1S0RBV,     ""                                  "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS0:TrigDelay1 }
-{ $(P), TrigDelay1S1RBV,     ""                                  "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS1:TrigDelay1 }
-{ $(P), TrigDelay2S0RBV,     ""                                  "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS0:TrigDelay2 }
-{ $(P), TrigDelay2S1RBV,     ""                                  "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS1:TrigDelay2 }
+{ $(P), TrigDelay1RBV,     ""                                  "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS0:TrigDelay1 }
+{ $(P), TrigDelay2RBV,     ""                                  "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS0:TrigDelay2 }
 }
 
 # ENUM register
@@ -150,7 +146,7 @@ file "RegisterCommand.template" { pattern
 
 # Note: NELM is 2x actual number of elements
 file "RegisterStream16.template" { pattern
-{ P,           R,             DESC,                                NELM,   PINI,         PORT,            PARAM                   }
-{ $(P),       S_R_WF          "Raw data (16-bit)",                 2048,   "NO",         $(PORT),        AMC$(AMC):StreamRaw      } 
-{ $(P),       IWF             "Integration Window (16-bit)",       2048,   "NO",         $(PORT),        AMC$(AMC):WeightFunction } 
+{ P,           R,             DESC,                                NELM,   PINI,         PORT,            PARAM                      }
+{ $(P),       R_WF            "Raw data (16-bit)",                 1024,   "YES",        $(PORT),        AMC$(AMC):StreamRaw:16      } 
+{ $(P),       IWF             "Integration Window (16-bit)",       1024,   "NO",         $(PORT),        AMC$(AMC):WeightFunction:16 } 
 }

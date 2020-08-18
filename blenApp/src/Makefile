@@ -40,9 +40,12 @@ USR_LIBS_Linux += hpstpr
 # ================================================
 # Build the IOC application
 # ================================================
-# This will attempt to build an IOC application 
-# for every target including the host computer.
-PROD_IOC = blen
+# This line will build for HOST + cross target
+#PROD_IOC = blen
+
+# These lines will build ONLY for cross target
+PROD_IOC_linuxRT-x86_64 = blen
+PROD_IOC = $(PROD_IOC_$(T_A))
 
 # blen.dbd will be created and installed
 DBD += blen.dbd
@@ -101,10 +104,9 @@ blen_SRCS += cpswStreamBSA.cpp
 blen_SRCS += blenBSA.cpp
 blen_SRCS += blenFcom.cpp
 blen_SRCS += asubWeightXAxis.c
+blen_SRCS += asubRWF.c
 
 blen_SRCS_DEFAULT += blenMain.cpp
-
-blen_SRCS_vxWorks += -nil-
 
 # ========================================================================
 # ========================================================================

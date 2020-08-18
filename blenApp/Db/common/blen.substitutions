@@ -17,13 +17,9 @@
 
 file "RegisterDoubleIn.template" { pattern
 { P,        R,                DESC,                     PINI,   SCAN,         PORT,       EGU,         PARAM      }
-{ $(P),     SUM,              "",                       "YES",  ".5 second",  $(PORT),    "",         AMC0:SUM    }
-{ $(P),     IMAX,             "",                       "YES",  ".5 second",  $(PORT),    "A",        AMC0:IMAX   }
-{ $(P),     TMIT,             "Transmitted intensity",  "YES",  ".5 second",  $(PORT),    "pC",       AMC0:TMIT   }
-
-{ $(P),     SUM,              "",                       "YES",  ".5 second",  $(PORT),    "",         AMC1:SUM    }
-{ $(P),     IMAX,             "",                       "YES",  ".5 second",  $(PORT),    "A",        AMC1:IMAX   }
-{ $(P),     TMIT,             "Transmitted intensity",  "YES",  ".5 second",  $(PORT),    "pC",       AMC1:TMIT   }
+{ $(P),     SUM,              "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):SUM    }
+{ $(P),     IMAX,             "",                       "YES",  ".5 second",  $(PORT),    "A",        AMC$(AMC):IMAX   }
+{ $(P),     TMIT,             "Transmitted intensity",  "YES",  ".5 second",  $(PORT),    "pC",       AMC$(AMC):TMIT   }
 }
 
 ########################################################################################################################

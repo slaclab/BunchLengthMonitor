@@ -13,7 +13,7 @@ record (calc, "BLEN:$(AREA):$(POS):$(INST):SAMP_TIME") {
 record (calc, "BLEN:$(AREA):$(POS):$(INST):TIME_PRE_RBV") {
   field(DESC, "Duration of pre-edge in ns")
   field(INPA, "BLEN:$(AREA):$(POS):$(INST):SAMP_TIME CP")
-  field(INPB, "BLEN:$(AREA):$(POS):$(INST):NumSamp0_RBV")
+  field(INPB, "BLEN:$(AREA):$(POS):$(INST):NumSamp0RBV")
   field(CALC, "A * B")
 }
 
@@ -23,7 +23,7 @@ record (calc, "BLEN:$(AREA):$(POS):$(INST):TIME_PRE_RBV") {
 record (calc, "BLEN:$(AREA):$(POS):$(INST):TIME_MID_RBV") {
   field(DESC, "Duration between edges in ns")
   field(INPA, "BLEN:$(AREA):$(POS):$(INST):SAMP_TIME CP")
-  field(INPB, "BLEN:$(AREA):$(POS):$(INST):TrigDelay1_RBV")
+  field(INPB, "BLEN:$(AREA):$(POS):$(INST):TrigDelay1RBV")
   field(CALC, "B*2 * A")
 }
 
@@ -32,7 +32,7 @@ record (calc, "BLEN:$(AREA):$(POS):$(INST):TIME_MID_RBV") {
 record (calc, "BLEN:$(AREA):$(POS):$(INST):TIME_POS_RBV") {
   field(DESC, "Duration of pos-edge in ns")
   field(INPA, "BLEN:$(AREA):$(POS):$(INST):SAMP_TIME CP")
-  field(INPB, "BLEN:$(AREA):$(POS):$(INST):NumSamp1_RBV")
+  field(INPB, "BLEN:$(AREA):$(POS):$(INST):NumSamp1RBV")
   field(CALC, "A * B")
 }
 
@@ -107,7 +107,6 @@ record (aSub, "BLEN:$(AREA):$(POS):$(INST):SampTime") {
   field(SNAM, "calcTimeArray")
   field(FTA, "LONG")
   field(FTVA, "DOUBLE")
-  field(NOA, "2020")
-  field(NOVA, "2020")
+  field(NOVA, "1024")
   field(INPA, "BLEN:$(AREA):$(POS):$(INST):AmcClkFreq CP")
 }

@@ -9,6 +9,18 @@
 #  Auth: 10-May-2017 C. Ford         (caf)
 #  Rev:  dd-mmm-yyyy, Reviewer's Name    (USERNAME)
 #--------------------------------------------------------------
+R4.0.0b0: 5/18/2020, Ryan Reno (rreno):
+    - WIP dev build for LCLS-II.
+        Significant changes from R3 (MR) series of releases:
+        * overall application structure changed to allow for LCLS-II/MR to live in same app
+        * iocBoot/common for common, mr, and lcls2 flavors
+          - IOC st.cmd must specify BLEN_VERSION to either LCLS2 or MR.
+        * Db/ split into common, mr, lcls2 flavors
+        * YAML is fetched from FPGA on IOC boot and does not rely on local copy
+        * (Some) PV prefixes changed to $(P): from $(P)_
+        * Significant updates to PyDM screens
+        * Removed old viocs
+
 R3.0.1: 04/4/2020, Janos Vamosi (jvamosi)
 	- Added FACET-II devices
 

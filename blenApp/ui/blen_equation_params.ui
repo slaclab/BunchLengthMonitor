@@ -76,7 +76,7 @@
             <bool>false</bool>
            </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}A_Reset_A0</string>
+            <string>ca://BLEN:${AREA}:${POS}:${INST}A:CoefA0</string>
            </property>
           </widget>
          </item>
@@ -103,7 +103,7 @@
             <bool>false</bool>
            </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}A_Reset_A1</string>
+            <string>ca://BLEN:${AREA}:${POS}:${INST}A:CoefA1</string>
            </property>
           </widget>
          </item>
@@ -613,7 +613,7 @@
             <bool>false</bool>
            </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}B_Reset_A0</string>
+            <string>ca://BLEN:${AREA}:${POS}:${INST}B:CoefA0</string>
            </property>
           </widget>
          </item>
@@ -640,7 +640,7 @@
             <bool>false</bool>
            </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}B_Reset_A1</string>
+            <string>ca://BLEN:${AREA}:${POS}:${INST}B:CoefA1</string>
            </property>
           </widget>
          </item>

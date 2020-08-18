@@ -45,8 +45,7 @@ cpswLoadConfigFile("$(YAML_CONFIG_FILE)", "mmio", "")
 #    Load dictionary,           # Dictionary file path with registers to load. An empty string will disable this function
 YCPSWASYNConfig("cpsw", "", "$(PREFIX)", "$(AUTO_GEN)", "$(DICT_FILE)")
 
-# Load drivers for TPR trigger and crossbar control
-crossbarControlAsynDriverConfigure("crossbar", "mmio/AmcCarrierCore/AxiSy56040")
+# Load drivers for TPR trigger
 tprTriggerAsynDriverConfigure("trig", "mmio/AmcCarrierCore")
 
 
@@ -54,16 +53,20 @@ tprTriggerAsynDriverConfigure("trig", "mmio/AmcCarrierCore")
 #               DB LOADING
 # ===========================================
 
+# metadata about the IOC
+dbLoadRecords("db/iocMeta.db", "AREA=$(AREA),IOC_UNIT=$(IOC_UNIT)")
+
 # main blen database - user facing PVs
-dbLoadRecords("db/blen.db", "P=BLEN:$(AREA):$(POS), INST=$(INST), PORT=cpsw")
+dbLoadRecords("db/blen.db", "P=BLEN:$(AREA):$(POS):$(INST)A, PORT=cpsw, AMC=0")
+dbLoadRecords("db/blen.db", "P=BLEN:$(AREA):$(POS):$(INST)B, PORT=cpsw, AMC=1")
 
 # FPGA-related records
 dbLoadRecords("db/commonFPGA.db", "P=BLEN:$(AREA):$(POS):$(INST)A, PORT=cpsw, AMC=0")
 dbLoadRecords("db/commonFPGA.db", "P=BLEN:$(AREA):$(POS):$(INST)B, PORT=cpsw, AMC=1")
-dbLoadRecords("db/saveLoadConfig.db", "P=BLEN:$(AREA):$(POS):$(INST)A, PORT=cpsw")
-dbLoadRecords("db/saveLoadConfig.db", "P=BLEN:$(AREA):$(POS):$(INST)B, PORT=cpsw")
+dbLoadRecords("db/saveLoadConfig.db", "P=BLEN:$(AREA):$(POS), PORT=cpsw")
 dbLoadRecords("db/monitorFPGAReboot.db", "P=BLEN:$(AREA):$(POS), PORT=cpsw, KEY=0xFC067333")
 
+dbLoadRecords("db/streamControl.db", "AREA=$(AREA),POS=$(POS),INSTA=$(INST)A,INSTB=$(INST)B")
 
 # Records to manipulate waveforms from detectors
 dbLoadRecords("db/calculatedWF.db", "AREA=$(AREA), POS=$(POS), INST=$(INST)A")
@@ -74,9 +77,10 @@ dbLoadRecords("db/weightFunctionXAxis.db", "AREA=$(AREA), POS=$(POS), INST=$(INS
 dbLoadRecords("db/weightFunctionXAxis.db", "AREA=$(AREA), POS=$(POS), INST=$(INST)B, AMC=1")
 
 
-# Timing crossbar and trigger
-dbLoadRecords("db/tprTrig.db",     "LOCA=$(AREA), IOC_UNIT=$(IOC_UNIT), INST=2, PORT=trig")
-dbLoadRecords("db/crossbarCtrl.db", "DEV=EVR:$(PART_PV), PORT=crossbar")
+# Timing trigger
+# INST = Instance Number (for multiple instances of tprTrigger in an IOC)
+# The convention adopted is to set INST to the ATCA slot
+dbLoadRecords("db/tprTrig.db",     "LOCA=$(AREA), IOC_UNIT=$(IOC_UNIT), INST=${ATCA_SLOT}, PORT=trig")
 
 # **********************************************************************
 # **** Load iocAdmin databases to support IOC Health and monitoring ****
@@ -108,6 +112,6 @@ dbLoadRecords("db/iocRelease.db","IOC=$(IOC_NAME)")
 system("cp $(TOP)/archive/$(IOC).archive $(IOC_DATA)/$(IOC)/archive")
 
 # ===========================================
-#          LOAD MR or LCLS2 CONFIG 
+#       LOAD LCLS1 (MR) or LCLS2 CONFIG 
 # ===========================================
 < iocBoot/common/blenCommon$(BLEN_VERSION).cmd

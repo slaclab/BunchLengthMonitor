@@ -1,0 +1,24 @@
+#
+# iocMeta.db
+# Meta information about the IOC
+# should be filled in with a dbpf on IOC start
+#
+
+record(stringin, "SIOC:$(AREA):$(IOC_UNIT):CPU") {
+    field(DESC, "IOC Host CPU") 
+    info(autosaveFields, "VAL")
+}
+
+record(stringin, "SIOC:$(AREA):$(IOC_UNIT):SHM") {
+    field(DESC, "IOC Host Shelf Manager") 
+    info(autosaveFields, "VAL")
+}
+
+record(longin, "SIOC:$(AREA):$(IOC_UNIT):ATCA_SLOT") {
+    info(autosaveFields, "VAL")
+}
+
+record(longin, "SIOC:$(AREA):$(IOC_UNIT):ATCA_CRATE") {
+    info(autosaveFields, "VAL")
+}
+

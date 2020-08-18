@@ -13,17 +13,18 @@
 epicsEnvSet("AREA", "BC2B")
 epicsEnvSet("POS", "950")
 epicsEnvSet("INST", "BZ21B")
-epicsEnvSet("IOC_UNIT", "BL03")
-epicsEnvSet("ATCA_SLOT", "7")
+epicsEnvSet("IOC_UNIT", "BL01")
+epicsEnvSet("ATCA_SLOT", 4)
 
 # YAML directory
-epicsEnvSet("YAML_DIR","$(IOC_DATA)/$(IOC)/firmware/yaml")
+epicsEnvSet("YAML_DIR","$(IOC_DATA)/$(IOC)/yaml")
 
 # Yaml File
 epicsEnvSet("TOP_YAML","$(YAML_DIR)/000TopLevel.yaml")
 epicsEnvSet("YAML_CONFIG_FILE", "$(YAML_DIR)/config/defaultsPyro.yaml")
 
-epicsEnvSet("FPGA_IP", "10.0.1.107")
+# FPGA IP address for CPSW
+epicsEnvSet("FPGA_IP", "10.1.1.104")
 
 # IOC name for IOC admin
 epicsEnvSet(IOC_NAME,"SIOC:$(AREA):$(IOC_UNIT)")
@@ -40,13 +41,6 @@ cd $(TOP)
 #               ASYN MASKS
 # ===========================================
 
-# ***********************************
-# * Asyn Masks for all Asyn drivers *
-
-#asynSetTraceMask(cpsw, -1, 9)
-#asynSetTraceMask(crossbar, -1, 9)
-#asynSetTraceMask(trig, -1, 9)
-#asynSetTraceMask(pattern, -1, 9)
 
 # ===========================================
 #               DB LOADING
