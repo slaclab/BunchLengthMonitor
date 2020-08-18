@@ -33,7 +33,7 @@ BlenFcom* BlenFcom::getInstance() {
 }
 
 // C wrapper to call class method
-static void C_fcomTask(void *p)
+static void C_fcomTask([[gnu::unused]] void *p)
 {
     BlenFcom::getInstance()->fcomTask();
 }
