@@ -99,6 +99,8 @@ blen_DBD += system.dbd
 # <name>_registerRecordDeviceDriver.cpp will be created from <name>.dbd
 blen_SRCS += blen_registerRecordDeviceDriver.cpp
 
+USR_CPPFLAGS += -Wall -Wextra -Wpedantic -Wshadow -std=c++17 -g
+
 blen_SRCS += blenIOCFunctions.cpp
 blen_SRCS += cpswStreamBSA.cpp
 blen_SRCS += blenBSA.cpp
