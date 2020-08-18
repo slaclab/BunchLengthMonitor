@@ -33,9 +33,9 @@ BlenFcom* BlenFcom::getInstance() {
 }
 
 // C wrapper to call class method
-static void C_fcomTask(void *p) {
-    BlenFcom* pBlenFcom = BlenFcom::getInstance();
-    pBlenFcom->fcomTask();
+static void C_fcomTask(void *p)
+{
+    BlenFcom::getInstance()->fcomTask();
 }
 
 BlenFcom::BlenFcom() {
@@ -270,10 +270,6 @@ void BlenFcom::sendData(bsaData_t* bsaData) {
     // Statistical data for blenReport
     blenStats.fcomTransmitted++;
     blenStats.lastAimaxSent = blenTxBlob.fcbl_blen_aimax;
-}
-
-struct tBlenStats BlenFcom::getStats() {
-    return blenStats;
 }
 
 BlenFcom::~BlenFcom() {

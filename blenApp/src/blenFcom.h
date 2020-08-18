@@ -71,7 +71,7 @@ public:
     ~BlenFcom();
 
     static BlenFcom* getInstance();
-    const BlenStats& getStats() const;
+    const auto& getStats() const { return blenStats; }
 
     void registerTmitId(std::string);
     void registerArawId(std::string);
