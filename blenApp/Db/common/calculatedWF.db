@@ -165,25 +165,25 @@ record (waveform, "BLEN:$(AREA):$(POS):$(INST)_S_P_WF") {
 
 # NumberSamples0 follows a linear proportionality with the coefficient A0.
 # We need to maintain the ratio A0 = ConstantA0/NumberSamples0.
-record (calcout, "BLEN:$(AREA):$(POS):$(INST)_A0_NS0") {
-  field(DESC, "Change A0, when NumSamp0 changes")
-  field(INPA, "BLEN:$(AREA):$(POS):$(INST):NumSamp0 CP")
-  field(INPB, "BLEN:$(AREA):$(POS):$(INST)_A0_CONST CP")
-  field(CALC, "A=0? B : B/A")
-  field(DOPT, "Use CALC")
-  field(OUT, "BLEN:$(AREA):$(POS):$(INST):CoefA0 PP")
-}
+#record (calcout, "BLEN:$(AREA):$(POS):$(INST)_A0_NS0") {
+#  field(DESC, "Change A0, when NumSamp0 changes")
+#  field(INPA, "BLEN:$(AREA):$(POS):$(INST):NumSamp0 CP")
+#  field(INPB, "BLEN:$(AREA):$(POS):$(INST)_A0_CONST CP")
+#  field(CALC, "A=0? B : B/A")
+#  field(DOPT, "Use CALC")
+#  field(OUT, "BLEN:$(AREA):$(POS):$(INST):CoefA0 PP")
+#}
 
 # NumberSamples1 follows a linear proportionality with the coefficient A1.
 # We need to maintain the ratio A1 = ConstantA1/NumberSamples1.
-record (calcout, "BLEN:$(AREA):$(POS):$(INST)_A1_NS1") {
-  field(DESC, "Change A1, when NumSamp1 changes")
-  field(INPA, "BLEN:$(AREA):$(POS):$(INST):NumSamp1 CP")
-  field(INPB, "BLEN:$(AREA):$(POS):$(INST)_A1_CONST CP")
-  field(CALC, "A=0? B : B/A")
-  field(DOPT, "Use CALC")
-  field(OUT, "BLEN:$(AREA):$(POS):$(INST):CoefA1 PP")
-}
+#record (calcout, "BLEN:$(AREA):$(POS):$(INST)_A1_NS1") {
+#  field(DESC, "Change A1, when NumSamp1 changes")
+#  field(INPA, "BLEN:$(AREA):$(POS):$(INST):NumSamp1 CP")
+#  field(INPB, "BLEN:$(AREA):$(POS):$(INST)_A1_CONST CP")
+#  field(CALC, "A=0? B : B/A")
+#  field(DOPT, "Use CALC")
+#  field(OUT, "BLEN:$(AREA):$(POS):$(INST):CoefA1 PP")
+#}
 
 # Constant A0, used by A0_NS0, can be changed in runtime, if needed.
 record (ao, "BLEN:$(AREA):$(POS):$(INST)_A0_CONST") {
