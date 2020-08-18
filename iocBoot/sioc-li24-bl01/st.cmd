@@ -11,24 +11,28 @@
 
 # Area, position, and instrument names to be used in record names
 epicsEnvSet("AREA", "LI24")
-#epicsEnvSet("POS", "886")
 epicsEnvSet("POS", "887")
 epicsEnvSet("INST", "BL21")
+epicsEnvSet("IOC_UNIT", "BL01")
+
+# IOC name for IOC admin
+epicsEnvSet(IOC_NAME,"SIOC:$(AREA):BL01")
 
 # Address of the FCOM network
 epicsEnvSet("FCOM_NETWORK", "239.219.8.0")
 
 # TMIT PV to read the value from, by using FCOM
 epicsEnvSet("TMIT_PV", "BPMS:LI24:901:TMIT")
-#epicsEnvSet("TMIT_PV", "BPMS:LI24:701:TMIT")
 
 # FPGA IP address for CPSW
+# Crate ID 0x1801 slot 2
 epicsEnvSet("FPGA_IP", "10.24.1.102")
 # Port number to send TMIT data to the FPGA
 epicsEnvSet("IP_PORT_TMIT", "8195")
 
-# IOC name for IOC admin
-epicsEnvSet(IOC_NAME,"SIOC:$(AREA):BL01")
+# Which version of the Application to use - "MR" or "LCLS2"
+epicsEnvSet("BLEN_VERSION", "MR")
+epicsEnvSet("DICT_FILE", "yaml/blenMR.dict")
 
 cd ${TOP}
 
