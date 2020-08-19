@@ -6,9 +6,9 @@ static long calcRWF16(aSubRecord *pasub) {
     /*
      * Calculate an unsiged 16 bit array from a signed array.
      * The raw 16 bit stream data is encoded unsigned but the asyn port driver converts it to signed.
-     * This routine eliminates the sign bit with the side effet of halving the sampled value.
+     * This routine eliminates the sign bit with the side effect of halving the sampled value.
      */
-    short i;
+    unsigned int i;
     pasub->pact = 1;
 
     for (i = 0; i < pasub->noa; i++) {
