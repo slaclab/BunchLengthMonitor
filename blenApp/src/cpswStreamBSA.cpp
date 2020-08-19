@@ -15,9 +15,9 @@
 #include <cpsw_api_user.h>
 #include "yamlLoader.h"
 
-static void C_streamTask(void *p) {
-    CpswStreamBSA* pStreamBSA = CpswStreamBSA::getInstance();
-    pStreamBSA->streamTask();
+static void C_streamTask([[gnu::unused]] void *p)
+{
+    CpswStreamBSA::getInstance()->streamTask();
 }
 
 // Singleton design pattern: initialize class instance pointer to null.
