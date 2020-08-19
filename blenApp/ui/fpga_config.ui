@@ -30,9 +30,18 @@
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="load_path">
-       <property name="enabled">
-        <bool>false</bool>
+      <widget class="PyDMLineEdit" name="load_path">
+       <property name="toolTip">
+        <string/>
+       </property>
+       <property name="whatsThis">
+        <string/>
+       </property>
+       <property name="channel" stdset="0">
+        <string>ca://BLEN:${AREA}:${POS}:loadConfigFile</string>
+       </property>
+       <property name="displayFormat" stdset="0">
+        <enum>PyDMLineEdit::String</enum>
        </property>
       </widget>
      </item>
@@ -54,9 +63,18 @@
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="load_yaml_root">
-       <property name="enabled">
-        <bool>false</bool>
+      <widget class="PyDMLineEdit" name="load_yaml_root">
+       <property name="toolTip">
+        <string/>
+       </property>
+       <property name="whatsThis">
+        <string/>
+       </property>
+       <property name="channel" stdset="0">
+        <string>ca://BLEN:${AREA}:${POS}:loadConfigRoot</string>
+       </property>
+       <property name="displayFormat" stdset="0">
+        <enum>PyDMLineEdit::String</enum>
        </property>
       </widget>
      </item>
@@ -65,59 +83,24 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_3">
      <item>
-      <widget class="QPushButton" name="upload_btn">
-       <property name="enabled">
-        <bool>false</bool>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>212</width>
-         <height>16777215</height>
-        </size>
-       </property>
+      <widget class="PyDMPushButton" name="upload_btn">
        <property name="toolTip">
         <string/>
        </property>
-       <property name="whatsThis">
-        <string>
-    Basic PushButton to send a fixed value.
-
-    The PyDMPushButton is meant to hold a specific value, and send that value
-    to a channel when it is clicked, much like the MessageButton does in EDM.
-    The PyDMPushButton works in two different modes of operation, first, a
-    fixed value can be given to the :attr:`.pressValue` attribute, whenever the
-    button is clicked a signal containing this value will be sent to the
-    connected channel. This is the default behavior of the button. However, if
-    the :attr:`.relativeChange` is set to True, the fixed value will be added
-    to the current value of the channel. This means that the button will
-    increment a channel by a fixed amount with every click, a consistent
-    relative move
-
-    Parameters
-    ----------
-    parent : QObject, optional
-        Parent of PyDMPushButton
-
-    label : str, optional
-        String to place on button
-
-    icon : QIcon, optional
-        An Icon to display on the PyDMPushButton
-
-    pressValue : int, float, str
-        Value to be sent when the button is clicked
-
-    relative : bool, optional
-        Choice to have the button perform a relative put, instead of always
-        setting to an absolute value
-
-    init_channel : str, optional
-        ID of channel to manipulate
-
-    </string>
-       </property>
        <property name="text">
         <string>Upload</string>
+       </property>
+       <property name="channel" stdset="0">
+        <string>ca://BLEN:${AREA}:${POS}:loadConfig</string>
+       </property>
+       <property name="showConfirmDialog" stdset="0">
+        <bool>true</bool>
+       </property>
+       <property name="confirmMessage" stdset="0">
+        <string>Are you sure you want to load a new configuration?</string>
+       </property>
+       <property name="pressValue" stdset="0">
+        <string>1</string>
        </property>
       </widget>
      </item>
@@ -168,7 +151,7 @@
       </widget>
      </item>
      <item>
-      <widget class="PyDMLineEdit" name="save_config_path">
+      <widget class="PyDMLineEdit" name="save_path">
        <property name="toolTip">
         <string/>
        </property>
@@ -221,56 +204,18 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_4">
      <item>
-      <widget class="QPushButton" name="save_btn">
-       <property name="maximumSize">
-        <size>
-         <width>212</width>
-         <height>16777215</height>
-        </size>
-       </property>
+      <widget class="PyDMPushButton" name="save_btn">
        <property name="toolTip">
         <string/>
        </property>
-       <property name="whatsThis">
-        <string>
-    Basic PushButton to send a fixed value.
-
-    The PyDMPushButton is meant to hold a specific value, and send that value
-    to a channel when it is clicked, much like the MessageButton does in EDM.
-    The PyDMPushButton works in two different modes of operation, first, a
-    fixed value can be given to the :attr:`.pressValue` attribute, whenever the
-    button is clicked a signal containing this value will be sent to the
-    connected channel. This is the default behavior of the button. However, if
-    the :attr:`.relativeChange` is set to True, the fixed value will be added
-    to the current value of the channel. This means that the button will
-    increment a channel by a fixed amount with every click, a consistent
-    relative move
-
-    Parameters
-    ----------
-    parent : QObject, optional
-        Parent of PyDMPushButton
-
-    label : str, optional
-        String to place on button
-
-    icon : QIcon, optional
-        An Icon to display on the PyDMPushButton
-
-    pressValue : int, float, str
-        Value to be sent when the button is clicked
-
-    relative : bool, optional
-        Choice to have the button perform a relative put, instead of always
-        setting to an absolute value
-
-    init_channel : str, optional
-        ID of channel to manipulate
-
-    </string>
-       </property>
        <property name="text">
         <string>Save</string>
+       </property>
+       <property name="channel" stdset="0">
+        <string>ca://BLEN:${AREA}:${POS}:saveConfig</string>
+       </property>
+       <property name="pressValue" stdset="0">
+        <string>1</string>
        </property>
       </widget>
      </item>
@@ -334,6 +279,11 @@
    <class>PyDMLineEdit</class>
    <extends>QLineEdit</extends>
    <header>pydm.widgets.line_edit</header>
+  </customwidget>
+  <customwidget>
+   <class>PyDMPushButton</class>
+   <extends>QPushButton</extends>
+   <header>pydm.widgets.pushbutton</header>
   </customwidget>
  </customwidgets>
  <resources/>
