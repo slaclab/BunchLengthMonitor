@@ -106,7 +106,7 @@ blenReportMR(void)
 
 /* epics ioc shell command for blenReport */
 
-static void blenReportMRCallFunc(const iocshArgBuf * args)
+static void blenReportMRCallFunc([[gnu::unused]] const iocshArgBuf * args)
 {
     blenReportMR();
 }
