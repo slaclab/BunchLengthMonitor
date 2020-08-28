@@ -64,6 +64,7 @@ dbLoadRecords("db/blen.db", "P=BLEN:$(AREA):$(POS):$(INST)B, PORT=cpsw, AMC=1")
 dbLoadRecords("db/commonFPGA.db", "P=BLEN:$(AREA):$(POS):$(INST)A, PORT=cpsw, AMC=0")
 dbLoadRecords("db/commonFPGA.db", "P=BLEN:$(AREA):$(POS):$(INST)B, PORT=cpsw, AMC=1")
 dbLoadRecords("db/saveLoadConfig.db", "P=BLEN:$(AREA):$(POS), PORT=cpsw")
+dbLoadRecords("db/monitorFPGAReboot.db", "P=BLEN:$(AREA):$(POS)")
 
 dbLoadRecords("db/streamControl.db", "AREA=$(AREA),POS=$(POS),INSTA=$(INST)A,INSTB=$(INST)B")
 

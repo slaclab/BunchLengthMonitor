@@ -1,0 +1,14 @@
+# When the FPGA reboots, it writes a 0 to the ScratchPad register.
+# Our configuration will write some non-zero value to it.
+# A reboot is detected when the scratchpad register reads back a 0
+# which should prompt us to reload the configuration
+
+record(calcout "$(P):FPGARebootMon") {
+  field(SCAN, "10 second")
+  field(DESC, "Verify AxiVersion Scratchpad")
+  field(INPA, "$(P):ScratchPadRBV")
+  field(B, "0")
+  field(CALC "A=B")
+  field(OUT, "$(P):loadConfig.PROC")
+  field(OOPT, "When Zero")
+}
