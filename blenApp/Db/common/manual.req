@@ -1,3 +1,4 @@
+BLEN:$(AREA):$(POS):$(INST):CoefA1
 BLEN:$(AREA):$(POS):$(INST):CoefA2
 BLEN:$(AREA):$(POS):$(INST):CoefB
 BLEN:$(AREA):$(POS):$(INST):CoefC
@@ -8,3 +9,5 @@ BLEN:$(AREA):$(POS):$(INST):CoefG
 BLEN:$(AREA):$(POS):$(INST):CoefH
 BLEN:$(AREA):$(POS):$(INST):CoefI
 BLEN:$(AREA):$(POS):$(INST):TMIT_T
+BLEN:$(AREA):$(POS):$(INST):loadConfigFile
+BLEN:$(AREA):$(POS):$(INST):loadConfigRoot
