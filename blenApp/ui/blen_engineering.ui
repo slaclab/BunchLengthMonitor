@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>BLEN ${INST} Engineering Screens</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -44,7 +44,7 @@
        <string>FPGA Configuration / Timing</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout">
-       <item row="1" column="0">
+       <item row="2" column="0">
         <widget class="PyDMEDMDisplayButton" name="trigger_screen">
          <property name="toolTip">
           <string/>
@@ -92,6 +92,9 @@
           </size>
          </property>
         </spacer>
+       </item>
+       <item row="1" column="0">
+        <widget class="QWidget" name="widget" native="true"/>
        </item>
       </layout>
      </widget>
