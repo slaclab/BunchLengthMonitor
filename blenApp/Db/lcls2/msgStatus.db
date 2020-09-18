@@ -1,0 +1,23 @@
+# Determine whether or not there is a good connection to BPM
+
+record(calc, "$(P):BPMS_SYNC_CALC") {
+    field(CALC, "A&B?1:0")
+    field(INPA, "$(P):StatusOfBsa1")
+    field(INPB, "0x4000")
+    field(HIHI, "1")
+    field(LOLO, "-1")
+    field(HHSV, "MAJOR")
+    field(LLSV, "MAJOR")
+    field(SCAN, "1 second")
+    field(FLNK, "$(P):BPMS_SYNC")
+}
+
+record(bi, "$(P):BPMS_SYNC") {
+    field(DESC, "$(DESC)")
+    field(DTYP, "Soft Channel")
+    field(INP, "$(P):BPMS_SYNC_CALC")
+    field(ZNAM, "OK")
+    field(ONAM, "NO_SYNC")
+    field(PINI, "YES")
+    field(SCAN, "Passive")
+}

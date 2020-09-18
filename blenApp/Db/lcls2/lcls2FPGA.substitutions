@@ -201,3 +201,8 @@ file "RegisterStream.template" {pattern
 file "RegisterStream16.template" {pattern
 { P,            R,          DESC,                           NELM,        PINI,  PORT,  PARAM         }
 }
+
+file "msgStatus.db" { pattern
+{   P,              DESC                   }
+{ $(P),  "Status of BSA connection to BPM" }
+}
