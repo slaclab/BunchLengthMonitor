@@ -1,9 +1,16 @@
 # Determine whether or not there is a good connection to BPM
 
+# Check CmnConfig/StatusOfBsa1 slot for good BPM sync
+# We're checking against bit 2 of the (0 indexed) 32 bit word.
+# If the bit is set, it indicates an error.
+# See https://confluence.slac.stanford.edu/pages/viewpage.action?pageId=283020091
 record(calc, "$(P):BPMS_SYNC_CALC") {
-    field(CALC, "A&B?1:0")
     field(INPA, "$(P):StatusOfBsa1")
-    field(INPB, "0x4000")
+    field(INPB, "0x4")
+    # calc records are a bit silly. You can't just return A&B here since
+    # it converts the result of the bitwise and to a double. So we have to
+    # use the ternary operator to get a 1 or a 0 for the bi record below.
+    field(CALC, "A&B?1:0")
     field(HIHI, "1")
     field(LOLO, "-1")
     field(HHSV, "MAJOR")
