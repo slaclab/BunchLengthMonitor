@@ -44,7 +44,7 @@ makeAutosaveFiles()
 # Note: the last arg cannot be set to 0
 create_monitor_set("info_positions.req", 5 )
 create_monitor_set("info_settings.req" , 5 )
-create_monitor_set("blen_manual.req",60,"")
+create_monitor_set("blen_manual.req",5,"")
 
 # change directory to TOP of application
 cd("${TOP}")
