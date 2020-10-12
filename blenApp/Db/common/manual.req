@@ -11,3 +11,5 @@ BLEN:$(AREA):$(POS):$(INST):CoefI
 BLEN:$(AREA):$(POS):$(INST):TMIT_T
 BLEN:$(AREA):$(POS):loadConfigFile
 BLEN:$(AREA):$(POS):loadConfigRoot
+BLEN:$(AREA):$(POS):saveConfigFile
+BLEN:$(AREA):$(POS):saveConfigRoot
