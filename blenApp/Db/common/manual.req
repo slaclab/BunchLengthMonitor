@@ -9,7 +9,7 @@ BLEN:$(AREA):$(POS):$(INST):CoefG
 BLEN:$(AREA):$(POS):$(INST):CoefH
 BLEN:$(AREA):$(POS):$(INST):CoefI
 BLEN:$(AREA):$(POS):$(INST):TMIT_T
-BLEN:$(AREA):$(POS):loadConfigFile
-BLEN:$(AREA):$(POS):loadConfigRoot
-BLEN:$(AREA):$(POS):saveConfigFile
-BLEN:$(AREA):$(POS):saveConfigRoot
+BLEN:$(AREA):$(POS):loadConfigFile.VAL
+BLEN:$(AREA):$(POS):loadConfigRoot.VAL
+BLEN:$(AREA):$(POS):saveConfigFile.VAL
+BLEN:$(AREA):$(POS):saveConfigRoot.VAL
