@@ -5,6 +5,7 @@
 #include "blenBSA.h"
 #include "blenFcom.h"
 
+
 /*
  * blenConfigureMR
  * 
@@ -15,19 +16,6 @@
  * ATCA IP:PORT (atcaIP):     IP:PORT in 32 bit ipv4 format to send TMIT to FPGA
  *
  */ 
-
-static const iocshArg blenConfigureMRArg0 = { "Station name", iocshArgString };
-static const iocshArg blenConfigureMRArg1 = { "BSA stream name", iocshArgString };
-static const iocshArg blenConfigureMRArg2 = { "FCOM TMIT PV", iocshArgString };
-static const iocshArg blenConfigureMRArg3 = { "ATCA IP:port to send TMIT", iocshArgString };
-
-static const iocshArg * const blenConfigureMRArgs[] = { 
-        &blenConfigureMRArg0,
-        &blenConfigureMRArg1, 
-        &blenConfigureMRArg2,
-        &blenConfigureMRArg3
-};
-static const iocshFuncDef blenConfigureMRFuncDef = { "blenConfigureMR", 4, blenConfigureMRArgs };
 
 static int
 blenConfigureMR(const char *station, const char *stream, const char *tmit, const char *atcaIP)
@@ -52,14 +40,6 @@ blenConfigureMR(const char *station, const char *stream, const char *tmit, const
 
     return 0;
 }
-
-static void
-blenConfigureMRCallFunc(const iocshArgBuf * args)
-{
-    blenConfigureMR(args[0].sval, args[1].sval, args[2].sval, args[3].sval);
-}
-
-static const iocshFuncDef blenReportMRFuncDef = { "blenReportMR", 0, nullptr };
 
 static int
 blenReportMR(void)
@@ -104,13 +84,6 @@ blenReportMR(void)
     return 0;
 }
 
-/* epics ioc shell command for blenReport */
-
-static void blenReportMRCallFunc([[gnu::unused]] const iocshArgBuf * args)
-{
-    blenReportMR();
-}
-
 /******************************************************************************
  * Dump BSA Stream print the stream to the console in groups of 4 bytes, using
  * the hexadecimal format.
@@ -119,11 +92,7 @@ static void blenReportMRCallFunc([[gnu::unused]] const iocshArgBuf * args)
  * be dumped.
 ******************************************************************************/
 
-static const iocshArg blenDumpBSAStreamMRArg0 = { "Number of packets to print", iocshArgInt };
-static const iocshArg *const blenDumpBSAStreamMRArgs[] = { &blenDumpBSAStreamMRArg0 };
-static const iocshFuncDef blenDumpBSAStreamMRFuncDef = { "blenDumpBSAStreamMR", 1, blenDumpBSAStreamMRArgs };
-
-void 
+static void 
 blenDumpBSAStreamMR(int numberOfPackets)
 {
     // Get instance of the stream BSA class
@@ -131,11 +100,58 @@ blenDumpBSAStreamMR(int numberOfPackets)
     streamBSA->setNumberPacketsToDump(numberOfPackets);
 }
 
+
+
+/* 
+ *
+ * EPICS Boilerplate
+ *
+ */
+
+// blenConfigureMR
+
+static const iocshArg blenConfigureMRArg0 = { "Station name", iocshArgString };
+static const iocshArg blenConfigureMRArg1 = { "BSA stream name", iocshArgString };
+static const iocshArg blenConfigureMRArg2 = { "FCOM TMIT PV", iocshArgString };
+static const iocshArg blenConfigureMRArg3 = { "ATCA IP:port to send TMIT", iocshArgString };
+
+static const iocshArg * const blenConfigureMRArgs[] = { 
+        &blenConfigureMRArg0,
+        &blenConfigureMRArg1, 
+        &blenConfigureMRArg2,
+        &blenConfigureMRArg3
+};
+
+static const iocshFuncDef blenConfigureMRFuncDef = { "blenConfigureMR", 4, blenConfigureMRArgs };
+
+static void
+blenConfigureMRCallFunc(const iocshArgBuf * args)
+{
+    blenConfigureMR(args[0].sval, args[1].sval, args[2].sval, args[3].sval);
+}
+
+
+// blenReportMR
+static const iocshFuncDef blenReportMRFuncDef = { "blenReportMR", 0, nullptr };
+
+static void blenReportMRCallFunc([[gnu::unused]] const iocshArgBuf * args)
+{
+    blenReportMR();
+}
+
+// blendumpBSAStreamMR
+
+static const iocshArg blenDumpBSAStreamMRArg0 = { "Number of packets to print", iocshArgInt };
+static const iocshArg *const blenDumpBSAStreamMRArgs[] = { &blenDumpBSAStreamMRArg0 };
+static const iocshFuncDef blenDumpBSAStreamMRFuncDef = { "blenDumpBSAStreamMR", 1, blenDumpBSAStreamMRArgs };
+
 static void blenDumpBSAStreamMRCallFunc(const iocshArgBuf * args)
 {
     blenDumpBSAStreamMR(args[0].ival);
 }
 
+
+// Register with iocsh
 
 void BlenIOCFunctionsRegistrar(void)
 {
@@ -145,3 +161,5 @@ void BlenIOCFunctionsRegistrar(void)
 }
 
 epicsExportRegistrar(BlenIOCFunctionsRegistrar);
+
+
