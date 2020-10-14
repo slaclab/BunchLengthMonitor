@@ -2,11 +2,15 @@ from __future__ import print_function
 
 import os
 
+import attr
+
 import pyqtgraph as pg
 from qtpy.QtCore import Signal, QObject, QPoint, Qt
-from qtpy.QtGui import QColor
-from qtpy.QtWidgets import (QAction, QGridLayout, QHBoxLayout, QLabel, QMenu,
-                            QTextEdit, QVBoxLayout, QWidget)
+from qtpy.QtGui import QColor, QFont
+from qtpy.QtSvg import QSvgWidget
+from qtpy.QtWidgets import (QAction, QDialog, QGridLayout, QHBoxLayout, QLabel,
+                            QMenu, QPushButton, QRadioButton, QTextEdit,
+                            QVBoxLayout, QWidget)
 
 from pydm import Display
 from pydm.widgets import PyDMLineEdit, PyDMSlider
@@ -23,6 +27,12 @@ class WaveformType:
 class Sensor:
     A = "A"
     B = "B"
+
+@attr.s(frozen=True)
+class WidgetSet(object):
+    """ A set of related widgets. """
+    plot    = attr.ib()
+    sliders = attr.ib()
 
 blen_pv = { "x": ":SampTime.VALA", WaveformType.RAW: ":RWF_U16.VALA", WaveformType.INT: ":IWF_U16.VALA",
         WaveformType.RAW_TIMES: "_S_P_WF", "window": "_SCL_VWF.AVAL"}
@@ -302,37 +312,106 @@ class BlenWeightFnSliders(QWidget):
 
 
 class BLENExpert(Display):
-
+    """ The main calibration display. """
     def __init__(self, parent=None, args=None, macros=None):
         super(BLENExpert, self).__init__(parent=parent, args=args, macros=macros)
-        self.setWindowTitle(\
-                "Bunch Length {} Calibration".format(self.macros()["INST"]))
+        self.inst = self.macros()["INST"]
+        self.setWindowTitle("Bunch Length {} Calibration".format(self.inst))
 
-        self.setFixedSize(1500, 500)
+        self.setFixedSize(750, 500)
+        self.main_layout = QVBoxLayout()
+        self.setLayout(self.main_layout)
+
+        self.setup_instr_select()
         self.setup_plots()
 
+    def setup_instr_select(self):
+        self.instr_layout = QHBoxLayout()
+        instABtn = QRadioButton()
+        instBBtn = QRadioButton()
+
+        instABtn.setText("{}A".format(self.inst))
+        instBBtn.setText("{}B".format(self.inst))
+
+        instABtn.setChecked(True)
+        instABtn.clicked.connect(self.swap_instrument)
+        instBBtn.clicked.connect(self.swap_instrument)
+
+        helpBtn = QPushButton()
+        helpBtn.setText("Help")
+        helpBtn.clicked.connect(self.open_help)
+
+        self.instr_layout.addWidget(instABtn)
+        self.instr_layout.addWidget(instBBtn)
+        self.instr_layout.addStretch(10)
+        self.instr_layout.addWidget(helpBtn)
+        self.main_layout.addLayout(self.instr_layout)
+
     def setup_plots(self):
-        main_layout = QVBoxLayout()
-        plot_layout = QHBoxLayout()
-        weight_fn_layout = QHBoxLayout()
+        self.plot_layout = QHBoxLayout()
+        self.weight_fn_layout = QHBoxLayout()
+        self.wfpA = BlenCalPlot(self.macros(), Sensor.A, WaveformType.RAW)
+        self.wfpB = BlenCalPlot(self.macros(), Sensor.B, WaveformType.RAW)
 
-        self.wfp0 = BlenCalPlot(self.macros(), Sensor.A, WaveformType.RAW)
-        self.wfp1 = BlenCalPlot(self.macros(), Sensor.B, WaveformType.RAW)
+        self.wfpA_sliders = BlenWeightFnSliders(macros=self.macros(), parent=self, sensor=Sensor.A)
+        self.wfpA.src_changed.connect(self.wfpA_sliders.plot_src_changed)
+        self.wfpB_sliders = BlenWeightFnSliders(macros=self.macros(), parent=self, sensor=Sensor.B)
+        self.wfpB.src_changed.connect(self.wfpB_sliders.plot_src_changed)
 
-        self.wfp0_sliders = BlenWeightFnSliders(macros=self.macros(), parent=self, sensor=Sensor.A)
-        self.wfp0.src_changed.connect(self.wfp0_sliders.plot_src_changed)
-        self.wfp1_sliders = BlenWeightFnSliders(macros=self.macros(), parent=self, sensor=Sensor.B)
-        self.wfp1.src_changed.connect(self.wfp1_sliders.plot_src_changed)
+        self.main_layout.addLayout(self.weight_fn_layout)
+        self.main_layout.addLayout(self.plot_layout)
+        # Only add one plot for now. There's a button that can swap plots out
+        self.plot_layout.addWidget(self.wfpA)
+        self.weight_fn_layout.addWidget(self.wfpA_sliders)
 
-        plot_layout.addWidget(self.wfp0)
-        plot_layout.addWidget(self.wfp1)
+        self.active_widgets   = WidgetSet(plot = self.wfpA, sliders = self.wfpA_sliders)
+        self.inactive_widgets = WidgetSet(plot = self.wfpB, sliders = self.wfpB_sliders)
+        self._set_viz()
 
-        weight_fn_layout.addWidget(self.wfp0_sliders)
-        weight_fn_layout.addWidget(self.wfp1_sliders)
+    def swap_instrument(self):
+        """ Swap out the plot and slider widgets """
+        tmp = self.active_widgets
+        self.active_widgets = self.inactive_widgets
+        self.inactive_widgets = tmp
 
-        self.setLayout(main_layout)
-        main_layout.addLayout(weight_fn_layout)
-        main_layout.addLayout(plot_layout)
+        self.plot_layout.removeWidget(self.inactive_widgets.plot)
+        self.plot_layout.addWidget(self.active_widgets.plot)
+
+        self.weight_fn_layout.removeWidget(self.inactive_widgets.sliders)
+        self.weight_fn_layout.addWidget(self.active_widgets.sliders)
+
+        self._set_viz()
+
+    def _set_viz(self):
+        self.active_widgets.plot.setVisible(True)
+        self.active_widgets.sliders.setVisible(True)
+        self.inactive_widgets.plot.setVisible(False)
+        self.inactive_widgets.sliders.setVisible(False)
+
+    def open_help(self):
+        dlg = QDialog(self)
+        lo  = QVBoxLayout()
+
+        lbl = QLabel("<b>Explaination of Pre, Mid, and Pos Edges</b>")
+        lbl.setAlignment(Qt.AlignHCenter | Qt.AlignVCenter)
+        svg = QSvgWidget("help.svg", parent=dlg)
+        lo.addWidget(lbl)
+        lo.addWidget(svg)
+
+        dlg.setFixedSize(500, 375)
+        dlg.setLayout(lo)
+        dlg.setWindowTitle("BLEN Calibration Help")
+        dlg.setModal(False)
+
+        # if there's already a dialog open we should close it
+        try:
+            self.dlg.close()
+        except:
+            pass
+
+        self.dlg = dlg
+        self.dlg.show()
+
 
     def ui_filepath(self):
         return None
