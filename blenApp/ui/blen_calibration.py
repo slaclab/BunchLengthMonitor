@@ -2,8 +2,6 @@ from __future__ import print_function
 
 import os
 
-import attr
-
 import pyqtgraph as pg
 from qtpy.QtCore import Signal, QObject, QPoint, Qt
 from qtpy.QtGui import QColor, QFont
@@ -27,12 +25,6 @@ class WaveformType:
 class Sensor:
     A = "A"
     B = "B"
-
-@attr.s(frozen=True)
-class WidgetSet(object):
-    """ A set of related widgets. """
-    plot    = attr.ib()
-    sliders = attr.ib()
 
 blen_pv = { "x": ":SampTime.VALA", WaveformType.RAW: ":RWF_U16.VALA", WaveformType.INT: ":IWF_U16.VALA",
         WaveformType.RAW_TIMES: "_S_P_WF", "window": "_SCL_VWF.AVAL"}
@@ -66,35 +58,27 @@ class CalPlotCtxBox(pg.ViewBox, QObject):
 
             self.y_datasrc = QMenu("Data Source")
             try:
-                inst = self.plot.macros["INST"]
-                self.instA_menu = QMenu("{}A".format(inst))
-                self.instB_menu = QMenu("{}B".format(inst))
+                # The plot INST macro is something like BZ21BA where
+                # BZ21B is the MAD name and A is the instr
+                sensor = self.plot.macros["INST"][-1]
             except KeyError:
                 raise KeyError("'INST' macro was not defined! Please start this screen with the 'INST' macro!")
 
-            rwfA = QAction("Raw Waveform (Stream0)", self.y_datasrc)
-            rwfB = QAction("Raw Waveform (Stream4)", self.y_datasrc)
-            rwf_mult_A = QAction("Raw Waveform times Weight Function", self.y_datasrc)
-            rwf_mult_B = QAction("Raw Waveform times Weight Function", self.y_datasrc)
-            iwfA = QAction("Integration Window Waveform (Stream3)", self.y_datasrc)
-            iwfB = QAction("Integration Window Waveform (Stream7)", self.y_datasrc)
-            # these lambdas are a workaround for passing arguments to slots
-            rwfA.triggered.connect(lambda: self.emit_ychange(WaveformType.RAW, Sensor.A))
-            rwfB.triggered.connect(lambda: self.emit_ychange(WaveformType.RAW, Sensor.B))
-            rwf_mult_A.triggered.connect(lambda: self.emit_ychange(WaveformType.RAW_TIMES, Sensor.A))
-            rwf_mult_B.triggered.connect(lambda: self.emit_ychange(WaveformType.RAW_TIMES, Sensor.B))
-            iwfA.triggered.connect(lambda: self.emit_ychange(WaveformType.INT, Sensor.A))
-            iwfB.triggered.connect(lambda: self.emit_ychange(WaveformType.INT, Sensor.B))
+            rwf = QAction("Raw Waveform (Stream0)", self.y_datasrc)
+            rwf_mult = QAction("Raw Waveform times Weight Function", self.y_datasrc)
+            iwf = QAction("Integration Window Waveform (Stream3)", self.y_datasrc)
+            # PyQt5 requires a workaround for passing arguments to slots.
+            # We use lambdas.
+            rwf.triggered.connect(lambda: self.emit_ychange(
+                WaveformType.RAW, sensor))
+            rwf_mult.triggered.connect(lambda: self.emit_ychange(
+                WaveformType.RAW_TIMES, sensor))
+            iwf.triggered.connect(lambda: self.emit_ychange(
+                WaveformType.INT, sensor))
 
-            self.y_datasrc.addMenu(self.instA_menu)
-            self.y_datasrc.addMenu(self.instB_menu)
-
-            self.instA_menu.addAction(rwfA)
-            self.instA_menu.addAction(rwf_mult_A)
-            self.instB_menu.addAction(rwfB)
-            self.instB_menu.addAction(rwf_mult_B)
-            self.instA_menu.addAction(iwfA)
-            self.instB_menu.addAction(iwfB)
+            self.y_datasrc.addAction(rwf)
+            self.y_datasrc.addAction(rwf_mult)
+            self.y_datasrc.addAction(iwf)
 
             self.menu.addAction(self.view_all)
             self.menu.addAction(self.reset)
@@ -118,11 +102,11 @@ class CalPlotCtxBox(pg.ViewBox, QObject):
 
 class BlenCalPlot(pg.PlotWidget):
     """
-    BlenCalPlot is a waveform plot with extra features useful calibration.
+    BlenCalPlot is a waveform plot with extra features useful for calibration.
 
     The PyDMWaveformPlot doesn't have the flexibility needed to make a more
-    interactive experience.
-    We directly subclass pyqtgraph PlotWidget to create our own custom context menu.
+    interactive experience. This class directly subclasses pyqtgraph PlotWidget
+    in order to implement a custom right click menu.
     """
 
     src_changed = Signal(str, str)
@@ -155,7 +139,6 @@ class BlenCalPlot(pg.PlotWidget):
     def y_changed(self, wf, sensor):
         if self.wf == wf and self.sensor == sensor:
             return
-        self.sensor = sensor
         self.wf = wf
         self.label_plot()
         self._set_data_src()
@@ -170,16 +153,14 @@ class BlenCalPlot(pg.PlotWidget):
                 left = left_lbl,
                 bottom = btm_lbl)
         self.plotItem.setTitle(
-                "{}{} {}".format(self.macros["INST"],
-                                 self.sensor,
+                "{} {}".format(self.macros["INST"],
                                  self.wf))
 
     def _set_data_src(self):
-        src_pv_prefix = "ca://BLEN:{}:{}:{}{}".format(
+        src_pv_prefix = "ca://BLEN:{}:{}:{}".format(
                 self.macros["AREA"],
                 self.macros["POS"],
-                self.macros["INST"],
-                self.sensor)
+                self.macros["INST"])
 
         x_pv = "{}{}".format(src_pv_prefix, blen_pv["x"])
         y_pv = "{}{}".format(src_pv_prefix, blen_pv[self.wf])
@@ -205,7 +186,6 @@ class BlenCalPlot(pg.PlotWidget):
 
         self.src_changed.emit(self.wf, self.sensor)
 
-
     def redraw_plot(self):
         self.curve.redrawCurve()
         self.window_curve.redrawCurve()
@@ -224,11 +204,10 @@ class BlenPyDMSlider(PyDMSlider):
         self.macros = macros
         self.sensor = ch.split(":")[0]
         self.window_edge = ch.split(":")[-1]
-        self.pv = "BLEN:{}:{}:{}{}:{}".format(\
+        self.pv = "BLEN:{}:{}:{}:{}".format(\
                 self.macros["AREA"],
                 self.macros["POS"],
                 self.macros["INST"],
-                self.sensor,
                 self.window_edge)
 
         self.value_label = PyDMLineEdit(self)
@@ -249,11 +228,10 @@ class BlenPyDMSlider(PyDMSlider):
 
     def plot_src_changed(self, wf, sensor):
         self.sensor = sensor
-        self.pv = "BLEN:{}:{}:{}{}:{}".format(\
+        self.pv = "BLEN:{}:{}:{}:{}".format(\
                 self.macros["AREA"],
                 self.macros["POS"],
                 self.macros["INST"],
-                self.sensor,
                 self.window_edge)
 
         self._change_channel()
@@ -315,78 +293,51 @@ class BLENExpert(Display):
     """ The main calibration display. """
     def __init__(self, parent=None, args=None, macros=None):
         super(BLENExpert, self).__init__(parent=parent, args=args, macros=macros)
-        self.inst = self.macros()["INST"]
-        self.setWindowTitle("Bunch Length {} Calibration".format(self.inst))
+        self.setWindowTitle("Bunch Length {} Calibration".format(
+            self.macros()["INST"][:-1]))
 
-        self.setFixedSize(750, 500)
+        """
+        We appended the A or B AMC card to the end of the INST macro in
+        the Qt Designer file.
+        eg: INST = BZ21BA but the MAD name is actually just BZ21B
+        """
+        if (self.macros()["INST"][-1] == 'A'):
+            self.sensor = Sensor.A
+        else:
+            self.sensor = Sensor.B
+
+        self.setFixedSize(725, 500)
         self.main_layout = QVBoxLayout()
         self.setLayout(self.main_layout)
 
-        self.setup_instr_select()
+        self.setup_help()
         self.setup_plots()
 
-    def setup_instr_select(self):
-        self.instr_layout = QHBoxLayout()
-        instABtn = QRadioButton()
-        instBBtn = QRadioButton()
-
-        instABtn.setText("{}A".format(self.inst))
-        instBBtn.setText("{}B".format(self.inst))
-
-        instABtn.setChecked(True)
-        instABtn.clicked.connect(self.swap_instrument)
-        instBBtn.clicked.connect(self.swap_instrument)
+    def setup_help(self):
+        self.help_layout = QHBoxLayout()
 
         helpBtn = QPushButton()
         helpBtn.setText("Help")
         helpBtn.clicked.connect(self.open_help)
 
-        self.instr_layout.addWidget(instABtn)
-        self.instr_layout.addWidget(instBBtn)
-        self.instr_layout.addStretch(10)
-        self.instr_layout.addWidget(helpBtn)
-        self.main_layout.addLayout(self.instr_layout)
+        self.help_layout.addStretch(10)
+        self.help_layout.addWidget(helpBtn)
+        self.main_layout.addLayout(self.help_layout)
 
     def setup_plots(self):
         self.plot_layout = QHBoxLayout()
         self.weight_fn_layout = QHBoxLayout()
-        self.wfpA = BlenCalPlot(self.macros(), Sensor.A, WaveformType.RAW)
-        self.wfpB = BlenCalPlot(self.macros(), Sensor.B, WaveformType.RAW)
+        self.wfp = BlenCalPlot(self.macros(), self.sensor, WaveformType.RAW)
 
-        self.wfpA_sliders = BlenWeightFnSliders(macros=self.macros(), parent=self, sensor=Sensor.A)
-        self.wfpA.src_changed.connect(self.wfpA_sliders.plot_src_changed)
-        self.wfpB_sliders = BlenWeightFnSliders(macros=self.macros(), parent=self, sensor=Sensor.B)
-        self.wfpB.src_changed.connect(self.wfpB_sliders.plot_src_changed)
+        self.wfp_sliders = BlenWeightFnSliders(macros=self.macros(),
+                parent=self, sensor=self.sensor)
+        self.wfp.src_changed.connect(self.wfp_sliders.plot_src_changed)
+
+        self.plot_layout.addWidget(self.wfp)
+        self.weight_fn_layout.addWidget(self.wfp_sliders)
 
         self.main_layout.addLayout(self.weight_fn_layout)
         self.main_layout.addLayout(self.plot_layout)
-        # Only add one plot for now. There's a button that can swap plots out
-        self.plot_layout.addWidget(self.wfpA)
-        self.weight_fn_layout.addWidget(self.wfpA_sliders)
-
-        self.active_widgets   = WidgetSet(plot = self.wfpA, sliders = self.wfpA_sliders)
-        self.inactive_widgets = WidgetSet(plot = self.wfpB, sliders = self.wfpB_sliders)
-        self._set_viz()
-
-    def swap_instrument(self):
-        """ Swap out the plot and slider widgets """
-        tmp = self.active_widgets
-        self.active_widgets = self.inactive_widgets
-        self.inactive_widgets = tmp
-
-        self.plot_layout.removeWidget(self.inactive_widgets.plot)
-        self.plot_layout.addWidget(self.active_widgets.plot)
-
-        self.weight_fn_layout.removeWidget(self.inactive_widgets.sliders)
-        self.weight_fn_layout.addWidget(self.active_widgets.sliders)
-
-        self._set_viz()
-
-    def _set_viz(self):
-        self.active_widgets.plot.setVisible(True)
-        self.active_widgets.sliders.setVisible(True)
-        self.inactive_widgets.plot.setVisible(False)
-        self.inactive_widgets.sliders.setVisible(False)
 
     def open_help(self):
         dlg = QDialog(self)
