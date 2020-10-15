@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>791</width>
-    <height>626</height>
+    <height>747</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -26,6 +26,12 @@
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
         <widget class="QTabWidget" name="cal_instr_tabs">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="currentIndex">
           <number>0</number>
          </property>
@@ -35,15 +41,15 @@
           </attribute>
           <layout class="QVBoxLayout" name="verticalLayout_4">
            <item>
-            <widget class="PyDMEmbeddedDisplay" name="insta_cal_display">
+            <widget class="PyDMEmbeddedDisplay" name="inst_a_cal">
              <property name="toolTip">
               <string/>
              </property>
              <property name="macros" stdset="0">
-              <string>AREA=${AREA},INST=&quot;${INST}A&quot;,POS=${POS}</string>
+              <string>{ &quot;AREA&quot;: &quot;${AREA}&quot;, &quot;POS&quot;: &quot;${POS}&quot;, &quot;INST&quot;: &quot;${INST}A&quot; }</string>
              </property>
              <property name="filename" stdset="0">
-              <string>blen_calibration.py</string>
+              <string>blen_cal_embedded.ui</string>
              </property>
             </widget>
            </item>
@@ -55,15 +61,15 @@
           </attribute>
           <layout class="QVBoxLayout" name="verticalLayout_3">
            <item>
-            <widget class="PyDMEmbeddedDisplay" name="instb_cal_display">
+            <widget class="PyDMEmbeddedDisplay" name="PyDMEmbeddedDisplay">
              <property name="toolTip">
               <string/>
              </property>
              <property name="macros" stdset="0">
-              <string>AREA=${AREA},INST=${INST}B,POS=${POS}</string>
+              <string>{ &quot;AREA&quot;: &quot;${AREA}&quot;, &quot;POS&quot;: &quot;${POS}&quot;, &quot;INST&quot;: &quot;${INST}B&quot; }</string>
              </property>
              <property name="filename" stdset="0">
-              <string>blen_calibration.py</string>
+              <string>blen_cal_embedded.ui</string>
              </property>
             </widget>
            </item>

@@ -11,7 +11,7 @@ from qtpy.QtWidgets import (QAction, QDialog, QGridLayout, QHBoxLayout, QLabel,
                             QVBoxLayout, QWidget)
 
 from pydm import Display
-from pydm.widgets import PyDMLineEdit, PyDMSlider
+from pydm.widgets import PyDMLineEdit, PyDMSlider, PyDMRelatedDisplayButton
 from pydm.widgets.waveformplot import WaveformCurveItem
 
 left_lbl = 'ADC Counts / 2'
@@ -301,6 +301,7 @@ class BLENExpert(Display):
         the Qt Designer file.
         eg: INST = BZ21BA but the MAD name is actually just BZ21B
         """
+        self.mad = self.macros()["INST"][:-1]
         if (self.macros()["INST"][-1] == 'A'):
             self.sensor = Sensor.A
         else:
@@ -310,19 +311,28 @@ class BLENExpert(Display):
         self.main_layout = QVBoxLayout()
         self.setLayout(self.main_layout)
 
-        self.setup_help()
+        self.setup_buttons()
         self.setup_plots()
 
-    def setup_help(self):
-        self.help_layout = QHBoxLayout()
+    def setup_buttons(self):
+        self.btn_layout = QHBoxLayout()
 
-        helpBtn = QPushButton()
-        helpBtn.setText("Help")
-        helpBtn.clicked.connect(self.open_help)
+        coef_btn = PyDMRelatedDisplayButton(filename="blen_coef_instr.ui")
+        coef_btn.setText("Coefficients...")
+        coef_btn.openInNewWindow = True
+        coef_btn.macros = "PREFIX=BLEN:{}:{}:{}{}".format(
+                self.macros()["AREA"],
+                self.macros()["POS"],
+                self.mad,
+                self.sensor)
 
-        self.help_layout.addStretch(10)
-        self.help_layout.addWidget(helpBtn)
-        self.main_layout.addLayout(self.help_layout)
+        help_btn = QPushButton("Help...")
+        help_btn.clicked.connect(self.open_help)
+
+        self.btn_layout.addStretch(10)
+        self.btn_layout.addWidget(coef_btn)
+        self.btn_layout.addWidget(help_btn)
+        self.main_layout.addLayout(self.btn_layout)
 
     def setup_plots(self):
         self.plot_layout = QHBoxLayout()
