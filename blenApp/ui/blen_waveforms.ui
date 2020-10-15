@@ -532,7 +532,7 @@
            <item row="3" column="0">
             <widget class="QGroupBox" name="groupBox">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
@@ -546,221 +546,108 @@
              <property name="title">
               <string>Current Acquisition</string>
              </property>
-             <widget class="QWidget" name="gridLayoutWidget">
-              <property name="geometry">
-               <rect>
-                <x>10</x>
-                <y>30</y>
-                <width>506</width>
-                <height>80</height>
-               </rect>
-              </property>
-              <layout class="QGridLayout" name="gridLayout_2" columnstretch="0,30,30,30">
-               <item row="2" column="0" alignment="Qt::AlignRight">
-                <widget class="QLabel" name="label_4">
-                 <property name="font">
-                  <font>
-                   <weight>75</weight>
-                   <bold>true</bold>
-                  </font>
-                 </property>
-                 <property name="text">
-                  <string>${INST}B</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="2" alignment="Qt::AlignHCenter">
-                <widget class="QLabel" name="label_6">
-                 <property name="font">
-                  <font>
-                   <weight>75</weight>
-                   <bold>true</bold>
-                  </font>
-                 </property>
-                 <property name="text">
-                  <string>IMAX</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="1" alignment="Qt::AlignHCenter">
-                <widget class="PyDMLabel" name="PyDMLabel_2">
-                 <property name="toolTip">
-                  <string/>
-                 </property>
-                 <property name="whatsThis">
-                  <string/>
-                 </property>
-                 <property name="text">
-                  <string>${INST}B:SUM</string>
-                 </property>
-                 <property name="precision" stdset="0">
-                  <number>3</number>
-                 </property>
-                 <property name="showUnits" stdset="0">
-                  <bool>true</bool>
-                 </property>
-                 <property name="precisionFromPV" stdset="0">
-                  <bool>false</bool>
-                 </property>
-                 <property name="channel" stdset="0">
-                  <string>ca://BLEN:${AREA}:${POS}:${INST}B:SUM</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="1" alignment="Qt::AlignHCenter">
-                <widget class="PyDMLabel" name="PyDMLabel">
-                 <property name="toolTip">
-                  <string/>
-                 </property>
-                 <property name="whatsThis">
-                  <string/>
-                 </property>
-                 <property name="text">
-                  <string>${INST}A:SUM</string>
-                 </property>
-                 <property name="precision" stdset="0">
-                  <number>3</number>
-                 </property>
-                 <property name="showUnits" stdset="0">
-                  <bool>true</bool>
-                 </property>
-                 <property name="precisionFromPV" stdset="0">
-                  <bool>false</bool>
-                 </property>
-                 <property name="channel" stdset="0">
-                  <string>ca://BLEN:${AREA}:${POS}:${INST}A:SUM</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="2" alignment="Qt::AlignHCenter">
-                <widget class="PyDMLabel" name="PyDMLabel_4">
-                 <property name="toolTip">
-                  <string/>
-                 </property>
-                 <property name="whatsThis">
-                  <string/>
-                 </property>
-                 <property name="text">
-                  <string>${INST}B:IMAX</string>
-                 </property>
-                 <property name="precision" stdset="0">
-                  <number>3</number>
-                 </property>
-                 <property name="showUnits" stdset="0">
-                  <bool>true</bool>
-                 </property>
-                 <property name="precisionFromPV" stdset="0">
-                  <bool>false</bool>
-                 </property>
-                 <property name="channel" stdset="0">
-                  <string>ca://BLEN:${AREA}:${POS}:${INST}B:IMAX</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="1" alignment="Qt::AlignHCenter">
-                <widget class="QLabel" name="label_5">
-                 <property name="font">
-                  <font>
-                   <weight>75</weight>
-                   <bold>true</bold>
-                  </font>
-                 </property>
-                 <property name="text">
-                  <string>Sum</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="0" alignment="Qt::AlignRight">
-                <widget class="QLabel" name="label_3">
-                 <property name="font">
-                  <font>
-                   <weight>75</weight>
-                   <bold>true</bold>
-                  </font>
-                 </property>
-                 <property name="text">
-                  <string>${INST}A</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="2" alignment="Qt::AlignHCenter">
-                <widget class="PyDMLabel" name="PyDMLabel_3">
-                 <property name="toolTip">
-                  <string/>
-                 </property>
-                 <property name="whatsThis">
-                  <string/>
-                 </property>
-                 <property name="text">
-                  <string>${INST}A:IMAX</string>
-                 </property>
-                 <property name="precision" stdset="0">
-                  <number>3</number>
-                 </property>
-                 <property name="showUnits" stdset="0">
-                  <bool>true</bool>
-                 </property>
-                 <property name="precisionFromPV" stdset="0">
-                  <bool>false</bool>
-                 </property>
-                 <property name="channel" stdset="0">
-                  <string>ca://BLEN:${AREA}:${POS}:${INST}A:IMAX</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="3" alignment="Qt::AlignHCenter">
-                <widget class="QLabel" name="label_9">
-                 <property name="font">
-                  <font>
-                   <weight>75</weight>
-                   <bold>true</bold>
-                  </font>
-                 </property>
-                 <property name="text">
-                  <string>TMIT</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="3" alignment="Qt::AlignHCenter">
-                <widget class="PyDMLabel" name="PyDMLabel_5">
-                 <property name="toolTip">
-                  <string/>
-                 </property>
-                 <property name="whatsThis">
-                  <string/>
-                 </property>
-                 <property name="text">
-                  <string>${INST}A:TMIT</string>
-                 </property>
-                 <property name="showUnits" stdset="0">
-                  <bool>true</bool>
-                 </property>
-                 <property name="channel" stdset="0">
-                  <string>ca://BLEN:${AREA}:${POS}:${INST}A:TMIT</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="3" alignment="Qt::AlignHCenter">
-                <widget class="PyDMLabel" name="PyDMLabel_6">
-                 <property name="toolTip">
-                  <string/>
-                 </property>
-                 <property name="whatsThis">
-                  <string/>
-                 </property>
-                 <property name="text">
-                  <string>${INST}B:TMIT</string>
-                 </property>
-                 <property name="showUnits" stdset="0">
-                  <bool>true</bool>
-                 </property>
-                 <property name="channel" stdset="0">
-                  <string>ca://BLEN:${AREA}:${POS}:${INST}B:TMIT</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </widget>
+             <layout class="QVBoxLayout" name="verticalLayout_5">
+              <item>
+               <layout class="QHBoxLayout" name="daqLayout">
+                <item>
+                 <widget class="QLabel" name="emptyLabel">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_4">
+                  <property name="font">
+                   <font>
+                    <pointsize>10</pointsize>
+                    <weight>75</weight>
+                    <bold>true</bold>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>SUM</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_3">
+                  <property name="font">
+                   <font>
+                    <pointsize>10</pointsize>
+                    <weight>75</weight>
+                    <bold>true</bold>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>IMAX</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label">
+                  <property name="font">
+                   <font>
+                    <pointsize>10</pointsize>
+                    <weight>75</weight>
+                    <bold>true</bold>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>TMIT</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="PyDMEmbeddedDisplay" name="inst_a_DAQ">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="toolTip">
+                 <string/>
+                </property>
+                <property name="macros" stdset="0">
+                 <string>{&quot;AREA&quot;: &quot;${AREA}&quot;, &quot;POS&quot;: &quot;${POS}&quot;, &quot;INST&quot;: &quot;${INST}A&quot; }</string>
+                </property>
+                <property name="filename" stdset="0">
+                 <string>blen_daq.ui</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="PyDMEmbeddedDisplay" name="inst_b_DAQ">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="toolTip">
+                 <string/>
+                </property>
+                <property name="macros" stdset="0">
+                 <string>{&quot;AREA&quot;: &quot;${AREA}&quot;, &quot;POS&quot;: &quot;${POS}&quot;, &quot;INST&quot;: &quot;${INST}B&quot; }</string>
+                </property>
+                <property name="filename" stdset="0">
+                 <string>blen_daq.ui</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
             </widget>
            </item>
            <item row="1" column="1">
@@ -1160,11 +1047,6 @@
   </layout>
  </widget>
  <customwidgets>
-  <customwidget>
-   <class>PyDMLabel</class>
-   <extends>QLabel</extends>
-   <header>pydm.widgets.label</header>
-  </customwidget>
   <customwidget>
    <class>PyDMWaveformPlot</class>
    <extends>QGraphicsView</extends>
