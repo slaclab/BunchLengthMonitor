@@ -27,12 +27,7 @@ class FPGAConfig(Display):
         self.atca_slot = PV('{}:ATCA_SLOT'.format(self.sioc_pv_prefix))
 
     def handle_tree_gui(self):
-        try:
-            subprocess.check_output(self._command(), shell=True, stderr=subprocess.STDOUT)
-        except subprocess.CalledProcessError as e:
-            print("Failed to start TreeGUI:")
-            print(e.output)
-
+        subprocess.Popen(self._command(), shell=True, stderr=subprocess.STDOUT)
 
     def _command(self):
         """ Creates the TreeGUI command from macros and the environment """
@@ -55,7 +50,7 @@ class FPGAConfig(Display):
         command.extend(['-t', backdoor])
         command.extend(['-L', '512'])
 
-        print("=" * 64)
+        print("\n" + "=" * 64)
         print("Launching cpswTreeGUI with following parameters:")
         # Python slice stride `x::y` take element x and increment iterator by y 
         # We're skipping element 0 since it's the path to TreeGUI's start.sh
