@@ -27,18 +27,25 @@ class FPGAConfig(Display):
         self.atca_slot = PV('{}:ATCA_SLOT'.format(self.sioc_pv_prefix))
 
     def handle_tree_gui(self):
-        subprocess.Popen(self._command(), stderr=subprocess.STDOUT)
+        try:
+            cmd = self._command()
+            subprocess.Popen(cmd, stderr=subprocess.STDOUT)
+        except Exception as e:
+            print("ERROR: Failed to launch TreeGUI")
+            print(e)
 
     def _command(self):
         """ Creates the TreeGUI command from macros and the environment """
         command = []
 
-        cpu = self.cpu.get()
-        shm = self.shm.get()
-        atca_slot = self.atca_slot.get()
+        # The values from the caget should be strings already
+        # but casting them here covers corner cases and will get
+        # error output from cpswTreeGUI when it tries to launch
+        cpu = str(self.cpu.get())
+        shm = str(self.shm.get())
+        atca_slot = str(self.atca_slot.get())
 
-        p_top = os.environ["PACKAGE_TOP"]
-        ioc_data = os.environ["IOC"]
+        p_top = self._get_package_top()
 
         tree_gui = os.path.join('.', p_top, "cpsw/cpswTreeGUI/current/start.sh")
         backdoor = os.path.join(self.path, "../../yaml/backdoor.tar.gz")
@@ -61,6 +68,27 @@ class FPGAConfig(Display):
         # return " ".join(command)
         return command
 
+
+    def _get_package_top(self):
+        """
+        We have no guarantee that PACKAGE_TOP will be defined.
+        This method tries its best to find the top of the package tree.
+        """
+        tries = ["PACKAGE_TOP", "PACKAGE_SITE_TOP"]
+        p_top = None
+        for t in tries:
+            try:
+                p_top = os.environ[t]
+                if p_top:
+                    return p_top
+            except:
+                continue
+        try:
+            return "{}/package".format(os.environ["FACILITY_ROOT"])
+        except:
+            msg  = "Cannot find package tree.\n"
+            msg += "Tried $PACKAGE_TOP $PACKAGE_SITE_TOP $FACILITY_ROOT/package"
+            raise RuntimeError(msg)
 
     def ui_filename(self):
         return "fpga_config.ui"
