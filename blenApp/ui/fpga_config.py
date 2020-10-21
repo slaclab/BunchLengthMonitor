@@ -27,7 +27,7 @@ class FPGAConfig(Display):
         self.atca_slot = PV('{}:ATCA_SLOT'.format(self.sioc_pv_prefix))
 
     def handle_tree_gui(self):
-        subprocess.Popen(self._command(), shell=True, stderr=subprocess.STDOUT)
+        subprocess.Popen(self._command(), stderr=subprocess.STDOUT)
 
     def _command(self):
         """ Creates the TreeGUI command from macros and the environment """
@@ -58,8 +58,8 @@ class FPGAConfig(Display):
             print("{}:\t{}".format(param, val))
 
         print("=" * 64)
-
-        return " ".join(command)
+        # return " ".join(command)
+        return command
 
 
     def ui_filename(self):
