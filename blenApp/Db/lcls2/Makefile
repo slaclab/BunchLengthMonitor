@@ -17,6 +17,7 @@ DB += blenLCLS2.db
 # --------------------------------------------------
 DB += lcls2FPGA.db
 DB += pyroFilters.db
+DB += msgStatus.db
 
 include $(TOP)/configure/RULES
 #----------------------------------------

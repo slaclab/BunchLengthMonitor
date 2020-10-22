@@ -73,8 +73,8 @@
 /mmio/AppTop/AppCore/AmcGenericAdcDacCore[1]/InitAmcCard                       AMC1:InitAmcCard
 
 # iMax calculation results
-/mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/AddSums1                   AMC0:SUM
-/mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/AddSums1                   AMC1:SUM
+/mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/AddSums1                   AMC0:AddSums1
+/mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/AddSums1                   AMC1:AddSums1
 /mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/FinalSum                   AMC0:IMAX
 /mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/FinalSum                   AMC1:IMAX
 /mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/MultResultH                AMC0:TMIT
@@ -137,8 +137,8 @@
 /mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/MultResultA2               AMC0:MultResultA2
 /mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/MultResultA2               AMC1:MultResultA2
 
-/mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/FinalRawSum                AMC0:FinalRawSum
-/mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/FinalRawSum                AMC1:FinalRawSum
+/mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/FinalRawSum                AMC0:SUM
+/mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/FinalRawSum                AMC1:SUM
 
 # Rearm activation to read streams
 /mmio/AppTop/DaqMuxV2[0]/TriggerHwAutoRearm                          AMC0:AutoRearm

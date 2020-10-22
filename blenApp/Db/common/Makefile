@@ -41,9 +41,6 @@ DB_INSTALLS += $(YCPSWASYN)/db/RegisterEnumBOut.template
 DB_INSTALLS += $(YCPSWASYN)/db/RegisterEnumBOutRBV.template
 DB_INSTALLS += $(YCPSWASYN)/db/RegisterEnumMBBOut.template
 DB_INSTALLS += $(YCPSWASYN)/db/RegisterEnumMBBOutRBV.template
-DB_INSTALLS += $(YCPSWASYN)/db/RegisterDoubleIn.template
-DB_INSTALLS += $(YCPSWASYN)/db/RegisterDoubleOut.template
-DB_INSTALLS += $(YCPSWASYN)/db/RegisterDoubleOutRBV.template
 DB_INSTALLS += $(YCPSWASYN)/db/RegisterCommand.template
 DB_INSTALLS += $(YCPSWASYN)/db/RegisterStream.template
 DB_INSTALLS += $(YCPSWASYN)/db/RegisterStream16.template
@@ -75,6 +72,10 @@ DB_INSTALLS += $(AUTOSAVE)/db/save_restoreStatus.db
 # ==================================================
 # BLEN Application DBs 
 # ==================================================
+
+DB += RegDoubleIn.template
+DB += RegDoubleOut.template
+DB += RegDoubleOutRBV.template
 
 # Main User-visible PVs 
 # --------------------------------------------------
