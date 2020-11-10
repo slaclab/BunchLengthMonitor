@@ -246,3 +246,24 @@ record(calc, "$(P):FLT4_ERR")
   field(SCAN, "$(SCAN)")
   field(DESC, "0 = OK 1 = Mismatch of STS and CTRL")
 }
+
+record(longin, "$(P):ATTN_IDX")
+{
+  field(DESC, "Filter mover Attenuation register index")
+  field(SCAN, "Passive")
+  field(INP, "$(P):ATTN_IDX_ASUB.VALA")
+}
+
+record(aSub, "$(P):ATTN_IDX_ASUB")
+{
+  field(DESC, "Get the Attenuation Index")
+  field(SCAN, "$(SCAN)")
+  field(SNAM, "GetAttenuationIndex")
+  field(INPA, "$(P):FLT1_STS")
+  field(INPA, "$(P):FLT2_STS")
+  field(INPA, "$(P):FLT3_STS")
+  field(INPA, "$(P):FLT4_STS")
+  field(FTA,  "LONG")
+  field(FTVA, "LONG")
+  field(FLNK, "$(P):ATTN_IDX") 
+}
