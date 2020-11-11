@@ -114,41 +114,41 @@ file "RegisterOutRBV.template" { pattern
 #======================================
 
 file "RegDoubleOut.template" { pattern
-{ P,              R,                     DESC,                   PINI,     SCAN,      PORT,     EGU,  PREC,        PARAM        }
-{ $(P), MoverAttenuation0,  "Set Mover State 0 Attenuation",     "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation0  }
-{ $(P), MoverAttenuation1,  "Set Mover State 1 Attenuation",     "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation1  }
-{ $(P), MoverAttenuation2,  "Set Mover State 2 Attenuation",     "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation2  }
-{ $(P), MoverAttenuation3,  "Set Mover State 3 Attenuation",     "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation3  }
-{ $(P), MoverAttenuation4,  "Set Mover State 4 Attenuation",     "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation4  }
-{ $(P), MoverAttenuation5,  "Set Mover State 5 Attenuation",     "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation5  }
-{ $(P), MoverAttenuation6,  "Set Mover State 6 Attenuation",     "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation6  }
-{ $(P), MoverAttenuation7,  "Set Mover State 7 Attenuation",     "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation7  }
-{ $(P), MoverAttenuation8,  "Set Mover State 8 Attenuation",     "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation8  }
-{ $(P), MoverAttenuation9,  "Set Mover State 9 Attenuation",     "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation9  }
-{ $(P), MoverAttenuation10, "Set Mover State 10 Attenuation",    "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation10 }
-{ $(P), MoverAttenuation11, "Set Mover State 11 Attenuation",    "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation11 }
-{ $(P), MoverAttenuation12, "Set Mover State 12 Attenuation",    "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation12 }
-{ $(P), MoverAttenuation13, "Set Mover State 13 Attenuation",    "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation13 }
-{ $(P), MoverAttenuation14, "Set Mover State 14 Attenuation",    "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation14 }
-{ $(P), MoverAttenuation15, "Set Mover State 15 Attenuation",    "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation15 }
+{ P,          R,                     DESC,                   PINI,     SCAN,      PORT,     EGU,   PREC,        PARAM        }
+{ $(P), Attenuation0,  "Set Filter State 0 Attenuation",     "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation0   }
+{ $(P), Attenuation1,  "Set Filter State 1 Attenuation",     "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation1   }
+{ $(P), Attenuation2,  "Set Filter State 2 Attenuation",     "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation2   }
+{ $(P), Attenuation3,  "Set Filter State 3 Attenuation",     "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation3   }
+{ $(P), Attenuation4,  "Set Filter State 4 Attenuation",     "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation4   }
+{ $(P), Attenuation5,  "Set Filter State 5 Attenuation",     "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation5   }
+{ $(P), Attenuation6,  "Set Filter State 6 Attenuation",     "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation6   }
+{ $(P), Attenuation7,  "Set Filter State 7 Attenuation",     "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation7   }
+{ $(P), Attenuation8,  "Set Filter State 8 Attenuation",     "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation8   }
+{ $(P), Attenuation9,  "Set Filter State 9 Attenuation",     "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation9   }
+{ $(P), Attenuation10, "Set Filter State 10 Attenuation",    "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation10  }
+{ $(P), Attenuation11, "Set Filter State 11 Attenuation",    "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation11  }
+{ $(P), Attenuation12, "Set Filter State 12 Attenuation",    "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation12  }
+{ $(P), Attenuation13, "Set Filter State 13 Attenuation",    "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation13  }
+{ $(P), Attenuation14, "Set Filter State 14 Attenuation",    "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation14  }
+{ $(P), Attenuation15, "Set Filter State 15 Attenuation",    "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation15  }
 }
 
 file "RegDoubleOutRBV.template" { pattern
-{ P,              R,                     DESC,                   PINI,     SCAN,      PORT,    EGU,  PREC,        PARAM         }
-{ $(P), MoverAttenuation0RBV,  "Mover State 0 Attenuation",     "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation0   }
-{ $(P), MoverAttenuation1RBV,  "Mover State 1 Attenuation",     "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation1   }
-{ $(P), MoverAttenuation2RBV,  "Mover State 2 Attenuation",     "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation2   }
-{ $(P), MoverAttenuation3RBV,  "Mover State 3 Attenuation",     "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation3   }
-{ $(P), MoverAttenuation4RBV,  "Mover State 4 Attenuation",     "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation4   }
-{ $(P), MoverAttenuation5RBV,  "Mover State 5 Attenuation",     "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation5   }
-{ $(P), MoverAttenuation6RBV,  "Mover State 6 Attenuation",     "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation6   }
-{ $(P), MoverAttenuation7RBV,  "Mover State 7 Attenuation",     "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation7   }
-{ $(P), MoverAttenuation8RBV,  "Mover State 8 Attenuation",     "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation8   }
-{ $(P), MoverAttenuation9RBV,  "Mover State 9 Attenuation",     "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation9   }
-{ $(P), MoverAttenuation10RBV, "Mover State 10 Attenuation",    "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation10  }
-{ $(P), MoverAttenuation11RBV, "Mover State 11 Attenuation",    "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation11  }
-{ $(P), MoverAttenuation12RBV, "Mover State 12 Attenuation",    "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation12  }
-{ $(P), MoverAttenuation13RBV, "Mover State 13 Attenuation",    "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation13  }
-{ $(P), MoverAttenuation14RBV, "Mover State 14 Attenuation",    "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation14  }
-{ $(P), MoverAttenuation15RBV, "Mover State 15 Attenuation",    "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation15  }
+{ P,           R,                     DESC,                 PINI,     SCAN,      PORT,     EGU,   PREC,        PARAM         }
+{ $(P), Attenuation0RBV,  "Filter State 0 Attenuation",     "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation0    }
+{ $(P), Attenuation1RBV,  "Filter State 1 Attenuation",     "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation1    }
+{ $(P), Attenuation2RBV,  "Filter State 2 Attenuation",     "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation2    }
+{ $(P), Attenuation3RBV,  "Filter State 3 Attenuation",     "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation3    }
+{ $(P), Attenuation4RBV,  "Filter State 4 Attenuation",     "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation4    }
+{ $(P), Attenuation5RBV,  "Filter State 5 Attenuation",     "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation5    }
+{ $(P), Attenuation6RBV,  "Filter State 6 Attenuation",     "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation6    }
+{ $(P), Attenuation7RBV,  "Filter State 7 Attenuation",     "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation7    }
+{ $(P), Attenuation8RBV,  "Filter State 8 Attenuation",     "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation8    }
+{ $(P), Attenuation9RBV,  "Filter State 9 Attenuation",     "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation9    }
+{ $(P), Attenuation10RBV, "Filter State 10 Attenuation",    "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation10   }
+{ $(P), Attenuation11RBV, "Filter State 11 Attenuation",    "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation11   }
+{ $(P), Attenuation12RBV, "Filter State 12 Attenuation",    "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation12   }
+{ $(P), Attenuation13RBV, "Filter State 13 Attenuation",    "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation13   }
+{ $(P), Attenuation14RBV, "Filter State 14 Attenuation",    "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation14   }
+{ $(P), Attenuation15RBV, "Filter State 15 Attenuation",    "NO",   "Passive",  $(PORT),   "",    "7",   MVR:Attenuation15   }
 }

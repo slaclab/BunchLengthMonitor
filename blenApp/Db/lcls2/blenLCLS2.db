@@ -36,6 +36,7 @@ record(calc, "$(P):$(INST0):SHT_STS")
   field(INPD, "0")    # Bit Shift 
   field(CALC, "(A&B&C) ? 3 : (((~(A|B)) & C) ? 2 : (A&C) >> D)")
   field(SCAN, "$(SCAN)")
+  field(PHAS, "0")
   field(DESC, "0=OUT, 1=IN, 2=MOVING, 3=INCONSISTENT")
 }
 
@@ -47,6 +48,7 @@ record(calc, "$(P):$(INST1):SHT_STS")
   field(INPD, "1")    # Bit Shift 
   field(CALC, "(A&B&C) ? 3 : (((~(A|B)) & C) ? 2 : (A&C) >> D)")
   field(SCAN, "$(SCAN)")
+  field(PHAS, "0")
   field(DESC, "0=OUT, 1=IN, 2=MOVING, 3=INCONSISTENT")
 }
 
@@ -62,6 +64,7 @@ record(calc, "$(P):FLT1_STS")
   field(INPD, "2")    # Bit Shift 
   field(CALC, "(A&B&C) ? 3 : (((~(A|B)) & C) ? 2 : (A&C) >> D)")
   field(SCAN, "$(SCAN)")
+  field(PHAS, "0")
   field(DESC, "0=OUT, 1=IN, 2=MOVING, 3=INCONSISTENT")
 }
 
@@ -83,6 +86,7 @@ record(calc, "$(P):FLT3_STS")
   field(INPD, "4")    # Bit Shift 
   field(CALC, "(A&B&C) ? 3 : (((~(A|B)) & C) ? 2 : (A&C) >> D)")
   field(SCAN, "$(SCAN)")
+  field(PHAS, "0")
   field(DESC, "0=OUT, 1=IN, 2=MOVING, 3=INCONSISTENT")
 }
 
@@ -94,6 +98,7 @@ record(calc, "$(P):FLT4_STS")
   field(INPD, "5")    # Bit Shift 
   field(CALC, "(A&B&C) ? 3 : (((~(A|B)) & C) ? 2 : (A&C) >> D)")
   field(SCAN, "$(SCAN)")
+  field(PHAS, "0")
   field(DESC, "0=OUT, 1=IN, 2=MOVING, 3=INCONSISTENT")
 }
 
@@ -185,6 +190,7 @@ record(calc, "$(P):$(INST0):SHT_ERR")
   field(INPD, "1")    # Error Value
   field(CALC, "(A = B) ? C : D")
   field(SCAN, "$(SCAN)")
+  field(PHAS, "1")
   field(DESC, "0 = OK 1 = Mismatch of STS and CTRL")
 }
 
@@ -196,6 +202,7 @@ record(calc, "$(P):$(INST1):SHT_ERR")
   field(INPD, "1")    # Error Value
   field(CALC, "(A = B) ? C : D")
   field(SCAN, "$(SCAN)")
+  field(PHAS, "1")
   field(DESC, "0 = OK 1 = Mismatch of STS and CTRL")
 }
 
@@ -211,6 +218,7 @@ record(calc, "$(P):FLT1_ERR")
   field(INPD, "1")    # Error Value
   field(CALC, "(A = B) ? C : D")
   field(SCAN, "$(SCAN)")
+  field(PHAS, "1")
   field(DESC, "0 = OK 1 = Mismatch of STS and CTRL")
 }
 
@@ -222,6 +230,7 @@ record(calc, "$(P):FLT2_ERR")
   field(INPD, "1")    # Error Value
   field(CALC, "(A = B) ? C : D")
   field(SCAN, "$(SCAN)")
+  field(PHAS, "1")
   field(DESC, "0 = OK 1 = Mismatch of STS and CTRL")
 }
 
@@ -233,6 +242,7 @@ record(calc, "$(P):FLT3_ERR")
   field(INPD, "1")    # Error Value
   field(CALC, "(A = B) ? C : D")
   field(SCAN, "$(SCAN)")
+  field(PHAS, "1")
   field(DESC, "0 = OK 1 = Mismatch of STS and CTRL")
 }
 
@@ -244,26 +254,6 @@ record(calc, "$(P):FLT4_ERR")
   field(INPD, "1")    # Error Value
   field(CALC, "(A = B) ? C : D")
   field(SCAN, "$(SCAN)")
+  field(PHAS, "1")
   field(DESC, "0 = OK 1 = Mismatch of STS and CTRL")
-}
-
-record(longin, "$(P):ATTN_IDX")
-{
-  field(DESC, "Filter mover Attenuation register index")
-  field(SCAN, "Passive")
-  field(INP, "$(P):ATTN_IDX_ASUB.VALA")
-}
-
-record(aSub, "$(P):ATTN_IDX_ASUB")
-{
-  field(DESC, "Get the Attenuation Index")
-  field(SCAN, "$(SCAN)")
-  field(SNAM, "GetAttenuationIndex")
-  field(INPA, "$(P):FLT1_STS")
-  field(INPA, "$(P):FLT2_STS")
-  field(INPA, "$(P):FLT3_STS")
-  field(INPA, "$(P):FLT4_STS")
-  field(FTA,  "LONG")
-  field(FTVA, "LONG")
-  field(FLNK, "$(P):ATTN_IDX") 
 }
