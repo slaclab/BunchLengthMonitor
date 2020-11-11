@@ -1,51 +1,66 @@
 import os
 
+from qtpy.QtCore import Qt
+from qtpy.QtWidgets import QLabel
+
 from epics import PV
 from pydm import Display
-from pydm.widgets.channel import PyDMChannel
+from pydm.widgets import PyDMLineEdit
 
 class BLENFilters(Display):
     def __init__(self, parent=None, macros=None):
         super(BLENFilters, self).__init__(parent=parent, macros=macros)
 
-        area = self.macros()["AREA"]
-        pos  = self.macros()["POS"]
+        self.area = self.macros()["AREA"]
+        self.pos  = self.macros()["POS"]
+
+        # make 16 LineEdit widgets to swap out.
+        self.attn_edits = [
+            PyDMLineEdit(
+                init_channel="ca://BLEN:{}:{}:Attenuation{}".format(
+                self.area, self.pos, i))
+            for i in range(16)
+        ]
+
+        # Set up the filter attenuation widgets.
+        self.ui.attnLayout.addStretch(2)
+
+        self.attnLbl = QLabel("Filter Attenuation")
+        self.attnLbl.setAlignment(Qt.AlignHCenter | Qt.AlignVCenter)
+        self.attnLbl.setStyleSheet("QLabel { font: bold 12pt; }")
+        self.ui.attnLayout.addWidget(self.attnLbl)
+
+        for widget in self.attn_edits:
+            self.ui.attnLayout.addWidget(widget)
+            widget.hide()
+
+        self.ui.attnLayout.addStretch(0.25)
+
+        self.last_attn_idx = 0
 
         # Monitor MoverOnOff for changes.
-        self.mvr_on_off_ch = PyDMChannel(
-                address="ca://BLEN:{}:{}:MoverOnOffRBV".format(area, pos),
-                value_slot = self.update_attn())
+        # This seems to work better than PyDMChannel - especially because it
+        # actually passes args to the callback.
+        self.mvr_pv = PV("BLEN:{}:{}:MoverOnOffRBV".format(self.area, self.pos),
+                callback=self.update_attn)
+        self.mvr_pv.connect()
 
-        self.mvr_on_off_ch.connect()
-        self.mvr_on_off = PV("BLEN:{}:{}:MoverOnOffRBV".format(area, pos))
 
-        self.attn_idx = 0
-        self.ui.attnEdit.channel = "BLEN:{}:{}:Attenuation0".format(area, pos)
-        self.update_attn()
-
-    def update_attn(self):
+    def update_attn(self, value=0, **kwargs):
         """
         Upon change in the filter configuration, we need to change which
         Attenuation register we are talking to.
         """
-        try:
-            attn_idx = self.mover_on_off.get()
-        except:
-            print("Could not get MoverOnOffRBV over CA!")
-            self.ui.attnEdit.setEnabled(False)
-            return
-
         # The lower two bits are for AMC0 and AMC1 shutters.
-        attn_idx = attn_idx >> 2
+        attn_idx = value >> 2
 
-        # The change could have just been the shutters. In that case, we're done.
-        if self.attn_idx == attn_idx:
-            return
+        self.attn_edits[self.last_attn_idx].hide()
+        self.attn_edits[attn_idx].show()
 
-        self.ui.attnEdit.channel = "BLEM:{}:{}:Attenuation{}".format(
-                self.macros()["AREA"], self.macros()["POS"], attn_idx)
+        self.attnLbl.setText("Filter Attenuation[{}] ".format(attn_idx))
 
-        self.attn_idx = attn_idx
+
+        self.last_attn_idx = attn_idx
         print("Changed to Attenuation{}".format(attn_idx))
 
 
