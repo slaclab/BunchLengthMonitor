@@ -20,7 +20,7 @@ record(calc, "$(P):BPMS_SYNC_CALC") {
 }
 
 record(bi, "$(P):BPMS_SYNC") {
-    field(DESC, "$(DESC)")
+    field(DESC, "Sync status with BPM")
     field(DTYP, "Soft Channel")
     field(INP, "$(P):BPMS_SYNC_CALC")
     field(ZNAM, "OK")
