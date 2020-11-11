@@ -94,7 +94,7 @@
             <string>{&quot;AREA&quot;:&quot;${AREA}&quot;, &quot;POS&quot;:&quot;${POS}&quot;, &quot;INST&quot;:&quot;${INST}&quot;}</string>
            </property>
            <property name="filename" stdset="0">
-            <string>blen_lcls2_filters.ui</string>
+            <string>blen_lcls2_filters.py</string>
            </property>
           </widget>
          </item>
