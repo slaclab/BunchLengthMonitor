@@ -1,3 +1,4 @@
+BLEN:$(AREA):$(POS):$(INST):CoefA0
 BLEN:$(AREA):$(POS):$(INST):CoefA1
 BLEN:$(AREA):$(POS):$(INST):CoefA2
 BLEN:$(AREA):$(POS):$(INST):CoefB
