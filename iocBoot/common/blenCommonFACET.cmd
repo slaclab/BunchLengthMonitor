@@ -21,16 +21,17 @@ fcomInit("${FCOM_NETWORK}", "20")
 # ===========================================
 
 # Manually created yCPSWasyn records
-dbLoadRecords("db/blenMR.db", "AREA=${AREA}, POS=${POS}, INST=${INST}A, INST_NUM=A, PORT=cpsw, AMC=0")
-dbLoadRecords("db/blenMR.db", "AREA=${AREA}, POS=${POS}, INST=${INST}B, INST_NUM=B, PORT=cpsw, AMC=1")
+dbLoadRecords("db/blenMR.db", "AREA=$(AREA), POS=$(POS), INST=$(INST)A, INST_NUM=A, PORT=$(BLEN_ASYN_PORT), AMC=0")
+dbLoadRecords("db/blenMR.db", "AREA=$(AREA), POS=$(POS), INST=$(INST)B, INST_NUM=B, PORT=$(BLEN_ASYN_PORT), AMC=1")
 
-dbLoadRecords("db/tprPattern.db",  "LOCA=${AREA}, IOC_UNIT=${IOC_UNIT}, INST=2, PORT=pattern")
+dbLoadRecords("db/tprPattern.db", "LOCA=${AREA}, IOC_UNIT=${IOC_UNIT}, INST=$(ATCA_SLOT), PORT=pattern")
+dbLoadRecords("db/tprTrig.db",    "LOCA=$(AREA), IOC_UNIT=$(IOC_UNIT), INST=$(ATCA_SLOT), PORT=trig")
 
 # BSA records
-dbLoadRecords("db/Bsa.db", "DEVICE=BLEN:${AREA}:${POS},ATRB=AIMAX, SINK_SIZE=1")
-dbLoadRecords("db/Bsa.db", "DEVICE=BLEN:${AREA}:${POS},ATRB=BIMAX, SINK_SIZE=1")
-dbLoadRecords("db/Bsa.db", "DEVICE=BLEN:${AREA}:${POS},ATRB=ARAW, SINK_SIZE=1")
-dbLoadRecords("db/Bsa.db", "DEVICE=BLEN:${AREA}:${POS},ATRB=BRAW, SINK_SIZE=1")
+dbLoadRecords("db/Bsa.db", "DEVICE=BLEN:$(AREA):$(POS),ATRB=AIMAX, SINK_SIZE=1")
+dbLoadRecords("db/Bsa.db", "DEVICE=BLEN:$(AREA):$(POS),ATRB=BIMAX, SINK_SIZE=1")
+dbLoadRecords("db/Bsa.db", "DEVICE=BLEN:$(AREA):$(POS),ATRB=ARAW,  SINK_SIZE=1")
+dbLoadRecords("db/Bsa.db", "DEVICE=BLEN:$(AREA):$(POS),ATRB=BRAW,  SINK_SIZE=1")
 
 # tpr high level PVs
 dbLoadRecords("db/tprDeviceNamePV.db","LOCA=$(AREA),IOC_UNIT=$(IOC_UNIT),INST=$(ATCA_SLOT),SYS=SYS0,NN=00,DEV_PREFIX=BLEN:$(AREA):$(POS):TRG00:,PORT=trig")
