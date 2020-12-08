@@ -15,6 +15,7 @@ epicsEnvSet("POS", "596")
 epicsEnvSet("INST", "BZ10596")
 epicsEnvSet("IOC_UNIT", "BL01")
 epicsEnvSet("ATCA_SLOT", "5")
+epicsEnvSet("BLEN_ASYN_PORT", "ATCA$(ATCA_SLOT)")
 
 # YAML directory
 epicsEnvSet("YAML_DIR", "$(IOC_DATA)/$(IOC)/firmware/yaml")
