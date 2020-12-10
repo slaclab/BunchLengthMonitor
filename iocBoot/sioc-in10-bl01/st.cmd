@@ -22,12 +22,12 @@ epicsEnvSet("YAML_DIR", "$(IOC_DATA)/$(IOC)/firmware/yaml")
 
 # YAML file
 epicsEnvSet("TOP_YAML", "$(YAML_DIR)/000TopLevel.yaml")
-epicsEnvSet("YAML_CONFIG_FILE", "$(YAML_DIR)/config/defaultsPyro.yaml")
+epicsEnvSet("YAML_CONFIG_FILE", "$(YAML_DIR)/config/defaults.yaml")
 
 epicsEnvSet("FPGA_IP", "10.0.1.105")
 
 # Address of the FCOM network
-epicsEnvSet("FCOM_NETWORK", "239.219.8.0")
+epicsEnvSet("FCOM_NETWORK", "224.0.0.0")
 
 # TMIT PV to read the value from, by using FCOM
 epicsEnvSet("TMIT_PV", "BPMS:IN10:581:TMIT")

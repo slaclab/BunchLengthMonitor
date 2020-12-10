@@ -15,7 +15,7 @@ epicsEnvSet("POS", "356")
 epicsEnvSet("INST", "BL11356")
 
 # Address of the FCOM network
-epicsEnvSet("FCOM_NETWORK", "239.219.8.0")
+epicsEnvSet("FCOM_NETWORK", "224.0.0.0")
 
 # TMIT PV to read the value from, by using FCOM
 epicsEnvSet("TMIT_PV", "BPMS:LI11:358:TMIT")
