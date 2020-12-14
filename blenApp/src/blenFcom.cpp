@@ -16,9 +16,6 @@
 
 #include "blenFcom.h"
 
-// More than 8.3 ms means we effectively lost the TMIT arrival
-volatile unsigned blmFcomTimeoutMs = 9;
-
 // Singleton design pattern: initialize class instance pointer to null.
 BlenFcom* BlenFcom::instance = 0;
 
@@ -191,7 +188,7 @@ void BlenFcom::fcomTask() {
 
     while (1) {
         // Wait for BPM blob to arrive
-        st = fcomGetBlob( tmitId, &bpmBlob, blmFcomTimeoutMs /* ms */ );
+        st = fcomGetBlob( tmitId, &bpmBlob, blmFcomTimeoutMs_ );
         if ( 0 == st ) {
             if ( bpmBlob->fc_stat ) {
                 blenStats.fcomStatErrors++;

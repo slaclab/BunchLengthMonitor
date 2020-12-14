@@ -18,7 +18,7 @@
  */ 
 
 static int
-blenConfigureMR(const char *station, const char *stream, const char *tmit, const char *atcaIP)
+blenConfigureMR(const char *station, const char *stream, const char *tmit, const char *atcaIP, int timeoutMs)
 {
     auto blenBSA = BlenBSA::getInstance();
     blenBSA->createChannels(station);
@@ -28,6 +28,7 @@ blenConfigureMR(const char *station, const char *stream, const char *tmit, const
     streamBSA->fireStreamTask();
 
     auto blenFcom = BlenFcom::getInstance();
+    blenFcom->setTimeout(timeoutMs);
     blenFcom->registerTmitId(tmit);
     
     /* ARAW PV is, for example, BLEN:LI21:265:ARAW. station parameter comes
@@ -114,20 +115,22 @@ static const iocshArg blenConfigureMRArg0 = { "Station name", iocshArgString };
 static const iocshArg blenConfigureMRArg1 = { "BSA stream name", iocshArgString };
 static const iocshArg blenConfigureMRArg2 = { "FCOM TMIT PV", iocshArgString };
 static const iocshArg blenConfigureMRArg3 = { "ATCA IP:port to send TMIT", iocshArgString };
+static const iocshArg blenConfigureMRArg4 = { "FCOM Rx Timeout (ms)", iocshArgInt };
 
 static const iocshArg * const blenConfigureMRArgs[] = { 
         &blenConfigureMRArg0,
         &blenConfigureMRArg1, 
         &blenConfigureMRArg2,
-        &blenConfigureMRArg3
+        &blenConfigureMRArg3,
+        &blenConfigureMRArg4,
 };
 
-static const iocshFuncDef blenConfigureMRFuncDef = { "blenConfigureMR", 4, blenConfigureMRArgs };
+static const iocshFuncDef blenConfigureMRFuncDef = { "blenConfigureMR", 5, blenConfigureMRArgs };
 
 static void
 blenConfigureMRCallFunc(const iocshArgBuf * args)
 {
-    blenConfigureMR(args[0].sval, args[1].sval, args[2].sval, args[3].sval);
+    blenConfigureMR(args[0].sval, args[1].sval, args[2].sval, args[3].sval, args[4].ival);
 }
 
 
