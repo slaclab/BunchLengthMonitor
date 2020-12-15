@@ -6,6 +6,7 @@
 #include "blenFcom.h"
 
 
+
 /*
  * blenConfigureMR
  * 
@@ -15,17 +16,13 @@
  * FCOM TMIT PV (tmit):       PV name of source of TMIT data
  * ATCA IP:PORT (atcaIP):     IP:PORT in 32 bit ipv4 format to send TMIT to FPGA
  *
- */ 
+ */
 
 static int
 blenConfigureMR(const char *station, const char *stream, const char *tmit, const char *atcaIP, int timeoutMs)
 {
-    auto blenBSA = BlenBSA::getInstance();
-    blenBSA->createChannels(station);
-
     auto streamBSA = CpswStreamBSA::getInstance();
-    streamBSA->setStreamName(stream);
-    streamBSA->fireStreamTask();
+    streamBSA->configureAndRun(station, stream);
 
     auto blenFcom = BlenFcom::getInstance();
     blenFcom->setTimeout(timeoutMs);

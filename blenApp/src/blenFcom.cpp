@@ -217,7 +217,7 @@ void BlenFcom::fcomTask() {
 }
 
 // Sends data to subscribed systems, like Fast Feedback
-void BlenFcom::sendData(bsaData_t* bsaData) {
+void BlenFcom::sendData(const bsaData_t& bsaData) {
     FcomGroup fcomGroup;
     int st;
     
@@ -229,13 +229,13 @@ void BlenFcom::sendData(bsaData_t* bsaData) {
 
     // Fill array with blen data
     blenTxBlob.fc_flt = blenTxData;
-    blenTxBlob.fcbl_blen_araw = static_cast<float>(bsaData->aSum);
-    blenTxBlob.fcbl_blen_braw = static_cast<float>(bsaData->bSum);
-    blenTxBlob.fcbl_blen_aimax = static_cast<float>(bsaData->aImax);
-    blenTxBlob.fcbl_blen_bimax = static_cast<float>(bsaData->bImax);
+    blenTxBlob.fcbl_blen_araw = static_cast<float>(bsaData.aSum);
+    blenTxBlob.fcbl_blen_braw = static_cast<float>(bsaData.bSum);
+    blenTxBlob.fcbl_blen_aimax = static_cast<float>(bsaData.aImax);
+    blenTxBlob.fcbl_blen_bimax = static_cast<float>(bsaData.bImax);
 
-    blenTxBlob.fc_tsHi = bsaData->timeStamp.secPastEpoch;
-    blenTxBlob.fc_tsLo = bsaData->timeStamp.nsec;
+    blenTxBlob.fc_tsHi = bsaData.timeStamp.secPastEpoch;
+    blenTxBlob.fc_tsLo = bsaData.timeStamp.nsec;
 
     blenTxBlob.fc_vers = FCOM_PROTO_VERSION;
     blenTxBlob.fc_idnt = aRawId;
@@ -245,9 +245,9 @@ void BlenFcom::sendData(bsaData_t* bsaData) {
     // If there is a problem with the data, status of the data is ored with the
     // masks provided by fcomLclsBlen.h
     blenTxBlob.fc_stat = FC_STAT_BLEN_OK;
-    blenTxBlob.fc_stat |= (bsaData->aStat != epicsAlarmNone) ? 
+    blenTxBlob.fc_stat |= (bsaData.aStat != epicsAlarmNone) ?
                                     FC_STAT_BLEN_INVAL_AIMAX_MASK : 0;
-    blenTxBlob.fc_stat |= (bsaData->bStat != epicsAlarmNone) ? 
+    blenTxBlob.fc_stat |= (bsaData.bStat != epicsAlarmNone) ?
                                     FC_STAT_BLEN_INVAL_BIMAX_MASK : 0;
 
     // Add blob to group

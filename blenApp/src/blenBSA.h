@@ -1,13 +1,14 @@
 #ifndef BLEN_BSA_H
 #define BLEN_BSA_H
 
+#include <array>
+
 #include "BsaApi.h"
 
-#define NUM_CHANNELS 4
-static const char* const channelNames[NUM_CHANNELS] = {"AIMAX", "BIMAX", "ARAW", "BRAW"};
+constexpr int NUM_CHANNELS = 4;
 
 // Data to be sent to BSA channels
-typedef struct bsaData_t {
+struct bsaData_t {
     epicsTimeStamp timeStamp;
 
     double         aImax;
@@ -19,27 +20,28 @@ typedef struct bsaData_t {
     double         bSum;
     BsaStat        bStat;
     BsaSevr        bSevr;
-} bsaData_t;
+};
 
 class BlenBSA {
-private:
-    BsaChannel *bsaChannels;
-    // Singleton design pattern: here is the pointer for the only instance of
-    // this class.
-    static BlenBSA* instance;
-    // Private constructor for Singleton design pattern
-    BlenBSA();
-    // Private copy constructor and copy assignment operator, to avoid someone
-    // to clone the object (we want only one instance)
-    BlenBSA(const BlenBSA&);
-    BlenBSA& operator=(const BlenBSA&);
 public:
-    ~BlenBSA();
-    // Singleton method to retrieve pointer to the only object that can be
-    // instantiated from this class.
-    static BlenBSA* getInstance();
-    int createChannels(const char *stationName);
-    void sendData(bsaData_t* bsaData);
+    BlenBSA() = default;
+    ~BlenBSA() = default;
+
+    BlenBSA(const BlenBSA &) = delete;
+    BlenBSA(BlenBSA &&) = delete;
+
+    BlenBSA& operator=(const BlenBSA &) = delete;
+    BlenBSA& operator=(BlenBSA &&) = delete;
+
+    void createChannels(const char *stationName);
+    void sendData(const bsaData_t& bsaData);
+
+    inline static constexpr std::array<const char *, NUM_CHANNELS> channelNames = {
+        "AIMAX", "BIMAX", "ARAW", "BRAW",
+    };
+
+private:
+    std::array<BsaChannel, NUM_CHANNELS> bsaChannels;
 };
 
 #endif // BLEN_BSA_H

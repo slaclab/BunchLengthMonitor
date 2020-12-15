@@ -79,7 +79,7 @@ public:
 
     int fireFcomTask();
     void fcomTask();
-    void sendData(bsaData_t *);
+    void sendData(const bsaData_t& bsaData);
     void setTimeout(int timeout) { blmFcomTimeoutMs_ = timeout; }
 
 private:
