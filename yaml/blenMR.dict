@@ -17,6 +17,18 @@
 /Stream3                                                                       AMC0:WeightFunction
 /Stream7                                                                       AMC1:WeightFunction
 
+# Common Configuration
+/mmio/AmcCarrierCore/AxiVersion/DeviceDna                            STAT:DeviceDna
+/mmio/AmcCarrierCore/AxiVersion/DeviceId                             STAT:DeviceId
+/mmio/AmcCarrierCore/AxiVersion/FpgaVersion                          STAT:FpgaVersion
+/mmio/AmcCarrierCore/AxiVersion/BuildStamp                           STAT:BuildStamp
+/mmio/AmcCarrierCore/AxiVersion/UpTimeCnt                            STAT:UpTimeCnt
+/mmio/AmcCarrierCore/AxiVersion/ScratchPad                           :ScratchPad 
+/mmio/AppTop/AppCore/CmnConfig/AppType                               CONF:AppType
+/mmio/AppTop/AppCore/CmnConfig/Location                              CONF:Location
+/mmio/AppTop/AppCore/SysGen[0]/DspCoreConfig/Version                 AMC0:Version
+/mmio/AppTop/AppCore/SysGen[1]/DspCoreConfig/Version                 AMC1:Version
+
 # ADC parameters
 /mmio/AppTop/AppCore/AmcGenericAdcDacCore[0]/AmcGenericAdcDacCtrl/AmcClkFreq   AMC0:AmcClkFreq
 /mmio/AppTop/AppCore/AmcGenericAdcDacCore[1]/AmcGenericAdcDacCtrl/AmcClkFreq   AMC1:AmcClkFreq
