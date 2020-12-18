@@ -19,6 +19,7 @@ DB += blenMR.db
 # --------------------------------------------------
 DB += blenFilters.db
 DB += blenFilterDecoders.db
+DB += mrFPGA.db
 
 include $(TOP)/configure/RULES
 #----------------------------------------
