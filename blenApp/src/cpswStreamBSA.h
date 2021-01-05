@@ -3,28 +3,47 @@
 
 #include <string>
 
-class CpswStreamBSA {
-private:
-    std::string streamName;
-    int counterPacketsToDump;
-    // Singleton design pattern: here is the pointer for the only instance of
-    // this class.
-    static CpswStreamBSA* instance;
-    // Private constructor for Singleton design pattern
-    CpswStreamBSA();
-    // Private copy constructor and copy assignment operator, to avoid someone
-    // to clone the object (we want only one instance)
-    CpswStreamBSA(const CpswStreamBSA&);
-    CpswStreamBSA& operator=(const CpswStreamBSA&);
+#include <epicsMutex.h>
+
+#include "blenBSA.h"
+#include "streamDataType.h"
+
+class CpswStreamBSA
+{
 public:
-    ~CpswStreamBSA();
-    // Singleton method to retrieve pointer to the only object that can be
-    // instantiated from this class.
-    static CpswStreamBSA* getInstance();
-    void setStreamName(std::string strmName);
+    ~CpswStreamBSA() { delete instance; }
+
+    CpswStreamBSA(const CpswStreamBSA &) = delete;
+    CpswStreamBSA(CpswStreamBSA &&) = delete;
+
+    CpswStreamBSA& operator=(const CpswStreamBSA &) = delete;
+    CpswStreamBSA& operator=(CpswStreamBSA &&) = delete;
+
+    void configureAndRun(const char *stationName, const char *streamName);
     void setNumberPacketsToDump(int numberOfPackets);
-    int fireStreamTask();
     void streamTask();
+
+    static CpswStreamBSA* getInstance()
+    {
+        if (!instance)
+            instance = new CpswStreamBSA();
+        return instance;
+    }
+
+private:
+    void dumpPackets(uint8_t *buf);
+    void gatherData(bsaData_t& bsaData, payload_t& AMC0, payload_t& AMC1);
+    void gatherAlarms(bsaData_t& bsaData, payload_t& AMC0, payload_t& AMC1);
+
+    std::string     streamName_;
+    int             counterPacketsToDump_ = 0;
+    BlenBSA         blenBSA_;
+
+    epicsMutex      mutex_;
+
+    // Singleton
+    CpswStreamBSA() = default;
+    inline static CpswStreamBSA* instance = nullptr;
 };
 
 #endif // CPSW_STREAM_BSA_H

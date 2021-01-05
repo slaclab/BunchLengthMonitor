@@ -32,7 +32,7 @@ blen_registerRecordDeviceDriver(pdbbase)
 ## Yaml Downloader
 DownloadYamlFile("$(FPGA_IP)", "$(YAML_DIR)")
 
-# Load yaml files do CPSW
+# Load yaml files for CPSW
 cpswLoadYamlFile("$(TOP_YAML)", "NetIODev", "", "$(FPGA_IP)")
 cpswLoadConfigFile("$(YAML_CONFIG_FILE)", "mmio", "")
 
@@ -43,7 +43,7 @@ cpswLoadConfigFile("$(YAML_CONFIG_FILE)", "mmio", "")
 #    Record name Prefix,        # Record name prefix
 #    Use DB Autogeneration,     # Set to 1 for autogeneration of records from the YAML definition. Set to 0 to disable it
 #    Load dictionary,           # Dictionary file path with registers to load. An empty string will disable this function
-YCPSWASYNConfig("cpsw", "", "$(PREFIX)", "$(AUTO_GEN)", "$(DICT_FILE)")
+YCPSWASYNConfig("$(BLEN_ASYN_PORT)", "", "$(PREFIX)", "$(AUTO_GEN)", "$(DICT_FILE)")
 
 # Load drivers for TPR trigger
 tprTriggerAsynDriverConfigure("trig", "mmio/AmcCarrierCore")
@@ -57,13 +57,13 @@ tprTriggerAsynDriverConfigure("trig", "mmio/AmcCarrierCore")
 dbLoadRecords("db/iocMeta.db", "AREA=$(AREA),IOC_UNIT=$(IOC_UNIT)")
 
 # main blen database - user facing PVs
-dbLoadRecords("db/blen.db", "P=BLEN:$(AREA):$(POS):$(INST)A, PORT=cpsw, AMC=0")
-dbLoadRecords("db/blen.db", "P=BLEN:$(AREA):$(POS):$(INST)B, PORT=cpsw, AMC=1")
+dbLoadRecords("db/blen.db", "P=BLEN:$(AREA):$(POS):$(INST)A, PORT=$(BLEN_ASYN_PORT), AMC=0")
+dbLoadRecords("db/blen.db", "P=BLEN:$(AREA):$(POS):$(INST)B, PORT=$(BLEN_ASYN_PORT), AMC=1")
 
 # FPGA-related records
-dbLoadRecords("db/commonFPGA.db", "P=BLEN:$(AREA):$(POS):$(INST)A, PORT=cpsw, AMC=0")
-dbLoadRecords("db/commonFPGA.db", "P=BLEN:$(AREA):$(POS):$(INST)B, PORT=cpsw, AMC=1")
-dbLoadRecords("db/saveLoadConfig.db", "P=BLEN:$(AREA):$(POS), PORT=cpsw")
+dbLoadRecords("db/commonFPGA.db", "P=BLEN:$(AREA):$(POS):$(INST)A, PORT=$(BLEN_ASYN_PORT), AMC=0")
+dbLoadRecords("db/commonFPGA.db", "P=BLEN:$(AREA):$(POS):$(INST)B, PORT=$(BLEN_ASYN_PORT), AMC=1")
+dbLoadRecords("db/saveLoadConfig.db", "P=BLEN:$(AREA):$(POS), PORT=$(BLEN_ASYN_PORT)")
 dbLoadRecords("db/monitorFPGAReboot.db", "P=BLEN:$(AREA):$(POS)")
 
 dbLoadRecords("db/streamControl.db", "AREA=$(AREA),POS=$(POS),INSTA=$(INST)A,INSTB=$(INST)B")
@@ -112,6 +112,6 @@ dbLoadRecords("db/iocRelease.db","IOC=$(IOC_NAME)")
 system("cp $(TOP)/archive/$(IOC).archive $(IOC_DATA)/$(IOC)/archive")
 
 # ===========================================
-#       LOAD LCLS1 (MR) or LCLS2 CONFIG 
+#   LOAD FACET, LCLS1 (MR) or LCLS2 CONFIG 
 # ===========================================
-< iocBoot/common/blenCommon$(BLEN_VERSION).cmd
+< iocBoot/common/blen$(BLEN_VERSION).cmd

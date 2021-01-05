@@ -3,12 +3,12 @@
 # A reboot is detected when the scratchpad register reads back a 0
 # which should prompt us to reload the configuration
 
-record(calcout "$(P):FPGARebootMon") {
+record(calcout, "$(P):FPGARebootMon") {
   field(SCAN, "10 second")
   field(DESC, "Verify AxiVersion Scratchpad")
   field(INPA, "$(P):ScratchPadRBV")
-  field(B, "0")
-  field(CALC "A=B")
+  field(INPB, "0")
+  field(CALC, "A=B")
   field(OUT, "$(P):loadConfig.PROC")
   field(OOPT, "When Zero")
 }

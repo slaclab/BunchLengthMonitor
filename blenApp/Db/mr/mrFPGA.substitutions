@@ -1,0 +1,57 @@
+########################################################################################################################
+# Summary:             Carrier substitutions file to generate PVs for CPSW registers
+########################################################################################################################
+
+# Registers in this file represent the non-public or expert interface.
+
+########################################################################################################################
+# Macros:
+#   P,R: The PV name as $(P):$(R)
+#   DESC, PINI, SCAN, NELM, etc.: The same fields on the records
+#   PORT: The asyn port name. It must match the port name given when calling "YCPSWASYNConfig" on st.cmd
+#   PARAM: The asyn paramter name. It must be defined in the dictionary file blenLCLS2.dict and assigned to a register
+########################################################################################################################
+
+#======================================
+# Registers with ScalVal_RO interfaces
+#======================================
+# Single register
+file "RegisterIn.template" { pattern
+{ P,          R,              DESC,                               PINI,     SCAN,       PORT,   EGU,      PARAM          }
+{ $(P), DeviceDna,      "Xilinx Device DNA",                      "YES",  "Passive",  $(PORT),   "",   STAT:DeviceDna    }
+{ $(P), FpgaVersion,    "FPGA Firmware Version Number",           "YES",  "Passive",  $(PORT),   "",   STAT:FpgaVersion  }
+{ $(P), UpTimeCnt,      "Seconds since last reset",               "YES",  "1 second", $(PORT),   "s",  STAT:UpTimeCnt    }
+{ $(P), DeviceId,       "Device Identification",                  "YES",  "Passive",  $(PORT),   "",   STAT:DeviceId     }
+{ $(P), BuildStamp,     "FPGA Build Stamp",                       "YES",  "Passive",  $(PORT),   "",   STAT:BuildStamp   } 
+}
+
+#======================================
+# Register with ScalVal interfaces
+#======================================
+
+file "RegisterOut.template" { pattern
+{ P,        R,              DESC,                                  PINI,   SCAN,       PORT,  PARAM       }
+{ $(P), ScratchPad,     "Register to test R/W"                     "NO",   "Passive",  $(PORT),    :ScratchPad }
+# BSA
+{ $(P), ClkSel,         "Select between LCLS-I/II timing",         "YES",  "Passive",  $(PORT),    TIME:ClkSel }
+{ $(P), RxPolarity,     "",                                        "NO",   "Passive",  $(PORT),    BSA:RxPolarity }
+{ $(P), PhaseTarget,    "",                                        "NO",   "Passive",  $(PORT),    BSA:PhaseTarget }
+# CmnConfig
+{ $(P), AppType,        "",                                        "NO",   "Passive",  $(PORT),    CONF:AppType }
+{ $(P), CalibEnable,    "",                                        "NO",   "Passive",  $(PORT),    CONF:CalibEnable }
+{ $(P), Location,       "",                                        "NO",   "Passive",  $(PORT),    CONF:Location }
+}
+
+file "RegisterOutRBV.template" { pattern
+{ P,           R,                DESC,                PINI,      SCAN,      PORT,        PARAM           }
+# Shared
+{ $(P), ScratchPadRBV,  "Register to test R/W",        "YES",  "1 second",  $(PORT),    :ScratchPad      }
+# BSA
+{ $(P), ClkSelRBV,  "",                                "YES",  "1 second",  $(PORT),    TIME:ClkSel      }
+{ $(P), RxPolarityRBV,  "",                            "YES",  "1 second",  $(PORT),    BSA:RxPolarity   }
+{ $(P), PhaseTargetRBV, "",                            "YES",  "1 second",  $(PORT),    BSA:PhaseTarget  }
+# CmnConfig
+{ $(P), AppTypeRBV,     "",                            "YES",  "1 second",  $(PORT),    CONF:AppType     }
+{ $(P), CalibEnableRBV, "",                            "YES",  "1 second",  $(PORT),    CONF:CalibEnable }
+{ $(P), LocationRBV,    "",                            "YES",  "1 second",  $(PORT),    CONF:Location    }
+}

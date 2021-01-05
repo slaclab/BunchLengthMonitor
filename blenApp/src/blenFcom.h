@@ -59,7 +59,7 @@ struct tTmitPacket {
     uint32_t unused[4];
 };
 
-class BlenFcom {
+class BlenFcom final {
 public:
     // Singleton so we don't want copy or move operations
     BlenFcom(const BlenFcom&) = delete;
@@ -79,7 +79,8 @@ public:
 
     int fireFcomTask();
     void fcomTask();
-    void sendData(bsaData_t *);
+    void sendData(const bsaData_t& bsaData);
+    void setTimeout(int timeout) { blmFcomTimeoutMs_ = timeout; }
 
 private:
     // Private constructor for Singleton design pattern
@@ -93,6 +94,7 @@ private:
 
     struct sockaddr_in atcaIpToSendTMIT;
     int socketFd;
+    int blmFcomTimeoutMs_;
 
     FcomBlob blenTxBlob;
     float blenTxData[NUM_BLEN_PARAM];
