@@ -21,8 +21,10 @@ fcomInit("${FCOM_NETWORK}", "20")
 # ===========================================
 
 # Manually created yCPSWasyn records
-dbLoadRecords("db/blenMR.db", "AREA=$(AREA), POS=$(POS), INST=$(INST)A, INST_NUM=A, PORT=$(BLEN_ASYN_PORT), AMC=0")
-dbLoadRecords("db/blenMR.db", "AREA=$(AREA), POS=$(POS), INST=$(INST)B, INST_NUM=B, PORT=$(BLEN_ASYN_PORT), AMC=1")
+dbLoadRecords("db/blenMR.db", "P=BLEN:$(AREA):$(POS), AREA=$(AREA), POS=$(POS), INST=$(INST)A, INST_NUM=A, PORT=$(BLEN_ASYN_PORT), AMC=0")
+dbLoadRecords("db/blenMR.db", "P=BLEN:$(AREA):$(POS), AREA=$(AREA), POS=$(POS), INST=$(INST)B, INST_NUM=B, PORT=$(BLEN_ASYN_PORT), AMC=1")
+
+dbLoadRecords("db/mrFPGA.db", "P=BLEN:$(AREA):$(POS), PORT=$(BLEN_ASYN_PORT)")
 
 dbLoadRecords("db/tprPattern.db", "LOCA=${AREA}, IOC_UNIT=${IOC_UNIT}, INST=$(ATCA_SLOT), PORT=pattern")
 dbLoadRecords("db/tprTrig.db",    "LOCA=$(AREA), IOC_UNIT=$(IOC_UNIT), INST=$(ATCA_SLOT), PORT=trig")

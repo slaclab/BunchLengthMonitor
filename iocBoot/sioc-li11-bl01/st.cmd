@@ -66,11 +66,12 @@ crossbarControl "FPGA" "LCLS1"
 caPutLogInit("${EPICS_CA_PUT_LOG_ADDR}")
 caPutLogShow(2)
 
-# blenConfigure parameters:
+# blenConfigureMR parameters:
 # 1 - Station name
-# 2 - BSA stream name must be identical to definition in yaml file
+# 2 - BSA stream name (must be identical to definition in yaml file)
 # 3 - PV used to get TMIT from FCOM
 # 4 - IP address and port to send TMIT information to ATCA
-blenConfigure "BLEN:${AREA}:${POS}" "${BSA_STREAM_YAML_NAME}" "${TMIT_PV}" "${FPGA_IP}:${IP_PORT_TMIT}"
+# 5 - FCOM Timeout in ms
+blenConfigureMR("BLEN:$(AREA):$(POS)","$(BSA_STREAM_YAML_NAME)","$(TMIT_PV)","$(FPGA_IP):$(IP_PORT_TMIT)", 34)
 
 < iocBoot/common/start_restore_soft.cmd

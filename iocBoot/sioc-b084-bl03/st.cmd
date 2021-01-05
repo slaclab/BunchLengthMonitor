@@ -36,26 +36,6 @@ cd $(TOP)
 
 < iocBoot/common/blenCommon.cmd
 
-# ===========================================
-#               ASYN MASKS
-# ===========================================
-
-# ***********************************
-# * Asyn Masks for all Asyn drivers *
-
-#asynSetTraceMask(cpsw, -1, 9)
-#asynSetTraceMask(crossbar, -1, 9)
-#asynSetTraceMask(trig, -1, 9)
-#asynSetTraceMask(pattern, -1, 9)
-
-# ===========================================
-#               DB LOADING
-# ===========================================
-
-
-# ===========================================
-#           SETUP AUTOSAVE/RESTORE
-# ===========================================
 
 # ===========================================
 #               IOC INIT
