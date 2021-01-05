@@ -3,12 +3,12 @@
 # ===========================================
 
 # Manually created yCPSWasyn records
-dbLoadRecords("db/blen.db", "P=BLEN:$(AREA):$(POS):$(INST)A, PORT=cpsw, AMC=0")
-dbLoadRecords("db/blen.db", "P=BLEN:$(AREA):$(POS):$(INST)B, PORT=cpsw, AMC=1")
+dbLoadRecords("db/blen.db", "P=BLEN:$(AREA):$(POS):$(INST)A, PORT=${BLEN_ASYN_PORT}, AMC=0")
+dbLoadRecords("db/blen.db", "P=BLEN:$(AREA):$(POS):$(INST)B, PORT=${BLEN_ASYN_PORT}, AMC=1")
 
 dbLoadRecords("db/blenLCLS2.db", "P=BLEN:$(AREA):$(POS), INST0=$(INST)A, INST1=$(INST)B, SCAN=1 second")
 dbLoadRecords("db/pyroFilters.db", "P=BLEN:$(AREA):$(POS), INST0=$(INST)A, INST1=$(INST)B")
-dbLoadRecords("db/lcls2FPGA.db", "P=BLEN:$(AREA):$(POS), PORT=cpsw") 
+dbLoadRecords("db/lcls2FPGA.db", "P=BLEN:$(AREA):$(POS), PORT=${BLEN_ASYN_PORT}") 
 
 dbLoadRecords("db/msgStatus.db", "P=BLEN:$(AREA):$(POS)")
 
