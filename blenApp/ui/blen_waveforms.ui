@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>775</width>
+    <width>925</width>
     <height>1000</height>
    </rect>
   </property>
@@ -39,7 +39,7 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>763</width>
+        <width>913</width>
         <height>994</height>
        </rect>
       </property>
@@ -60,10 +60,10 @@
         <number>0</number>
        </property>
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout"/>
-       </item>
-       <item>
         <layout class="QVBoxLayout" name="verticalLayout_2">
+         <property name="spacing">
+          <number>0</number>
+         </property>
          <property name="sizeConstraint">
           <enum>QLayout::SetNoConstraint</enum>
          </property>
@@ -114,9 +114,9 @@
          <item>
           <layout class="QGridLayout" name="gridLayout" columnstretch="0,0,0">
            <property name="horizontalSpacing">
-            <number>1</number>
+            <number>0</number>
            </property>
-           <item row="1" column="2">
+           <item row="0" column="2">
             <widget class="QFrame" name="frame_20">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -245,7 +245,7 @@
                   </property>
                   <property name="minimumSize">
                    <size>
-                    <width>0</width>
+                    <width>400</width>
                     <height>250</height>
                    </size>
                   </property>
@@ -327,6 +327,85 @@
             </widget>
            </item>
            <item row="1" column="0">
+            <widget class="PyDMWaveformPlot" name="wfpARawTimesWeight">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>400</width>
+               <height>240</height>
+              </size>
+             </property>
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="whatsThis">
+              <string>
+    PyDMWaveformPlot is a widget to plot one or more waveforms.
+
+    Each curve can plot either a Y-axis waveform vs. its indices,
+    or a Y-axis waveform against an X-axis waveform.
+
+    Parameters
+    ----------
+    parent : optional
+        The parent of this widget.
+    init_x_channels: optional
+        init_x_channels can be a string with the address for a channel,
+        or a list of strings, each containing an address for a channel.
+        If not specified, y-axis waveforms will be plotted against their
+        indices. If a list is specified for both init_x_channels and
+        init_y_channels, they both must have the same length.
+        If a single x channel was specified, and a list of y channels are
+        specified, all y channels will be plotted against the same x channel.
+    init_y_channels: optional
+        init_y_channels can be a string with the address for a channel,
+        or a list of strings, each containing an address for a channel.
+        If a list is specified for both init_x_channels and init_y_channels,
+        they both must have the same length.
+        If a single x channel was specified, and a list of y channels are
+        specified, all y channels will be plotted against the same x channel.
+    background: optional
+        The background color for the plot.  Accepts any arguments that
+        pyqtgraph.mkColor will accept.
+    </string>
+             </property>
+             <property name="title" stdset="0">
+              <string>${INST}A Raw times Weight Function</string>
+             </property>
+             <property name="maxRedrawRate" stdset="0">
+              <number>30</number>
+             </property>
+             <property name="curves">
+              <stringlist>
+               <string>{&quot;y_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}A_S_P_WF&quot;, &quot;x_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}A:SampTime.VALA&quot;, &quot;name&quot;: &quot;BL11A Process Waveform&quot;, &quot;color&quot;: &quot;white&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;redraw_mode&quot;: 2}</string>
+              </stringlist>
+             </property>
+             <property name="autoRangeX">
+              <bool>true</bool>
+             </property>
+             <property name="minXRange">
+              <double>0.000000000000000</double>
+             </property>
+             <property name="maxXRange">
+              <double>1.000000000000000</double>
+             </property>
+             <property name="autoRangeY">
+              <bool>true</bool>
+             </property>
+             <property name="minYRange">
+              <double>0.000000000000000</double>
+             </property>
+             <property name="maxYRange">
+              <double>1.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
             <widget class="QFrame" name="frame_19">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -455,7 +534,7 @@
                   </property>
                   <property name="minimumSize">
                    <size>
-                    <width>0</width>
+                    <width>400</width>
                     <height>250</height>
                    </size>
                   </property>
@@ -529,7 +608,7 @@
              </layout>
             </widget>
            </item>
-           <item row="3" column="0">
+           <item row="2" column="0">
             <widget class="QGroupBox" name="groupBox">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -650,108 +729,7 @@
              </layout>
             </widget>
            </item>
-           <item row="1" column="1">
-            <widget class="QFrame" name="frame_5">
-             <property name="minimumSize">
-              <size>
-               <width>10</width>
-               <height>0</height>
-              </size>
-             </property>
-             <property name="frameShape">
-              <enum>QFrame::VLine</enum>
-             </property>
-             <property name="frameShadow">
-              <enum>QFrame::Raised</enum>
-             </property>
-             <property name="lineWidth">
-              <number>2</number>
-             </property>
-             <property name="midLineWidth">
-              <number>0</number>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="0">
-            <widget class="PyDMWaveformPlot" name="wfpARawTimesWeight">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="minimumSize">
-              <size>
-               <width>0</width>
-               <height>240</height>
-              </size>
-             </property>
-             <property name="toolTip">
-              <string/>
-             </property>
-             <property name="whatsThis">
-              <string>
-    PyDMWaveformPlot is a widget to plot one or more waveforms.
-
-    Each curve can plot either a Y-axis waveform vs. its indices,
-    or a Y-axis waveform against an X-axis waveform.
-
-    Parameters
-    ----------
-    parent : optional
-        The parent of this widget.
-    init_x_channels: optional
-        init_x_channels can be a string with the address for a channel,
-        or a list of strings, each containing an address for a channel.
-        If not specified, y-axis waveforms will be plotted against their
-        indices. If a list is specified for both init_x_channels and
-        init_y_channels, they both must have the same length.
-        If a single x channel was specified, and a list of y channels are
-        specified, all y channels will be plotted against the same x channel.
-    init_y_channels: optional
-        init_y_channels can be a string with the address for a channel,
-        or a list of strings, each containing an address for a channel.
-        If a list is specified for both init_x_channels and init_y_channels,
-        they both must have the same length.
-        If a single x channel was specified, and a list of y channels are
-        specified, all y channels will be plotted against the same x channel.
-    background: optional
-        The background color for the plot.  Accepts any arguments that
-        pyqtgraph.mkColor will accept.
-    </string>
-             </property>
-             <property name="title" stdset="0">
-              <string>${INST}A Raw times Weight Function</string>
-             </property>
-             <property name="maxRedrawRate" stdset="0">
-              <number>30</number>
-             </property>
-             <property name="curves">
-              <stringlist>
-               <string>{&quot;y_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}A_S_P_WF&quot;, &quot;x_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}A:SampTime.VALA&quot;, &quot;name&quot;: &quot;BL11A Process Waveform&quot;, &quot;color&quot;: &quot;white&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;redraw_mode&quot;: 2}</string>
-              </stringlist>
-             </property>
-             <property name="autoRangeX">
-              <bool>true</bool>
-             </property>
-             <property name="minXRange">
-              <double>0.000000000000000</double>
-             </property>
-             <property name="maxXRange">
-              <double>1.000000000000000</double>
-             </property>
-             <property name="autoRangeY">
-              <bool>true</bool>
-             </property>
-             <property name="minYRange">
-              <double>0.000000000000000</double>
-             </property>
-             <property name="maxYRange">
-              <double>1.000000000000000</double>
-             </property>
-            </widget>
-           </item>
-           <item row="2" column="2">
+           <item row="1" column="2">
             <widget class="PyDMWaveformPlot" name="wfpBRawTimesWeight">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
@@ -761,7 +739,7 @@
              </property>
              <property name="minimumSize">
               <size>
-               <width>0</width>
+               <width>400</width>
                <height>240</height>
               </size>
              </property>
@@ -837,10 +815,119 @@
              </property>
             </widget>
            </item>
-           <item row="3" column="2">
+           <item row="2" column="2">
             <layout class="QVBoxLayout" name="verticalLayout">
              <item>
+              <spacer name="verticalSpacer_2">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="PyDMRelatedDisplayButton" name="PyDMRelatedDisplayButton_2">
+               <property name="toolTip">
+                <string/>
+               </property>
+               <property name="whatsThis">
+                <string>
+    A QPushButton capable of opening a new Display at the same of at a
+    new window.
+
+    Parameters
+    ----------
+    init_channel : str, optional
+        The channel to be used by the widget.
+
+    filename : str, optional
+        The file to be opened
+    </string>
+               </property>
+               <property name="text">
+                <string>Bunch Length ${INST} Calculation Parameters</string>
+               </property>
+               <property name="filenames" stdset="0">
+                <stringlist>
+                 <string>blen_coef_main.ui</string>
+                </stringlist>
+               </property>
+               <property name="displayFilename" stdset="0">
+                <string>blen_coef_main.ui</string>
+               </property>
+               <property name="macros" stdset="0">
+                <stringlist>
+                 <string>{&quot;AREA&quot;:&quot;${AREA}&quot;,&quot;POS&quot;:&quot;${POS}&quot;,&quot;INST&quot;:&quot;${INST}&quot;}</string>
+                </stringlist>
+               </property>
+               <property name="openInNewWindow" stdset="0">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="PyDMRelatedDisplayButton" name="PyDMRelatedDisplayButton_3">
+               <property name="toolTip">
+                <string/>
+               </property>
+               <property name="whatsThis">
+                <string>
+    A QPushButton capable of opening a new Display at the same of at a
+    new window.
+
+    Parameters
+    ----------
+    init_channel : str, optional
+        The channel to be used by the widget.
+
+    filename : str, optional
+        The file to be opened
+    </string>
+               </property>
+               <property name="text">
+                <string>Bunch Length ${INST} Engineering Screens</string>
+               </property>
+               <property name="filenames" stdset="0">
+                <stringlist>
+                 <string>blen_engineering.ui</string>
+                </stringlist>
+               </property>
+               <property name="displayFilename" stdset="0">
+                <string>blen_engineering.ui</string>
+               </property>
+               <property name="macros" stdset="0">
+                <stringlist>
+                 <string>ATCA_SLOT=${ATCA_SLOT},AREA=${AREA},INST=${INST},IOC_UNIT=${IOC_UNIT},POS=${POS}</string>
+                </stringlist>
+               </property>
+               <property name="openInNewWindow" stdset="0">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="verticalSpacer">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
               <layout class="QHBoxLayout" name="horizontalLayout_2">
+               <property name="topMargin">
+                <number>0</number>
+               </property>
                <item>
                 <spacer name="horizontalSpacer_2">
                  <property name="orientation">
@@ -932,90 +1019,32 @@
                </item>
               </layout>
              </item>
-             <item>
-              <widget class="PyDMRelatedDisplayButton" name="PyDMRelatedDisplayButton_2">
-               <property name="toolTip">
-                <string/>
-               </property>
-               <property name="whatsThis">
-                <string>
-    A QPushButton capable of opening a new Display at the same of at a
-    new window.
-
-    Parameters
-    ----------
-    init_channel : str, optional
-        The channel to be used by the widget.
-
-    filename : str, optional
-        The file to be opened
-    </string>
-               </property>
-               <property name="text">
-                <string>Bunch Length ${INST} Calculation Parameters</string>
-               </property>
-               <property name="filenames" stdset="0">
-                <stringlist>
-                 <string>blen_coef_main.ui</string>
-                </stringlist>
-               </property>
-               <property name="displayFilename" stdset="0">
-                <string>blen_coef_main.ui</string>
-               </property>
-               <property name="macros" stdset="0">
-                <stringlist>
-                 <string>{&quot;AREA&quot;:&quot;${AREA}&quot;,&quot;POS&quot;:&quot;${POS}&quot;,&quot;INST&quot;:&quot;${INST}&quot;}</string>
-                </stringlist>
-               </property>
-               <property name="openInNewWindow" stdset="0">
-                <bool>true</bool>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="PyDMRelatedDisplayButton" name="PyDMRelatedDisplayButton_3">
-               <property name="toolTip">
-                <string/>
-               </property>
-               <property name="whatsThis">
-                <string>
-    A QPushButton capable of opening a new Display at the same of at a
-    new window.
-
-    Parameters
-    ----------
-    init_channel : str, optional
-        The channel to be used by the widget.
-
-    filename : str, optional
-        The file to be opened
-    </string>
-               </property>
-               <property name="text">
-                <string>Bunch Length ${INST} Engineering Screens</string>
-               </property>
-               <property name="filenames" stdset="0">
-                <stringlist>
-                 <string>blen_engineering.ui</string>
-                </stringlist>
-               </property>
-               <property name="displayFilename" stdset="0">
-                <string>blen_engineering.ui</string>
-               </property>
-               <property name="macros" stdset="0">
-                <stringlist>
-                 <string>ATCA_SLOT=${ATCA_SLOT},AREA=${AREA},INST=${INST},IOC_UNIT=${IOC_UNIT},POS=${POS}</string>
-                </stringlist>
-               </property>
-               <property name="openInNewWindow" stdset="0">
-                <bool>true</bool>
-               </property>
-              </widget>
-             </item>
             </layout>
            </item>
            <item row="0" column="1">
-            <widget class="QFrame" name="frame_12">
+            <widget class="QFrame" name="frame_5">
+             <property name="minimumSize">
+              <size>
+               <width>10</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::VLine</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <property name="lineWidth">
+              <number>2</number>
+             </property>
+             <property name="midLineWidth">
+              <number>0</number>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QFrame" name="frame_6">
              <property name="minimumSize">
               <size>
                <width>10</width>
