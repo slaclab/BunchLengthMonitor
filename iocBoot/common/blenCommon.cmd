@@ -102,11 +102,6 @@ dbLoadRecords("db/iocRelease.db","IOC=$(IOC_NAME)")
 < $(ACF_INIT)
 
 # ===========================================
-#           SETUP AUTOSAVE/RESTORE
-# ===========================================
-< iocBoot/common/init_restore_soft.cmd
-
-# ===========================================
 #           ARCHIVER FILES
 # ===========================================
 system("cp $(TOP)/archive/$(IOC).archive $(IOC_DATA)/$(IOC)/archive")
@@ -115,3 +110,9 @@ system("cp $(TOP)/archive/$(IOC).archive $(IOC_DATA)/$(IOC)/archive")
 #   LOAD FACET, LCLS1 (MR) or LCLS2 CONFIG 
 # ===========================================
 < iocBoot/common/blen$(BLEN_VERSION).cmd
+
+# ===========================================
+#           SETUP AUTOSAVE/RESTORE
+# ===========================================
+< iocBoot/common/init_restore_soft.cmd
+
