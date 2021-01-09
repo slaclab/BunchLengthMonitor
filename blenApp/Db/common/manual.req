@@ -10,10 +10,13 @@ BLEN:$(AREA):$(POS):$(INST):CoefG
 BLEN:$(AREA):$(POS):$(INST):CoefH
 BLEN:$(AREA):$(POS):$(INST):CoefI
 BLEN:$(AREA):$(POS):$(INST):TMIT_T
+
 BLEN:$(AREA):$(POS):loadConfigFile.VAL
 BLEN:$(AREA):$(POS):loadConfigRoot.VAL
 BLEN:$(AREA):$(POS):saveConfigFile.VAL
 BLEN:$(AREA):$(POS):saveConfigRoot.VAL
+BLEN:$(AREA):$(POS):AppType.VAL
+BLEN:$(AREA):$(POS):Location.VAL
 
 BLEN:$(AREA):$(POS):Attenuation0.VAL
 BLEN:$(AREA):$(POS):Attenuation1.VAL
