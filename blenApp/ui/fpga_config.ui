@@ -17,6 +17,75 @@
    <item>
     <layout class="QVBoxLayout" name="versionLayout">
      <item>
+      <layout class="QHBoxLayout" name="appTypeLayout">
+       <property name="leftMargin">
+        <number>4</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="appTypeLbl">
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>AppType</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="PyDMLabel" name="appType">
+         <property name="toolTip">
+          <string/>
+         </property>
+         <property name="text">
+          <string>AppType</string>
+         </property>
+         <property name="rules" stdset="0">
+          <string>[]</string>
+         </property>
+         <property name="channel" stdset="0">
+          <string/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="locationLayout">
+       <property name="leftMargin">
+        <number>4</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="locationLbl">
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Location</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="PyDMLabel" name="location">
+         <property name="toolTip">
+          <string/>
+         </property>
+         <property name="text">
+          <string>Location</string>
+         </property>
+         <property name="channel" stdset="0">
+          <string/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
       <layout class="QHBoxLayout" name="sysGenVersionLayout">
        <property name="leftMargin">
         <number>4</number>
