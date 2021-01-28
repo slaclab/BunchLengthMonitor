@@ -10,5 +10,5 @@ record(calcout, "$(P):FPGARebootMon") {
   field(INPB, "0")
   field(CALC, "A=B")
   field(OUT, "$(P):loadConfig.PROC")
-  field(OOPT, "When Zero")
+  field(OOPT, "When Non-zero")
 }
