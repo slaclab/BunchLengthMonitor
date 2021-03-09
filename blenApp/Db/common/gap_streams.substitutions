@@ -1,0 +1,5 @@
+# Note: NELM is 2x actual number of elements
+file "RegisterStream16.template" { pattern
+{ P,           R,             DESC,                                NELM,   PINI,         PORT,            PARAM                      }
+{ $(P),       R_WF            "Raw data (16-bit)",                 1024,   "YES",        $(PORT),        AMC$(AMC):StreamRaw1:16      } 
+}

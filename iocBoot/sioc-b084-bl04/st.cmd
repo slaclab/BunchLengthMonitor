@@ -31,12 +31,17 @@ epicsEnvSet(IOC_NAME,"SIOC:$(AREA):$(IOC_UNIT)")
 
 # Which version of the Application to use - "LCLS1" or "LCLS2"
 epicsEnvSet("BLEN_VERSION", "LCLS2")
-epicsEnvSet("DICT_FILE", "yaml/blenLCLS2.dict")
+epicsEnvSet("DICT_FILE", "yaml/blenGapDiode.dict")
 
 cd $(TOP)
 
 < iocBoot/common/blenCommon.cmd
 
+dbLoadRecords("db/gap_streams.db", "P=BLEN:$(AREA):$(POS):$(INST)C, PORT=${BLEN_ASYN_PORT}, AMC=0")
+dbLoadRecords("db/gap_streams.db", "P=BLEN:$(AREA):$(POS):$(INST)D, PORT=${BLEN_ASYN_PORT}, AMC=1")
+
+dbLoadRecords("db/calculatedWF.db", "AREA=$(AREA), POS=$(POS), INST=$(INST)C")
+dbLoadRecords("db/calculatedWF.db", "AREA=$(AREA), POS=$(POS), INST=$(INST)D")
 
 # ===========================================
 #               IOC INIT

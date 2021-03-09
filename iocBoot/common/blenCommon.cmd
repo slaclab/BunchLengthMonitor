@@ -71,8 +71,9 @@ dbLoadRecords("db/streamControl.db", "AREA=$(AREA),POS=$(POS),INSTA=$(INST)A,INS
 # Records to manipulate waveforms from detectors
 dbLoadRecords("db/calculatedWF.db", "AREA=$(AREA), POS=$(POS), INST=$(INST)A")
 dbLoadRecords("db/calculatedWF.db", "AREA=$(AREA), POS=$(POS), INST=$(INST)B")
-dbLoadRecords("db/processRawWFHeader.db", "AREA=$(AREA), POS=$(POS), INST=$(INST)A")
-dbLoadRecords("db/processRawWFHeader.db", "AREA=$(AREA), POS=$(POS), INST=$(INST)B")
+### processRawWFHeader does not exist?!?
+#dbLoadRecords("db/processRawWFHeader.db", "AREA=$(AREA), POS=$(POS), INST=$(INST)A")
+#dbLoadRecords("db/processRawWFHeader.db", "AREA=$(AREA), POS=$(POS), INST=$(INST)B")
 dbLoadRecords("db/weightFunctionXAxis.db", "AREA=$(AREA), POS=$(POS), INST=$(INST)A, AMC=0")
 dbLoadRecords("db/weightFunctionXAxis.db", "AREA=$(AREA), POS=$(POS), INST=$(INST)B, AMC=1")
 
