@@ -217,3 +217,27 @@
 # TMIT
 /mmio/AppTop/AppCore/SysGen[0]/DspPreprocConfig[0]/TMITSimEn         AMC0:SENS0:TMITSim
 /mmio/AppTop/AppCore/SysGen[1]/DspPreprocConfig[0]/TMITSimEn         AMC1:SENS0:TMITSim
+
+# Filter control
+/mmio/AppTop/AppCore/MoverCntl/IgnoreMover                           MVR:IgnoreMover
+/mmio/AppTop/AppCore/MoverCntl/Inserted                              MVR:Inserted
+/mmio/AppTop/AppCore/MoverCntl/MoverOnOff                            MVR:MoverOnOff
+/mmio/AppTop/AppCore/MoverCntl/Removed                               MVR:Removed
+/mmio/AppTop/AppCore/MoverCntl/StatusLimitSwitches                   MVR:StatusLimitSw
+
+/mmio/AppTop/AppCore/MoverCntl/Attenuation[0]                        MVR:Attenuation0
+/mmio/AppTop/AppCore/MoverCntl/Attenuation[1]                        MVR:Attenuation1
+/mmio/AppTop/AppCore/MoverCntl/Attenuation[2]                        MVR:Attenuation2
+/mmio/AppTop/AppCore/MoverCntl/Attenuation[3]                        MVR:Attenuation3
+/mmio/AppTop/AppCore/MoverCntl/Attenuation[4]                        MVR:Attenuation4
+/mmio/AppTop/AppCore/MoverCntl/Attenuation[5]                        MVR:Attenuation5
+/mmio/AppTop/AppCore/MoverCntl/Attenuation[6]                        MVR:Attenuation6
+/mmio/AppTop/AppCore/MoverCntl/Attenuation[7]                        MVR:Attenuation7
+/mmio/AppTop/AppCore/MoverCntl/Attenuation[8]                        MVR:Attenuation8
+/mmio/AppTop/AppCore/MoverCntl/Attenuation[9]                        MVR:Attenuation9
+/mmio/AppTop/AppCore/MoverCntl/Attenuation[10]                       MVR:Attenuation10
+/mmio/AppTop/AppCore/MoverCntl/Attenuation[11]                       MVR:Attenuation11
+/mmio/AppTop/AppCore/MoverCntl/Attenuation[12]                       MVR:Attenuation12
+/mmio/AppTop/AppCore/MoverCntl/Attenuation[13]                       MVR:Attenuation13
+/mmio/AppTop/AppCore/MoverCntl/Attenuation[14]                       MVR:Attenuation14
+/mmio/AppTop/AppCore/MoverCntl/Attenuation[15]                       MVR:Attenuation15
