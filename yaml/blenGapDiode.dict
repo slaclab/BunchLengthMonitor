@@ -214,6 +214,9 @@
 /mmio/AppTop/AppCore/SysGen[0]/DspCoreConfig/CoefI                   AMC0:CoefI
 /mmio/AppTop/AppCore/SysGen[1]/DspCoreConfig/CoefI                   AMC1:CoefI
 
+/mmio/AppTop/AppCore/SysGen[0]/DspCoreConfig/CoefI2                  AMC0:CoefI2
+/mmio/AppTop/AppCore/SysGen[1]/DspCoreConfig/CoefI2                  AMC1:CoefI2
+
 # TMIT
 /mmio/AppTop/AppCore/SysGen[0]/DspPreprocConfig[0]/TMITSimEn         AMC0:SENS0:TMITSim
 /mmio/AppTop/AppCore/SysGen[1]/DspPreprocConfig[0]/TMITSimEn         AMC1:SENS0:TMITSim

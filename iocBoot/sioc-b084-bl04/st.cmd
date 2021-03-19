@@ -40,6 +40,9 @@ cd $(TOP)
 dbLoadRecords("db/gap_streams.db", "P=BLEN:$(AREA):$(POS):$(INST)C, PORT=${BLEN_ASYN_PORT}, AMC=0")
 dbLoadRecords("db/gap_streams.db", "P=BLEN:$(AREA):$(POS):$(INST)D, PORT=${BLEN_ASYN_PORT}, AMC=1")
 
+dbLoadRecords("db/blen_gap_coefI2.db", "P=BLEN:$(AREA):$(POS):$(INST)C, PORT=${BLEN_ASYN_PORT}, AMC=0")
+dbLoadRecords("db/blen_gap_coefI2.db", "P=BLEN:$(AREA):$(POS):$(INST)D, PORT=${BLEN_ASYN_PORT}, AMC=1")
+
 dbLoadRecords("db/blen_gap_DspPreprocConfig.db", "P=BLEN:$(AREA):$(POS):$(INST)C, PORT=${BLEN_ASYN_PORT}, AMC=0")
 dbLoadRecords("db/blen_gap_DspPreprocConfig.db", "P=BLEN:$(AREA):$(POS):$(INST)D, PORT=${BLEN_ASYN_PORT}, AMC=1")
 

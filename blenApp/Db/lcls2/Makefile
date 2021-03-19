@@ -22,6 +22,7 @@ DB += msgStatus.db
 DB += gap_streams.db
 DB += blen_gap_DspPreprocConfig.db
 DB += blen_gap_weightFunctionXAxis.db
+DB += blen_gap_coefI2.db
 
 include $(TOP)/configure/RULES
 #----------------------------------------
