@@ -19,6 +19,10 @@ DB += lcls2FPGA.db
 DB += pyroFilters.db
 DB += msgStatus.db
 
+DB += gap_streams.db
+DB += blen_gap_DspPreprocConfig.db
+DB += blen_gap_weightFunctionXAxis.db
+
 include $(TOP)/configure/RULES
 #----------------------------------------
 #  ADD RULES AFTER THIS LINE

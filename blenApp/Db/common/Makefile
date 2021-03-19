@@ -89,6 +89,5 @@ DB += calculatedWF.db
 DB += streamControl.db
 DB += iocMeta.db
 DB += monitorFPGAReboot.db
-DB += gap_streams.db
 
 include $(TOP)/configure/RULES
