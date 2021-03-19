@@ -25,6 +25,8 @@ class WaveformType:
 class Sensor:
     A = "A"
     B = "B"
+    C = "C"
+    D = "D"
 
 blen_pv = { "x": ":SampTime.VALA", WaveformType.RAW: ":RWF_U16.VALA", WaveformType.INT: ":IWF_U16.VALA",
         WaveformType.RAW_TIMES: "_S_P_WF", "window": "_SCL_VWF.AVAL"}
@@ -302,10 +304,11 @@ class BLENExpert(Display):
         eg: INST = BZ21BA but the MAD name is actually just BZ21B
         """
         self.mad = self.macros()["INST"][:-1]
-        if (self.macros()["INST"][-1] == 'A'):
-            self.sensor = Sensor.A
-        else:
-            self.sensor = Sensor.B
+        #if (self.macros()["INST"][-1] == 'A'):
+        #    self.sensor = Sensor.A
+        #else:
+        #    self.sensor = Sensor.B
+        self.sensor = self.macros()['INST'][-1] # pick off the A,B,C,D channel suffix
 
         self.setFixedSize(725, 500)
         self.main_layout = QVBoxLayout()
