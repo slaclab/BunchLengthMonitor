@@ -151,31 +151,31 @@
 
 # Control of the weight function
 /mmio/AppTop/AppCore/SysGen[0]/DspPreprocConfig[0]/Mode              AMC0:SENS0:Mode
-/mmio/AppTop/AppCore/SysGen[1]/DspPreprocConfig[0]/Mode              AMC1:SENS0:Mode
 /mmio/AppTop/AppCore/SysGen[0]/DspPreprocConfig[1]/Mode              AMC0:SENS1:Mode
+/mmio/AppTop/AppCore/SysGen[1]/DspPreprocConfig[0]/Mode              AMC1:SENS0:Mode
 /mmio/AppTop/AppCore/SysGen[1]/DspPreprocConfig[1]/Mode              AMC1:SENS1:Mode
 
 /mmio/AppTop/AppCore/SysGen[0]/DspPreprocConfig[0]/NumberSamples0    AMC0:SENS0:NumSamp0
-/mmio/AppTop/AppCore/SysGen[1]/DspPreprocConfig[0]/NumberSamples0    AMC1:SENS0:NumSamp0
 /mmio/AppTop/AppCore/SysGen[0]/DspPreprocConfig[0]/NumberSamples1    AMC0:SENS0:NumSamp1
+/mmio/AppTop/AppCore/SysGen[1]/DspPreprocConfig[0]/NumberSamples0    AMC1:SENS0:NumSamp0
 /mmio/AppTop/AppCore/SysGen[1]/DspPreprocConfig[0]/NumberSamples1    AMC1:SENS0:NumSamp1
 
 /mmio/AppTop/AppCore/SysGen[0]/DspPreprocConfig[1]/NumberSamples0    AMC0:SENS1:NumSamp0
-/mmio/AppTop/AppCore/SysGen[1]/DspPreprocConfig[1]/NumberSamples0    AMC1:SENS1:NumSamp0
 /mmio/AppTop/AppCore/SysGen[0]/DspPreprocConfig[1]/NumberSamples1    AMC0:SENS1:NumSamp1
+/mmio/AppTop/AppCore/SysGen[1]/DspPreprocConfig[1]/NumberSamples0    AMC1:SENS1:NumSamp0
 /mmio/AppTop/AppCore/SysGen[1]/DspPreprocConfig[1]/NumberSamples1    AMC1:SENS1:NumSamp1
 
 /mmio/AppTop/AppCore/SysGen[0]/DspPreprocConfig[0]/TriggerRate       AMC0:SENS0:RATE
 /mmio/AppTop/AppCore/SysGen[1]/DspPreprocConfig[0]/TriggerRate       AMC1:SENS0:RATE
 
 /mmio/AppTop/AppCore/SysGen[0]/DspPreprocConfig[0]/TrigDelay1        AMC0:SENS0:TrigDelay1
-/mmio/AppTop/AppCore/SysGen[1]/DspPreprocConfig[0]/TrigDelay1        AMC1:SENS0:TrigDelay1
 /mmio/AppTop/AppCore/SysGen[0]/DspPreprocConfig[0]/TrigDelay2        AMC0:SENS0:TrigDelay2
+/mmio/AppTop/AppCore/SysGen[1]/DspPreprocConfig[0]/TrigDelay1        AMC1:SENS0:TrigDelay1
 /mmio/AppTop/AppCore/SysGen[1]/DspPreprocConfig[0]/TrigDelay2        AMC1:SENS0:TrigDelay2
 
 /mmio/AppTop/AppCore/SysGen[0]/DspPreprocConfig[1]/TrigDelay1        AMC0:SENS1:TrigDelay1
-/mmio/AppTop/AppCore/SysGen[1]/DspPreprocConfig[1]/TrigDelay1        AMC1:SENS1:TrigDelay1
 /mmio/AppTop/AppCore/SysGen[0]/DspPreprocConfig[1]/TrigDelay2        AMC0:SENS1:TrigDelay2
+/mmio/AppTop/AppCore/SysGen[1]/DspPreprocConfig[1]/TrigDelay1        AMC1:SENS1:TrigDelay1
 /mmio/AppTop/AppCore/SysGen[1]/DspPreprocConfig[1]/TrigDelay2        AMC1:SENS1:TrigDelay2
 
 # Parameters of the equation to calculate iMax
