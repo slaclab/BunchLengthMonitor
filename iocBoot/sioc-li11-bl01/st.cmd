@@ -13,6 +13,19 @@
 epicsEnvSet("AREA", "LI11")
 epicsEnvSet("POS", "356")
 epicsEnvSet("INST", "BL11356")
+epicsEnvSet("IOC_UNIT", "BL01")
+epicsEnvSet("ATCA_SLOT", "4")
+epicsEnvSet("BLEN_ASYN_PORT", "ATCA$(ATCA_SLOT)")
+
+# YAML directory
+epicsEnvSet("YAML_DIR", "$(IOC_DATA)/$(IOC)/firmware/yaml")
+
+# YAML file
+epicsEnvSet("TOP_YAML", "$(YAML_DIR)/000TopLevel.yaml")
+epicsEnvSet("YAML_CONFIG_FILE", "$(YAML_DIR)/config/defaults.yaml")
+
+# FPGA IP address for CPSW
+epicsEnvSet("FPGA_IP", "10.0.1.104")
 
 # Address of the FCOM network
 epicsEnvSet("FCOM_NETWORK", "224.0.0.0")
@@ -20,38 +33,19 @@ epicsEnvSet("FCOM_NETWORK", "224.0.0.0")
 # TMIT PV to read the value from, by using FCOM
 epicsEnvSet("TMIT_PV", "BPMS:LI11:358:TMIT")
 
-# FPGA IP address for CPSW
-epicsEnvSet("FPGA_IP", "10.0.1.104")
 # Port number to send TMIT data to the FPGA
 epicsEnvSet("IP_PORT_TMIT", "8195")
 
 # IOC name for IOC admin
 epicsEnvSet(IOC_NAME,"SIOC:$(AREA):BL01")
 
+# Which version of the Application to use - "FACET", "LCLS1", or "LCLS2"
+epicsEnvSet("BLEN_VERSION", "FACET")
+epicsEnvSet("DICT_FILE", "yaml/blenMR.dict")
+
 cd ${TOP}
 
 < iocBoot/common/blenCommon.cmd
-
-# ===========================================
-#               ASYN MASKS
-# ===========================================
-
-# ***********************************
-# * Asyn Masks for all Asyn drivers *
-
-#asynSetTraceMask(cpsw, -1, 9)
-#asynSetTraceMask(crossbar, -1, 9)
-#asynSetTraceMask(trig, -1, 9)
-#asynSetTraceMask(pattern, -1, 9)
-
-# ===========================================
-#               DB LOADING
-# ===========================================
-
-
-# ===========================================
-#           SETUP AUTOSAVE/RESTORE
-# ===========================================
 
 # ===========================================
 #               IOC INIT
@@ -59,7 +53,7 @@ cd ${TOP}
 iocInit()
 
 # Enforce RTM timing
-crossbarControl "FPGA" "LCLS1"
+crossbarControl("FPGA" "BP")
 
 # Turn on caPutLogging:
 # Log values only on change to the iocLogServer:
