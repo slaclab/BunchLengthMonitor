@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>434</width>
-    <height>516</height>
+    <width>800</width>
+    <height>959</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -84,12 +84,18 @@
    </item>
    <item>
     <widget class="QTabWidget" name="instrumentTab">
+     <property name="minimumSize">
+      <size>
+       <width>600</width>
+       <height>800</height>
+      </size>
+     </property>
      <property name="currentIndex">
       <number>0</number>
      </property>
-     <widget class="QWidget" name="instA">
+     <widget class="QWidget" name="instX">
       <attribute name="title">
-       <string>${INST} A</string>
+       <string>${INST} +/-X</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_3">
        <item>
@@ -98,18 +104,18 @@
           <string/>
          </property>
          <property name="macros" stdset="0">
-          <string>{&quot;PREFIX&quot;:&quot;BLEN:${AREA}:${POS}:${INST}A&quot;}</string>
+          <string>{&quot;PREFIX&quot;:&quot;BLEN:${AREA}:${POS}:${INST}B&quot;, &quot;COORD&quot;:&quot;X&quot;, &quot;MINUS&quot;:&quot;-X&quot;, &quot;PLUS&quot;:&quot;+X&quot;}</string>
          </property>
          <property name="filename" stdset="0">
-          <string>blen_coef_instr.ui</string>
+          <string>blen_lcls2_gap_coef_instr.ui</string>
          </property>
         </widget>
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="instB">
+     <widget class="QWidget" name="instY">
       <attribute name="title">
-       <string>${INST} B</string>
+       <string>${INST} +/-Y</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_4">
        <item>
@@ -118,10 +124,10 @@
           <string/>
          </property>
          <property name="macros" stdset="0">
-          <string>{&quot;PREFIX&quot;:&quot;BLEN:${AREA}:${POS}:${INST}B&quot;}</string>
+          <string>{&quot;PREFIX&quot;:&quot;BLEN:${AREA}:${POS}:${INST}A&quot;, &quot;COORD&quot;:&quot;Y&quot;, &quot;MINUS&quot;:&quot;-Y&quot;, &quot;PLUS&quot;:&quot;+Y&quot;}</string>
          </property>
          <property name="filename" stdset="0">
-          <string>blen_coef_instr.ui</string>
+          <string>blen_lcls2_gap_coef_instr.ui</string>
          </property>
         </widget>
        </item>

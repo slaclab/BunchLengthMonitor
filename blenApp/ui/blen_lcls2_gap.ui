@@ -74,11 +74,11 @@
        </property>
        <property name="filenames" stdset="0">
         <stringlist>
-         <string>blen_coef_main.ui</string>
+         <string>blen_lcls2_gap_coef_main.ui</string>
         </stringlist>
        </property>
        <property name="displayFilename" stdset="0">
-        <string>blen_coef_main.ui</string>
+        <string>blen_lcls2_gap_coef_main.ui</string>
        </property>
        <property name="macros" stdset="0">
         <stringlist>
@@ -772,7 +772,7 @@
         </font>
        </property>
        <property name="text">
-        <string>${INST}D  (+X)</string>
+        <string>${INST}D  (-X)</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
