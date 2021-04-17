@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1435</width>
-    <height>1190</height>
+    <width>1325</width>
+    <height>1100</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -39,15 +39,15 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>1423</width>
-        <height>1184</height>
+        <width>1313</width>
+        <height>1094</height>
        </rect>
       </property>
       <widget class="PyDMRelatedDisplayButton" name="PyDMRelatedDisplayButton_2">
        <property name="geometry">
         <rect>
-         <x>760</x>
-         <y>990</y>
+         <x>750</x>
+         <y>910</y>
          <width>300</width>
          <height>24</height>
         </rect>
@@ -70,7 +70,7 @@
     </string>
        </property>
        <property name="text">
-        <string>Bunch Length ${INST} Calculation Parameters</string>
+        <string>BLEN ${INST} Coefficient Configuration</string>
        </property>
        <property name="filenames" stdset="0">
         <stringlist>
@@ -92,8 +92,8 @@
       <widget class="PyDMRelatedDisplayButton" name="PyDMRelatedDisplayButton_3">
        <property name="geometry">
         <rect>
-         <x>760</x>
-         <y>1030</y>
+         <x>750</x>
+         <y>950</y>
          <width>300</width>
          <height>24</height>
         </rect>
@@ -116,7 +116,7 @@
     </string>
        </property>
        <property name="text">
-        <string>Bunch Length ${INST} Engineering Screens</string>
+        <string>BLEN ${INST} Engineering Screens</string>
        </property>
        <property name="filenames" stdset="0">
         <stringlist>
@@ -138,8 +138,8 @@
       <widget class="QLabel" name="label_2">
        <property name="geometry">
         <rect>
-         <x>970</x>
-         <y>110</y>
+         <x>870</x>
+         <y>90</y>
          <width>120</width>
          <height>21</height>
         </rect>
@@ -157,8 +157,8 @@
       <widget class="QLabel" name="label_5">
        <property name="geometry">
         <rect>
-         <x>970</x>
-         <y>135</y>
+         <x>870</x>
+         <y>115</y>
          <width>58</width>
          <height>15</height>
         </rect>
@@ -176,8 +176,8 @@
       <widget class="PyDMByteIndicator" name="PyDMByteIndicator_2">
        <property name="geometry">
         <rect>
-         <x>1065</x>
-         <y>135</y>
+         <x>965</x>
+         <y>115</y>
          <width>21</width>
          <height>16</height>
         </rect>
@@ -201,8 +201,8 @@
       <widget class="PyDMEnumComboBox" name="PyDMEnumComboBox">
        <property name="geometry">
         <rect>
-         <x>970</x>
-         <y>160</y>
+         <x>870</x>
+         <y>140</y>
          <width>120</width>
          <height>23</height>
         </rect>
@@ -217,8 +217,8 @@
       <widget class="QLabel" name="label_6">
        <property name="geometry">
         <rect>
-         <x>980</x>
-         <y>750</y>
+         <x>870</x>
+         <y>650</y>
          <width>120</width>
          <height>21</height>
         </rect>
@@ -237,7 +237,7 @@
        <property name="geometry">
         <rect>
          <x>105</x>
-         <y>455</y>
+         <y>385</y>
          <width>21</width>
          <height>16</height>
         </rect>
@@ -262,7 +262,7 @@
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>430</y>
+         <y>360</y>
          <width>120</width>
          <height>21</height>
         </rect>
@@ -281,7 +281,7 @@
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>455</y>
+         <y>385</y>
          <width>58</width>
          <height>15</height>
         </rect>
@@ -300,7 +300,7 @@
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>480</y>
+         <y>410</y>
          <width>120</width>
          <height>23</height>
         </rect>
@@ -315,8 +315,8 @@
       <widget class="QLabel" name="label_17">
        <property name="geometry">
         <rect>
-         <x>1280</x>
-         <y>440</y>
+         <x>1180</x>
+         <y>380</y>
          <width>120</width>
          <height>21</height>
         </rect>
@@ -334,8 +334,8 @@
       <widget class="QLabel" name="BPMSyncLabel">
        <property name="geometry">
         <rect>
-         <x>800</x>
-         <y>1080</y>
+         <x>790</x>
+         <y>1000</y>
          <width>182</width>
          <height>23</height>
         </rect>
@@ -354,8 +354,8 @@
       <widget class="PyDMByteIndicator" name="PyDMByteIndicator">
        <property name="geometry">
         <rect>
-         <x>1000</x>
-         <y>1080</y>
+         <x>990</x>
+         <y>1000</y>
          <width>15</width>
          <height>23</height>
         </rect>
@@ -384,407 +384,13 @@
         <bool>false</bool>
        </property>
       </widget>
-      <widget class="PyDMLabel" name="sum">
-       <property name="geometry">
-        <rect>
-         <x>320</x>
-         <y>1020</y>
-         <width>114</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>110</width>
-         <height>16</height>
-        </size>
-       </property>
-       <property name="toolTip">
-        <string/>
-       </property>
-       <property name="text">
-        <string>${INST}B:SUM</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-       <property name="channel" stdset="0">
-        <string>ca://BLEN:${AREA}:${POS}:${INST}B:SUM</string>
-       </property>
-       <property name="displayFormat" stdset="0">
-        <enum>PyDMLabel::Decimal</enum>
-       </property>
-      </widget>
-      <widget class="PyDMLabel" name="imax">
-       <property name="geometry">
-        <rect>
-         <x>440</x>
-         <y>1020</y>
-         <width>113</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>110</width>
-         <height>16</height>
-        </size>
-       </property>
-       <property name="toolTip">
-        <string/>
-       </property>
-       <property name="text">
-        <string>${INST}B:IMAX</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-       <property name="channel" stdset="0">
-        <string>ca://BLEN:${AREA}:${POS}:${INST}B:IMAX</string>
-       </property>
-       <property name="displayFormat" stdset="0">
-        <enum>PyDMLabel::Decimal</enum>
-       </property>
-      </widget>
-      <widget class="QLabel" name="rowLabel">
-       <property name="geometry">
-        <rect>
-         <x>200</x>
-         <y>1010</y>
-         <width>114</width>
-         <height>25</height>
-        </rect>
-       </property>
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>110</width>
-         <height>25</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>10</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>${INST}B  (-X)</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_19">
-       <property name="geometry">
-        <rect>
-         <x>554</x>
-         <y>970</y>
-         <width>108</width>
-         <height>35</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>10</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>TMIT</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_20">
-       <property name="geometry">
-        <rect>
-         <x>325</x>
-         <y>970</y>
-         <width>109</width>
-         <height>35</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>10</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>SUM</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_21">
-       <property name="geometry">
-        <rect>
-         <x>440</x>
-         <y>970</y>
-         <width>108</width>
-         <height>35</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>10</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>IMAX</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-      <widget class="QLabel" name="rowLabel_2">
-       <property name="geometry">
-        <rect>
-         <x>201</x>
-         <y>1100</y>
-         <width>114</width>
-         <height>25</height>
-        </rect>
-       </property>
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>110</width>
-         <height>25</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>10</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>${INST}C  (-Y)</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-      <widget class="PyDMLabel" name="imax_3">
-       <property name="geometry">
-        <rect>
-         <x>440</x>
-         <y>1080</y>
-         <width>113</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>110</width>
-         <height>16</height>
-        </size>
-       </property>
-       <property name="toolTip">
-        <string/>
-       </property>
-       <property name="text">
-        <string>${INST}A:IMAX</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-       <property name="channel" stdset="0">
-        <string>ca://BLEN:${AREA}:${POS}:${INST}A:IMAX</string>
-       </property>
-       <property name="displayFormat" stdset="0">
-        <enum>PyDMLabel::Decimal</enum>
-       </property>
-      </widget>
-      <widget class="PyDMLabel" name="sum_3">
-       <property name="geometry">
-        <rect>
-         <x>320</x>
-         <y>1080</y>
-         <width>114</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>110</width>
-         <height>16</height>
-        </size>
-       </property>
-       <property name="toolTip">
-        <string/>
-       </property>
-       <property name="text">
-        <string>${INST}A:SUM</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-       <property name="channel" stdset="0">
-        <string>ca://BLEN:${AREA}:${POS}:${INST}A:SUM</string>
-       </property>
-       <property name="displayFormat" stdset="0">
-        <enum>PyDMLabel::Decimal</enum>
-       </property>
-      </widget>
-      <widget class="QLabel" name="rowLabel_3">
-       <property name="geometry">
-        <rect>
-         <x>201</x>
-         <y>1070</y>
-         <width>114</width>
-         <height>25</height>
-        </rect>
-       </property>
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>110</width>
-         <height>25</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>10</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>${INST}A  (+Y)</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-      <widget class="PyDMLabel" name="tmit_3">
-       <property name="geometry">
-        <rect>
-         <x>550</x>
-         <y>1050</y>
-         <width>114</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>110</width>
-         <height>16</height>
-        </size>
-       </property>
-       <property name="toolTip">
-        <string/>
-       </property>
-       <property name="text">
-        <string>${INST}A:TMIT</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-       <property name="channel" stdset="0">
-        <string>ca://BLEN:${AREA}:${POS}:${INST}A:TMIT</string>
-       </property>
-       <property name="displayFormat" stdset="0">
-        <enum>PyDMLabel::Decimal</enum>
-       </property>
-      </widget>
-      <widget class="QLabel" name="rowLabel_4">
-       <property name="geometry">
-        <rect>
-         <x>201</x>
-         <y>1040</y>
-         <width>114</width>
-         <height>25</height>
-        </rect>
-       </property>
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>110</width>
-         <height>25</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>10</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>${INST}D  (-X)</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
       <widget class="PyDMWaveformPlot" name="wfpARaw">
        <property name="geometry">
         <rect>
          <x>450</x>
-         <y>640</y>
-         <width>500</width>
-         <height>300</height>
+         <y>550</y>
+         <width>400</width>
+         <height>250</height>
         </rect>
        </property>
        <property name="sizePolicy">
@@ -868,9 +474,9 @@
        <property name="geometry">
         <rect>
          <x>760</x>
-         <y>325</y>
-         <width>500</width>
-         <height>300</height>
+         <y>280</y>
+         <width>400</width>
+         <height>250</height>
         </rect>
        </property>
        <property name="sizePolicy">
@@ -962,8 +568,8 @@
         <rect>
          <x>450</x>
          <y>10</y>
-         <width>500</width>
-         <height>300</height>
+         <width>400</width>
+         <height>250</height>
         </rect>
        </property>
        <property name="sizePolicy">
@@ -1047,9 +653,9 @@
        <property name="geometry">
         <rect>
          <x>150</x>
-         <y>325</y>
-         <width>500</width>
-         <height>300</height>
+         <y>280</y>
+         <width>400</width>
+         <height>250</height>
         </rect>
        </property>
        <property name="sizePolicy">
@@ -1135,6 +741,306 @@
        <property name="maxYRange">
         <double>1.000000000000000</double>
        </property>
+      </widget>
+      <widget class="QWidget" name="gridLayoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>170</x>
+         <y>890</y>
+         <width>460</width>
+         <height>141</height>
+        </rect>
+       </property>
+       <layout class="QGridLayout" name="gridLayout" rowminimumheight="0,0,0,0,0,0,0">
+        <item row="2" column="2">
+         <widget class="PyDMLabel" name="imax">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>110</width>
+            <height>16</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string/>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <property name="text">
+           <string>${INST}B:IMAX</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="channel" stdset="0">
+           <string>ca://BLEN:${AREA}:${POS}:${INST}B:IMAX</string>
+          </property>
+          <property name="displayFormat" stdset="0">
+           <enum>PyDMLabel::Decimal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="3">
+         <widget class="PyDMLabel" name="tmit_3">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>110</width>
+            <height>16</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string/>
+          </property>
+          <property name="text">
+           <string>${INST}A:TMIT</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="channel" stdset="0">
+           <string>ca://BLEN:${AREA}:${POS}:${INST}A:TMIT</string>
+          </property>
+          <property name="displayFormat" stdset="0">
+           <enum>PyDMLabel::Decimal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="PyDMLabel" name="sum">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>110</width>
+            <height>16</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string/>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <property name="text">
+           <string>${INST}B:SUM</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="channel" stdset="0">
+           <string>ca://BLEN:${AREA}:${POS}:${INST}B:SUM</string>
+          </property>
+          <property name="displayFormat" stdset="0">
+           <enum>PyDMLabel::Decimal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="rowLabel">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>110</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <property name="text">
+           <string>+/- X</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLabel" name="label_20">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <property name="text">
+           <string>SUM</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="margin">
+           <number>0</number>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="rowLabel_3">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>110</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <property name="text">
+           <string>+/- Y</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="QLabel" name="label_21">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <property name="text">
+           <string>IMAX</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="PyDMLabel" name="sum_3">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>110</width>
+            <height>16</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string/>
+          </property>
+          <property name="text">
+           <string>${INST}A:SUM</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="channel" stdset="0">
+           <string>ca://BLEN:${AREA}:${POS}:${INST}A:SUM</string>
+          </property>
+          <property name="displayFormat" stdset="0">
+           <enum>PyDMLabel::Decimal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="2">
+         <widget class="PyDMLabel" name="imax_3">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>110</width>
+            <height>16</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string/>
+          </property>
+          <property name="text">
+           <string>${INST}A:IMAX</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="channel" stdset="0">
+           <string>ca://BLEN:${AREA}:${POS}:${INST}A:IMAX</string>
+          </property>
+          <property name="displayFormat" stdset="0">
+           <enum>PyDMLabel::Decimal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="3">
+         <widget class="QLabel" name="label_19">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <property name="text">
+           <string>TMIT</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </widget>
      </widget>
     </widget>
