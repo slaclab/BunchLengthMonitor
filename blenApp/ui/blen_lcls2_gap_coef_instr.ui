@@ -60,48 +60,6 @@
          </property>
         </widget>
        </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="a0lbl">
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>A0  (Pedestal Weight)</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="2">
-        <widget class="PyDMLabel" name="a1RBV">
-         <property name="toolTip">
-          <string/>
-         </property>
-         <property name="text">
-          <string>A1 RBV</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <property name="precision" stdset="0">
-          <number>7</number>
-         </property>
-         <property name="precisionFromPV" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="channel" stdset="0">
-          <string>ca://${PREFIX}:CoefA1RBV</string>
-         </property>
-         <property name="displayFormat" stdset="0">
-          <enum>PyDMLabel::Decimal</enum>
-         </property>
-        </widget>
-       </item>
        <item row="3" column="0">
         <widget class="QLabel" name="offsetLbl">
          <property name="font">
@@ -116,56 +74,6 @@
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="PyDMLineEdit" name="a1edit">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="toolTip">
-          <string/>
-         </property>
-         <property name="precision" stdset="0">
-          <number>7</number>
-         </property>
-         <property name="precisionFromPV" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="channel" stdset="0">
-          <string>ca://${PREFIX}:CoefA1</string>
-         </property>
-         <property name="displayFormat" stdset="0">
-          <enum>PyDMLineEdit::Decimal</enum>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="2">
-        <widget class="PyDMLabel" name="a0RBV">
-         <property name="toolTip">
-          <string/>
-         </property>
-         <property name="text">
-          <string>A0 RBV</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <property name="precision" stdset="0">
-          <number>7</number>
-         </property>
-         <property name="precisionFromPV" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="channel" stdset="0">
-          <string>ca://${PREFIX}:CoefA0RBV</string>
-         </property>
-         <property name="displayFormat" stdset="0">
-          <enum>PyDMLabel::Decimal</enum>
          </property>
         </widget>
        </item>
@@ -209,31 +117,6 @@
          </property>
         </widget>
        </item>
-       <item row="1" column="1">
-        <widget class="PyDMLineEdit" name="a0edit">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="toolTip">
-          <string/>
-         </property>
-         <property name="precision" stdset="0">
-          <number>7</number>
-         </property>
-         <property name="precisionFromPV" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="channel" stdset="0">
-          <string>ca://${PREFIX}:CoefA0</string>
-         </property>
-         <property name="displayFormat" stdset="0">
-          <enum>PyDMLineEdit::Decimal</enum>
-         </property>
-        </widget>
-       </item>
        <item row="3" column="2">
         <widget class="PyDMLabel" name="offsetRBV">
          <property name="toolTip">
@@ -260,6 +143,23 @@
         </widget>
        </item>
        <item row="2" column="0">
+        <widget class="QLabel" name="a0lbl">
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>A0  (Pedestal Weight)</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
         <widget class="QLabel" name="a1lbl">
          <property name="font">
           <font>
@@ -273,6 +173,106 @@
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="PyDMLineEdit" name="a1edit">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="toolTip">
+          <string/>
+         </property>
+         <property name="precision" stdset="0">
+          <number>7</number>
+         </property>
+         <property name="precisionFromPV" stdset="0">
+          <bool>false</bool>
+         </property>
+         <property name="channel" stdset="0">
+          <string>ca://${PREFIX}:CoefA1</string>
+         </property>
+         <property name="displayFormat" stdset="0">
+          <enum>PyDMLineEdit::Decimal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="PyDMLineEdit" name="a0edit">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="toolTip">
+          <string/>
+         </property>
+         <property name="precision" stdset="0">
+          <number>7</number>
+         </property>
+         <property name="precisionFromPV" stdset="0">
+          <bool>false</bool>
+         </property>
+         <property name="channel" stdset="0">
+          <string>ca://${PREFIX}:CoefA0</string>
+         </property>
+         <property name="displayFormat" stdset="0">
+          <enum>PyDMLineEdit::Decimal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <widget class="PyDMLabel" name="a0RBV">
+         <property name="toolTip">
+          <string/>
+         </property>
+         <property name="text">
+          <string>A0 RBV</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="precision" stdset="0">
+          <number>7</number>
+         </property>
+         <property name="precisionFromPV" stdset="0">
+          <bool>false</bool>
+         </property>
+         <property name="channel" stdset="0">
+          <string>ca://${PREFIX}:CoefA0RBV</string>
+         </property>
+         <property name="displayFormat" stdset="0">
+          <enum>PyDMLabel::Decimal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="PyDMLabel" name="a1RBV">
+         <property name="toolTip">
+          <string/>
+         </property>
+         <property name="text">
+          <string>A1 RBV</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="precision" stdset="0">
+          <number>7</number>
+         </property>
+         <property name="precisionFromPV" stdset="0">
+          <bool>false</bool>
+         </property>
+         <property name="channel" stdset="0">
+          <string>ca://${PREFIX}:CoefA1RBV</string>
+         </property>
+         <property name="displayFormat" stdset="0">
+          <enum>PyDMLabel::Decimal</enum>
          </property>
         </widget>
        </item>
@@ -400,57 +400,24 @@
          </property>
         </widget>
        </item>
-       <item row="3" column="2">
-        <widget class="PyDMLabel" name="a4RBV">
-         <property name="toolTip">
-          <string/>
+       <item row="0" column="2">
+        <widget class="QLabel" name="readbackLbl_2">
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
          </property>
          <property name="text">
-          <string>A4 RBV</string>
+          <string>Readback</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
          </property>
-         <property name="precision" stdset="0">
-          <number>7</number>
-         </property>
-         <property name="precisionFromPV" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="channel" stdset="0">
-          <string>ca://${PREFIX}:CoefA4RBV</string>
-         </property>
-         <property name="displayFormat" stdset="0">
-          <enum>PyDMLabel::Decimal</enum>
-         </property>
         </widget>
        </item>
-       <item row="1" column="1">
-        <widget class="PyDMLineEdit" name="a3edit">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="toolTip">
-          <string/>
-         </property>
-         <property name="precision" stdset="0">
-          <number>7</number>
-         </property>
-         <property name="precisionFromPV" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="channel" stdset="0">
-          <string>ca://${PREFIX}:CoefA3</string>
-         </property>
-         <property name="displayFormat" stdset="0">
-          <enum>PyDMLineEdit::Decimal</enum>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="0">
+       <item row="1" column="0">
         <widget class="QLabel" name="a4lbl">
          <property name="font">
           <font>
@@ -467,32 +434,24 @@
          </property>
         </widget>
        </item>
-       <item row="1" column="2">
-        <widget class="PyDMLabel" name="a3RBV">
-         <property name="toolTip">
-          <string/>
+       <item row="3" column="0">
+        <widget class="QLabel" name="a3lbl">
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
          </property>
          <property name="text">
-          <string>A3 RBV</string>
+          <string>A3  (Pedestal Weight)</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
          </property>
-         <property name="precision" stdset="0">
-          <number>7</number>
-         </property>
-         <property name="precisionFromPV" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="channel" stdset="0">
-          <string>ca://${PREFIX}:CoefA3RBV</string>
-         </property>
-         <property name="displayFormat" stdset="0">
-          <enum>PyDMLabel::Decimal</enum>
-         </property>
         </widget>
        </item>
-       <item row="3" column="1">
+       <item row="1" column="1">
         <widget class="PyDMLineEdit" name="a4edit">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
@@ -517,37 +476,78 @@
          </property>
         </widget>
        </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="a3lbl">
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
+       <item row="3" column="1">
+        <widget class="PyDMLineEdit" name="a3edit">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
          </property>
-         <property name="text">
-          <string>A3  (Pedestal Weight)</string>
+         <property name="toolTip">
+          <string/>
          </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
+         <property name="precision" stdset="0">
+          <number>7</number>
+         </property>
+         <property name="precisionFromPV" stdset="0">
+          <bool>false</bool>
+         </property>
+         <property name="channel" stdset="0">
+          <string>ca://${PREFIX}:CoefA3</string>
+         </property>
+         <property name="displayFormat" stdset="0">
+          <enum>PyDMLineEdit::Decimal</enum>
          </property>
         </widget>
        </item>
-       <item row="0" column="2">
-        <widget class="QLabel" name="readbackLbl_2">
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
+       <item row="1" column="2">
+        <widget class="PyDMLabel" name="a4RBV">
+         <property name="toolTip">
+          <string/>
          </property>
          <property name="text">
-          <string>Readback</string>
+          <string>A4 RBV</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
+         </property>
+         <property name="precision" stdset="0">
+          <number>7</number>
+         </property>
+         <property name="precisionFromPV" stdset="0">
+          <bool>false</bool>
+         </property>
+         <property name="channel" stdset="0">
+          <string>ca://${PREFIX}:CoefA4RBV</string>
+         </property>
+         <property name="displayFormat" stdset="0">
+          <enum>PyDMLabel::Decimal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="2">
+        <widget class="PyDMLabel" name="a3RBV">
+         <property name="toolTip">
+          <string/>
+         </property>
+         <property name="text">
+          <string>A3 RBV</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="precision" stdset="0">
+          <number>7</number>
+         </property>
+         <property name="precisionFromPV" stdset="0">
+          <bool>false</bool>
+         </property>
+         <property name="channel" stdset="0">
+          <string>ca://${PREFIX}:CoefA3RBV</string>
+         </property>
+         <property name="displayFormat" stdset="0">
+          <enum>PyDMLabel::Decimal</enum>
          </property>
         </widget>
        </item>
