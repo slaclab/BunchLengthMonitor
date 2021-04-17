@@ -33,11 +33,11 @@
           </sizepolicy>
          </property>
          <property name="currentIndex">
-          <number>3</number>
+          <number>2</number>
          </property>
          <widget class="QWidget" name="instATab">
           <attribute name="title">
-           <string>${INST} A</string>
+           <string>${INST}A (+Y)</string>
           </attribute>
           <layout class="QVBoxLayout" name="verticalLayout_4">
            <item>
@@ -49,27 +49,7 @@
               <string>{ &quot;AREA&quot;: &quot;${AREA}&quot;, &quot;POS&quot;: &quot;${POS}&quot;, &quot;INST&quot;: &quot;${INST}A&quot; }</string>
              </property>
              <property name="filename" stdset="0">
-              <string>blen_cal_embedded.ui</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-         <widget class="QWidget" name="instBTab">
-          <attribute name="title">
-           <string>${INST} B</string>
-          </attribute>
-          <layout class="QVBoxLayout" name="verticalLayout_3">
-           <item>
-            <widget class="PyDMEmbeddedDisplay" name="inst_b_cal">
-             <property name="toolTip">
-              <string/>
-             </property>
-             <property name="macros" stdset="0">
-              <string>{ &quot;AREA&quot;: &quot;${AREA}&quot;, &quot;POS&quot;: &quot;${POS}&quot;, &quot;INST&quot;: &quot;${INST}B&quot; }</string>
-             </property>
-             <property name="filename" stdset="0">
-              <string>blen_cal_embedded.ui</string>
+              <string>blen_cal_lcls2_gap_embedded.ui</string>
              </property>
             </widget>
            </item>
@@ -77,7 +57,7 @@
          </widget>
          <widget class="QWidget" name="instCTab">
           <attribute name="title">
-           <string>${INST} C</string>
+           <string>${INST}C (-Y)</string>
           </attribute>
           <layout class="QVBoxLayout" name="verticalLayout_5">
            <item>
@@ -89,7 +69,27 @@
               <string>{ &quot;AREA&quot;: &quot;${AREA}&quot;, &quot;POS&quot;: &quot;${POS}&quot;, &quot;INST&quot;: &quot;${INST}C&quot; }</string>
              </property>
              <property name="filename" stdset="0">
-              <string>blen_cal_embedded.ui</string>
+              <string>blen_cal_lcls2_gap_embedded.ui</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="instBTab">
+          <attribute name="title">
+           <string>${INST}B (-X)</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <item>
+            <widget class="PyDMEmbeddedDisplay" name="inst_b_cal">
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="macros" stdset="0">
+              <string>{ &quot;AREA&quot;: &quot;${AREA}&quot;, &quot;POS&quot;: &quot;${POS}&quot;, &quot;INST&quot;: &quot;${INST}B&quot; }</string>
+             </property>
+             <property name="filename" stdset="0">
+              <string>blen_cal_lcls2_gap_embedded.ui</string>
              </property>
             </widget>
            </item>
@@ -97,7 +97,7 @@
          </widget>
          <widget class="QWidget" name="instDTab">
           <attribute name="title">
-           <string>${INST} D</string>
+           <string>${INST}D (+X)</string>
           </attribute>
           <layout class="QVBoxLayout" name="verticalLayout_6">
            <item>
@@ -109,7 +109,7 @@
               <string>{ &quot;AREA&quot;: &quot;${AREA}&quot;, &quot;POS&quot;: &quot;${POS}&quot;, &quot;INST&quot;: &quot;${INST}D&quot; }</string>
              </property>
              <property name="filename" stdset="0">
-              <string>blen_cal_embedded.ui</string>
+              <string>blen_cal_lcls2_gap_embedded.ui</string>
              </property>
             </widget>
            </item>
