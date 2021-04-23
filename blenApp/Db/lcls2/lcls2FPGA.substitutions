@@ -22,8 +22,8 @@ file "RegisterIn.template" { pattern
 { $(P), FpgaVersion,    "FPGA Firmware Version Number",           "YES",  "Passive",  $(PORT),   "",   STAT:FpgaVersion  }
 { $(P), UpTimeCnt,      "Seconds since last reset",               "YES",  "1 second", $(PORT),   "s",  STAT:UpTimeCnt    }
 { $(P), DeviceId,       "Device Identification",                  "YES",  "Passive",  $(PORT),   "",   STAT:DeviceId     }
-{ $(P), ServerRemoteIp, "Backplane Rem Srv IP",                   "YES",  "1 second", $(PORT),   "",   CONF:BpServerIp   }
-{ $(P), ServerRemotePort,"Backplane Rem Srv Port",                "YES",  "1 second", $(PORT),   "",   CONF:BpServerPort }
+{ $(P), ServerRemoteIp, "Backplane Rem Srv IP",                   "YES",  "1 second", $(PORT),   "",   CONF:ServerRemoteIp}
+{ $(P), ServerRemotePort,"Backplane Rem Srv Port",                "YES",  "1 second", $(PORT),   "",   CONF:ServerRemotePort}
 # BSA status
 { $(P), SofCount,       "BSA: Start of Frame Count",              "YES",  "1 second", $(PORT),   "",   BSA:sofCount      }
 { $(P), EofCount,       "BSA: End of Frame Count",                "YES",  "1 second", $(PORT),   "",   BSA:eofCount      }

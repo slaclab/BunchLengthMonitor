@@ -26,8 +26,8 @@
 /mmio/AmcCarrierCore/AxiVersion/BuildStamp                           STAT:BuildStamp
 /mmio/AmcCarrierCore/AxiVersion/UpTimeCnt                            STAT:UpTimeCnt
 /mmio/AmcCarrierCore/AxiVersion/ScratchPad                           :ScratchPad 
-/mmio/AmcCarrierCore/BpUdpServer/ServerRemoteIp                      STAT:ServerRemoteIp
-/mmio/AmcCarrierCore/BpUdpServer/ServerRemotePort                    STAT:ServerRemotePort
+/mmio/AmcCarrierCore/BpUdpServer/ServerRemoteIp                      CONF:ServerRemoteIp
+/mmio/AmcCarrierCore/BpUdpServer/ServerRemotePort                    CONF:ServerRemotePort
 /mmio/AppTop/AppCore/CmnConfig/AppType                               CONF:AppType
 /mmio/AppTop/AppCore/CmnConfig/Location                              CONF:Location
 /mmio/AppTop/AppCore/SysGen[0]/DspCoreConfig/Version                 AMC0:Version
