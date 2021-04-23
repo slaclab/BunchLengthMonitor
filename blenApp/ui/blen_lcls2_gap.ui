@@ -46,8 +46,8 @@
       <widget class="PyDMRelatedDisplayButton" name="PyDMRelatedDisplayButton_2">
        <property name="geometry">
         <rect>
-         <x>750</x>
-         <y>910</y>
+         <x>740</x>
+         <y>840</y>
          <width>300</width>
          <height>24</height>
         </rect>
@@ -92,8 +92,8 @@
       <widget class="PyDMRelatedDisplayButton" name="PyDMRelatedDisplayButton_3">
        <property name="geometry">
         <rect>
-         <x>750</x>
-         <y>950</y>
+         <x>740</x>
+         <y>880</y>
          <width>300</width>
          <height>24</height>
         </rect>
@@ -334,17 +334,17 @@
       <widget class="QLabel" name="BPMSyncLabel">
        <property name="geometry">
         <rect>
-         <x>790</x>
-         <y>1000</y>
+         <x>740</x>
+         <y>930</y>
          <width>182</width>
          <height>23</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <pointsize>14</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
+         <pointsize>12</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
         </font>
        </property>
        <property name="text">
@@ -354,8 +354,8 @@
       <widget class="PyDMByteIndicator" name="PyDMByteIndicator">
        <property name="geometry">
         <rect>
-         <x>990</x>
-         <y>1000</y>
+         <x>940</x>
+         <y>930</y>
          <width>15</width>
          <height>23</height>
         </rect>
@@ -746,7 +746,7 @@
        <property name="geometry">
         <rect>
          <x>170</x>
-         <y>890</y>
+         <y>840</y>
          <width>460</width>
          <height>141</height>
         </rect>
@@ -1041,6 +1041,128 @@
          </widget>
         </item>
        </layout>
+      </widget>
+      <widget class="QLabel" name="BPMSyncLabel_2">
+       <property name="geometry">
+        <rect>
+         <x>740</x>
+         <y>960</y>
+         <width>127</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>BPM Source</string>
+       </property>
+      </widget>
+      <widget class="PyDMLabel" name="bpm_srv_ip">
+       <property name="geometry">
+        <rect>
+         <x>940</x>
+         <y>960</y>
+         <width>75</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string/>
+       </property>
+       <property name="channel" stdset="0">
+        <string>ca://BLEN:${AREA}:${POS}:ServerRemoteIp</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>1010</x>
+         <y>960</y>
+         <width>21</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>:</string>
+       </property>
+       <property name="textFormat">
+        <enum>Qt::RichText</enum>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="PyDMLabel" name="bpm_srv_port">
+       <property name="geometry">
+        <rect>
+         <x>1030</x>
+         <y>960</y>
+         <width>75</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string/>
+       </property>
+       <property name="channel" stdset="0">
+        <string>ca://BLEN:${AREA}:${POS}:ServerRemotePort</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="bpm_select">
+       <property name="geometry">
+        <rect>
+         <x>740</x>
+         <y>990</y>
+         <width>127</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>BPM Select</string>
+       </property>
+      </widget>
+      <widget class="PyDMEnumComboBox" name="PyDMEnumComboBox_2">
+       <property name="geometry">
+        <rect>
+         <x>940</x>
+         <y>990</y>
+         <width>101</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string/>
+       </property>
+       <property name="channel" stdset="0">
+        <string>ca://BLEN:${AREA}:${POS}:BpmSelect</string>
+       </property>
       </widget>
      </widget>
     </widget>

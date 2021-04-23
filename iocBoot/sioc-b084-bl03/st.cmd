@@ -36,6 +36,7 @@ epicsEnvSet("DICT_FILE", "yaml/blenLCLS2.dict")
 cd $(TOP)
 
 < iocBoot/common/blenCommon.cmd
+dbLoadRecords("db/pyroFilters.db", "P=BLEN:$(AREA):$(POS), INST0=$(INST)A, INST1=$(INST)B")
 
 
 # ===========================================

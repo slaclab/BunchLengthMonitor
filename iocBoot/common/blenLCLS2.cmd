@@ -4,9 +4,8 @@
 
 dbLoadRecords("db/blenLCLS2.db", "P=BLEN:$(AREA):$(POS), INST0=$(INST)A, INST1=$(INST)B, SCAN=1 second")
 
-# pyroFilters do not exist for gap-diode application!
-#dbLoadRecords("db/pyroFilters.db", "P=BLEN:$(AREA):$(POS), INST0=$(INST)A, INST1=$(INST)B")
 dbLoadRecords("db/lcls2FPGA.db", "P=BLEN:$(AREA):$(POS), PORT=${BLEN_ASYN_PORT}") 
+dbLoadRecords("db/bpmSelect.db", "P=BLEN:$(AREA):$(POS)")
 
 dbLoadRecords("db/msgStatus.db", "P=BLEN:$(AREA):$(POS)")
 
