@@ -90,5 +90,6 @@ DB += streamControl.db
 DB += iocMeta.db
 DB += monitorFPGAReboot.db
 DB += bpmSelect.db
+DB += ipAddr.db
 
 include $(TOP)/configure/RULES

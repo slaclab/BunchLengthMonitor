@@ -43,98 +43,6 @@
         <height>1094</height>
        </rect>
       </property>
-      <widget class="PyDMRelatedDisplayButton" name="PyDMRelatedDisplayButton_2">
-       <property name="geometry">
-        <rect>
-         <x>740</x>
-         <y>840</y>
-         <width>300</width>
-         <height>24</height>
-        </rect>
-       </property>
-       <property name="toolTip">
-        <string/>
-       </property>
-       <property name="whatsThis">
-        <string>
-    A QPushButton capable of opening a new Display at the same of at a
-    new window.
-
-    Parameters
-    ----------
-    init_channel : str, optional
-        The channel to be used by the widget.
-
-    filename : str, optional
-        The file to be opened
-    </string>
-       </property>
-       <property name="text">
-        <string>BLEN ${INST} Coefficient Configuration</string>
-       </property>
-       <property name="filenames" stdset="0">
-        <stringlist>
-         <string>blen_lcls2_gap_coef_main.ui</string>
-        </stringlist>
-       </property>
-       <property name="displayFilename" stdset="0">
-        <string>blen_lcls2_gap_coef_main.ui</string>
-       </property>
-       <property name="macros" stdset="0">
-        <stringlist>
-         <string>{&quot;AREA&quot;:&quot;${AREA}&quot;,&quot;POS&quot;:&quot;${POS}&quot;,&quot;INST&quot;:&quot;${INST}&quot;}</string>
-        </stringlist>
-       </property>
-       <property name="openInNewWindow" stdset="0">
-        <bool>true</bool>
-       </property>
-      </widget>
-      <widget class="PyDMRelatedDisplayButton" name="PyDMRelatedDisplayButton_3">
-       <property name="geometry">
-        <rect>
-         <x>740</x>
-         <y>880</y>
-         <width>300</width>
-         <height>24</height>
-        </rect>
-       </property>
-       <property name="toolTip">
-        <string/>
-       </property>
-       <property name="whatsThis">
-        <string>
-    A QPushButton capable of opening a new Display at the same of at a
-    new window.
-
-    Parameters
-    ----------
-    init_channel : str, optional
-        The channel to be used by the widget.
-
-    filename : str, optional
-        The file to be opened
-    </string>
-       </property>
-       <property name="text">
-        <string>BLEN ${INST} Engineering Screens</string>
-       </property>
-       <property name="filenames" stdset="0">
-        <stringlist>
-         <string>blen_engineering_lcls2_gap.ui</string>
-        </stringlist>
-       </property>
-       <property name="displayFilename" stdset="0">
-        <string>blen_engineering_lcls2_gap.ui</string>
-       </property>
-       <property name="macros" stdset="0">
-        <stringlist>
-         <string>ATCA_SLOT=${ATCA_SLOT},AREA=${AREA},INST=${INST},IOC_UNIT=${IOC_UNIT},POS=${POS}</string>
-        </stringlist>
-       </property>
-       <property name="openInNewWindow" stdset="0">
-        <bool>true</bool>
-       </property>
-      </widget>
       <widget class="QLabel" name="label_2">
        <property name="geometry">
         <rect>
@@ -329,59 +237,6 @@
        </property>
        <property name="text">
         <string>${INST}D    (+X)</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="BPMSyncLabel">
-       <property name="geometry">
-        <rect>
-         <x>740</x>
-         <y>930</y>
-         <width>182</width>
-         <height>23</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>12</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>BPM Sync Status</string>
-       </property>
-      </widget>
-      <widget class="PyDMByteIndicator" name="PyDMByteIndicator">
-       <property name="geometry">
-        <rect>
-         <x>940</x>
-         <y>930</y>
-         <width>15</width>
-         <height>23</height>
-        </rect>
-       </property>
-       <property name="toolTip">
-        <string/>
-       </property>
-       <property name="channel" stdset="0">
-        <string>ca://BLEN:${AREA}:${POS}:BPMS_SYNC</string>
-       </property>
-       <property name="onColor" stdset="0">
-        <color>
-         <red>100</red>
-         <green>100</green>
-         <blue>100</blue>
-        </color>
-       </property>
-       <property name="offColor" stdset="0">
-        <color>
-         <red>0</red>
-         <green>255</green>
-         <blue>0</blue>
-        </color>
-       </property>
-       <property name="showLabels" stdset="0">
-        <bool>false</bool>
        </property>
       </widget>
       <widget class="PyDMWaveformPlot" name="wfpARaw">
@@ -745,8 +600,8 @@
       <widget class="QWidget" name="gridLayoutWidget">
        <property name="geometry">
         <rect>
-         <x>170</x>
-         <y>840</y>
+         <x>130</x>
+         <y>880</y>
          <width>460</width>
          <height>141</height>
         </rect>
@@ -1042,127 +897,244 @@
         </item>
        </layout>
       </widget>
-      <widget class="QLabel" name="BPMSyncLabel_2">
+      <widget class="QWidget" name="gridLayoutWidget_2">
        <property name="geometry">
         <rect>
-         <x>740</x>
-         <y>960</y>
-         <width>127</width>
-         <height>23</height>
+         <x>710</x>
+         <y>880</y>
+         <width>583</width>
+         <height>141</height>
         </rect>
        </property>
-       <property name="font">
-        <font>
-         <pointsize>12</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>BPM Source</string>
-       </property>
-      </widget>
-      <widget class="PyDMLabel" name="bpm_srv_ip">
-       <property name="geometry">
-        <rect>
-         <x>940</x>
-         <y>960</y>
-         <width>75</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="toolTip">
-        <string/>
-       </property>
-       <property name="channel" stdset="0">
-        <string>ca://BLEN:${AREA}:${POS}:ServerRemoteIp</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label">
-       <property name="geometry">
-        <rect>
-         <x>1010</x>
-         <y>960</y>
-         <width>21</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>:</string>
-       </property>
-       <property name="textFormat">
-        <enum>Qt::RichText</enum>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-      <widget class="PyDMLabel" name="bpm_srv_port">
-       <property name="geometry">
-        <rect>
-         <x>1030</x>
-         <y>960</y>
-         <width>75</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="toolTip">
-        <string/>
-       </property>
-       <property name="channel" stdset="0">
-        <string>ca://BLEN:${AREA}:${POS}:ServerRemotePort</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="bpm_select">
-       <property name="geometry">
-        <rect>
-         <x>740</x>
-         <y>990</y>
-         <width>127</width>
-         <height>23</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>12</pointsize>
-         <weight>50</weight>
-         <bold>false</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>BPM Select</string>
-       </property>
-      </widget>
-      <widget class="PyDMEnumComboBox" name="PyDMEnumComboBox_2">
-       <property name="geometry">
-        <rect>
-         <x>940</x>
-         <y>990</y>
-         <width>101</width>
-         <height>23</height>
-        </rect>
-       </property>
-       <property name="toolTip">
-        <string/>
-       </property>
-       <property name="channel" stdset="0">
-        <string>ca://BLEN:${AREA}:${POS}:BpmSelect</string>
-       </property>
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="4" column="3">
+         <widget class="PyDMLabel" name="bpm_srv_port">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="toolTip">
+           <string/>
+          </property>
+          <property name="channel" stdset="0">
+           <string>ca://BLEN:${AREA}:${POS}:ServerRemotePort</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="BPMSyncLabel">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>BPM Sync Status</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0">
+         <widget class="QLabel" name="bpm_select">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>BPM Select</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="PyDMRelatedDisplayButton" name="PyDMRelatedDisplayButton_2">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="toolTip">
+           <string/>
+          </property>
+          <property name="whatsThis">
+           <string>
+    A QPushButton capable of opening a new Display at the same of at a
+    new window.
+
+    Parameters
+    ----------
+    init_channel : str, optional
+        The channel to be used by the widget.
+
+    filename : str, optional
+        The file to be opened
+    </string>
+          </property>
+          <property name="text">
+           <string>BLEN ${INST} Coefficient Configuration</string>
+          </property>
+          <property name="filenames" stdset="0">
+           <stringlist>
+            <string>blen_lcls2_gap_coef_main.ui</string>
+           </stringlist>
+          </property>
+          <property name="displayFilename" stdset="0">
+           <string>blen_lcls2_gap_coef_main.ui</string>
+          </property>
+          <property name="macros" stdset="0">
+           <stringlist>
+            <string>{&quot;AREA&quot;:&quot;${AREA}&quot;,&quot;POS&quot;:&quot;${POS}&quot;,&quot;INST&quot;:&quot;${INST}&quot;}</string>
+           </stringlist>
+          </property>
+          <property name="openInNewWindow" stdset="0">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="2">
+         <widget class="QLabel" name="label">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>:</string>
+          </property>
+          <property name="textFormat">
+           <enum>Qt::RichText</enum>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="PyDMLabel" name="bpm_srv_ip">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="toolTip">
+           <string/>
+          </property>
+          <property name="channel" stdset="0">
+           <string>ca://BLEN:${AREA}:${POS}:ServerRemoteIp:IpAddr.SVAL</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="PyDMByteIndicator" name="PyDMByteIndicator">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="toolTip">
+           <string/>
+          </property>
+          <property name="channel" stdset="0">
+           <string>ca://BLEN:${AREA}:${POS}:BPMS_SYNC</string>
+          </property>
+          <property name="onColor" stdset="0">
+           <color>
+            <red>100</red>
+            <green>100</green>
+            <blue>100</blue>
+           </color>
+          </property>
+          <property name="offColor" stdset="0">
+           <color>
+            <red>0</red>
+            <green>255</green>
+            <blue>0</blue>
+           </color>
+          </property>
+          <property name="showLabels" stdset="0">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="1">
+         <widget class="PyDMEnumComboBox" name="PyDMEnumComboBox_2">
+          <property name="toolTip">
+           <string/>
+          </property>
+          <property name="channel" stdset="0">
+           <string>ca://BLEN:${AREA}:${POS}:BpmSelect</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="BPMSyncLabel_2">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>BPM Source (ip : port)</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="PyDMRelatedDisplayButton" name="PyDMRelatedDisplayButton_3">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="toolTip">
+           <string/>
+          </property>
+          <property name="whatsThis">
+           <string>
+    A QPushButton capable of opening a new Display at the same of at a
+    new window.
+
+    Parameters
+    ----------
+    init_channel : str, optional
+        The channel to be used by the widget.
+
+    filename : str, optional
+        The file to be opened
+    </string>
+          </property>
+          <property name="text">
+           <string>BLEN ${INST} Engineering Screens</string>
+          </property>
+          <property name="filenames" stdset="0">
+           <stringlist>
+            <string>blen_engineering_lcls2_gap.ui</string>
+           </stringlist>
+          </property>
+          <property name="displayFilename" stdset="0">
+           <string>blen_engineering_lcls2_gap.ui</string>
+          </property>
+          <property name="macros" stdset="0">
+           <stringlist>
+            <string>ATCA_SLOT=${ATCA_SLOT},AREA=${AREA},INST=${INST},IOC_UNIT=${IOC_UNIT},POS=${POS}</string>
+           </stringlist>
+          </property>
+          <property name="openInNewWindow" stdset="0">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </widget>
      </widget>
     </widget>

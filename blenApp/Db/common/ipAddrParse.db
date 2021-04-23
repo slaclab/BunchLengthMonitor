@@ -72,3 +72,48 @@ record(calc, "$(P):$(SRC)D")
   field(CALC, "(A&B)>>C")
   field(SCAN, "$(SCAN)")
 }
+
+record(scalcout, "$(P):$(SRC)s1") {
+    field(PINI, "YES")
+    field(INAA, "$(P):$(SRC)D CP")
+    field(CALC, "$P('%.0f.',AA)")
+}
+
+record(scalcout, "$(P):$(SRC)s2") {
+    field(PINI, "YES")
+    field(INAA, "$(P):$(SRC)C CP")
+    field(CALC, "$P('%.0f.',AA)")
+}
+
+record(scalcout, "$(P):$(SRC)s3") {
+    field(PINI, "YES")
+    field(INAA, "$(P):$(SRC)B CP")
+    field(CALC, "$P('%.0f.',AA)")
+}
+
+record(scalcout, "$(P):$(SRC)s4") {
+    field(PINI, "YES")
+    field(INAA, "$(P):$(SRC)A CP")
+    field(CALC, "$P('%.0f',AA)")
+}
+
+record(scalcout, "$(P):$(SRC)s5") {
+    field(PINI, "YES")
+    field(INAA, "$(P):$(SRC)s1.SVAL CP")
+    field(INBB, "$(P):$(SRC)s2.SVAL CP")
+    field(CALC, "AA + BB")
+}
+
+record(scalcout, "$(P):$(SRC)s6") {
+    field(PINI, "YES")
+    field(INAA, "$(P):$(SRC)s3.SVAL CP")
+    field(INBB, "$(P):$(SRC)s4.SVAL CP")
+    field(CALC, "AA + BB")
+}
+
+record(scalcout, "$(P):$(SRC):IpAddr") {
+    field(PINI, "YES")
+    field(INAA, "$(P):$(SRC)s5.SVAL CP")
+    field(INBB, "$(P):$(SRC)s6.SVAL CP")
+    field(CALC, "AA + BB")
+}
