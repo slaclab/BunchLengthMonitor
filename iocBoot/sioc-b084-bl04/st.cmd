@@ -61,6 +61,9 @@ dbLoadRecords("db/blen_gap_weightFunctionXAxis.db", "AREA=$(AREA), POS=$(POS), I
 # Parse IP address
 dbLoadRecords("db/ipAddr.db", "P=BLEN:$(AREA):$(POS), SRC=ServerRemoteIp")
 
+# Pt100 temperature sensor inputs
+dbLoadRecords("db/blen_gap_temperatures.db", "P=BLEN:${AREA}:${POS}")
+
 # ===========================================
 #               IOC INIT
 # ===========================================

@@ -23,6 +23,8 @@ DB += gap_streams.db
 DB += blen_gap_DspPreprocConfig.db
 DB += blen_gap_weightFunctionXAxis.db
 DB += blen_gap_coefI2.db
+DB += blen_gap_temperatures.db
+DB += blen_pyro_temperatures.db
 
 include $(TOP)/configure/RULES
 #----------------------------------------

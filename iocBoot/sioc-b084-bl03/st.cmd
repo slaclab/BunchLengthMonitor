@@ -38,6 +38,8 @@ cd $(TOP)
 < iocBoot/common/blenCommon.cmd
 dbLoadRecords("db/pyroFilters.db", "P=BLEN:$(AREA):$(POS), INST0=$(INST)A, INST1=$(INST)B")
 
+# Pt100 temperature sensor inputs
+dbLoadRecords("db/blen_pyro_temperatures.db", "P=BLEN:${AREA}:${POS}")
 
 # ===========================================
 #               IOC INIT

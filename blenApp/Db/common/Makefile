@@ -91,5 +91,6 @@ DB += iocMeta.db
 DB += monitorFPGAReboot.db
 DB += bpmSelect.db
 DB += ipAddr.db
+DB += temperature.template
 
 include $(TOP)/configure/RULES

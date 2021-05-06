@@ -1,0 +1,23 @@
+#==============================================================================
+#
+# Abs:  Temperature substitutions file.
+#
+# Name: temperature.substitutions
+#
+# Note: Must follow the LCLS naming conventions.
+#
+#==============================================================================
+#
+file temperature.template
+{
+pattern   {P, R, DESC, EGU, SCAN}
+
+# P is the PV prefix
+# R is the PV attribute
+# DESC is the DESC field
+# EGU is the EGU field
+# SCAN is the SCAN field
+
+# these Records are fed via CA from a seperate Ethercat application
+{ $(P), "TempPrimPyro", "Temperature of sensor 0", "K", "Passive"}
+}
