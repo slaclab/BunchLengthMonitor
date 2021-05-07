@@ -606,7 +606,7 @@
          <height>141</height>
         </rect>
        </property>
-       <layout class="QGridLayout" name="gridLayout" rowminimumheight="0,0,0,0,0,0,0">
+       <layout class="QGridLayout" name="gridLayout" rowminimumheight="0,0,0,0,0">
         <item row="2" column="2">
          <widget class="PyDMLabel" name="imax">
           <property name="sizePolicy">
@@ -636,9 +636,6 @@
           <property name="channel" stdset="0">
            <string>ca://BLEN:${AREA}:${POS}:${INST}B:IMAX</string>
           </property>
-          <property name="displayFormat" stdset="0">
-           <enum>PyDMLabel::Decimal</enum>
-          </property>
          </widget>
         </item>
         <item row="3" column="3">
@@ -666,9 +663,6 @@
           </property>
           <property name="channel" stdset="0">
            <string>ca://BLEN:${AREA}:${POS}:${INST}A:TMIT</string>
-          </property>
-          <property name="displayFormat" stdset="0">
-           <enum>PyDMLabel::Decimal</enum>
           </property>
          </widget>
         </item>
@@ -700,9 +694,6 @@
           </property>
           <property name="channel" stdset="0">
            <string>ca://BLEN:${AREA}:${POS}:${INST}B:SUM</string>
-          </property>
-          <property name="displayFormat" stdset="0">
-           <enum>PyDMLabel::Decimal</enum>
           </property>
          </widget>
         </item>
@@ -839,9 +830,6 @@
           <property name="channel" stdset="0">
            <string>ca://BLEN:${AREA}:${POS}:${INST}A:SUM</string>
           </property>
-          <property name="displayFormat" stdset="0">
-           <enum>PyDMLabel::Decimal</enum>
-          </property>
          </widget>
         </item>
         <item row="4" column="2">
@@ -869,9 +857,6 @@
           </property>
           <property name="channel" stdset="0">
            <string>ca://BLEN:${AREA}:${POS}:${INST}A:IMAX</string>
-          </property>
-          <property name="displayFormat" stdset="0">
-           <enum>PyDMLabel::Decimal</enum>
           </property>
          </widget>
         </item>
@@ -1136,6 +1121,242 @@
         </item>
        </layout>
       </widget>
+      <widget class="QWidget" name="layoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>440</y>
+         <width>128</width>
+         <height>18</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLabel" name="label_8">
+          <property name="font">
+           <font>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Temp:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="PyDMLabel" name="tempLeft">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>75</width>
+            <height>16</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string/>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <property name="text">
+           <string>TempLeft</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="showUnits" stdset="0">
+           <bool>true</bool>
+          </property>
+          <property name="channel" stdset="0">
+           <string>ca://BLEN:${AREA}:${POS}:TempGapLeft</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="layoutWidget_2">
+       <property name="geometry">
+        <rect>
+         <x>870</x>
+         <y>670</y>
+         <width>128</width>
+         <height>18</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QLabel" name="label_9">
+          <property name="font">
+           <font>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Temp:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="PyDMLabel" name="tempLeft_2">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>75</width>
+            <height>16</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string/>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <property name="text">
+           <string>TempBtm</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="showUnits" stdset="0">
+           <bool>true</bool>
+          </property>
+          <property name="channel" stdset="0">
+           <string>ca://BLEN:${AREA}:${POS}:TempGapBtm</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="layoutWidget_3">
+       <property name="geometry">
+        <rect>
+         <x>1180</x>
+         <y>400</y>
+         <width>128</width>
+         <height>18</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <widget class="QLabel" name="label_10">
+          <property name="font">
+           <font>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Temp:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="PyDMLabel" name="tempLeft_3">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>75</width>
+            <height>16</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string/>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <property name="text">
+           <string>TempRight</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="showUnits" stdset="0">
+           <bool>true</bool>
+          </property>
+          <property name="channel" stdset="0">
+           <string>ca://BLEN:${AREA}:${POS}:TempGapRight</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="">
+       <property name="geometry">
+        <rect>
+         <x>871</x>
+         <y>170</y>
+         <width>128</width>
+         <height>18</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLabel" name="label_7">
+          <property name="font">
+           <font>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Temp:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="PyDMLabel" name="tempTop">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>75</width>
+            <height>16</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string/>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <property name="text">
+           <string>TempTop</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="showUnits" stdset="0">
+           <bool>true</bool>
+          </property>
+          <property name="channel" stdset="0">
+           <string>ca://BLEN:${AREA}:${POS}:TempGapTop</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
      </widget>
     </widget>
    </item>
@@ -1148,24 +1369,24 @@
    <header>pydm.widgets.label</header>
   </customwidget>
   <customwidget>
-   <class>PyDMWaveformPlot</class>
-   <extends>QGraphicsView</extends>
-   <header>pydm.widgets.waveformplot</header>
-  </customwidget>
-  <customwidget>
-   <class>PyDMByteIndicator</class>
-   <extends>QWidget</extends>
-   <header>pydm.widgets.byte</header>
-  </customwidget>
-  <customwidget>
    <class>PyDMRelatedDisplayButton</class>
    <extends>QPushButton</extends>
    <header>pydm.widgets.related_display_button</header>
   </customwidget>
   <customwidget>
+   <class>PyDMWaveformPlot</class>
+   <extends>QGraphicsView</extends>
+   <header>pydm.widgets.waveformplot</header>
+  </customwidget>
+  <customwidget>
    <class>PyDMEnumComboBox</class>
    <extends>QComboBox</extends>
    <header>pydm.widgets.enum_combo_box</header>
+  </customwidget>
+  <customwidget>
+   <class>PyDMByteIndicator</class>
+   <extends>QWidget</extends>
+   <header>pydm.widgets.byte</header>
   </customwidget>
  </customwidgets>
  <resources/>
