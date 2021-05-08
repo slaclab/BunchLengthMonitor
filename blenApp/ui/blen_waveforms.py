@@ -17,19 +17,11 @@ class BLENWaveforms(Display):
 
     def setup_plots(self):
 
-        self.ui.wfpARaw.plotItem.setLabels(
+        self.ui.raw_waveforms.wfpARaw.plotItem.setLabels(
         left = left_lbl,
         bottom = btm_lbl)
 
-        self.ui.wfpBRaw.plotItem.setLabels(
-        left = left_lbl,
-        bottom = btm_lbl)
-
-        self.ui.wfpARawTimesWeight.plotItem.setLabels(
-        left = left_lbl,
-        bottom = btm_lbl)
-
-        self.ui.wfpBRawTimesWeight.plotItem.setLabels(
+        self.ui.raw_waveforms.wfpBRaw.plotItem.setLabels(
         left = left_lbl,
         bottom = btm_lbl)
 

@@ -52,7 +52,7 @@ class BLENAttenEdit(QLineEdit):
 
     @Slot(float)
     def update_txt(self, val):
-        self.setText("{:.3f}".format(val))
+        self.setText('{}'.format(val))
         self.cached_val_ = val
 
 
