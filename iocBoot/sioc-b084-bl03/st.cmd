@@ -38,6 +38,9 @@ cd $(TOP)
 < iocBoot/common/blenCommon.cmd
 dbLoadRecords("db/pyroFilters.db", "P=BLEN:$(AREA):$(POS), INST0=$(INST)A, INST1=$(INST)B")
 
+# Parse IP address
+dbLoadRecords("db/ipAddr.db", "P=BLEN:$(AREA):$(POS), SRC=ServerRemoteIp")
+
 # Pt100 temperature sensor inputs
 dbLoadRecords("db/blen_pyro_temperatures.db", "P=BLEN:${AREA}:${POS}")
 
