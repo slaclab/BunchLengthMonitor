@@ -1,7 +1,11 @@
 # User-facing temperature sensor PV template
 
 record(ai,      "$(P):$(R)") {
+    field(DTYP, "Raw Soft Channel")
+    field(INP, "$(INP) CP")
     field(DESC, "$(DESC)")
-    field(EGU,  "K")
-    field(SCAN,  "$(SCAN)")
+    field(EGU,  "$(EGU=K)")
+    field(LINR, "LINEAR")
+    field(EOFF, "$(EOFF=273.15)")
+    field(ESLO, "$(ESLO=0.01)")
 }

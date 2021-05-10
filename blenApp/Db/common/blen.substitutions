@@ -52,8 +52,8 @@ file "RegDoubleIn.template" { pattern
 #   DESC, SCAN: The same fields on the records
 ########################################################################################################################
 
-file "temperature.template" { pattern
-{  P,      R,                       DESC,                 SCAN     }
-{ $(P), "Temp0",        "Temperature of sensor 0",     "10 second" }
-{ $(P), "Temp1",        "Temperature of sensor 1",     "10 second" }
-}
+#file "temperature.template" { pattern
+#{  P,      R,                       DESC,                 SCAN     }
+#{ $(P), "Temp0",        "Temperature of sensor 0",     "10 second" }
+#{ $(P), "Temp1",        "Temperature of sensor 1",     "10 second" }
+#}

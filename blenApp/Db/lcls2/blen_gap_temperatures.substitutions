@@ -10,7 +10,7 @@
 #
 file temperature.template
 {
-pattern   {P, R, DESC, EGU, SCAN}
+pattern   {P, R, DESC, INP}
 
 # P is the PV prefix
 # R is the PV attribute
@@ -19,8 +19,8 @@ pattern   {P, R, DESC, EGU, SCAN}
 # SCAN is the SCAN field
 
 # these Records are fed via CA from a seperate Ethercat application
-{ $(P), "TempGapLeft", "Temperature of sensor 0", "K", "Passive"}
-{ $(P), "TempGapTop", "Temperature of sensor 1", "K", "Passive"}
-{ $(P), "TempGapRight", "Temperature of sensor 2", "K", "Passive"}
-{ $(P), "TempGapBtm", "Temperature of sensor 3", "K", "Passive"}
+{ $(P), "TempGapLeft", "Temperature of sensor 0", "SIOC:B084:IM03:3:INPUT1:VALUE"}
+{ $(P), "TempGapTop", "Temperature of sensor 1", "SIOC:B084:IM03:3:INPUT2:VALUE"}
+{ $(P), "TempGapRight", "Temperature of sensor 2", "SIOC:B084:IM03:4:INPUT1:VALUE"}
+{ $(P), "TempGapBtm", "Temperature of sensor 3", "SIOC:B084:IM03:4:INPUT2:VALUE"}
 }

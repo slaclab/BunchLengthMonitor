@@ -10,7 +10,7 @@
 #
 file temperature.template
 {
-pattern   {P, R, DESC, EGU, SCAN}
+pattern   {P, R, DESC, INP}
 
 # P is the PV prefix
 # R is the PV attribute
@@ -19,5 +19,6 @@ pattern   {P, R, DESC, EGU, SCAN}
 # SCAN is the SCAN field
 
 # these Records are fed via CA from a seperate Ethercat application
-{ $(P), "TempPrimPyro", "Temperature of sensor 0", "K", "Passive"}
+{ $(P), "TempA", "Temperature of sensor 0", "SIOC:B084:IM03:1:INPUT1:VALUE"}
+{ $(P), "TempB", "Temperature of sensor 1", "SIOC:B084:IM03:1:INPUT1:VALUE"}
 }
