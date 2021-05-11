@@ -189,9 +189,9 @@
             </property>
             <property name="onColor" stdset="0">
              <color>
-              <red>100</red>
-              <green>100</green>
-              <blue>100</blue>
+              <red>255</red>
+              <green>0</green>
+              <blue>0</blue>
              </color>
             </property>
             <property name="offColor" stdset="0">
@@ -521,7 +521,7 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="">
+      <widget class="QWidget" name="layoutWidget">
        <property name="geometry">
         <rect>
          <x>20</x>

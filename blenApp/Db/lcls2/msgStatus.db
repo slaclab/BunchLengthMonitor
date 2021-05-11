@@ -16,15 +16,13 @@ record(calc, "$(P):BPMS_SYNC_CALC") {
     field(HHSV, "MAJOR")
     field(LLSV, "MAJOR")
     field(SCAN, "1 second")
-    field(FLNK, "$(P):BPMS_SYNC")
 }
 
 record(bi, "$(P):BPMS_SYNC") {
     field(DESC, "Sync status with BPM")
     field(DTYP, "Soft Channel")
-    field(INP, "$(P):BPMS_SYNC_CALC")
+    field(INP, "$(P):BPMS_SYNC_CALC CP MS")
     field(ZNAM, "OK")
     field(ONAM, "NO_SYNC")
     field(PINI, "YES")
-    field(SCAN, "Passive")
 }
