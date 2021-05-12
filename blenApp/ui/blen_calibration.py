@@ -320,20 +320,10 @@ class BLENExpert(Display):
     def setup_buttons(self):
         self.btn_layout = QHBoxLayout()
 
-        coef_btn = PyDMRelatedDisplayButton(filename="blen_coef_instr.ui")
-        coef_btn.setText("Coefficients...")
-        coef_btn.openInNewWindow = True
-        coef_btn.macros = "PREFIX=BLEN:{}:{}:{}{}".format(
-                self.macros()["AREA"],
-                self.macros()["POS"],
-                self.mad,
-                self.sensor)
-
         help_btn = QPushButton("Help...")
         help_btn.clicked.connect(self.open_help)
 
         self.btn_layout.addStretch(10)
-        self.btn_layout.addWidget(coef_btn)
         self.btn_layout.addWidget(help_btn)
         self.main_layout.addLayout(self.btn_layout)
 
@@ -358,11 +348,11 @@ class BLENExpert(Display):
 
         lbl = QLabel("<b>Explaination of Pre, Mid, and Pos Edges</b>")
         lbl.setAlignment(Qt.AlignHCenter | Qt.AlignVCenter)
-        svg = QSvgWidget("help.svg", parent=dlg)
+        svg = QSvgWidget("blen.svg", parent=dlg)
         lo.addWidget(lbl)
         lo.addWidget(svg)
 
-        dlg.setFixedSize(500, 375)
+        dlg.setFixedSize(640, 480)
         dlg.setLayout(lo)
         dlg.setWindowTitle("BLEN Calibration Help")
         dlg.setModal(False)
