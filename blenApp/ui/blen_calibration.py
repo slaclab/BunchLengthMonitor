@@ -348,11 +348,11 @@ class BLENExpert(Display):
 
         lbl = QLabel("<b>Explaination of Pre, Mid, and Post Edges</b>")
         lbl.setAlignment(Qt.AlignHCenter | Qt.AlignVCenter)
-        svg = QSvgWidget("blen.svg", parent=dlg)
+        svg = QSvgWidget("help.svg", parent=dlg)
         lo.addWidget(lbl)
         lo.addWidget(svg)
 
-        dlg.setFixedSize(640, 480)
+        dlg.setFixedSize(800, 600)
         dlg.setLayout(lo)
         dlg.setWindowTitle("BLEN Calibration Help")
         dlg.setModal(False)
