@@ -549,13 +549,13 @@
            <string/>
           </property>
           <property name="text">
-           <string>${INST}A:SUM</string>
+           <string>${INST}B:SUM</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
           </property>
           <property name="channel" stdset="0">
-           <string>ca://BLEN:${AREA}:${POS}:${INST}A:SUM</string>
+           <string>ca://BLEN:${AREA}:${POS}:${INST}B:SUM</string>
           </property>
          </widget>
         </item>
@@ -600,13 +600,13 @@
            <string/>
           </property>
           <property name="text">
-           <string>${INST}A:IMAX</string>
+           <string>${INST}B:IMAX</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
           </property>
           <property name="channel" stdset="0">
-           <string>ca://BLEN:${AREA}:${POS}:${INST}A:IMAX</string>
+           <string>ca://BLEN:${AREA}:${POS}:${INST}B:IMAX</string>
           </property>
          </widget>
         </item>
@@ -631,13 +631,13 @@
            <enum>QFrame::NoFrame</enum>
           </property>
           <property name="text">
-           <string>${INST}B:SUM</string>
+           <string>${INST}A:SUM</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
           </property>
           <property name="channel" stdset="0">
-           <string>ca://BLEN:${AREA}:${POS}:${INST}B:SUM</string>
+           <string>ca://BLEN:${AREA}:${POS}:${INST}A:SUM</string>
           </property>
          </widget>
         </item>
@@ -694,7 +694,7 @@
            <enum>QFrame::NoFrame</enum>
           </property>
           <property name="text">
-           <string>${INST} B</string>
+           <string>${INST} A</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -746,7 +746,7 @@
            <enum>QFrame::NoFrame</enum>
           </property>
           <property name="text">
-           <string>${INST} A</string>
+           <string>${INST} B</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -774,13 +774,13 @@
            <enum>QFrame::NoFrame</enum>
           </property>
           <property name="text">
-           <string>${INST}B:IMAX</string>
+           <string>${INST}A:IMAX</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
           </property>
           <property name="channel" stdset="0">
-           <string>ca://BLEN:${AREA}:${POS}:${INST}B:IMAX</string>
+           <string>ca://BLEN:${AREA}:${POS}:${INST}A:IMAX</string>
           </property>
          </widget>
         </item>
