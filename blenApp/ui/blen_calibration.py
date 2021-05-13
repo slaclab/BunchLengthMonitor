@@ -346,7 +346,7 @@ class BLENExpert(Display):
         dlg = QDialog(self)
         lo  = QVBoxLayout()
 
-        lbl = QLabel("<b>Explaination of Pre, Mid, and Post Edges</b>")
+        lbl = QLabel("<b>Description of Pre, Inter, and Post Edges</b>")
         lbl.setAlignment(Qt.AlignHCenter | Qt.AlignVCenter)
         svg = QSvgWidget("help.svg", parent=dlg)
         lo.addWidget(lbl)
@@ -354,7 +354,7 @@ class BLENExpert(Display):
 
         dlg.setFixedSize(800, 600)
         dlg.setLayout(lo)
-        dlg.setWindowTitle("BLEN Calibration Help")
+        dlg.setWindowTitle("Calibration Help")
         dlg.setModal(False)
 
         # if there's already a dialog open we should close it
