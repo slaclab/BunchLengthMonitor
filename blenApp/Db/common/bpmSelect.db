@@ -3,5 +3,5 @@ record(bo, "$(P):BpmSelect") {
     field(ONAM, "BPM 1")
     field(OUT, "$(P):SelBpm PP")
 
-    info(autosaveFields, "VAL")
+    info(autosaveFields, "VAL ZNAM ONAM")
 }
