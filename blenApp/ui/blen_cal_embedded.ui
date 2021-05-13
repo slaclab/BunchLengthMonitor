@@ -167,7 +167,7 @@
       <string/>
      </property>
      <property name="macros" stdset="0">
-      <string>{ &quot;INST&quot;: &quot;${INST}&quot; }</string>
+      <string>{ &quot;INST&quot;: &quot;${INST}&quot;, &quot;CH&quot;: &quot;${CH}&quot; }</string>
      </property>
      <property name="filename" stdset="0">
       <string>blen_daq.ui</string>

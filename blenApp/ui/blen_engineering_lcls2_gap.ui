@@ -46,7 +46,7 @@
               <string/>
              </property>
              <property name="macros" stdset="0">
-              <string>{ &quot;AREA&quot;: &quot;${AREA}&quot;, &quot;POS&quot;: &quot;${POS}&quot;, &quot;INST&quot;: &quot;${INST}A&quot; }</string>
+              <string>{ &quot;AREA&quot;: &quot;${AREA}&quot;, &quot;POS&quot;: &quot;${POS}&quot;, &quot;INST&quot;: &quot;${INST}A&quot;, &quot;CH&quot;: &quot;${INST}A&quot; }</string>
              </property>
              <property name="filename" stdset="0">
               <string>blen_cal_embedded.ui</string>
@@ -66,7 +66,7 @@
               <string/>
              </property>
              <property name="macros" stdset="0">
-              <string>{ &quot;AREA&quot;: &quot;${AREA}&quot;, &quot;POS&quot;: &quot;${POS}&quot;, &quot;INST&quot;: &quot;${INST}C&quot; }</string>
+              <string>{ &quot;AREA&quot;: &quot;${AREA}&quot;, &quot;POS&quot;: &quot;${POS}&quot;, &quot;INST&quot;: &quot;${INST}C&quot;, &quot;CH&quot;: &quot;${INST}A&quot; }</string>
              </property>
              <property name="filename" stdset="0">
               <string>blen_cal_embedded.ui</string>
@@ -86,7 +86,7 @@
               <string/>
              </property>
              <property name="macros" stdset="0">
-              <string>{ &quot;AREA&quot;: &quot;${AREA}&quot;, &quot;POS&quot;: &quot;${POS}&quot;, &quot;INST&quot;: &quot;${INST}B&quot; }</string>
+              <string>{ &quot;AREA&quot;: &quot;${AREA}&quot;, &quot;POS&quot;: &quot;${POS}&quot;, &quot;INST&quot;: &quot;${INST}B&quot;, &quot;CH&quot;: &quot;${INST}B&quot; }</string>
              </property>
              <property name="filename" stdset="0">
               <string>blen_cal_embedded.ui</string>
@@ -106,7 +106,7 @@
               <string/>
              </property>
              <property name="macros" stdset="0">
-              <string>{ &quot;AREA&quot;: &quot;${AREA}&quot;, &quot;POS&quot;: &quot;${POS}&quot;, &quot;INST&quot;: &quot;${INST}D&quot; }</string>
+              <string>{ &quot;AREA&quot;: &quot;${AREA}&quot;, &quot;POS&quot;: &quot;${POS}&quot;, &quot;INST&quot;: &quot;${INST}D&quot;, &quot;CH&quot;: &quot;${INST}B&quot; }</string>
              </property>
              <property name="filename" stdset="0">
               <string>blen_cal_embedded.ui</string>

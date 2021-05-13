@@ -75,13 +75,13 @@
         <string/>
        </property>
        <property name="text">
-        <string>${INST}:SUM</string>
+        <string>${CH}:SUM</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
        </property>
        <property name="channel" stdset="0">
-        <string>ca://BLEN:${AREA}:${POS}:${INST}:SUM</string>
+        <string>ca://BLEN:${AREA}:${POS}:${CH}:SUM</string>
        </property>
        <property name="displayFormat" stdset="0">
         <enum>PyDMLabel::Decimal</enum>
@@ -106,13 +106,13 @@
         <string/>
        </property>
        <property name="text">
-        <string>${INST}:IMAX</string>
+        <string>${CH}:IMAX</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
        </property>
        <property name="channel" stdset="0">
-        <string>ca://BLEN:${AREA}:${POS}:${INST}:IMAX</string>
+        <string>ca://BLEN:${AREA}:${POS}:${CH}:IMAX</string>
        </property>
        <property name="displayFormat" stdset="0">
         <enum>PyDMLabel::Decimal</enum>
@@ -137,13 +137,13 @@
         <string/>
        </property>
        <property name="text">
-        <string>${INST}:TMIT</string>
+        <string>${CH}:TMIT</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
        </property>
        <property name="channel" stdset="0">
-        <string>ca://BLEN:${AREA}:${POS}:${INST}:TMIT</string>
+        <string>ca://BLEN:${AREA}:${POS}:${CH}:TMIT</string>
        </property>
        <property name="displayFormat" stdset="0">
         <enum>PyDMLabel::Decimal</enum>
