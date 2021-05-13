@@ -259,7 +259,7 @@ class BlenWeightFnSliders(QWidget):
 
         self.pre_label = QLabel("Duration Pre-Edge (ns)")
         self.mid_label = QLabel("Duration Inter-Edge (ns)")
-        self.pos_label = QLabel("Duration Pos-Edge (ns)")
+        self.pos_label = QLabel("Duration Post-Edge (ns)")
 
         self.sliders = [self.pre_slider, self.mid_slider, self.pos_slider]
         self.labels = [self.pre_label, self.mid_label, self.pos_label]
@@ -346,7 +346,7 @@ class BLENExpert(Display):
         dlg = QDialog(self)
         lo  = QVBoxLayout()
 
-        lbl = QLabel("<b>Explaination of Pre, Mid, and Pos Edges</b>")
+        lbl = QLabel("<b>Explaination of Pre, Mid, and Post Edges</b>")
         lbl.setAlignment(Qt.AlignHCenter | Qt.AlignVCenter)
         svg = QSvgWidget("blen.svg", parent=dlg)
         lo.addWidget(lbl)
