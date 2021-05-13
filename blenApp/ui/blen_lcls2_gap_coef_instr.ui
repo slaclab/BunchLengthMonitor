@@ -26,7 +26,7 @@
         </font>
        </property>
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; text-decoration: underline;&quot;&gt;Channel ${PLUS}: Pedestal Correction&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;ARAW&lt;/span&gt;&lt;span style=&quot; font-size:10pt; vertical-align:sub;&quot;&gt;${PLUS}&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; = &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-style:italic; text-decoration: underline;&quot;&gt;A1&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;*Signal&lt;/span&gt;&lt;span style=&quot; font-size:10pt; vertical-align:sub;&quot;&gt;${PLUS}&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; - &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-style:italic; text-decoration: underline;&quot;&gt;A0&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;*Pedestal&lt;/span&gt;&lt;span style=&quot; font-size:10pt; vertical-align:sub;&quot;&gt;${PLUS}&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; + &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-style:italic; text-decoration: underline;&quot;&gt;Offset&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; text-decoration: underline;&quot;&gt;Channel ${PLUS}: Pedestal Correction&lt;/span&gt;&lt;/p&gt;&lt;p&gt;ARAW&lt;span style=&quot; vertical-align:sub;&quot;&gt;${PLUS}&lt;/span&gt; = &lt;span style=&quot; font-style:italic; text-decoration: underline;&quot;&gt;A1&lt;/span&gt;*Signal&lt;span style=&quot; vertical-align:sub;&quot;&gt;${PLUS}&lt;/span&gt; + &lt;span style=&quot; font-style:italic; text-decoration: underline;&quot;&gt;A0&lt;/span&gt;*Pedestal&lt;span style=&quot; vertical-align:sub;&quot;&gt;${PLUS}&lt;/span&gt; + &lt;span style=&quot; font-style:italic; text-decoration: underline;&quot;&gt;Offset&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -301,7 +301,7 @@
         </font>
        </property>
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; text-decoration: underline;&quot;&gt;Channel ${MINUS}: Pedestal Correction&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;ARAW&lt;/span&gt;&lt;span style=&quot; font-size:10pt; vertical-align:sub;&quot;&gt;${MINUS}&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; = &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-style:italic; text-decoration: underline;&quot;&gt;A4&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;*Signal&lt;/span&gt;&lt;span style=&quot; font-size:10pt; vertical-align:sub;&quot;&gt;${MINUS}&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; - &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-style:italic; text-decoration: underline;&quot;&gt;A3&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;*Pedestal&lt;/span&gt;&lt;span style=&quot; font-size:10pt; vertical-align:sub;&quot;&gt;${MINUS}&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; + &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-style:italic; text-decoration: underline;&quot;&gt;Offset&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; text-decoration: underline;&quot;&gt;Channel ${MINUS}: Pedestal Correction&lt;/span&gt;&lt;/p&gt;&lt;p&gt;ARAW&lt;span style=&quot; vertical-align:sub;&quot;&gt;${MINUS}&lt;/span&gt; = &lt;span style=&quot; font-style:italic; text-decoration: underline;&quot;&gt;A4&lt;/span&gt;*Signal&lt;span style=&quot; vertical-align:sub;&quot;&gt;${MINUS}&lt;/span&gt; + &lt;span style=&quot; font-style:italic; text-decoration: underline;&quot;&gt;A3&lt;/span&gt;*Pedestal&lt;span style=&quot; vertical-align:sub;&quot;&gt;${MINUS}&lt;/span&gt; + &lt;span style=&quot; font-style:italic; text-decoration: underline;&quot;&gt;Offset&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -834,7 +834,7 @@
           </font>
          </property>
          <property name="text">
-          <string>H  (BPM TMIT Weight)</string>
+          <string>H  (TMIT to pC)</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>

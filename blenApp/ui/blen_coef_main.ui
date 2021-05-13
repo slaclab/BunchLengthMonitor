@@ -43,7 +43,7 @@
         </font>
        </property>
        <property name="text">
-        <string>ARAW = SIGNAL * &lt;i&gt;&lt;u&gt;A1&lt;/u&gt;&lt;/i&gt; - BKGD * &lt;i&gt;&lt;u&gt;A0&lt;/u&gt;&lt;/i&gt; + &lt;i&gt;&lt;u&gt;OFFSET&lt;/u&gt;&lt;/i&gt;</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ARAW = SIGNAL * &lt;span style=&quot; font-style:italic; text-decoration: underline;&quot;&gt;A1&lt;/span&gt; + BKGD * &lt;span style=&quot; font-style:italic; text-decoration: underline;&quot;&gt;A0&lt;/span&gt; + &lt;span style=&quot; font-style:italic; text-decoration: underline;&quot;&gt;OFFSET&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
