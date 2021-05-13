@@ -4,8 +4,8 @@ record(ai,      "$(P):$(R)") {
     field(DTYP, "Raw Soft Channel")
     field(INP, "$(INP) CP")
     field(DESC, "$(DESC)")
-    field(EGU,  "$(EGU=K)")
+    field(EGU,  "$(EGU=C)")
     field(LINR, "LINEAR")
-    field(EOFF, "$(EOFF=273.15)")
+    field(EOFF, "$(EOFF=0.0)")
     field(ESLO, "$(ESLO=0.01)")
 }

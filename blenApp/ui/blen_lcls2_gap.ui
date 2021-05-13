@@ -633,6 +633,9 @@
           <property name="alignment">
            <set>Qt::AlignCenter</set>
           </property>
+          <property name="showUnits" stdset="0">
+           <bool>true</bool>
+          </property>
           <property name="channel" stdset="0">
            <string>ca://BLEN:${AREA}:${POS}:${INST}B:IMAX</string>
           </property>
@@ -660,6 +663,9 @@
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
+          </property>
+          <property name="showUnits" stdset="0">
+           <bool>true</bool>
           </property>
           <property name="channel" stdset="0">
            <string>ca://BLEN:${AREA}:${POS}:${INST}A:TMIT</string>
@@ -854,6 +860,9 @@
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
+          </property>
+          <property name="showUnits" stdset="0">
+           <bool>true</bool>
           </property>
           <property name="channel" stdset="0">
            <string>ca://BLEN:${AREA}:${POS}:${INST}A:IMAX</string>

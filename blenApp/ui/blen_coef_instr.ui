@@ -669,7 +669,7 @@
         </font>
        </property>
        <property name="text">
-        <string>H</string>
+        <string>H (TMIT to pC)</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -837,6 +837,9 @@
        <property name="alignment">
         <set>Qt::AlignCenter</set>
        </property>
+       <property name="showUnits" stdset="0">
+        <bool>true</bool>
+       </property>
        <property name="channel" stdset="0">
         <string>ca://${PREFIX}:IMAX</string>
        </property>
@@ -852,6 +855,9 @@
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
+       </property>
+       <property name="showUnits" stdset="0">
+        <bool>true</bool>
        </property>
        <property name="channel" stdset="0">
         <string>ca://${PREFIX}:TMIT</string>
