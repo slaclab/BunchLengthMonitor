@@ -59,7 +59,7 @@
         </font>
        </property>
        <property name="text">
-        <string>${INST}A    (+Y)</string>
+        <string>${INST}B    (+Y)</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_5">
@@ -94,7 +94,7 @@
         <string/>
        </property>
        <property name="channel" stdset="0">
-        <string>ca://BLEN:${AREA}:${POS}:${INST}A:AutoRearmRBV</string>
+        <string>ca://BLEN:${AREA}:${POS}:${INST}B:AutoRearmRBV</string>
        </property>
        <property name="showLabels" stdset="0">
         <bool>false</bool>
@@ -119,7 +119,7 @@
         <string/>
        </property>
        <property name="channel" stdset="0">
-        <string>ca://BLEN:${AREA}:${POS}:${INST}A:ACCESS</string>
+        <string>ca://BLEN:${AREA}:${POS}:${INST}B:ACCESS</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_6">
@@ -138,14 +138,14 @@
         </font>
        </property>
        <property name="text">
-        <string>${INST}C    (-Y)</string>
+        <string>${INST}D    (-Y)</string>
        </property>
       </widget>
       <widget class="PyDMByteIndicator" name="PyDMByteIndicator_7">
        <property name="geometry">
         <rect>
-         <x>105</x>
-         <y>385</y>
+         <x>1270</x>
+         <y>405</y>
          <width>21</width>
          <height>16</height>
         </rect>
@@ -154,7 +154,7 @@
         <string/>
        </property>
        <property name="channel" stdset="0">
-        <string>ca://BLEN:${AREA}:${POS}:${INST}B:AutoRearmRBV</string>
+        <string>ca://BLEN:${AREA}:${POS}:${INST}A:AutoRearmRBV</string>
        </property>
        <property name="showLabels" stdset="0">
         <bool>false</bool>
@@ -170,7 +170,7 @@
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>360</y>
+         <y>370</y>
          <width>120</width>
          <height>21</height>
         </rect>
@@ -182,14 +182,14 @@
         </font>
        </property>
        <property name="text">
-        <string>${INST}B    (-X)</string>
+        <string>${INST}C    (-X)</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_16">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>385</y>
+         <x>1180</x>
+         <y>405</y>
          <width>58</width>
          <height>15</height>
         </rect>
@@ -207,8 +207,8 @@
       <widget class="PyDMEnumComboBox" name="PyDMEnumComboBox_5">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>410</y>
+         <x>1180</x>
+         <y>430</y>
          <width>120</width>
          <height>23</height>
         </rect>
@@ -217,7 +217,7 @@
         <string/>
        </property>
        <property name="channel" stdset="0">
-        <string>ca://BLEN:${AREA}:${POS}:${INST}B:ACCESS</string>
+        <string>ca://BLEN:${AREA}:${POS}:${INST}A:ACCESS</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_17">
@@ -236,14 +236,14 @@
         </font>
        </property>
        <property name="text">
-        <string>${INST}D    (+X)</string>
+        <string>${INST}A    (+X)</string>
        </property>
       </widget>
       <widget class="PyDMWaveformPlot" name="wfpARaw">
        <property name="geometry">
         <rect>
-         <x>450</x>
-         <y>550</y>
+         <x>150</x>
+         <y>280</y>
          <width>400</width>
          <height>250</height>
         </rect>
@@ -328,8 +328,8 @@
       <widget class="PyDMWaveformPlot" name="wfpBRaw">
        <property name="geometry">
         <rect>
-         <x>760</x>
-         <y>280</y>
+         <x>450</x>
+         <y>550</y>
          <width>400</width>
          <height>250</height>
         </rect>
@@ -421,8 +421,8 @@
       <widget class="PyDMWaveformPlot" name="wfpARaw_2">
        <property name="geometry">
         <rect>
-         <x>450</x>
-         <y>10</y>
+         <x>760</x>
+         <y>280</y>
          <width>400</width>
          <height>250</height>
         </rect>
@@ -507,8 +507,8 @@
       <widget class="PyDMWaveformPlot" name="wfpBRaw_2">
        <property name="geometry">
         <rect>
-         <x>150</x>
-         <y>280</y>
+         <x>450</x>
+         <y>10</y>
          <width>400</width>
          <height>250</height>
         </rect>
@@ -628,7 +628,7 @@
            <enum>QFrame::NoFrame</enum>
           </property>
           <property name="text">
-           <string>${INST}B:IMAX</string>
+           <string>${INST}A:IMAX</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -637,7 +637,7 @@
            <bool>true</bool>
           </property>
           <property name="channel" stdset="0">
-           <string>ca://BLEN:${AREA}:${POS}:${INST}B:IMAX</string>
+           <string>ca://BLEN:${AREA}:${POS}:${INST}A:IMAX</string>
           </property>
          </widget>
         </item>
@@ -693,13 +693,13 @@
            <enum>QFrame::NoFrame</enum>
           </property>
           <property name="text">
-           <string>${INST}B:SUM</string>
+           <string>${INST}A:SUM</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
           </property>
           <property name="channel" stdset="0">
-           <string>ca://BLEN:${AREA}:${POS}:${INST}B:SUM</string>
+           <string>ca://BLEN:${AREA}:${POS}:${INST}A:SUM</string>
           </property>
          </widget>
         </item>
@@ -803,7 +803,7 @@
            <enum>QFrame::NoFrame</enum>
           </property>
           <property name="text">
-           <string>IMAX</string>
+           <string> IMAX (BLEN)</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -828,13 +828,13 @@
            <string/>
           </property>
           <property name="text">
-           <string>${INST}A:SUM</string>
+           <string>${INST}B:SUM</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
           </property>
           <property name="channel" stdset="0">
-           <string>ca://BLEN:${AREA}:${POS}:${INST}A:SUM</string>
+           <string>ca://BLEN:${AREA}:${POS}:${INST}B:SUM</string>
           </property>
          </widget>
         </item>
@@ -856,7 +856,7 @@
            <string/>
           </property>
           <property name="text">
-           <string>${INST}A:IMAX</string>
+           <string>${INST}B:IMAX</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -865,7 +865,7 @@
            <bool>true</bool>
           </property>
           <property name="channel" stdset="0">
-           <string>ca://BLEN:${AREA}:${POS}:${INST}A:IMAX</string>
+           <string>ca://BLEN:${AREA}:${POS}:${INST}B:IMAX</string>
           </property>
          </widget>
         </item>
@@ -1137,7 +1137,7 @@
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>440</y>
+         <y>390</y>
          <width>128</width>
          <height>18</height>
         </rect>
@@ -1255,7 +1255,7 @@
        <property name="geometry">
         <rect>
          <x>1180</x>
-         <y>400</y>
+         <y>460</y>
          <width>128</width>
          <height>18</height>
         </rect>
