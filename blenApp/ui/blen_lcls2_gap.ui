@@ -47,7 +47,7 @@
        <property name="geometry">
         <rect>
          <x>870</x>
-         <y>90</y>
+         <y>50</y>
          <width>120</width>
          <height>21</height>
         </rect>
@@ -126,7 +126,7 @@
        <property name="geometry">
         <rect>
          <x>870</x>
-         <y>650</y>
+         <y>600</y>
          <width>120</width>
          <height>21</height>
         </rect>
@@ -170,7 +170,7 @@
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>370</y>
+         <y>330</y>
          <width>120</width>
          <height>21</height>
         </rect>
@@ -224,7 +224,7 @@
        <property name="geometry">
         <rect>
          <x>1180</x>
-         <y>380</y>
+         <y>340</y>
          <width>120</width>
          <height>21</height>
         </rect>
@@ -1368,6 +1368,98 @@
          </widget>
         </item>
        </layout>
+      </widget>
+      <widget class="QLabel" name="label_22">
+       <property name="geometry">
+        <rect>
+         <x>880</x>
+         <y>70</y>
+         <width>91</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>&quot;Long&quot; BLEN
+(&lt; 40 GHz)</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_23">
+       <property name="geometry">
+        <rect>
+         <x>1190</x>
+         <y>360</y>
+         <width>91</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>&quot;Short&quot; BLEN
+(&gt; 40 GHz)</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_24">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>350</y>
+         <width>91</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>&quot;Short&quot; BLEN
+(&gt; 40 GHz)</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_25">
+       <property name="geometry">
+        <rect>
+         <x>880</x>
+         <y>620</y>
+         <width>91</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>&quot;Long&quot; BLEN
+(&lt; 40 GHz)</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
       </widget>
      </widget>
     </widget>
