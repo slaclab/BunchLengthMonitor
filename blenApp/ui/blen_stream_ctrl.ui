@@ -262,6 +262,9 @@
        <property name="showUnits" stdset="0">
         <bool>true</bool>
        </property>
+       <property name="alarmSensitiveContent" stdset="0">
+        <bool>true</bool>
+       </property>
        <property name="channel" stdset="0">
         <string>ca://BLEN:${AREA}:${POS}:TempA</string>
        </property>
@@ -311,6 +314,12 @@
         <set>Qt::AlignCenter</set>
        </property>
        <property name="showUnits" stdset="0">
+        <bool>true</bool>
+       </property>
+       <property name="alarmSensitiveContent" stdset="0">
+        <bool>true</bool>
+       </property>
+       <property name="alarmSensitiveBorder" stdset="0">
         <bool>true</bool>
        </property>
        <property name="channel" stdset="0">

@@ -8,4 +8,10 @@ record(ai,      "$(P):$(R)") {
     field(LINR, "LINEAR")
     field(EOFF, "$(EOFF=0.0)")
     field(ESLO, "$(ESLO=0.01)")
+    field(HIHI, "$(HIHI=80.0)")
+    field(HIGH, "$(HIGH=60.0)")
+    field(HHSV, "MAJOR")
+    field(HSV, "MINOR")
+
+    info(autosaveFields, "HIHI HIGH")
 }

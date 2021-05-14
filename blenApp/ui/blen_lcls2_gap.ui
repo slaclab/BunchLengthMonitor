@@ -1185,6 +1185,9 @@
           <property name="showUnits" stdset="0">
            <bool>true</bool>
           </property>
+          <property name="alarmSensitiveContent" stdset="0">
+           <bool>true</bool>
+          </property>
           <property name="channel" stdset="0">
            <string>ca://BLEN:${AREA}:${POS}:TempGapLeft</string>
           </property>
@@ -1242,6 +1245,9 @@
            <set>Qt::AlignCenter</set>
           </property>
           <property name="showUnits" stdset="0">
+           <bool>true</bool>
+          </property>
+          <property name="alarmSensitiveContent" stdset="0">
            <bool>true</bool>
           </property>
           <property name="channel" stdset="0">
@@ -1303,6 +1309,9 @@
           <property name="showUnits" stdset="0">
            <bool>true</bool>
           </property>
+          <property name="alarmSensitiveContent" stdset="0">
+           <bool>true</bool>
+          </property>
           <property name="channel" stdset="0">
            <string>ca://BLEN:${AREA}:${POS}:TempGapRight</string>
           </property>
@@ -1360,6 +1369,9 @@
            <set>Qt::AlignCenter</set>
           </property>
           <property name="showUnits" stdset="0">
+           <bool>true</bool>
+          </property>
+          <property name="alarmSensitiveContent" stdset="0">
            <bool>true</bool>
           </property>
           <property name="channel" stdset="0">
