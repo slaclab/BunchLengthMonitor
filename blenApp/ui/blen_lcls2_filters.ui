@@ -74,6 +74,15 @@ QFrame#shtFrame {
             <property name="alignment">
              <set>Qt::AlignCenter</set>
             </property>
+            <property name="precisionFromPV" stdset="0">
+             <bool>false</bool>
+            </property>
+            <property name="alarmSensitiveBorder" stdset="0">
+             <bool>false</bool>
+            </property>
+            <property name="channel" stdset="0">
+             <string>ca://BLEN:${AREA}:${POS}:FLT2_CTRL.DESC</string>
+            </property>
            </widget>
           </item>
           <item row="1" column="2">
@@ -274,6 +283,15 @@ QFrame#shtFrame {
             <property name="alignment">
              <set>Qt::AlignCenter</set>
             </property>
+            <property name="precisionFromPV" stdset="0">
+             <bool>false</bool>
+            </property>
+            <property name="alarmSensitiveBorder" stdset="0">
+             <bool>false</bool>
+            </property>
+            <property name="channel" stdset="0">
+             <string>ca://BLEN:${AREA}:${POS}:FLT3_CTRL.DESC</string>
+            </property>
            </widget>
           </item>
           <item row="1" column="1">
@@ -366,6 +384,15 @@ QFrame#shtFrame {
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
+            </property>
+            <property name="precisionFromPV" stdset="0">
+             <bool>false</bool>
+            </property>
+            <property name="alarmSensitiveBorder" stdset="0">
+             <bool>false</bool>
+            </property>
+            <property name="channel" stdset="0">
+             <string>ca://BLEN:${AREA}:${POS}:FLT4_CTRL.DESC</string>
             </property>
            </widget>
           </item>
@@ -475,6 +502,12 @@ QFrame#shtFrame {
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
+            </property>
+            <property name="precisionFromPV" stdset="0">
+             <bool>false</bool>
+            </property>
+            <property name="channel" stdset="0">
+             <string>ca://BLEN:${AREA}:${POS}:FLT1_CTRL.DESC</string>
             </property>
            </widget>
           </item>

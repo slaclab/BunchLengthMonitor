@@ -134,42 +134,54 @@ record(mbbo, "$(P):$(INST1):SHT_CTRL")
 
 record(mbbo, "$(P):FLT1_CTRL")
 {
+  field(DESC, "Neutral Density Filter")
   field(VAL,   "0")
   field(ZRVL,  "0")
   field(ZRST,  "OUT")
   field(ONVL,  "1")
   field(ONST,  "IN")
   field(OUT, "$(P):FLT1_MOVE PP")
+
+  info(autosaveFields, "VAL DESC")
 }
 
 record(mbbo, "$(P):FLT2_CTRL")
 {
+  field(DESC, "Neutral Density Filter")
   field(VAL,   "0")
   field(ZRVL,  "0")
   field(ZRST,  "OUT")
   field(ONVL,  "1")
   field(ONST,  "IN")
   field(OUT, "$(P):FLT2_MOVE PP")
+
+  info(autosaveFields, "VAL DESC")
 }
 
 record(mbbo, "$(P):FLT3_CTRL")
 {
+  field(DESC, "Band-Pass Filter")
   field(VAL,   "0")
   field(ZRVL,  "0")
   field(ZRST,  "OUT")
   field(ONVL,  "1")
   field(ONST,  "IN")
   field(OUT, "$(P):FLT3_MOVE PP")
+
+  info(autosaveFields, "VAL DESC")
 }
 
 record(mbbo, "$(P):FLT4_CTRL")
 {
+  field(DESC, "Band-Reject Filter")
   field(VAL,   "0")
   field(ZRVL,  "0")
   field(ZRST,  "OUT")
   field(ONVL,  "1")
   field(ONST,  "IN")
   field(OUT, "$(P):FLT4_MOVE PP")
+
+  info(autosaveFields, "VAL DESC")
 }
 
 #
