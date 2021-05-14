@@ -111,7 +111,7 @@
         </font>
        </property>
        <property name="text">
-        <string>IMAX</string>
+        <string>IMAX (BLEN)</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
