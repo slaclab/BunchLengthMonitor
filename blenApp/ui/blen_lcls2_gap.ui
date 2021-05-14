@@ -895,9 +895,9 @@
        <property name="geometry">
         <rect>
          <x>710</x>
-         <y>880</y>
+         <y>850</y>
          <width>583</width>
-         <height>141</height>
+         <height>212</height>
         </rect>
        </property>
        <layout class="QGridLayout" name="gridLayout_3">
@@ -924,6 +924,9 @@
             <weight>75</weight>
             <bold>true</bold>
            </font>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::LeftToRight</enum>
           </property>
           <property name="text">
            <string>BPM Sync Status</string>
@@ -1062,16 +1065,6 @@
           </property>
          </widget>
         </item>
-        <item row="5" column="1">
-         <widget class="PyDMEnumComboBox" name="PyDMEnumComboBox_2">
-          <property name="toolTip">
-           <string/>
-          </property>
-          <property name="channel" stdset="0">
-           <string>ca://BLEN:${AREA}:${POS}:BpmSelect</string>
-          </property>
-         </widget>
-        </item>
         <item row="4" column="0">
          <widget class="QLabel" name="BPMSyncLabel_2">
           <property name="font">
@@ -1128,6 +1121,28 @@
           </property>
           <property name="openInNewWindow" stdset="0">
            <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="1">
+         <widget class="PyDMEnumButton" name="PyDMEnumButton">
+          <property name="toolTip">
+           <string/>
+          </property>
+          <property name="channel" stdset="0">
+           <string>ca://BLEN:${AREA}:${POS}:BpmSelect</string>
+          </property>
+          <property name="items" stdset="0">
+           <stringlist>
+            <string>BPM 0</string>
+            <string>BPM 1</string>
+           </stringlist>
+          </property>
+          <property name="widgetType" stdset="0">
+           <enum>PyDMEnumButton::RadioButton</enum>
+          </property>
+          <property name="orientation" stdset="0">
+           <enum>Qt::Vertical</enum>
           </property>
          </widget>
         </item>
@@ -1483,6 +1498,11 @@
    <class>PyDMLabel</class>
    <extends>QLabel</extends>
    <header>pydm.widgets.label</header>
+  </customwidget>
+  <customwidget>
+   <class>PyDMEnumButton</class>
+   <extends>QWidget</extends>
+   <header>pydm.widgets.enum_button</header>
   </customwidget>
   <customwidget>
    <class>PyDMRelatedDisplayButton</class>

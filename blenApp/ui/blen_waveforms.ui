@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>931</width>
-    <height>801</height>
+    <height>845</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -40,7 +40,7 @@
         <x>0</x>
         <y>0</y>
         <width>919</width>
-        <height>795</height>
+        <height>839</height>
        </rect>
       </property>
       <widget class="QWidget" name="verticalLayoutWidget_2">
@@ -49,7 +49,7 @@
          <x>540</x>
          <y>590</y>
          <width>345</width>
-         <height>141</height>
+         <height>212</height>
         </rect>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout">
@@ -163,16 +163,6 @@
             </property>
            </widget>
           </item>
-          <item row="2" column="1">
-           <widget class="PyDMEnumComboBox" name="PyDMEnumComboBox_2">
-            <property name="toolTip">
-             <string/>
-            </property>
-            <property name="channel" stdset="0">
-             <string>ca://BLEN:${AREA}:${POS}:BpmSelect</string>
-            </property>
-           </widget>
-          </item>
           <item row="0" column="1">
            <widget class="PyDMByteIndicator" name="PyDMByteIndicator_2">
             <property name="sizePolicy">
@@ -267,6 +257,28 @@
             </property>
             <property name="channel" stdset="0">
              <string>ca://BLEN:${AREA}:${POS}:ServerRemotePort</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="PyDMEnumButton" name="PyDMEnumButton">
+            <property name="toolTip">
+             <string/>
+            </property>
+            <property name="channel" stdset="0">
+             <string>ca://BLEN:${AREA}:${POS}:BpmSelect</string>
+            </property>
+            <property name="items" stdset="0">
+             <stringlist>
+              <string>BPM 0</string>
+              <string>BPM 1</string>
+             </stringlist>
+            </property>
+            <property name="widgetType" stdset="0">
+             <enum>PyDMEnumButton::RadioButton</enum>
+            </property>
+            <property name="orientation" stdset="0">
+             <enum>Qt::Vertical</enum>
             </property>
            </widget>
           </item>
@@ -525,7 +537,7 @@
        <property name="geometry">
         <rect>
          <x>20</x>
-         <y>600</y>
+         <y>630</y>
          <width>460</width>
          <height>126</height>
         </rect>
@@ -827,6 +839,11 @@
    <header>pydm.widgets.label</header>
   </customwidget>
   <customwidget>
+   <class>PyDMEnumButton</class>
+   <extends>QWidget</extends>
+   <header>pydm.widgets.enum_button</header>
+  </customwidget>
+  <customwidget>
    <class>PyDMRelatedDisplayButton</class>
    <extends>QPushButton</extends>
    <header>pydm.widgets.related_display_button</header>
@@ -840,11 +857,6 @@
    <class>PyDMWaveformPlot</class>
    <extends>QGraphicsView</extends>
    <header>pydm.widgets.waveformplot</header>
-  </customwidget>
-  <customwidget>
-   <class>PyDMEnumComboBox</class>
-   <extends>QComboBox</extends>
-   <header>pydm.widgets.enum_combo_box</header>
   </customwidget>
   <customwidget>
    <class>PyDMByteIndicator</class>
