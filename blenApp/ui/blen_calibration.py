@@ -257,9 +257,9 @@ class BlenWeightFnSliders(QWidget):
         self.mid_slider = BlenPyDMSlider(macros, self, ch="{}:TIME_MID".format(self.sensor))
         self.pos_slider = BlenPyDMSlider(macros, self, ch="{}:TIME_POS".format(self.sensor))
 
-        self.pre_label = QLabel("Duration Pre-Edge (ns)")
-        self.mid_label = QLabel("Duration Inter-Edge (ns)")
-        self.pos_label = QLabel("Duration Post-Edge (ns)")
+        self.pre_label = QLabel("<b>Pedestal Region</b><p>(ns from t=0)</p>")
+        self.mid_label = QLabel("<b>Deadband to Signal</b><p>(ns from t=0)</p>")
+        self.pos_label = QLabel("<b>Signal Region</b><p>(ns in width)</p>")
 
         self.sliders = [self.pre_slider, self.mid_slider, self.pos_slider]
         self.labels = [self.pre_label, self.mid_label, self.pos_label]
