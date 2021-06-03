@@ -1,66 +1,27 @@
 # Control stream from sensor A 
-record (mbbo, "BLEN:$(AREA):$(POS):$(INSTA):ACCESS") {
+record (bo, "BLEN:$(AREA):$(POS):$(INSTA):ACCESS") {
   field(DESC, "Stream from ATCA control")
   field(DTYP, "Raw Soft Channel")
-  field(ZRVL, "1")
-  field(ZRST, "Running")
-  field(ZRSV, "NO_ALARM")
-  field(ONVL, "1")
-  field(ONST, "Maintenance")
-  field(ONSV, "MINOR")
-  field(TWVL, "1")
-  field(TWST, "Test")
-  field(TWSV, "MINOR")
-  field(THVL, "0")
-  field(THST, "OFFLINE")
-  field(THSV, "MAJOR")
   field(PINI, "YES")
+  field(ZNAM, "Offline")
+  field(ONAM, "Running")
+  field(ZSV, "MAJOR")
+  field(OSV, "NO_ALARM")
   field(OUT, "BLEN:$(AREA):$(POS):$(INSTA):AutoRearm PP")
+
   info(autosaveFields, "VAL")
 }
 
 # Control stream from sensor B 
-record (mbbo, "BLEN:$(AREA):$(POS):$(INSTB):ACCESS") {
+record (bo, "BLEN:$(AREA):$(POS):$(INSTB):ACCESS") {
   field(DESC, "Stream from ATCA control")
   field(DTYP, "Raw Soft Channel")
-  field(ZRVL, "1")
-  field(ZRST, "Running")
-  field(ZRSV, "NO_ALARM")
-  field(ONVL, "1")
-  field(ONST, "Maintenance")
-  field(ONSV, "MINOR")
-  field(TWVL, "1")
-  field(TWST, "Test")
-  field(TWSV, "MINOR")
-  field(THVL, "0")
-  field(THST, "OFFLINE")
-  field(THSV, "MAJOR")
   field(PINI, "YES")
+  field(ZNAM, "Offline")
+  field(ONAM, "Running")
+  field(ZSV, "MAJOR")
+  field(OSV, "NO_ALARM")
   field(OUT, "BLEN:$(AREA):$(POS):$(INSTB):AutoRearm PP")
+
   info(autosaveFields, "VAL")
-}
-
-# Control stream for both sensors at the same time
-record (mbbo, "BLEN:$(AREA):$(POS):ACCESS") {
-  field(DESC, "Stream from ATCA control")
-  field(DTYP, "Raw Soft Channel")
-  field(ZRVL, "0")
-  field(ZRST, "Running")
-  field(ZRSV, "NO_ALARM")
-  field(ONVL, "1")
-  field(ONST, "Maintenance")
-  field(ONSV, "MINOR")
-  field(TWVL, "2")
-  field(TWST, "Test")
-  field(TWSV, "MINOR")
-  field(THVL, "3")
-  field(THST, "OFFLINE")
-  field(THSV, "MAJOR")
-  field(OUT, "BLEN:$(AREA):$(POS):F_ACCESS PP")
-}
-
-# Distribute data to both sensors
-record (dfanout, "BLEN:$(AREA):$(POS):F_ACCESS") {
-  field(OUTA, "BLEN:$(AREA):$(POS):$(INSTA):ACCESS PP")
-  field(OUTB, "BLEN:$(AREA):$(POS):$(INSTB):ACCESS PP")
 }
