@@ -18,7 +18,7 @@ epicsEnvSet("ATCA_SLOT", "7")
 epicsEnvSet("BLEN_ASYN_PORT", "ATCA$(ATCA_SLOT)")
 
 # YAML directory
-epicsEnvSet("YAML_DIR","$(IOC_DATA)/$(IOC)/firmware/yaml")
+epicsEnvSet("YAML_DIR","$(IOC_DATA)/$(IOC)/yaml")
 
 # Yaml File
 epicsEnvSet("TOP_YAML","$(YAML_DIR)/000TopLevel.yaml")
