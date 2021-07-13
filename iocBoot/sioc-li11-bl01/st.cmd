@@ -11,8 +11,8 @@
 
 # Area, position, and instrument names to be used in record names
 epicsEnvSet("AREA", "LI11")
-epicsEnvSet("POS", "356")
-epicsEnvSet("INST", "BL11356")
+epicsEnvSet("POS", "359")
+epicsEnvSet("INST", "BL11359")
 epicsEnvSet("IOC_UNIT", "BL01")
 epicsEnvSet("ATCA_SLOT", "4")
 epicsEnvSet("BLEN_ASYN_PORT", "ATCA$(ATCA_SLOT)")
