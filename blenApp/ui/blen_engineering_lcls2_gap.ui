@@ -17,7 +17,7 @@
    <item>
     <widget class="QTabWidget" name="engineering_tabs">
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="calibration">
       <attribute name="title">
@@ -134,12 +134,12 @@
          </property>
          <property name="filenames" stdset="0">
           <stringlist>
-           <string>tprMain_final.edl</string>
+           <string>$PYDM/evnt/tprDiagNC.ui</string>
           </stringlist>
          </property>
          <property name="macros" stdset="0">
           <stringlist>
-           <string>DEVICE=SIOC:${AREA}:${IOC_UNIT},LOCA=${AREA},IOC_UNIT=${IOC_UNIT},INST=${ATCA_SLOT}</string>
+           <string>LOCA=${AREA},IOC_UNIT=${IOC_UNIT},INST=${ATCA_SLOT},IOC=${IOC},CPU=${CPU},CRATE=${CRATE}</string>
           </stringlist>
          </property>
         </widget>
