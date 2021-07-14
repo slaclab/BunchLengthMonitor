@@ -110,10 +110,10 @@
           <string/>
          </property>
          <property name="macros" stdset="0">
-          <string>AREA=${AREA},IOC_UNIT=${IOC_UNIT},POS=${POS}</string>
+          <string>AREA=${AREA},IOC_UNIT=${IOC_UNIT},POS=${POS},TYPE=${TYPE},IOC=${IOC}</string>
          </property>
          <property name="filename" stdset="0">
-          <string>fpga_config.py</string>
+          <string>../general/fpga_config.py</string>
          </property>
         </widget>
        </item>
