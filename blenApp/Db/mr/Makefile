@@ -20,6 +20,7 @@ DB += blenMR.db
 DB += blenFilters.db
 DB += blenFilterDecoders.db
 DB += mrFPGA.db
+DB += processRawWFHeader.db
 
 include $(TOP)/configure/RULES
 #----------------------------------------

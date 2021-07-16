@@ -38,21 +38,21 @@ cpswLoadConfigFile("$(YAML_CONFIG_FILE)", "mmio", "")
 
 # Setup BSA Driver
 # add BSA PVs
-addBsa("AMC0:SUM",        "uint32")
-addBsa("AMC0:IMAX",       "uint32")
-addBsa("AMC0:TMIT",       "uint32")
-addBsa("AMC0:SUMFLOAT",   "float32")
-addBsa("AMC0:IMAXFLOAT",  "float32")
-addBsa("AMC0:BLSTATUS",   "uint32")
-addBsa("AMC1:SUM",        "uint32")
-addBsa("AMC1:IMAX",       "uint32")
-addBsa("AMC1:TMIT",       "uint32")
-addBsa("AMC1:SUMFLOAT",   "float32")
-addBsa("AMC1:IMAXFLOAT",  "float32")
-addBsa("AMC1:BLSTATUS",   "uint32")
+#addBsa("AMC0:SUM",        "uint32")
+#addBsa("AMC0:IMAX",       "uint32")
+#addBsa("AMC0:TMIT",       "uint32")
+#addBsa("AMC0:SUMFLOAT",   "float32")
+#addBsa("AMC0:IMAXFLOAT",  "float32")
+#addBsa("AMC0:BLSTATUS",   "uint32")
+#addBsa("AMC1:SUM",        "uint32")
+#addBsa("AMC1:IMAX",       "uint32")
+#addBsa("AMC1:TMIT",       "uint32")
+#addBsa("AMC1:SUMFLOAT",   "float32")
+#addBsa("AMC1:IMAXFLOAT",  "float32")
+#addBsa("AMC1:BLSTATUS",   "uint32")
 
 # BSA driver for yaml
-bsaAsynDriverConfigure("bsaPort", "mmio/AmcCarrierCore/AmcCarrierBsa","strm/AmcCarrierDRAM/dram")
+#bsaAsynDriverConfigure("bsaPort", "mmio/AmcCarrierCore/AmcCarrierBsa","strm/AmcCarrierDRAM/dram")
 
 # Driver setup for YCPSWAsyn
 # YCPSWASYNConfig(
@@ -89,9 +89,9 @@ dbLoadRecords("db/streamControl.db", "AREA=$(AREA),POS=$(POS),INSTA=$(INST)A,INS
 # Records to manipulate waveforms from detectors
 dbLoadRecords("db/calculatedWF.db", "AREA=$(AREA), POS=$(POS), INST=$(INST)A")
 dbLoadRecords("db/calculatedWF.db", "AREA=$(AREA), POS=$(POS), INST=$(INST)B")
-### processRawWFHeader does not exist?!?
-#dbLoadRecords("db/processRawWFHeader.db", "AREA=$(AREA), POS=$(POS), INST=$(INST)A")
-#dbLoadRecords("db/processRawWFHeader.db", "AREA=$(AREA), POS=$(POS), INST=$(INST)B")
+#possibly move to MR startup command
+dbLoadRecords("db/processRawWFHeader.db", "AREA=$(AREA), POS=$(POS), INST=$(INST)A")
+dbLoadRecords("db/processRawWFHeader.db", "AREA=$(AREA), POS=$(POS), INST=$(INST)B")
 dbLoadRecords("db/weightFunctionXAxis.db", "AREA=$(AREA), POS=$(POS), INST=$(INST)A, AMC=0")
 dbLoadRecords("db/weightFunctionXAxis.db", "AREA=$(AREA), POS=$(POS), INST=$(INST)B, AMC=1")
 
@@ -100,19 +100,19 @@ dbLoadRecords("db/weightFunctionXAxis.db", "AREA=$(AREA), POS=$(POS), INST=$(INS
 epicsEnvSet("AMC0_PREFIX","BLEN:$(AREA):$(POS):$(INST)A")
 epicsEnvSet("AMC1_PREFIX","BLEN:$(AREA):$(POS):$(INST)B")
 
-dbLoadRecords("db/bsa.db", "DEV=$(AMC0_PREFIX),PORT=bsaPort,BSAKEY=AMC0:SUM,SECN=SUM")
-dbLoadRecords("db/bsa.db", "DEV=$(AMC0_PREFIX),PORT=bsaPort,BSAKEY=AMC0:IMAX,SECN=IMAX")
-dbLoadRecords("db/bsa.db", "DEV=$(AMC0_PREFIX),PORT=bsaPort,BSAKEY=AMC0:TMIT,SECN=TMIT")
-dbLoadRecords("db/bsa.db", "DEV=$(AMC0_PREFIX),PORT=bsaPort,BSAKEY=AMC0:SUMFLOAT,SECN=SUMFLOAT")
-dbLoadRecords("db/bsa.db", "DEV=$(AMC0_PREFIX),PORT=bsaPort,BSAKEY=AMC0:IMAXFLOAT,SECN=IMAXFLOAT")
-dbLoadRecords("db/bsa.db", "DEV=$(AMC0_PREFIX),PORT=bsaPort,BSAKEY=AMC0:BLSTATUS,SECN=BLSTATUS")
+#dbLoadRecords("db/bsa.db", "DEV=$(AMC0_PREFIX),PORT=bsaPort,BSAKEY=AMC0:SUM,SECN=SUM")
+#dbLoadRecords("db/bsa.db", "DEV=$(AMC0_PREFIX),PORT=bsaPort,BSAKEY=AMC0:IMAX,SECN=IMAX")
+#dbLoadRecords("db/bsa.db", "DEV=$(AMC0_PREFIX),PORT=bsaPort,BSAKEY=AMC0:TMIT,SECN=TMIT")
+#dbLoadRecords("db/bsa.db", "DEV=$(AMC0_PREFIX),PORT=bsaPort,BSAKEY=AMC0:SUMFLOAT,SECN=SUMFLOAT")
+#dbLoadRecords("db/bsa.db", "DEV=$(AMC0_PREFIX),PORT=bsaPort,BSAKEY=AMC0:IMAXFLOAT,SECN=IMAXFLOAT")
+#dbLoadRecords("db/bsa.db", "DEV=$(AMC0_PREFIX),PORT=bsaPort,BSAKEY=AMC0:BLSTATUS,SECN=BLSTATUS")
 
-dbLoadRecords("db/bsa.db", "DEV=$(AMC1_PREFIX),PORT=bsaPort,BSAKEY=AMC1:SUM,SECN=SUM")
-dbLoadRecords("db/bsa.db", "DEV=$(AMC1_PREFIX),PORT=bsaPort,BSAKEY=AMC1:IMAX,SECN=IMAX")
-dbLoadRecords("db/bsa.db", "DEV=$(AMC1_PREFIX),PORT=bsaPort,BSAKEY=AMC1:TMIT,SECN=TMIT")
-dbLoadRecords("db/bsa.db", "DEV=$(AMC1_PREFIX),PORT=bsaPort,BSAKEY=AMC1:SUMFLOAT,SECN=SUMFLOAT")
-dbLoadRecords("db/bsa.db", "DEV=$(AMC1_PREFIX),PORT=bsaPort,BSAKEY=AMC1:IMAXFLOAT,SECN=IMAXFLOAT")
-dbLoadRecords("db/bsa.db", "DEV=$(AMC1_PREFIX),PORT=bsaPort,BSAKEY=AMC1:BLSTATUS,SECN=BLSTATUS")
+#dbLoadRecords("db/bsa.db", "DEV=$(AMC1_PREFIX),PORT=bsaPort,BSAKEY=AMC1:SUM,SECN=SUM")
+#dbLoadRecords("db/bsa.db", "DEV=$(AMC1_PREFIX),PORT=bsaPort,BSAKEY=AMC1:IMAX,SECN=IMAX")
+#dbLoadRecords("db/bsa.db", "DEV=$(AMC1_PREFIX),PORT=bsaPort,BSAKEY=AMC1:TMIT,SECN=TMIT")
+#dbLoadRecords("db/bsa.db", "DEV=$(AMC1_PREFIX),PORT=bsaPort,BSAKEY=AMC1:SUMFLOAT,SECN=SUMFLOAT")
+#dbLoadRecords("db/bsa.db", "DEV=$(AMC1_PREFIX),PORT=bsaPort,BSAKEY=AMC1:IMAXFLOAT,SECN=IMAXFLOAT")
+#dbLoadRecords("db/bsa.db", "DEV=$(AMC1_PREFIX),PORT=bsaPort,BSAKEY=AMC1:BLSTATUS,SECN=BLSTATUS")
 
 # Timing trigger
 # INST = Instance Number (for multiple instances of tprTrigger in an IOC)
