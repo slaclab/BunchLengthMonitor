@@ -7,7 +7,8 @@
 record (acalcout, "BLEN:$(AREA):$(POS):$(INST)_R_WF_CLC") {
   field(DESC, "Beam updated when beam full")
   field(INAA, "BLEN:$(AREA):$(POS):$(INST)_HR_WF CP")
-  field(CALC, "AA[5,5] & 8? AA[28,2047]:BB")
+  # field(CALC, "AA[5,5] & 8? AA[28,2047]:BB")
+  field(CALC, "AA[28,2047]")
   # Saves the last value of AA in field BB. 
   # LAA parameter is not working as last AA. It raises "invalid
   # CALC expression".
