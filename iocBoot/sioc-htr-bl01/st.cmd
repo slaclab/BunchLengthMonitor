@@ -24,7 +24,7 @@ epicsEnvSet("YAML_DIR","$(IOC_DATA)/$(IOC)/yaml")
 epicsEnvSet("TOP_YAML","$(YAML_DIR)/000TopLevel.yaml")
 epicsEnvSet("YAML_CONFIG_FILE", "$(YAML_DIR)/config/defaultsGap.yaml")
 
-epicsEnvSet("FPGA_IP", "10.0.1.104")
+epicsEnvSet("FPGA_IP", "10.1.1.104")
 
 # IOC name for IOC admin
 epicsEnvSet(IOC_NAME,"SIOC:$(AREA):$(IOC_UNIT)")
