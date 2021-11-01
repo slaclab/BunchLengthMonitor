@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Bunch Length Monitor Expert ${INST}</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <item row="0" column="0">
+    <layout class="QVBoxLayout" name="verticalLayout_4" stretch="1,0,0,0,0,1,1">
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Bunch Lenght Monitor Expert Interfaces</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="PyDMRelatedDisplayButton" name="PyDMRelatedDisplayButton_2">
+       <property name="toolTip">
+        <string/>
+       </property>
+       <property name="text">
+        <string>Temperature Data...</string>
+       </property>
+       <property name="filenames" stdset="0">
+        <stringlist>
+         <string>blen_lcls2_gap_temperature.ui</string>
+        </stringlist>
+       </property>
+       <property name="openInNewWindow" stdset="0">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="PyDMRelatedDisplayButton" name="PyDMRelatedDisplayButton">
+       <property name="toolTip">
+        <string/>
+       </property>
+       <property name="text">
+        <string>BPM Input Configuration...</string>
+       </property>
+       <property name="filenames" stdset="0">
+        <stringlist>
+         <string>blen_lcls2_gap_bpm_control.ui</string>
+        </stringlist>
+       </property>
+       <property name="openInNewWindow" stdset="0">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="PyDMRelatedDisplayButton" name="PyDMRelatedDisplayButton_3">
+       <property name="toolTip">
+        <string/>
+       </property>
+       <property name="text">
+        <string>Sensor Timing..</string>
+       </property>
+       <property name="filenames" stdset="0">
+        <stringlist>
+         <string>blen_lcls2_gap_sensor_delay.ui</string>
+        </stringlist>
+       </property>
+       <property name="openInNewWindow" stdset="0">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="PyDMRelatedDisplayButton" name="PyDMRelatedDisplayButton_4">
+       <property name="toolTip">
+        <string/>
+       </property>
+       <property name="text">
+        <string>Coefficient...</string>
+       </property>
+       <property name="filenames" stdset="0">
+        <stringlist>
+         <string>blen_lcls2_gap_coef_main.ui</string>
+        </stringlist>
+       </property>
+       <property name="openInNewWindow" stdset="0">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="PyDMRelatedDisplayButton" name="Trig">
+       <property name="toolTip">
+        <string/>
+       </property>
+       <property name="text">
+        <string>Trigger Controls...</string>
+       </property>
+       <property name="filenames" stdset="0">
+        <stringlist>
+         <string>$PYDM/evnt/tprDiagSC.ui</string>
+        </stringlist>
+       </property>
+       <property name="macros" stdset="0">
+        <stringlist>
+         <string>INST=${INST_TRIG}, LOCA=${AREA}</string>
+        </stringlist>
+       </property>
+       <property name="openInNewWindow" stdset="0">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="PyDMRelatedDisplayButton" name="FPGAConfig">
+       <property name="toolTip">
+        <string/>
+       </property>
+       <property name="text">
+        <string>FPGA Configuration...</string>
+       </property>
+       <property name="filenames" stdset="0">
+        <stringlist>
+         <string>$PYDM/gadc/general/fpga_config.py</string>
+        </stringlist>
+       </property>
+       <property name="macros" stdset="0">
+        <stringlist>
+         <string>CHAN=${INST}</string>
+        </stringlist>
+       </property>
+       <property name="openInNewWindow" stdset="0">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PyDMRelatedDisplayButton</class>
+   <extends>QPushButton</extends>
+   <header>pydm.widgets.related_display_button</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

@@ -6,1507 +6,573 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1325</width>
-    <height>1100</height>
+    <width>1012</width>
+    <height>890</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Bunch Length ${INST}</string>
+   <string>Form</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_3">
-   <property name="spacing">
-    <number>0</number>
-   </property>
-   <property name="leftMargin">
-    <number>5</number>
-   </property>
-   <property name="topMargin">
-    <number>2</number>
-   </property>
-   <property name="rightMargin">
-    <number>5</number>
-   </property>
-   <property name="bottomMargin">
-    <number>2</number>
-   </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
-    <widget class="QScrollArea" name="scrollArea">
-     <property name="widgetResizable">
-      <bool>true</bool>
-     </property>
-     <widget class="QWidget" name="scrollAreaWidgetContents">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>1313</width>
-        <height>1094</height>
-       </rect>
-      </property>
-      <widget class="QLabel" name="label_2">
-       <property name="geometry">
-        <rect>
-         <x>870</x>
-         <y>50</y>
-         <width>120</width>
-         <height>21</height>
-        </rect>
-       </property>
+    <layout class="QVBoxLayout" name="verticalLayout" stretch="1,1,20,1,1,1,1">
+     <item>
+      <widget class="QLabel" name="label">
        <property name="font">
         <font>
+         <pointsize>14</pointsize>
          <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
        <property name="text">
-        <string>${INST}B    (+Y)</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_5">
-       <property name="geometry">
-        <rect>
-         <x>870</x>
-         <y>115</y>
-         <width>58</width>
-         <height>15</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>Stream</string>
-       </property>
-      </widget>
-      <widget class="PyDMByteIndicator" name="PyDMByteIndicator_2">
-       <property name="geometry">
-        <rect>
-         <x>965</x>
-         <y>115</y>
-         <width>21</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="toolTip">
-        <string/>
-       </property>
-       <property name="alarmSensitiveContent" stdset="0">
-        <bool>true</bool>
-       </property>
-       <property name="channel" stdset="0">
-        <string>ca://BLEN:${AREA}:${POS}:${INST}B:AutoRearmRBV</string>
-       </property>
-       <property name="offColor" stdset="0">
-        <color>
-         <red>255</red>
-         <green>0</green>
-         <blue>0</blue>
-        </color>
-       </property>
-       <property name="showLabels" stdset="0">
-        <bool>false</bool>
-       </property>
-       <property name="labels" stdset="0">
-        <stringlist>
-         <string>Off</string>
-         <string>On</string>
-        </stringlist>
-       </property>
-      </widget>
-      <widget class="PyDMEnumComboBox" name="PyDMEnumComboBox">
-       <property name="geometry">
-        <rect>
-         <x>870</x>
-         <y>140</y>
-         <width>120</width>
-         <height>23</height>
-        </rect>
-       </property>
-       <property name="toolTip">
-        <string/>
-       </property>
-       <property name="channel" stdset="0">
-        <string>ca://BLEN:${AREA}:${POS}:${INST}B:ACCESS</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_6">
-       <property name="geometry">
-        <rect>
-         <x>870</x>
-         <y>600</y>
-         <width>120</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>${INST}D    (-Y)</string>
-       </property>
-      </widget>
-      <widget class="PyDMByteIndicator" name="PyDMByteIndicator_7">
-       <property name="geometry">
-        <rect>
-         <x>1270</x>
-         <y>405</y>
-         <width>21</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="toolTip">
-        <string/>
-       </property>
-       <property name="channel" stdset="0">
-        <string>ca://BLEN:${AREA}:${POS}:${INST}A:AutoRearmRBV</string>
-       </property>
-       <property name="offColor" stdset="0">
-        <color>
-         <red>255</red>
-         <green>0</green>
-         <blue>0</blue>
-        </color>
-       </property>
-       <property name="showLabels" stdset="0">
-        <bool>false</bool>
-       </property>
-       <property name="labels" stdset="0">
-        <stringlist>
-         <string>Off</string>
-         <string>On</string>
-        </stringlist>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_15">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>330</y>
-         <width>120</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>${INST}C    (-X)</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_16">
-       <property name="geometry">
-        <rect>
-         <x>1180</x>
-         <y>405</y>
-         <width>58</width>
-         <height>15</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>Stream</string>
-       </property>
-      </widget>
-      <widget class="PyDMEnumComboBox" name="PyDMEnumComboBox_5">
-       <property name="geometry">
-        <rect>
-         <x>1180</x>
-         <y>430</y>
-         <width>120</width>
-         <height>23</height>
-        </rect>
-       </property>
-       <property name="toolTip">
-        <string/>
-       </property>
-       <property name="channel" stdset="0">
-        <string>ca://BLEN:${AREA}:${POS}:${INST}A:ACCESS</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_17">
-       <property name="geometry">
-        <rect>
-         <x>1180</x>
-         <y>340</y>
-         <width>120</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>${INST}A    (+X)</string>
-       </property>
-      </widget>
-      <widget class="PyDMWaveformPlot" name="wfpARaw">
-       <property name="geometry">
-        <rect>
-         <x>150</x>
-         <y>280</y>
-         <width>400</width>
-         <height>250</height>
-        </rect>
-       </property>
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>350</width>
-         <height>250</height>
-        </size>
-       </property>
-       <property name="toolTip">
-        <string/>
-       </property>
-       <property name="whatsThis">
-        <string>
-    PyDMWaveformPlot is a widget to plot one or more waveforms.
-
-    Each curve can plot either a Y-axis waveform vs. its indices,
-    or a Y-axis waveform against an X-axis waveform.
-
-    Parameters
-    ----------
-    parent : optional
-        The parent of this widget.
-    init_x_channels: optional
-        init_x_channels can be a string with the address for a channel,
-        or a list of strings, each containing an address for a channel.
-        If not specified, y-axis waveforms will be plotted against their
-        indices. If a list is specified for both init_x_channels and
-        init_y_channels, they both must have the same length.
-        If a single x channel was specified, and a list of y channels are
-        specified, all y channels will be plotted against the same x channel.
-    init_y_channels: optional
-        init_y_channels can be a string with the address for a channel,
-        or a list of strings, each containing an address for a channel.
-        If a list is specified for both init_x_channels and init_y_channels,
-        they both must have the same length.
-        If a single x channel was specified, and a list of y channels are
-        specified, all y channels will be plotted against the same x channel.
-    background: optional
-        The background color for the plot.  Accepts any arguments that
-        pyqtgraph.mkColor will accept.
-    </string>
-       </property>
-       <property name="title" stdset="0">
-        <string>${INST}C Raw</string>
-       </property>
-       <property name="maxRedrawRate" stdset="0">
-        <number>30</number>
-       </property>
-       <property name="curves">
-        <stringlist>
-         <string>{&quot;y_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}C:RWF_U16.VALA&quot;, &quot;x_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}A:SampTime.VALA&quot;, &quot;name&quot;: &quot;${INST}C Raw Waveform&quot;, &quot;color&quot;: &quot;white&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;redraw_mode&quot;: 2}</string>
-         <string>{&quot;y_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}C_SCL_VWF.AVAL&quot;, &quot;x_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}A:SampTime.VALA&quot;, &quot;name&quot;: &quot;&quot;, &quot;color&quot;: &quot;cyan&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;redraw_mode&quot;: 2}</string>
-        </stringlist>
-       </property>
-       <property name="autoRangeX">
-        <bool>true</bool>
-       </property>
-       <property name="minXRange">
-        <double>0.000000000000000</double>
-       </property>
-       <property name="maxXRange">
-        <double>1.000000000000000</double>
-       </property>
-       <property name="autoRangeY">
-        <bool>true</bool>
-       </property>
-       <property name="minYRange">
-        <double>0.000000000000000</double>
-       </property>
-       <property name="maxYRange">
-        <double>1.000000000000000</double>
-       </property>
-      </widget>
-      <widget class="PyDMWaveformPlot" name="wfpBRaw">
-       <property name="geometry">
-        <rect>
-         <x>450</x>
-         <y>550</y>
-         <width>400</width>
-         <height>250</height>
-        </rect>
-       </property>
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>400</width>
-         <height>250</height>
-        </size>
-       </property>
-       <property name="toolTip">
-        <string/>
-       </property>
-       <property name="whatsThis">
-        <string>
-    PyDMWaveformPlot is a widget to plot one or more waveforms.
-
-    Each curve can plot either a Y-axis waveform vs. its indices,
-    or a Y-axis waveform against an X-axis waveform.
-
-    Parameters
-    ----------
-    parent : optional
-        The parent of this widget.
-    init_x_channels: optional
-        init_x_channels can be a string with the address for a channel,
-        or a list of strings, each containing an address for a channel.
-        If not specified, y-axis waveforms will be plotted against their
-        indices. If a list is specified for both init_x_channels and
-        init_y_channels, they both must have the same length.
-        If a single x channel was specified, and a list of y channels are
-        specified, all y channels will be plotted against the same x channel.
-    init_y_channels: optional
-        init_y_channels can be a string with the address for a channel,
-        or a list of strings, each containing an address for a channel.
-        If a list is specified for both init_x_channels and init_y_channels,
-        they both must have the same length.
-        If a single x channel was specified, and a list of y channels are
-        specified, all y channels will be plotted against the same x channel.
-    background: optional
-        The background color for the plot.  Accepts any arguments that
-        pyqtgraph.mkColor will accept.
-    </string>
-       </property>
-       <property name="axisColor">
-        <color>
-         <red>0</red>
-         <green>170</green>
-         <blue>0</blue>
-        </color>
-       </property>
-       <property name="title" stdset="0">
-        <string>${INST}D Raw</string>
-       </property>
-       <property name="maxRedrawRate" stdset="0">
-        <number>30</number>
-       </property>
-       <property name="curves">
-        <stringlist>
-         <string>{&quot;y_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}D:RWF_U16.VALA&quot;, &quot;x_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}B:SampTime.VALA&quot;, &quot;name&quot;: &quot;${INST}D Raw Waveform&quot;, &quot;color&quot;: &quot;#00aa00&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;redraw_mode&quot;: 2}</string>
-         <string>{&quot;y_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}D_SCL_VWF.AVAL&quot;, &quot;x_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}B:SampTime.VALA&quot;, &quot;name&quot;: &quot;&quot;, &quot;color&quot;: &quot;cyan&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;redraw_mode&quot;: 2}</string>
-        </stringlist>
-       </property>
-       <property name="autoRangeX">
-        <bool>true</bool>
-       </property>
-       <property name="minXRange">
-        <double>0.000000000000000</double>
-       </property>
-       <property name="maxXRange">
-        <double>1.000000000000000</double>
-       </property>
-       <property name="autoRangeY">
-        <bool>true</bool>
-       </property>
-       <property name="minYRange">
-        <double>0.000000000000000</double>
-       </property>
-       <property name="maxYRange">
-        <double>1.000000000000000</double>
-       </property>
-      </widget>
-      <widget class="PyDMWaveformPlot" name="wfpARaw_2">
-       <property name="geometry">
-        <rect>
-         <x>760</x>
-         <y>280</y>
-         <width>400</width>
-         <height>250</height>
-        </rect>
-       </property>
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>350</width>
-         <height>250</height>
-        </size>
-       </property>
-       <property name="toolTip">
-        <string/>
-       </property>
-       <property name="whatsThis">
-        <string>
-    PyDMWaveformPlot is a widget to plot one or more waveforms.
-
-    Each curve can plot either a Y-axis waveform vs. its indices,
-    or a Y-axis waveform against an X-axis waveform.
-
-    Parameters
-    ----------
-    parent : optional
-        The parent of this widget.
-    init_x_channels: optional
-        init_x_channels can be a string with the address for a channel,
-        or a list of strings, each containing an address for a channel.
-        If not specified, y-axis waveforms will be plotted against their
-        indices. If a list is specified for both init_x_channels and
-        init_y_channels, they both must have the same length.
-        If a single x channel was specified, and a list of y channels are
-        specified, all y channels will be plotted against the same x channel.
-    init_y_channels: optional
-        init_y_channels can be a string with the address for a channel,
-        or a list of strings, each containing an address for a channel.
-        If a list is specified for both init_x_channels and init_y_channels,
-        they both must have the same length.
-        If a single x channel was specified, and a list of y channels are
-        specified, all y channels will be plotted against the same x channel.
-    background: optional
-        The background color for the plot.  Accepts any arguments that
-        pyqtgraph.mkColor will accept.
-    </string>
-       </property>
-       <property name="title" stdset="0">
-        <string>${INST}A Raw</string>
-       </property>
-       <property name="maxRedrawRate" stdset="0">
-        <number>30</number>
-       </property>
-       <property name="curves">
-        <stringlist>
-         <string>{&quot;y_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}A:RWF_U16.VALA&quot;, &quot;x_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}A:SampTime.VALA&quot;, &quot;name&quot;: &quot;${INST}A Raw Waveform&quot;, &quot;color&quot;: &quot;white&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;redraw_mode&quot;: 2}</string>
-         <string>{&quot;y_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}A_SCL_VWF.AVAL&quot;, &quot;x_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}A:SampTime.VALA&quot;, &quot;name&quot;: &quot;&quot;, &quot;color&quot;: &quot;cyan&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;redraw_mode&quot;: 2}</string>
-        </stringlist>
-       </property>
-       <property name="autoRangeX">
-        <bool>true</bool>
-       </property>
-       <property name="minXRange">
-        <double>0.000000000000000</double>
-       </property>
-       <property name="maxXRange">
-        <double>1.000000000000000</double>
-       </property>
-       <property name="autoRangeY">
-        <bool>true</bool>
-       </property>
-       <property name="minYRange">
-        <double>0.000000000000000</double>
-       </property>
-       <property name="maxYRange">
-        <double>1.000000000000000</double>
-       </property>
-      </widget>
-      <widget class="PyDMWaveformPlot" name="wfpBRaw_2">
-       <property name="geometry">
-        <rect>
-         <x>450</x>
-         <y>10</y>
-         <width>400</width>
-         <height>250</height>
-        </rect>
-       </property>
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>400</width>
-         <height>250</height>
-        </size>
-       </property>
-       <property name="toolTip">
-        <string/>
-       </property>
-       <property name="whatsThis">
-        <string>
-    PyDMWaveformPlot is a widget to plot one or more waveforms.
-
-    Each curve can plot either a Y-axis waveform vs. its indices,
-    or a Y-axis waveform against an X-axis waveform.
-
-    Parameters
-    ----------
-    parent : optional
-        The parent of this widget.
-    init_x_channels: optional
-        init_x_channels can be a string with the address for a channel,
-        or a list of strings, each containing an address for a channel.
-        If not specified, y-axis waveforms will be plotted against their
-        indices. If a list is specified for both init_x_channels and
-        init_y_channels, they both must have the same length.
-        If a single x channel was specified, and a list of y channels are
-        specified, all y channels will be plotted against the same x channel.
-    init_y_channels: optional
-        init_y_channels can be a string with the address for a channel,
-        or a list of strings, each containing an address for a channel.
-        If a list is specified for both init_x_channels and init_y_channels,
-        they both must have the same length.
-        If a single x channel was specified, and a list of y channels are
-        specified, all y channels will be plotted against the same x channel.
-    background: optional
-        The background color for the plot.  Accepts any arguments that
-        pyqtgraph.mkColor will accept.
-    </string>
-       </property>
-       <property name="axisColor">
-        <color>
-         <red>0</red>
-         <green>170</green>
-         <blue>0</blue>
-        </color>
-       </property>
-       <property name="title" stdset="0">
-        <string>${INST}B Raw</string>
-       </property>
-       <property name="maxRedrawRate" stdset="0">
-        <number>30</number>
-       </property>
-       <property name="curves">
-        <stringlist>
-         <string>{&quot;y_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}B:RWF_U16.VALA&quot;, &quot;x_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}B:SampTime.VALA&quot;, &quot;name&quot;: &quot;${INST}B Raw Waveform&quot;, &quot;color&quot;: &quot;#00aa00&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;redraw_mode&quot;: 2}</string>
-         <string>{&quot;y_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}B_SCL_VWF.AVAL&quot;, &quot;x_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}B:SampTime.VALA&quot;, &quot;name&quot;: &quot;&quot;, &quot;color&quot;: &quot;cyan&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;redraw_mode&quot;: 2}</string>
-        </stringlist>
-       </property>
-       <property name="autoRangeX">
-        <bool>true</bool>
-       </property>
-       <property name="minXRange">
-        <double>0.000000000000000</double>
-       </property>
-       <property name="maxXRange">
-        <double>1.000000000000000</double>
-       </property>
-       <property name="autoRangeY">
-        <bool>true</bool>
-       </property>
-       <property name="minYRange">
-        <double>0.000000000000000</double>
-       </property>
-       <property name="maxYRange">
-        <double>1.000000000000000</double>
-       </property>
-      </widget>
-      <widget class="QWidget" name="gridLayoutWidget">
-       <property name="geometry">
-        <rect>
-         <x>130</x>
-         <y>880</y>
-         <width>460</width>
-         <height>141</height>
-        </rect>
-       </property>
-       <layout class="QGridLayout" name="gridLayout" rowminimumheight="0,0,0,0,0">
-        <item row="2" column="2">
-         <widget class="PyDMLabel" name="imax">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>110</width>
-            <height>16</height>
-           </size>
-          </property>
-          <property name="toolTip">
-           <string/>
-          </property>
-          <property name="frameShape">
-           <enum>QFrame::NoFrame</enum>
-          </property>
-          <property name="text">
-           <string>${INST}A:IMAX</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="showUnits" stdset="0">
-           <bool>true</bool>
-          </property>
-          <property name="channel" stdset="0">
-           <string>ca://BLEN:${AREA}:${POS}:${INST}A:IMAX</string>
-          </property>
-         </widget>
-        </item>
-        <item row="3" column="3">
-         <widget class="PyDMLabel" name="tmit_3">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>110</width>
-            <height>16</height>
-           </size>
-          </property>
-          <property name="toolTip">
-           <string/>
-          </property>
-          <property name="text">
-           <string>${INST}A:TMIT</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="showUnits" stdset="0">
-           <bool>true</bool>
-          </property>
-          <property name="channel" stdset="0">
-           <string>ca://BLEN:${AREA}:${POS}:${INST}A:TMIT</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="1">
-         <widget class="PyDMLabel" name="sum">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>110</width>
-            <height>16</height>
-           </size>
-          </property>
-          <property name="toolTip">
-           <string/>
-          </property>
-          <property name="frameShape">
-           <enum>QFrame::NoFrame</enum>
-          </property>
-          <property name="text">
-           <string>${INST}A:SUM</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="channel" stdset="0">
-           <string>ca://BLEN:${AREA}:${POS}:${INST}A:SUM</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="0">
-         <widget class="QLabel" name="rowLabel">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>110</width>
-            <height>25</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="frameShape">
-           <enum>QFrame::NoFrame</enum>
-          </property>
-          <property name="text">
-           <string>+/- X</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="1">
-         <widget class="QLabel" name="label_20">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="frameShape">
-           <enum>QFrame::NoFrame</enum>
-          </property>
-          <property name="text">
-           <string>SUM</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="margin">
-           <number>0</number>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="0">
-         <widget class="QLabel" name="rowLabel_3">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>110</width>
-            <height>25</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="frameShape">
-           <enum>QFrame::NoFrame</enum>
-          </property>
-          <property name="text">
-           <string>+/- Y</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="2">
-         <widget class="QLabel" name="label_21">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="frameShape">
-           <enum>QFrame::NoFrame</enum>
-          </property>
-          <property name="text">
-           <string> IMAX (BLEN)</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="1">
-         <widget class="PyDMLabel" name="sum_3">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>110</width>
-            <height>16</height>
-           </size>
-          </property>
-          <property name="toolTip">
-           <string/>
-          </property>
-          <property name="text">
-           <string>${INST}B:SUM</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="channel" stdset="0">
-           <string>ca://BLEN:${AREA}:${POS}:${INST}B:SUM</string>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="2">
-         <widget class="PyDMLabel" name="imax_3">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>110</width>
-            <height>16</height>
-           </size>
-          </property>
-          <property name="toolTip">
-           <string/>
-          </property>
-          <property name="text">
-           <string>${INST}B:IMAX</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="showUnits" stdset="0">
-           <bool>true</bool>
-          </property>
-          <property name="channel" stdset="0">
-           <string>ca://BLEN:${AREA}:${POS}:${INST}B:IMAX</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="3">
-         <widget class="QLabel" name="label_19">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="frameShape">
-           <enum>QFrame::NoFrame</enum>
-          </property>
-          <property name="text">
-           <string>TMIT</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="gridLayoutWidget_2">
-       <property name="geometry">
-        <rect>
-         <x>710</x>
-         <y>850</y>
-         <width>583</width>
-         <height>212</height>
-        </rect>
-       </property>
-       <layout class="QGridLayout" name="gridLayout_3">
-        <item row="4" column="3">
-         <widget class="PyDMLabel" name="bpm_srv_port">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-          <property name="toolTip">
-           <string/>
-          </property>
-          <property name="channel" stdset="0">
-           <string>ca://BLEN:${AREA}:${POS}:ServerRemotePort</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="0">
-         <widget class="QLabel" name="BPMSyncLabel">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="layoutDirection">
-           <enum>Qt::LeftToRight</enum>
-          </property>
-          <property name="text">
-           <string>BPM Sync Status</string>
-          </property>
-         </widget>
-        </item>
-        <item row="5" column="0">
-         <widget class="QLabel" name="bpm_select">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>BPM Select</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="0">
-         <widget class="PyDMRelatedDisplayButton" name="PyDMRelatedDisplayButton_2">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-            <weight>50</weight>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="toolTip">
-           <string/>
-          </property>
-          <property name="whatsThis">
-           <string>
-    A QPushButton capable of opening a new Display at the same of at a
-    new window.
-
-    Parameters
-    ----------
-    init_channel : str, optional
-        The channel to be used by the widget.
-
-    filename : str, optional
-        The file to be opened
-    </string>
-          </property>
-          <property name="text">
-           <string>BLEN ${INST} Coefficient Configuration</string>
-          </property>
-          <property name="filenames" stdset="0">
-           <stringlist>
-            <string>blen_lcls2_gap_coef_main.ui</string>
-           </stringlist>
-          </property>
-          <property name="displayFilename" stdset="0">
-           <string>blen_lcls2_gap_coef_main.ui</string>
-          </property>
-          <property name="macros" stdset="0">
-           <stringlist>
-            <string>{&quot;AREA&quot;:&quot;${AREA}&quot;,&quot;POS&quot;:&quot;${POS}&quot;,&quot;INST&quot;:&quot;${INST}&quot;}</string>
-           </stringlist>
-          </property>
-          <property name="openInNewWindow" stdset="0">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="2">
-         <widget class="QLabel" name="label">
-          <property name="font">
-           <font>
-            <pointsize>12</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>:</string>
-          </property>
-          <property name="textFormat">
-           <enum>Qt::RichText</enum>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="1">
-         <widget class="PyDMLabel" name="bpm_srv_ip">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-            <weight>50</weight>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="toolTip">
-           <string/>
-          </property>
-          <property name="channel" stdset="0">
-           <string>ca://BLEN:${AREA}:${POS}:ServerRemoteIp:IpAddr.SVAL</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="1">
-         <widget class="PyDMByteIndicator" name="PyDMByteIndicator">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="toolTip">
-           <string/>
-          </property>
-          <property name="alarmSensitiveContent" stdset="0">
-           <bool>false</bool>
-          </property>
-          <property name="channel" stdset="0">
-           <string>ca://BLEN:${AREA}:${POS}:BPMS_SYNC</string>
-          </property>
-          <property name="onColor" stdset="0">
-           <color>
-            <red>255</red>
-            <green>0</green>
-            <blue>0</blue>
-           </color>
-          </property>
-          <property name="offColor" stdset="0">
-           <color>
-            <red>0</red>
-            <green>255</green>
-            <blue>0</blue>
-           </color>
-          </property>
-          <property name="showLabels" stdset="0">
-           <bool>false</bool>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="0">
-         <widget class="QLabel" name="BPMSyncLabel_2">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>BPM Source (ip : port)</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="0">
-         <widget class="PyDMRelatedDisplayButton" name="PyDMRelatedDisplayButton_3">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-          <property name="toolTip">
-           <string/>
-          </property>
-          <property name="whatsThis">
-           <string>
-    A QPushButton capable of opening a new Display at the same of at a
-    new window.
-
-    Parameters
-    ----------
-    init_channel : str, optional
-        The channel to be used by the widget.
-
-    filename : str, optional
-        The file to be opened
-    </string>
-          </property>
-          <property name="text">
-           <string>BLEN ${INST} Engineering Screens</string>
-          </property>
-          <property name="filenames" stdset="0">
-           <stringlist>
-            <string>blen_engineering_lcls2_gap.ui</string>
-           </stringlist>
-          </property>
-          <property name="displayFilename" stdset="0">
-           <string>blen_engineering_lcls2_gap.ui</string>
-          </property>
-          <property name="macros" stdset="0">
-           <stringlist>
-            <string>ATCA_SLOT=${ATCA_SLOT},AREA=${AREA},INST=${INST},IOC_UNIT=${IOC_UNIT},POS=${POS}</string>
-           </stringlist>
-          </property>
-          <property name="openInNewWindow" stdset="0">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item row="5" column="1">
-         <widget class="PyDMEnumButton" name="PyDMEnumButton">
-          <property name="toolTip">
-           <string/>
-          </property>
-          <property name="channel" stdset="0">
-           <string>ca://BLEN:${AREA}:${POS}:BpmSelect</string>
-          </property>
-          <property name="items" stdset="0">
-           <stringlist>
-            <string>BPM 0</string>
-            <string>BPM 1</string>
-           </stringlist>
-          </property>
-          <property name="widgetType" stdset="0">
-           <enum>PyDMEnumButton::RadioButton</enum>
-          </property>
-          <property name="orientation" stdset="0">
-           <enum>Qt::Vertical</enum>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="layoutWidget">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>390</y>
-         <width>128</width>
-         <height>18</height>
-        </rect>
-       </property>
-       <layout class="QHBoxLayout" name="horizontalLayout_2">
-        <item>
-         <widget class="QLabel" name="label_8">
-          <property name="font">
-           <font>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>Temp:</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="PyDMLabel" name="tempLeft">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>75</width>
-            <height>16</height>
-           </size>
-          </property>
-          <property name="toolTip">
-           <string/>
-          </property>
-          <property name="frameShape">
-           <enum>QFrame::NoFrame</enum>
-          </property>
-          <property name="text">
-           <string>TempLeft</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="showUnits" stdset="0">
-           <bool>true</bool>
-          </property>
-          <property name="alarmSensitiveContent" stdset="0">
-           <bool>true</bool>
-          </property>
-          <property name="channel" stdset="0">
-           <string>ca://BLEN:${AREA}:${POS}:TempGapLeft</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="layoutWidget_2">
-       <property name="geometry">
-        <rect>
-         <x>870</x>
-         <y>670</y>
-         <width>128</width>
-         <height>18</height>
-        </rect>
-       </property>
-       <layout class="QHBoxLayout" name="horizontalLayout_3">
-        <item>
-         <widget class="QLabel" name="label_9">
-          <property name="font">
-           <font>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>Temp:</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="PyDMLabel" name="tempLeft_2">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>75</width>
-            <height>16</height>
-           </size>
-          </property>
-          <property name="toolTip">
-           <string/>
-          </property>
-          <property name="frameShape">
-           <enum>QFrame::NoFrame</enum>
-          </property>
-          <property name="text">
-           <string>TempBtm</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="showUnits" stdset="0">
-           <bool>true</bool>
-          </property>
-          <property name="alarmSensitiveContent" stdset="0">
-           <bool>true</bool>
-          </property>
-          <property name="channel" stdset="0">
-           <string>ca://BLEN:${AREA}:${POS}:TempGapBtm</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="layoutWidget_3">
-       <property name="geometry">
-        <rect>
-         <x>1180</x>
-         <y>460</y>
-         <width>128</width>
-         <height>18</height>
-        </rect>
-       </property>
-       <layout class="QHBoxLayout" name="horizontalLayout_4">
-        <item>
-         <widget class="QLabel" name="label_10">
-          <property name="font">
-           <font>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>Temp:</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="PyDMLabel" name="tempLeft_3">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>75</width>
-            <height>16</height>
-           </size>
-          </property>
-          <property name="toolTip">
-           <string/>
-          </property>
-          <property name="frameShape">
-           <enum>QFrame::NoFrame</enum>
-          </property>
-          <property name="text">
-           <string>TempRight</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="showUnits" stdset="0">
-           <bool>true</bool>
-          </property>
-          <property name="alarmSensitiveContent" stdset="0">
-           <bool>true</bool>
-          </property>
-          <property name="channel" stdset="0">
-           <string>ca://BLEN:${AREA}:${POS}:TempGapRight</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="layoutWidget">
-       <property name="geometry">
-        <rect>
-         <x>871</x>
-         <y>170</y>
-         <width>128</width>
-         <height>18</height>
-        </rect>
-       </property>
-       <layout class="QHBoxLayout" name="horizontalLayout">
-        <item>
-         <widget class="QLabel" name="label_7">
-          <property name="font">
-           <font>
-            <weight>75</weight>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>Temp:</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="PyDMLabel" name="tempTop">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>75</width>
-            <height>16</height>
-           </size>
-          </property>
-          <property name="toolTip">
-           <string/>
-          </property>
-          <property name="frameShape">
-           <enum>QFrame::NoFrame</enum>
-          </property>
-          <property name="text">
-           <string>TempTop</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="showUnits" stdset="0">
-           <bool>true</bool>
-          </property>
-          <property name="alarmSensitiveContent" stdset="0">
-           <bool>true</bool>
-          </property>
-          <property name="channel" stdset="0">
-           <string>ca://BLEN:${AREA}:${POS}:TempGapTop</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QLabel" name="label_22">
-       <property name="geometry">
-        <rect>
-         <x>880</x>
-         <y>70</y>
-         <width>91</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <weight>50</weight>
-         <bold>false</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>&quot;Long&quot; BLEN
-(&lt; 40 GHz)</string>
+        <string>BLEN: ${INST}</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
        </property>
       </widget>
-      <widget class="QLabel" name="label_23">
-       <property name="geometry">
-        <rect>
-         <x>1190</x>
-         <y>360</y>
-         <width>91</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <weight>50</weight>
-         <bold>false</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>&quot;Short&quot; BLEN
-(&gt; 40 GHz)</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
+     </item>
+     <item>
+      <widget class="Line" name="line_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
        </property>
       </widget>
-      <widget class="QLabel" name="label_24">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>350</y>
-         <width>91</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <weight>50</weight>
-         <bold>false</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>&quot;Short&quot; BLEN
-(&gt; 40 GHz)</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item>
+          <widget class="QLabel" name="label_2">
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>Low Frequency Detector
+&lt;40Ghz</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QGridLayout" name="gridLayout_4" columnstretch="4,1,4" columnminimumwidth="0,0,0">
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_4">
+             <property name="text">
+              <string>Stream Status</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="PyDMByteIndicator" name="PyDMByteIndicator_2">
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="channel" stdset="0">
+              <string>ca://BLEN:${AREA}:${POS}:${INST}B:AutoRearmRBV</string>
+             </property>
+             <property name="labels" stdset="0">
+              <stringlist/>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="PyDMEnumComboBox" name="PyDMEnumComboBox_2">
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="channel" stdset="0">
+              <string>ca://BLEN:${AREA}:${POS}:${INST}B:ACCESS</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QGridLayout" name="gridLayout">
+           <item row="1" column="1">
+            <widget class="PyDMLabel" name="PyDMLabel_3">
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="channel" stdset="0">
+              <string>ca://BLEN:${AREA}:${POS}:TempPY</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_9">
+             <property name="text">
+              <string>-Y  Temperature:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_8">
+             <property name="text">
+              <string>+Y Temperature:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="PyDMLabel" name="PyDMLabel_4">
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="channel" stdset="0">
+              <string>ca://BLEN:${AREA}:${POS}:TempNY</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="PyDMWaveformPlot" name="PyDMWaveformPlot_2">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="curves">
+            <stringlist>
+             <string>{&quot;y_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}B:RWF_U16.VALA&quot;, &quot;x_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}B:SampTime.VALA&quot;, &quot;name&quot;: &quot;${INST}B Raw Waveform&quot;, &quot;color&quot;: &quot;white&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;redraw_mode&quot;: 2}</string>
+             <string>{&quot;y_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}B_SCL_VWF.AVAL&quot;, &quot;x_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}B:SampTime.VALA&quot;, &quot;name&quot;: &quot;&quot;, &quot;color&quot;: &quot;cyan&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;redraw_mode&quot;: 2}</string>
+            </stringlist>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="PyDMWaveformPlot" name="PyDMWaveformPlot">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="curves">
+            <stringlist>
+             <string>{&quot;y_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}D:RWF_U16.VALA&quot;, &quot;x_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}B:SampTime.VALA&quot;, &quot;name&quot;: &quot;${INST}D Raw Waveform&quot;, &quot;color&quot;: &quot;white&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;redraw_mode&quot;: 2}</string>
+             <string>{&quot;y_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}D_SCL_VWF.AVAL&quot;, &quot;x_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}B:SampTime.VALA&quot;, &quot;name&quot;: &quot;&quot;, &quot;color&quot;: &quot;cyan&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;redraw_mode&quot;: 2}</string>
+            </stringlist>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="Line" name="line_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_5">
+         <item>
+          <widget class="QLabel" name="label_3">
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>High Frequency Detector
+&gt;40Ghz</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QGridLayout" name="gridLayout_2" columnstretch="4,1,4">
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_5">
+             <property name="text">
+              <string>Stream Status</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="PyDMByteIndicator" name="PyDMByteIndicator">
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="channel" stdset="0">
+              <string>ca://BLEN:${AREA}:${POS}:${INST}A:AutoRearmRBV</string>
+             </property>
+             <property name="labels" stdset="0">
+              <stringlist/>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="PyDMEnumComboBox" name="PyDMEnumComboBox">
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="channel" stdset="0">
+              <string>ca://BLEN:${AREA}:${POS}:${INST}A:ACCESS</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QGridLayout" name="gridLayout_3">
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_6">
+             <property name="text">
+              <string>+X Temperature:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="PyDMLabel" name="PyDMLabel_2">
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="channel" stdset="0">
+              <string>ca://BLEN:${AREA}:${POS}:TempNX</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="PyDMLabel" name="PyDMLabel">
+             <property name="toolTip">
+              <string/>
+             </property>
+             <property name="channel" stdset="0">
+              <string>ca://BLEN:${AREA}:${POS}:TempPX</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_7">
+             <property name="text">
+              <string>-X  Temperature:</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="PyDMWaveformPlot" name="PyDMWaveformPlot_3">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="curves">
+            <stringlist>
+             <string>{&quot;y_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}A:RWF_U16.VALA&quot;, &quot;x_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}A:SampTime.VALA&quot;, &quot;name&quot;: &quot;${INST}A Raw Waveform&quot;, &quot;color&quot;: &quot;white&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;redraw_mode&quot;: 2}</string>
+             <string>{&quot;y_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}A_SCL_VWF.AVAL&quot;, &quot;x_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}A:SampTime.VALA&quot;, &quot;name&quot;: &quot;&quot;, &quot;color&quot;: &quot;cyan&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;redraw_mode&quot;: 2}</string>
+            </stringlist>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="PyDMWaveformPlot" name="PyDMWaveformPlot_4">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="curves">
+            <stringlist>
+             <string>{&quot;y_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}C:RWF_U16.VALA&quot;, &quot;x_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}A:SampTime.VALA&quot;, &quot;name&quot;: &quot;${INST}C Raw Waveform&quot;, &quot;color&quot;: &quot;white&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;redraw_mode&quot;: 2}</string>
+             <string>{&quot;y_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}C_SCL_VWF.AVAL&quot;, &quot;x_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}A:SampTime.VALA&quot;, &quot;name&quot;: &quot;&quot;, &quot;color&quot;: &quot;cyan&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;redraw_mode&quot;: 2}</string>
+            </stringlist>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="Line" name="line">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
        </property>
       </widget>
-      <widget class="QLabel" name="label_25">
-       <property name="geometry">
-        <rect>
-         <x>880</x>
-         <y>620</y>
-         <width>91</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <weight>50</weight>
-         <bold>false</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>&quot;Long&quot; BLEN
-(&lt; 40 GHz)</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,1,2,2,1,1">
+       <item>
+        <spacer name="horizontalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="Line" name="line_5">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QGridLayout" name="gridLayout_8" rowstretch="1,0,0,0,0" columnstretch="0,0">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_11">
+           <property name="text">
+            <string>Sensor</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_20">
+           <property name="text">
+            <string>+Y</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_18">
+           <property name="text">
+            <string>+X</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_19">
+           <property name="text">
+            <string>-X</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="label_21">
+           <property name="text">
+            <string>-Y</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="label_23">
+           <property name="text">
+            <string>Signal (pC)</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="PyDMLabel" name="PyDMLabel_13">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="channel" stdset="0">
+            <string>ca://BLEN:${AREA}:${POS}:${INST}A_TMIT</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="PyDMLabel" name="PyDMLabel_14">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="channel" stdset="0">
+            <string>ca://BLEN:${AREA}:${POS}:${INST}C_TMIT</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="PyDMLabel" name="PyDMLabel_15">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="channel" stdset="0">
+            <string>ca://BLEN:${AREA}:${POS}:${INST}B_TMIT</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="PyDMLabel" name="PyDMLabel_16">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="channel" stdset="0">
+            <string>ca://BLEN:${AREA}:${POS}:${INST}D_TMIT</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QGridLayout" name="gridLayout_9" rowstretch="1,2,2">
+         <item row="0" column="1">
+          <widget class="QLabel" name="label_24">
+           <property name="text">
+            <string>BLEN (fs)</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="PyDMLabel" name="PyDMLabel_6">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="channel" stdset="0">
+            <string>ca://BLEN:${AREA}:${POS}:${INST}A:IMAX</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_12">
+           <property name="text">
+            <string>SUM TMIT (pC)</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="PyDMLabel" name="PyDMLabel_12">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="channel" stdset="0">
+            <string>ca://BLEN:${AREA}:${POS}:${INST}B:TMIT</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="PyDMLabel" name="PyDMLabel_11">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="channel" stdset="0">
+            <string>ca://BLEN:${AREA}:${POS}:${INST}A:TMIT</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="PyDMLabel" name="PyDMLabel_5">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="channel" stdset="0">
+            <string>ca://BLEN:${AREA}:${POS}:${INST}B:IMAX</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="Line" name="line_6">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="Line" name="line_4">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
        </property>
       </widget>
-     </widget>
-    </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="PyDMRelatedDisplayButton" name="PyDMRelatedDisplayButton">
+         <property name="toolTip">
+          <string/>
+         </property>
+         <property name="text">
+          <string>Expert...</string>
+         </property>
+         <property name="filenames" stdset="0">
+          <stringlist>
+           <string>blen_lcls2_gap_expert.ui</string>
+          </stringlist>
+         </property>
+         <property name="openInNewWindow" stdset="0">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
    </item>
   </layout>
  </widget>
@@ -1515,11 +581,6 @@
    <class>PyDMLabel</class>
    <extends>QLabel</extends>
    <header>pydm.widgets.label</header>
-  </customwidget>
-  <customwidget>
-   <class>PyDMEnumButton</class>
-   <extends>QWidget</extends>
-   <header>pydm.widgets.enum_button</header>
   </customwidget>
   <customwidget>
    <class>PyDMRelatedDisplayButton</class>

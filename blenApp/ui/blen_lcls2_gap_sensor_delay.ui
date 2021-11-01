@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>866</width>
+    <height>807</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QTabWidget" name="cal_instr_tabs">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>60</y>
+     <width>751</width>
+     <height>682</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="currentIndex">
+    <number>3</number>
+   </property>
+   <widget class="QWidget" name="instATab">
+    <attribute name="title">
+     <string>${INST}A (+X)</string>
+    </attribute>
+    <layout class="QVBoxLayout" name="verticalLayout_4">
+     <item>
+      <widget class="PyDMEmbeddedDisplay" name="inst_a_cal">
+       <property name="toolTip">
+        <string/>
+       </property>
+       <property name="macros" stdset="0">
+        <string>{ &quot;AREA&quot;: &quot;${AREA}&quot;, &quot;POS&quot;: &quot;${POS}&quot;, &quot;INST&quot;: &quot;${INST}A&quot;, &quot;CH&quot;: &quot;${INST}A&quot; }</string>
+       </property>
+       <property name="filename" stdset="0">
+        <string>blen_cal_embedded.ui</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="instCTab">
+    <attribute name="title">
+     <string>${INST}C (-X)</string>
+    </attribute>
+    <layout class="QVBoxLayout" name="verticalLayout_5">
+     <item>
+      <widget class="PyDMEmbeddedDisplay" name="inst_c_cal">
+       <property name="toolTip">
+        <string/>
+       </property>
+       <property name="macros" stdset="0">
+        <string>{ &quot;AREA&quot;: &quot;${AREA}&quot;, &quot;POS&quot;: &quot;${POS}&quot;, &quot;INST&quot;: &quot;${INST}C&quot;, &quot;CH&quot;: &quot;${INST}A&quot; }</string>
+       </property>
+       <property name="filename" stdset="0">
+        <string>blen_cal_embedded.ui</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="instBTab">
+    <attribute name="title">
+     <string>${INST}B (+Y)</string>
+    </attribute>
+    <layout class="QVBoxLayout" name="verticalLayout_3">
+     <item>
+      <widget class="PyDMEmbeddedDisplay" name="inst_b_cal">
+       <property name="toolTip">
+        <string/>
+       </property>
+       <property name="macros" stdset="0">
+        <string>{ &quot;AREA&quot;: &quot;${AREA}&quot;, &quot;POS&quot;: &quot;${POS}&quot;, &quot;INST&quot;: &quot;${INST}B&quot;, &quot;CH&quot;: &quot;${INST}B&quot; }</string>
+       </property>
+       <property name="filename" stdset="0">
+        <string>blen_cal_embedded.ui</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="instDTab">
+    <attribute name="title">
+     <string>${INST}D (-Y)</string>
+    </attribute>
+    <layout class="QVBoxLayout" name="verticalLayout_6">
+     <item>
+      <widget class="PyDMEmbeddedDisplay" name="inst_d_cal">
+       <property name="toolTip">
+        <string/>
+       </property>
+       <property name="macros" stdset="0">
+        <string>{ &quot;AREA&quot;: &quot;${AREA}&quot;, &quot;POS&quot;: &quot;${POS}&quot;, &quot;INST&quot;: &quot;${INST}D&quot;, &quot;CH&quot;: &quot;${INST}B&quot; }</string>
+       </property>
+       <property name="filename" stdset="0">
+        <string>blen_cal_embedded.ui</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>20</y>
+     <width>231</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>BLEN Senor Delay Setting</string>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PyDMEmbeddedDisplay</class>
+   <extends>QFrame</extends>
+   <header>pydm.widgets.embedded_display</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
