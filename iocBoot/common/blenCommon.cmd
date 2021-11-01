@@ -153,3 +153,10 @@ system("cp $(TOP)/archive/$(IOC).archive $(IOC_DATA)/$(IOC)/archive")
 # ===========================================
 < iocBoot/common/init_restore_soft.cmd
 
+#////////////////////////////////////////#
+#Run script to generate archiver files   #
+#////////////////////////////////////////#
+cd(${TOP}/blenApp/scripts/)
+system("./makeArchive.sh ${IOC} &")
+cd(${TOP})
+
