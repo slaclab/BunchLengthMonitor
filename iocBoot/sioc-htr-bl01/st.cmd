@@ -78,3 +78,6 @@ caPutLogInit("$(EPICS_CA_PUT_LOG_ADDR)")
 caPutLogShow(2)
 
 < iocBoot/common/start_restore_soft.cmd
+
+dbpf BLEN:${AREA}:${POS}:BpmSelect.ZNAM BPM0H04
+dbpf BLEN:${AREA}:${POS}:BpmSelect.ONAM BPM0H05
