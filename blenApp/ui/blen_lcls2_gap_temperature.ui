@@ -11,15 +11,39 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>BLEN: ${INST} Temperature</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
+      <widget class="QLabel" name="label_12">
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>BLEN: ${INST}</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="Line" name="line">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QLabel" name="label">
        <property name="text">
-        <string>Internal BLEN Temperature Sensors (*C)</string>
+        <string>Internal BLEN Temperature Sensors (degC)</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -99,9 +123,16 @@
       </layout>
      </item>
      <item>
+      <widget class="Line" name="line_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QLabel" name="label_2">
        <property name="text">
-        <string>Temperature System Sensors on BLEN (*C)</string>
+        <string>MPS Interlocked Temperature Sensors (degC)</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
