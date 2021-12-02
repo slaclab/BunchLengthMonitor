@@ -17,6 +17,12 @@ epicsEnvSet("IOC_UNIT", "BL04")
 epicsEnvSet("ATCA_SLOT", "6")
 epicsEnvSet("BLEN_ASYN_PORT", "ATCA$(ATCA_SLOT)")
 
+epicsEnvSet("TEMP_IOC", "SIOC:B084:IM03")
+epicsEnvSet("TEMP_PY_SRC","$(TEMP_IOC):4:INPUT2:VALUE")
+epicsEnvSet("TEMP_NY_SRC","$(TEMP_IOC):5:INPUT2:VALUE")
+epicsEnvSet("TEMP_PX_SRC","$(TEMP_IOC):4:INPUT1:VALUE")
+epicsEnvSet("TEMP_NX_SRC","$(TEMP_IOC):5:INPUT1:VALUE")
+
 # YAML directory
 epicsEnvSet("YAML_DIR","$(IOC_DATA)/$(IOC)/yaml")
 
@@ -61,8 +67,11 @@ dbLoadRecords("db/blen_gap_weightFunctionXAxis.db", "AREA=$(AREA), POS=$(POS), I
 # Parse IP address
 dbLoadRecords("db/ipAddr.db", "P=BLEN:$(AREA):$(POS), SRC=ServerRemoteIp")
 
-# Pt100 temperature sensor inputs
-dbLoadRecords("db/blen_gap_temperatures.db", "P=BLEN:${AREA}:${POS}")
+# Temperature sensors
+dbLoadRecords("db/tempProcess.db","P=BLEN:$(AREA):$(POS), R=TempPY, SRC=$(TEMP_PY_SRC)")
+dbLoadRecords("db/tempProcess.db","P=BLEN:$(AREA):$(POS), R=TempNY, SRC=$(TEMP_NY_SRC)")
+dbLoadRecords("db/tempProcess.db","P=BLEN:$(AREA):$(POS), R=TempPX, SRC=$(TEMP_PX_SRC)")
+dbLoadRecords("db/tempProcess.db","P=BLEN:$(AREA):$(POS), R=TempNX, SRC=$(TEMP_NX_SRC)")
 
 # ===========================================
 #               IOC INIT
