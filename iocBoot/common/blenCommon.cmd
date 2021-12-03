@@ -84,7 +84,8 @@ dbLoadRecords("db/commonFPGA.db", "P=BLEN:$(AREA):$(POS):$(INST)B, PORT=$(BLEN_A
 dbLoadRecords("db/saveLoadConfig.db", "P=BLEN:$(AREA):$(POS), PORT=$(BLEN_ASYN_PORT)")
 dbLoadRecords("db/monitorFPGAReboot.db", "P=BLEN:$(AREA):$(POS)")
 
-dbLoadRecords("db/streamControl.db", "AREA=$(AREA),POS=$(POS),INSTA=$(INST)A,INSTB=$(INST)B")
+dbLoadRecords("db/streamControl.db", "AREA=$(AREA),POS=$(POS),INST=1")
+dbLoadRecords("db/streamControl.db", "AREA=$(AREA),POS=$(POS),INST=2")
 
 # Records to manipulate waveforms from detectors
 dbLoadRecords("db/calculatedWF.db", "AREA=$(AREA), POS=$(POS), INST=$(INST)A")

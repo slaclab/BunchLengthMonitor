@@ -18,39 +18,3 @@ file "RegDoubleIn.template" { pattern
 { $(P),     IMAX,             "",                       "YES",  ".5 second",  $(PORT),    "",    "2",    AMC$(AMC):IMAX   }
 { $(P),     TMIT,             "Transmitted intensity",  "YES",  ".5 second",  $(PORT),    "pC",   "2",    AMC$(AMC):TMIT   }
 }
-
-########################################################################################################################
-# Waveforms 
-# Macros:
-#   P, INST, R: The PV name as $(P):$(INST):$(R)
-#   DESC: The Waveform Description
-#   FTVL: The Type of the waveform elements (short, long, double, etc.)
-#   NELM: The number of elements in each waveform array
-#   INP:  The PV that provides the input (probably either an acalcout or an aSub record)
-########################################################################################################################
-
-#file "blenWaveforms.template" { pattern
-#{   P,          R,          DESC,                                     FTVL,     NELM,     INP   }
-#{  $(P),      "RWF",      "Raw waveform, 32 bits",                  "LONG",    1024,     "$(P)"   }
-#{  $(P),      "RWFS",     "Raw waveform, 16 bits",                  "SHORT",   2048,     "$(P)"   }
-#{  $(P),      "IWF",      "Integration Window waveform, 32 bits",   "LONG",    1024,     "$(P)"   }
-#{  $(P),      "IWFS",     "Integration Window waveform, 16 bits",   "SHORT",   2048,     "$(P)"   }
-#
-#{  $(P),      "RWF",      "Raw waveform, 32 bits",                  "LONG",    1024,     "$(P)"   }
-#{  $(P),      "RWFS",     "Raw waveform, 16 bits",                  "SHORT",   2048,     "$(P)"   }
-#{  $(P),      "IWF",      "Integration Window waveform, 32 bits",   "LONG",    1024,     "$(P)"   }
-#{  $(P),      "IWFS",     "Integration Window waveform, 16 bits",   "SHORT",   2048,     "$(P)"   }
-#}
-
-########################################################################################################################
-# Temperature Sensors 
-# Macros:
-#   P, INST, R: The PV name as $(P):$(INST):$(R)
-#   DESC, SCAN: The same fields on the records
-########################################################################################################################
-
-#file "temperature.template" { pattern
-#{  P,      R,                       DESC,                 SCAN     }
-#{ $(P), "Temp0",        "Temperature of sensor 0",     "10 second" }
-#{ $(P), "Temp1",        "Temperature of sensor 1",     "10 second" }
-#}

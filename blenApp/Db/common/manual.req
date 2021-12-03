@@ -1,15 +1,15 @@
-BLEN:$(AREA):$(POS):$(INST):CoefA0
-BLEN:$(AREA):$(POS):$(INST):CoefA1
-BLEN:$(AREA):$(POS):$(INST):CoefA2
-BLEN:$(AREA):$(POS):$(INST):CoefB
-BLEN:$(AREA):$(POS):$(INST):CoefC
-BLEN:$(AREA):$(POS):$(INST):CoefD
-BLEN:$(AREA):$(POS):$(INST):CoefE
-BLEN:$(AREA):$(POS):$(INST):CoefF
-BLEN:$(AREA):$(POS):$(INST):CoefG
-BLEN:$(AREA):$(POS):$(INST):CoefH
-BLEN:$(AREA):$(POS):$(INST):CoefI
-BLEN:$(AREA):$(POS):$(INST):TMIT_T
+BLEN:$(AREA):$(POS):CoefA0
+BLEN:$(AREA):$(POS):CoefA1
+BLEN:$(AREA):$(POS):CoefA2
+BLEN:$(AREA):$(POS):CoefB
+BLEN:$(AREA):$(POS):CoefC
+BLEN:$(AREA):$(POS):CoefD
+BLEN:$(AREA):$(POS):CoefE
+BLEN:$(AREA):$(POS):CoefF
+BLEN:$(AREA):$(POS):CoefG
+BLEN:$(AREA):$(POS):CoefH
+BLEN:$(AREA):$(POS):CoefI
+BLEN:$(AREA):$(POS):TMIT_T
 
 BLEN:$(AREA):$(POS):loadConfigFile.VAL
 BLEN:$(AREA):$(POS):loadConfigRoot.VAL

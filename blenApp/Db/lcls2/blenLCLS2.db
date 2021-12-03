@@ -7,7 +7,7 @@
 ###################################################################################################
 # Macros:
 #   P:        The PV name as BLEN:(AREA):(POS)
-#   P0/1:     The PV name as BLEN:(AREA):(POS):(INST)A/B
+#   P0/1:     The PV name as BLEN:(AREA):(POS)A/B
 #   SCAN:     Scan rate for PVs. Should keep below 1Hz, 2Hz max rate
 ###################################################################################################
 

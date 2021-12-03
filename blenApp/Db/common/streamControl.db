@@ -1,5 +1,5 @@
 # Control stream from sensor A 
-record (bo, "BLEN:$(AREA):$(POS):$(INSTA):ACCESS") {
+record (bo, "BLEN:$(AREA):$(POS):$(INST):ACCESS") {
   field(DESC, "Stream from ATCA control")
   field(DTYP, "Raw Soft Channel")
   field(PINI, "YES")
@@ -7,21 +7,7 @@ record (bo, "BLEN:$(AREA):$(POS):$(INSTA):ACCESS") {
   field(ONAM, "Running")
   field(ZSV, "MAJOR")
   field(OSV, "NO_ALARM")
-  field(OUT, "BLEN:$(AREA):$(POS):$(INSTA):AutoRearm PP")
-
-  info(autosaveFields, "VAL")
-}
-
-# Control stream from sensor B 
-record (bo, "BLEN:$(AREA):$(POS):$(INSTB):ACCESS") {
-  field(DESC, "Stream from ATCA control")
-  field(DTYP, "Raw Soft Channel")
-  field(PINI, "YES")
-  field(ZNAM, "Offline")
-  field(ONAM, "Running")
-  field(ZSV, "MAJOR")
-  field(OSV, "NO_ALARM")
-  field(OUT, "BLEN:$(AREA):$(POS):$(INSTB):AutoRearm PP")
+  field(OUT, "BLEN:$(AREA):$(POS):$(INST):AutoRearm PP")
 
   info(autosaveFields, "VAL")
 }
