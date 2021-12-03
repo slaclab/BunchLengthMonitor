@@ -1,0 +1,65 @@
+
+
+
+# Status Values:
+# 0 = OUT
+# 1 = IN
+# 2 = MOVING
+# 3 = INCONSISTENT  - Due to both limit switches being activated at the same time.
+
+#
+#  (P)(INST):SHT_STS -- status of shutter for AMCX
+#
+
+record(calc, "$(P):$(INST):SHT_STS")
+{
+  field(INPA, "$(P):Inserted")
+  field(INPB, "$(P):Removed")
+  field(INPC, "0x1")  # Bit Mask
+  field(INPD, "0")    # Bit Shift 
+  field(CALC, "(A&B&C) ? 3 : (((~(A|B)) & C) ? 2 : (A&C) >> D)")
+  field(SCAN, "$(SCAN)")
+  field(PHAS, "0")
+  field(DESC, "0=OUT, 1=IN, 2=MOVING, 3=INCONSISTENT")
+}
+
+#
+# Control (CTRL) values:
+# 0 = OUT
+# 1 = IN
+#
+# (P):(INST):SHT_CTRL  -- AMCX Shutter Control
+# (P):FLTX_CTRL  -- FilterX Control
+#
+
+record(mbbo, "$(P):$(INST):SHT_CTRL")
+{
+  field(VAL,   "0")
+  field(ZRVL,  "0")
+  field(ZRST,  "OUT")
+  field(ONVL,  "1")
+  field(ONST,  "IN")
+  field(OUT, "$(P):$(INST):SHT_MOVE PP") 
+}
+
+#
+# Error (ERR) Values:
+#   0 = OK
+#   1 = Mismatch of CTRL and STS
+#
+
+#
+# (PX):SHT_ERR -- AMCX Shutter Error State
+#
+
+record(calc, "$(P):$(INST):SHT_ERR")
+{
+  field(INPA, "$(P):$(INST):SHT_STS")
+  field(INPB, "$(P):$(INST):SHT_CTRL")
+  field(INPC, "0")    # OK Value
+  field(INPD, "1")    # Error Value
+  field(CALC, "(A = B) ? C : D")
+  field(SCAN, "$(SCAN)")
+  field(PHAS, "1")
+  field(DESC, "0 = OK 1 = Mismatch of STS and CTRL")
+}

@@ -10,7 +10,8 @@ include $(TOP)/configure/CONFIG
 
 # Main User-visible PVs 
 # --------------------------------------------------
-DB += blenLCLS2.db
+DB += pyroShutter.db
+DB += pyroShutter_inst.db
 
 
 # DBs containing Expert PVs and other routines
