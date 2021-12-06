@@ -4,7 +4,7 @@
 # Giving the frequency in Hz, calculate the time in ns between each sample
 record (calc, "BLEN:$(AREA):$(POS):$(INST):SAMP_TIME") {
   field(DESC, "Time between samples in ns")
-  field(INPA, "BLEN:$(AREA):$(POS):$(CLK_INST):AmcClkFreq CP")
+  field(INPA, "BLEN:$(AREA):$(POS):$(AMC):AmcClkFreq CP")
   field(CALC, "1000000000/(2 * A)")
 }
 
@@ -48,7 +48,7 @@ record (ao, "BLEN:$(AREA):$(POS):$(INST):TIME_PRE") {
 record (calcout, "BLEN:$(AREA):$(POS):$(INST):NumSamp0_CLC") {
   field(DESC, "Number samples of pre-edge")
   field(INPA, "BLEN:$(AREA):$(POS):$(INST):TIME_PRE CP")
-  field(INPB, "BLEN:$(AREA):$(POS):$(CLK_INST):AmcClkFreq CP")
+  field(INPB, "BLEN:$(AREA):$(POS):$(AMC):AmcClkFreq CP")
   field(CALC, "((~0)-1)&FLOOR((2*A*B)/1000000000)")
   field(OUT, "BLEN:$(AREA):$(POS):$(INST):NumSamp0 PP")
   field(DOPT, "Use CALC")
@@ -77,7 +77,7 @@ record (calc, "BLEN:$(AREA):$(POS):$(INST):TIME_MIDC") {
 record (calcout, "BLEN:$(AREA):$(POS):$(INST):TrigDelay1_CLC") {
   field(DESC, "Number samples of between edges")
   field(INPA, "BLEN:$(AREA):$(POS):$(INST):TIME_MIDC CP")
-  field(INPB, "BLEN:$(AREA):$(POS):$(CLK_INST):AmcClkFreq CP")
+  field(INPB, "BLEN:$(AREA):$(POS):$(AMC):AmcClkFreq CP")
   field(CALC, "((~0)-1)&FLOOR((2*A*B)/1000000000)")
   field(OUT, "BLEN:$(AREA):$(POS):$(INST):TrigDelay1 PP")
   field(DOPT, "Use CALC")
@@ -95,7 +95,7 @@ record (ao, "BLEN:$(AREA):$(POS):$(INST):TIME_POS") {
 record (calcout, "BLEN:$(AREA):$(POS):$(INST):NumSamp1_CLC") {
   field(DESC, "Number samples of pos-edge")
   field(INPA, "BLEN:$(AREA):$(POS):$(INST):TIME_POS CP")
-  field(INPB, "BLEN:$(AREA):$(POS):$(CLK_INST):AmcClkFreq CP")
+  field(INPB, "BLEN:$(AREA):$(POS):$(AMC):AmcClkFreq CP")
   field(CALC, "((~0)-1)&FLOOR((2*A*B)/1000000000)")
   field(OUT, "BLEN:$(AREA):$(POS):$(INST):NumSamp1 PP")
   field(DOPT, "Use CALC")
@@ -108,5 +108,5 @@ record (aSub, "BLEN:$(AREA):$(POS):$(INST):SampTime") {
   field(FTA, "LONG")
   field(FTVA, "DOUBLE")
   field(NOVA, "1024")
-  field(INPA, "BLEN:$(AREA):$(POS):$(CLK_INST):AmcClkFreq CP")
+  field(INPA, "BLEN:$(AREA):$(POS):$(AMC):AmcClkFreq CP")
 }

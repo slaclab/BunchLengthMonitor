@@ -61,8 +61,8 @@ dbLoadRecords("db/calculatedWF.db", "AREA=$(AREA), POS=$(POS), INST=$(INST)D")
 
 # Num-sample <--> Time conversion Records supporting ch1 on AMC0, AMC1.
 # Parameterized by per-AMC frequency counter (clock).
-dbLoadRecords("db/blen_gap_weightFunctionXAxis.db", "AREA=$(AREA), POS=$(POS), INST=$(INST)C, AMC=0, CLK_INST=$(INST)A")
-dbLoadRecords("db/blen_gap_weightFunctionXAxis.db", "AREA=$(AREA), POS=$(POS), INST=$(INST)D, AMC=1, CLK_INST=$(INST)B")
+dbLoadRecords("db/blen_gap_weightFunctionXAxis.db", "AREA=$(AREA), POS=$(POS), INST=$(INST)C, AMC=0")
+dbLoadRecords("db/blen_gap_weightFunctionXAxis.db", "AREA=$(AREA), POS=$(POS), INST=$(INST)D, AMC=1")
 
 # Parse IP address
 dbLoadRecords("db/ipAddr.db", "P=BLEN:$(AREA):$(POS), SRC=ServerRemoteIp")
