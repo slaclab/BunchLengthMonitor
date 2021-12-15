@@ -1,4 +1,4 @@
-# Control stream from sensor A 
+# Control stream
 record (bo, "BLEN:$(AREA):$(POS):$(INST):ACCESS") {
   field(DESC, "Stream from ATCA control")
   field(DTYP, "Raw Soft Channel")

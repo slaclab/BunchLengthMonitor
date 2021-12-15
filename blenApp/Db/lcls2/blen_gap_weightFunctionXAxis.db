@@ -2,7 +2,7 @@
 # by using the sampling frequency of the ADCs.
 
 # Giving the frequency in Hz, calculate the time in ns between each sample
-record (calc, "BLEN:$(AREA):$(POS):$(INST):SAMP_TIME") {
+record (calc, "BLEN:$(AREA):$(POS):SAMP_TIME") {
   field(DESC, "Time between samples in ns")
   field(INPA, "BLEN:$(AREA):$(POS):$(AMC):AmcClkFreq CP")
   field(CALC, "1000000000/(2 * A)")
@@ -10,10 +10,10 @@ record (calc, "BLEN:$(AREA):$(POS):$(INST):SAMP_TIME") {
 
 # Calculate the time correspondent to the number of samples of the pre-edge
 # of the weight function
-record (calc, "BLEN:$(AREA):$(POS):$(INST):TIME_PRE_RBV") {
+record (calc, "BLEN:$(AREA):$(POS):TIME_PRE_RBV") {
   field(DESC, "Duration of pre-edge in ns")
-  field(INPA, "BLEN:$(AREA):$(POS):$(INST):SAMP_TIME CP")
-  field(INPB, "BLEN:$(AREA):$(POS):$(INST):NumSamp0RBV")
+  field(INPA, "BLEN:$(AREA):$(POS):SAMP_TIME CP")
+  field(INPB, "BLEN:$(AREA):$(POS):NumSamp0RBV")
   field(CALC, "A * B")
 }
 
@@ -22,7 +22,7 @@ record (calc, "BLEN:$(AREA):$(POS):$(INST):TIME_PRE_RBV") {
 # pre-edge time because the time counts from the beginning of the pre-edge.
 record (calc, "BLEN:$(AREA):$(POS):$(INST):TIME_MID_RBV") {
   field(DESC, "Duration between edges in ns")
-  field(INPA, "BLEN:$(AREA):$(POS):$(INST):SAMP_TIME CP")
+  field(INPA, "BLEN:$(AREA):$(POS):SAMP_TIME CP")
   field(INPB, "BLEN:$(AREA):$(POS):$(INST):TrigDelay1RBV")
   field(CALC, "B*2 * A")
 }
@@ -31,7 +31,7 @@ record (calc, "BLEN:$(AREA):$(POS):$(INST):TIME_MID_RBV") {
 # of the weight function
 record (calc, "BLEN:$(AREA):$(POS):$(INST):TIME_POS_RBV") {
   field(DESC, "Duration of pos-edge in ns")
-  field(INPA, "BLEN:$(AREA):$(POS):$(INST):SAMP_TIME CP")
+  field(INPA, "BLEN:$(AREA):$(POS):SAMP_TIME CP")
   field(INPB, "BLEN:$(AREA):$(POS):$(INST):NumSamp1RBV")
   field(CALC, "A * B")
 }

@@ -2,8 +2,8 @@
 #               DB LOADING
 # ===========================================
 
-dbLoadRecords("db/pyroShutter_inst.db", "P=BLEN:$(AREA):$(POS), INST=0, SCAN=1 second")
-dbLoadRecords("db/pyroShutter_inst.db", "P=BLEN:$(AREA):$(POS), INST=1, SCAN=1 second")
+dbLoadRecords("db/pyroShutter_inst.db", "P=BLEN:$(AREA):$(POS), INST=AMC0, SCAN=1 second")
+dbLoadRecords("db/pyroShutter_inst.db", "P=BLEN:$(AREA):$(POS), INST=AMC1, SCAN=1 second")
 dbLoadRecords("db/pyroShutter.db", "P=BLEN:$(AREA):$(POS), SCAN=1 second")
 
 dbLoadRecords("db/lcls2FPGA.db", "P=BLEN:$(AREA):$(POS), PORT=${BLEN_ASYN_PORT}") 
