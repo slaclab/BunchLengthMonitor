@@ -1,7 +1,0 @@
-file "blenFilters.template" { pattern
-{   AREA ,   POS ,   INST , PYRO_NUM, FILTER_NUM, BIT_NUM }
-{ $(AREA), $(POS), $(INST),     1   ,     1     ,    0    }
-{ $(AREA), $(POS), $(INST),     1   ,     2     ,    1    }
-{ $(AREA), $(POS), $(INST),     2   ,     1     ,    2    }
-{ $(AREA), $(POS), $(INST),     2   ,     2     ,    3    }
-}
