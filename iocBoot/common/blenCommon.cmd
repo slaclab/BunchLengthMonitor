@@ -87,8 +87,8 @@ dbLoadRecords("db/monitorFPGAReboot.db", "P=BLEN:$(AREA):$(POS)")
 dbLoadRecords("db/streamControl.db", "AREA=$(AREA),POS=$(POS),INSTA=$(INST)A,INSTB=$(INST)B")
 
 # Records to manipulate waveforms from detectors
-dbLoadRecords("db/calculatedWF.db", "AREA=$(AREA), POS=$(POS), INST=$(INST)A")
-dbLoadRecords("db/calculatedWF.db", "AREA=$(AREA), POS=$(POS), INST=$(INST)B")
+dbLoadRecords("db/calculatedWF.db", "AREA=$(AREA), POS=$(POS), INST=NX")
+dbLoadRecords("db/calculatedWF.db", "AREA=$(AREA), POS=$(POS), INST=PY")
 #possibly move to MR startup command
 dbLoadRecords("db/processRawWFHeader.db", "AREA=$(AREA), POS=$(POS), INST=$(INST)A")
 dbLoadRecords("db/processRawWFHeader.db", "AREA=$(AREA), POS=$(POS), INST=$(INST)B")

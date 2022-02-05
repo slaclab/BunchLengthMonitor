@@ -44,8 +44,8 @@ cd $(TOP)
 < iocBoot/common/blenCommon.cmd
 
 # Additional Waveform containers for ch1 raw data on AMC0, AMC1
-dbLoadRecords("db/gap_streams.db", "P=BLEN:$(AREA):$(POS):$(INST)C, PORT=${BLEN_ASYN_PORT}, AMC=0")
-dbLoadRecords("db/gap_streams.db", "P=BLEN:$(AREA):$(POS):$(INST)D, PORT=${BLEN_ASYN_PORT}, AMC=1")
+dbLoadRecords("db/gap_streams.db", "P=BLEN:$(AREA):$(POS):PX, PORT=${BLEN_ASYN_PORT}, AMC=0")
+dbLoadRecords("db/gap_streams.db", "P=BLEN:$(AREA):$(POS):NY, PORT=${BLEN_ASYN_PORT}, AMC=1")
 
 # Additional offset coefficients for AMC0, AMC1 ch1 raw data
 dbLoadRecords("db/blen_gap_coefI2.db", "P=BLEN:$(AREA):$(POS):$(INST)A, PORT=${BLEN_ASYN_PORT}, AMC=0")
@@ -56,8 +56,8 @@ dbLoadRecords("db/blen_gap_DspPreprocConfig.db", "P=BLEN:$(AREA):$(POS):$(INST)C
 dbLoadRecords("db/blen_gap_DspPreprocConfig.db", "P=BLEN:$(AREA):$(POS):$(INST)D, PORT=${BLEN_ASYN_PORT}, AMC=1")
 
 # WeightFunction calculations supporting additio of ch1 on AMC0, AMC1
-dbLoadRecords("db/calculatedWF.db", "AREA=$(AREA), POS=$(POS), INST=$(INST)C")
-dbLoadRecords("db/calculatedWF.db", "AREA=$(AREA), POS=$(POS), INST=$(INST)D")
+dbLoadRecords("db/calculatedWF.db", "AREA=$(AREA), POS=$(POS), INST=PX")
+dbLoadRecords("db/calculatedWF.db", "AREA=$(AREA), POS=$(POS), INST=NY")
 
 # Num-sample <--> Time conversion Records supporting ch1 on AMC0, AMC1.
 # Parameterized by per-AMC frequency counter (clock).

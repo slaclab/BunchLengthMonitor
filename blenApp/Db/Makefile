@@ -4,7 +4,7 @@ include $(TOP)/configure/CONFIG
 #  ADD MACRO DEFINITIONS AFTER THIS LINE
 
 DIRS += common
-DIRS += lcls2 mr
+DIRS += lcls2
 
 #----------------------------------------------------
 #  Optimization of db files using dbst (DEFAULT: NO)
