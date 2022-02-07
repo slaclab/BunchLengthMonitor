@@ -47,6 +47,9 @@ cd $(TOP)
 dbLoadRecords("db/gap_streams.db", "P=BLEN:$(AREA):$(POS):PX, PORT=${BLEN_ASYN_PORT}, AMC=0")
 dbLoadRecords("db/gap_streams.db", "P=BLEN:$(AREA):$(POS):NY, PORT=${BLEN_ASYN_PORT}, AMC=1")
 
+dbLoadRecords("db/FPGAsensor.db", "P=BLEN:$(AREA):$(POS), PORT=$(BLEN_ASYN_PORT), AMC=0, SENS=1")
+dbLoadRecords("db/FPGAsensor.db", "P=BLEN:$(AREA):$(POS), PORT=$(BLEN_ASYN_PORT), AMC=1, SENS=1")
+
 # Additional offset coefficients for AMC0, AMC1 ch1 raw data
 dbLoadRecords("db/blen_gap_coefI2.db", "P=BLEN:$(AREA):$(POS):$(INST)A, PORT=${BLEN_ASYN_PORT}, AMC=0")
 dbLoadRecords("db/blen_gap_coefI2.db", "P=BLEN:$(AREA):$(POS):$(INST)B, PORT=${BLEN_ASYN_PORT}, AMC=1")
