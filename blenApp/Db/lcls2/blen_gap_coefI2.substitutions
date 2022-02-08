@@ -5,11 +5,11 @@
 
 file "RegisterDoubleOut.template" { pattern
 { P,              R,            DESC,                   PINI,  SCAN,        PORT,        EGU,          PARAM      }
-{ $(P),     CoefI2,        "Coef I2 - Offset",            "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefI2  }
+{ $(P),     $(AMC):CoefI2,        "Coef I2 - Offset",            "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefI2  }
 }
 
 file "RegisterDoubleOutRBV.template" { pattern
 { P,              R,            DESC,                   PINI,  SCAN,        PORT,        EGU,          PARAM      }
-{ $(P),     CoefI2RBV,     "Coef I2- Offset",            "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefI2  }
+{ $(P),     $(AMC):CoefI2RBV,     "Coef I2- Offset",            "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefI2  }
 }
 

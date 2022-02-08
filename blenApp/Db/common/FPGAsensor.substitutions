@@ -4,7 +4,7 @@
 # Single register
 file "RegisterIn.template" { pattern
 { P,          R,              DESC,                           PINI,   SCAN,       PORT, EGU,  PARAM         }
-{ $(P), AMC$(AMC):SENS$(SENS):RATE,           "Trigger rate over 1 sec",      "YES",  "1 second", $(PORT),   "Hz", AMC$(AMC):SENS$(SENS):RATE          }
+{ $(P), $(AMC)$(SENS):RATE,           "Trigger rate over 1 sec",      "YES",  "1 second", $(PORT),   "Hz", AMC$(AMC):SENS$(SENS):RATE          }
 }
 
 #======================================
@@ -13,18 +13,18 @@ file "RegisterIn.template" { pattern
 
 file "RegisterOut.template" { pattern
 { P,        R,              DESC,                                       PINI,   SCAN,       PORT,  PARAM       }
-{ $(P),AMC$(AMC):SENS$(SENS):Mode,             "BLEN mode, sensor $(SENS)"               "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS$(SENS):Mode }
-{ $(P),AMC$(AMC):SENS$(SENS):NumSamp0,           "Number of samples AMC sensor 0"     "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS$(SENS):NumSamp0 }
-{ $(P),AMC$(AMC):SENS$(SENS):NumSamp1,           "Number of samples 1, sensor 0"     "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS$(SENS):NumSamp1 }
-{ $(P),AMC$(AMC):SENS$(SENS):TrigDelay1,       ""                                  "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS$(SENS):TrigDelay1 }
-{ $(P),AMC$(AMC):SENS$(SENS):TrigDelay2,       ""                                  "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS$(SENS):TrigDelay2 }
+{ $(P),$(AMC)$(SENS):Mode,             "BLEN mode, sensor $(SENS)"               "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS$(SENS):Mode }
+{ $(P),$(AMC)$(SENS):NumSamp0,           "Number of samples AMC sensor 0"     "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS$(SENS):NumSamp0 }
+{ $(P),$(AMC)$(SENS):NumSamp1,           "Number of samples 1, sensor 0"     "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS$(SENS):NumSamp1 }
+{ $(P),$(AMC)$(SENS):TrigDelay1,       ""                                  "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS$(SENS):TrigDelay1 }
+{ $(P),$(AMC)$(SENS):TrigDelay2,       ""                                  "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS$(SENS):TrigDelay2 }
 }
 
 file "RegisterOutRBV.template" { pattern
 { P,    R,                   DESC,                               PINI,   SCAN,        PORT,       PARAM       }
-{ $(P),AMC$(AMC):SENS$(SENS):ModeRBV,           "BLEN mode, sensor 0"               "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS$(SENS):Mode }
-{ $(P),AMC$(AMC):SENS$(SENS):NumSamp0RBV,         "Number of samples 0, sensor 0"     "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS$(SENS):NumSamp0 }
-{ $(P),AMC$(AMC):SENS$(SENS):NumSamp1RBV,         "Number of samples 1, sensor 0"     "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS$(SENS):NumSamp1 }
-{ $(P),AMC$(AMC):SENS$(SENS):TrigDelay1RBV,     ""                                  "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS$(SENS):TrigDelay1 }
-{ $(P),AMC$(AMC):SENS$(SENS):TrigDelay2RBV,     ""                                  "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS$(SENS):TrigDelay2 }
+{ $(P),$(AMC)$(SENS):ModeRBV,           "BLEN mode, sensor 0"               "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS$(SENS):Mode }
+{ $(P),$(AMC)$(SENS):NumSamp0RBV,         "Number of samples 0, sensor 0"     "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS$(SENS):NumSamp0 }
+{ $(P),$(AMC)$(SENS):NumSamp1RBV,         "Number of samples 1, sensor 0"     "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS$(SENS):NumSamp1 }
+{ $(P),$(AMC)$(SENS):TrigDelay1RBV,     ""                                  "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS$(SENS):TrigDelay1 }
+{ $(P),$(AMC)$(SENS):TrigDelay2RBV,     ""                                  "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS$(SENS):TrigDelay2 }
 }

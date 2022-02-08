@@ -10,8 +10,8 @@
 ########################################################################################################################
 
 # AMC Stream Interface
-/Stream0                                                             AMC0:StreamRaw 
-/Stream4                                                             AMC1:StreamRaw
+/Stream0                                                             AMC0:StreamRaw0 
+/Stream4                                                             AMC1:StreamRaw0
 /Stream3                                                             AMC0:WeightFunction
 /Stream7                                                             AMC1:WeightFunction
 

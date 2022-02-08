@@ -1,0 +1,11 @@
+# These are the records that transform tick counts to time in nanoseconds,
+# by using the sampling frequency of the ADCs.
+
+# Giving the frequency in Hz, calculate the time in ns between each sample
+record (calc, "BLEN:$(AREA):$(POS):$(AMC):SAMP_TIME") {
+  field(DESC, "Time between samples in ns")
+  field(INPA, "BLEN:$(AREA):$(POS):$(AMC):AmcClkFreq CP")
+  field(CALC, "1000000000/(2 * A)")
+}
+
+

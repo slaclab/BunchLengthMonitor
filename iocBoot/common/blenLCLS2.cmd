@@ -2,7 +2,8 @@
 #               DB LOADING
 # ===========================================
 
-dbLoadRecords("db/blenLCLS2.db", "P=BLEN:$(AREA):$(POS), INST0=$(INST)A, INST1=$(INST)B, SCAN=1 second")
+###############For Pyros
+###############dbLoadRecords("db/blenLCLS2.db", "P=BLEN:$(AREA):$(POS), INST0=$(INST)A, INST1=$(INST)B, SCAN=1 second")
 
 dbLoadRecords("db/lcls2FPGA.db", "P=BLEN:$(AREA):$(POS), PORT=${BLEN_ASYN_PORT}") 
 dbLoadRecords("db/bpmSelect.db", "P=BLEN:$(AREA):$(POS)")

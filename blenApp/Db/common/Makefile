@@ -85,7 +85,9 @@ DB += blen.db
 # --------------------------------------------------
 DB += commonFPGA.db
 DB += FPGAsensor.db
-DB += weightFunctionXAxis.db
+DB += data_streams.db
+DB += weightFunctionAmc.db
+DB += weightFunctionSensor.db
 DB += calculatedWF.db
 DB += streamControl.db
 DB += iocMeta.db

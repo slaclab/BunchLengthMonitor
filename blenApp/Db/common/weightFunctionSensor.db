@@ -1,43 +1,33 @@
-# These are the records that transform tick counts to time in nanoseconds,
-# by using the sampling frequency of the ADCs.
-
-# Giving the frequency in Hz, calculate the time in ns between each sample
-record (calc, "BLEN:$(AREA):$(POS):$(INST):SAMP_TIME") {
-  field(DESC, "Time between samples in ns")
-  field(INPA, "BLEN:$(AREA):$(POS):$(CLK_INST):AmcClkFreq CP")
-  field(CALC, "1000000000/(2 * A)")
-}
-
 # Calculate the time correspondent to the number of samples of the pre-edge
 # of the weight function
-record (calc, "BLEN:$(AREA):$(POS):$(INST):TIME_PRE_RBV") {
+record (calc, "BLEN:$(AREA):$(POS):$(AMC)$(INST):TIME_PRE_RBV") {
   field(DESC, "Duration of pre-edge in ns")
-  field(INPA, "BLEN:$(AREA):$(POS):$(INST):SAMP_TIME CP")
-  field(INPB, "BLEN:$(AREA):$(POS):$(INST):NumSamp0RBV")
+  field(INPA, "BLEN:$(AREA):$(POS):$(AMC):SAMP_TIME CP")
+  field(INPB, "BLEN:$(AREA):$(POS):$(AMC)$(INST):NumSamp0RBV")
   field(CALC, "A * B")
 }
 
 # Calculate the time correspondent to the number of samples of between edges
 # of the weight function. It must be at least the same size of the
 # pre-edge time because the time counts from the beginning of the pre-edge.
-record (calc, "BLEN:$(AREA):$(POS):$(INST):TIME_MID_RBV") {
+record (calc, "BLEN:$(AREA):$(POS):$(AMC)$(INST):TIME_MID_RBV") {
   field(DESC, "Duration between edges in ns")
-  field(INPA, "BLEN:$(AREA):$(POS):$(INST):SAMP_TIME CP")
-  field(INPB, "BLEN:$(AREA):$(POS):$(INST):TrigDelay1RBV")
+  field(INPA, "BLEN:$(AREA):$(POS):$(AMC):SAMP_TIME CP")
+  field(INPB, "BLEN:$(AREA):$(POS):$(AMC)$(INST):TrigDelay1RBV")
   field(CALC, "B*2 * A")
 }
 
 # Calculate the time correspondent to the number of samples of the pos-edge
 # of the weight function
-record (calc, "BLEN:$(AREA):$(POS):$(INST):TIME_POS_RBV") {
+record (calc, "BLEN:$(AREA):$(POS):$(AMC)$(INST):TIME_POS_RBV") {
   field(DESC, "Duration of pos-edge in ns")
-  field(INPA, "BLEN:$(AREA):$(POS):$(INST):SAMP_TIME CP")
-  field(INPB, "BLEN:$(AREA):$(POS):$(INST):NumSamp1RBV")
+  field(INPA, "BLEN:$(AREA):$(POS):$(AMC):SAMP_TIME CP")
+  field(INPB, "BLEN:$(AREA):$(POS):$(AMC)$(INST):NumSamp1RBV")
   field(CALC, "A * B")
 }
 
 # Desired time of the weight function pre-edge
-record (ao, "BLEN:$(AREA):$(POS):$(INST):TIME_PRE") {
+record (ao, "BLEN:$(AREA):$(POS):$(AMC)$(INST):TIME_PRE") {
   field(DESC, "Duration of pre-edge in ns")
   info(autosaveFields, "VAL")
 }
@@ -45,17 +35,17 @@ record (ao, "BLEN:$(AREA):$(POS):$(INST):TIME_PRE") {
 # Calculate the number of samples of the pre-edge of the weight function 
 # giving the correspondent time and writes it to the firmware. Only even
 # numbers are allowed in the FPGA register (that is why we use ((~0)-1)&
-record (calcout, "BLEN:$(AREA):$(POS):$(INST):NumSamp0_CLC") {
+record (calcout, "BLEN:$(AREA):$(POS):$(AMC)$(INST):NumSamp0_CLC") {
   field(DESC, "Number samples of pre-edge")
-  field(INPA, "BLEN:$(AREA):$(POS):$(INST):TIME_PRE CP")
-  field(INPB, "BLEN:$(AREA):$(POS):$(CLK_INST):AmcClkFreq CP")
+  field(INPA, "BLEN:$(AREA):$(POS):$(AMC)$(INST):TIME_PRE CP")
+  field(INPB, "BLEN:$(AREA):$(POS):$(AMC):AmcClkFreq CP")
   field(CALC, "((~0)-1)&FLOOR((2*A*B)/1000000000)")
-  field(OUT, "BLEN:$(AREA):$(POS):$(INST):NumSamp0 PP")
+  field(OUT, "BLEN:$(AREA):$(POS):$(AMC)$(INST):NumSamp0 PP")
   field(DOPT, "Use CALC")
 }
 
 # Desired time of the weight function between edges
-record (ao, "BLEN:$(AREA):$(POS):$(INST):TIME_MID") {
+record (ao, "BLEN:$(AREA):$(POS):$(AMC)$(INST):TIME_MID") {
   field(DESC, "Duration of between edge in ns")
   info(autosaveFields, "VAL")
 }
@@ -63,10 +53,10 @@ record (ao, "BLEN:$(AREA):$(POS):$(INST):TIME_MID") {
 # Time between edges is doubled related to the edges. Also, timing zero for
 # this time is exactly timing zero for the pre-edge. So, we must not allow
 # that the between edges time keeps greater than the pre-edge.
-record (calc, "BLEN:$(AREA):$(POS):$(INST):TIME_MIDC") {
+record (calc, "BLEN:$(AREA):$(POS):$(AMC)$(INST):TIME_MIDC") {
   field(DESC, "Duration of between edge in ns")
-  field(INPA, "BLEN:$(AREA):$(POS):$(INST):TIME_PRE CP")
-  field(INPB, "BLEN:$(AREA):$(POS):$(INST):TIME_MID CP")
+  field(INPA, "BLEN:$(AREA):$(POS):$(AMC)$(INST):TIME_PRE CP")
+  field(INPB, "BLEN:$(AREA):$(POS):$(AMC)$(INST):TIME_MID CP")
   field(CALC, "A<B? B/2 : A/2")
 }
 
@@ -74,17 +64,17 @@ record (calc, "BLEN:$(AREA):$(POS):$(INST):TIME_MIDC") {
 # giving the correspondent time and writes it to the firmware. The time
 # here is twice the time in pre and post edges. Only even numbers are allowed
 # in the FPGA register (that is why we use ((~0)-1)&).
-record (calcout, "BLEN:$(AREA):$(POS):$(INST):TrigDelay1_CLC") {
+record (calcout, "BLEN:$(AREA):$(POS):$(AMC)$(INST):TrigDelay1_CLC") {
   field(DESC, "Number samples of between edges")
-  field(INPA, "BLEN:$(AREA):$(POS):$(INST):TIME_MIDC CP")
-  field(INPB, "BLEN:$(AREA):$(POS):$(CLK_INST):AmcClkFreq CP")
+  field(INPA, "BLEN:$(AREA):$(POS):$(AMC)$(INST):TIME_MIDC CP")
+  field(INPB, "BLEN:$(AREA):$(POS):$(AMC):AmcClkFreq CP")
   field(CALC, "((~0)-1)&FLOOR((2*A*B)/1000000000)")
-  field(OUT, "BLEN:$(AREA):$(POS):$(INST):TrigDelay1 PP")
+  field(OUT, "BLEN:$(AREA):$(POS):$(AMC)$(INST):TrigDelay1 PP")
   field(DOPT, "Use CALC")
 }
 
 # Desired time of the weight function pos-edge
-record (ao, "BLEN:$(AREA):$(POS):$(INST):TIME_POS") {
+record (ao, "BLEN:$(AREA):$(POS):$(AMC)$(INST):TIME_POS") {
   field(DESC, "Duration of pos-edge in ns")
   info(autosaveFields, "VAL")
 }
@@ -92,21 +82,21 @@ record (ao, "BLEN:$(AREA):$(POS):$(INST):TIME_POS") {
 # Calculate the number of samples of the pos-edge of the weight function 
 # giving the correspondent time and writes it to the firmware. Only even
 # numbers are allowed in the FPGA register (that is why we use ((~0)-1)&).
-record (calcout, "BLEN:$(AREA):$(POS):$(INST):NumSamp1_CLC") {
+record (calcout, "BLEN:$(AREA):$(POS):$(AMC)$(INST):NumSamp1_CLC") {
   field(DESC, "Number samples of pos-edge")
-  field(INPA, "BLEN:$(AREA):$(POS):$(INST):TIME_POS CP")
-  field(INPB, "BLEN:$(AREA):$(POS):$(CLK_INST):AmcClkFreq CP")
+  field(INPA, "BLEN:$(AREA):$(POS):$(AMC)$(INST):TIME_POS CP")
+  field(INPB, "BLEN:$(AREA):$(POS):$(AMC):AmcClkFreq CP")
   field(CALC, "((~0)-1)&FLOOR((2*A*B)/1000000000)")
-  field(OUT, "BLEN:$(AREA):$(POS):$(INST):NumSamp1 PP")
+  field(OUT, "BLEN:$(AREA):$(POS):$(AMC)$(INST):NumSamp1 PP")
   field(DOPT, "Use CALC")
 }
 
 # Create a waveform with the sampling time. This will be the X axis of the
 # waveform.
-record (aSub, "BLEN:$(AREA):$(POS):$(INST):SampTime") {
-  field(SNAM, "calcTimeArray")
-  field(FTA, "LONG")
-  field(FTVA, "DOUBLE")
-  field(NOVA, "1024")
-  field(INPA, "BLEN:$(AREA):$(POS):$(CLK_INST):AmcClkFreq CP")
-}
+#record (aSub, "BLEN:$(AREA):$(POS):$(AMC)$(INST):SampTime") {
+#  field(SNAM, "calcTimeArray")
+#  field(FTA, "LONG")
+#  field(FTVA, "DOUBLE")
+#  field(NOVA, "1024")
+#  field(INPA, "BLEN:$(AREA):$(POS):$(AMC):AmcClkFreq CP")
+#}

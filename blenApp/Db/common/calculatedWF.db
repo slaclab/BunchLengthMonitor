@@ -1,18 +1,18 @@
 # Weight function calculated from pre edge, edge, and pos edge sample amounts.
-record (acalcout, "BLEN:$(AREA):$(POS):$(INST)_SCL_WF_CLC") {
+record (acalcout, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):SCL_WF_CLC") {
   field(DESC, "Weight function")
   field(CALC, "ARR(1){0,A-1} + ARR(-1){B*2,B*2+C-1}")
   field(NELM, "1024")
-  field(INPA, "BLEN:$(AREA):$(POS):$(INST):NumSamp0 CP")
-  field(INPB, "BLEN:$(AREA):$(POS):$(INST):TrigDelay1 CP")
-  field(INPC, "BLEN:$(AREA):$(POS):$(INST):NumSamp1 CP")
+  field(INPA, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):NumSamp0 CP")
+  field(INPB, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):TrigDelay1 CP")
+  field(INPC, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):NumSamp1 CP")
 }
 
 # Transform an acalcout AVAL info into an waveform VAL, just to maintain
 # compatibility with previous systems.
-record (waveform, "BLEN:$(AREA):$(POS):$(INST)_SCL_WF") {
+record (waveform, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):SCL_WF") {
   field(DESC, "Weight function")
-  field(INP, "BLEN:$(AREA):$(POS):$(INST)_SCL_WF_CLC.AVAL CP")
+  field(INP, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):SCL_WF_CLC.AVAL CP")
   field(NELM, "1024")
   field(FTVL, "SHORT")
 }
@@ -23,80 +23,80 @@ record (waveform, "BLEN:$(AREA):$(POS):$(INST)_SCL_WF") {
 
 # Need to use 2 acalcouts to get MAX and MIN from the waveform because the CALC
 # field is too small (36 characters)
-record (acalcout, "BLEN:$(AREA):$(POS):$(INST)_RWF_MAX") {
+record (acalcout, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):RWF_MAX") {
   field(DESC, "Max value of the raw waveform")
   field(CALC, "AMAX(AA)")
-  field(INAA, "BLEN:$(AREA):$(POS):$(INST):RWF_U16.VALA CP")
+  field(INAA, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):RWF_U16.VALA CP")
   field(DOPT, "Use CALC")
   field(NELM, "1024")
 }
 
-record (acalcout, "BLEN:$(AREA):$(POS):$(INST)_RWF_MIN") {
+record (acalcout, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):RWF_MIN") {
   field(DESC, "Min value of the raw waveform")
   field(CALC, "AMIN(AA)")
-  field(INAA, "BLEN:$(AREA):$(POS):$(INST):RWF_U16.VALA CP")
+  field(INAA, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):RWF_U16.VALA CP")
   field(DOPT, "Use CALC")
   field(NELM, "1024")
 }
 
 # Change the top of the visual weight function only if it is greater than 35%
 # of the last calculated top value.
-record (acalcout, "BLEN:$(AREA):$(POS):$(INST)_WF_MAX") {
+record (acalcout, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):WF_MAX") {
   field(DESC, "Smooth function for the top")
   field(CALC, "ABS(A-C)>ABS(A-B)*0.35?A:C")
-  field(INPA, "BLEN:$(AREA):$(POS):$(INST)_RWF_MAX CP")
-  field(INPB, "BLEN:$(AREA):$(POS):$(INST)_RWF_MIN CP")
-  field(OUT, "BLEN:$(AREA):$(POS):$(INST)_WF_MAX.C")
+  field(INPA, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):RWF_MAX CP")
+  field(INPB, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):RWF_MIN CP")
+  field(OUT, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):WF_MAX.C")
   field(DOPT, "Use CALC")
   field(NELM, "1024")
 }
 
 # Change the bottom of the visual weight function only if it is greater than 35%
 # of the last calculated bottom value.
-record (acalcout, "BLEN:$(AREA):$(POS):$(INST)_WF_MIN") {
+record (acalcout, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):WF_MIN") {
   field(DESC, "Smooth function for the bottom")
   field(CALC, "ABS(B-C)>ABS(A-B)*0.35?B:C")
-  field(INPA, "BLEN:$(AREA):$(POS):$(INST)_RWF_MAX CP")
-  field(INPB, "BLEN:$(AREA):$(POS):$(INST)_RWF_MIN CP")
-  field(OUT, "BLEN:$(AREA):$(POS):$(INST)_WF_MIN.C")
+  field(INPA, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):RWF_MAX CP")
+  field(INPB, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):RWF_MIN CP")
+  field(OUT, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):WF_MIN.C")
   field(DOPT, "Use CALC")
   field(NELM, "1024")
 }
 
 # Line before the edge (corresponding to +1 of the Weight Function)
-record (acalcout, "BLEN:$(AREA):$(POS):$(INST)_SCL_VWF_PRE") {
+record (acalcout, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):SCL_VWF_PRE") {
   field(DESC, "Equivalent to +1 in Weight")
   # Fills the array with the maximum of the raw waveform until the edge.
   # All other elements remain zero.
   field(CALC, "ARR(E){0,A-1}")
   field(NELM, "1024")
   # Number of samples pre-edge
-  field(INPA, "BLEN:$(AREA):$(POS):$(INST):NumSamp0 CP")
-  field(INPE, "BLEN:$(AREA):$(POS):$(INST)_WF_MAX CP")
+  field(INPA, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):NumSamp0 CP")
+  field(INPE, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):WF_MAX CP")
   # Raw waveform 16 bits.
-  field(INAA, "BLEN:$(AREA):$(POS):$(INST):RWF_U16.VALA CP")
+  field(INAA, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):RWF_U16.VALA CP")
 }
 
 # Line after the edge (corresponding to -1 of the Weight Function)
-record (acalcout, "BLEN:$(AREA):$(POS):$(INST)_SCL_VWF_POS") {
+record (acalcout, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):SCL_VWF_POS") {
   field(DESC, "Equivalent to -1 in Weight")
   # Fills the array with the minimum of the raw waveform after the edge.
   # All other elements remain zero.
   field(CALC, "ARR(D){B*2,B*2+C-1}")
   field(NELM, "1024")
   # Number of samples pre-edge
-  field(INPA, "BLEN:$(AREA):$(POS):$(INST):NumSamp0 CP")
+  field(INPA, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):NumSamp0 CP")
   # Number of samples of the edge
-  field(INPB, "BLEN:$(AREA):$(POS):$(INST):TrigDelay1 CP")
+  field(INPB, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):TrigDelay1 CP")
   # Number of samples pos-edge
-  field(INPC, "BLEN:$(AREA):$(POS):$(INST):NumSamp1 CP")
-  field(INPD, "BLEN:$(AREA):$(POS):$(INST)_WF_MIN CP")
+  field(INPC, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):NumSamp1 CP")
+  field(INPD, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):WF_MIN CP")
   # Raw waveform 16 bits.
-  field(INAA, "BLEN:$(AREA):$(POS):$(INST):RWF_U16.VALA CP")
+  field(INAA, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):RWF_U16.VALA CP")
 }
 
 # Line of the edge (corresponding to 0 of the Weight Function)
-record (acalcout, "BLEN:$(AREA):$(POS):$(INST)_SCL_VWF_MID") {
+record (acalcout, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):SCL_VWF_MID") {
   field(DESC, "Equivalent to 0 in Weight")
   # Fills the array with the average of the maximum and minimum raw waveform
   # and places it between the pre and the pos-edge curves.
@@ -104,139 +104,139 @@ record (acalcout, "BLEN:$(AREA):$(POS):$(INST)_SCL_VWF_MID") {
   field(CALC, "ARR((D+E)/2){A,B*2-1}")
   field(NELM, "1024")
   # Number of samples pre-edge
-  field(INPA, "BLEN:$(AREA):$(POS):$(INST):NumSamp0 CP")
+  field(INPA, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):NumSamp0 CP")
   # Number of samples of the edge
-  field(INPB, "BLEN:$(AREA):$(POS):$(INST):TrigDelay1 CP")
-  field(INPD, "BLEN:$(AREA):$(POS):$(INST)_WF_MAX CP")
-  field(INPE, "BLEN:$(AREA):$(POS):$(INST)_WF_MIN CP")
+  field(INPB, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):TrigDelay1 CP")
+  field(INPD, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):WF_MAX CP")
+  field(INPE, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):WF_MIN CP")
   # Raw waveform 16 bits.
-  field(INAA, "BLEN:$(AREA):$(POS):$(INST):RWF_U16.VALA CP")
+  field(INAA, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):RWF_U16.VALA CP")
 }
 
 # Last part of the weight function, after the pos-edge.
-record (acalcout, "BLEN:$(AREA):$(POS):$(INST)_SCL_VWF_FINAL") {
+record (acalcout, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):SCL_VWF_FINAL") {
   field(DESC, "Final portion, after pos-edge")
   # Obtain the same value as used for the edge, placing it at the end of the
   # curve.
   field(CALC, "ARR((D+E)/2){B*2+C,-1}")
   field(NELM, "1024")
   # Number of samples pre-edge
-  field(INPA, "BLEN:$(AREA):$(POS):$(INST):NumSamp0 CP")
+  field(INPA, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):NumSamp0 CP")
   # Number of samples of the edge
-  field(INPB, "BLEN:$(AREA):$(POS):$(INST):TrigDelay1 CP")
+  field(INPB, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):TrigDelay1 CP")
   # Number of samples pos-edge
-  field(INPC, "BLEN:$(AREA):$(POS):$(INST):NumSamp1 CP")
-  field(INPD, "BLEN:$(AREA):$(POS):$(INST)_WF_MAX CP")
-  field(INPE, "BLEN:$(AREA):$(POS):$(INST)_WF_MIN CP")
+  field(INPC, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):NumSamp1 CP")
+  field(INPD, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):WF_MAX CP")
+  field(INPE, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):WF_MIN CP")
   # Raw waveform 16 bits.
-  field(INAA, "BLEN:$(AREA):$(POS):$(INST):RWF_U16.VALA CP")
+  field(INAA, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):RWF_U16.VALA CP")
 }
 
 # This is the weight function multiplied by the raw min and max. The only
 # purpose is to fit the curve on the same chart as the raw data using the
 # same scale in the y-axis.
-record (acalcout, "BLEN:$(AREA):$(POS):$(INST)_SCL_VWF") {
+record (acalcout, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):SCL_VWF") {
   field(DESC, "Weight scaled for best plot")
   field(CALC, "AA+BB+CC+DD")
   field(NELM, "1024")
-  field(INAA, "BLEN:$(AREA):$(POS):$(INST)_SCL_VWF_PRE.AVAL CP")
-  field(INBB, "BLEN:$(AREA):$(POS):$(INST)_SCL_VWF_POS.AVAL CP")
-  field(INCC, "BLEN:$(AREA):$(POS):$(INST)_SCL_VWF_MID.AVAL CP")
-  field(INDD, "BLEN:$(AREA):$(POS):$(INST)_SCL_VWF_FINAL.AVAL CP")
+  field(INAA, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):SCL_VWF_PRE.AVAL CP")
+  field(INBB, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):SCL_VWF_POS.AVAL CP")
+  field(INCC, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):SCL_VWF_MID.AVAL CP")
+  field(INDD, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):SCL_VWF_FINAL.AVAL CP")
 }
 
 # Calculated waveforms when multiplying raw for weight
-record (acalcout, "BLEN:$(AREA):$(POS):$(INST)_S_P_WF_CLC") {
+record (acalcout, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):S_P_WF_CLC") {
   field(DESC, "Raw times weight")
-  field(INAA, "BLEN:$(AREA):$(POS):$(INST):RWF_U16.VALA CP")
-  field(INBB, "BLEN:$(AREA):$(POS):$(INST)_SCL_WF_CLC.AVAL CP")
+  field(INAA, "BLEN:$(AREA):$(POS):$(AMC)$(SENS)::RWF_U16.VALA CP")
+  field(INBB, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):SCL_WF_CLC.AVAL CP")
   field(NELM, "1024")
   field(CALC, "AA * BB")
 }
 
 # Transform an acalcout AVAL info into an waveform VAL, just to maintain
 # compatibility with previous systems.
-record (waveform, "BLEN:$(AREA):$(POS):$(INST)_S_P_WF") {
+record (waveform, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):S_P_WF") {
   field(DESC, "Raw times weight")
-  field(INP, "BLEN:$(AREA):$(POS):$(INST)_S_P_WF_CLC.AVAL CP")
+  field(INP, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):S_P_WF_CLC.AVAL CP")
   field(NELM, "1024")
   field(FTVL, "SHORT")
 }
 
 # NumberSamples0 follows a linear proportionality with the coefficient A0.
 # We need to maintain the ratio A0 = ConstantA0/NumberSamples0.
-#record (calcout, "BLEN:$(AREA):$(POS):$(INST)_A0_NS0") {
+#record (calcout, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):A0_NS0") {
 #  field(DESC, "Change A0, when NumSamp0 changes")
-#  field(INPA, "BLEN:$(AREA):$(POS):$(INST):NumSamp0 CP")
-#  field(INPB, "BLEN:$(AREA):$(POS):$(INST)_A0_CONST CP")
+#  field(INPA, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):NumSamp0 CP")
+#  field(INPB, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):A0_CONST CP")
 #  field(CALC, "A=0? B : B/A")
 #  field(DOPT, "Use CALC")
-#  field(OUT, "BLEN:$(AREA):$(POS):$(INST):CoefA0 PP")
+#  field(OUT, "BLEN:$(AREA):$(POS):$(AMC):CoefA0 PP")
 #}
 
 # NumberSamples1 follows a linear proportionality with the coefficient A1.
 # We need to maintain the ratio A1 = ConstantA1/NumberSamples1.
-#record (calcout, "BLEN:$(AREA):$(POS):$(INST)_A1_NS1") {
+#record (calcout, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):A1_NS1") {
 #  field(DESC, "Change A1, when NumSamp1 changes")
-#  field(INPA, "BLEN:$(AREA):$(POS):$(INST):NumSamp1 CP")
-#  field(INPB, "BLEN:$(AREA):$(POS):$(INST)_A1_CONST CP")
+#  field(INPA, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):NumSamp1 CP")
+#  field(INPB, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):A1_CONST CP")
 #  field(CALC, "A=0? B : B/A")
 #  field(DOPT, "Use CALC")
-#  field(OUT, "BLEN:$(AREA):$(POS):$(INST):CoefA1 PP")
+#  field(OUT, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):CoefA1 PP")
 #}
 
 # Constant A0, used by A0_NS0, can be changed in runtime, if needed.
-record (ao, "BLEN:$(AREA):$(POS):$(INST)_A0_CONST") {
+record (ao, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):A0_CONST") {
   field(DESC, "Constant A0, used by A0_NS0")
   info(autosaveFields, "VAL")
 }
 
 # Constant A1, used by A1_NS1, can be changed in runtime, if needed.
-record (ao, "BLEN:$(AREA):$(POS):$(INST)_A1_CONST") {
+record (ao, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):A1_CONST") {
   field(DESC, "Constant A1, used by A1_NS1")
   info(autosaveFields, "VAL")
 }
 
 # New A0 target, desired by the user
-record (ao, "BLEN:$(AREA):$(POS):$(INST)_Reset_A0") {
+record (ao, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):Reset_A0") {
   field(DESC, "New A0 target, desired by the user")
   field(PREC, "7")
 }
 
 # New A1 target, desired by the user
-record (ao, "BLEN:$(AREA):$(POS):$(INST)_Reset_A1") {
+record (ao, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):Reset_A1") {
   field(DESC, "New A1 target, desired by the user")
   field(PREC, "7")
 }
 
 # When A0 target changes, A0 constant also changes, based on the value of
 # Number Samples 0, in a way that the coefficient A0 hits the desired target.
-record (calcout, "BLEN:$(AREA):$(POS):$(INST)_CALC_Const_A0") {
+record (calcout, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):CALC_Const_A0") {
   field(DESC, "Change Const A0, when target A0 changes")
-  field(INPA, "BLEN:$(AREA):$(POS):$(INST):NumSamp0")
-  field(INPB, "BLEN:$(AREA):$(POS):$(INST)_Reset_A0 CP")
+  field(INPA, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):NumSamp0")
+  field(INPB, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):Reset_A0 CP")
   field(CALC, "A * B")
   field(DOPT, "Use CALC")
   field(OOPT, "On Change")
-  field(OUT, "BLEN:$(AREA):$(POS):$(INST)_A0_CONST PP")
+  field(OUT, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):A0_CONST PP")
 }
 
 # When A1 target changes, A1 constant also changes, based on the value of
 # Number Samples 1, in a way that the coefficient A1 hits the desired target.
-record (calcout, "BLEN:$(AREA):$(POS):$(INST)_CALC_Const_A1") {
+record (calcout, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):CALC_Const_A1") {
   field(DESC, "Change Cons A1, when target A1 changes")
-  field(INPA, "BLEN:$(AREA):$(POS):$(INST):NumSamp1")
-  field(INPB, "BLEN:$(AREA):$(POS):$(INST)_Reset_A1 CP")
+  field(INPA, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):NumSamp1")
+  field(INPB, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):Reset_A1 CP")
   field(CALC, "A * B")
   field(DOPT, "Use CALC")
   field(OOPT, "On Change")
-  field(OUT, "BLEN:$(AREA):$(POS):$(INST)_A1_CONST PP")
+  field(OUT, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):A1_CONST PP")
 }
 
-record (aSub, "BLEN:$(AREA):$(POS):$(INST):RWF_U16") {
+record (aSub, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):RWF_U16") {
   field(DESC, "Slow raw waveform")
   field(SNAM, "calcRWF16")
-  field(INPA, "BLEN:$(AREA):$(POS):$(INST):R_WF")
+  field(INPA, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):R_WF")
   field(NOA, "1024")
   field(NOVA, "1024")
   field(FTA, "SHORT")
@@ -244,29 +244,13 @@ record (aSub, "BLEN:$(AREA):$(POS):$(INST):RWF_U16") {
   field(SCAN, "1 second") 
 }
 
-record (aSub, "BLEN:$(AREA):$(POS):$(INST):IWF_U16") {
+record (aSub, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):IWF_U16") {
   field(DESC, "Slow integration window waveform")
   field(SNAM, "calcRWF16")
-  field(INPA, "BLEN:$(AREA):$(POS):$(INST):IWF")
+  field(INPA, "BLEN:$(AREA):$(POS):$(AMC):IWF")
   field(NOA, "1024")
   field(NOVA, "1024")
   field(FTA, "SHORT")
   field(FTVA, "SHORT")
   field(SCAN, "1 second") 
 }
-
-# Transform Nel in pC
-record (calc, "BLEN:$(AREA):$(POS):$(INST)_TMIT") {
-  field(DESC, "Transform Nel in pC")
-  field(INPA, "BLEN:$(AREA):$(POS):$(INST)_TMIT_NEL CP")
-  field(CALC, "A * 1.60217662e-7")
-  field(EGU, "pC")
-}
-
-# Transform Nel in nC
-record (calc, "BLEN:$(AREA):$(POS):$(INST)_TMIT_NC") {
-  field(DESC, "Transform Nel in nC")
-  field(INPA, "BLEN:$(AREA):$(POS):$(INST)_TMIT_NEL CP")
-  field(CALC, "A * 1.60217662e-10")
-  field(EGU, "pC")
-} 

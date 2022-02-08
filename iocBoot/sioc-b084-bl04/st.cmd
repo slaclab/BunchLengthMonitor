@@ -44,28 +44,23 @@ cd $(TOP)
 < iocBoot/common/blenCommon.cmd
 
 # Additional Waveform containers for ch1 raw data on AMC0, AMC1
-dbLoadRecords("db/gap_streams.db", "P=BLEN:$(AREA):$(POS):PX, PORT=${BLEN_ASYN_PORT}, AMC=0")
-dbLoadRecords("db/gap_streams.db", "P=BLEN:$(AREA):$(POS):NY, PORT=${BLEN_ASYN_PORT}, AMC=1")
+dbLoadRecords("db/data_streams.db", "P=BLEN:$(AREA):$(POS), PORT=${BLEN_ASYN_PORT}, AMC=0, SENS=1")
+dbLoadRecords("db/data_streams.db", "P=BLEN:$(AREA):$(POS), PORT=${BLEN_ASYN_PORT}, AMC=1, SENS=1")
 
 dbLoadRecords("db/FPGAsensor.db", "P=BLEN:$(AREA):$(POS), PORT=$(BLEN_ASYN_PORT), AMC=0, SENS=1")
 dbLoadRecords("db/FPGAsensor.db", "P=BLEN:$(AREA):$(POS), PORT=$(BLEN_ASYN_PORT), AMC=1, SENS=1")
 
-# Additional offset coefficients for AMC0, AMC1 ch1 raw data
-dbLoadRecords("db/blen_gap_coefI2.db", "P=BLEN:$(AREA):$(POS):$(INST)A, PORT=${BLEN_ASYN_PORT}, AMC=0")
-dbLoadRecords("db/blen_gap_coefI2.db", "P=BLEN:$(AREA):$(POS):$(INST)B, PORT=${BLEN_ASYN_PORT}, AMC=1")
-
-# Additional per-ADC variables for ch1 on AMC0, AMC1
-dbLoadRecords("db/blen_gap_DspPreprocConfig.db", "P=BLEN:$(AREA):$(POS):$(INST)C, PORT=${BLEN_ASYN_PORT}, AMC=0")
-dbLoadRecords("db/blen_gap_DspPreprocConfig.db", "P=BLEN:$(AREA):$(POS):$(INST)D, PORT=${BLEN_ASYN_PORT}, AMC=1")
 
 # WeightFunction calculations supporting additio of ch1 on AMC0, AMC1
-dbLoadRecords("db/calculatedWF.db", "AREA=$(AREA), POS=$(POS), INST=PX")
-dbLoadRecords("db/calculatedWF.db", "AREA=$(AREA), POS=$(POS), INST=NY")
+dbLoadRecords("db/calculatedWF.db", "AREA=$(AREA), POS=$(POS), SENS=1, AMC=0")
+dbLoadRecords("db/calculatedWF.db", "AREA=$(AREA), POS=$(POS), SENS=1, AMC=1")
 
 # Num-sample <--> Time conversion Records supporting ch1 on AMC0, AMC1.
 # Parameterized by per-AMC frequency counter (clock).
-dbLoadRecords("db/blen_gap_weightFunctionXAxis.db", "AREA=$(AREA), POS=$(POS), INST=$(INST)C, AMC=0, CLK_INST=$(INST)A")
-dbLoadRecords("db/blen_gap_weightFunctionXAxis.db", "AREA=$(AREA), POS=$(POS), INST=$(INST)D, AMC=1, CLK_INST=$(INST)B")
+#dbLoadRecords("db/blen_gap_weightFunctionXAxis.db", "AREA=$(AREA), POS=$(POS), INST=$(INST)C, AMC=0, CLK_INST=$(INST)A")
+#dbLoadRecords("db/blen_gap_weightFunctionXAxis.db", "AREA=$(AREA), POS=$(POS), INST=$(INST)D, AMC=1, CLK_INST=$(INST)B")
+dbLoadRecords("db/weightFunctionSensor.db", "AREA=$(AREA), POS=$(POS), INST=1, AMC=0")
+dbLoadRecords("db/weightFunctionSensor.db", "AREA=$(AREA), POS=$(POS), INST=1, AMC=1")
 
 # Parse IP address
 dbLoadRecords("db/ipAddr.db", "P=BLEN:$(AREA):$(POS), SRC=ServerRemoteIp")

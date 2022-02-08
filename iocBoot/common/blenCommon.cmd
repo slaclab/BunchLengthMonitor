@@ -75,33 +75,40 @@ tprTriggerAsynDriverConfigure("trig", "mmio/AmcCarrierCore")
 dbLoadRecords("db/iocMeta.db", "AREA=$(AREA),IOC_UNIT=$(IOC_UNIT)")
 
 # main blen database - user facing PVs
-dbLoadRecords("db/blen.db", "P=BLEN:$(AREA):$(POS):AMC0, PORT=$(BLEN_ASYN_PORT), AMC=0")
-dbLoadRecords("db/blen.db", "P=BLEN:$(AREA):$(POS):AMC1, PORT=$(BLEN_ASYN_PORT), AMC=1")
+dbLoadRecords("db/blen.db", "P=BLEN:$(AREA):$(POS):0, PORT=$(BLEN_ASYN_PORT), AMC=0")
+dbLoadRecords("db/blen.db", "P=BLEN:$(AREA):$(POS):1, PORT=$(BLEN_ASYN_PORT), AMC=1")
+
+# Additional offset coefficients for AMC0, AMC1 ch1 raw data
+dbLoadRecords("db/blen_gap_coefI2.db", "P=BLEN:$(AREA):$(POS), PORT=${BLEN_ASYN_PORT}, AMC=0")
+dbLoadRecords("db/blen_gap_coefI2.db", "P=BLEN:$(AREA):$(POS), PORT=${BLEN_ASYN_PORT}, AMC=1")
 
 dbLoadRecords("db/FPGAsensor.db", "P=BLEN:$(AREA):$(POS), PORT=$(BLEN_ASYN_PORT), AMC=0, SENS=0")
 dbLoadRecords("db/FPGAsensor.db", "P=BLEN:$(AREA):$(POS), PORT=$(BLEN_ASYN_PORT), AMC=1, SENS=0")
 
 # FPGA-related records
-dbLoadRecords("db/commonFPGA.db", "P=BLEN:$(AREA):$(POS):$(INST)A, PORT=$(BLEN_ASYN_PORT), AMC=0")
-dbLoadRecords("db/commonFPGA.db", "P=BLEN:$(AREA):$(POS):$(INST)B, PORT=$(BLEN_ASYN_PORT), AMC=1")
+dbLoadRecords("db/commonFPGA.db", "P=BLEN:$(AREA):$(POS):0, PORT=$(BLEN_ASYN_PORT), AMC=0")
+dbLoadRecords("db/commonFPGA.db", "P=BLEN:$(AREA):$(POS):1, PORT=$(BLEN_ASYN_PORT), AMC=1")
+dbLoadRecords("db/data_streams.db", "P=BLEN:$(AREA):$(POS), PORT=${BLEN_ASYN_PORT}, AMC=0, SENS=0")
+dbLoadRecords("db/data_streams.db", "P=BLEN:$(AREA):$(POS), PORT=${BLEN_ASYN_PORT}, AMC=1, SENS=0")
 dbLoadRecords("db/saveLoadConfig.db", "P=BLEN:$(AREA):$(POS), PORT=$(BLEN_ASYN_PORT)")
 dbLoadRecords("db/monitorFPGAReboot.db", "P=BLEN:$(AREA):$(POS)")
 
-dbLoadRecords("db/streamControl.db", "AREA=$(AREA),POS=$(POS),INSTA=$(INST)A,INSTB=$(INST)B")
+dbLoadRecords("db/streamControl.db", "AREA=$(AREA),POS=$(POS),AMC=0")
+dbLoadRecords("db/streamControl.db", "AREA=$(AREA),POS=$(POS),AMC=1")
 
 # Records to manipulate waveforms from detectors
-dbLoadRecords("db/calculatedWF.db", "AREA=$(AREA), POS=$(POS), INST=NX")
-dbLoadRecords("db/calculatedWF.db", "AREA=$(AREA), POS=$(POS), INST=PY")
-#possibly move to MR startup command
-dbLoadRecords("db/processRawWFHeader.db", "AREA=$(AREA), POS=$(POS), INST=$(INST)A")
-dbLoadRecords("db/processRawWFHeader.db", "AREA=$(AREA), POS=$(POS), INST=$(INST)B")
-dbLoadRecords("db/weightFunctionXAxis.db", "AREA=$(AREA), POS=$(POS), INST=$(INST)A, AMC=0")
-dbLoadRecords("db/weightFunctionXAxis.db", "AREA=$(AREA), POS=$(POS), INST=$(INST)B, AMC=1")
+dbLoadRecords("db/calculatedWF.db", "AREA=$(AREA), POS=$(POS), SENS=0, AMC=0")
+dbLoadRecords("db/calculatedWF.db", "AREA=$(AREA), POS=$(POS), SENS=0, AMC=1")
+##########################Only revelant to MR
+##########################dbLoadRecords("db/processRawWFHeader.db", "AREA=$(AREA), POS=$(POS), INST=$(INST)A")
+##########################dbLoadRecords("db/processRawWFHeader.db", "AREA=$(AREA), POS=$(POS), INST=$(INST)B")
+dbLoadRecords("db/weightFunctionAmc.db", "AREA=$(AREA), POS=$(POS), AMC=0")
+dbLoadRecords("db/weightFunctionAmc.db", "AREA=$(AREA), POS=$(POS), AMC=1")
+dbLoadRecords("db/weightFunctionSensor.db", "AREA=$(AREA), POS=$(POS), INST=0, AMC=0")
+dbLoadRecords("db/weightFunctionSensor.db", "AREA=$(AREA), POS=$(POS), INST=0, AMC=1")
+
 
 # **** Load BSA driver DB ****
-# BLEN attached to AMC0
-epicsEnvSet("AMC0_PREFIX","BLEN:$(AREA):$(POS):$(INST)A")
-epicsEnvSet("AMC1_PREFIX","BLEN:$(AREA):$(POS):$(INST)B")
 
 #dbLoadRecords("db/bsa.db", "DEV=$(AMC0_PREFIX),PORT=bsaPort,BSAKEY=AMC0:SUM,SECN=SUM")
 #dbLoadRecords("db/bsa.db", "DEV=$(AMC0_PREFIX),PORT=bsaPort,BSAKEY=AMC0:IMAX,SECN=IMAX")
