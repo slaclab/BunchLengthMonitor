@@ -14,9 +14,8 @@
 
 file "RegDoubleIn.template" { pattern
 { P,        R,                DESC,                     PINI,   SCAN,         PORT,       EGU,    PREC,     PARAM          }
-{ $(P),     SUM,              "",                       "YES",  ".5 second",  $(PORT),    "",     "2",    AMC$(AMC):SUM    }
-{ $(P),     IMAX,             "",                       "YES",  ".5 second",  $(PORT),    "",     "2",    AMC$(AMC):IMAX   }
-{ $(P),     TMIT,             "Transmitted intensity",  "YES",  ".5 second",  $(PORT),    "",     "2",    AMC$(AMC):TMIT   }
+{ $(P),     $(AMC):SUM,              "",                       "YES",  ".5 second",  $(PORT),    "",     "2",    AMC$(AMC):SUM    }
+{ $(P),     $(AMC):IMAX,             "",                       "YES",  ".5 second",  $(PORT),    "",     "2",    AMC$(AMC):IMAX   }
 }
 
 ########################################################################################################################
@@ -31,7 +30,7 @@ file "RegDoubleIn.template" { pattern
 
 #file "blenWaveforms.template" { pattern
 #{   P,          R,          DESC,                                     FTVL,     NELM,     INP   }
-#{  $(P),      "RWF",      "Raw waveform, 32 bits",                  "LONG",    1024,     "$(P)"   }
+#{  $(P),      AMC$(AMC):RWF",      "Raw waveform, 32 bits",                  "LONG",    1024,     "$(P)"   }
 #{  $(P),      "RWFS",     "Raw waveform, 16 bits",                  "SHORT",   2048,     "$(P)"   }
 #{  $(P),      "IWF",      "Integration Window waveform, 32 bits",   "LONG",    1024,     "$(P)"   }
 #{  $(P),      "IWFS",     "Integration Window waveform, 16 bits",   "SHORT",   2048,     "$(P)"   }

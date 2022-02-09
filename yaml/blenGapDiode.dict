@@ -78,12 +78,17 @@
 /mmio/AppTop/AppCore/AmcGenericAdcDacCore[1]/InitAmcCard                       AMC1:InitAmcCard
 
 # iMax calculation results
-/mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/AddSums1                   AMC0:AddSums1
-/mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/AddSums1                   AMC1:AddSums1
-/mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/FinalSum                   AMC0:IMAX
-/mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/FinalSum                   AMC1:IMAX
-/mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/MultResultH                AMC0:TMIT
-/mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/MultResultH                AMC1:TMIT
+/mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/AddSums1                   AMC0:SENS0:RawSum
+/mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/AddSums1                   AMC1:SENS0:RawSum
+/mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/AddSums1Gap                AMC0:SENS1:RawSum
+/mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/AddSums1Gap                AMC1:SENS1:RawSum
+/mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/FinalRawSum                AMC0:SensPairSum
+/mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/FinalRawSum                AMC1:SensPairSum
+/mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/FinalSum                   AMC0:BLEN
+/mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/FinalSum                   AMC1:BLEN
+#previously used
+#/mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/MultResultH                AMC0:TMIT
+#/mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/MultResultH                AMC1:TMIT
 
 # Intermediary calculation results
 /mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/AddSums0                   AMC0:AddSums0
@@ -99,8 +104,6 @@
 
 /mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/AddSums0Gap                AMC0:AddSums0Gap
 /mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/AddSums0Gap                AMC1:AddSums0Gap
-/mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/AddSums1Gap                AMC0:AddSums1Gap
-/mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/AddSums1Gap                AMC1:AddSums1Gap
 
 /mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/AddSums2Sensors            AMC0:AddSums2Sensors
 /mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/AddSums2Sensors            AMC1:AddSums2Sensors

@@ -20,23 +20,8 @@
 # Single register
 file "RegisterIn.template" { pattern
 { P,          R,              DESC,                           PINI,   SCAN,       PORT, EGU,  PARAM         }
-{ $(P), AmcClkFreq,     "AMC Clock frequency",          "YES",  "1 second", $(PORT),   "Hz", AMC$(AMC):AmcClkFreq    }
-{ $(P), DSPVers,        "System generator core vers",   "YES",  "1 second", $(PORT),   "",   AMC$(AMC):Version       }
-}
-
-# Array of register
-file "RegisterArrayIn.template" { pattern
-{ P,          R,             DESC,                          NELM,   PINI,   SCAN,       PORT,  PARAM       }
-}
-
-# Array of 8-bit register as a string
-file "RegisterArrayChar.template" { pattern
-{ P,        R,              DESC,                           NELM,   PINI,   SCAN,       PORT,  PARAM       }
-}
-
-# ENUM register
-file "RegisterEnumBIn.template" { pattern
-{ P,        R,              DESC,                    PINI,   ZNAM,       ONAM,       SCAN,      PORT, PARAM     }
+{ $(P), $(AMC):AmcClkFreq,     "AMC Clock frequency",          "YES",  "1 second", $(PORT),   "Hz", AMC$(AMC):AmcClkFreq    }
+{ $(P), $(AMC):DSPVers,        "System generator core vers",   "YES",  "1 second", $(PORT),   "",   AMC$(AMC):Version       }
 }
 
 #======================================
@@ -46,12 +31,12 @@ file "RegisterEnumBIn.template" { pattern
 # ENUM register
 file "RegisterEnumBOut.template" { pattern
 { P,        R,              DESC,        PINI,  ZNAM,        ONAM,     SCAN,       PORT, PARAM     }
-{ $(P), AutoRearm,   "Auto rearm", "NO",  "Disabled", "Enabled", "Passive",  $(PORT),   AMC$(AMC):AutoRearm }
+{ $(P), $(AMC):AutoRearm,   "Auto rearm", "NO",  "Disabled", "Enabled", "Passive",  $(PORT),   AMC$(AMC):AutoRearm }
 }
 
 file "RegisterEnumBOutRBV.template" { pattern
 { P,        R,              DESC,         PINI,   ZNAM,        ONAM,     SCAN,        PORT, PARAM     }
-{ $(P), AutoRearmRBV, "Auto rearm", "YES",  "Disabled", "Enabled", ".5 second",  $(PORT),   AMC$(AMC):AutoRearm }
+{ $(P), $(AMC):AutoRearmRBV, "Auto rearm", "YES",  "Disabled", "Enabled", ".5 second",  $(PORT),   AMC$(AMC):AutoRearm }
 }
 
 #======================================
@@ -60,14 +45,13 @@ file "RegisterEnumBOutRBV.template" { pattern
 
 file "RegisterDoubleIn.template" { pattern
 { P,        R,                DESC,                     PINI,   SCAN,         PORT,       EGU,        PARAM                     }
-{ $(P),     AddSums0,         "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):AddSums0        }
-{ $(P),     AddSums2,         "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):AddSums2        }
-{ $(P),     AddSums3,         "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):AddSums3        }
-{ $(P),     AddSums4,         "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):AddSums4        }
-{ $(P),     AddSums5,         "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):AddSums5        }
-{ $(P),     AddSums0Gap,      "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):AddSums0Gap     }
-{ $(P),     AddSums1Gap,      "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):AddSums1Gap     }
-{ $(P),     AddSums2Sensors,  "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):AddSums2Sensors }
+{ $(P),     $(AMC):AddSums0,         "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):AddSums0        }
+{ $(P),     $(AMC):AddSums2,         "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):AddSums2        }
+{ $(P),     $(AMC):AddSums3,         "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):AddSums3        }
+{ $(P),     $(AMC):AddSums4,         "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):AddSums4        }
+{ $(P),     $(AMC):AddSums5,         "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):AddSums5        }
+{ $(P),     $(AMC):SensPairSum,         "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):SensPairSum        }
+{ $(P),     $(AMC):BLEN,         "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):BLEN        }
 }
 
 #======================================
@@ -76,38 +60,38 @@ file "RegisterDoubleIn.template" { pattern
 
 file "RegisterDoubleOut.template" { pattern
 { P,              R,            DESC,                   PINI,  SCAN,        PORT,        EGU,          PARAM      }
-{ $(P),     CoefA0,       "Coef A0 for 1st group",      "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefA0 }
-{ $(P),     CoefA1,       "Coef A1 for 2nd group",      "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefA1 }
-{ $(P),     CoefA2,       "Coef A2 for 3rd group",      "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefA2 }
-{ $(P),     CoefA3,       "Coef A3 Scale 1st group",    "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefA3 }
-{ $(P),     CoefA4,       "Coef A4 Scale 2nd group",    "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefA4 }
-{ $(P),     CoefA5,       "Coef A5 Scale 3rd group",    "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefA5 }
-{ $(P),     CoefB,        "Coef B",                     "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefB  }
-{ $(P),     CoefC,        "Coef C",                     "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefC  }
-{ $(P),     CoefD,        "Coef D",                     "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefD  }
-{ $(P),     CoefE,        "Coef E",                     "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefE  }
-{ $(P),     CoefF,        "Coef F",                     "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefF  }
-{ $(P),     CoefG,        "Coef G",                     "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefG  }
-{ $(P),     CoefH,        "Coef H",                     "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefH  }
-{ $(P),     CoefI,        "Coef I - Offset",            "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefI  }
+{ $(P),     $(AMC):CoefA0,       "Coef A0 for 1st group",      "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefA0 }
+{ $(P),     $(AMC):CoefA1,       "Coef A1 for 2nd group",      "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefA1 }
+{ $(P),     $(AMC):CoefA2,       "Coef A2 for 3rd group",      "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefA2 }
+{ $(P),     $(AMC):CoefA3,       "Coef A3 Scale 1st group",    "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefA3 }
+{ $(P),     $(AMC):CoefA4,       "Coef A4 Scale 2nd group",    "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefA4 }
+{ $(P),     $(AMC):CoefA5,       "Coef A5 Scale 3rd group",    "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefA5 }
+{ $(P),     $(AMC):CoefB,        "Coef B",                     "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefB  }
+{ $(P),     $(AMC):CoefC,        "Coef C",                     "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefC  }
+{ $(P),     $(AMC):CoefD,        "Coef D",                     "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefD  }
+{ $(P),     $(AMC):CoefE,        "Coef E",                     "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefE  }
+{ $(P),     $(AMC):CoefF,        "Coef F",                     "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefF  }
+{ $(P),     $(AMC):CoefG,        "Coef G",                     "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefG  }
+{ $(P),     $(AMC):CoefH,        "Coef H",                     "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefH  }
+{ $(P),     $(AMC):CoefI,        "Coef I - Offset",            "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefI  }
 }
 
 file "RegisterDoubleOutRBV.template" { pattern
 { P,              R,            DESC,                   PINI,  SCAN,        PORT,        EGU,          PARAM      }
-{ $(P),     CoefA0RBV,    "Coef A0 for 1st group",      "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefA0 }
-{ $(P),     CoefA1RBV,    "Coef A1 for 2nd group",      "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefA1 }
-{ $(P),     CoefA2RBV,    "Coef A2 for 3rd group",      "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefA2 }
-{ $(P),     CoefA3RBV,    "Coef A3 Scale 1st group",    "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefA3 }
-{ $(P),     CoefA4RBV,    "Coef A4 Scale 2nd group",    "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefA4 }
-{ $(P),     CoefA5RBV,    "Coef A5 Scale 3rd group",    "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefA5 }
-{ $(P),     CoefBRBV,     "Coef B",                     "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefB  }
-{ $(P),     CoefCRBV,     "Coef C",                     "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefC  }
-{ $(P),     CoefDRBV,     "Coef D",                     "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefD  }
-{ $(P),     CoefERBV,     "Coef E",                     "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefE  }
-{ $(P),     CoefFRBV,     "Coef F",                     "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefF  }
-{ $(P),     CoefGRBV,     "Coef G",                     "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefG  }
-{ $(P),     CoefHRBV,     "Coef H",                     "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefH  }
-{ $(P),     CoefIRBV,     "Coef I - Offset",            "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefI  }
+{ $(P),     $(AMC):CoefA0RBV,    "Coef A0 for 1st group",      "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefA0 }
+{ $(P),     $(AMC):CoefA1RBV,    "Coef A1 for 2nd group",      "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefA1 }
+{ $(P),     $(AMC):CoefA2RBV,    "Coef A2 for 3rd group",      "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefA2 }
+{ $(P),     $(AMC):CoefA3RBV,    "Coef A3 Scale 1st group",    "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefA3 }
+{ $(P),     $(AMC):CoefA4RBV,    "Coef A4 Scale 2nd group",    "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefA4 }
+{ $(P),     $(AMC):CoefA5RBV,    "Coef A5 Scale 3rd group",    "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefA5 }
+{ $(P),     $(AMC):CoefBRBV,     "Coef B",                     "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefB  }
+{ $(P),     $(AMC):CoefCRBV,     "Coef C",                     "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefC  }
+{ $(P),     $(AMC):CoefDRBV,     "Coef D",                     "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefD  }
+{ $(P),     $(AMC):CoefERBV,     "Coef E",                     "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefE  }
+{ $(P),     $(AMC):CoefFRBV,     "Coef F",                     "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefF  }
+{ $(P),     $(AMC):CoefGRBV,     "Coef G",                     "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefG  }
+{ $(P),     $(AMC):CoefHRBV,     "Coef H",                     "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefH  }
+{ $(P),     $(AMC):CoefIRBV,     "Coef I - Offset",            "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefI  }
 }
 
 #======================================
@@ -115,7 +99,7 @@ file "RegisterDoubleOutRBV.template" { pattern
 #======================================
 file "RegisterCommand.template" { pattern
 { P,            R,            DESC,                      PINI,   SCAN,         PORT,             PARAM          }
-{ $(P),   InitAmcCard,  "Init JESD modules",             "NO",  "Passive",   $(PORT),     AMC$(AMC):InitAmcCard }
+{ $(P),   $(AMC):InitAmcCard,  "Init JESD modules",             "NO",  "Passive",   $(PORT),     AMC$(AMC):InitAmcCard }
 }
 
 #======================================
@@ -126,5 +110,5 @@ file "RegisterCommand.template" { pattern
 # Note: NELM is 2x actual number of elements
 file "RegisterStream16.template" { pattern
 { P,           R,             DESC,                                NELM,   PINI,         PORT,            PARAM                      }
-{ $(P),       IWF             "Integration Window (16-bit)",       1024,   "NO",         $(PORT),        AMC$(AMC):WeightFunction:16 } 
+{ $(P),       $(AMC):IWF             "Integration Window (16-bit)",       1024,   "NO",         $(PORT),        AMC$(AMC):WeightFunction:16 } 
 }
