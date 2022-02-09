@@ -477,7 +477,7 @@ X Position</string>
             <set>Qt::AlignCenter</set>
            </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}A_TMIT</string>
+            <string>ca://BLEN:${AREA}:${POS}:00:RawSum</string>
            </property>
           </widget>
          </item>
@@ -490,7 +490,7 @@ X Position</string>
             <set>Qt::AlignCenter</set>
            </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}C_TMIT</string>
+            <string>ca://BLEN:${AREA}:${POS}:01:RawSum</string>
            </property>
           </widget>
          </item>
@@ -503,7 +503,7 @@ X Position</string>
             <set>Qt::AlignCenter</set>
            </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}B_TMIT</string>
+            <string>ca://BLEN:${AREA}:${POS}:10:RawSum</string>
            </property>
           </widget>
          </item>
@@ -516,7 +516,7 @@ X Position</string>
             <set>Qt::AlignCenter</set>
            </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}D_TMIT</string>
+            <string>ca://BLEN:${AREA}:${POS}:11:RawSum</string>
            </property>
           </widget>
          </item>
@@ -543,7 +543,7 @@ X Position</string>
             <set>Qt::AlignCenter</set>
            </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}A:IMAX</string>
+            <string>ca://BLEN:${AREA}:${POS}:0:BLEN</string>
            </property>
           </widget>
          </item>
@@ -566,7 +566,7 @@ X Position</string>
             <set>Qt::AlignCenter</set>
            </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}B:SUM</string>
+            <string>ca://BLEN:${AREA}:${POS}:1:SensPairSum</string>
            </property>
           </widget>
          </item>
@@ -579,7 +579,7 @@ X Position</string>
             <set>Qt::AlignCenter</set>
            </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}A:SUM</string>
+            <string>ca://BLEN:${AREA}:${POS}:0:SensPairSum</string>
            </property>
           </widget>
          </item>
@@ -592,7 +592,7 @@ X Position</string>
             <set>Qt::AlignCenter</set>
            </property>
            <property name="channel" stdset="0">
-            <string>ca://BLEN:${AREA}:${POS}:${INST}B:IMAX</string>
+            <string>ca://BLEN:${AREA}:${POS}:1:BLEN</string>
            </property>
           </widget>
          </item>
