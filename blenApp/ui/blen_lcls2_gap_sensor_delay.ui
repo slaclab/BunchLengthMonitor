@@ -38,11 +38,11 @@
       </sizepolicy>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>3</number>
      </property>
      <widget class="QWidget" name="instATab">
       <attribute name="title">
-       <string>${INST}A (+X)</string>
+       <string>${INST} (+X)</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_4">
        <item>
@@ -51,10 +51,10 @@
           <string/>
          </property>
          <property name="macros" stdset="0">
-          <string>{ &quot;AREA&quot;: &quot;${AREA}&quot;, &quot;POS&quot;: &quot;${POS}&quot;, &quot;INST&quot;: &quot;${INST}A&quot;, &quot;CH&quot;: &quot;${INST}A&quot; }</string>
+          <string>{ &quot;AREA&quot;: &quot;${AREA}&quot;, &quot;POS&quot;: &quot;${POS}&quot;,&quot;AMC&quot;:&quot;0&quot;,&quot;SENS&quot;:&quot;0&quot;}</string>
          </property>
          <property name="filename" stdset="0">
-          <string>blen_cal_embedded.ui</string>
+          <string>blen_sensor_timing.ui</string>
          </property>
         </widget>
        </item>
@@ -62,7 +62,7 @@
      </widget>
      <widget class="QWidget" name="instCTab">
       <attribute name="title">
-       <string>${INST}C (-X)</string>
+       <string>${INST} (-X)</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_5">
        <item>
@@ -71,10 +71,10 @@
           <string/>
          </property>
          <property name="macros" stdset="0">
-          <string>{ &quot;AREA&quot;: &quot;${AREA}&quot;, &quot;POS&quot;: &quot;${POS}&quot;, &quot;INST&quot;: &quot;${INST}C&quot;, &quot;CH&quot;: &quot;${INST}A&quot; }</string>
+          <string>{ &quot;AREA&quot;: &quot;${AREA}&quot;, &quot;POS&quot;: &quot;${POS}&quot;,&quot;AMC&quot;:&quot;0&quot;,&quot;SENS&quot;:&quot;1&quot; }</string>
          </property>
          <property name="filename" stdset="0">
-          <string>blen_cal_embedded.ui</string>
+          <string>blen_sensor_timing.ui</string>
          </property>
         </widget>
        </item>
@@ -82,7 +82,7 @@
      </widget>
      <widget class="QWidget" name="instBTab">
       <attribute name="title">
-       <string>${INST}B (+Y)</string>
+       <string>${INST} (+Y)</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_3">
        <item>
@@ -91,10 +91,10 @@
           <string/>
          </property>
          <property name="macros" stdset="0">
-          <string>{ &quot;AREA&quot;: &quot;${AREA}&quot;, &quot;POS&quot;: &quot;${POS}&quot;, &quot;INST&quot;: &quot;${INST}B&quot;, &quot;CH&quot;: &quot;${INST}B&quot; }</string>
+          <string>{ &quot;AREA&quot;: &quot;${AREA}&quot;, &quot;POS&quot;: &quot;${POS}&quot;,&quot;AMC&quot;:&quot;1&quot;,&quot;SENS&quot;:&quot;0&quot; }</string>
          </property>
          <property name="filename" stdset="0">
-          <string>blen_cal_embedded.ui</string>
+          <string>blen_sensor_timing.ui</string>
          </property>
         </widget>
        </item>
@@ -102,7 +102,7 @@
      </widget>
      <widget class="QWidget" name="instDTab">
       <attribute name="title">
-       <string>${INST}D (-Y)</string>
+       <string>${INST} (-Y)</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout_6">
        <item>
@@ -111,10 +111,10 @@
           <string/>
          </property>
          <property name="macros" stdset="0">
-          <string>{ &quot;AREA&quot;: &quot;${AREA}&quot;, &quot;POS&quot;: &quot;${POS}&quot;, &quot;INST&quot;: &quot;${INST}D&quot;, &quot;CH&quot;: &quot;${INST}B&quot; }</string>
+          <string>{ &quot;AREA&quot;: &quot;${AREA}&quot;, &quot;POS&quot;: &quot;${POS}&quot;,&quot;AMC&quot;:&quot;1&quot;,&quot;SENS&quot;:&quot;1&quot; }</string>
          </property>
          <property name="filename" stdset="0">
-          <string>blen_cal_embedded.ui</string>
+          <string>blen_sensor_timing.ui</string>
          </property>
         </widget>
        </item>
