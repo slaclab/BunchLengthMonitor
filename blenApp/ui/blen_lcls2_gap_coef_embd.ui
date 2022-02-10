@@ -15,7 +15,7 @@
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
-    <layout class="QVBoxLayout" name="verticalLayout" stretch="4,1,2,4,1,2,4,0,0,2,0">
+    <layout class="QVBoxLayout" name="verticalLayout" stretch="4,1,2,4,1,2,4,0,0">
      <item>
       <widget class="QLabel" name="araw">
        <property name="font">
@@ -26,7 +26,7 @@
         </font>
        </property>
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; text-decoration: underline;&quot;&gt;Channel ${PLUS}: Pedestal Correction&lt;/span&gt;&lt;/p&gt;&lt;p&gt;ARAW&lt;span style=&quot; vertical-align:sub;&quot;&gt;${PLUS}&lt;/span&gt; = &lt;span style=&quot; font-style:italic; text-decoration: underline;&quot;&gt;A1&lt;/span&gt;*Signal&lt;span style=&quot; vertical-align:sub;&quot;&gt;${PLUS}&lt;/span&gt; + &lt;span style=&quot; font-style:italic; text-decoration: underline;&quot;&gt;A0&lt;/span&gt;*Pedestal&lt;span style=&quot; vertical-align:sub;&quot;&gt;${PLUS}&lt;/span&gt; + &lt;span style=&quot; font-style:italic; text-decoration: underline;&quot;&gt;Offset&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; text-decoration: underline;&quot;&gt;AMC${AMC} Channel 0: Pedestal Correction&lt;/span&gt;&lt;/p&gt;&lt;p&gt;ARAW&lt;span style=&quot; vertical-align:sub;&quot;&gt;AMC${AMC}CHAN0&lt;/span&gt; = &lt;span style=&quot; font-style:italic; text-decoration: underline;&quot;&gt;A1&lt;/span&gt;*Signal&lt;span style=&quot; vertical-align:sub;&quot;&gt;AMC${AMC}CHAN0&lt;/span&gt; + &lt;span style=&quot; font-style:italic; text-decoration: underline;&quot;&gt;A0&lt;/span&gt;*Pedestal&lt;span style=&quot; vertical-align:sub;&quot;&gt;AMC${AMC}CHAN0&lt;/span&gt; + &lt;span style=&quot; font-style:italic; text-decoration: underline;&quot;&gt;Offset&lt;/span&gt;&lt;span style=&quot; vertical-align:sub;&quot;&gt;AMC${AMC}CHAN0&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -53,7 +53,7 @@
           <bool>false</bool>
          </property>
          <property name="channel" stdset="0">
-          <string>ca://${PREFIX}:CoefI</string>
+          <string>ca://${PREFIX}:${AMC}:CoefI</string>
          </property>
          <property name="displayFormat" stdset="0">
           <enum>PyDMLineEdit::Decimal</enum>
@@ -135,7 +135,7 @@
           <bool>false</bool>
          </property>
          <property name="channel" stdset="0">
-          <string>ca://${PREFIX}:CoefIRBV</string>
+          <string>ca://${PREFIX}:${AMC}:CoefIRBV</string>
          </property>
          <property name="displayFormat" stdset="0">
           <enum>PyDMLabel::Decimal</enum>
@@ -194,7 +194,7 @@
           <bool>false</bool>
          </property>
          <property name="channel" stdset="0">
-          <string>ca://${PREFIX}:CoefA1</string>
+          <string>ca://${PREFIX}:${AMC}:CoefA1</string>
          </property>
          <property name="displayFormat" stdset="0">
           <enum>PyDMLineEdit::Decimal</enum>
@@ -219,7 +219,7 @@
           <bool>false</bool>
          </property>
          <property name="channel" stdset="0">
-          <string>ca://${PREFIX}:CoefA0</string>
+          <string>ca://${PREFIX}:${AMC}:CoefA0</string>
          </property>
          <property name="displayFormat" stdset="0">
           <enum>PyDMLineEdit::Decimal</enum>
@@ -244,7 +244,7 @@
           <bool>false</bool>
          </property>
          <property name="channel" stdset="0">
-          <string>ca://${PREFIX}:CoefA0RBV</string>
+          <string>ca://${PREFIX}:${AMC}:CoefA0RBV</string>
          </property>
          <property name="displayFormat" stdset="0">
           <enum>PyDMLabel::Decimal</enum>
@@ -269,7 +269,7 @@
           <bool>false</bool>
          </property>
          <property name="channel" stdset="0">
-          <string>ca://${PREFIX}:CoefA1RBV</string>
+          <string>ca://${PREFIX}:${AMC}:CoefA1RBV</string>
          </property>
          <property name="displayFormat" stdset="0">
           <enum>PyDMLabel::Decimal</enum>
@@ -301,7 +301,7 @@
         </font>
        </property>
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; text-decoration: underline;&quot;&gt;Channel ${MINUS}: Pedestal Correction&lt;/span&gt;&lt;/p&gt;&lt;p&gt;ARAW&lt;span style=&quot; vertical-align:sub;&quot;&gt;${MINUS}&lt;/span&gt; = &lt;span style=&quot; font-style:italic; text-decoration: underline;&quot;&gt;A4&lt;/span&gt;*Signal&lt;span style=&quot; vertical-align:sub;&quot;&gt;${MINUS}&lt;/span&gt; + &lt;span style=&quot; font-style:italic; text-decoration: underline;&quot;&gt;A3&lt;/span&gt;*Pedestal&lt;span style=&quot; vertical-align:sub;&quot;&gt;${MINUS}&lt;/span&gt; + &lt;span style=&quot; font-style:italic; text-decoration: underline;&quot;&gt;Offset&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; text-decoration: underline;&quot;&gt;AMC${AMC} Channel 1: Pedestal Correction&lt;/span&gt;&lt;/p&gt;&lt;p&gt;ARAW&lt;span style=&quot; vertical-align:sub;&quot;&gt;AMC${AMC}CHAN1&lt;/span&gt; = &lt;span style=&quot; font-style:italic; text-decoration: underline;&quot;&gt;A4&lt;/span&gt;*Signal&lt;span style=&quot; vertical-align:sub;&quot;&gt;AMC${AMC}CHAN1&lt;/span&gt; + &lt;span style=&quot; font-style:italic; text-decoration: underline;&quot;&gt;A3&lt;/span&gt;*Pedestal&lt;span style=&quot; vertical-align:sub;&quot;&gt;AMC${AMC}CHAN1&lt;/span&gt; + &lt;span style=&quot; font-style:italic; text-decoration: underline;&quot;&gt;Offset&lt;/span&gt;&lt;span style=&quot; vertical-align:sub;&quot;&gt;AMC${AMC}CHAN1&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -345,7 +345,7 @@
           <bool>false</bool>
          </property>
          <property name="channel" stdset="0">
-          <string>ca://${PREFIX}:CoefI2RBV</string>
+          <string>ca://${PREFIX}:${AMC}:CoefI2RBV</string>
          </property>
          <property name="displayFormat" stdset="0">
           <enum>PyDMLabel::Decimal</enum>
@@ -393,7 +393,7 @@
           <bool>false</bool>
          </property>
          <property name="channel" stdset="0">
-          <string>ca://${PREFIX}:CoefI2</string>
+          <string>ca://${PREFIX}:${AMC}:CoefI2</string>
          </property>
          <property name="displayFormat" stdset="0">
           <enum>PyDMLineEdit::Decimal</enum>
@@ -469,7 +469,7 @@
           <bool>false</bool>
          </property>
          <property name="channel" stdset="0">
-          <string>ca://${PREFIX}:CoefA4</string>
+          <string>ca://${PREFIX}:${AMC}:CoefA4</string>
          </property>
          <property name="displayFormat" stdset="0">
           <enum>PyDMLineEdit::Decimal</enum>
@@ -494,7 +494,7 @@
           <bool>false</bool>
          </property>
          <property name="channel" stdset="0">
-          <string>ca://${PREFIX}:CoefA3</string>
+          <string>ca://${PREFIX}:${AMC}:CoefA3</string>
          </property>
          <property name="displayFormat" stdset="0">
           <enum>PyDMLineEdit::Decimal</enum>
@@ -519,7 +519,7 @@
           <bool>false</bool>
          </property>
          <property name="channel" stdset="0">
-          <string>ca://${PREFIX}:CoefA4RBV</string>
+          <string>ca://${PREFIX}:${AMC}:CoefA4RBV</string>
          </property>
          <property name="displayFormat" stdset="0">
           <enum>PyDMLabel::Decimal</enum>
@@ -544,7 +544,7 @@
           <bool>false</bool>
          </property>
          <property name="channel" stdset="0">
-          <string>ca://${PREFIX}:CoefA3RBV</string>
+          <string>ca://${PREFIX}:${AMC}:CoefA3RBV</string>
          </property>
          <property name="displayFormat" stdset="0">
           <enum>PyDMLabel::Decimal</enum>
@@ -576,7 +576,7 @@
         </font>
        </property>
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; text-decoration: underline;&quot;&gt;IMAX Calculation:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;ARAW&lt;/span&gt;&lt;span style=&quot; font-size:10pt; vertical-align:sub;&quot;&gt;${COORD}&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; = ARAW&lt;/span&gt;&lt;span style=&quot; font-size:10pt; vertical-align:sub;&quot;&gt;${PLUS}&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; + ARAW&lt;/span&gt;&lt;span style=&quot; font-size:10pt; vertical-align:sub;&quot;&gt;${MINUS}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;IMAX&lt;/span&gt;&lt;span style=&quot; font-size:10pt; vertical-align:sub;&quot;&gt;${COORD}&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; = &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-style:italic; text-decoration: underline;&quot;&gt;B&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; * TMIT&lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-style:italic; text-decoration: underline; vertical-align:super;&quot;&gt;C&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; * ARAW&lt;/span&gt;&lt;span style=&quot; font-size:10pt; vertical-align:super;&quot;&gt;D&lt;/span&gt;&lt;span style=&quot; font-size:10pt; vertical-align:sub;&quot;&gt;${COORD}&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; + &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-style:italic; text-decoration: underline;&quot;&gt;E&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; * TMIT&lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-style:italic; text-decoration: underline; vertical-align:super;&quot;&gt;F&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; * ARAW&lt;/span&gt;&lt;span style=&quot; font-size:10pt; vertical-align:super;&quot;&gt;G&lt;/span&gt;&lt;span style=&quot; font-size:10pt; vertical-align:sub;&quot;&gt;${COORD}&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; text-decoration: underline;&quot;&gt;BLEN Calculation:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;ARAW&lt;span style=&quot; vertical-align:sub;&quot;&gt;AMC${AMC}&lt;/span&gt; = ARAW&lt;span style=&quot; vertical-align:sub;&quot;&gt;AMC${AMC}CHAN0&lt;/span&gt;+ ARAW&lt;span style=&quot; vertical-align:sub;&quot;&gt;AMC${AMC}CHAN1&lt;/span&gt;&lt;/p&gt;&lt;p&gt;BLEN&lt;span style=&quot; vertical-align:sub;&quot;&gt;AMC${AMC}&lt;/span&gt; = &lt;span style=&quot; font-style:italic; text-decoration: underline;&quot;&gt;B&lt;/span&gt; * TMIT&lt;span style=&quot; font-style:italic; text-decoration: underline; vertical-align:super;&quot;&gt;C&lt;/span&gt; * ARAW&lt;span style=&quot; vertical-align:super;&quot;&gt;D&lt;/span&gt;&lt;span style=&quot; vertical-align:sub;&quot;&gt;AMC${AMC}&lt;/span&gt; + &lt;span style=&quot; font-style:italic; text-decoration: underline;&quot;&gt;E&lt;/span&gt; * TMIT&lt;span style=&quot; font-style:italic; text-decoration: underline; vertical-align:super;&quot;&gt;F&lt;/span&gt; * ARAW&lt;span style=&quot; vertical-align:super;&quot;&gt;G&lt;/span&gt;&lt;span style=&quot; vertical-align:sub;&quot;&gt;AMC${AMC}&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -633,7 +633,7 @@
           <bool>false</bool>
          </property>
          <property name="channel" stdset="0">
-          <string>ca://${PREFIX}:CoefD</string>
+          <string>ca://${PREFIX}:${AMC}:CoefD</string>
          </property>
          <property name="displayFormat" stdset="0">
           <enum>PyDMLineEdit::Decimal</enum>
@@ -658,7 +658,7 @@
           <bool>false</bool>
          </property>
          <property name="channel" stdset="0">
-          <string>ca://${PREFIX}:CoefF</string>
+          <string>ca://${PREFIX}:${AMC}:CoefF</string>
          </property>
          <property name="displayFormat" stdset="0">
           <enum>PyDMLineEdit::Decimal</enum>
@@ -683,7 +683,7 @@
           <bool>false</bool>
          </property>
          <property name="channel" stdset="0">
-          <string>ca://${PREFIX}:CoefFRBV</string>
+          <string>ca://${PREFIX}:${AMC}:CoefFRBV</string>
          </property>
          <property name="displayFormat" stdset="0">
           <enum>PyDMLabel::Decimal</enum>
@@ -708,7 +708,7 @@
           <bool>false</bool>
          </property>
          <property name="channel" stdset="0">
-          <string>ca://${PREFIX}:CoefH</string>
+          <string>ca://${PREFIX}:${AMC}:CoefH</string>
          </property>
          <property name="displayFormat" stdset="0">
           <enum>PyDMLineEdit::Decimal</enum>
@@ -733,7 +733,7 @@
           <bool>false</bool>
          </property>
          <property name="channel" stdset="0">
-          <string>ca://${PREFIX}:CoefB</string>
+          <string>ca://${PREFIX}:${AMC}:CoefB</string>
          </property>
          <property name="displayFormat" stdset="0">
           <enum>PyDMLineEdit::Decimal</enum>
@@ -758,7 +758,7 @@
           <bool>false</bool>
          </property>
          <property name="channel" stdset="0">
-          <string>ca://${PREFIX}:CoefDRBV</string>
+          <string>ca://${PREFIX}:${AMC}:CoefDRBV</string>
          </property>
          <property name="displayFormat" stdset="0">
           <enum>PyDMLabel::Decimal</enum>
@@ -800,7 +800,7 @@
           <bool>false</bool>
          </property>
          <property name="channel" stdset="0">
-          <string>ca://${PREFIX}:CoefBRBV</string>
+          <string>ca://${PREFIX}:${AMC}:CoefBRBV</string>
          </property>
          <property name="displayFormat" stdset="0">
           <enum>PyDMLabel::Decimal</enum>
@@ -859,7 +859,7 @@
           <bool>false</bool>
          </property>
          <property name="channel" stdset="0">
-          <string>ca://${PREFIX}:CoefCRBV</string>
+          <string>ca://${PREFIX}:${AMC}:CoefCRBV</string>
          </property>
          <property name="displayFormat" stdset="0">
           <enum>PyDMLabel::Decimal</enum>
@@ -884,7 +884,7 @@
           <bool>false</bool>
          </property>
          <property name="channel" stdset="0">
-          <string>ca://${PREFIX}:CoefERBV</string>
+          <string>ca://${PREFIX}:${AMC}:CoefERBV</string>
          </property>
          <property name="displayFormat" stdset="0">
           <enum>PyDMLabel::Decimal</enum>
@@ -909,7 +909,7 @@
           <bool>false</bool>
          </property>
          <property name="channel" stdset="0">
-          <string>ca://${PREFIX}:CoefC</string>
+          <string>ca://${PREFIX}:${AMC}:CoefC</string>
          </property>
          <property name="displayFormat" stdset="0">
           <enum>PyDMLineEdit::Decimal</enum>
@@ -968,7 +968,7 @@
           <bool>false</bool>
          </property>
          <property name="channel" stdset="0">
-          <string>ca://${PREFIX}:CoefGRBV</string>
+          <string>ca://${PREFIX}:${AMC}:CoefGRBV</string>
          </property>
          <property name="displayFormat" stdset="0">
           <enum>PyDMLabel::Decimal</enum>
@@ -993,7 +993,7 @@
           <bool>false</bool>
          </property>
          <property name="channel" stdset="0">
-          <string>ca://${PREFIX}:CoefE</string>
+          <string>ca://${PREFIX}:${AMC}:CoefE</string>
          </property>
          <property name="displayFormat" stdset="0">
           <enum>PyDMLineEdit::Decimal</enum>
@@ -1018,7 +1018,7 @@
           <bool>false</bool>
          </property>
          <property name="channel" stdset="0">
-          <string>ca://${PREFIX}:CoefG</string>
+          <string>ca://${PREFIX}:${AMC}:CoefG</string>
          </property>
          <property name="displayFormat" stdset="0">
           <enum>PyDMLineEdit::Decimal</enum>
@@ -1100,123 +1100,10 @@
           <bool>false</bool>
          </property>
          <property name="channel" stdset="0">
-          <string>ca://${PREFIX}:CoefHRBV</string>
+          <string>ca://${PREFIX}:${AMC}:CoefHRBV</string>
          </property>
          <property name="displayFormat" stdset="0">
           <enum>PyDMLabel::Decimal</enum>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <spacer name="verticalSpacer">
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>20</width>
-         <height>80</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <layout class="QGridLayout" name="daqLayout">
-       <item row="0" column="0">
-        <widget class="QLabel" name="sum_lbl">
-         <property name="font">
-          <font>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>SUM</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="2">
-        <widget class="QLabel" name="tmit_lbl">
-         <property name="font">
-          <font>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>TMIT</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="PyDMLabel" name="sum">
-         <property name="toolTip">
-          <string/>
-         </property>
-         <property name="text">
-          <string>${PREFIX}:SUM</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <property name="channel" stdset="0">
-          <string>ca://${PREFIX}:SUM</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="PyDMLabel" name="imax">
-         <property name="toolTip">
-          <string/>
-         </property>
-         <property name="text">
-          <string>${PREFIX}:IMAX</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <property name="channel" stdset="0">
-          <string>ca://${PREFIX}:IMAX</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="2">
-        <widget class="PyDMLabel" name="tmit">
-         <property name="toolTip">
-          <string/>
-         </property>
-         <property name="text">
-          <string>${PREFIX}:TMIT</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <property name="channel" stdset="0">
-          <string>ca://${PREFIX}:TMIT</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="QLabel" name="imax_lbl">
-         <property name="font">
-          <font>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>IMAX (BLEN)</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
          </property>
         </widget>
        </item>

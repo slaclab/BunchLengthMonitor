@@ -15,19 +15,6 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <spacer name="verticalSpacer">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>40</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item>
     <widget class="QTabWidget" name="instrumentTab">
      <property name="minimumSize">
       <size>
@@ -49,10 +36,10 @@
           <string/>
          </property>
          <property name="macros" stdset="0">
-          <string>{&quot;PREFIX&quot;:&quot;BLEN:${AREA}:${POS}:${INST}B&quot;, &quot;COORD&quot;:&quot;X&quot;, &quot;MINUS&quot;:&quot;-X&quot;, &quot;PLUS&quot;:&quot;+X&quot;}</string>
+          <string>{&quot;PREFIX&quot;:&quot;BLEN:${AREA}:${POS}&quot;,&quot;AMC&quot;:&quot;0&quot;}</string>
          </property>
          <property name="filename" stdset="0">
-          <string>blen_lcls2_gap_coef_instr.ui</string>
+          <string>blen_lcls2_gap_coef_embd.ui</string>
          </property>
         </widget>
        </item>
@@ -69,10 +56,10 @@
           <string/>
          </property>
          <property name="macros" stdset="0">
-          <string>{&quot;PREFIX&quot;:&quot;BLEN:${AREA}:${POS}:${INST}A&quot;, &quot;COORD&quot;:&quot;Y&quot;, &quot;MINUS&quot;:&quot;-Y&quot;, &quot;PLUS&quot;:&quot;+Y&quot;}</string>
+          <string>{&quot;PREFIX&quot;:&quot;BLEN:${AREA}:${POS}&quot;, &quot;AMC&quot;:&quot;1&quot;}</string>
          </property>
          <property name="filename" stdset="0">
-          <string>blen_lcls2_gap_coef_instr.ui</string>
+          <string>blen_lcls2_gap_coef_embd.ui</string>
          </property>
         </widget>
        </item>
