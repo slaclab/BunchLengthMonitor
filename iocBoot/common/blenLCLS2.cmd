@@ -7,6 +7,7 @@
 
 dbLoadRecords("db/lcls2FPGA.db", "P=BLEN:$(AREA):$(POS), PORT=${BLEN_ASYN_PORT}") 
 dbLoadRecords("db/bpmSelect.db", "P=BLEN:$(AREA):$(POS)")
+dbLoadRecords("db/selectStatus.db", "P=BLEN:$(AREA):$(POS)")
 
 dbLoadRecords("db/msgStatus.db", "P=BLEN:$(AREA):$(POS)")
 

@@ -95,5 +95,6 @@ DB += monitorFPGAReboot.db
 DB += bpmSelect.db
 DB += ipAddr.db
 DB += temperature.template
+DB += selectStatus.db
 
 include $(TOP)/configure/RULES

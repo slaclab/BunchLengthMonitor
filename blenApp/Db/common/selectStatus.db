@@ -11,13 +11,13 @@
 #
 # $(P):$(RESULT)
 #
-record(calc, "$(P):$(RESULT)")
+record(calc, "$(P):USED_TMIT")
 {
-  field(INPA, "$(P):$(STATUS0)")
-  field(INPB, "$(P):$(STATUS1)")
-  field(INPC, "$(P):$(SELECT)")
+  field(INPA, "$(P):TmitStatus0")
+  field(INPB, "$(P):TmitStatus1")
+  field(INPC, "$(P):SelBpm")
   field(INPD, "1")
   field(CALC, "(C=D) ? B : A")
-  field(SCAN, "$(SCAN)")
-  field(DESC, "$(SELECT): $(STATUS0) or $(STATUS1)")
+  field(SCAN, ".5 second")
+  field(DESC, "Slects if bpm0 or bpm1 is used")
 }
