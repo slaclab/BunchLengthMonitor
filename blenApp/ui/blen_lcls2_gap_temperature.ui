@@ -85,8 +85,14 @@
          <property name="toolTip">
           <string/>
          </property>
+         <property name="precision" stdset="0">
+          <number>2</number>
+         </property>
+         <property name="precisionFromPV" stdset="0">
+          <bool>false</bool>
+         </property>
          <property name="channel" stdset="0">
-          <string>ca://BLEN:${AREA}:${POS}:TempPX</string>
+          <string>calc://degCPX?PXKel=ca://BLEN:${AREA}:${POS}:TempPX&amp;expr=PXKel-273.15</string>
          </property>
         </widget>
        </item>
@@ -95,8 +101,14 @@
          <property name="toolTip">
           <string/>
          </property>
+         <property name="precision" stdset="0">
+          <number>2</number>
+         </property>
+         <property name="precisionFromPV" stdset="0">
+          <bool>false</bool>
+         </property>
          <property name="channel" stdset="0">
-          <string>ca://BLEN:${AREA}:${POS}:TempNX</string>
+          <string>calc://degCNX?NXKel=ca://BLEN:${AREA}:${POS}:TempNX&amp;expr=NXKel-273.15</string>
          </property>
         </widget>
        </item>
@@ -105,8 +117,14 @@
          <property name="toolTip">
           <string/>
          </property>
+         <property name="precision" stdset="0">
+          <number>2</number>
+         </property>
+         <property name="precisionFromPV" stdset="0">
+          <bool>false</bool>
+         </property>
          <property name="channel" stdset="0">
-          <string>ca://BLEN:${AREA}:${POS}:TempPY</string>
+          <string>calc://degCPY?PYKel=ca://BLEN:${AREA}:${POS}:TempPY&amp;expr=PYKel-273.15</string>
          </property>
         </widget>
        </item>
@@ -115,8 +133,14 @@
          <property name="toolTip">
           <string/>
          </property>
+         <property name="precision" stdset="0">
+          <number>2</number>
+         </property>
+         <property name="precisionFromPV" stdset="0">
+          <bool>false</bool>
+         </property>
          <property name="channel" stdset="0">
-          <string>ca://BLEN:${AREA}:${POS}:TempNY</string>
+          <string>calc://degCNY?NYKel=ca://BLEN:${AREA}:${POS}:TempNY&amp;expr=NYKel-273.15</string>
          </property>
         </widget>
        </item>

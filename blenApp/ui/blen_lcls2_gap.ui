@@ -109,22 +109,28 @@ Y Position</string>
              <property name="toolTip">
               <string/>
              </property>
+             <property name="precision" stdset="0">
+              <number>2</number>
+             </property>
+             <property name="precisionFromPV" stdset="0">
+              <bool>false</bool>
+             </property>
              <property name="channel" stdset="0">
-              <string>ca://BLEN:${AREA}:${POS}:TempPY</string>
+              <string>calc://degCPY?PYKel=ca://BLEN:${AREA}:${POS}:TempPY&amp;expr=PYKel-273.15</string>
              </property>
             </widget>
            </item>
            <item row="2" column="0">
             <widget class="QLabel" name="label_9">
              <property name="text">
-              <string>-Y  Temperature:</string>
+              <string>-Y  Temperature degC:</string>
              </property>
             </widget>
            </item>
            <item row="1" column="0">
             <widget class="QLabel" name="label_8">
              <property name="text">
-              <string>+Y Temperature:</string>
+              <string>+Y Temperature degC:</string>
              </property>
             </widget>
            </item>
@@ -133,8 +139,14 @@ Y Position</string>
              <property name="toolTip">
               <string/>
              </property>
+             <property name="precision" stdset="0">
+              <number>2</number>
+             </property>
+             <property name="precisionFromPV" stdset="0">
+              <bool>false</bool>
+             </property>
              <property name="channel" stdset="0">
-              <string>ca://BLEN:${AREA}:${POS}:TempNY</string>
+              <string>calc://degCNY?NYKel=ca://BLEN:${AREA}:${POS}:TempNY&amp;expr=NYKel-273.15</string>
              </property>
             </widget>
            </item>
@@ -277,7 +289,7 @@ X Position</string>
            <item row="0" column="0">
             <widget class="QLabel" name="label_6">
              <property name="text">
-              <string>+X Temperature:</string>
+              <string>+X Temperature degC:</string>
              </property>
             </widget>
            </item>
@@ -286,8 +298,14 @@ X Position</string>
              <property name="toolTip">
               <string/>
              </property>
+             <property name="precision" stdset="0">
+              <number>2</number>
+             </property>
+             <property name="precisionFromPV" stdset="0">
+              <bool>false</bool>
+             </property>
              <property name="channel" stdset="0">
-              <string>ca://BLEN:${AREA}:${POS}:TempNX</string>
+              <string>calc://degCNX?NXKel=ca://BLEN:${AREA}:${POS}:TempNX&amp;expr=NXKel-273.15</string>
              </property>
             </widget>
            </item>
@@ -296,15 +314,21 @@ X Position</string>
              <property name="toolTip">
               <string/>
              </property>
+             <property name="precision" stdset="0">
+              <number>2</number>
+             </property>
+             <property name="precisionFromPV" stdset="0">
+              <bool>false</bool>
+             </property>
              <property name="channel" stdset="0">
-              <string>ca://BLEN:${AREA}:${POS}:TempPX</string>
+              <string>calc://degCPX?PXKel=ca://BLEN:${AREA}:${POS}:TempPX&amp;expr=PXKel-273.15</string>
              </property>
             </widget>
            </item>
            <item row="1" column="0">
             <widget class="QLabel" name="label_7">
              <property name="text">
-              <string>-X  Temperature:</string>
+              <string>-X  Temperature degC:</string>
              </property>
             </widget>
            </item>
