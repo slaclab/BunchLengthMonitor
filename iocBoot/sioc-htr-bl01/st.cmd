@@ -17,7 +17,7 @@ epicsEnvSet("IOC_UNIT", "BL01")
 epicsEnvSet("ATCA_SLOT", "4")
 epicsEnvSet("BLEN_ASYN_PORT", "ATCA$(ATCA_SLOT)")
 
-epicsEnvSet("TEMP_IOC", "SIOC:B084:IM03")
+epicsEnvSet("TEMP_IOC", "SIOC:GUNB:IM02")
 epicsEnvSet("TEMP_PY_SRC","$(TEMP_IOC):4:INPUT2:VALUE")
 epicsEnvSet("TEMP_NY_SRC","$(TEMP_IOC):5:INPUT2:VALUE")
 epicsEnvSet("TEMP_PX_SRC","$(TEMP_IOC):4:INPUT1:VALUE")
