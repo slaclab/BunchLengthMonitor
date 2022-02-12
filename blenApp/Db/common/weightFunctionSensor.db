@@ -33,13 +33,12 @@ record (ao, "BLEN:$(AREA):$(POS):$(AMC)$(INST):TIME_PRE") {
 }
 
 # Calculate the number of samples of the pre-edge of the weight function 
-# giving the correspondent time and writes it to the firmware. Only even
-# numbers are allowed in the FPGA register (that is why we use ((~0)-1)&
+# giving the correspondent time and writes it to the firmware.
 record (calcout, "BLEN:$(AREA):$(POS):$(AMC)$(INST):NumSamp0_CLC") {
   field(DESC, "Number samples of pre-edge")
   field(INPA, "BLEN:$(AREA):$(POS):$(AMC)$(INST):TIME_PRE CP")
   field(INPB, "BLEN:$(AREA):$(POS):$(AMC):AmcClkFreq CP")
-  field(CALC, "((~0)-1)&FLOOR((2*A*B)/1000000000)")
+  field(CALC, "FLOOR((2*A*B)/1000000000)")
   field(OUT, "BLEN:$(AREA):$(POS):$(AMC)$(INST):NumSamp0 PP")
   field(DOPT, "Use CALC")
 }
@@ -62,13 +61,12 @@ record (calc, "BLEN:$(AREA):$(POS):$(AMC)$(INST):TIME_MIDC") {
 
 # Calculate the number of samples of between edges of the weight function 
 # giving the correspondent time and writes it to the firmware. The time
-# here is twice the time in pre and post edges. Only even numbers are allowed
-# in the FPGA register (that is why we use ((~0)-1)&).
+# here is twice the time in pre and post edges.
 record (calcout, "BLEN:$(AREA):$(POS):$(AMC)$(INST):TrigDelay1_CLC") {
   field(DESC, "Number samples of between edges")
   field(INPA, "BLEN:$(AREA):$(POS):$(AMC)$(INST):TIME_MIDC CP")
   field(INPB, "BLEN:$(AREA):$(POS):$(AMC):AmcClkFreq CP")
-  field(CALC, "((~0)-1)&FLOOR((2*A*B)/1000000000)")
+  field(CALC, "FLOOR((2*A*B)/1000000000)")
   field(OUT, "BLEN:$(AREA):$(POS):$(AMC)$(INST):TrigDelay1 PP")
   field(DOPT, "Use CALC")
 }
@@ -80,13 +78,12 @@ record (ao, "BLEN:$(AREA):$(POS):$(AMC)$(INST):TIME_POS") {
 }
 
 # Calculate the number of samples of the pos-edge of the weight function 
-# giving the correspondent time and writes it to the firmware. Only even
-# numbers are allowed in the FPGA register (that is why we use ((~0)-1)&).
+# giving the correspondent time and writes it to the firmware.
 record (calcout, "BLEN:$(AREA):$(POS):$(AMC)$(INST):NumSamp1_CLC") {
   field(DESC, "Number samples of pos-edge")
   field(INPA, "BLEN:$(AREA):$(POS):$(AMC)$(INST):TIME_POS CP")
   field(INPB, "BLEN:$(AREA):$(POS):$(AMC):AmcClkFreq CP")
-  field(CALC, "((~0)-1)&FLOOR((2*A*B)/1000000000)")
+  field(CALC, "FLOOR((2*A*B)/1000000000)")
   field(OUT, "BLEN:$(AREA):$(POS):$(AMC)$(INST):NumSamp1 PP")
   field(DOPT, "Use CALC")
 }
