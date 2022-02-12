@@ -13,7 +13,6 @@ BLEN:$(AREA):$(POS):$(INST):CoefG
 BLEN:$(AREA):$(POS):$(INST):CoefH
 BLEN:$(AREA):$(POS):$(INST):CoefI
 BLEN:$(AREA):$(POS):$(INST):CoefI2
-BLEN:$(AREA):$(POS):$(INST):TMIT
 
 BLEN:$(AREA):$(POS):loadConfigFile.VAL
 BLEN:$(AREA):$(POS):loadConfigRoot.VAL
