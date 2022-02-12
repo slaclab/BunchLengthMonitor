@@ -55,6 +55,12 @@
              <property name="toolTip">
               <string/>
              </property>
+             <property name="precision" stdset="0">
+              <number>2</number>
+             </property>
+             <property name="precisionFromPV" stdset="0">
+              <bool>false</bool>
+             </property>
              <property name="channel" stdset="0">
               <string>ca://BLEN:${AREA}:${POS}:${AMC}${SENS}:TIME_PRE_RBV</string>
              </property>
@@ -91,6 +97,12 @@
             <widget class="PyDMLineEdit" name="PyDMLineEdit">
              <property name="toolTip">
               <string/>
+             </property>
+             <property name="precision" stdset="0">
+              <number>2</number>
+             </property>
+             <property name="precisionFromPV" stdset="0">
+              <bool>false</bool>
              </property>
              <property name="channel" stdset="0">
               <string>ca://BLEN:${AREA}:${POS}:${AMC}${SENS}:TIME_PRE</string>
@@ -172,6 +184,12 @@
              <property name="toolTip">
               <string/>
              </property>
+             <property name="precision" stdset="0">
+              <number>2</number>
+             </property>
+             <property name="precisionFromPV" stdset="0">
+              <bool>false</bool>
+             </property>
              <property name="channel" stdset="0">
               <string>ca://BLEN:${AREA}:${POS}:${AMC}${SENS}:TIME_MID</string>
              </property>
@@ -181,6 +199,12 @@
             <widget class="PyDMLabel" name="PyDMLabel_2">
              <property name="toolTip">
               <string/>
+             </property>
+             <property name="precision" stdset="0">
+              <number>2</number>
+             </property>
+             <property name="precisionFromPV" stdset="0">
+              <bool>false</bool>
              </property>
              <property name="channel" stdset="0">
               <string>ca://BLEN:${AREA}:${POS}:${AMC}${SENS}:TIME_MID_RBV</string>
@@ -270,6 +294,12 @@
              <property name="toolTip">
               <string/>
              </property>
+             <property name="precision" stdset="0">
+              <number>2</number>
+             </property>
+             <property name="precisionFromPV" stdset="0">
+              <bool>false</bool>
+             </property>
              <property name="channel" stdset="0">
               <string>ca://BLEN:${AREA}:${POS}:${AMC}${SENS}:TIME_POS</string>
              </property>
@@ -279,6 +309,12 @@
             <widget class="PyDMLabel" name="PyDMLabel_3">
              <property name="toolTip">
               <string/>
+             </property>
+             <property name="precision" stdset="0">
+              <number>2</number>
+             </property>
+             <property name="precisionFromPV" stdset="0">
+              <bool>false</bool>
              </property>
              <property name="channel" stdset="0">
               <string>ca://BLEN:${AREA}:${POS}:${AMC}${SENS}:TIME_POS_RBV</string>
