@@ -52,9 +52,9 @@
             </font>
            </property>
            <property name="text">
-            <string>Low Frequency Detector 
-&lt;40Ghz 
-Y Position</string>
+            <string>Long Bunches 
+&gt; 1 mm (3.3 ps) 
+(Detectors on ±y axis)</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignCenter</set>
@@ -234,9 +234,9 @@ Y Position</string>
             </font>
            </property>
            <property name="text">
-            <string>High Frequency Detector
-&gt;40Ghz
-X Position</string>
+            <string>Short Bunches
+&lt; 1 mm (3.3 ps)
+(Detectors on ±x axis)</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignCenter</set>

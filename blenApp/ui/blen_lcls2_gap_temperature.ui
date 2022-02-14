@@ -168,35 +168,35 @@
        <item row="2" column="0">
         <widget class="QLabel" name="label_11">
          <property name="text">
-          <string>${ILOCK_T3_NAME}</string>
+          <string>+Y Temp</string>
          </property>
         </widget>
        </item>
        <item row="0" column="0">
         <widget class="QLabel" name="label_7">
          <property name="text">
-          <string>${ILOCK_T1_NAME}</string>
+          <string>+X Temp</string>
          </property>
         </widget>
        </item>
        <item row="4" column="0">
         <widget class="QLabel" name="label_9">
          <property name="text">
-          <string>${ILOCK_T5_NAME}</string>
+          <string>Ceramic Temp</string>
          </property>
         </widget>
        </item>
        <item row="1" column="0">
         <widget class="QLabel" name="label_8">
          <property name="text">
-          <string>${ILOCK_T2_NAME}</string>
+          <string>-X Temp</string>
          </property>
         </widget>
        </item>
        <item row="3" column="0">
         <widget class="QLabel" name="label_10">
          <property name="text">
-          <string>${ILOCK_T4_NAME}</string>
+          <string>-Y Temp</string>
          </property>
         </widget>
        </item>
@@ -206,7 +206,7 @@
           <string/>
          </property>
          <property name="channel" stdset="0">
-          <string>ca://${TEMP_PREFIX}:3:TEMP</string>
+          <string>ca://${TEMP_PREFIX}:4:TEMP</string>
          </property>
         </widget>
        </item>
@@ -216,7 +216,7 @@
           <string/>
          </property>
          <property name="channel" stdset="0">
-          <string>ca://${TEMP_PREFIX}:1:TEMP</string>
+          <string>ca://${TEMP_PREFIX}:2:TEMP</string>
          </property>
         </widget>
        </item>
@@ -226,7 +226,7 @@
           <string/>
          </property>
          <property name="channel" stdset="0">
-          <string>ca://${TEMP_PREFIX}:2:TEMP</string>
+          <string>ca://${TEMP_PREFIX}:3:TEMP</string>
          </property>
         </widget>
        </item>
@@ -236,7 +236,7 @@
           <string/>
          </property>
          <property name="channel" stdset="0">
-          <string>ca://${TEMP_PREFIX}:4:TEMP</string>
+          <string>ca://${TEMP_PREFIX}:1:TEMP</string>
          </property>
         </widget>
        </item>
