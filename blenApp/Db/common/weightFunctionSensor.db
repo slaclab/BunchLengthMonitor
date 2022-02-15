@@ -29,6 +29,7 @@ record (calc, "BLEN:$(AREA):$(POS):$(AMC)$(INST):TIME_POS_RBV") {
 # Desired time of the weight function pre-edge
 record (ao, "BLEN:$(AREA):$(POS):$(AMC)$(INST):TIME_PRE") {
   field(DESC, "Duration of pre-edge in ns")
+  field(DRVH, "720")
   info(autosaveFields, "VAL")
 }
 
@@ -46,6 +47,7 @@ record (calcout, "BLEN:$(AREA):$(POS):$(AMC)$(INST):NumSamp0_CLC") {
 # Desired time of the weight function between edges
 record (ao, "BLEN:$(AREA):$(POS):$(AMC)$(INST):TIME_MID") {
   field(DESC, "Duration of between edge in ns")
+  field(DRVH, "720")
   info(autosaveFields, "VAL")
 }
 
@@ -74,6 +76,7 @@ record (calcout, "BLEN:$(AREA):$(POS):$(AMC)$(INST):TrigDelay1_CLC") {
 # Desired time of the weight function pos-edge
 record (ao, "BLEN:$(AREA):$(POS):$(AMC)$(INST):TIME_POS") {
   field(DESC, "Duration of pos-edge in ns")
+  field(DRVH, "720")
   info(autosaveFields, "VAL")
 }
 
