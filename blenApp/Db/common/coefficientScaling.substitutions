@@ -1,0 +1,12 @@
+
+
+file coefScale.db
+{
+pattern {P, AMC, SENS, COEF}
+
+    {$(P), $(AMC), 0, 0}
+    {$(P), $(AMC), 0, 1}
+    {$(P), $(AMC), 1, 3}
+    {$(P), $(AMC), 1, 4}
+
+}

@@ -1,0 +1,8 @@
+# This database has items related to calibration of the sensor
+
+
+record(bi, "$(P):$(AMC):CalibMode"){
+    field(ZNAM, "Running")
+    field(ONAM, "Calibration")
+}
+

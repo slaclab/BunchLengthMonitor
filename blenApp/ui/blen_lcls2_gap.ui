@@ -54,7 +54,7 @@
            <property name="text">
             <string>Long Bunches 
 &gt; 1 mm (3.3 ps) 
-(Detectors on ±y axis)</string>
+(Detectors on +/-Y axis)</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignCenter</set>
@@ -236,7 +236,7 @@
            <property name="text">
             <string>Short Bunches
 &lt; 1 mm (3.3 ps)
-(Detectors on ±x axis)</string>
+(Detectors on +/-X axis)</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignCenter</set>
@@ -474,7 +474,7 @@
        <item row="0" column="0">
         <widget class="QLabel" name="label_13">
          <property name="text">
-          <string>BPM TMIT (pC):</string>
+          <string>BPM TMIT formated to pC:</string>
          </property>
         </widget>
        </item>

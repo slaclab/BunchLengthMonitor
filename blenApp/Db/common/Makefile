@@ -96,5 +96,8 @@ DB += bpmSelect.db
 DB += ipAddr.db
 DB += temperature.template
 DB += selectStatus.db
+DB += coefScale.db
+DB += coefficientScaling.db
+DB += sensCalibration.db
 
 include $(TOP)/configure/RULES
