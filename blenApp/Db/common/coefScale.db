@@ -33,5 +33,5 @@ record(calcout, "$(P):$(AMC):Calib_Coef_A$(COEF)"){
     field(OUT, "$(P):$(AMC):CoefA$(COEF)")
     field(FLNK, "$(P):$(AMC):CoefA$(COEF)")
     
-    field(SCAN, ".1 second")
+    field(SCAN, "1 second")
 }
