@@ -38,7 +38,7 @@
       </sizepolicy>
      </property>
      <property name="currentIndex">
-      <number>3</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="instATab">
       <attribute name="title">
@@ -54,7 +54,7 @@
           <string>{ &quot;AREA&quot;: &quot;${AREA}&quot;, &quot;POS&quot;: &quot;${POS}&quot;,&quot;AMC&quot;:&quot;0&quot;,&quot;SENS&quot;:&quot;0&quot;}</string>
          </property>
          <property name="filename" stdset="0">
-          <string>blen_sensor_timing.ui</string>
+          <string>blen_lcls2_gap_sensor_timing.ui </string>
          </property>
         </widget>
        </item>
@@ -74,7 +74,7 @@
           <string>{ &quot;AREA&quot;: &quot;${AREA}&quot;, &quot;POS&quot;: &quot;${POS}&quot;,&quot;AMC&quot;:&quot;0&quot;,&quot;SENS&quot;:&quot;1&quot; }</string>
          </property>
          <property name="filename" stdset="0">
-          <string>blen_sensor_timing.ui</string>
+          <string>blen_lcls2_gap_sensor_timing.ui </string>
          </property>
         </widget>
        </item>
@@ -94,7 +94,7 @@
           <string>{ &quot;AREA&quot;: &quot;${AREA}&quot;, &quot;POS&quot;: &quot;${POS}&quot;,&quot;AMC&quot;:&quot;1&quot;,&quot;SENS&quot;:&quot;0&quot; }</string>
          </property>
          <property name="filename" stdset="0">
-          <string>blen_sensor_timing.ui</string>
+          <string>blen_lcls2_gap_sensor_timing.ui </string>
          </property>
         </widget>
        </item>
@@ -114,7 +114,7 @@
           <string>{ &quot;AREA&quot;: &quot;${AREA}&quot;, &quot;POS&quot;: &quot;${POS}&quot;,&quot;AMC&quot;:&quot;1&quot;,&quot;SENS&quot;:&quot;1&quot; }</string>
          </property>
          <property name="filename" stdset="0">
-          <string>blen_sensor_timing.ui</string>
+          <string>blen_lcls2_gap_sensor_timing.ui </string>
          </property>
         </widget>
        </item>
