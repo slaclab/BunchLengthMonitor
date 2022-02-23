@@ -14,8 +14,8 @@ epicsEnvSet("AREA", "BC2B")
 epicsEnvSet("POS", "950")
 epicsEnvSet("INST", "BZ21B")
 epicsEnvSet("IOC_UNIT", "BL03")
-epicsEnvSet("ATCA_SLOT", "7")
-epicsEnvSet("BLEN_ASYN_PORT", "ATCA$(ATCA_SLOT)")
+epicsEnvSet("ATCA_SLOT", "4")
+epicsEnvSet("BLEN_ASYN_PORT", "ATCA7")
 
 # YAML directory
 epicsEnvSet("YAML_DIR","$(IOC_DATA)/$(IOC)/yaml")
@@ -24,7 +24,7 @@ epicsEnvSet("YAML_DIR","$(IOC_DATA)/$(IOC)/yaml")
 epicsEnvSet("TOP_YAML","$(YAML_DIR)/000TopLevel.yaml")
 epicsEnvSet("YAML_CONFIG_FILE", "$(YAML_DIR)/config/defaultsPyro.yaml")
 
-epicsEnvSet("FPGA_IP", "10.0.1.107")
+epicsEnvSet("FPGA_IP", "10.0.1.104")
 
 # IOC name for IOC admin
 epicsEnvSet(IOC_NAME,"SIOC:$(AREA):$(IOC_UNIT)")
@@ -36,13 +36,12 @@ epicsEnvSet("DICT_FILE", "yaml/blenLCLS2.dict")
 cd $(TOP)
 
 < iocBoot/common/blenCommon.cmd
-dbLoadRecords("db/pyroFilters.db", "P=BLEN:$(AREA):$(POS), INST0=$(INST)A, INST1=$(INST)B")
+
+dbLoadRecords("db/pyroFilters.db", "P=BLEN:$(AREA):$(POS)")
+dbLoadRecords("db/pyroShutter.db", "P=BLEN:$(AREA):$(POS)")
 
 # Parse IP address
 dbLoadRecords("db/ipAddr.db", "P=BLEN:$(AREA):$(POS), SRC=ServerRemoteIp")
-
-# Pt100 temperature sensor inputs
-dbLoadRecords("db/blen_pyro_temperatures.db", "P=BLEN:${AREA}:${POS}")
 
 # ===========================================
 #               IOC INIT

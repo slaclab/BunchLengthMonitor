@@ -37,7 +37,7 @@ epicsEnvSet(IOC_NAME,"SIOC:$(AREA):$(IOC_UNIT)")
 
 # Which version of the Application to use - "LCLS1" or "LCLS2"
 epicsEnvSet("BLEN_VERSION", "LCLS2")
-epicsEnvSet("DICT_FILE", "yaml/blenGapDiode.dict")
+epicsEnvSet("DICT_FILE", "yaml/blenLCLS2.dict")
 
 cd $(TOP)
 
@@ -63,6 +63,7 @@ dbLoadRecords("db/weightFunctionSensor.db", "AREA=$(AREA), POS=$(POS), INST=1, A
 dbLoadRecords("db/weightFunctionSensor.db", "AREA=$(AREA), POS=$(POS), INST=1, AMC=1")
 
 # Parse IP address
+#should be moved to common
 dbLoadRecords("db/ipAddr.db", "P=BLEN:$(AREA):$(POS), SRC=ServerRemoteIp")
 
 # Temperature sensors

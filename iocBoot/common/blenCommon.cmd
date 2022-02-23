@@ -38,18 +38,19 @@ cpswLoadConfigFile("$(YAML_CONFIG_FILE)", "mmio", "")
 
 # Setup BSA Driver
 # add BSA PVs
-#addBsa("AMC0:SUM",        "uint32")
-#addBsa("AMC0:IMAX",       "uint32")
-#addBsa("AMC0:TMIT",       "uint32")
-#addBsa("AMC0:SUMFLOAT",   "float32")
-#addBsa("AMC0:IMAXFLOAT",  "float32")
-#addBsa("AMC0:BLSTATUS",   "uint32")
-#addBsa("AMC1:SUM",        "uint32")
-#addBsa("AMC1:IMAX",       "uint32")
-#addBsa("AMC1:TMIT",       "uint32")
-#addBsa("AMC1:SUMFLOAT",   "float32")
-#addBsa("AMC1:IMAXFLOAT",  "float32")
-#addBsa("AMC1:BLSTATUS",   "uint32")
+addBsa("AMC0:SUM",        "uint32")
+addBsa("AMC0:IMAX",       "uint32")
+addBsa("AMC0:TMIT",       "uint32")
+addBsa("AMC0:SUMFLOAT",   "float32")
+addBsa("AMC0:IMAXFLOAT",  "float32")
+addBsa("AMC0:BLSTATUS",   "uint32")
+
+addBsa("AMC1:SUM",        "uint32")
+addBsa("AMC1:IMAX",       "uint32")
+addBsa("AMC1:TMIT",       "uint32")
+addBsa("AMC1:SUMFLOAT",   "float32")
+addBsa("AMC1:IMAXFLOAT",  "float32")
+addBsa("AMC1:BLSTATUS",   "uint32")
 
 # BSA driver for yaml
 #bsaAsynDriverConfigure("bsaPort", "mmio/AmcCarrierCore/AmcCarrierBsa","strm/AmcCarrierDRAM/dram")
@@ -108,21 +109,56 @@ dbLoadRecords("db/weightFunctionSensor.db", "AREA=$(AREA), POS=$(POS), INST=0, A
 dbLoadRecords("db/weightFunctionSensor.db", "AREA=$(AREA), POS=$(POS), INST=0, AMC=1")
 
 
+dbLoadRecords("db/lcls2FPGA.db", "P=BLEN:$(AREA):$(POS), PORT=${BLEN_ASYN_PORT}") 
+dbLoadRecords("db/bpmSelect.db", "P=BLEN:$(AREA):$(POS)")
+dbLoadRecords("db/selectStatus.db", "P=BLEN:$(AREA):$(POS)")
+dbLoadRecords("db/sensCalibration.db", "P=BLEN:$(AREA):$(POS), AMC=0")
+dbLoadRecords("db/sensCalibration.db", "P=BLEN:$(AREA):$(POS), AMC=1")
+dbLoadRecords("db/coefficientScaling.db", "P=BLEN:$(AREA):$(POS), AMC=0")
+dbLoadRecords("db/coefficientScaling.db", "P=BLEN:$(AREA):$(POS), AMC=1")
+
+dbLoadRecords("db/msgStatus.db", "P=BLEN:$(AREA):$(POS)")
+
+# BSA records
+#dbLoadRecords("db/Bsa.db", "DEVICE=BLEN:$(AREA):$(POS),ATRB=AIMAX, SINK_SIZE=1, LNK=''")
+#dbLoadRecords("db/Bsa.db", "DEVICE=BLEN:$(AREA):$(POS),ATRB=BIMAX, SINK_SIZE=1, LNK=''")
+#dbLoadRecords("db/Bsa.db", "DEVICE=BLEN:$(AREA):$(POS),ATRB=ARAW, SINK_SIZE=1, LNK=''")
+#dbLoadRecords("db/Bsa.db", "DEVICE=BLEN:$(AREA):$(POS),ATRB=BRAW, SINK_SIZE=1, LNK=''")
+
+# tpr high level PVs
+dbLoadRecords("db/tprDeviceNamePV.db","LOCA=$(AREA),IOC_UNIT=$(IOC_UNIT),INST=$(ATCA_SLOT),SYS=SYS2,NN=00,DEV_PREFIX=BLEN:$(AREA):$(POS):TRG00:,PORT=trig")
+dbLoadRecords("db/tprDeviceNamePV.db","LOCA=$(AREA),IOC_UNIT=$(IOC_UNIT),INST=$(ATCA_SLOT),SYS=SYS2,NN=01,DEV_PREFIX=BLEN:$(AREA):$(POS):TRG01:,PORT=trig")
+dbLoadRecords("db/tprDeviceNamePV.db","LOCA=$(AREA),IOC_UNIT=$(IOC_UNIT),INST=$(ATCA_SLOT),SYS=SYS2,NN=02,DEV_PREFIX=BLEN:$(AREA):$(POS):TRG02:,PORT=trig")
+dbLoadRecords("db/tprDeviceNamePV.db","LOCA=$(AREA),IOC_UNIT=$(IOC_UNIT),INST=$(ATCA_SLOT),SYS=SYS2,NN=03,DEV_PREFIX=BLEN:$(AREA):$(POS):TRG03:,PORT=trig")
+dbLoadRecords("db/tprDeviceNamePV.db","LOCA=$(AREA),IOC_UNIT=$(IOC_UNIT),INST=$(ATCA_SLOT),SYS=SYS2,NN=04,DEV_PREFIX=BLEN:$(AREA):$(POS):TRG04:,PORT=trig")
+dbLoadRecords("db/tprDeviceNamePV.db","LOCA=$(AREA),IOC_UNIT=$(IOC_UNIT),INST=$(ATCA_SLOT),SYS=SYS2,NN=05,DEV_PREFIX=BLEN:$(AREA):$(POS):TRG05:,PORT=trig")
+dbLoadRecords("db/tprDeviceNamePV.db","LOCA=$(AREA),IOC_UNIT=$(IOC_UNIT),INST=$(ATCA_SLOT),SYS=SYS2,NN=06,DEV_PREFIX=BLEN:$(AREA):$(POS):TRG06:,PORT=trig")
+dbLoadRecords("db/tprDeviceNamePV.db","LOCA=$(AREA),IOC_UNIT=$(IOC_UNIT),INST=$(ATCA_SLOT),SYS=SYS2,NN=07,DEV_PREFIX=BLEN:$(AREA):$(POS):TRG07:,PORT=trig")
+dbLoadRecords("db/tprDeviceNamePV.db","LOCA=$(AREA),IOC_UNIT=$(IOC_UNIT),INST=$(ATCA_SLOT),SYS=SYS2,NN=08,DEV_PREFIX=BLEN:$(AREA):$(POS):TRG08:,PORT=trig")
+dbLoadRecords("db/tprDeviceNamePV.db","LOCA=$(AREA),IOC_UNIT=$(IOC_UNIT),INST=$(ATCA_SLOT),SYS=SYS2,NN=09,DEV_PREFIX=BLEN:$(AREA):$(POS):TRG09:,PORT=trig")
+dbLoadRecords("db/tprDeviceNamePV.db","LOCA=$(AREA),IOC_UNIT=$(IOC_UNIT),INST=$(ATCA_SLOT),SYS=SYS2,NN=10,DEV_PREFIX=BLEN:$(AREA):$(POS):TRG10:,PORT=trig")
+dbLoadRecords("db/tprDeviceNamePV.db","LOCA=$(AREA),IOC_UNIT=$(IOC_UNIT),INST=$(ATCA_SLOT),SYS=SYS2,NN=11,DEV_PREFIX=BLEN:$(AREA):$(POS):TRG11:,PORT=trig")
+dbLoadRecords("db/tprDeviceNamePV.db","LOCA=$(AREA),IOC_UNIT=$(IOC_UNIT),INST=$(ATCA_SLOT),SYS=SYS2,NN=12,DEV_PREFIX=BLEN:$(AREA):$(POS):TRG12:,PORT=trig")
+dbLoadRecords("db/tprDeviceNamePV.db","LOCA=$(AREA),IOC_UNIT=$(IOC_UNIT),INST=$(ATCA_SLOT),SYS=SYS2,NN=13,DEV_PREFIX=BLEN:$(AREA):$(POS):TRG13:,PORT=trig")
+dbLoadRecords("db/tprDeviceNamePV.db","LOCA=$(AREA),IOC_UNIT=$(IOC_UNIT),INST=$(ATCA_SLOT),SYS=SYS2,NN=14,DEV_PREFIX=BLEN:$(AREA):$(POS):TRG14:,PORT=trig")
+dbLoadRecords("db/tprDeviceNamePV.db","LOCA=$(AREA),IOC_UNIT=$(IOC_UNIT),INST=$(ATCA_SLOT),SYS=SYS2,NN=15,DEV_PREFIX=BLEN:$(AREA):$(POS):TRG15:,PORT=trig")
+
+
 # **** Load BSA driver DB ****
 
-#dbLoadRecords("db/bsa.db", "DEV=$(AMC0_PREFIX),PORT=bsaPort,BSAKEY=AMC0:SUM,SECN=SUM")
-#dbLoadRecords("db/bsa.db", "DEV=$(AMC0_PREFIX),PORT=bsaPort,BSAKEY=AMC0:IMAX,SECN=IMAX")
-#dbLoadRecords("db/bsa.db", "DEV=$(AMC0_PREFIX),PORT=bsaPort,BSAKEY=AMC0:TMIT,SECN=TMIT")
-#dbLoadRecords("db/bsa.db", "DEV=$(AMC0_PREFIX),PORT=bsaPort,BSAKEY=AMC0:SUMFLOAT,SECN=SUMFLOAT")
-#dbLoadRecords("db/bsa.db", "DEV=$(AMC0_PREFIX),PORT=bsaPort,BSAKEY=AMC0:IMAXFLOAT,SECN=IMAXFLOAT")
-#dbLoadRecords("db/bsa.db", "DEV=$(AMC0_PREFIX),PORT=bsaPort,BSAKEY=AMC0:BLSTATUS,SECN=BLSTATUS")
+dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsaPort,BSAKEY=AMC0:SUM,SECN=SUM")
+dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsaPort,BSAKEY=AMC0:IMAX,SECN=IMAX")
+dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsaPort,BSAKEY=AMC0:TMIT,SECN=TMIT")
+dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsaPort,BSAKEY=AMC0:SUMFLOAT,SECN=SUMFLOAT")
+dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsaPort,BSAKEY=AMC0:IMAXFLOAT,SECN=IMAXFLOAT")
+dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsaPort,BSAKEY=AMC0:BLSTATUS,SECN=BLSTATUS")
 
-#dbLoadRecords("db/bsa.db", "DEV=$(AMC1_PREFIX),PORT=bsaPort,BSAKEY=AMC1:SUM,SECN=SUM")
-#dbLoadRecords("db/bsa.db", "DEV=$(AMC1_PREFIX),PORT=bsaPort,BSAKEY=AMC1:IMAX,SECN=IMAX")
-#dbLoadRecords("db/bsa.db", "DEV=$(AMC1_PREFIX),PORT=bsaPort,BSAKEY=AMC1:TMIT,SECN=TMIT")
-#dbLoadRecords("db/bsa.db", "DEV=$(AMC1_PREFIX),PORT=bsaPort,BSAKEY=AMC1:SUMFLOAT,SECN=SUMFLOAT")
-#dbLoadRecords("db/bsa.db", "DEV=$(AMC1_PREFIX),PORT=bsaPort,BSAKEY=AMC1:IMAXFLOAT,SECN=IMAXFLOAT")
-#dbLoadRecords("db/bsa.db", "DEV=$(AMC1_PREFIX),PORT=bsaPort,BSAKEY=AMC1:BLSTATUS,SECN=BLSTATUS")
+dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsaPort,BSAKEY=AMC1:SUM,SECN=SUM")
+dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsaPort,BSAKEY=AMC1:IMAX,SECN=IMAX")
+dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsaPort,BSAKEY=AMC1:TMIT,SECN=TMIT")
+dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsaPort,BSAKEY=AMC1:SUMFLOAT,SECN=SUMFLOAT")
+dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsaPort,BSAKEY=AMC1:IMAXFLOAT,SECN=IMAXFLOAT")
+dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsaPort,BSAKEY=AMC1:BLSTATUS,SECN=BLSTATUS")
 
 # Timing trigger
 # INST = Instance Number (for multiple instances of tprTrigger in an IOC)
@@ -156,7 +192,7 @@ system("cp $(TOP)/archive/$(IOC).archive $(IOC_DATA)/$(IOC)/archive")
 # ===========================================
 #   LOAD FACET, LCLS1 (MR) or LCLS2 CONFIG 
 # ===========================================
-< iocBoot/common/blen$(BLEN_VERSION).cmd
+<# iocBoot/common/blen$(BLEN_VERSION).cmd
 
 # ===========================================
 #           SETUP AUTOSAVE/RESTORE
