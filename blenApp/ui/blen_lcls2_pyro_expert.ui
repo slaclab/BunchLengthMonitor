@@ -15,7 +15,7 @@
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
    <item row="0" column="0">
-    <layout class="QVBoxLayout" name="verticalLayout_4" stretch="1,0,0,0,0,1,1">
+    <layout class="QVBoxLayout" name="verticalLayout_4" stretch="1,0,0,0,1,1">
      <item>
       <widget class="QLabel" name="label">
        <property name="font">
@@ -24,28 +24,10 @@
         </font>
        </property>
        <property name="text">
-        <string>Bunch Lenght Monitor Expert Interfaces</string>
+        <string>Bunch Length Monitor Expert Interfaces</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="PyDMRelatedDisplayButton" name="PyDMRelatedDisplayButton_2">
-       <property name="toolTip">
-        <string/>
-       </property>
-       <property name="text">
-        <string>Temperature Data...</string>
-       </property>
-       <property name="filenames" stdset="0">
-        <stringlist>
-         <string>blen_lcls2_gap_temperature.ui</string>
-        </stringlist>
-       </property>
-       <property name="openInNewWindow" stdset="0">
-        <bool>true</bool>
        </property>
       </widget>
      </item>
@@ -77,7 +59,7 @@
        </property>
        <property name="filenames" stdset="0">
         <stringlist>
-         <string>blen_lcls2_gap_sensor_delay.ui</string>
+         <string>blen_lcls2_pyro_sensor_delay.ui</string>
         </stringlist>
        </property>
        <property name="openInNewWindow" stdset="0">
@@ -95,7 +77,7 @@
        </property>
        <property name="filenames" stdset="0">
         <stringlist>
-         <string>blen_lcls2_gap_coef_main.ui</string>
+         <string>blen_lcls2_pyro_coef_main.ui</string>
         </stringlist>
        </property>
        <property name="openInNewWindow" stdset="0">

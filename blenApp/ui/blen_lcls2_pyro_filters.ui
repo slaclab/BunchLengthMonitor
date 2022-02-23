@@ -517,23 +517,6 @@ QFrame#shtFrame {
       </widget>
      </item>
      <item>
-      <layout class="QHBoxLayout" name="attnLayout">
-       <item>
-        <spacer name="horizontalSpacer_4">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-      </layout>
-     </item>
-     <item>
       <widget class="QFrame" name="shtFrame">
        <property name="frameShape">
         <enum>QFrame::NoFrame</enum>
@@ -570,7 +553,7 @@ QFrame#shtFrame {
                <string/>
               </property>
               <property name="text">
-               <string>${INST}B Shutter Status</string>
+               <string>Shutter 1 Status</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignCenter</set>
@@ -608,7 +591,7 @@ QFrame#shtFrame {
                <string/>
               </property>
               <property name="channel" stdset="0">
-               <string>ca://BLEN:${AREA}:${POS}:${INST}B:SHT_CTRL</string>
+               <string>ca://BLEN:${AREA}:${POS}:1:SHT_CTRL</string>
               </property>
               <property name="items" stdset="0">
                <stringlist>
@@ -652,7 +635,7 @@ QFrame#shtFrame {
              <string/>
             </property>
             <property name="text">
-             <string>${INST}A Shutter</string>
+             <string>Shutter 0</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
@@ -676,7 +659,7 @@ QFrame#shtFrame {
                <enum>QFrame::NoFrame</enum>
               </property>
               <property name="text">
-               <string>${INST}A Shutter Status</string>
+               <string>Shutter 0 Status</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignCenter</set>
@@ -717,7 +700,7 @@ QFrame#shtFrame {
                <string/>
               </property>
               <property name="channel" stdset="0">
-               <string>ca://BLEN:${AREA}:${POS}:${INST}A:SHT_CTRL</string>
+               <string>ca://BLEN:${AREA}:${POS}:0:SHT_CTRL</string>
               </property>
               <property name="items" stdset="0">
                <stringlist>
@@ -761,7 +744,7 @@ QFrame#shtFrame {
              <string/>
             </property>
             <property name="text">
-             <string>${INST}B Shutter</string>
+             <string>Shutter 1</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
