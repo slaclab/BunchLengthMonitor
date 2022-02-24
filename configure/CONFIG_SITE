@@ -1,5 +1,4 @@
 # CONFIG_SITE
-
 # Make any application-specific changes to the EPICS build
 #   configuration variables in this file.
 #
@@ -7,7 +6,6 @@
 #   CONFIG_SITE.$(EPICS_HOST_ARCH).Common
 #   CONFIG_SITE.Common.$(T_A)
 #   CONFIG_SITE.$(EPICS_HOST_ARCH).$(T_A)
-
 # CHECK_RELEASE controls the consistency checking of the support
 #   applications pointed to by the RELEASE* files.
 # Normally CHECK_RELEASE should be set to YES.
@@ -15,17 +13,14 @@
 # Set CHECK_RELEASE to WARN to perform consistency checking but
 #   continue building anyway if conflicts are found.
 CHECK_RELEASE = YES
-
 # Set this when you only want to compile this application
 #   for a subset of the cross-compiled target architectures
 #   that Base is built for.
 CROSS_COMPILER_TARGET_ARCHS = linuxRT-x86_64
 
-
 # To install files into a location other than $(TOP) define
 #   INSTALL_LOCATION here.
 #INSTALL_LOCATION=</path/name/to/install/top>
-
 # Set this when your IOC and the host use different paths
 #   to access the application. This will be needed to boot
 #   from a Microsoft FTP server or with some NFS mounts.
@@ -39,14 +34,11 @@ CROSS_COMPILER_TARGET_ARCHS = linuxRT-x86_64
 # =======================================================
 INSTALL_LOCATION_STARTUP += $(INSTALL_LOCATION)/startup
 DIRECTORY_TARGETS += $(INSTALL_LOCATION_STARTUP)
-# =======================================================
-
 ## =============================
 ## Build Application Statically
 ## =============================
 SHARED_LIBRARIES=NO
 STATIC_BUILD=YES
-
 # Location of Linux Kernel Modules:
 LINUX_KERNEL_MODULES=$(PACKAGE_SITE_TOP)/linuxKernel_Modules
 
@@ -73,6 +65,8 @@ LIBXML2_TOP=$(PACKAGE_SITE_TOP)/$(LIBXML2_PACKAGE_NAME)/$(LIBXML2_VERSION)
 LIBXML2_LIB =$(LIBXML2_TOP)/$(PKG_ARCH)/lib
 LIBXML2_INCLUDE = $(LIBXML2_TOP)/$(PKG_ARCH)/include/libxml2
 # ======================================================================================================================
+# Support for CPSW
+# # ==========================================================================================================CPSW_DEVICE_LIBRARY_PACKAGE_NAME=cpsw/
 CPSW_DEVICE_LIBRARY_PACKAGE_NAME=cpsw/deviceLibrary
 CPSW_DEVICE_LIBRARY_VERSION=R1.2.0
 CPSW_DEVICE_LIBRARY_TOP=$(PACKAGE_SITE_TOP)/$(CPSW_DEVICE_LIBRARY_PACKAGE_NAME)/$(CPSW_DEVICE_LIBRARY_VERSION)
@@ -119,17 +113,16 @@ PCRE_TOP=$(PACKAGE_SITE_TOP)/$(PCRE_PACKAGE_NAME)/$(PCRE_VERSION)
 PCRE_LIB=$(PCRE_TOP)/$(PKG_ARCH)/lib
 PCRE_INCLUDE=$(PCRE_TOP)/$(PKG_ARCH)/include
 
-# Timing API
-HPSTPR_PACKAGE_NAME=timing/hpsTpr
-HPSTPR_VERSION=R1.1.0
-HPSTPR_TOP=$(PACKAGE_SITE_TOP)/$(HPSTPR_PACKAGE_NAME)/$(HPSTPR_VERSION)
-HPSTPR_LIB=$(HPSTPR_TOP)/$(PKG_ARCH)/lib
-HPSTPR_INCLUDE=$(HPSTPR_TOP)/$(PKG_ARCH)/include
-
 # MPS API
 L2MPS_PACKAGE_NAME=l2Mps
-L2MPS_VERSION=R2.4.0
+L2MPS_VERSION=R3.7.0
 L2MPS_TOP=$(PACKAGE_SITE_TOP)/$(L2MPS_PACKAGE_NAME)/$(L2MPS_VERSION)
 L2MPS_LIB=$(L2MPS_TOP)/$(PKG_ARCH)/lib
 L2MPS_INCLUDE=$(L2MPS_TOP)/$(PKG_ARCH)/include
 
+# Timing API
+HPSTPR_PACKAGE_NAME=timing/hpsTpr
+HPSTPR_VERSION=R2.0.1
+HPSTPR_TOP=$(PACKAGE_SITE_TOP)/$(HPSTPR_PACKAGE_NAME)/$(HPSTPR_VERSION)
+HPSTPR_LIB=$(HPSTPR_TOP)/$(PKG_ARCH)/lib
+HPSTPR_INCLUDE=$(HPSTPR_TOP)/$(PKG_ARCH)/include
