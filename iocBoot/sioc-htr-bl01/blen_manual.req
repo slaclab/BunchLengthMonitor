@@ -1,2 +1,2 @@
-file "lcls2_gap_manual.req" AREA=HTR,POS=350,INST=0
-file "lcls2_gap_manual.req" AREA=HTR,POS=350,INST=1
+file "lcls2.req" AREA=HTR,POS=350,INST=0
+file "lcls2.req" AREA=HTR,POS=350,INST=1

@@ -8,19 +8,19 @@ include $(TOP)/configure/CONFIG
 #  Optimization of db files using dbst (DEFAULT: NO)
 #DB_OPT = YES
 
-# Main User-visible PVs 
+# Databases
 # --------------------------------------------------
 DB += pyroShutter.db
-
-
-# DBs containing Expert PVs and other routines
-# --------------------------------------------------
 DB += lcls2FPGA.db
 DB += pyroFilters.db
 DB += msgStatus.db
-
 DB += blen_gap_coefI2.db
 DB += tempProcess.db
+
+# Autosave
+# --------------------------------------------------
+REQ += lcls2.req
+
 
 include $(TOP)/configure/RULES
 #----------------------------------------
