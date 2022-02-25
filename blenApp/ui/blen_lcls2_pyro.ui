@@ -308,6 +308,13 @@
      </item>
      <item>
       <layout class="QGridLayout" name="gridLayout_5">
+       <item row="3" column="2">
+        <widget class="QLabel" name="label_6">
+         <property name="text">
+          <string>Primary Temperature</string>
+         </property>
+        </widget>
+       </item>
        <item row="2" column="2">
         <widget class="QLabel" name="label_13">
          <property name="text">
@@ -328,7 +335,44 @@
          </property>
         </spacer>
        </item>
-       <item row="2" column="6">
+       <item row="2" column="3">
+        <widget class="PyDMLabel" name="PyDMLabel_7">
+         <property name="toolTip">
+          <string/>
+         </property>
+         <property name="channel" stdset="0">
+          <string>ca://BLEN:${AREA}:${POS}:USED_TMIT</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="2">
+        <widget class="QLabel" name="label_7">
+         <property name="text">
+          <string>Secondary Temperature</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="3">
+        <widget class="PyDMLabel" name="PyDMLabel">
+         <property name="toolTip">
+          <string/>
+         </property>
+         <property name="channel" stdset="0">
+          <string>ca://BLEN:${AREA}:3:TEMP</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="3">
+        <widget class="PyDMLabel" name="PyDMLabel_2">
+         <property name="toolTip">
+          <string/>
+         </property>
+         <property name="channel" stdset="0">
+          <string>ca://BLEN:${AREA}:4:TEMP</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="5">
         <widget class="PyDMRelatedDisplayButton" name="PyDMRelatedDisplayButton">
          <property name="toolTip">
           <string/>
@@ -343,16 +387,6 @@
          </property>
          <property name="openInNewWindow" stdset="0">
           <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="3">
-        <widget class="PyDMLabel" name="PyDMLabel_7">
-         <property name="toolTip">
-          <string/>
-         </property>
-         <property name="channel" stdset="0">
-          <string>ca://BLEN:${AREA}:${POS}:USED_TMIT</string>
          </property>
         </widget>
        </item>
