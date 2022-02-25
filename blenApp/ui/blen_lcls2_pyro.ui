@@ -358,7 +358,7 @@
           <string/>
          </property>
          <property name="channel" stdset="0">
-          <string>ca://BLEN:${AREA}:3:TEMP</string>
+          <string>ca://BLEN:${AREA}${POS}:3:TEMP</string>
          </property>
         </widget>
        </item>
@@ -368,7 +368,7 @@
           <string/>
          </property>
          <property name="channel" stdset="0">
-          <string>ca://BLEN:${AREA}:4:TEMP</string>
+          <string>ca://BLEN:${AREA}:${POS}:4:TEMP</string>
          </property>
         </widget>
        </item>
