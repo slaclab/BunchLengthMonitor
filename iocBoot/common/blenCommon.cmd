@@ -16,7 +16,7 @@ epicsEnvSet("PART_PV", "$(AREA):$(IOC_UNIT)")
 epicsEnvSet("AUTO_GEN", 0)
 
 # Automatically generated record prefix, case the previous option is 1
-epicsEnvSet("PREFIX","BLEN:$(AREA):$(POS):$(INST)_")
+epicsEnvSet("PREFIX","BLEN:$(AREA):$(POS)")
 
 # ===========================================
 #               DBD LOADING
