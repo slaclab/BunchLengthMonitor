@@ -38,22 +38,15 @@ cpswLoadConfigFile("$(YAML_CONFIG_FILE)", "mmio", "")
 
 # Setup BSA Driver
 # add BSA PVs
-addBsa("AMC0:SUM",        "uint32")
-addBsa("AMC0:IMAX",       "uint32")
-addBsa("AMC0:TMIT",       "uint32")
-addBsa("AMC0:SUMFLOAT",   "float32")
-addBsa("AMC0:IMAXFLOAT",  "float32")
-addBsa("AMC0:BLSTATUS",   "uint32")
-
-addBsa("AMC1:SUM",        "uint32")
-addBsa("AMC1:IMAX",       "uint32")
-addBsa("AMC1:TMIT",       "uint32")
-addBsa("AMC1:SUMFLOAT",   "float32")
-addBsa("AMC1:IMAXFLOAT",  "float32")
-addBsa("AMC1:BLSTATUS",   "uint32")
+addBsa("SUM",        "uint32")
+addBsa("IMAX",       "uint32")
+addBsa("TMIT",       "uint32")
+addBsa("SUMFLOAT",   "float32")
+addBsa("IMAXFLOAT",  "float32")
+addBsa("BLSTATUS",   "uint32")
 
 # BSA driver for yaml
-#bsaAsynDriverConfigure("bsaPort", "mmio/AmcCarrierCore/AmcCarrierBsa","strm/AmcCarrierDRAM/dram")
+bsaAsynDriverConfigure("bsaPort", "mmio/AmcCarrierCore/AmcCarrierBsa","strm/AmcCarrierDRAM/dram")
 
 # Driver setup for YCPSWAsyn
 # YCPSWASYNConfig(
@@ -146,19 +139,12 @@ dbLoadRecords("db/tprDeviceNamePV.db","LOCA=$(AREA),IOC_UNIT=$(IOC_UNIT),INST=$(
 
 # **** Load BSA driver DB ****
 
-dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsaPort,BSAKEY=AMC0:SUM,SECN=SUM")
-dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsaPort,BSAKEY=AMC0:IMAX,SECN=IMAX")
-dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsaPort,BSAKEY=AMC0:TMIT,SECN=TMIT")
-dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsaPort,BSAKEY=AMC0:SUMFLOAT,SECN=SUMFLOAT")
-dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsaPort,BSAKEY=AMC0:IMAXFLOAT,SECN=IMAXFLOAT")
-dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsaPort,BSAKEY=AMC0:BLSTATUS,SECN=BLSTATUS")
-
-dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsaPort,BSAKEY=AMC1:SUM,SECN=SUM")
-dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsaPort,BSAKEY=AMC1:IMAX,SECN=IMAX")
-dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsaPort,BSAKEY=AMC1:TMIT,SECN=TMIT")
-dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsaPort,BSAKEY=AMC1:SUMFLOAT,SECN=SUMFLOAT")
-dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsaPort,BSAKEY=AMC1:IMAXFLOAT,SECN=IMAXFLOAT")
-dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsaPort,BSAKEY=AMC1:BLSTATUS,SECN=BLSTATUS")
+dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS),PORT=bsaPort,BSAKEY=SUM,SECN=SUM")
+dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS),PORT=bsaPort,BSAKEY=IMAX,SECN=IMAX")
+dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS),PORT=bsaPort,BSAKEY=TMIT,SECN=TMIT")
+dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS),PORT=bsaPort,BSAKEY=SUMFLOAT,SECN=SUMFLOAT")
+dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS),PORT=bsaPort,BSAKEY=IMAXFLOAT,SECN=IMAXFLOAT")
+dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS),PORT=bsaPort,BSAKEY=BLSTATUS,SECN=BLSTATUS")
 
 # Timing trigger
 # INST = Instance Number (for multiple instances of tprTrigger in an IOC)
