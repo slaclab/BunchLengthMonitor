@@ -5,7 +5,7 @@
 record(calcout, "$(P):$(AMC):CoefA$(COEF)_SAV"){
     field(INPA, "$(P):$(AMC):CalibMode")
     field(INPB, "$(P):$(AMC):CoefA$(COEF)")
-    field(INPC, "$(P):$(AMC):CoefA$(COEF)_SAV")
+    field(INPC, "$(P):$(AMC):CoefA$(COEF)_SAV_ARCH")
     field(CALC, "A ? B : C")
     field(OUT, "$(P):$(AMC):CoefA$(COEF)_SAV_ARCH")
     field(SCAN, "1 second")
@@ -15,24 +15,24 @@ record(ao, "$(P):$(AMC):CoefA$(COEF)_SAV_ARCH"){
     field(SCAN, "Passive")
 }
 
-record(calcout, "$(P):$(AMC)$(SENS):TIME_POS_SAV"){
+record(calcout, "$(P):$(AMC)$(SENS):NumSamp1_SAV"){
     field(INPA, "$(P):$(AMC):CalibMode")
-    field(INPB, "$(P):$(AMC)$(SENS):TIME_POS_RBV")
-    field(INPC, "$(P):$(AMC)$(SENS):TIME_POS_SAV")
+    field(INPB, "$(P):$(AMC)$(SENS):NumSamp1RBV")
+    field(INPC, "$(P):$(AMC)$(SENS):NumSamp1_SAV")
     field(CALC, "A ? B : C")
-    field(OUT, "$(P):$(AMC)$(SENS):TIME_POS_SAV_ARCH")
+    field(OUT, "$(P):$(AMC)$(SENS):NumSamp1_SAV_ARCH")
     field(SCAN, "1 second")
 }
 
-record(ao, "$(P):$(AMC)$(SENS):TIME_POS_SAV_ARCH"){
+record(ao, "$(P):$(AMC)$(SENS):NumSamp1_SAV_ARCH"){
     field(SCAN, "Passive")
 }
 
 record(calcout, "$(P):$(AMC):Calib_Coef_A$(COEF)"){
     field(INPA, "$(P):$(AMC):CalibMode")
     field(INPB, "$(P):$(AMC):CoefA$(COEF)_SAV_ARCH")
-    field(INPC, "$(P):$(AMC)$(SENS):TIME_POS_SAV_ARCH")
-    field(INPD, "$(P):$(AMC)$(SENS):TIME_POS_RBV")
+    field(INPC, "$(P):$(AMC)$(SENS):NumSamp1_SAV_ARCH")
+    field(INPD, "$(P):$(AMC)$(SENS):NumSamp1RBV")
     field(INPE, "$(P):$(AMC):CoefA$(COEF)")
     
     field(CALC, "A ? 0 : B*(C/D)")
