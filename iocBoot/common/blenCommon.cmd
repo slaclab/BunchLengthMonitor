@@ -38,12 +38,19 @@ cpswLoadConfigFile("$(YAML_CONFIG_FILE)", "mmio", "")
 
 # Setup BSA Driver
 # add BSA PVs
-addBsa("SUM",        "uint32")
-addBsa("IMAX",       "uint32")
-addBsa("TMIT",       "uint32")
-addBsa("SUMFLOAT",   "float32")
-addBsa("IMAXFLOAT",  "float32")
-addBsa("BLSTATUS",   "uint32")
+addBsa("AMC0:SENSPSUM",     "uint32")
+addBsa("AMC0:BLEN",         "uint32")
+addBsa("AMC0:TMITSTAT",     "uint32")
+addBsa("AMC0:SENSPSUMFLOAT","float32")
+addBsa("AMC0:BLENFLOAT",    "float32")
+addBsa("AMC0:BLSTATUS",     "uint32")
+
+addBsa("AMC1:SENSPSUM",     "uint32")
+addBsa("AMC1:BLEN",         "uint32")
+addBsa("AMC1:TMITSTAT",     "uint32")
+addBsa("AMC1:SENSPSUMFLOAT","float32")
+addBsa("AMC1:BLENFLOAT",    "float32")
+addBsa("AMC1:BLSTATUS",     "uint32")
 
 # BSA driver for yaml
 bsaAsynDriverConfigure("bsaPort", "mmio/AmcCarrierCore/AmcCarrierBsa","strm/AmcCarrierDRAM/dram")
@@ -139,12 +146,19 @@ dbLoadRecords("db/tprDeviceNamePV.db","LOCA=$(AREA),IOC_UNIT=$(IOC_UNIT),INST=$(
 
 # **** Load BSA driver DB ****
 
-dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS),PORT=bsaPort,BSAKEY=SUM,SECN=SUM")
-dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS),PORT=bsaPort,BSAKEY=IMAX,SECN=IMAX")
-dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS),PORT=bsaPort,BSAKEY=TMIT,SECN=TMIT")
-dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS),PORT=bsaPort,BSAKEY=SUMFLOAT,SECN=SUMFLOAT")
-dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS),PORT=bsaPort,BSAKEY=IMAXFLOAT,SECN=IMAXFLOAT")
-dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS),PORT=bsaPort,BSAKEY=BLSTATUS,SECN=BLSTATUS")
+dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsaPort,BSAKEY=AMC0:SENSPSUM,SECN=SENSPSUM")
+dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsaPort,BSAKEY=AMC0:BLEN,SECN=BLEN")
+dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsaPort,BSAKEY=AMC0:TMITSTAT,SECN=TMITSTAT")
+dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsaPort,BSAKEY=AMC0:SENSPSUMFLOAT,SECN=SENSPSUMFLOAT")
+dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsaPort,BSAKEY=AMC0:BLENFLOAT,SECN=BLENFLOAT")
+dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsaPort,BSAKEY=AMC0:BLSTATUS,SECN=BLSTATUS")
+
+dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsaPort,BSAKEY=AMC1:SENSPSUM,SECN=SENSPSUM")
+dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsaPort,BSAKEY=AMC1:BLEN,SECN=BLEN")
+dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsaPort,BSAKEY=AMC1:TMITSTAT,SECN=TMITSTAT")
+dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsaPort,BSAKEY=AMC1:SENSPSUMFLOAT,SECN=SENSPSUMFLOAT")
+dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsaPort,BSAKEY=AMC1:BLENFLOAT,SECN=BLENFLOAT")
+dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsaPort,BSAKEY=AMC1:BLSTATUS,SECN=BLSTATUS")
 
 # Timing trigger
 # INST = Instance Number (for multiple instances of tprTrigger in an IOC)
