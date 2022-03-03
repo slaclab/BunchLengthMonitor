@@ -119,12 +119,6 @@ dbLoadRecords("db/coefficientScaling.db", "P=BLEN:$(AREA):$(POS), AMC=1")
 
 dbLoadRecords("db/msgStatus.db", "P=BLEN:$(AREA):$(POS)")
 
-# BSA records
-#dbLoadRecords("db/Bsa.db", "DEVICE=BLEN:$(AREA):$(POS),ATRB=AIMAX, SINK_SIZE=1, LNK=''")
-#dbLoadRecords("db/Bsa.db", "DEVICE=BLEN:$(AREA):$(POS),ATRB=BIMAX, SINK_SIZE=1, LNK=''")
-#dbLoadRecords("db/Bsa.db", "DEVICE=BLEN:$(AREA):$(POS),ATRB=ARAW, SINK_SIZE=1, LNK=''")
-#dbLoadRecords("db/Bsa.db", "DEVICE=BLEN:$(AREA):$(POS),ATRB=BRAW, SINK_SIZE=1, LNK=''")
-
 # tpr high level PVs
 dbLoadRecords("db/tprDeviceNamePV.db","LOCA=$(AREA),IOC_UNIT=$(IOC_UNIT),INST=$(ATCA_SLOT),SYS=SYS2,NN=00,DEV_PREFIX=BLEN:$(AREA):$(POS):TRG00:,PORT=trig")
 dbLoadRecords("db/tprDeviceNamePV.db","LOCA=$(AREA),IOC_UNIT=$(IOC_UNIT),INST=$(ATCA_SLOT),SYS=SYS2,NN=01,DEV_PREFIX=BLEN:$(AREA):$(POS):TRG01:,PORT=trig")
@@ -192,7 +186,7 @@ system("cp $(TOP)/archive/$(IOC).archive $(IOC_DATA)/$(IOC)/archive")
 # ===========================================
 #   LOAD FACET, LCLS1 (MR) or LCLS2 CONFIG 
 # ===========================================
-<# iocBoot/common/blen$(BLEN_VERSION).cmd
+#< iocBoot/common/blen$(BLEN_VERSION).cmd
 
 # ===========================================
 #           SETUP AUTOSAVE/RESTORE
