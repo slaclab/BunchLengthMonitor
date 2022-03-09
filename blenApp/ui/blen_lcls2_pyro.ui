@@ -308,21 +308,21 @@
      </item>
      <item>
       <layout class="QGridLayout" name="gridLayout_5">
-       <item row="3" column="2">
+       <item row="4" column="2">
         <widget class="QLabel" name="label_6">
          <property name="text">
           <string>Primary Temperature (degC)</string>
          </property>
         </widget>
        </item>
-       <item row="2" column="2">
+       <item row="3" column="2">
         <widget class="QLabel" name="label_13">
          <property name="text">
           <string>BPM TMIT formated to pC:</string>
          </property>
         </widget>
        </item>
-       <item row="2" column="4">
+       <item row="3" column="4">
         <spacer name="horizontalSpacer">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
@@ -335,7 +335,7 @@
          </property>
         </spacer>
        </item>
-       <item row="2" column="3">
+       <item row="3" column="3">
         <widget class="PyDMLabel" name="PyDMLabel_7">
          <property name="toolTip">
           <string/>
@@ -345,14 +345,14 @@
          </property>
         </widget>
        </item>
-       <item row="4" column="2">
+       <item row="5" column="2">
         <widget class="QLabel" name="label_7">
          <property name="text">
           <string>Secondary Temperature (degC)</string>
          </property>
         </widget>
        </item>
-       <item row="3" column="3">
+       <item row="4" column="3">
         <widget class="PyDMLabel" name="PyDMLabel">
          <property name="toolTip">
           <string/>
@@ -362,7 +362,7 @@
          </property>
         </widget>
        </item>
-       <item row="4" column="3">
+       <item row="5" column="3">
         <widget class="PyDMLabel" name="PyDMLabel_2">
          <property name="toolTip">
           <string/>
@@ -372,7 +372,7 @@
          </property>
         </widget>
        </item>
-       <item row="4" column="5">
+       <item row="5" column="5">
         <widget class="PyDMRelatedDisplayButton" name="PyDMRelatedDisplayButton">
          <property name="toolTip">
           <string/>
@@ -387,6 +387,40 @@
          </property>
          <property name="openInNewWindow" stdset="0">
           <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <widget class="QLabel" name="label_8">
+         <property name="text">
+          <string>BPM Status:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="3">
+        <widget class="PyDMByteIndicator" name="PyDMByteIndicator_3">
+         <property name="toolTip">
+          <string/>
+         </property>
+         <property name="channel" stdset="0">
+          <string>ca://BLEN:${AREA}:${POS}:BPMS_SYNC</string>
+         </property>
+         <property name="onColor" stdset="0">
+          <color>
+           <red>255</red>
+           <green>0</green>
+           <blue>0</blue>
+          </color>
+         </property>
+         <property name="offColor" stdset="0">
+          <color>
+           <red>0</red>
+           <green>255</green>
+           <blue>0</blue>
+          </color>
+         </property>
+         <property name="showLabels" stdset="0">
+          <bool>false</bool>
          </property>
         </widget>
        </item>
