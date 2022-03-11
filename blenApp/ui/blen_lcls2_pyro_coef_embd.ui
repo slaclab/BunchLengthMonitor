@@ -34,49 +34,7 @@
       </widget>
      </item>
      <item>
-      <layout class="QGridLayout" name="gridLayout_2" columnstretch="4,2,2">
-       <item row="3" column="1">
-        <widget class="PyDMLineEdit" name="offsetedit">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="toolTip">
-          <string/>
-         </property>
-         <property name="precision" stdset="0">
-          <number>7</number>
-         </property>
-         <property name="precisionFromPV" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="channel" stdset="0">
-          <string>ca://${PREFIX}:${AMC}:CoefI</string>
-         </property>
-         <property name="displayFormat" stdset="0">
-          <enum>PyDMLineEdit::Decimal</enum>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="0">
-        <widget class="QLabel" name="offsetLbl">
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>Offset</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
+      <layout class="QGridLayout" name="gridLayout_2" columnstretch="4,0,0">
        <item row="0" column="1">
         <widget class="QLabel" name="setpointLbl">
          <property name="sizePolicy">
@@ -114,31 +72,6 @@
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="2">
-        <widget class="PyDMLabel" name="offsetRBV">
-         <property name="toolTip">
-          <string/>
-         </property>
-         <property name="text">
-          <string>Offset I RBV</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <property name="precision" stdset="0">
-          <number>7</number>
-         </property>
-         <property name="precisionFromPV" stdset="0">
-          <bool>false</bool>
-         </property>
-         <property name="channel" stdset="0">
-          <string>ca://${PREFIX}:${AMC}:CoefIRBV</string>
-         </property>
-         <property name="displayFormat" stdset="0">
-          <enum>PyDMLabel::Decimal</enum>
          </property>
         </widget>
        </item>
