@@ -78,7 +78,8 @@ dbLoadRecords("db/tempProcess.db","P=BLEN:$(AREA):$(POS), R=TempNX, SRC=$(TEMP_N
 iocInit()
 
 # Enforce RTM timing
-crossbarControl "FPGA" "$(BLEN_VERSION)"
+#crossbarControl "FPGA" "$(BLEN_VERSION)"
+crossbarControl("FPGA", "BP")
 
 # Turn on caPutLogging:
 # Log values only on change to the iocLogServer:
