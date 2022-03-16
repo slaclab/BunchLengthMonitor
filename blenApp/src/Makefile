@@ -158,7 +158,7 @@ blen_LIBS += eventBsaSupport
 blen_LIBS += BsaCore
 
 #Needed for Crossbar control-TprPattern and TprTrigger
-blen_LIBS += commonATCA
+blen_LIBS += ATCACommon
 blen_LIBS += tprTrigger
 blen_LIBS += tprPattern
 # API for tprPattern
