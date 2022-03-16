@@ -24,6 +24,7 @@ boost_system_DIR = $(BOOST_LIB)
 yaml-cpp_DIR = $(YAML_LIB)
 hpstpr_DIR = $(HPSTPR_LIB)
 yamlReader_DIR = $(YAMLREADER_LIB)
+commonATCA_DIR = $(COMMONATCA_LIB)
 # =====================================================
 
 # ======================================================
@@ -35,6 +36,7 @@ USR_LIBS_Linux += cpsw
 USR_LIBS_Linux += yaml-cpp
 USR_LIBS_Linux += boost_system
 USR_LIBS_Linux += hpstpr
+USR_LIBS_Linux += commonATCA
 #======================================================
 
 # ================================================
@@ -156,7 +158,7 @@ blen_LIBS += eventBsaSupport
 blen_LIBS += BsaCore
 
 #Needed for Crossbar control-TprPattern and TprTrigger
-blen_LIBS += crossbarControl
+blen_LIBS += commonATCA
 blen_LIBS += tprTrigger
 blen_LIBS += tprPattern
 # API for tprPattern
