@@ -44,9 +44,8 @@ LINUX_KERNEL_MODULES=$(PACKAGE_SITE_TOP)/linuxKernel_Modules
 
 LINUXRT_BUILDROOT_VERSION=buildroot-2019.08
 LINUX_VERSION=rhel6
-# ========================================================================================================================
-# Support for EtherCAT
-# ========================================================================================================================
+
+
 XZ_PACKAGE_NAME     =xz
 XZ_VERSION          =5.2.2
 XZ_TOP=$(PACKAGE_SITE_TOP)/$(XZ_PACKAGE_NAME)/$(XZ_VERSION)
@@ -59,11 +58,11 @@ ZLIB_TOP=$(PACKAGE_SITE_TOP)/$(ZLIB_PACKAGE_NAME)/$(ZLIB_VERSION)
 ZLIB_LIB=$(ZLIB_TOP)/$(PKG_ARCH)/lib
 ZLIB_INCLUDE = $(ZLIB_TOP)/$(PKG_ARCH)/include
 
-LIBXML2_PACKAGE_NAME    =libxml2
-LIBXML2_VERSION         =2.9.10
-LIBXML2_TOP=$(PACKAGE_SITE_TOP)/$(LIBXML2_PACKAGE_NAME)/$(LIBXML2_VERSION)
-LIBXML2_LIB =$(LIBXML2_TOP)/$(PKG_ARCH)/lib
-LIBXML2_INCLUDE = $(LIBXML2_TOP)/$(PKG_ARCH)/include/libxml2
+#LIBXML2_PACKAGE_NAME    =libxml2
+#LIBXML2_VERSION         =2.9.10
+#LIBXML2_TOP=$(PACKAGE_SITE_TOP)/$(LIBXML2_PACKAGE_NAME)/$(LIBXML2_VERSION)
+#LIBXML2_LIB =$(LIBXML2_TOP)/$(PKG_ARCH)/lib
+#LIBXML2_INCLUDE = $(LIBXML2_TOP)/$(PKG_ARCH)/include/libxml2
 # ======================================================================================================================
 # Support for CPSW
 # # ==========================================================================================================CPSW_DEVICE_LIBRARY_PACKAGE_NAME=cpsw/
