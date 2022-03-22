@@ -53,7 +53,7 @@
            </property>
            <property name="text">
             <string>Long Bunches 
-&gt; 1 mm (3.3 ps) 
+&gt; 10 ps FWHM 
 (Detectors on +/-Y axis)</string>
            </property>
            <property name="alignment">
@@ -235,7 +235,7 @@
            </property>
            <property name="text">
             <string>Short Bunches
-&lt; 1 mm (3.3 ps)
+&lt; 10 ps FWHM
 (Detectors on +/-X axis)</string>
            </property>
            <property name="alignment">
