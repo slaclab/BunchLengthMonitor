@@ -99,5 +99,7 @@ DB += selectStatus.db
 DB += coefScale.db
 DB += coefficientScaling.db
 DB += sensCalibration.db
+DB += coefTransform.db
+DB += coefTf.db
 
 include $(TOP)/configure/RULES

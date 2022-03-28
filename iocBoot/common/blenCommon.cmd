@@ -116,6 +116,7 @@ dbLoadRecords("db/sensCalibration.db", "P=BLEN:$(AREA):$(POS), AMC=0")
 dbLoadRecords("db/sensCalibration.db", "P=BLEN:$(AREA):$(POS), AMC=1")
 dbLoadRecords("db/coefficientScaling.db", "P=BLEN:$(AREA):$(POS), AMC=0")
 dbLoadRecords("db/coefficientScaling.db", "P=BLEN:$(AREA):$(POS), AMC=1")
+dbLoadRecords("db/coefTf.db", "P=BLEN:$(AREA):$(POS)")
 
 dbLoadRecords("db/msgStatus.db", "P=BLEN:$(AREA):$(POS)")
 
