@@ -47,12 +47,15 @@ DB_INSTALLS += $(YCPSWASYN)/db/RegisterStream16.template
 
 DB_INSTALLS += $(YCPSWASYN)/db/saveLoadConfig.db
 
-# Timing (tprTrigger, tprPatter, crossbarControl, event, BSA) 
+# Timing (tprTrigger, tprPatter, crossbarControl, event, BSA, BSSS scalr PVs and controls) 
 # --------------------------------------------------
 DB_INSTALLS += $(TPRTRIGGER)/db/tprTrig.db
 DB_INSTALLS += $(TPRTRIGGER)/db/tprDeviceNamePV.db
 
 DB_INSTALLS += $(BSADRIVER)/db/bsa.db
+
+DB_INSTALLS += $(BSADRIVER)/db/bsss.db
+DB_INSTALLS += $(BSADRIVER)/db/bsssCtrl.db
 
 # IOCAdmin 
 # --------------------------------------------------
