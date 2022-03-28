@@ -412,7 +412,7 @@
           <bool>false</bool>
          </property>
          <property name="channel" stdset="0">
-          <string>ca://${PREFIX}:${AMC}:CoefB</string>
+          <string>ca://${PREFIX}:${AMC}:CoefBLN</string>
          </property>
          <property name="displayFormat" stdset="0">
           <enum>PyDMLineEdit::Decimal</enum>
@@ -479,7 +479,7 @@
           <bool>false</bool>
          </property>
          <property name="channel" stdset="0">
-          <string>ca://${PREFIX}:${AMC}:CoefBRBV</string>
+          <string>ca://${PREFIX}:${AMC}:CoefBRBVTF</string>
          </property>
          <property name="displayFormat" stdset="0">
           <enum>PyDMLabel::Decimal</enum>
@@ -563,7 +563,7 @@
           <bool>false</bool>
          </property>
          <property name="channel" stdset="0">
-          <string>ca://${PREFIX}:${AMC}:CoefERBV</string>
+          <string>ca://${PREFIX}:${AMC}:CoefERBVTF</string>
          </property>
          <property name="displayFormat" stdset="0">
           <enum>PyDMLabel::Decimal</enum>
@@ -672,7 +672,7 @@
           <bool>false</bool>
          </property>
          <property name="channel" stdset="0">
-          <string>ca://${PREFIX}:${AMC}:CoefE</string>
+          <string>ca://${PREFIX}:${AMC}:CoefELN</string>
          </property>
          <property name="displayFormat" stdset="0">
           <enum>PyDMLineEdit::Decimal</enum>
