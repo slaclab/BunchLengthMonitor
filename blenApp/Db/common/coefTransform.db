@@ -12,6 +12,6 @@ record(calcout, "$(P):$(AMC):Coef$(COEF)TF"){
 
 record(calc, "$(P):$(AMC):Coef$(COEF)RBVTF"){
     field(INPA, "$(P):$(AMC):Coef$(COEF)RBV")
-    field(CALC, "EXP(A)")
+    field(CALC, "LN(A)")
     field(SCAN, "1 second")
 }
