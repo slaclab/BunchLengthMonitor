@@ -4,7 +4,7 @@ record(ai, "$(P):$(AMC):Coef$(COEF)LN"){
 
 record(calcout, "$(P):$(AMC):Coef$(COEF)TF"){
     field(INPA, "$(P):$(AMC):Coef$(COEF)LN")
-    field(CALC, "EXP(A)")
+    field(CALC, "LN(A)")
     field(OUT, "$(P):$(AMC):Coef$(COEF)")
     field(FLNK, "$(P):$(AMC):Coef$(COEF)")
     field(SCAN, "1 second")
@@ -12,6 +12,6 @@ record(calcout, "$(P):$(AMC):Coef$(COEF)TF"){
 
 record(calc, "$(P):$(AMC):Coef$(COEF)RBVTF"){
     field(INPA, "$(P):$(AMC):Coef$(COEF)RBV")
-    field(CALC, "LN(A)")
+    field(CALC, "EXP(A)")
     field(SCAN, "1 second")
 }
