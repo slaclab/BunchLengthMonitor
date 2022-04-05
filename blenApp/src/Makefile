@@ -24,6 +24,7 @@ boost_system_DIR = $(BOOST_LIB)
 yaml-cpp_DIR = $(YAML_LIB)
 hpstpr_DIR = $(HPSTPR_LIB)
 yamlReader_DIR = $(YAMLREADER_LIB)
+commonATCA_DIR = $(COMMONATCA_LIB)
 # =====================================================
 
 # ======================================================
@@ -35,6 +36,7 @@ USR_LIBS_Linux += cpsw
 USR_LIBS_Linux += yaml-cpp
 USR_LIBS_Linux += boost_system
 USR_LIBS_Linux += hpstpr
+USR_LIBS_Linux += commonATCA
 #======================================================
 
 # ================================================
@@ -65,20 +67,11 @@ blen_DBD += crossbarControl.dbd
 blen_DBD += tprTriggerAsynDriver.dbd
 blen_DBD += tprPatternAsynDriver.dbd
 
-blen_DBD += blenSupport.dbd
-
 # BSA
-blen_DBD += bsaCore.dbd
-blen_DBD += bsa.dbd
+#blen_DBD += bsa.dbd
 
 # For calculated waveforms
 blen_DBD += calc.dbd
-
-# For FCOM
-blen_DBD += fcomIocshSupport.dbd
-blen_DBD += fcomUtil.dbd
-blen_DBD += devFcom.dbd
-blen_DBD += drvAsynIPPort.dbd
 
 # caf: aCalcout record support
 blen_DBD += sscanSupport.dbd
@@ -101,10 +94,6 @@ blen_SRCS += blen_registerRecordDeviceDriver.cpp
 
 USR_CPPFLAGS += -Wall -Wextra -Wpedantic -Wshadow -std=c++17 -g
 
-blen_SRCS += blenIOCFunctions.cpp
-blen_SRCS += cpswStreamBSA.cpp
-blen_SRCS += blenBSA.cpp
-blen_SRCS += blenFcom.cpp
 blen_SRCS += asubWeightXAxis.c
 blen_SRCS += asubRWF.c
 
@@ -115,9 +104,6 @@ blen_SRCS_DEFAULT += blenMain.cpp
 # Add locally compiled object code
 # For example, subroutines
 # ========================================================================
-# blen_SRCS += file1.c
-# blen_SRCS += file2.c
-blen_SRCS += DaqSizeSub.c
 
 # =====================================================
 # Link in the libraries other EPICS modules
@@ -129,10 +115,6 @@ blen_LIBS += yamlLoader
 # caf: Needed to link in aCalcout support
 blen_LIBS += calc
 blen_LIBS += sscan
-
-# For FCOM
-blen_LIBS += fcomUtil fcomIocshSupport fcom
-blen_LIBS += udpCommBSD 
 
 # Needed to link in iocAdmin support
 blen_LIBS += devIocStats
@@ -152,11 +134,10 @@ blen_SYS_LIBS += $(CEXP_SYS_LIBS)
 blen_LIBS += bsaDriver
 bsa_DIR = $(BSA_LIB)
 blen_LIBS += bsa
-blen_LIBS += eventBsaSupport
-blen_LIBS += BsaCore
+#blen_LIBS += eventBsaSupport
 
 #Needed for Crossbar control-TprPattern and TprTrigger
-blen_LIBS += crossbarControl
+blen_LIBS += ATCACommon
 blen_LIBS += tprTrigger
 blen_LIBS += tprPattern
 # API for tprPattern

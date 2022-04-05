@@ -68,6 +68,13 @@ YCPSWASYNConfig("$(BLEN_ASYN_PORT)", "", "$(PREFIX)", "$(AUTO_GEN)", "$(DICT_FIL
 tprTriggerAsynDriverConfigure("trig", "mmio/AmcCarrierCore")
 
 
+# ======================================
+# timing crossbar configuration
+# ======================================
+crossbarControlAsynDriverConfigure("crossbar", "mmio/AmcCarrierCore/AxiSy56040")
+
+
+
 # ===========================================
 #               DB LOADING
 # ===========================================
