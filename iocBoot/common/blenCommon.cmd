@@ -55,6 +55,15 @@ addBsa("AMC1:BLSTATUS",     "uint32")
 # BSA driver for yaml
 bsaAsynDriverConfigure("bsaPort", "mmio/AmcCarrierCore/AmcCarrierBsa","strm/AmcCarrierDRAM/dram")
 
+#  Initialize BSSS driver
+#  make assoication with BSA channels: bsssAssociateBsaChannels(<BSA port name>)
+bsssAssociateBsaChannels("bsaPort")
+
+# confiugre BSSS driver: bsssAsynDriverConfigure(<bsss port>, <register path>)
+bsssAsynDriverConfigure("bsssPort", "mmio/AmcCarrierCore/AmcCarrierBsa/Bsss")
+
+
+
 # Driver setup for YCPSWAsyn
 # YCPSWASYNConfig(
 #    Port Name,                 # the name given to this port driver
@@ -161,6 +170,25 @@ dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsaPort,BSAKEY=AMC1:T
 dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsaPort,BSAKEY=AMC1:SENSPSUMFLOAT,SECN=SENSPSUMFLOAT")
 dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsaPort,BSAKEY=AMC1:BLENFLOAT,SECN=BLENFLOAT")
 dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsaPort,BSAKEY=AMC1:BLSTATUS,SECN=BLSTATUS")
+
+# **** Load BSSS Scalar PV DB ****
+
+dbLoadRecords("db/bsss.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsssPort,IDX=0,BSAKEY=AMC0:SENSPSUM,SECN=SENSPSUM")
+dbLoadRecords("db/bsss.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsssPort,IDX=1,BSAKEY=AMC0:BLEN,SECN=BLEN")
+dbLoadRecords("db/bsss.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsssPort,IDX=2,BSAKEY=AMC0:TMITSTAT,SECN=TMITSTAT")
+dbLoadRecords("db/bsss.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsssPort,IDX=3,BSAKEY=AMC0:SENSPSUMFLOAT,SECN=SENSPSUMFLOAT")
+dbLoadRecords("db/bsss.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsssPort,IDX=4,BSAKEY=AMC0:BLENFLOAT,SECN=BLENFLOAT")
+dbLoadRecords("db/bsss.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsssPort,IDX=5,BSAKEY=AMC0:BLSTATUS,SECN=BLSTATUS")
+
+dbLoadRecords("db/bsss.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsssPort,IDX=6,BSAKEY=AMC1:SENSPSUM,SECN=SENSPSUM")
+dbLoadRecords("db/bsss.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsssPort,IDX=7,BSAKEY=AMC1:BLEN,SECN=BLEN")
+dbLoadRecords("db/bsss.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsssPort,IDX=8,BSAKEY=AMC1:TMITSTAT,SECN=TMITSTAT")
+dbLoadRecords("db/bsss.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsssPort,IDX=9,BSAKEY=AMC1:SENSPSUMFLOAT,SECN=SENSPSUMFLOAT")
+dbLoadRecords("db/bsss.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsssPort,IDX=10,BSAKEY=AMC1:BLENFLOAT,SECN=BLENFLOAT")
+dbLoadRecords("db/bsss.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsssPort,IDX=11,BSAKEY=AMC1:BLSTATUS,SECN=BLSTATUS")
+
+# **** Load BSSS Controls DB ****
+dbLoadRecords("db/bsssCtrl.db", "DEV=BLEN:$(AREA):$(POS),PORT=bsssPort")
 
 # Timing trigger
 # INST = Instance Number (for multiple instances of tprTrigger in an IOC)
