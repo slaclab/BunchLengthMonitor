@@ -110,7 +110,6 @@ record(calc, "$(P):FLT4_STS")
 
 record(mbbo, "$(P):0:SHT_CTRL")
 {
-  field(VAL,   "0")
   field(ZRVL,  "0")
   field(ZRST,  "OUT")
   field(ONVL,  "1")
@@ -120,7 +119,6 @@ record(mbbo, "$(P):0:SHT_CTRL")
 
 record(mbbo, "$(P):1:SHT_CTRL")
 {
-  field(VAL,   "0")
   field(ZRVL,  "0")
   field(ZRST,  "OUT")
   field(ONVL,  "1")

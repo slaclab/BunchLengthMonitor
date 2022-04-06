@@ -18,6 +18,8 @@ BLEN:$(AREA):$(POS):$(INST):CoefA0_SAV
 BLEN:$(AREA):$(POS):0$(INST):NumSamp1_SAV
 BLEN:$(AREA):$(POS):1$(INST):NumSamp1_SAV
 
+BLEN:$(AREA):$(POS):$(INST):SHT_CTRL
+
 BLEN:$(AREA):$(POS):loadConfigFile.VAL
 BLEN:$(AREA):$(POS):loadConfigRoot.VAL
 BLEN:$(AREA):$(POS):saveConfigFile.VAL
