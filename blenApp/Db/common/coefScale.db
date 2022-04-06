@@ -8,6 +8,7 @@ record(calcout, "$(P):$(AMC):CoefA$(COEF)_SAV"){
     field(INPC, "$(P):$(AMC):CoefA$(COEF)_SAV")
     field(CALC, "A ? B : C")
     field(SCAN, "1 second")
+    field(PINI, "YES")
 }
 
 record(calcout, "$(P):$(AMC)$(SENS):NumSamp1_SAV"){

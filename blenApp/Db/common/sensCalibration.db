@@ -4,5 +4,6 @@
 record(bi, "$(P):$(AMC):CalibMode"){
     field(ZNAM, "Running")
     field(ONAM, "Calibration")
+    field(PINI, "YES")
 }
 
