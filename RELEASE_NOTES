@@ -10,6 +10,11 @@
 #  Rev:  dd-mmm-yyyy, Reviewer's Name    (USERNAME)
 #--------------------------------------------------------------
 
+R5.0.0: 04/07/2022 Taine Eriksen (taine)
+    -Intial release to having resolved most faults
+    -New UI
+    -Almost toatal DB overhall
+    -All new module versions
 
 R4.0.0b0: 5/18/2020 - 8/18/2020, Ryan Reno (rreno):
     - WIP dev build for LCLS-II.
