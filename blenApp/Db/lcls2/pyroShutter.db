@@ -28,28 +28,31 @@
 #  (P)(INSTX):SHT_STS -- status of shutter for AMCX
 #
 
+
+#Shutter motor/solenoide was changed thus these are oposit to filters
 record(calc, "$(P):0:SHT_STS")
 {
   field(INPA, "$(P):Inserted")
   field(INPB, "$(P):Removed")
   field(INPC, "0x1")  # Bit Mask
   field(INPD, "0")    # Bit Shift 
-  field(CALC, "(A&B&C) ? 3 : (((~(A|B)) & C) ? 2 : (A&C) >> D)")
+  field(CALC, "(A&B&C) ? 3 : (((~(A|B)) & C) ? 2 : !((A&C) >> D))")
   field(SCAN, "$(SCAN)")
   field(PHAS, "0")
-  field(DESC, "0=OUT, 1=IN, 2=MOVING, 3=INCONSISTENT")
+  field(DESC, "0=IN, 1=OUT, 2=MOVING, 3=INCONSISTENT")
 }
 
+#Shutter motor/solenoide was changed thus these are oposit to filters
 record(calc, "$(P):1:SHT_STS")
 {
   field(INPA, "$(P):Inserted")
   field(INPB, "$(P):Removed")
   field(INPC, "0x2")  # Bit Mask
   field(INPD, "1")    # Bit Shift 
-  field(CALC, "(A&B&C) ? 3 : (((~(A|B)) & C) ? 2 : (A&C) >> D)")
+  field(CALC, "(A&B&C) ? 3 : (((~(A|B)) & C) ? 2 : !((A&C) >> D))")
   field(SCAN, "$(SCAN)")
   field(PHAS, "0")
-  field(DESC, "0=OUT, 1=IN, 2=MOVING, 3=INCONSISTENT")
+  field(DESC, "0=IN, 1=OUT, 2=MOVING, 3=INCONSISTENT")
 }
 
 #
@@ -108,20 +111,22 @@ record(calc, "$(P):FLT4_STS")
 # 1 = IN
 #
 
+#Shutter motor/solenoide was changed thus these are oposit to filters
 record(mbbo, "$(P):0:SHT_CTRL")
 {
-  field(ZRVL,  "0")
+  field(ZRVL,  "1")
   field(ZRST,  "OUT")
-  field(ONVL,  "1")
+  field(ONVL,  "0")
   field(ONST,  "IN")
   field(OUT, "$(P):0:SHT_MOVE PP") 
 }
 
+#Shutter motor/solenoide was changed thus these are oposit to filters
 record(mbbo, "$(P):1:SHT_CTRL")
 {
-  field(ZRVL,  "0")
+  field(ZRVL,  "1")
   field(ZRST,  "OUT")
-  field(ONVL,  "1")
+  field(ONVL,  "0")
   field(ONST,  "IN")
   field(OUT, "$(P):1:SHT_MOVE PP") 
 }

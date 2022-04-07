@@ -17,7 +17,7 @@
 #  
 # For any of the 5 bits, 0 = Mover Removed, 1 = Mover Inserted
 
-
+#Shutter motor/solenoide was changed thus these are oposit to filters
 record(calcout, "$(P):0:SHT_MOVE")
 {
   field(OUT, "$(P):MoverOnOff PP")
@@ -25,13 +25,14 @@ record(calcout, "$(P):0:SHT_MOVE")
   field(DOPT, "Use CALC")
   field(INPA, "$(P):0:SHT_CTRL")
   field(INPB, "$(P):MoverOnOffRBV")
-  field(INPC, "1")
+  field(INPC, "0")
   field(INPD, "0x1")  # bit 0 set
   field(INPE, "0x3e") # bit 0 unset
-  field(CALC, "(A = C) ? B|D : B&E")
+  field(CALC, "(A = C) ? B&E : B|D")
   field(SCAN, "Passive")
 }
 
+#Shutter motor/solenoide was changed thus these are oposit to filters
 record(calcout, "$(P):1:SHT_MOVE")
 {
   field(OUT, "$(P):MoverOnOff PP")
@@ -39,10 +40,10 @@ record(calcout, "$(P):1:SHT_MOVE")
   field(DOPT, "Use CALC")
   field(INPA, "$(P):1:SHT_CTRL")
   field(INPB, "$(P):MoverOnOffRBV")
-  field(INPC, "1")
+  field(INPC, "0")
   field(INPD, "0x2")  # bit 1 set
   field(INPE, "0x3d") # bit 1 unset
-  field(CALC, "(A = C) ? B|D : B&E")
+  field(CALC, "(A = C) ? B&E : B|D")
   field(SCAN, "Passive")
 }
 
