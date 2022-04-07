@@ -11,6 +11,9 @@
 #--------------------------------------------------------------
 
 R5.0.0: 04/07/2022 Taine Eriksen (taine)
+    -Changed the shutter controls to match the actual shutter solenoid used
+
+R5.0.0: 04/07/2022 Taine Eriksen (taine)
     -Intial release to having resolved most faults
     -New UI
     -Almost toatal DB overhall
