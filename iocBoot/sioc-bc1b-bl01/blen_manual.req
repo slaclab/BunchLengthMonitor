@@ -1,2 +1,2 @@
-file "lcls2.req" AREA=BC2B,POS=950,INST=0
-file "lcls2.req" AREA=BC2B,POS=950,INST=1
+file "lcls2.req" AREA=BC1B,POS=850,INST=0
+file "lcls2.req" AREA=BC1B,POS=850,INST=1
