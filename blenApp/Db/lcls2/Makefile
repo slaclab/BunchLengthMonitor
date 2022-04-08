@@ -19,7 +19,8 @@ DB += tempProcess.db
 
 # Autosave
 # --------------------------------------------------
-REQ += lcls2.req
+REQ += common.req
+REQ += pyro.req
 
 
 include $(TOP)/configure/RULES
