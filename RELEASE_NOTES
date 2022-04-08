@@ -10,7 +10,10 @@
 #  Rev:  dd-mmm-yyyy, Reviewer's Name    (USERNAME)
 #--------------------------------------------------------------
 
-R5.0.0: 04/07/2022 Taine Eriksen (taine)
+R5.0.2: 04/07/2022 Taine Eriksen (taine)
+    -Corrected fault with autosave
+
+R5.0.1: 04/07/2022 Taine Eriksen (taine)
     -Changed the shutter controls to match the actual shutter solenoid used
 
 R5.0.0: 04/07/2022 Taine Eriksen (taine)
