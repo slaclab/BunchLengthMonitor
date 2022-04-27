@@ -37,8 +37,8 @@ cd $(TOP)
 
 < iocBoot/common/blenCommon.cmd
 
-dbLoadRecords("db/pyroFilters.db", "P=BLEN:$(AREA):$(POS)")
-dbLoadRecords("db/pyroShutter.db", "P=BLEN:$(AREA):$(POS)")
+dbLoadRecords("db/motionCtrl.db", "P=BLEN:$(AREA):$(POS)")
+dbLoadRecords("db/motionCtrlRB.db", "P=BLEN:$(AREA):$(POS)")
 
 # Parse IP address
 dbLoadRecords("db/ipAddr.db", "P=BLEN:$(AREA):$(POS), SRC=ServerRemoteIp")

@@ -10,9 +10,9 @@ include $(TOP)/configure/CONFIG
 
 # Databases
 # --------------------------------------------------
-DB += pyroShutter.db
+DB += motionCtrlRB.db
 DB += lcls2FPGA.db
-DB += pyroFilters.db
+DB += motionCtrl.db
 DB += msgStatus.db
 DB += blen_gap_coefI2.db
 DB += tempProcess.db

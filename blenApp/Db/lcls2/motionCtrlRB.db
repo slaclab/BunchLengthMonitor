@@ -18,40 +18,46 @@
 #
 # --------------------------------------------------------------------------------------------------
 
-# Status Values:
+# Status Values Filters:
 # 0 = OUT
 # 1 = IN
 # 2 = MOVING
 # 3 = INCONSISTENT  - Due to both limit switches being activated at the same time.
 
-#
-#  (P)(INSTX):SHT_STS -- status of shutter for AMCX
-#
+# Status Values Shutters:
+# 0 = IN
+# 1 = OUT
+# 2 = MOVING
+# 3 = INCONSISTENT  - Due to both limit switches being activated at the same time.
 
 
 #Shutter motor/solenoide was changed thus these are oposit to filters
+record(calc, "$(P):LIMSW0")
+{
+  field(INPA, "$(P):StatusLimitSw")
+  field(INPB, "0x1")  # Bit Mask
+  field(INPC, "0")    # Bit Shift 
+  field(CALC, "A&B >> C")
+  field(SCAN, "1 second")
+  field(PHAS, "0")
+  field(DESC, "0=Inserted, 1=Removed")
+}
+
 record(calc, "$(P):0:SHT_STS")
 {
-  field(INPA, "$(P):Inserted")
-  field(INPB, "$(P):Removed")
-  field(INPC, "0x1")  # Bit Mask
-  field(INPD, "0")    # Bit Shift 
-  field(CALC, "(A&B&C) ? 3 : (((~(A|B)) & C) ? 2 : !((A&C) >> D))")
-  field(SCAN, "$(SCAN)")
-  field(PHAS, "0")
+  field(INPA, "$(P):LIMSW0")
+  field(INPB, "$(P):LIMSW6") 
+  field(CALC, "A&&B ? 3 : !(A&&B) ? 2 : B")
+  field(SCAN, "1 second")
   field(DESC, "0=IN, 1=OUT, 2=MOVING, 3=INCONSISTENT")
 }
 
-#Shutter motor/solenoide was changed thus these are oposit to filters
 record(calc, "$(P):1:SHT_STS")
 {
-  field(INPA, "$(P):Inserted")
-  field(INPB, "$(P):Removed")
-  field(INPC, "0x2")  # Bit Mask
-  field(INPD, "1")    # Bit Shift 
-  field(CALC, "(A&B&C) ? 3 : (((~(A|B)) & C) ? 2 : !((A&C) >> D))")
-  field(SCAN, "$(SCAN)")
-  field(PHAS, "0")
+  field(INPA, "$(P):LIMSW1")
+  field(INPB, "$(P):LIMSW7") 
+  field(CALC, "A&&B ? 3 : !(A&&B) ? 2 : B")
+  field(SCAN, "1 second")
   field(DESC, "0=IN, 1=OUT, 2=MOVING, 3=INCONSISTENT")
 }
 
@@ -61,48 +67,25 @@ record(calc, "$(P):1:SHT_STS")
 
 record(calc, "$(P):FLT1_STS")
 {
-  field(INPA, "$(P):Inserted")
-  field(INPB, "$(P):Removed")
-  field(INPC, "0x4")  # Bit Mask
-  field(INPD, "2")    # Bit Shift 
-  field(CALC, "(A&B&C) ? 3 : (((~(A|B)) & C) ? 2 : (A&C) >> D)")
-  field(SCAN, "$(SCAN)")
-  field(PHAS, "0")
-  field(DESC, "0=OUT, 1=IN, 2=MOVING, 3=INCONSISTENT")
+  field(INPA, "$(P):LIMSW2")
+  field(INPB, "$(P):LIMSW8") 
+  field(CALC, "A&&B ? 3 : !(A&&B) ? 2 : A")
+  field(SCAN, "1 second")
+  field(DESC, "0=IN, 1=OUT, 2=MOVING, 3=INCONSISTENT")
 }
 
 record(calc, "$(P):FLT2_STS")
 {
-  field(INPA, "$(P):Inserted")
-  field(INPB, "$(P):Removed")
-  field(INPC, "0x8")  # Bit Mask
-  field(INPD, "3")    # Bit Shift 
-  field(CALC, "(A&B&C) ? 3 : (((~(A|B)) & C) ? 2 : (A&C) >> D)")
-  field(SCAN, "$(SCAN)")
-  field(DESC, "0=OUT, 1=IN, 2=MOVING, 3=INCONSISTENT")
+
 }
 record(calc, "$(P):FLT3_STS")
 {
-  field(INPA, "$(P):Inserted")
-  field(INPB, "$(P):Removed")
-  field(INPC, "0x10")  # Bit Mask
-  field(INPD, "4")    # Bit Shift 
-  field(CALC, "(A&B&C) ? 3 : (((~(A|B)) & C) ? 2 : (A&C) >> D)")
-  field(SCAN, "$(SCAN)")
-  field(PHAS, "0")
-  field(DESC, "0=OUT, 1=IN, 2=MOVING, 3=INCONSISTENT")
+  
 }
 
 record(calc, "$(P):FLT4_STS")
 {
-  field(INPA, "$(P):Inserted")
-  field(INPB, "$(P):Removed")
-  field(INPC, "0x20")  # Bit Mask
-  field(INPD, "5")    # Bit Shift 
-  field(CALC, "(A&B&C) ? 3 : (((~(A|B)) & C) ? 2 : (A&C) >> D)")
-  field(SCAN, "$(SCAN)")
-  field(PHAS, "0")
-  field(DESC, "0=OUT, 1=IN, 2=MOVING, 3=INCONSISTENT")
+ 
 }
 
 #
@@ -201,7 +184,7 @@ record(calc, "$(P):0:SHT_ERR")
   field(INPC, "0")    # OK Value
   field(INPD, "1")    # Error Value
   field(CALC, "(A = B) ? C : D")
-  field(SCAN, "$(SCAN)")
+  field(SCAN, "1 second")
   field(PHAS, "1")
   field(DESC, "0 = OK 1 = Mismatch of STS and CTRL")
 }
@@ -213,7 +196,7 @@ record(calc, "$(P):1:SHT_ERR")
   field(INPC, "0")    # OK Value
   field(INPD, "1")    # Error Value
   field(CALC, "(A = B) ? C : D")
-  field(SCAN, "$(SCAN)")
+  field(SCAN, "1 second")
   field(PHAS, "1")
   field(DESC, "0 = OK 1 = Mismatch of STS and CTRL")
 }
@@ -229,7 +212,7 @@ record(calc, "$(P):FLT1_ERR")
   field(INPC, "0")    # OK Value
   field(INPD, "1")    # Error Value
   field(CALC, "(A = B) ? C : D")
-  field(SCAN, "$(SCAN)")
+  field(SCAN, "1 second")
   field(PHAS, "1")
   field(DESC, "0 = OK 1 = Mismatch of STS and CTRL")
 }
@@ -241,7 +224,7 @@ record(calc, "$(P):FLT2_ERR")
   field(INPC, "0")    # OK Value
   field(INPD, "1")    # Error Value
   field(CALC, "(A = B) ? C : D")
-  field(SCAN, "$(SCAN)")
+  field(SCAN, "1 second")
   field(PHAS, "1")
   field(DESC, "0 = OK 1 = Mismatch of STS and CTRL")
 }
@@ -253,7 +236,7 @@ record(calc, "$(P):FLT3_ERR")
   field(INPC, "0")    # OK Value
   field(INPD, "1")    # Error Value
   field(CALC, "(A = B) ? C : D")
-  field(SCAN, "$(SCAN)")
+  field(SCAN, "1 second")
   field(PHAS, "1")
   field(DESC, "0 = OK 1 = Mismatch of STS and CTRL")
 }
@@ -265,7 +248,7 @@ record(calc, "$(P):FLT4_ERR")
   field(INPC, "0")    # OK Value
   field(INPD, "1")    # Error Value
   field(CALC, "(A = B) ? C : D")
-  field(SCAN, "$(SCAN)")
+  field(SCAN, "1 second")
   field(PHAS, "1")
   field(DESC, "0 = OK 1 = Mismatch of STS and CTRL")
 }
