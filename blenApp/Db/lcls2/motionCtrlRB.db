@@ -43,6 +43,127 @@ record(calc, "$(P):LIMSW0")
   field(DESC, "0=Inserted, 1=Removed")
 }
 
+record(calc, "$(P):LIMSW1")
+{
+  field(INPA, "$(P):StatusLimitSw")
+  field(INPB, "0x2")  # Bit Mask
+  field(INPC, "0")    # Bit Shift 
+  field(CALC, "A&B >> C")
+  field(SCAN, "1 second")
+  field(PHAS, "0")
+  field(DESC, "0=Inserted, 1=Removed")
+}
+
+record(calc, "$(P):LIMSW2")
+{
+  field(INPA, "$(P):StatusLimitSw")
+  field(INPB, "0x4")  # Bit Mask
+  field(INPC, "0")    # Bit Shift 
+  field(CALC, "A&B >> C")
+  field(SCAN, "1 second")
+  field(PHAS, "0")
+  field(DESC, "0=Inserted, 1=Removed")
+}
+
+record(calc, "$(P):LIMSW3")
+{
+  field(INPA, "$(P):StatusLimitSw")
+  field(INPB, "0x8")  # Bit Mask
+  field(INPC, "0")    # Bit Shift 
+  field(CALC, "A&B >> C")
+  field(SCAN, "1 second")
+  field(PHAS, "0")
+  field(DESC, "0=Inserted, 1=Removed")
+}
+
+record(calc, "$(P):LIMSW4")
+{
+  field(INPA, "$(P):StatusLimitSw")
+  field(INPB, "0x10")  # Bit Mask
+  field(INPC, "0")    # Bit Shift 
+  field(CALC, "A&B >> C")
+  field(SCAN, "1 second")
+  field(PHAS, "0")
+  field(DESC, "0=Inserted, 1=Removed")
+}
+
+record(calc, "$(P):LIMSW5")
+{
+  field(INPA, "$(P):StatusLimitSw")
+  field(INPB, "0x20")  # Bit Mask
+  field(INPC, "0")    # Bit Shift 
+  field(CALC, "A&B >> C")
+  field(SCAN, "1 second")
+  field(PHAS, "0")
+  field(DESC, "0=Inserted, 1=Removed")
+}
+
+record(calc, "$(P):LIMSW6")
+{
+  field(INPA, "$(P):StatusLimitSw")
+  field(INPB, "0x40")  # Bit Mask
+  field(INPC, "0")    # Bit Shift 
+  field(CALC, "A&B >> C")
+  field(SCAN, "1 second")
+  field(PHAS, "0")
+  field(DESC, "0=Inserted, 1=Removed")
+}
+
+record(calc, "$(P):LIMSW7")
+{
+  field(INPA, "$(P):StatusLimitSw")
+  field(INPB, "0x80")  # Bit Mask
+  field(INPC, "0")    # Bit Shift 
+  field(CALC, "A&B >> C")
+  field(SCAN, "1 second")
+  field(PHAS, "0")
+  field(DESC, "0=Inserted, 1=Removed")
+}
+
+record(calc, "$(P):LIMSW8")
+{
+  field(INPA, "$(P):StatusLimitSw")
+  field(INPB, "0x100")  # Bit Mask
+  field(INPC, "0")    # Bit Shift 
+  field(CALC, "A&B >> C")
+  field(SCAN, "1 second")
+  field(PHAS, "0")
+  field(DESC, "0=Inserted, 1=Removed")
+}
+
+record(calc, "$(P):LIMSW9")
+{
+  field(INPA, "$(P):StatusLimitSw")
+  field(INPB, "0x200")  # Bit Mask
+  field(INPC, "0")    # Bit Shift 
+  field(CALC, "A&B >> C")
+  field(SCAN, "1 second")
+  field(PHAS, "0")
+  field(DESC, "0=Inserted, 1=Removed")
+}
+
+record(calc, "$(P):LIMSW10")
+{
+  field(INPA, "$(P):StatusLimitSw")
+  field(INPB, "0x400")  # Bit Mask
+  field(INPC, "0")    # Bit Shift 
+  field(CALC, "A&B >> C")
+  field(SCAN, "1 second")
+  field(PHAS, "0")
+  field(DESC, "0=Inserted, 1=Removed")
+}
+
+record(calc, "$(P):LIMSW11")
+{
+  field(INPA, "$(P):StatusLimitSw")
+  field(INPB, "0x800")  # Bit Mask
+  field(INPC, "0")    # Bit Shift 
+  field(CALC, "A&B >> C")
+  field(SCAN, "1 second")
+  field(PHAS, "0")
+  field(DESC, "0=Inserted, 1=Removed")
+}
+
 record(calc, "$(P):0:SHT_STS")
 {
   field(INPA, "$(P):LIMSW0")
@@ -76,95 +197,28 @@ record(calc, "$(P):FLT1_STS")
 
 record(calc, "$(P):FLT2_STS")
 {
-
+  field(INPA, "$(P):LIMSW3")
+  field(INPB, "$(P):LIMSW9") 
+  field(CALC, "A&&B ? 3 : !(A&&B) ? 2 : A")
+  field(SCAN, "1 second")
+  field(DESC, "0=IN, 1=OUT, 2=MOVING, 3=INCONSISTENT")
 }
 record(calc, "$(P):FLT3_STS")
 {
-  
+  field(INPA, "$(P):LIMSW4")
+  field(INPB, "$(P):LIMSW10") 
+  field(CALC, "A&&B ? 3 : !(A&&B) ? 2 : A")
+  field(SCAN, "1 second")
+  field(DESC, "0=IN, 1=OUT, 2=MOVING, 3=INCONSISTENT")
 }
 
 record(calc, "$(P):FLT4_STS")
 {
- 
-}
-
-#
-# Control (CTRL) values:
-# 0 = OUT
-# 1 = IN
-#
-
-#Shutter motor/solenoide was changed thus these are oposit to filters
-record(mbbo, "$(P):0:SHT_CTRL")
-{
-  field(ZRVL,  "1")
-  field(ZRST,  "OUT")
-  field(ONVL,  "0")
-  field(ONST,  "IN")
-  field(OUT, "$(P):0:SHT_MOVE PP") 
-}
-
-#Shutter motor/solenoide was changed thus these are oposit to filters
-record(mbbo, "$(P):1:SHT_CTRL")
-{
-  field(ZRVL,  "1")
-  field(ZRST,  "OUT")
-  field(ONVL,  "0")
-  field(ONST,  "IN")
-  field(OUT, "$(P):1:SHT_MOVE PP") 
-}
-
-
-record(mbbo, "$(P):FLT1_CTRL")
-{
-  field(DESC, "Neutral Density Filter")
-  field(VAL,   "0")
-  field(ZRVL,  "0")
-  field(ZRST,  "OUT")
-  field(ONVL,  "1")
-  field(ONST,  "IN")
-  field(OUT, "$(P):FLT1_MOVE PP")
-
-  info(autosaveFields, "VAL DESC")
-}
-
-record(mbbo, "$(P):FLT2_CTRL")
-{
-  field(DESC, "Neutral Density Filter")
-  field(VAL,   "0")
-  field(ZRVL,  "0")
-  field(ZRST,  "OUT")
-  field(ONVL,  "1")
-  field(ONST,  "IN")
-  field(OUT, "$(P):FLT2_MOVE PP")
-
-  info(autosaveFields, "VAL DESC")
-}
-
-record(mbbo, "$(P):FLT3_CTRL")
-{
-  field(DESC, "Band-Pass Filter")
-  field(VAL,   "0")
-  field(ZRVL,  "0")
-  field(ZRST,  "OUT")
-  field(ONVL,  "1")
-  field(ONST,  "IN")
-  field(OUT, "$(P):FLT3_MOVE PP")
-
-  info(autosaveFields, "VAL DESC")
-}
-
-record(mbbo, "$(P):FLT4_CTRL")
-{
-  field(DESC, "Band-Reject Filter")
-  field(VAL,   "0")
-  field(ZRVL,  "0")
-  field(ZRST,  "OUT")
-  field(ONVL,  "1")
-  field(ONST,  "IN")
-  field(OUT, "$(P):FLT4_MOVE PP")
-
-  info(autosaveFields, "VAL DESC")
+  field(INPA, "$(P):LIMSW5")
+  field(INPB, "$(P):LIMSW11") 
+  field(CALC, "A&&B ? 3 : !(A&&B) ? 2 : A")
+  field(SCAN, "1 second")
+  field(DESC, "0=IN, 1=OUT, 2=MOVING, 3=INCONSISTENT")
 }
 
 #
