@@ -47,7 +47,7 @@ record(calc, "$(P):LIMSW1")
 {
   field(INPA, "$(P):StatusLimitSw")
   field(INPB, "0x2")  # Bit Mask
-  field(INPC, "0")    # Bit Shift 
+  field(INPC, "1")    # Bit Shift 
   field(CALC, "A&B >> C")
   field(SCAN, "1 second")
   field(PHAS, "0")
@@ -58,7 +58,7 @@ record(calc, "$(P):LIMSW2")
 {
   field(INPA, "$(P):StatusLimitSw")
   field(INPB, "0x4")  # Bit Mask
-  field(INPC, "0")    # Bit Shift 
+  field(INPC, "2")    # Bit Shift 
   field(CALC, "A&B >> C")
   field(SCAN, "1 second")
   field(PHAS, "0")
@@ -69,7 +69,7 @@ record(calc, "$(P):LIMSW3")
 {
   field(INPA, "$(P):StatusLimitSw")
   field(INPB, "0x8")  # Bit Mask
-  field(INPC, "0")    # Bit Shift 
+  field(INPC, "3")    # Bit Shift 
   field(CALC, "A&B >> C")
   field(SCAN, "1 second")
   field(PHAS, "0")
@@ -80,7 +80,7 @@ record(calc, "$(P):LIMSW4")
 {
   field(INPA, "$(P):StatusLimitSw")
   field(INPB, "0x10")  # Bit Mask
-  field(INPC, "0")    # Bit Shift 
+  field(INPC, "4")    # Bit Shift 
   field(CALC, "A&B >> C")
   field(SCAN, "1 second")
   field(PHAS, "0")
@@ -91,7 +91,7 @@ record(calc, "$(P):LIMSW5")
 {
   field(INPA, "$(P):StatusLimitSw")
   field(INPB, "0x20")  # Bit Mask
-  field(INPC, "0")    # Bit Shift 
+  field(INPC, "5")    # Bit Shift 
   field(CALC, "A&B >> C")
   field(SCAN, "1 second")
   field(PHAS, "0")
@@ -102,7 +102,7 @@ record(calc, "$(P):LIMSW6")
 {
   field(INPA, "$(P):StatusLimitSw")
   field(INPB, "0x40")  # Bit Mask
-  field(INPC, "0")    # Bit Shift 
+  field(INPC, "6")    # Bit Shift 
   field(CALC, "A&B >> C")
   field(SCAN, "1 second")
   field(PHAS, "0")
@@ -113,7 +113,7 @@ record(calc, "$(P):LIMSW7")
 {
   field(INPA, "$(P):StatusLimitSw")
   field(INPB, "0x80")  # Bit Mask
-  field(INPC, "0")    # Bit Shift 
+  field(INPC, "7")    # Bit Shift 
   field(CALC, "A&B >> C")
   field(SCAN, "1 second")
   field(PHAS, "0")
@@ -124,7 +124,7 @@ record(calc, "$(P):LIMSW8")
 {
   field(INPA, "$(P):StatusLimitSw")
   field(INPB, "0x100")  # Bit Mask
-  field(INPC, "0")    # Bit Shift 
+  field(INPC, "8")    # Bit Shift 
   field(CALC, "A&B >> C")
   field(SCAN, "1 second")
   field(PHAS, "0")
@@ -135,7 +135,7 @@ record(calc, "$(P):LIMSW9")
 {
   field(INPA, "$(P):StatusLimitSw")
   field(INPB, "0x200")  # Bit Mask
-  field(INPC, "0")    # Bit Shift 
+  field(INPC, "9")    # Bit Shift 
   field(CALC, "A&B >> C")
   field(SCAN, "1 second")
   field(PHAS, "0")
@@ -146,7 +146,7 @@ record(calc, "$(P):LIMSW10")
 {
   field(INPA, "$(P):StatusLimitSw")
   field(INPB, "0x400")  # Bit Mask
-  field(INPC, "0")    # Bit Shift 
+  field(INPC, "10")    # Bit Shift 
   field(CALC, "A&B >> C")
   field(SCAN, "1 second")
   field(PHAS, "0")
@@ -157,7 +157,7 @@ record(calc, "$(P):LIMSW11")
 {
   field(INPA, "$(P):StatusLimitSw")
   field(INPB, "0x800")  # Bit Mask
-  field(INPC, "0")    # Bit Shift 
+  field(INPC, "11")    # Bit Shift 
   field(CALC, "A&B >> C")
   field(SCAN, "1 second")
   field(PHAS, "0")
@@ -168,7 +168,7 @@ record(calc, "$(P):0:SHT_STS")
 {
   field(INPA, "$(P):LIMSW0")
   field(INPB, "$(P):LIMSW6") 
-  field(CALC, "A&&B ? 3 : !(A&&B) ? 2 : B")
+  field(CALC, "A&&B ? 3 : !A&&!B ? 2 : B")
   field(SCAN, "1 second")
   field(DESC, "0=IN, 1=OUT, 2=MOVING, 3=INCONSISTENT")
 }
@@ -177,7 +177,7 @@ record(calc, "$(P):1:SHT_STS")
 {
   field(INPA, "$(P):LIMSW1")
   field(INPB, "$(P):LIMSW7") 
-  field(CALC, "A&&B ? 3 : !(A&&B) ? 2 : B")
+  field(CALC, "A&&B ? 3 : !A&&!B ? 2 : B")
   field(SCAN, "1 second")
   field(DESC, "0=IN, 1=OUT, 2=MOVING, 3=INCONSISTENT")
 }
@@ -190,7 +190,7 @@ record(calc, "$(P):FLT1_STS")
 {
   field(INPA, "$(P):LIMSW2")
   field(INPB, "$(P):LIMSW8") 
-  field(CALC, "A&&B ? 3 : !(A&&B) ? 2 : A")
+  field(CALC, "A&&B ? 3 : !A&&!B ? 2 : A")
   field(SCAN, "1 second")
   field(DESC, "0=IN, 1=OUT, 2=MOVING, 3=INCONSISTENT")
 }
@@ -199,7 +199,7 @@ record(calc, "$(P):FLT2_STS")
 {
   field(INPA, "$(P):LIMSW3")
   field(INPB, "$(P):LIMSW9") 
-  field(CALC, "A&&B ? 3 : !(A&&B) ? 2 : A")
+  field(CALC, "A&&B ? 3 : !A&&!B ? 2 : A")
   field(SCAN, "1 second")
   field(DESC, "0=IN, 1=OUT, 2=MOVING, 3=INCONSISTENT")
 }
@@ -207,7 +207,7 @@ record(calc, "$(P):FLT3_STS")
 {
   field(INPA, "$(P):LIMSW4")
   field(INPB, "$(P):LIMSW10") 
-  field(CALC, "A&&B ? 3 : !(A&&B) ? 2 : A")
+  field(CALC, "A&&B ? 3 : !A&&!B ? 2 : A")
   field(SCAN, "1 second")
   field(DESC, "0=IN, 1=OUT, 2=MOVING, 3=INCONSISTENT")
 }
@@ -216,7 +216,7 @@ record(calc, "$(P):FLT4_STS")
 {
   field(INPA, "$(P):LIMSW5")
   field(INPB, "$(P):LIMSW11") 
-  field(CALC, "A&&B ? 3 : !(A&&B) ? 2 : A")
+  field(CALC, "A&&B ? 3 : !A&&!B ? 2 : A")
   field(SCAN, "1 second")
   field(DESC, "0=IN, 1=OUT, 2=MOVING, 3=INCONSISTENT")
 }

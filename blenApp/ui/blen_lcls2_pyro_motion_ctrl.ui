@@ -527,7 +527,7 @@ QFrame#shtFrame {
               <string/>
              </property>
              <property name="rules" stdset="0">
-              <string>[{&quot;channels&quot;: [{&quot;use_enum&quot;: false, &quot;trigger&quot;: true, &quot;channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:0:SHT_STS&quot;}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;\&quot;{}\&quot;.format(\&quot;OUT\&quot; if ch[0] == 1 else (\&quot;IN\&quot; if ch[0] == 0 else (\&quot;MOVING\&quot; if ch[0] == 2 else \&quot;ERROR\&quot;)))&quot;, &quot;name&quot;: &quot;New Rule&quot;, &quot;initial_value&quot;: &quot;&quot;}]</string>
+              <string>[{&quot;channels&quot;: [{&quot;use_enum&quot;: false, &quot;trigger&quot;: true, &quot;channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:0:SHT_STS&quot;}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;\&quot;{}\&quot;.format(\&quot;OUT\&quot; if ch[0] == 0 else (\&quot;IN\&quot; if ch[0] == 1 else (\&quot;MOVING\&quot; if ch[0] == 2 else \&quot;ERROR\&quot;)))&quot;, &quot;name&quot;: &quot;New Rule&quot;, &quot;initial_value&quot;: &quot;&quot;}]</string>
              </property>
             </widget>
            </item>
@@ -611,7 +611,7 @@ QFrame#shtFrame {
               <string/>
              </property>
              <property name="rules" stdset="0">
-              <string>[{&quot;channels&quot;: [{&quot;use_enum&quot;: true, &quot;trigger&quot;: true, &quot;channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:1:SHT_STS&quot;}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;\&quot;{}\&quot;.format(\&quot;OUT\&quot; if ch[0] == 1 else (\&quot;IN\&quot; if ch[0] == 0 else (\&quot;MOVING\&quot; if ch[0] == 2 else \&quot;ERROR\&quot;)))&quot;, &quot;name&quot;: &quot;New Rule&quot;, &quot;initial_value&quot;: &quot;&quot;}]</string>
+              <string>[{&quot;channels&quot;: [{&quot;use_enum&quot;: true, &quot;trigger&quot;: true, &quot;channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:1:SHT_STS&quot;}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;\&quot;{}\&quot;.format(\&quot;OUT\&quot; if ch[0] == 0 else (\&quot;IN\&quot; if ch[0] == 1 else (\&quot;MOVING\&quot; if ch[0] == 2 else \&quot;ERROR\&quot;)))&quot;, &quot;name&quot;: &quot;New Rule&quot;, &quot;initial_value&quot;: &quot;&quot;}]</string>
              </property>
             </widget>
            </item>
