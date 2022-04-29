@@ -39,6 +39,7 @@ record(calc, "$(P):LIMSW0")
   field(INPC, "0")    # Bit Shift 
   field(CALC, "A&B >> C")
   field(SCAN, "1 second")
+  field(PINI, "YES")
   field(PHAS, "0")
   field(DESC, "0=Inserted, 1=Removed")
 }
@@ -50,6 +51,7 @@ record(calc, "$(P):LIMSW1")
   field(INPC, "1")    # Bit Shift 
   field(CALC, "A&B >> C")
   field(SCAN, "1 second")
+  field(PINI, "YES")
   field(PHAS, "0")
   field(DESC, "0=Inserted, 1=Removed")
 }
@@ -61,6 +63,7 @@ record(calc, "$(P):LIMSW2")
   field(INPC, "2")    # Bit Shift 
   field(CALC, "A&B >> C")
   field(SCAN, "1 second")
+  field(PINI, "YES")
   field(PHAS, "0")
   field(DESC, "0=Inserted, 1=Removed")
 }
@@ -73,6 +76,7 @@ record(calc, "$(P):LIMSW3")
   field(CALC, "A&B >> C")
   field(SCAN, "1 second")
   field(PHAS, "0")
+  field(PINI, "YES")
   field(DESC, "0=Inserted, 1=Removed")
 }
 
@@ -83,6 +87,7 @@ record(calc, "$(P):LIMSW4")
   field(INPC, "4")    # Bit Shift 
   field(CALC, "A&B >> C")
   field(SCAN, "1 second")
+  field(PINI, "YES")
   field(PHAS, "0")
   field(DESC, "0=Inserted, 1=Removed")
 }
@@ -94,6 +99,7 @@ record(calc, "$(P):LIMSW5")
   field(INPC, "5")    # Bit Shift 
   field(CALC, "A&B >> C")
   field(SCAN, "1 second")
+  field(PINI, "YES")
   field(PHAS, "0")
   field(DESC, "0=Inserted, 1=Removed")
 }
@@ -105,6 +111,7 @@ record(calc, "$(P):LIMSW6")
   field(INPC, "6")    # Bit Shift 
   field(CALC, "A&B >> C")
   field(SCAN, "1 second")
+  field(PINI, "YES")
   field(PHAS, "0")
   field(DESC, "0=Inserted, 1=Removed")
 }
@@ -116,6 +123,7 @@ record(calc, "$(P):LIMSW7")
   field(INPC, "7")    # Bit Shift 
   field(CALC, "A&B >> C")
   field(SCAN, "1 second")
+  field(PINI, "YES")
   field(PHAS, "0")
   field(DESC, "0=Inserted, 1=Removed")
 }
@@ -127,6 +135,7 @@ record(calc, "$(P):LIMSW8")
   field(INPC, "8")    # Bit Shift 
   field(CALC, "A&B >> C")
   field(SCAN, "1 second")
+  field(PINI, "YES")
   field(PHAS, "0")
   field(DESC, "0=Inserted, 1=Removed")
 }
@@ -138,6 +147,7 @@ record(calc, "$(P):LIMSW9")
   field(INPC, "9")    # Bit Shift 
   field(CALC, "A&B >> C")
   field(SCAN, "1 second")
+  field(PINI, "YES")
   field(PHAS, "0")
   field(DESC, "0=Inserted, 1=Removed")
 }
@@ -149,6 +159,7 @@ record(calc, "$(P):LIMSW10")
   field(INPC, "10")    # Bit Shift 
   field(CALC, "A&B >> C")
   field(SCAN, "1 second")
+  field(PINI, "YES")
   field(PHAS, "0")
   field(DESC, "0=Inserted, 1=Removed")
 }
@@ -160,6 +171,7 @@ record(calc, "$(P):LIMSW11")
   field(INPC, "11")    # Bit Shift 
   field(CALC, "A&B >> C")
   field(SCAN, "1 second")
+  field(PINI, "YES")
   field(PHAS, "0")
   field(DESC, "0=Inserted, 1=Removed")
 }
@@ -170,6 +182,7 @@ record(calc, "$(P):0:SHT_STS")
   field(INPB, "$(P):LIMSW6") 
   field(CALC, "A&&B ? 3 : !A&&!B ? 2 : B")
   field(SCAN, "1 second")
+  field(PINI, "YES")
   field(DESC, "0=IN, 1=OUT, 2=MOVING, 3=INCONSISTENT")
 }
 
@@ -179,6 +192,7 @@ record(calc, "$(P):1:SHT_STS")
   field(INPB, "$(P):LIMSW7") 
   field(CALC, "A&&B ? 3 : !A&&!B ? 2 : B")
   field(SCAN, "1 second")
+  field(PINI, "YES")
   field(DESC, "0=IN, 1=OUT, 2=MOVING, 3=INCONSISTENT")
 }
 
@@ -192,6 +206,7 @@ record(calc, "$(P):FLT1_STS")
   field(INPB, "$(P):LIMSW8") 
   field(CALC, "A&&B ? 3 : !A&&!B ? 2 : A")
   field(SCAN, "1 second")
+  field(PINI, "YES")
   field(DESC, "0=IN, 1=OUT, 2=MOVING, 3=INCONSISTENT")
 }
 
@@ -201,6 +216,7 @@ record(calc, "$(P):FLT2_STS")
   field(INPB, "$(P):LIMSW9") 
   field(CALC, "A&&B ? 3 : !A&&!B ? 2 : A")
   field(SCAN, "1 second")
+  field(PINI, "YES")
   field(DESC, "0=IN, 1=OUT, 2=MOVING, 3=INCONSISTENT")
 }
 record(calc, "$(P):FLT3_STS")
@@ -209,6 +225,7 @@ record(calc, "$(P):FLT3_STS")
   field(INPB, "$(P):LIMSW10") 
   field(CALC, "A&&B ? 3 : !A&&!B ? 2 : A")
   field(SCAN, "1 second")
+  field(PINI, "YES")
   field(DESC, "0=IN, 1=OUT, 2=MOVING, 3=INCONSISTENT")
 }
 
@@ -218,6 +235,7 @@ record(calc, "$(P):FLT4_STS")
   field(INPB, "$(P):LIMSW11") 
   field(CALC, "A&&B ? 3 : !A&&!B ? 2 : A")
   field(SCAN, "1 second")
+  field(PINI, "YES")
   field(DESC, "0=IN, 1=OUT, 2=MOVING, 3=INCONSISTENT")
 }
 
