@@ -20,7 +20,8 @@
 #Shutter motor/solenoide was changed thus these are oposit to filters
 record(calcout, "$(P):0:SHT_MOVE")
 {
-  field(OUT, "$(P):MoverOnOff PP")
+  field(OUT,  "$(P):MoverOnOff PP")
+  #field(FLNK, "$(P):MoverOnOff")
   field(OOPT, "Every Time")
   field(DOPT, "Use CALC")
   field(INPA, "$(P):0:SHT_CTRL")
@@ -35,7 +36,8 @@ record(calcout, "$(P):0:SHT_MOVE")
 #Shutter motor/solenoide was changed thus these are oposit to filters
 record(calcout, "$(P):1:SHT_MOVE")
 {
-  field(OUT, "$(P):MoverOnOff PP")
+  field(OUT,  "$(P):MoverOnOff PP")
+  #field(FLNK, "$(P):MoverOnOff")
   field(OOPT, "Every Time")
   field(DOPT, "Use CALC")
   field(INPA, "$(P):1:SHT_CTRL")
@@ -116,8 +118,9 @@ record(mbbo, "$(P):0:SHT_CTRL")
   field(ZRST,  "OUT")
   field(ONVL,  "0")
   field(ONST,  "IN")
-  field(OUT, "$(P):0:SHT_MOVE PP")
-
+  field(OUT,   "$(P):0:SHT_MOVE")
+  #field(FLNK,  "$(P):0:SHT_MOVE")
+  field(PINI,  "YES")
 }
   
 #Shutter motor/solenoide was changed thus these are oposit to filters
@@ -127,8 +130,9 @@ record(mbbo, "$(P):1:SHT_CTRL")
   field(ZRST,  "OUT")
   field(ONVL,  "0")
   field(ONST,  "IN")
-  field(OUT, "$(P):1:SHT_MOVE PP")
-
+  field(OUT,   "$(P):1:SHT_MOVE")
+  #field(FLNK,  "$(P):1:SHT_MOVE")
+  field(PINI,  "YES")
 }
   
   
@@ -141,9 +145,8 @@ record(mbbo, "$(P):FLT1_CTRL")
   field(ONVL,  "1")
   field(ONST,  "IN")
   field(OUT, "$(P):FLT1_MOVE PP")
-
+  field(PINI,  "YES")
   info(autosaveFields, "VAL DESC")
-
 }
   
 record(mbbo, "$(P):FLT2_CTRL")
@@ -155,9 +158,8 @@ record(mbbo, "$(P):FLT2_CTRL")
   field(ONVL,  "1")
   field(ONST,  "IN")
   field(OUT, "$(P):FLT2_MOVE PP")
-
+  field(PINI,  "YES")
   info(autosaveFields, "VAL DESC")
-
 }
 
 record(mbbo, "$(P):FLT3_CTRL")
@@ -169,9 +171,8 @@ record(mbbo, "$(P):FLT3_CTRL")
   field(ONVL,  "1")
   field(ONST,  "IN")
   field(OUT, "$(P):FLT3_MOVE PP")
-
+  field(PINI,  "YES")
   info(autosaveFields, "VAL DESC")
-
 }
   
 record(mbbo, "$(P):FLT4_CTRL")
@@ -183,8 +184,7 @@ record(mbbo, "$(P):FLT4_CTRL")
   field(ONVL,  "1")
   field(ONST,  "IN")
   field(OUT, "$(P):FLT4_MOVE PP")
-
+  field(PINI,  "YES")
   info(autosaveFields, "VAL DESC")
-
 }
 

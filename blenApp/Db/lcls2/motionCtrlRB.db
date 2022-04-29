@@ -75,8 +75,8 @@ record(calc, "$(P):LIMSW3")
   field(INPC, "3")    # Bit Shift 
   field(CALC, "A&B >> C")
   field(SCAN, "1 second")
-  field(PHAS, "0")
   field(PINI, "YES")
+  field(PHAS, "0")
   field(DESC, "0=Inserted, 1=Removed")
 }
 
@@ -180,7 +180,7 @@ record(calc, "$(P):0:SHT_STS")
 {
   field(INPA, "$(P):LIMSW0")
   field(INPB, "$(P):LIMSW6") 
-  field(CALC, "A&&B ? 3 : !A&&!B ? 2 : B")
+  field(CALC, "A&&B ? 3 : !A&&!B ? 2 : A")
   field(SCAN, "1 second")
   field(PINI, "YES")
   field(DESC, "0=IN, 1=OUT, 2=MOVING, 3=INCONSISTENT")
@@ -190,7 +190,7 @@ record(calc, "$(P):1:SHT_STS")
 {
   field(INPA, "$(P):LIMSW1")
   field(INPB, "$(P):LIMSW7") 
-  field(CALC, "A&&B ? 3 : !A&&!B ? 2 : B")
+  field(CALC, "A&&B ? 3 : !A&&!B ? 2 : A")
   field(SCAN, "1 second")
   field(PINI, "YES")
   field(DESC, "0=IN, 1=OUT, 2=MOVING, 3=INCONSISTENT")
@@ -207,7 +207,7 @@ record(calc, "$(P):FLT1_STS")
   field(CALC, "A&&B ? 3 : !A&&!B ? 2 : A")
   field(SCAN, "1 second")
   field(PINI, "YES")
-  field(DESC, "0=IN, 1=OUT, 2=MOVING, 3=INCONSISTENT")
+  field(DESC, "0=OUT, 1=IN, 2=MOVING, 3=INCONSISTENT")
 }
 
 record(calc, "$(P):FLT2_STS")
@@ -217,7 +217,7 @@ record(calc, "$(P):FLT2_STS")
   field(CALC, "A&&B ? 3 : !A&&!B ? 2 : A")
   field(SCAN, "1 second")
   field(PINI, "YES")
-  field(DESC, "0=IN, 1=OUT, 2=MOVING, 3=INCONSISTENT")
+  field(DESC, "0=OUT, 1=IN, 2=MOVING, 3=INCONSISTENT")
 }
 record(calc, "$(P):FLT3_STS")
 {
@@ -226,7 +226,7 @@ record(calc, "$(P):FLT3_STS")
   field(CALC, "A&&B ? 3 : !A&&!B ? 2 : A")
   field(SCAN, "1 second")
   field(PINI, "YES")
-  field(DESC, "0=IN, 1=OUT, 2=MOVING, 3=INCONSISTENT")
+  field(DESC, "0=OUT, 1=IN, 2=MOVING, 3=INCONSISTENT")
 }
 
 record(calc, "$(P):FLT4_STS")
@@ -236,7 +236,7 @@ record(calc, "$(P):FLT4_STS")
   field(CALC, "A&&B ? 3 : !A&&!B ? 2 : A")
   field(SCAN, "1 second")
   field(PINI, "YES")
-  field(DESC, "0=IN, 1=OUT, 2=MOVING, 3=INCONSISTENT")
+  field(DESC, "0=OUT, 1=IN, 2=MOVING, 3=INCONSISTENT")
 }
 
 #
