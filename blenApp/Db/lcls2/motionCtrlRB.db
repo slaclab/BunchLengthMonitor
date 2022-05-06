@@ -41,7 +41,7 @@ record(calc, "$(P):LIMSW0")
   field(SCAN, "1 second")
   field(PINI, "YES")
   field(PHAS, "0")
-  field(DESC, "0=Inserted, 1=Removed")
+  field(DESC, "0=Removed, 1=Inserted")
 }
 
 record(calc, "$(P):LIMSW1")
@@ -53,7 +53,7 @@ record(calc, "$(P):LIMSW1")
   field(SCAN, "1 second")
   field(PINI, "YES")
   field(PHAS, "0")
-  field(DESC, "0=Inserted, 1=Removed")
+  field(DESC, "0=Removed, 1=Inserted")
 }
 
 record(calc, "$(P):LIMSW2")
@@ -113,7 +113,7 @@ record(calc, "$(P):LIMSW6")
   field(SCAN, "1 second")
   field(PINI, "YES")
   field(PHAS, "0")
-  field(DESC, "0=Removed, 1=Inserted")
+  field(DESC, "0=Inserted, 1=Removed")
 }
 
 record(calc, "$(P):LIMSW7")
@@ -125,7 +125,7 @@ record(calc, "$(P):LIMSW7")
   field(SCAN, "1 second")
   field(PINI, "YES")
   field(PHAS, "0")
-  field(DESC, "0=Removed, 1=Inserted")
+  field(DESC, "0=Inserted, 1=Removed")
 }
 
 record(calc, "$(P):LIMSW8")
