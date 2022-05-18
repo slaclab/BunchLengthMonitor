@@ -12,19 +12,24 @@ include $(TOP)/configure/CONFIG
 USR_INCLUDES = -I$(BOOST_INCLUDE) -I$(CPSW_FRAMEWORK_INCLUDE) -I$(YAML_INCLUDE)
 USR_INCLUDES += -I$(CPSW_DEVICE_LIBRARY_INCLUDE)
 USR_INCLUDES += -I$(YAMLREADER_INCLUDE)
+USR_INCLUDES += -I$(COMMONATCA_INCLUDE)
+USR_INCLUDES += -I$(HPSTPR_INCLUDE)
+USR_INCLUDES += -I$(BSA_INCLUDE)
+USR_INCLUDES += -I$(L2MPS_INCLUDE)
 #==================================================================================
 
 #======================================================
 # PATH TO "NON EPICS" EXTERNAL PACKAGES: USER LIBRARIES
 #======================================================
 # Support for CPSW
-cpsw_DIR = $(CPSW_FRAMEWORK_LIB)
-deviceLib_DIR = $(CPSW_DEVICE_LIBRARY_LIB)
-boost_system_DIR = $(BOOST_LIB)
-yaml-cpp_DIR = $(YAML_LIB)
-hpstpr_DIR = $(HPSTPR_LIB)
-yamlReader_DIR = $(YAMLREADER_LIB)
-commonATCA_DIR = $(COMMONATCA_LIB)
+cpsw_DIR          = $(CPSW_FRAMEWORK_LIB)
+deviceLib_DIR     = $(CPSW_DEVICE_LIBRARY_LIB)
+boost_system_DIR  = $(BOOST_LIB)
+yaml-cpp_DIR      = $(YAML_LIB)
+hpstpr_DIR        = $(HPSTPR_LIB)
+yamlReader_DIR    = $(YAMLREADER_LIB)
+commonATCA_DIR    = $(COMMONATCA_LIB)
+l2Mps_DIR         = $(L2MPS_LIB)
 # =====================================================
 
 # ======================================================
@@ -37,6 +42,8 @@ USR_LIBS_Linux += yaml-cpp
 USR_LIBS_Linux += boost_system
 USR_LIBS_Linux += hpstpr
 USR_LIBS_Linux += commonATCA
+USR_LIBS_Linux += bsa 
+USR_LIBS_Linux += l2Mps    
 #======================================================
 
 # ================================================
@@ -66,6 +73,7 @@ blen_DBD += $(CEXP_DBDS)
 blen_DBD += crossbarControl.dbd
 blen_DBD += tprTriggerAsynDriver.dbd
 blen_DBD += tprPatternAsynDriver.dbd
+blen_DBD += l2MpsAsyn.dbd
 
 # BSA
 #blen_DBD += bsa.dbd
@@ -135,6 +143,7 @@ blen_LIBS += bsaDriver
 bsa_DIR = $(BSA_LIB)
 blen_LIBS += bsa
 #blen_LIBS += eventBsaSupport
+blen_LIBS += l2MpsAsyn
 
 #Needed for Crossbar control-TprPattern and TprTrigger
 blen_LIBS += ATCACommon

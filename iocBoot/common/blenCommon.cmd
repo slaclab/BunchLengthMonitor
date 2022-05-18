@@ -44,6 +44,16 @@ addBsa("AMC0:TMITSTAT",     "uint32")
 addBsa("AMC0:SENSPSUMFLOAT","float32")
 addBsa("AMC0:BLENFLOAT",    "float32")
 addBsa("AMC0:BLSTATUS",     "uint32")
+addBsa("Junk1",             "uint32")
+addBsa("Junk2",             "uint32")
+addBsa("Junk3",             "uint32")
+addBsa("Junk4",             "uint32")
+addBsa("Junk5",             "uint32")
+addBsa("Junk6",             "uint32")
+addBsa("Junk7",             "uint32")
+addBsa("Junk8",             "uint32")
+addBsa("Junk9",             "uint32")
+addBsa("Junk10",            "uint32")
 
 addBsa("AMC1:SENSPSUM",     "uint32")
 addBsa("AMC1:BLEN",         "uint32")
@@ -81,6 +91,26 @@ tprTriggerAsynDriverConfigure("trig", "mmio/AmcCarrierCore")
 # timing crossbar configuration
 # ======================================
 crossbarControlAsynDriverConfigure("crossbar", "mmio/AmcCarrierCore/AxiSy56040")
+
+## Set MPS Configuration location
+# setMpsConfigurationPath(
+#   Path)                   # Path to the MPS configuraton TOP directory
+setMpsConfigurationPath("${FACILITY_ROOT}/physics/mps_configuration/current/link_node_db")
+
+# *****************************************
+# **** Driver setup for L2MPSASYNConfig ****
+## Configure asyn port driver
+# L2MPSASYNConfig(
+#    Port Name)                 # the name given to this port driver
+L2MPSASYNConfig("${L2MPSASYN_PORT}")
+
+## Set the MpsManager hostname and port number
+# L2MPSASYNSetManagerHost(
+#    MpsManagerHostName,   # Server hostname
+#    MpsManagerPortNumber) # Server port number
+#
+# In DEV, the MpsManager runs in lcls-dev3, default port number.
+L2MPSASYNSetManagerHost("${MPS_MANAGER_HOST}", 1975)
 
 
 

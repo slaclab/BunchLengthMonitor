@@ -16,6 +16,7 @@ epicsEnvSet("INST", "BZ0H04")
 epicsEnvSet("IOC_UNIT", "BL01")
 epicsEnvSet("ATCA_SLOT", "4")
 epicsEnvSet("BLEN_ASYN_PORT", "ATCA7")
+epicsEnvSet("L2MPSASYN_PORT","L2MPSASYN_PORT")
 
 epicsEnvSet("TEMP_IOC", "SIOC:GUNB:IM02")
 epicsEnvSet("TEMP_PY_SRC","$(TEMP_IOC):4:INPUT2:VALUE")
@@ -88,3 +89,5 @@ caPutLogShow(2)
 
 dbpf BLEN:${AREA}:${POS}:BpmSelect.ZNAM BPM0H05
 dbpf BLEN:${AREA}:${POS}:BpmSelect.ONAM BPM0H08
+dbpf ${L2MPS_PREFIX}:THR_LOADED 1
+dbpf ${L2MPS_PREFIX}:MPS_EN 1
