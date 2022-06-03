@@ -176,31 +176,31 @@ record(calc, "$(P):LIMSW11")
   field(DESC, "0=Inserted, 1=Removed")
 }
 
-record(calc, "$(P):0:SHT_STS")
+record(calc, "$(P):0:SHT_STS_CALC")
 {
   field(INPA, "$(P):LIMSW0")
   field(INPB, "$(P):LIMSW6") 
   field(CALC, "A&&B ? 3 : !A&&!B ? 2 : A")
   field(SCAN, "1 second")
   field(PINI, "YES")
-  field(DESC, "0=IN, 1=OUT, 2=MOVING, 3=INCONSISTENT")
+  field(DESC, "0=OUT, 1=IN, 2=MOVING, 3=INCONSISTENT")
 }
 
-record(calc, "$(P):1:SHT_STS")
+record(calc, "$(P):1:SHT_STS_CALC")
 {
   field(INPA, "$(P):LIMSW1")
   field(INPB, "$(P):LIMSW7") 
   field(CALC, "A&&B ? 3 : !A&&!B ? 2 : A")
   field(SCAN, "1 second")
   field(PINI, "YES")
-  field(DESC, "0=IN, 1=OUT, 2=MOVING, 3=INCONSISTENT")
+  field(DESC, "0=OUT, 1=IN, 2=MOVING, 3=INCONSISTENT")
 }
 
 #
-# (P):FLTX_STS  -- status of Filter X
+# (P):FLTX_STS_CALC  -- calculates status of Filter X
 #
 
-record(calc, "$(P):FLT1_STS")
+record(calc, "$(P):FLT1_STS_CALC")
 {
   field(INPA, "$(P):LIMSW2")
   field(INPB, "$(P):LIMSW8") 
@@ -210,7 +210,7 @@ record(calc, "$(P):FLT1_STS")
   field(DESC, "0=OUT, 1=IN, 2=MOVING, 3=INCONSISTENT")
 }
 
-record(calc, "$(P):FLT2_STS")
+record(calc, "$(P):FLT2_STS_CALC")
 {
   field(INPA, "$(P):LIMSW3")
   field(INPB, "$(P):LIMSW9") 
@@ -219,7 +219,7 @@ record(calc, "$(P):FLT2_STS")
   field(PINI, "YES")
   field(DESC, "0=OUT, 1=IN, 2=MOVING, 3=INCONSISTENT")
 }
-record(calc, "$(P):FLT3_STS")
+record(calc, "$(P):FLT3_STS_CALC")
 {
   field(INPA, "$(P):LIMSW4")
   field(INPB, "$(P):LIMSW10") 
@@ -229,7 +229,7 @@ record(calc, "$(P):FLT3_STS")
   field(DESC, "0=OUT, 1=IN, 2=MOVING, 3=INCONSISTENT")
 }
 
-record(calc, "$(P):FLT4_STS")
+record(calc, "$(P):FLT4_STS_CALC")
 {
   field(INPA, "$(P):LIMSW5")
   field(INPB, "$(P):LIMSW11") 
@@ -239,6 +239,96 @@ record(calc, "$(P):FLT4_STS")
   field(DESC, "0=OUT, 1=IN, 2=MOVING, 3=INCONSISTENT")
 }
 
+
+record(mbbi, "$(P):0:SHT_STS")
+{
+    field(DESC, "Shutter 0 Readback Status")
+    field(INP,  "$(P):0:SHT_STS_CALC")
+    field(SCAN, "1 second")
+    field(ZRVL, "0") 
+    field(ZRST, "OUT")
+    field(ONVL, "1") 
+    field(ONST, "IN") 
+    field(TWVL, "2") 
+    field(TWST, "MOVING") 
+    field(THVL, "3") 
+    field(THST, "ERROR") 
+}
+
+record(mbbi, "$(P):1:SHT_STS")
+{
+    field(DESC, "Shutter 1 Readback Status")
+    field(INP,  "$(P):1:SHT_STS_CALC")
+    field(SCAN, "1 second")
+    field(ZRVL, "0") 
+    field(ZRST, "OUT")
+    field(ONVL, "1") 
+    field(ONST, "IN") 
+    field(TWVL, "2") 
+    field(TWST, "MOVING") 
+    field(THVL, "3") 
+    field(THST, "ERROR") 
+}
+
+record(mbbi, "$(P):FLT1_STS")
+{
+    field(DESC, "Filter 1 Readback Status")
+    field(INP,  "$(P):FLT1_STS_CALC")
+    field(SCAN, "1 second")
+    field(ZRVL, "0") 
+    field(ZRST, "OUT")
+    field(ONVL, "1") 
+    field(ONST, "IN") 
+    field(TWVL, "2") 
+    field(TWST, "MOVING") 
+    field(THVL, "3") 
+    field(THST, "ERROR") 
+}
+
+record(mbbi, "$(P):FLT2_STS")
+{
+    field(DESC, "Filter 2 Readback Status")
+    field(INP,  "$(P):FLT2_STS_CALC")
+    field(SCAN, "1 second")
+    field(ZRVL, "0") 
+    field(ZRST, "OUT")
+    field(ONVL, "1") 
+    field(ONST, "IN") 
+    field(TWVL, "2") 
+    field(TWST, "MOVING") 
+    field(THVL, "3") 
+    field(THST, "ERROR") 
+}
+
+record(mbbi, "$(P):FLT3_STS")
+{
+    field(DESC, "Filter 3 Readback Status")
+    field(INP,  "$(P):FLT3_STS_CALC")
+    field(SCAN, "1 second")
+    field(ZRVL, "0") 
+    field(ZRST, "OUT")
+    field(ONVL, "1") 
+    field(ONST, "IN") 
+    field(TWVL, "2") 
+    field(TWST, "MOVING") 
+    field(THVL, "3") 
+    field(THST, "ERROR") 
+}
+
+record(mbbi, "$(P):FLT4_STS")
+{
+    field(DESC, "Filter 4 Readback Status")
+    field(INP,  "$(P):FLT4_STS_CALC")
+    field(SCAN, "1 second")
+    field(ZRVL, "0") 
+    field(ZRST, "OUT")
+    field(ONVL, "1") 
+    field(ONST, "IN") 
+    field(TWVL, "2") 
+    field(TWST, "MOVING") 
+    field(THVL, "3") 
+    field(THST, "ERROR") 
+}
 #
 # Error (ERR) Values:
 #   0 = OK
