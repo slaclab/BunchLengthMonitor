@@ -59,4 +59,9 @@ caPutLogShow(2)
 
 < iocBoot/common/start_restore_soft.cmd
 
-epicsThreadSleep 10
+dbpf BLEN:${AREA}:${POS}:0:SHT_STS.PROC 1
+dbpf BLEN:${AREA}:${POS}:1:SHT_STS.PROC 1
+dbpf BLEN:${AREA}:${POS}:FLT1_STS.PROC 1
+dbpf BLEN:${AREA}:${POS}:FLT2_STS.PROC 1
+dbpf BLEN:${AREA}:${POS}:FLT3_STS.PROC 1
+dbpf BLEN:${AREA}:${POS}:FLT4_STS.PROC 1

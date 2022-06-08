@@ -14,8 +14,9 @@
 
 file "RegDoubleIn.template" { pattern
 { P,        R,                DESC,                     PINI,   SCAN,         PORT,       EGU,    PREC,     PARAM          }
-{ $(P),     $(AMC):SUM,              "",                       "YES",  ".5 second",  $(PORT),    "",     "2",    AMC$(AMC):SUM    }
-{ $(P),     $(AMC):IMAX,             "",                       "YES",  ".5 second",  $(PORT),    "",     "2",    AMC$(AMC):IMAX   }
+{ $(P),     $(AMC):SUM,              "",               "YES",  ".5 second",  $(PORT),    "",     "2",    AMC$(AMC):SUM    }
+{ $(P),     $(AMC):IMAX,             "",               "YES",  ".5 second",  $(PORT),    "",     "2",    AMC$(AMC):IMAX   }
+{ $(P),     $(AMC):TMIT,             "",               "YES",  ".5 second",  $(PORT),    "",     "2",    AMC$(AMC):TMIT   }
 }
 
 ########################################################################################################################

@@ -86,9 +86,8 @@
 /mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/FinalRawSum                AMC1:SensPairSum
 /mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/FinalSum                   AMC0:BLEN
 /mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/FinalSum                   AMC1:BLEN
-#previously used
-#/mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/MultResultH                AMC0:TMIT
-#/mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/MultResultH                AMC1:TMIT
+/mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/MultResultH                AMC0:TMIT
+/mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/MultResultH                AMC1:TMIT
 
 # Intermediary calculation results
 /mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/AddSums0                   AMC0:AddSums0
