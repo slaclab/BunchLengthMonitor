@@ -348,7 +348,7 @@
        <item row="3" column="2">
         <widget class="QLabel" name="label_13">
          <property name="text">
-          <string>BPM TMIT formated to pC:</string>
+          <string>BPM TMIT formatted to pC:</string>
          </property>
         </widget>
        </item>
@@ -369,6 +369,12 @@
         <widget class="PyDMLabel" name="PyDMLabel_7">
          <property name="toolTip">
           <string/>
+         </property>
+         <property name="precision" stdset="0">
+          <number>2</number>
+         </property>
+         <property name="precisionFromPV" stdset="0">
+          <bool>false</bool>
          </property>
          <property name="channel" stdset="0">
           <string>ca://BLEN:${AREA}:${POS}:USED_TMIT</string>
