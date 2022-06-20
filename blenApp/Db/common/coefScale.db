@@ -11,10 +11,10 @@ record(calcout, "$(P):$(AMC):CoefA$(COEF)_SAV"){
     field(PINI, "YES")
 }
 
-record(calcout, "$(P):$(AMC)$(SENS):NumSamp1_SAV"){
+record(calcout, "$(P):$(AMC)$(SENS):NumSamp$(NUMSAMP)_SAV"){
     field(INPA, "$(P):$(AMC):CalibMode")
-    field(INPB, "$(P):$(AMC)$(SENS):NumSamp1RBV")
-    field(INPC, "$(P):$(AMC)$(SENS):NumSamp1_SAV")
+    field(INPB, "$(P):$(AMC)$(SENS):NumSamp$(NUMSAMP)RBV")
+    field(INPC, "$(P):$(AMC)$(SENS):NumSamp$(NUMSAMP)_SAV")
     field(CALC, "A ? B : C")
     field(SCAN, "1 second")
 }
@@ -22,8 +22,8 @@ record(calcout, "$(P):$(AMC)$(SENS):NumSamp1_SAV"){
 record(calcout, "$(P):$(AMC):Calib_Coef_A$(COEF)"){
     field(INPA, "$(P):$(AMC):CalibMode")
     field(INPB, "$(P):$(AMC):CoefA$(COEF)_SAV")
-    field(INPC, "$(P):$(AMC)$(SENS):NumSamp1_SAV")
-    field(INPD, "$(P):$(AMC)$(SENS):NumSamp1RBV")
+    field(INPC, "$(P):$(AMC)$(SENS):NumSamp$(NUMSAMP)_SAV")
+    field(INPD, "$(P):$(AMC)$(SENS):NumSamp$(NUMSAMP)RBV")
     field(INPE, "$(P):$(AMC):CoefA$(COEF)")
     
     field(CALC, "A ? 0 : B*(D/C)")
