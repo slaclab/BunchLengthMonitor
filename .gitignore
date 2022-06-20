@@ -25,3 +25,5 @@ archive/
 blenApp/ui/fontconfig/
 blenApp/ui/gmon.out
 *.pyc
+# vim swap files
+*.sw*
