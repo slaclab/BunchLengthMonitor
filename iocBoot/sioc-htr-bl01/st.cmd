@@ -95,7 +95,13 @@ caPutLogShow(2)
 
 < iocBoot/common/start_restore_soft.cmd
 
+
+epicsThreadSleep(20)
+# Switching to running mode to allow autosave to put values in A0 and A1 coefficients
+dbpf BLEN:${AREA}:${POS}:0:CALIBMODEINIT.PROC 1
+dbpf BLEN:${AREA}:${POS}:1:CALIBMODEINIT.PROC 1
 dbpf BLEN:${AREA}:${POS}:BpmSelect.ZNAM BPM0H05
 dbpf BLEN:${AREA}:${POS}:BpmSelect.ONAM BPM0H08
+# Enabling MPS
 dbpf ${L2MPS_PREFIX}:THR_LOADED 1
 dbpf ${L2MPS_PREFIX}:MPS_EN 1
