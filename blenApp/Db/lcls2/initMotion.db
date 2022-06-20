@@ -1,0 +1,72 @@
+# Initialization of motion devices on startup.
+
+record(dfanout, "$(P):MOTIONINIT") {
+  field(DESC, "Proc. Motion Devices on Boot")
+#  field(PINI, "YES")
+  field(VAL,  "1")
+  field(OUTA, "$(P):0:SHT_CTRL.DISV PP")
+  field(OUTB, "$(P):1:SHT_CTRL.DISV PP")
+  field(OUTC, "$(P):FLT1_CTRL.DISV PP")
+  field(OUTD, "$(P):FLT2_CTRL.DISV PP")
+  field(OUTE, "$(P):FLT3_CTRL.DISV PP")
+  field(OUTF, "$(P):FLT4_CTRL.DISV PP")
+  field(OUTG, "$(P):MOTIONINIT2.PROC PP")
+  field(ASG,  "Internal")
+
+}
+
+record(dfanout, "$(P):MOTIONINIT2") {
+  field(DESC, "Proc. Motion Devices on Boot")
+#  field(PINI, "YES")
+  field(VAL,  "1")
+  field(OUTA, "$(P):FLT1_CTRL.PROC PP")
+  field(ASG,  "Internal")
+
+}
+
+record(dfanout, "$(P):MOTIONINIT3") {
+  field(DESC, "Proc. Motion Devices on Boot")
+#  field(PINI, "YES")
+  field(VAL,  "1")
+  field(OUTA, "$(P):FLT2_CTRL.PROC PP")
+  field(ASG,  "Internal")
+
+}
+
+record(dfanout, "$(P):MOTIONINIT4") {
+  field(DESC, "Proc. Motion Devices on Boot")
+#  field(PINI, "YES")
+  field(VAL,  "1")
+  field(OUTA, "$(P):FLT3_CTRL.PROC PP")
+  field(ASG,  "Internal")
+
+}
+
+record(dfanout, "$(P):MOTIONINIT5") {
+  field(DESC, "Proc. Motion Devices on Boot")
+#  field(PINI, "YES")
+  field(VAL,  "1")
+  field(OUTA, "$(P):FLT4_CTRL.PROC PP")
+#  field(OUTE, "$(P):0:SHT_CTRL.PROC PP")
+#  field(OUTF, "$(P):1:SHT_CTRL.PROC PP")
+  field(ASG,  "Internal")
+
+}
+
+record(dfanout, "$(P):MOTIONINIT6") {
+  field(DESC, "Proc. Motion Devices on Boot")
+#  field(PINI, "YES")
+  field(VAL,  "1")
+  field(OUTA, "$(P):0:SHT_CTRL.PROC PP")
+  field(ASG,  "Internal")
+
+}
+
+record(dfanout, "$(P):MOTIONINIT7") {
+  field(DESC, "Proc. Motion Devices on Boot")
+#  field(PINI, "YES")
+  field(VAL,  "1")
+  field(OUTA, "$(P):1:SHT_CTRL.PROC PP")
+  field(ASG,  "Internal")
+
+}

@@ -1,0 +1,28 @@
+# Initialization of motion devices on startup.
+
+# Initialization of calibration/running mode on startup
+#   There is a bug on startup where it is possible to change A1 and A0 even when running mode.
+#   This bug disappears on when toggled/initialize.
+
+#record(dfanout, "$(P):$(AMC):COEFINIT") {
+#  field(DESC, "Process coef in certain order to running")
+#  field(PINI, "YES")
+#  field(DOL,  "1")
+#  field(OUTA, "$(P):$(AMC)0:TIME_PRE.PROC PP")
+#  field(OUTB, "$(P):$(AMC)0:TIME_POS.PROC PP")
+#  field(OUTC, "$(P):$(AMC):CoefA0.PROC PP")
+#  field(OUTD, "$(P):$(AMC):CoefA1.PROC PP")
+#  field(FLNK, "$(P):$(AMC):CALIBMODEINIT")
+#  field(ASG,  "Internal")
+
+#}
+
+record(dfanout, "$(P):$(AMC):CALIBMODEINIT") {
+  field(DESC, "Set initial mode to running")
+#  field(PINI, "YES")
+  field(VAL,  "0")
+  field(OUTA, "$(P):$(AMC):CalibMode.VAL PP")
+  field(ASG,  "Internal")
+
+}
+
