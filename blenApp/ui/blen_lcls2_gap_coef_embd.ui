@@ -117,11 +117,17 @@
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
+         <property name="minimumSize">
+          <size>
+           <width>125</width>
+           <height>0</height>
+          </size>
+         </property>
          <property name="toolTip">
           <string/>
          </property>
          <property name="precision" stdset="0">
-          <number>7</number>
+          <number>3</number>
          </property>
          <property name="precisionFromPV" stdset="0">
           <bool>false</bool>
@@ -130,7 +136,7 @@
           <string>ca://${PREFIX}:${AMC}:CoefA1</string>
          </property>
          <property name="displayFormat" stdset="0">
-          <enum>PyDMLineEdit::Decimal</enum>
+          <enum>PyDMLineEdit::Exponential</enum>
          </property>
         </widget>
        </item>
@@ -142,11 +148,17 @@
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
+         <property name="minimumSize">
+          <size>
+           <width>125</width>
+           <height>0</height>
+          </size>
+         </property>
          <property name="toolTip">
           <string/>
          </property>
          <property name="precision" stdset="0">
-          <number>7</number>
+          <number>3</number>
          </property>
          <property name="precisionFromPV" stdset="0">
           <bool>false</bool>
@@ -155,7 +167,7 @@
           <string>ca://${PREFIX}:${AMC}:CoefA0</string>
          </property>
          <property name="displayFormat" stdset="0">
-          <enum>PyDMLineEdit::Decimal</enum>
+          <enum>PyDMLineEdit::Exponential</enum>
          </property>
         </widget>
        </item>
@@ -171,7 +183,7 @@
           <set>Qt::AlignCenter</set>
          </property>
          <property name="precision" stdset="0">
-          <number>7</number>
+          <number>3</number>
          </property>
          <property name="precisionFromPV" stdset="0">
           <bool>false</bool>
@@ -180,7 +192,7 @@
           <string>ca://${PREFIX}:${AMC}:CoefA0RBV</string>
          </property>
          <property name="displayFormat" stdset="0">
-          <enum>PyDMLabel::Decimal</enum>
+          <enum>PyDMLabel::Exponential</enum>
          </property>
         </widget>
        </item>
@@ -196,7 +208,7 @@
           <set>Qt::AlignCenter</set>
          </property>
          <property name="precision" stdset="0">
-          <number>7</number>
+          <number>3</number>
          </property>
          <property name="precisionFromPV" stdset="0">
           <bool>false</bool>
@@ -205,7 +217,7 @@
           <string>ca://${PREFIX}:${AMC}:CoefA1RBV</string>
          </property>
          <property name="displayFormat" stdset="0">
-          <enum>PyDMLabel::Decimal</enum>
+          <enum>PyDMLabel::Exponential</enum>
          </property>
         </widget>
        </item>
@@ -307,16 +319,22 @@
        <item row="1" column="1">
         <widget class="PyDMLineEdit" name="a4edit">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>125</width>
+           <height>0</height>
+          </size>
          </property>
          <property name="toolTip">
           <string/>
          </property>
          <property name="precision" stdset="0">
-          <number>7</number>
+          <number>3</number>
          </property>
          <property name="precisionFromPV" stdset="0">
           <bool>false</bool>
@@ -325,23 +343,29 @@
           <string>ca://${PREFIX}:${AMC}:CoefA4</string>
          </property>
          <property name="displayFormat" stdset="0">
-          <enum>PyDMLineEdit::Decimal</enum>
+          <enum>PyDMLineEdit::Exponential</enum>
          </property>
         </widget>
        </item>
        <item row="3" column="1">
         <widget class="PyDMLineEdit" name="a3edit">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>125</width>
+           <height>0</height>
+          </size>
          </property>
          <property name="toolTip">
           <string/>
          </property>
          <property name="precision" stdset="0">
-          <number>7</number>
+          <number>3</number>
          </property>
          <property name="precisionFromPV" stdset="0">
           <bool>false</bool>
@@ -350,7 +374,7 @@
           <string>ca://${PREFIX}:${AMC}:CoefA3</string>
          </property>
          <property name="displayFormat" stdset="0">
-          <enum>PyDMLineEdit::Decimal</enum>
+          <enum>PyDMLineEdit::Exponential</enum>
          </property>
         </widget>
        </item>
@@ -366,7 +390,7 @@
           <set>Qt::AlignCenter</set>
          </property>
          <property name="precision" stdset="0">
-          <number>7</number>
+          <number>3</number>
          </property>
          <property name="precisionFromPV" stdset="0">
           <bool>false</bool>
@@ -375,7 +399,7 @@
           <string>ca://${PREFIX}:${AMC}:CoefA4RBV</string>
          </property>
          <property name="displayFormat" stdset="0">
-          <enum>PyDMLabel::Decimal</enum>
+          <enum>PyDMLabel::Exponential</enum>
          </property>
         </widget>
        </item>
@@ -391,7 +415,7 @@
           <set>Qt::AlignCenter</set>
          </property>
          <property name="precision" stdset="0">
-          <number>7</number>
+          <number>3</number>
          </property>
          <property name="precisionFromPV" stdset="0">
           <bool>false</bool>
@@ -400,7 +424,7 @@
           <string>ca://${PREFIX}:${AMC}:CoefA3RBV</string>
          </property>
          <property name="displayFormat" stdset="0">
-          <enum>PyDMLabel::Decimal</enum>
+          <enum>PyDMLabel::Exponential</enum>
          </property>
         </widget>
        </item>
