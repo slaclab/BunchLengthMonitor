@@ -18,4 +18,5 @@ record(ai,      "$(P):$(R)") {
     field(SCAN, "$(SCAN)")
     field(PREC, "$(PREC)")
     field(INP,  "@asyn($(PORT),3)$(PARAM)")
+    info(autosaveFields, "VAL DESC") 
 }

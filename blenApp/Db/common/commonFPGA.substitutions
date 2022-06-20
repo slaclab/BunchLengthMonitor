@@ -43,7 +43,7 @@ file "RegisterEnumBOutRBV.template" { pattern
 # Register with DoubleVal_RO interfaces
 #======================================
 
-file "RegisterDoubleIn.template" { pattern
+file "RegDoubleIn.template" { pattern
 { P,        R,                DESC,                     PINI,   SCAN,         PORT,       EGU,        PARAM                     }
 { $(P),     $(AMC):AddSums0,         "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):AddSums0        }
 { $(P),     $(AMC):AddSums2,         "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):AddSums2        }
@@ -58,7 +58,7 @@ file "RegisterDoubleIn.template" { pattern
 # Register with DoubleVal interfaces
 #======================================
 
-file "RegisterDoubleOut.template" { pattern
+file "RegDoubleOut.template" { pattern
 { P,              R,            DESC,                   PINI,  SCAN,        PORT,        EGU,          PARAM      }
 { $(P),     $(AMC):CoefA0,       "Coef A0 for 1st group",      "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefA0 }
 { $(P),     $(AMC):CoefA1,       "Coef A1 for 2nd group",      "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefA1 }
@@ -76,7 +76,7 @@ file "RegisterDoubleOut.template" { pattern
 { $(P),     $(AMC):CoefI,        "Coef I - Offset",            "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefI  }
 }
 
-file "RegisterDoubleOutRBV.template" { pattern
+file "RegDoubleOutRBV.template" { pattern
 { P,              R,            DESC,                   PINI,  SCAN,        PORT,        EGU,          PARAM      }
 { $(P),     $(AMC):CoefA0RBV,    "Coef A0 for 1st group",      "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefA0 }
 { $(P),     $(AMC):CoefA1RBV,    "Coef A1 for 2nd group",      "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefA1 }
