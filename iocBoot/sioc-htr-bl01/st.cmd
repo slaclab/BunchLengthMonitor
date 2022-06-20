@@ -44,6 +44,10 @@ cd $(TOP)
 
 < iocBoot/common/blenCommon.cmd
 
+
+dbLoadRecords("db/initMotion.db", "P=BLEN:$(AREA):$(POS), AMC=0")
+dbLoadRecords("db/initMotion.db", "P=BLEN:$(AREA):$(POS), AMC=1")
+
 # Additional Waveform containers for ch1 raw data on AMC0, AMC1
 dbLoadRecords("db/data_streams.db", "P=BLEN:$(AREA):$(POS), PORT=${BLEN_ASYN_PORT}, AMC=0, SENS=1")
 dbLoadRecords("db/data_streams.db", "P=BLEN:$(AREA):$(POS), PORT=${BLEN_ASYN_PORT}, AMC=1, SENS=1")
@@ -72,13 +76,17 @@ dbLoadRecords("db/tempProcess.db","P=BLEN:$(AREA):$(POS), R=TempNY, SRC=$(TEMP_N
 dbLoadRecords("db/tempProcess.db","P=BLEN:$(AREA):$(POS), R=TempPX, SRC=$(TEMP_PX_SRC)")
 dbLoadRecords("db/tempProcess.db","P=BLEN:$(AREA):$(POS), R=TempNX, SRC=$(TEMP_NX_SRC)")
 
+# Initialization Records
+dbLoadRecords("db/initMode.db", "P=BLEN:$(AREA):$(POS), AMC=0")
+dbLoadRecords("db/initMode.db", "P=BLEN:$(AREA):$(POS), AMC=1")
+
 # ===========================================
 #               IOC INIT
 # ===========================================
 iocInit()
 
 # Enforce RTM timing
-crossbarControl "FPGA" "$(BLEN_VERSION)"
+#crossbarControl "FPGA" "$(BLEN_VERSION)"
 
 # Turn on caPutLogging:
 # Log values only on change to the iocLogServer:
