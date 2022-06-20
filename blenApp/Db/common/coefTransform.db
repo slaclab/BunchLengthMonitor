@@ -1,5 +1,6 @@
 record(ai, "$(P):$(AMC):Coef$(COEF)LN"){
     field(DESC, "Coefficet input")
+    info(autosaveFields, "VAL DESC") 
 }
 
 record(calcout, "$(P):$(AMC):Coef$(COEF)TF"){
@@ -8,10 +9,12 @@ record(calcout, "$(P):$(AMC):Coef$(COEF)TF"){
     field(OUT, "$(P):$(AMC):Coef$(COEF)")
     field(FLNK, "$(P):$(AMC):Coef$(COEF)")
     field(SCAN, "1 second")
+    info(autosaveFields, "VAL DESC") 
 }
 
 record(calc, "$(P):$(AMC):Coef$(COEF)RBVTF"){
     field(INPA, "$(P):$(AMC):Coef$(COEF)RBV")
     field(CALC, "EXP(A)")
     field(SCAN, "1 second")
+    info(autosaveFields, "VAL DESC") 
 }
