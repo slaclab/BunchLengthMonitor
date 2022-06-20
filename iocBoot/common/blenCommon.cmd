@@ -133,12 +133,12 @@ dbLoadRecords("db/FPGAsensor.db", "P=BLEN:$(AREA):$(POS), PORT=$(BLEN_ASYN_PORT)
 dbLoadRecords("db/FPGAsensor.db", "P=BLEN:$(AREA):$(POS), PORT=$(BLEN_ASYN_PORT), AMC=1, SENS=0")
 
 # FPGA-related records
-dbLoadRecords("db/commonFPGA.db", "P=BLEN:$(AREA):$(POS), PORT=$(BLEN_ASYN_PORT), AMC=0")
-dbLoadRecords("db/commonFPGA.db", "P=BLEN:$(AREA):$(POS), PORT=$(BLEN_ASYN_PORT), AMC=1")
-dbLoadRecords("db/data_streams.db", "P=BLEN:$(AREA):$(POS), PORT=${BLEN_ASYN_PORT}, AMC=0, SENS=0")
-dbLoadRecords("db/data_streams.db", "P=BLEN:$(AREA):$(POS), PORT=${BLEN_ASYN_PORT}, AMC=1, SENS=0")
-dbLoadRecords("db/saveLoadConfig.db", "P=BLEN:$(AREA):$(POS), PORT=$(BLEN_ASYN_PORT)")
-dbLoadRecords("db/monitorFPGAReboot.db", "P=BLEN:$(AREA):$(POS)")
+#dbLoadRecords("db/commonFPGA.db", "P=BLEN:$(AREA):$(POS), PORT=$(BLEN_ASYN_PORT), AMC=0")
+#dbLoadRecords("db/commonFPGA.db", "P=BLEN:$(AREA):$(POS), PORT=$(BLEN_ASYN_PORT), AMC=1")
+#dbLoadRecords("db/data_streams.db", "P=BLEN:$(AREA):$(POS), PORT=${BLEN_ASYN_PORT}, AMC=0, SENS=0")
+#dbLoadRecords("db/data_streams.db", "P=BLEN:$(AREA):$(POS), PORT=${BLEN_ASYN_PORT}, AMC=1, SENS=0")
+#dbLoadRecords("db/saveLoadConfig.db", "P=BLEN:$(AREA):$(POS), PORT=$(BLEN_ASYN_PORT)")
+#dbLoadRecords("db/monitorFPGAReboot.db", "P=BLEN:$(AREA):$(POS)")
 
 dbLoadRecords("db/streamControl.db", "AREA=$(AREA),POS=$(POS),AMC=0")
 dbLoadRecords("db/streamControl.db", "AREA=$(AREA),POS=$(POS),AMC=1")
@@ -154,6 +154,13 @@ dbLoadRecords("db/weightFunctionAmc.db", "AREA=$(AREA), POS=$(POS), AMC=1")
 dbLoadRecords("db/weightFunctionSensor.db", "AREA=$(AREA), POS=$(POS), INST=0, AMC=0")
 dbLoadRecords("db/weightFunctionSensor.db", "AREA=$(AREA), POS=$(POS), INST=0, AMC=1")
 
+# FPGA-related records
+dbLoadRecords("db/commonFPGA.db", "P=BLEN:$(AREA):$(POS), PORT=$(BLEN_ASYN_PORT), AMC=0")
+dbLoadRecords("db/commonFPGA.db", "P=BLEN:$(AREA):$(POS), PORT=$(BLEN_ASYN_PORT), AMC=1")
+dbLoadRecords("db/data_streams.db", "P=BLEN:$(AREA):$(POS), PORT=${BLEN_ASYN_PORT}, AMC=0, SENS=0")
+dbLoadRecords("db/data_streams.db", "P=BLEN:$(AREA):$(POS), PORT=${BLEN_ASYN_PORT}, AMC=1, SENS=0")
+dbLoadRecords("db/saveLoadConfig.db", "P=BLEN:$(AREA):$(POS), PORT=$(BLEN_ASYN_PORT)")
+dbLoadRecords("db/monitorFPGAReboot.db", "P=BLEN:$(AREA):$(POS)")
 
 dbLoadRecords("db/lcls2FPGA.db", "P=BLEN:$(AREA):$(POS), PORT=${BLEN_ASYN_PORT}") 
 dbLoadRecords("db/bpmSelect.db", "P=BLEN:$(AREA):$(POS)")
