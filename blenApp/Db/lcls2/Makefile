@@ -16,6 +16,8 @@ DB += motionCtrl.db
 DB += msgStatus.db
 DB += blen_gap_coefI2.db
 DB += tempProcess.db
+DB += initMode.db
+DB += initMotion.db
 
 # Autosave
 # --------------------------------------------------

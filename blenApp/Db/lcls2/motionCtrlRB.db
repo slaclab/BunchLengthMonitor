@@ -253,6 +253,7 @@ record(mbbi, "$(P):0:SHT_STS")
     field(TWST, "MOVING") 
     field(THVL, "3") 
     field(THST, "ERROR") 
+#    info(autosaveFields, "VAL RVAL DESC")
 }
 
 record(mbbi, "$(P):1:SHT_STS")
@@ -268,6 +269,7 @@ record(mbbi, "$(P):1:SHT_STS")
     field(TWST, "MOVING") 
     field(THVL, "3") 
     field(THST, "ERROR") 
+#    info(autosaveFields, "VAL RVAL DESC")
 }
 
 record(mbbi, "$(P):FLT1_STS")
@@ -283,6 +285,7 @@ record(mbbi, "$(P):FLT1_STS")
     field(TWST, "MOVING") 
     field(THVL, "3") 
     field(THST, "ERROR") 
+#    info(autosaveFields, "VAL RVAL DESC")
 }
 
 record(mbbi, "$(P):FLT2_STS")
@@ -298,6 +301,7 @@ record(mbbi, "$(P):FLT2_STS")
     field(TWST, "MOVING") 
     field(THVL, "3") 
     field(THST, "ERROR") 
+#    info(autosaveFields, "VAL RVAL DESC")
 }
 
 record(mbbi, "$(P):FLT3_STS")
@@ -313,6 +317,7 @@ record(mbbi, "$(P):FLT3_STS")
     field(TWST, "MOVING") 
     field(THVL, "3") 
     field(THST, "ERROR") 
+#    info(autosaveFields, "VAL RVAL DESC")
 }
 
 record(mbbi, "$(P):FLT4_STS")
@@ -328,6 +333,7 @@ record(mbbi, "$(P):FLT4_STS")
     field(TWST, "MOVING") 
     field(THVL, "3") 
     field(THST, "ERROR") 
+#    info(autosaveFields, "VAL RVAL DESC")
 }
 #
 # Error (ERR) Values:
