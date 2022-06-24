@@ -10,6 +10,34 @@
 #  Rev:  dd-mmm-yyyy, Reviewer's Name    (USERNAME)
 #--------------------------------------------------------------
 
+R5.1.4: 06/20/2022 Kyle Leleux (kleleux)
+    -Fixed some gui bugs
+    -Added calibration mode initialization for sioc-htr-bl01 
+
+R5.1.3: 06/19/2022 Kyle Leleux (kleleux)
+    - Updated pydm display precision for coefficients
+    - Added autosave to coefficients
+    - Fixed bug with motors by adding initialization sequence in st.cmd for pyro detectors
+    - Fixed bug with autosave on A0 and A1 by adding initialization sequence 
+
+R5.1.2: 06/16/2022 Kyle Leleux (kleleux)
+    -Updated uis by changing tmit pv to formatted tmit in pC  
+
+R5.1.1: 06/14/2022 Kyle Leleux (kleleux)
+    -Initial fix for mismatched motion control input and readback. 
+
+R5.1.0: 06/01/2022 Kyle Leleux (kleleux)
+    -Added MPS. 
+
+R5.0.5: 04/07/2022 Kyle Leleux (kleleux)
+    -Updated display rules logic. 
+
+R5.0.4: 04/07/2022 Kyle Leleux (kleleux)
+    -New tag for working bit mask.
+
+R5.0.3: 04/07/2022 Kyle Leleux (kleleux)
+    -Bug fixes for filter and shutter status and minor display changes. 
+
 R5.0.2: 04/07/2022 Taine Eriksen (taine)
     -Corrected fault with autosave
 
