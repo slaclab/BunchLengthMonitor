@@ -38,8 +38,11 @@ cd $(TOP)
 
 < iocBoot/common/blenCommon.cmd
 
+# Motion control records
 dbLoadRecords("db/motionCtrl.db", "P=BLEN:$(AREA):$(POS)")
 dbLoadRecords("db/motionCtrlRB.db", "P=BLEN:$(AREA):$(POS)")
+
+# Initialization Records
 dbLoadRecords("db/initMode.db", "P=BLEN:$(AREA):$(POS), AMC=0")
 dbLoadRecords("db/initMode.db", "P=BLEN:$(AREA):$(POS), AMC=1")
 dbLoadRecords("db/initMotion.db", "P=BLEN:$(AREA):$(POS)")
