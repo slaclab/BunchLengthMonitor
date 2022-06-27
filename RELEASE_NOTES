@@ -10,6 +10,11 @@
 #  Rev:  dd-mmm-yyyy, Reviewer's Name    (USERNAME)
 #--------------------------------------------------------------
 
+R5.1.5: 06/20/2022 Kyle Leleux (kleleux)
+    -Reverted coefficient scaling back to previous behavior.
+    -Enabled MPS on sioc-bc2b-bl01
+    -Added PREC field to commonFPGA 
+
 R5.1.4: 06/20/2022 Kyle Leleux (kleleux)
     -Fixed some gui bugs
     -Added calibration mode initialization for sioc-htr-bl01 
