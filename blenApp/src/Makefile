@@ -74,7 +74,7 @@ blen_DBD += crossbarControl.dbd
 blen_DBD += tprTriggerAsynDriver.dbd
 blen_DBD += tprPatternAsynDriver.dbd
 blen_DBD += l2MpsAsyn.dbd
-
+blen_DBD += pvxsIoc.dbd
 # BSA
 #blen_DBD += bsa.dbd
 
@@ -133,6 +133,9 @@ blen_LIBS += autosave
 # Needed to link caPutLog support
 blen_LIBS += caPutLog
 blen_LIBS += seq pv
+
+blen_LIBS += pvxsIoc
+blen_LIBS += pvxs
 
 # Needed to link cexpsh() support
 blen_LIBS += $(CEXP_LIBS)

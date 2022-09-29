@@ -30,7 +30,7 @@ SSCAN_MODULE_VERSION            = R2.10.2-1.0.0
 STREAMDEVICE_MODULE_VERSION     = R2.8.9-1.2.1
 
 # Timing
-BSADRIVER_MODULE_VERSION        = R2.1.0
+BSADRIVER_MODULE_VERSION        = R2.1.0-2.0
 ATCACOMMON_MODULE_VERSION       = R1.6.2
 #EVENT_MODULE_VERSION            = R4.5.5
 TIMING_MODULE_VERSION           = R0.6
@@ -42,7 +42,7 @@ L2MPSASYN_MODULE_VERSION        = R3.11.0
 YAMLDOWNLOADER_MODULE_VERSION   = R1.2.2
 YAMLLOADER_MODULE_VERSION       = R2.2.0
 YCPSWASYN_MODULE_VERSION        = R3.3.5
-
+PVXS_MODULE_VERSION             = pvxs-git
 
 # ==========================================================
 # Define module paths using pattern
@@ -72,7 +72,7 @@ TPRPATTERN      =$(EPICS_MODULES)/tprPattern/$(TPRPATTERN_MODULE_VERSION)
 ATCACOMMON      =$(EPICS_MODULES)/ATCACommon/$(ATCACOMMON_MODULE_VERSION)
 TIMING          =$(EPICS_MODULES)/timingApi/$(TIMING_MODULE_VERSION)
 L2MPSASYN       =$(EPICS_MODULES)/l2MpsAsyn/$(L2MPSASYN_MODULE_VERSION)
-
+PVXS            =$(EPICS_MODULES)/pvxs/$(PVXS_MODULE_VERSION)
 # =====================================================================
 # Set EPICS_BASE last so it appears last in the DB, DBD, INCLUDE, and LIB search paths
 # ====================================================================
