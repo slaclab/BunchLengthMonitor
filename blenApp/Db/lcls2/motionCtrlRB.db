@@ -354,6 +354,8 @@ record(calc, "$(P):0:SHT_ERR")
   field(CALC, "(A = B) ? C : D")
   field(SCAN, "1 second")
   field(PHAS, "1")
+  field(HIHI, 1)
+  field(HHSV, "MAJOR")
   field(DESC, "0 = OK 1 = Mismatch of STS and CTRL")
 }
 
@@ -366,6 +368,8 @@ record(calc, "$(P):1:SHT_ERR")
   field(CALC, "(A = B) ? C : D")
   field(SCAN, "1 second")
   field(PHAS, "1")
+  field(HIHI, 1)
+  field(HHSV, "MAJOR")
   field(DESC, "0 = OK 1 = Mismatch of STS and CTRL")
 }
 
@@ -382,6 +386,8 @@ record(calc, "$(P):FLT1_ERR")
   field(CALC, "(A = B) ? C : D")
   field(SCAN, "1 second")
   field(PHAS, "1")
+  field(HIHI, 1)
+  field(HHSV, "MAJOR")
   field(DESC, "0 = OK 1 = Mismatch of STS and CTRL")
 }
 
@@ -394,6 +400,8 @@ record(calc, "$(P):FLT2_ERR")
   field(CALC, "(A = B) ? C : D")
   field(SCAN, "1 second")
   field(PHAS, "1")
+  field(HIHI, 1)
+  field(HHSV, "MAJOR")
   field(DESC, "0 = OK 1 = Mismatch of STS and CTRL")
 }
 
@@ -406,6 +414,8 @@ record(calc, "$(P):FLT3_ERR")
   field(CALC, "(A = B) ? C : D")
   field(SCAN, "1 second")
   field(PHAS, "1")
+  field(HIHI, 1)
+  field(HHSV, "MAJOR")
   field(DESC, "0 = OK 1 = Mismatch of STS and CTRL")
 }
 
@@ -418,5 +428,7 @@ record(calc, "$(P):FLT4_ERR")
   field(CALC, "(A = B) ? C : D")
   field(SCAN, "1 second")
   field(PHAS, "1")
+  field(HIHI, 1)
+  field(HHSV, "MAJOR")
   field(DESC, "0 = OK 1 = Mismatch of STS and CTRL")
 }

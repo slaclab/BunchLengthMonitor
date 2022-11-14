@@ -32,7 +32,6 @@ file "RegisterIn.template" { pattern
 { $(P), RxRstCount,     "BSA: Recieve link reset count",          "YES",  "1 second", $(PORT),   "",   BSA:RxRstCount    }
 { $(P), RxDecErrCount,  "BSA: Recieve 8b/10b decode error count", "YES",  "1 second", $(PORT),   "",   BSA:RxDecErrCount }
 { $(P), RxDspErrCount,  "BSA: Recieve disparity error count",     "YES",  "1 second", $(PORT),   "",   BSA:RxDspErrCount }
-{ $(P), RxLinkUp,       "BSA: Recieve link status",               "YES",  "1 second", $(PORT),   "",   BSA:RxLinkUp      }
 # CmnConfig status
 { $(P), TmitTimeUp,     "TMIT Time Stamp Upper Part",             "YES",  "1 second", $(PORT),   "",   STAT:TmitTimeUp   }
 { $(P), TmitTimeLow,    "TMIT Time Stamp Lower Part",             "YES",  "1 second", $(PORT),   "",   STAT:TmitTimeLow  }
@@ -51,6 +50,11 @@ file "RegisterIn.template" { pattern
 { $(P), StatusLimitSw,  "",                                       "YES",  "1 second", $(PORT),   "",   MVR:StatusLimitSw }
 { $(P), Inserted,       "",                                       "YES",  "1 second", $(PORT),   "",   MVR:Inserted      }
 { $(P), Removed,        "",                                       "YES",  "1 second", $(PORT),   "",   MVR:Removed       }
+}
+
+file "RegisterInAlarms.template" { pattern
+{ P,           R, DESC, NELM,    PINI,       SCAN,     PORT,  LOLO, HIHI,    LLSV,       HHSV,   PARAM     }
+{ $(P), RxLinkUp,   "",   20,   "YES",  "1 second",  $(PORT),    0,    1, "MAJOR", "NO_ALARM",  RxLinkup   }
 }
 
 # Array of register
