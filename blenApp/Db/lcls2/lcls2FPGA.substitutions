@@ -54,7 +54,7 @@ file "RegisterIn.template" { pattern
 
 file "RegisterInAlarms.template" { pattern
 { P,           R, DESC, NELM,    PINI,       SCAN,     PORT,  LOLO, HIHI,    LLSV,       HHSV,   PARAM     }
-{ $(P), RxLinkUp,   "",   20,   "YES",  "1 second",  $(PORT),    0,    1, "MAJOR", "NO_ALARM",  RxLinkup   }
+{ $(P), RxLinkUp,   "",   20,   "YES",  "1 second",  $(PORT),    0,    1, "MAJOR", "NO_ALARM",  BSA:RxLinkUp   }
 }
 
 # Array of register
@@ -80,7 +80,7 @@ file "RegisterEnumBIn.template" { pattern
 
 file "RegisterOut.template" { pattern
 { P,        R,              DESC,                                  PINI,   SCAN,       PORT,  PARAM       }
-{ $(P), ScratchPad,     "Register to test R/W"                     "NO",   "Passive",  $(PORT),    :ScratchPad }
+{ $(P), ScratchPad,     "Register to test R/W"                     "NO",   "Passive",  $(PORT),    ScratchPad }
 # BSA
 { $(P), ClkSel,         "Select between LCLS-I/II timing",         "YES",  "Passive",  $(PORT),    TIME:ClkSel }
 { $(P), RxPolarity,     "",                                        "NO",   "Passive",  $(PORT),    BSA:RxPolarity }
@@ -99,7 +99,7 @@ file "RegisterOut.template" { pattern
 file "RegisterOutRBV.template" { pattern
 { P,           R,                DESC,                PINI,      SCAN,      PORT,        PARAM           }
 # Shared
-{ $(P), ScratchPadRBV,  "Register to test R/W",        "YES",  "1 second",  $(PORT),    :ScratchPad      }
+{ $(P), ScratchPadRBV,  "Register to test R/W",        "YES",  "1 second",  $(PORT),    ScratchPad      }
 # BSA
 { $(P), ClkSelRBV,  "",                                "YES",  "1 second",  $(PORT),    TIME:ClkSel      }
 { $(P), RxPolarityRBV,  "",                            "YES",  "1 second",  $(PORT),    BSA:RxPolarity   }
