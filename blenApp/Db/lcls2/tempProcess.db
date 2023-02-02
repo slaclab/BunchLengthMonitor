@@ -11,4 +11,21 @@ record(calc, "$(P):$(R)")
   field(HSV,"$(HSV=MAJOR)")
   field(LSV,"$(LSV=MINOR)")
   field(LLSV,"$(LLSV=MAJOR)")
+  field(EGU,"K")
+}
+
+record(calc, "$(P):$(R)_C")
+{
+  field(INPA, "$(P):$(R)")
+  field(CALC, "A-273.15")
+  field(SCAN, "1 second")
+  field(HIHI,"$(HIHI=226.85)")
+  field(HIGH,"$(HIGH=56.85)")
+  field(LOW,"$(LOW=6.85)")
+  field(LOLO,"$(LOLO=-3.15)")
+  field(HHSV,"$(HHSV=INVALID)")
+  field(HSV,"$(HSV=MAJOR)")
+  field(LSV,"$(LSV=MINOR)")
+  field(LLSV,"$(LLSV=MAJOR)")
+  field(EGU,"C")
 }
