@@ -50,6 +50,10 @@ dbLoadRecords("db/initMotion.db", "P=BLEN:$(AREA):$(POS)")
 # Parse IP address
 dbLoadRecords("db/ipAddr.db", "P=BLEN:$(AREA):$(POS), SRC=ServerRemoteIp")
 
+# BPM Scale Factors:
+dbLoadRecords("db/blen_bpm_coef.db", "P=BLEN:$(AREA):$(POS), BPM0=BPMS:COL1:120, BPM1=BPMS:BC1B:440, AMC=0")
+dbLoadRecords("db/blen_bpm_coef.db", "P=BLEN:$(AREA):$(POS), BPM0=BPMS:COL1:120, BPM1=BPMS:BC1B:440, AMC=1")
+
 # ===========================================
 #               IOC INIT
 # ===========================================

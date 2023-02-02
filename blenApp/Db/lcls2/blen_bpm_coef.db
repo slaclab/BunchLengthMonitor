@@ -1,0 +1,12 @@
+record(calcout, "$(P):$(AMC):CHRG_BPMSCL")
+{
+    field(DESC,  "BPM FW Scale Factor")
+    field(PINI,  "YES")
+    field(INPA,  "$(P):BpmSelect")
+    field(INPB,  "$(BPM0):CHRG_FWSCL.VAL")
+    field(INPC,  "$(BPM1):CHRG_FWSCL.VAL")
+    field(CALC,  "A ? B : C")
+    field(SCAN,  "1 second") 
+    field(OUT,   "$(P):$(AMC):CoefH")
+    field(FLNK,   "$(P):$(AMC):CoefH")
+}

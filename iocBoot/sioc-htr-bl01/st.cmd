@@ -19,9 +19,9 @@ epicsEnvSet("BLEN_ASYN_PORT", "ATCA7")
 epicsEnvSet("L2MPSASYN_PORT","L2MPSASYN_PORT")
 
 epicsEnvSet("TEMP_IOC", "SIOC:GUNB:IM02")
-epicsEnvSet("TEMP_PY_SRC","$(TEMP_IOC):0:INPUT2:VALUE")
+epicsEnvSet("TEMP_PY_SRC","$(TEMP_IOC):1:INPUT2:VALUE")
 epicsEnvSet("TEMP_NY_SRC","$(TEMP_IOC):5:INPUT2:VALUE")
-epicsEnvSet("TEMP_PX_SRC","$(TEMP_IOC):0:INPUT1:VALUE")
+epicsEnvSet("TEMP_PX_SRC","$(TEMP_IOC):1:INPUT1:VALUE")
 epicsEnvSet("TEMP_NX_SRC","$(TEMP_IOC):5:INPUT1:VALUE")
 
 # YAML directory
@@ -79,6 +79,10 @@ dbLoadRecords("db/tempProcess.db","P=BLEN:$(AREA):$(POS), R=TempNX, SRC=$(TEMP_N
 # Initialization Records
 dbLoadRecords("db/initMode.db", "P=BLEN:$(AREA):$(POS), AMC=0")
 dbLoadRecords("db/initMode.db", "P=BLEN:$(AREA):$(POS), AMC=1")
+
+# BPM Scale Factors:
+dbLoadRecords("db/blen_bpm_coef.db", "P=BLEN:$(AREA):$(POS), BPM0=BPMS:HTR:460, BPM1=BPMS:HTR:365, AMC=0")
+dbLoadRecords("db/blen_bpm_coef.db", "P=BLEN:$(AREA):$(POS), BPM0=BPMS:HTR:460, BPM1=BPMS:HTR:365, AMC=1")
 
 # ===========================================
 #               IOC INIT

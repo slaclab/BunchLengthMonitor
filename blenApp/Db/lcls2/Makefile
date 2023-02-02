@@ -18,7 +18,7 @@ DB += blen_gap_coefI2.db
 DB += tempProcess.db
 DB += initMode.db
 DB += initMotion.db
-
+DB += blen_bpm_coef.db
 # Autosave
 # --------------------------------------------------
 REQ += common.req
