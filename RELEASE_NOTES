@@ -9,6 +9,9 @@
 #  Auth: 10-May-2017 C. Ford         (caf)
 #  Rev:  dd-mmm-yyyy, Reviewer's Name    (USERNAME)
 #--------------------------------------------------------------
+R5.4.0: 02/08/2023 Kyle Leleux (kleleux)
+    - Added new PV for AdcValid
+    - Upgraded BSA modules
 
 R5.1.5: 06/20/2022 Kyle Leleux (kleleux)
     -Reverted coefficient scaling back to previous behavior.
