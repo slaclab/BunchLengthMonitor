@@ -53,8 +53,10 @@ file "RegisterIn.template" { pattern
 }
 
 file "RegisterInAlarms.template" { pattern
-{ P,           R, DESC, NELM,    PINI,       SCAN,     PORT,  LOLO, HIHI,    LLSV,       HHSV,   PARAM     }
-{ $(P), RxLinkUp,   "",   20,   "YES",  "1 second",  $(PORT),    0,    1, "MAJOR", "NO_ALARM",  BSA:RxLinkUp   }
+{ P,           R, DESC,  PINI,       SCAN,     PORT,  LOLO, HIHI,    LLSV,       HHSV,   PARAM     }
+{ $(P), RxLinkUp,   "", "YES",  "1 second",  $(PORT),    0,    1, "MAJOR", "NO_ALARM",  BSA:RxLinkUp   }
+{ $(P), AdcValid0,   "", "YES",  "1 second",  $(PORT),    0,    1, "MAJOR", "NO_ALARM",  AMC0:AdcValid   }
+{ $(P), AdcValid1,   "", "YES",  "1 second",  $(PORT),    0,    1, "MAJOR", "NO_ALARM",  AMC1:AdcValid   }
 }
 
 # Array of register

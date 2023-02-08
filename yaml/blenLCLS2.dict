@@ -70,6 +70,8 @@
 
 
 # ADC parameters
+/mmio/AppTop/AppCore/AmcGenericAdcDacCore[0]/AmcGenericAdcDacCtrl/AdcValid     AMC0:AdcValid
+/mmio/AppTop/AppCore/AmcGenericAdcDacCore[1]/AmcGenericAdcDacCtrl/AdcValid     AMC1:AdcValid
 /mmio/AppTop/AppCore/AmcGenericAdcDacCore[0]/AmcGenericAdcDacCtrl/AmcClkFreq   AMC0:AmcClkFreq
 /mmio/AppTop/AppCore/AmcGenericAdcDacCore[1]/AmcGenericAdcDacCtrl/AmcClkFreq   AMC1:AmcClkFreq
 /mmio/AppTop/AppCore/AmcGenericAdcDacCore[0]/AmcGenericAdcDacCtrl/AdcData      AMC0:AdcData
