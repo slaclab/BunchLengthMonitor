@@ -87,6 +87,7 @@ dbLoadRecords("db/blen_bpm_coef.db", "P=BLEN:$(AREA):$(POS), BPM0=BPMS:HTR:460, 
 # ===========================================
 #               IOC INIT
 # ===========================================
+callbackSetQueueSize(12000)
 iocInit()
 
 # Enforce RTM timing
