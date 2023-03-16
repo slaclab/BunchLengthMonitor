@@ -34,6 +34,7 @@ DownloadYamlFile("$(FPGA_IP)", "$(YAML_DIR)")
 
 # Load yaml files for CPSW
 cpswLoadYamlFile("$(TOP_YAML)", "NetIODev", "", "$(FPGA_IP)")
+cpswLoadConfigFile("$(TOP)/yaml/disable_bld_bsss_bsas.yaml", "mmio/AmcCarrierCore/AmcCarrierBsa")
 cpswLoadConfigFile("$(YAML_CONFIG_FILE)", "mmio", "")
 
 # Setup BSA Driver
@@ -63,7 +64,7 @@ addBsa("AMC1:BLENFLOAT",    "float32")
 addBsa("AMC1:BLSTATUS",     "uint32")
 
 # BSA driver for yaml
-bsaAsynDriverConfigure("bsaPort", "mmio/AmcCarrierCore/AmcCarrierBsa","strm/AmcCarrierDRAM/dram")
+bsaAsynDriverConfigure("bsaPort", "mmio/AmcCarrierTimingGenerator/AmcCarrierCore/AmcCarrierBsa","strm/AmcCarrierDRAM/dram")
 
 #  Initialize BSSS driver
 #  make assoication with BSA channels: bsssAssociateBsaChannels(<BSA port name>)
@@ -208,8 +209,10 @@ dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsaPort,BSAKEY=AMC1:S
 dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsaPort,BSAKEY=AMC1:BLENFLOAT,SECN=BLENFLOAT")
 dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsaPort,BSAKEY=AMC1:BLSTATUS,SECN=BLSTATUS")
 
-# **** Load BSSS Scalar PV DB ****
+# **** Load BSSS Controls DB ****
+dbLoadRecords("db/bsssCtrl.db", "DEV=BLEN:$(AREA):$(POS),PORT=bsssPort")
 
+# **** Load BSSS Scalar PV DB ****
 dbLoadRecords("db/bsss.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsssPort,IDX=0,BSAKEY=AMC0:SENSPSUM,SECN=SENSPSUM")
 dbLoadRecords("db/bsss.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsssPort,IDX=1,BSAKEY=AMC0:BLEN,SECN=BLEN")
 dbLoadRecords("db/bsss.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsssPort,IDX=2,BSAKEY=AMC0:TMITSTAT,SECN=TMITSTAT")
@@ -223,9 +226,6 @@ dbLoadRecords("db/bsss.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsssPort,IDX=8,BSAKE
 dbLoadRecords("db/bsss.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsssPort,IDX=9,BSAKEY=AMC1:SENSPSUMFLOAT,SECN=SENSPSUMFLOAT")
 dbLoadRecords("db/bsss.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsssPort,IDX=10,BSAKEY=AMC1:BLENFLOAT,SECN=BLENFLOAT")
 dbLoadRecords("db/bsss.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsssPort,IDX=11,BSAKEY=AMC1:BLSTATUS,SECN=BLSTATUS")
-
-# **** Load BSSS Controls DB ****
-dbLoadRecords("db/bsssCtrl.db", "DEV=BLEN:$(AREA):$(POS),PORT=bsssPort")
 
 # Timing trigger
 # INST = Instance Number (for multiple instances of tprTrigger in an IOC)

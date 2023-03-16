@@ -57,6 +57,7 @@ dbLoadRecords("db/blen_bpm_coef.db", "P=BLEN:$(AREA):$(POS), BPM0=BPMS:COL1:120,
 # ===========================================
 #               IOC INIT
 # ===========================================
+callbackSetQueueSeize(12000)
 iocInit()
 
 # Turn on caPutLogging:

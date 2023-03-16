@@ -1,0 +1,28 @@
+- Bld:
+    - enable: !<value> 0x0
+- Bsss0:
+    - enable: !<value> 0x0
+- Bsss1:
+    - enable: !<value> 0x0
+- Bsas:
+    - BsasModule:
+        - TableReset:
+            - Enable: !<value>
+                - 0x0
+                - 0x0
+                - 0x0
+                - 0x0
+        - RowAdvance:
+            - Enable: !<value>
+                - 0x0
+                - 0x0
+                - 0x0
+                - 0x0
+        - BsasStream:
+            - enable: !<value> 0x0
+        - Acquire:
+            - Enable: !<value>
+                - 0x0
+                - 0x0
+                - 0x0
+                - 0x0
