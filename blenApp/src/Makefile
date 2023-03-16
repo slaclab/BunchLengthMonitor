@@ -141,6 +141,8 @@ blen_LIBS += pvxs
 blen_LIBS += $(CEXP_LIBS)
 blen_SYS_LIBS += $(CEXP_SYS_LIBS)
 
+blen_LIBS += cpsw
+
 # Needed to link bsaDriver support
 blen_LIBS += bsaDriver
 bsa_DIR = $(BSA_LIB)
