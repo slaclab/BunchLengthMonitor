@@ -64,7 +64,7 @@ addBsa("AMC1:BLENFLOAT",    "float32")
 addBsa("AMC1:BLSTATUS",     "uint32")
 
 # BSA driver for yaml
-bsaAsynDriverConfigure("bsaPort", "mmio/AmcCarrierTimingGenerator/AmcCarrierCore/AmcCarrierBsa","strm/AmcCarrierDRAM/dram")
+bsaAsynDriverConfigure("bsaPort", "mmio/AmcCarrierCore/AmcCarrierBsa","strm/AmcCarrierDRAM/dram")
 
 #  Initialize BSSS driver
 #  make assoication with BSA channels: bsssAssociateBsaChannels(<BSA port name>)
@@ -195,37 +195,37 @@ dbLoadRecords("db/tprDeviceNamePV.db","LOCA=$(AREA),IOC_UNIT=$(IOC_UNIT),INST=$(
 
 # **** Load BSA driver DB ****
 
-dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsaPort,BSAKEY=AMC0:SENSPSUM,SECN=SENSPSUM")
-dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsaPort,BSAKEY=AMC0:BLEN,SECN=BLEN")
-dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsaPort,BSAKEY=AMC0:TMITSTAT,SECN=TMITSTAT")
-dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsaPort,BSAKEY=AMC0:SENSPSUMFLOAT,SECN=SENSPSUMFLOAT")
-dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsaPort,BSAKEY=AMC0:BLENFLOAT,SECN=BLENFLOAT")
-dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsaPort,BSAKEY=AMC0:BLSTATUS,SECN=BLSTATUS")
+dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):0,TPR=TPR:$(AREA):$(IOC_UNIT):$(ATCA_SLOT),PORT=bsaPort,BSAKEY=AMC0:SENSPSUM,SECN=SENSPSUM")
+dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):0,TPR=TPR:$(AREA):$(IOC_UNIT):$(ATCA_SLOT),PORT=bsaPort,BSAKEY=AMC0:BLEN,SECN=BLEN")
+dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):0,TPR=TPR:$(AREA):$(IOC_UNIT):$(ATCA_SLOT),PORT=bsaPort,BSAKEY=AMC0:TMITSTAT,SECN=TMITSTAT")
+dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):0,TPR=TPR:$(AREA):$(IOC_UNIT):$(ATCA_SLOT),PORT=bsaPort,BSAKEY=AMC0:SENSPSUMFLOAT,SECN=SENSPSUMFLOAT")
+dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):0,TPR=TPR:$(AREA):$(IOC_UNIT):$(ATCA_SLOT),PORT=bsaPort,BSAKEY=AMC0:BLENFLOAT,SECN=BLENFLOAT")
+dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):0,TPR=TPR:$(AREA):$(IOC_UNIT):$(ATCA_SLOT),PORT=bsaPort,BSAKEY=AMC0:BLSTATUS,SECN=BLSTATUS")
 
-dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsaPort,BSAKEY=AMC1:SENSPSUM,SECN=SENSPSUM")
-dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsaPort,BSAKEY=AMC1:BLEN,SECN=BLEN")
-dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsaPort,BSAKEY=AMC1:TMITSTAT,SECN=TMITSTAT")
-dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsaPort,BSAKEY=AMC1:SENSPSUMFLOAT,SECN=SENSPSUMFLOAT")
-dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsaPort,BSAKEY=AMC1:BLENFLOAT,SECN=BLENFLOAT")
-dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsaPort,BSAKEY=AMC1:BLSTATUS,SECN=BLSTATUS")
+dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):1,TPR=TPR:$(AREA):$(IOC_UNIT):$(ATCA_SLOT),PORT=bsaPort,BSAKEY=AMC1:SENSPSUM,SECN=SENSPSUM")
+dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):1,TPR=TPR:$(AREA):$(IOC_UNIT):$(ATCA_SLOT),PORT=bsaPort,BSAKEY=AMC1:BLEN,SECN=BLEN")
+dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):1,TPR=TPR:$(AREA):$(IOC_UNIT):$(ATCA_SLOT),PORT=bsaPort,BSAKEY=AMC1:TMITSTAT,SECN=TMITSTAT")
+dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):1,TPR=TPR:$(AREA):$(IOC_UNIT):$(ATCA_SLOT),PORT=bsaPort,BSAKEY=AMC1:SENSPSUMFLOAT,SECN=SENSPSUMFLOAT")
+dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):1,TPR=TPR:$(AREA):$(IOC_UNIT):$(ATCA_SLOT),PORT=bsaPort,BSAKEY=AMC1:BLENFLOAT,SECN=BLENFLOAT")
+dbLoadRecords("db/bsa.db", "DEV=BLEN:$(AREA):$(POS):1,TPR=TPR:$(AREA):$(IOC_UNIT):$(ATCA_SLOT),PORT=bsaPort,BSAKEY=AMC1:BLSTATUS,SECN=BLSTATUS")
 
 # **** Load BSSS Controls DB ****
 dbLoadRecords("db/bsssCtrl.db", "DEV=BLEN:$(AREA):$(POS),PORT=bsssPort")
 
 # **** Load BSSS Scalar PV DB ****
-dbLoadRecords("db/bsss.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsssPort,IDX=0,BSAKEY=AMC0:SENSPSUM,SECN=SENSPSUM")
-dbLoadRecords("db/bsss.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsssPort,IDX=1,BSAKEY=AMC0:BLEN,SECN=BLEN")
-dbLoadRecords("db/bsss.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsssPort,IDX=2,BSAKEY=AMC0:TMITSTAT,SECN=TMITSTAT")
-dbLoadRecords("db/bsss.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsssPort,IDX=3,BSAKEY=AMC0:SENSPSUMFLOAT,SECN=SENSPSUMFLOAT")
-dbLoadRecords("db/bsss.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsssPort,IDX=4,BSAKEY=AMC0:BLENFLOAT,SECN=BLENFLOAT")
-dbLoadRecords("db/bsss.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsssPort,IDX=5,BSAKEY=AMC0:BLSTATUS,SECN=BLSTATUS")
+dbLoadRecords("db/bsss.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsssPort,BSAKEY=AMC0:SENSPSUM,SECN=SENSPSUM")
+dbLoadRecords("db/bsss.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsssPort,BSAKEY=AMC0:BLEN,SECN=BLEN")
+dbLoadRecords("db/bsss.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsssPort,BSAKEY=AMC0:TMITSTAT,SECN=TMITSTAT")
+dbLoadRecords("db/bsss.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsssPort,BSAKEY=AMC0:SENSPSUMFLOAT,SECN=SENSPSUMFLOAT")
+dbLoadRecords("db/bsss.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsssPort,BSAKEY=AMC0:BLENFLOAT,SECN=BLENFLOAT")
+dbLoadRecords("db/bsss.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsssPort,BSAKEY=AMC0:BLSTATUS,SECN=BLSTATUS")
 
-dbLoadRecords("db/bsss.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsssPort,IDX=6,BSAKEY=AMC1:SENSPSUM,SECN=SENSPSUM")
-dbLoadRecords("db/bsss.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsssPort,IDX=7,BSAKEY=AMC1:BLEN,SECN=BLEN")
-dbLoadRecords("db/bsss.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsssPort,IDX=8,BSAKEY=AMC1:TMITSTAT,SECN=TMITSTAT")
-dbLoadRecords("db/bsss.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsssPort,IDX=9,BSAKEY=AMC1:SENSPSUMFLOAT,SECN=SENSPSUMFLOAT")
-dbLoadRecords("db/bsss.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsssPort,IDX=10,BSAKEY=AMC1:BLENFLOAT,SECN=BLENFLOAT")
-dbLoadRecords("db/bsss.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsssPort,IDX=11,BSAKEY=AMC1:BLSTATUS,SECN=BLSTATUS")
+dbLoadRecords("db/bsss.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsssPort,BSAKEY=AMC1:SENSPSUM,SECN=SENSPSUM")
+dbLoadRecords("db/bsss.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsssPort,BSAKEY=AMC1:BLEN,SECN=BLEN")
+dbLoadRecords("db/bsss.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsssPort,BSAKEY=AMC1:TMITSTAT,SECN=TMITSTAT")
+dbLoadRecords("db/bsss.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsssPort,BSAKEY=AMC1:SENSPSUMFLOAT,SECN=SENSPSUMFLOAT")
+dbLoadRecords("db/bsss.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsssPort,BSAKEY=AMC1:BLENFLOAT,SECN=BLENFLOAT")
+dbLoadRecords("db/bsss.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsssPort,BSAKEY=AMC1:BLSTATUS,SECN=BLSTATUS")
 
 # Timing trigger
 # INST = Instance Number (for multiple instances of tprTrigger in an IOC)
