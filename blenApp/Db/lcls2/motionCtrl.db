@@ -66,19 +66,19 @@ record(calcout, "$(P):FLT1_MOVE")
   field(SCAN, "Passive")
 }
 
-record(calcout, "$(P):FLT2_MOVE")
-{
-  field(OUT, "$(P):MoverOnOff PP")
-  field(OOPT, "Every Time")
-  field(DOPT, "Use CALC")
-  field(INPA, "$(P):FLT2_CTRL")
-  field(INPB, "$(P):MoverOnOffRBV")
-  field(INPC, "1")
-  field(INPD, "0x8")  # bit 3 set
-  field(INPE, "0x37") # bit 3 unset
-  field(CALC, "(A = C) ? B|D : B&E")
-  field(SCAN, "Passive")
-}
+#record(calcout, "$(P):FLT2_MOVE")
+#{
+#  field(OUT, "$(P):MoverOnOff PP")
+#  field(OOPT, "Every Time")
+#  field(DOPT, "Use CALC")
+#  field(INPA, "$(P):FLT2_CTRL")
+#  field(INPB, "$(P):MoverOnOffRBV")
+#  field(INPC, "1")
+#  field(INPD, "0x8")  # bit 3 set
+#  field(INPE, "0x37") # bit 3 unset
+#  field(CALC, "(A = C) ? B|D : B&E")
+#  field(SCAN, "Passive")
+#}
 
 record(calcout, "$(P):FLT3_MOVE")
 {
@@ -157,19 +157,19 @@ record(mbbo, "$(P):FLT1_CTRL")
   info(autosaveFields, "VAL RVAL DESC")
 }
   
-record(mbbo, "$(P):FLT2_CTRL")
-{
-  field(DESC, "Neutral Density Filter")
-#  field(VAL,   "0")
-  field(ZRVL,  "0")
-  field(ZRST,  "OUT")
-  field(ONVL,  "1")
-  field(ONST,  "IN")
-  field(OUT, "$(P):FLT2_MOVE PP")
-  field(DISV,  "0")
-#  field(PINI,  "YES")
-  info(autosaveFields, "VAL RVAL DESC")
-}
+#record(mbbo, "$(P):FLT2_CTRL")
+#{
+#  field(DESC, "Neutral Density Filter")
+##  field(VAL,   "0")
+#  field(ZRVL,  "0")
+#  field(ZRST,  "OUT")
+#  field(ONVL,  "1")
+#  field(ONST,  "IN")
+#  field(OUT, "$(P):FLT2_MOVE PP")
+#  field(DISV,  "0")
+##  field(PINI,  "YES")
+#  info(autosaveFields, "VAL RVAL DESC")
+#}
 
 record(mbbo, "$(P):FLT3_CTRL")
 {

@@ -210,15 +210,15 @@ record(calc, "$(P):FLT1_STS_CALC")
   field(DESC, "0=OUT, 1=IN, 2=MOVING, 3=INCONSISTENT")
 }
 
-record(calc, "$(P):FLT2_STS_CALC")
-{
-  field(INPA, "$(P):LIMSW3")
-  field(INPB, "$(P):LIMSW9") 
-  field(CALC, "A&&B ? 3 : !A&&!B ? 2 : A")
-  field(SCAN, "1 second")
-  field(PINI, "YES")
-  field(DESC, "0=OUT, 1=IN, 2=MOVING, 3=INCONSISTENT")
-}
+#record(calc, "$(P):FLT2_STS_CALC")
+#{
+#  field(INPA, "$(P):LIMSW3")
+#  field(INPB, "$(P):LIMSW9") 
+#  field(CALC, "A&&B ? 3 : !A&&!B ? 2 : A")
+#  field(SCAN, "1 second")
+#  field(PINI, "YES")
+#  field(DESC, "0=OUT, 1=IN, 2=MOVING, 3=INCONSISTENT")
+#}
 record(calc, "$(P):FLT3_STS_CALC")
 {
   field(INPA, "$(P):LIMSW4")
@@ -288,21 +288,21 @@ record(mbbi, "$(P):FLT1_STS")
 #    info(autosaveFields, "VAL RVAL DESC")
 }
 
-record(mbbi, "$(P):FLT2_STS")
-{
-    field(DESC, "Filter 2 Readback Status")
-    field(INP,  "$(P):FLT2_STS_CALC")
-    field(SCAN, "1 second")
-    field(ZRVL, "0") 
-    field(ZRST, "OUT")
-    field(ONVL, "1") 
-    field(ONST, "IN") 
-    field(TWVL, "2") 
-    field(TWST, "MOVING") 
-    field(THVL, "3") 
-    field(THST, "ERROR") 
-#    info(autosaveFields, "VAL RVAL DESC")
-}
+#record(mbbi, "$(P):FLT2_STS")
+#{
+#    field(DESC, "Filter 2 Readback Status")
+#    field(INP,  "$(P):FLT2_STS_CALC")
+#    field(SCAN, "1 second")
+#    field(ZRVL, "0") 
+#    field(ZRST, "OUT")
+#    field(ONVL, "1") 
+#    field(ONST, "IN") 
+#    field(TWVL, "2") 
+#    field(TWST, "MOVING") 
+#    field(THVL, "3") 
+#    field(THST, "ERROR") 
+##    info(autosaveFields, "VAL RVAL DESC")
+#}
 
 record(mbbi, "$(P):FLT3_STS")
 {
@@ -391,19 +391,19 @@ record(calc, "$(P):FLT1_ERR")
   field(DESC, "0 = OK 1 = Mismatch of STS and CTRL")
 }
 
-record(calc, "$(P):FLT2_ERR")
-{
-  field(INPA, "$(P):FLT2_STS")
-  field(INPB, "$(P):FLT2_CTRL")
-  field(INPC, "0")    # OK Value
-  field(INPD, "1")    # Error Value
-  field(CALC, "(A = B) ? C : D")
-  field(SCAN, "1 second")
-  field(PHAS, "1")
-  field(HIHI, 1)
-  field(HHSV, "MAJOR")
-  field(DESC, "0 = OK 1 = Mismatch of STS and CTRL")
-}
+#record(calc, "$(P):FLT2_ERR")
+#{
+#  field(INPA, "$(P):FLT2_STS")
+#  field(INPB, "$(P):FLT2_CTRL")
+#  field(INPC, "0")    # OK Value
+#  field(INPD, "1")    # Error Value
+#  field(CALC, "(A = B) ? C : D")
+#  field(SCAN, "1 second")
+#  field(PHAS, "1")
+#  field(HIHI, 1)
+#  field(HHSV, "MAJOR")
+#  field(DESC, "0 = OK 1 = Mismatch of STS and CTRL")
+#}
 
 record(calc, "$(P):FLT3_ERR")
 {
