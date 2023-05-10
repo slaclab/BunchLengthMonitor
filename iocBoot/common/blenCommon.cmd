@@ -72,6 +72,8 @@ bsssAssociateBsaChannels("bsaPort")
 # confiugre BSSS driver: bsssAsynDriverConfigure(<bsss port>, <register path>)
 bsssAsynDriverConfigure("bsssPort", "mmio/AmcCarrierCore/AmcCarrierBsa/Bsss")
 
+epicsEnvSet("BSAS_PREFIX", "BSAS:$(AREA):$(IOC_UNIT):0")
+
 # Make association with BSA channels: bsasAssociateBsaChannels(<BSA port name)
 bsasAssociateBsaChannels("bsaPort")
 
