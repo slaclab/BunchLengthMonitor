@@ -69,11 +69,30 @@ bsaAsynDriverConfigure("bsaPort", "mmio/AmcCarrierCore/AmcCarrierBsa","strm/AmcC
 #  Initialize BSSS driver
 #  make assoication with BSA channels: bsssAssociateBsaChannels(<BSA port name>)
 bsssAssociateBsaChannels("bsaPort")
-
 # confiugre BSSS driver: bsssAsynDriverConfigure(<bsss port>, <register path>)
 bsssAsynDriverConfigure("bsssPort", "mmio/AmcCarrierCore/AmcCarrierBsa/Bsss")
 
+# Make association with BSA channels: bsasAssociateBsaChannels(<BSA port name)
+bsasAssociateBsaChannels("bsaPort")
 
+# Configure the 2-D table header titles
+# bsasBaseName(<BSA key>, <signal_header>)
+# <BSA key> must correspond with what was used with addBsa().
+# We've been conventioning to use the DEVICE_PREFIX macro to name header titles.
+bsasBaseName("AMC0:SENSPSUM",         "BLEN:$(AREA):$(POS):SENSPSUM"     )
+bsasBaseName("AMC0:BLEN",             "BLEN:$(AREA):$(POS):BLEN"         )
+bsasBaseName("AMC0:TMITSTAT",         "BLEN:$(AREA):$(POS):TMITSTAT"     )
+bsasBaseName("AMC0:SENSPSUMFLOAT",    "BLEN:$(AREA):$(POS):SENSPSUMFLOAT")
+bsasBaseName("AMC0:BLENFLOAT",        "BLEN:$(AREA):$(POS):BLENFLOAT"    )
+bsasBaseName("AMC0:BLSTATUS",         "BLEN:$(AREA):$(POS):BLSTATUS"     )
+#bsasBaseName("AMC1:SENSPSUM",         "BLEN:$(AREA):$(POS):SENSPSUM"     )
+#bsasBaseName("AMC1:BLEN",             "BLEN:$(AREA):$(POS):BLEN"         )
+#bsasBaseName("AMC1:TMITSTAT",         "BLEN:$(AREA):$(POS):TMITSTAT"     )
+#bsasBaseName("AMC1:SENSPSUMFLOAT",    "BLEN:$(AREA):$(POS):SENSPSUMFLOAT")
+#bsasBaseName("AMC1:BLENFLOAT",        "BLEN:$(AREA):$(POS):BLENFLOAT"    )
+#bsasBaseName("AMC1:BLSTATUS",         "BLEN:$(AREA):$(POS):BLSTATUS"     )
+
+bsasAsynDriverConfigure("bsasPort", "mmio/AmcCarrierCore/AmcCarrierBsa/Bsas", "${BSAS_PREFIX}:SC_DIAG0", "${BSAS_PREFIX}:SC_BSYD", "${BSAS_PREFIX}:SC_HXR", "${BSAS_PREFIX}:SC_SXR")
 
 # Driver setup for YCPSWAsyn
 # YCPSWASYNConfig(
@@ -226,6 +245,24 @@ dbLoadRecords("db/bsss.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsssPort,BSAKEY=AMC1
 dbLoadRecords("db/bsss.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsssPort,BSAKEY=AMC1:SENSPSUMFLOAT,SECN=SENSPSUMFLOAT")
 dbLoadRecords("db/bsss.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsssPort,BSAKEY=AMC1:BLENFLOAT,SECN=BLENFLOAT")
 dbLoadRecords("db/bsss.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsssPort,BSAKEY=AMC1:BLSTATUS,SECN=BLSTATUS")
+
+# BSAS rate control template
+dbLoadRecords("db/bsasCtrl.db", "AREA=$(AREA),IOC_UNIT=$(IOC_UNIT),IOC_INST=0,PORT=bsasPort")
+
+# **** Load BSAS Scalar PV DB ****
+dbLoadRecords("db/bsas.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsasPort,BSAKEY=AMC0:SENSPSUM,SECN=SENSPSUM")
+dbLoadRecords("db/bsas.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsasPort,BSAKEY=AMC0:BLEN,SECN=BLEN")
+dbLoadRecords("db/bsas.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsasPort,BSAKEY=AMC0:TMITSTAT,SECN=TMITSTAT")
+dbLoadRecords("db/bsas.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsasPort,BSAKEY=AMC0:SENSPSUMFLOAT,SECN=SENSPSUMFLOAT")
+dbLoadRecords("db/bsas.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsasPort,BSAKEY=AMC0:BLENFLOAT,SECN=BLENFLOAT")
+dbLoadRecords("db/bsas.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsasPort,BSAKEY=AMC0:BLSTATUS,SECN=BLSTATUS")
+
+#dbLoadRecords("db/bsas.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsasPort,BSAKEY=AMC1:SENSPSUM,SECN=SENSPSUM")
+#dbLoadRecords("db/bsas.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsasPort,BSAKEY=AMC1:BLEN,SECN=BLEN")
+#dbLoadRecords("db/bsas.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsasPort,BSAKEY=AMC1:TMITSTAT,SECN=TMITSTAT")
+#dbLoadRecords("db/bsas.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsasPort,BSAKEY=AMC1:SENSPSUMFLOAT,SECN=SENSPSUMFLOAT")
+#dbLoadRecords("db/bsas.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsasPort,BSAKEY=AMC1:BLENFLOAT,SECN=BLENFLOAT")
+#dbLoadRecords("db/bsas.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsasPort,BSAKEY=AMC1:BLSTATUS,SECN=BLSTATUS")
 
 # Timing trigger
 # INST = Instance Number (for multiple instances of tprTrigger in an IOC)
