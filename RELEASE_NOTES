@@ -9,6 +9,14 @@
 #  Auth: 10-May-2017 C. Ford         (caf)
 #  Rev:  dd-mmm-yyyy, Reviewer's Name    (USERNAME)
 #--------------------------------------------------------------
+R5.4.2: 03/20/2023 Kyle Leleux (kleleux)
+    - Upgrade to bsaDriver R3.2.1
+    - Implemeneted BSAS
+    - Added minor alarms to calibration variables
+
+R5.4.1: 03/20/2023 Kyle Leleux (kleleux)
+    - Upgraded BSA modules
+
 R5.4.0: 02/08/2023 Kyle Leleux (kleleux)
     - Added new PV for AdcValid
     - Upgraded BSA modules
