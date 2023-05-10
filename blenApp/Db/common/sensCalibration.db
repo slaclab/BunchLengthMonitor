@@ -6,7 +6,6 @@ record(bi, "$(P):$(AMC):CalibMode"){
     field(ZNAM, "Running")
     field(ONAM, "Calibration")
     field(PINI, "YES")
-    field(HIGH, "1")
-    field(HSV,  "MINOR")
+    field(OSV, "MINOR")
 }
 
