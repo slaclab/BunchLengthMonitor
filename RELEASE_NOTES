@@ -9,7 +9,7 @@
 #  Auth: 10-May-2017 C. Ford         (caf)
 #  Rev:  dd-mmm-yyyy, Reviewer's Name    (USERNAME)
 #--------------------------------------------------------------
-R5.4.2: 03/20/2023 Kyle Leleux (kleleux)
+R5.4.2: 05/10/2023 Kyle Leleux (kleleux)
     - Upgrade to bsaDriver R3.2.1
     - Implemeneted BSAS
     - Added minor alarms to calibration variables
