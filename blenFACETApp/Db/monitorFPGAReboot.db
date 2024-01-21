@@ -1,0 +1,20 @@
+# Database to monitor FPGA reboots and 
+# reload the configuration values after it.
+# 
+# It monitors a specific register and it the
+# read value if different for what it is expected
+# then it will call the load configuration PV.
+#
+# INPA points to the register you are monitoring
+# The macro KEY is the expected value
+# OUT points to the load configuration PV
+
+record(calcout, "$(P):FPGARebootMon") {
+  field(SCAN, "10 second")
+  field(DESC, "Verify AxiVersion Scratchpad")
+  field(INPA, "$(P):C:AV:ScratchPad:Rd")
+  field(B,    "$(KEY)")
+  field(CALC, "A!=B")
+  field(OUT,  "$(P):loadConfig.PROC")
+  field(OOPT, "When Non-zero")
+}

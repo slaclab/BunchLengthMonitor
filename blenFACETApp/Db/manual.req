@@ -1,0 +1,14 @@
+BLEN:$(AREA):$(POS):$(INST)_CoefA0
+BLEN:$(AREA):$(POS):$(INST)_CoefA1
+BLEN:$(AREA):$(POS):$(INST)_CoefA0_SAV
+BLEN:$(AREA):$(POS):$(INST)_CoefA1_SAV
+BLEN:$(AREA):$(POS):$(INST)_NumSamp1_SAV
+BLEN:$(AREA):$(POS):$(INST)_CoefI
+BLEN:$(AREA):$(POS):$(INST)_CoefB
+BLEN:$(AREA):$(POS):$(INST)_CoefC
+BLEN:$(AREA):$(POS):$(INST)_CoefD
+BLEN:$(AREA):$(POS):$(INST)_CoefE
+BLEN:$(AREA):$(POS):$(INST)_CoefF
+BLEN:$(AREA):$(POS):$(INST)_CoefG
+BLEN:$(AREA):$(POS):$(INST)_CoefH
+BLEN:$(AREA):$(POS):$(INST)_CalibMode

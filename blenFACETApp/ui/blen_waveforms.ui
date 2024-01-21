@@ -1,0 +1,1271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1045</width>
+    <height>763</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>900</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Bunch Length ${INST}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_3">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>5</number>
+   </property>
+   <property name="topMargin">
+    <number>2</number>
+   </property>
+   <property name="rightMargin">
+    <number>5</number>
+   </property>
+   <property name="bottomMargin">
+    <number>2</number>
+   </property>
+   <item>
+    <widget class="QScrollArea" name="scrollArea">
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1033</width>
+        <height>757</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <property name="spacing">
+        <number>6</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout"/>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <property name="sizeConstraint">
+          <enum>QLayout::SetNoConstraint</enum>
+         </property>
+         <item>
+          <layout class="QGridLayout" name="gridLayout" columnstretch="0,0,0">
+           <property name="horizontalSpacing">
+            <number>1</number>
+           </property>
+           <item row="0" column="1">
+            <widget class="QFrame" name="frame_8">
+             <property name="minimumSize">
+              <size>
+               <width>10</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::VLine</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <property name="lineWidth">
+              <number>2</number>
+             </property>
+             <property name="midLineWidth">
+              <number>0</number>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QFrame" name="frame_9">
+             <property name="minimumSize">
+              <size>
+               <width>10</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::VLine</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <property name="lineWidth">
+              <number>2</number>
+             </property>
+             <property name="midLineWidth">
+              <number>0</number>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label">
+             <property name="layoutDirection">
+              <enum>Qt::LeftToRight</enum>
+             </property>
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#000000;&quot;&gt;${INST}A&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <layout class="QHBoxLayout" name="horizontalLayout_3">
+             <property name="spacing">
+              <number>23</number>
+             </property>
+             <property name="leftMargin">
+              <number>15</number>
+             </property>
+             <property name="rightMargin">
+              <number>15</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="label_8">
+               <property name="maximumSize">
+                <size>
+                 <width>60</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>11</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>Stream</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="PyDMByteIndicator" name="PyDMByteIndicator_2">
+               <property name="maximumSize">
+                <size>
+                 <width>35</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="toolTip">
+                <string/>
+               </property>
+               <property name="whatsThis">
+                <string>
+    Widget for graphical representation of bits from an integer number
+    with support for Channels and more from PyDM
+
+    Parameters
+    ----------
+    parent : QWidget
+        The parent widget for the Label
+    init_channel : str, optional
+        The channel to be used by the widget.
+    </string>
+               </property>
+               <property name="channel" stdset="0">
+                <string>ca://BLEN:${AREA}:${POS}:${INST}B_AutoRearm_RBV</string>
+               </property>
+               <property name="onColor" stdset="0">
+                <color>
+                 <red>0</red>
+                 <green>170</green>
+                 <blue>0</blue>
+                </color>
+               </property>
+               <property name="showLabels" stdset="0">
+                <bool>false</bool>
+               </property>
+               <property name="circles" stdset="0">
+                <bool>false</bool>
+               </property>
+               <property name="labels" stdset="0">
+                <stringlist>
+                 <string>off</string>
+                 <string>on</string>
+                </stringlist>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="PyDMEnumComboBox" name="PyDMEnumComboBox_2">
+               <property name="font">
+                <font>
+                 <pointsize>11</pointsize>
+                </font>
+               </property>
+               <property name="toolTip">
+                <string/>
+               </property>
+               <property name="whatsThis">
+                <string>
+    A QComboBox with support for Channels and more from PyDM
+
+    Parameters
+    ----------
+    parent : QWidget
+        The parent widget for the Label
+    init_channel : str, optional
+        The channel to be used by the widget.
+
+    Signals
+    -------
+    send_value_signal : int, float, str, bool or np.ndarray
+        Emitted when the user changes the value.
+    activated : int, str
+        Emitted when the user chooses an item in the combobox.
+    currentIndexChanged : int, str
+        Emitted when the index is changed in the combobox.
+    highlighted : int, str
+        Emitted when an item in the combobox popup list is highlighted
+        by the user.
+    </string>
+               </property>
+               <property name="channel" stdset="0">
+                <string>ca://BLEN:${AREA}:${POS}:${INST}B_ACCESS</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="5" column="1">
+            <widget class="QFrame" name="frame_5">
+             <property name="minimumSize">
+              <size>
+               <width>10</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::VLine</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <property name="lineWidth">
+              <number>2</number>
+             </property>
+             <property name="midLineWidth">
+              <number>0</number>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="QFrame" name="frame_10">
+             <property name="minimumSize">
+              <size>
+               <width>10</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::VLine</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <property name="lineWidth">
+              <number>2</number>
+             </property>
+             <property name="midLineWidth">
+              <number>0</number>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="2">
+            <widget class="QFrame" name="frame_20">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="palette">
+              <palette>
+               <active>
+                <colorrole role="Button">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>214</red>
+                   <green>214</green>
+                   <blue>214</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+                <colorrole role="Base">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>214</red>
+                   <green>214</green>
+                   <blue>214</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+                <colorrole role="Window">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>214</red>
+                   <green>214</green>
+                   <blue>214</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </active>
+               <inactive>
+                <colorrole role="Button">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>214</red>
+                   <green>214</green>
+                   <blue>214</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+                <colorrole role="Base">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>214</red>
+                   <green>214</green>
+                   <blue>214</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+                <colorrole role="Window">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>214</red>
+                   <green>214</green>
+                   <blue>214</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </inactive>
+               <disabled>
+                <colorrole role="Button">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>214</red>
+                   <green>214</green>
+                   <blue>214</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+                <colorrole role="Base">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>214</red>
+                   <green>214</green>
+                   <blue>214</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+                <colorrole role="Window">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>214</red>
+                   <green>214</green>
+                   <blue>214</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </disabled>
+              </palette>
+             </property>
+             <property name="autoFillBackground">
+              <bool>false</bool>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_12">
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_9">
+                <property name="spacing">
+                 <number>3</number>
+                </property>
+                <item>
+                 <widget class="PyDMWaveformPlot" name="wfpBRawPlusWeight">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>360</width>
+                    <height>250</height>
+                   </size>
+                  </property>
+                  <property name="toolTip">
+                   <string/>
+                  </property>
+                  <property name="whatsThis">
+                   <string>
+    PyDMWaveformPlot is a widget to plot one or more waveforms.
+
+    Each curve can plot either a Y-axis waveform vs. its indices,
+    or a Y-axis waveform against an X-axis waveform.
+
+    Parameters
+    ----------
+    parent : optional
+        The parent of this widget.
+    init_x_channels: optional
+        init_x_channels can be a string with the address for a channel,
+        or a list of strings, each containing an address for a channel.
+        If not specified, y-axis waveforms will be plotted against their
+        indices. If a list is specified for both init_x_channels and
+        init_y_channels, they both must have the same length.
+        If a single x channel was specified, and a list of y channels are
+        specified, all y channels will be plotted against the same x channel.
+    init_y_channels: optional
+        init_y_channels can be a string with the address for a channel,
+        or a list of strings, each containing an address for a channel.
+        If a list is specified for both init_x_channels and init_y_channels,
+        they both must have the same length.
+        If a single x channel was specified, and a list of y channels are
+        specified, all y channels will be plotted against the same x channel.
+    background: optional
+        The background color for the plot.  Accepts any arguments that
+        pyqtgraph.mkColor will accept.
+    </string>
+                  </property>
+                  <property name="axisColor">
+                   <color>
+                    <red>150</red>
+                    <green>150</green>
+                    <blue>150</blue>
+                   </color>
+                  </property>
+                  <property name="yAxes">
+                   <stringlist>
+                    <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;minRange&quot;: -1.0, &quot;maxRange&quot;: 1.0, &quot;autoRange&quot;: true}</string>
+                    <string>{&quot;name&quot;: &quot;Axis 2&quot;, &quot;orientation&quot;: &quot;right&quot;, &quot;minRange&quot;: -1.0, &quot;maxRange&quot;: 1.0, &quot;autoRange&quot;: true}</string>
+                   </stringlist>
+                  </property>
+                  <property name="title" stdset="0">
+                   <string/>
+                  </property>
+                  <property name="maxRedrawRate" stdset="0">
+                   <number>30</number>
+                  </property>
+                  <property name="curves">
+                   <stringlist>
+                    <string>{&quot;y_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}B_S_R_WF&quot;, &quot;x_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}B_WF_TIME.VALA&quot;, &quot;name&quot;: &quot;${INST}B Raw Waveform&quot;, &quot;color&quot;: &quot;white&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;yAxisName&quot;: &quot;Axis 1&quot;, &quot;redraw_mode&quot;: 2}</string>
+                    <string>{&quot;y_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}B_SCL_WF_CLC.AVAL&quot;, &quot;x_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}B_WF_TIME.VALA&quot;, &quot;name&quot;: &quot;${INST}B Weight Function&quot;, &quot;color&quot;: &quot;cyan&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;yAxisName&quot;: &quot;Axis 2&quot;, &quot;redraw_mode&quot;: 2}</string>
+                   </stringlist>
+                  </property>
+                  <property name="autoRangeX">
+                   <bool>true</bool>
+                  </property>
+                  <property name="minXRange">
+                   <double>0.000000000000000</double>
+                  </property>
+                  <property name="maxXRange">
+                   <double>1.000000000000000</double>
+                  </property>
+                  <property name="autoRangeY">
+                   <bool>true</bool>
+                  </property>
+                  <property name="minYRange">
+                   <double>0.000000000000000</double>
+                  </property>
+                  <property name="maxYRange">
+                   <double>1.000000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item row="9" column="0">
+            <widget class="QGroupBox" name="groupBox">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>100</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="title">
+              <string/>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_2">
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <item row="0" column="0">
+               <widget class="PyDMRelatedDisplayButton" name="PyDMRelatedDisplayButton_5">
+                <property name="toolTip">
+                 <string/>
+                </property>
+                <property name="whatsThis">
+                 <string>
+    A QPushButton capable of opening a new Display at the same of at a
+    new window.
+
+    Parameters
+    ----------
+    init_channel : str, optional
+        The channel to be used by the widget.
+
+    filename : str, optional
+        The file to be opened
+    </string>
+                </property>
+                <property name="text">
+                 <string>Diagnostic Display</string>
+                </property>
+                <property name="filenames" stdset="0">
+                 <stringlist>
+                  <string>blen_diagnostic.ui</string>
+                 </stringlist>
+                </property>
+                <property name="displayFilename" stdset="0">
+                 <string>blen_diagnostic.ui</string>
+                </property>
+                <property name="macros" stdset="0">
+                 <stringlist>
+                  <string>{&quot;AREA&quot;:&quot;${AREA}&quot;, &quot;POS&quot;:&quot;${POS}&quot;, &quot;INST&quot;:&quot;${INST}&quot;, &quot;INST_NUM&quot;:&quot;${INST_NUM}&quot;, &quot;BPM&quot;:&quot;${BPM}&quot;}</string>
+                 </stringlist>
+                </property>
+                <property name="openInNewWindow" stdset="0">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item row="6" column="1">
+            <widget class="QFrame" name="frame_7">
+             <property name="minimumSize">
+              <size>
+               <width>10</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::VLine</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <property name="lineWidth">
+              <number>2</number>
+             </property>
+             <property name="midLineWidth">
+              <number>0</number>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QLabel" name="label_2">
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; color:#000000;&quot;&gt;${INST}B&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0" rowspan="2">
+            <widget class="QFrame" name="frame_2">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>5</height>
+              </size>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::HLine</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <property name="lineWidth">
+              <number>2</number>
+             </property>
+             <property name="midLineWidth">
+              <number>0</number>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="2" rowspan="3">
+            <layout class="QVBoxLayout" name="verticalLayout">
+             <item>
+              <widget class="PyDMRelatedDisplayButton" name="PyDMRelatedDisplayButton">
+               <property name="toolTip">
+                <string/>
+               </property>
+               <property name="whatsThis">
+                <string>
+    A QPushButton capable of opening a new Display at the same of at a
+    new window.
+
+    Parameters
+    ----------
+    init_channel : str, optional
+        The channel to be used by the widget.
+
+    filename : str, optional
+        The file to be opened
+    </string>
+               </property>
+               <property name="text">
+                <string>Bunch Length ${INST} Weight Function</string>
+               </property>
+               <property name="filenames" stdset="0">
+                <stringlist>
+                 <string>blen_facet_gap_sensor_delay.py</string>
+                </stringlist>
+               </property>
+               <property name="displayFilename" stdset="0">
+                <string>blen_facet_gap_sensor_delay.py</string>
+               </property>
+               <property name="macros" stdset="0">
+                <stringlist>
+                 <string>{&quot;AREA&quot;:&quot;${AREA}&quot;,&quot;POS&quot;:&quot;${POS}&quot;,&quot;INST&quot;:&quot;${INST}&quot;}</string>
+                </stringlist>
+               </property>
+               <property name="openInNewWindow" stdset="0">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="PyDMRelatedDisplayButton" name="PyDMRelatedDisplayButton_2">
+               <property name="toolTip">
+                <string/>
+               </property>
+               <property name="whatsThis">
+                <string>
+    A QPushButton capable of opening a new Display at the same of at a
+    new window.
+
+    Parameters
+    ----------
+    init_channel : str, optional
+        The channel to be used by the widget.
+
+    filename : str, optional
+        The file to be opened
+    </string>
+               </property>
+               <property name="text">
+                <string>Bunch Length ${INST} Calculation Parameters</string>
+               </property>
+               <property name="displayFilename" stdset="0">
+                <string>blen_equation_params.ui</string>
+               </property>
+               <property name="macros" stdset="0">
+                <stringlist>
+                 <string>{&quot;AREA&quot;:&quot;${AREA}&quot;,&quot;POS&quot;:&quot;${POS}&quot;,&quot;INST&quot;:&quot;${INST}&quot;}</string>
+                </stringlist>
+               </property>
+               <property name="openInNewWindow" stdset="0">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="PyDMRelatedDisplayButton" name="PyDMRelatedDisplayButton_4">
+               <property name="toolTip">
+                <string/>
+               </property>
+               <property name="whatsThis">
+                <string>
+    A QPushButton capable of opening a new Display at the same of at a
+    new window.
+
+    Parameters
+    ----------
+    init_channel : str, optional
+        The channel to be used by the widget.
+
+    filename : str, optional
+        The file to be opened
+    </string>
+               </property>
+               <property name="text">
+                <string>Bunch Length ${INST} Triggers</string>
+               </property>
+               <property name="filenames" stdset="0">
+                <stringlist>
+                 <string>$PYDM/evnt/tprDiagNC.ui</string>
+                </stringlist>
+               </property>
+               <property name="displayFilename" stdset="0">
+                <string>$PYDM/evnt/tprDiagNC.ui</string>
+               </property>
+               <property name="macros" stdset="0">
+                <stringlist>
+                 <string>LOCA=${AREA},IOC_UNIT=${IOC_UNIT},INST=${ATCA_SLOT},IOC=${IOC}, CPU=${CPU}, CRATE=${CRATE}</string>
+                </stringlist>
+               </property>
+               <property name="openInNewWindow" stdset="0">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="5" column="0">
+            <widget class="QFrame" name="frame_19">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="palette">
+              <palette>
+               <active>
+                <colorrole role="Button">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>214</red>
+                   <green>214</green>
+                   <blue>214</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+                <colorrole role="Base">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>214</red>
+                   <green>214</green>
+                   <blue>214</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+                <colorrole role="Window">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>214</red>
+                   <green>214</green>
+                   <blue>214</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </active>
+               <inactive>
+                <colorrole role="Button">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>214</red>
+                   <green>214</green>
+                   <blue>214</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+                <colorrole role="Base">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>214</red>
+                   <green>214</green>
+                   <blue>214</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+                <colorrole role="Window">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>214</red>
+                   <green>214</green>
+                   <blue>214</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </inactive>
+               <disabled>
+                <colorrole role="Button">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>214</red>
+                   <green>214</green>
+                   <blue>214</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+                <colorrole role="Base">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>214</red>
+                   <green>214</green>
+                   <blue>214</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+                <colorrole role="Window">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>214</red>
+                   <green>214</green>
+                   <blue>214</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </disabled>
+              </palette>
+             </property>
+             <property name="autoFillBackground">
+              <bool>false</bool>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_11">
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_8">
+                <property name="spacing">
+                 <number>3</number>
+                </property>
+                <item>
+                 <widget class="PyDMWaveformPlot" name="wfpARawPlusWeight">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>360</width>
+                    <height>250</height>
+                   </size>
+                  </property>
+                  <property name="toolTip">
+                   <string/>
+                  </property>
+                  <property name="whatsThis">
+                   <string>
+    PyDMWaveformPlot is a widget to plot one or more waveforms.
+
+    Each curve can plot either a Y-axis waveform vs. its indices,
+    or a Y-axis waveform against an X-axis waveform.
+
+    Parameters
+    ----------
+    parent : optional
+        The parent of this widget.
+    init_x_channels: optional
+        init_x_channels can be a string with the address for a channel,
+        or a list of strings, each containing an address for a channel.
+        If not specified, y-axis waveforms will be plotted against their
+        indices. If a list is specified for both init_x_channels and
+        init_y_channels, they both must have the same length.
+        If a single x channel was specified, and a list of y channels are
+        specified, all y channels will be plotted against the same x channel.
+    init_y_channels: optional
+        init_y_channels can be a string with the address for a channel,
+        or a list of strings, each containing an address for a channel.
+        If a list is specified for both init_x_channels and init_y_channels,
+        they both must have the same length.
+        If a single x channel was specified, and a list of y channels are
+        specified, all y channels will be plotted against the same x channel.
+    background: optional
+        The background color for the plot.  Accepts any arguments that
+        pyqtgraph.mkColor will accept.
+    </string>
+                  </property>
+                  <property name="backgroundBrush">
+                   <brush brushstyle="SolidPattern">
+                    <color alpha="255">
+                     <red>0</red>
+                     <green>0</green>
+                     <blue>0</blue>
+                    </color>
+                   </brush>
+                  </property>
+                  <property name="yAxes">
+                   <stringlist>
+                    <string>{&quot;name&quot;: &quot;Axis 1&quot;, &quot;orientation&quot;: &quot;left&quot;, &quot;minRange&quot;: -1.0, &quot;maxRange&quot;: 1.0, &quot;autoRange&quot;: true}</string>
+                    <string>{&quot;name&quot;: &quot;Axis 2&quot;, &quot;orientation&quot;: &quot;right&quot;, &quot;minRange&quot;: -1.0, &quot;maxRange&quot;: 1.0, &quot;autoRange&quot;: true}</string>
+                   </stringlist>
+                  </property>
+                  <property name="title" stdset="0">
+                   <string/>
+                  </property>
+                  <property name="maxRedrawRate" stdset="0">
+                   <number>30</number>
+                  </property>
+                  <property name="curves">
+                   <stringlist>
+                    <string>{&quot;y_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}A_S_R_WF&quot;, &quot;x_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}A_WF_TIME.VALA&quot;, &quot;name&quot;: &quot;${INST}A Raw Waveform&quot;, &quot;color&quot;: &quot;white&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;yAxisName&quot;: &quot;Axis 1&quot;, &quot;redraw_mode&quot;: 2}</string>
+                    <string>{&quot;y_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}A_SCL_WF_CLC.AVAL&quot;, &quot;x_channel&quot;: &quot;ca://BLEN:${AREA}:${POS}:${INST}A_WF_TIME.VALA&quot;, &quot;name&quot;: &quot;${INST}A Weight Function&quot;, &quot;color&quot;: &quot;cyan&quot;, &quot;lineStyle&quot;: 1, &quot;lineWidth&quot;: 1, &quot;symbol&quot;: null, &quot;symbolSize&quot;: 10, &quot;yAxisName&quot;: &quot;Axis 2&quot;, &quot;redraw_mode&quot;: 2}</string>
+                   </stringlist>
+                  </property>
+                  <property name="autoRangeX">
+                   <bool>true</bool>
+                  </property>
+                  <property name="minXRange">
+                   <double>0.000000000000000</double>
+                  </property>
+                  <property name="maxXRange">
+                   <double>1.000000000000000</double>
+                  </property>
+                  <property name="autoRangeY">
+                   <bool>true</bool>
+                  </property>
+                  <property name="minYRange">
+                   <double>0.000000000000000</double>
+                  </property>
+                  <property name="maxYRange">
+                   <double>1.000000000000000</double>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout_2">
+             <property name="spacing">
+              <number>23</number>
+             </property>
+             <property name="leftMargin">
+              <number>15</number>
+             </property>
+             <property name="rightMargin">
+              <number>15</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="label_7">
+               <property name="maximumSize">
+                <size>
+                 <width>60</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>11</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>Stream</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="PyDMByteIndicator" name="PyDMByteIndicator">
+               <property name="maximumSize">
+                <size>
+                 <width>35</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="toolTip">
+                <string/>
+               </property>
+               <property name="whatsThis">
+                <string>
+    Widget for graphical representation of bits from an integer number
+    with support for Channels and more from PyDM
+
+    Parameters
+    ----------
+    parent : QWidget
+        The parent widget for the Label
+    init_channel : str, optional
+        The channel to be used by the widget.
+    </string>
+               </property>
+               <property name="channel" stdset="0">
+                <string>ca://BLEN:${AREA}:${POS}:${INST}A_AutoRearm_RBV</string>
+               </property>
+               <property name="onColor" stdset="0">
+                <color>
+                 <red>0</red>
+                 <green>170</green>
+                 <blue>0</blue>
+                </color>
+               </property>
+               <property name="showLabels" stdset="0">
+                <bool>false</bool>
+               </property>
+               <property name="circles" stdset="0">
+                <bool>false</bool>
+               </property>
+               <property name="labels" stdset="0">
+                <stringlist>
+                 <string>off</string>
+                 <string>on</string>
+                </stringlist>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="PyDMEnumComboBox" name="PyDMEnumComboBox">
+               <property name="font">
+                <font>
+                 <pointsize>11</pointsize>
+                </font>
+               </property>
+               <property name="toolTip">
+                <string/>
+               </property>
+               <property name="whatsThis">
+                <string>
+    A QComboBox with support for Channels and more from PyDM
+
+    Parameters
+    ----------
+    parent : QWidget
+        The parent widget for the Label
+    init_channel : str, optional
+        The channel to be used by the widget.
+
+    Signals
+    -------
+    send_value_signal : int, float, str, bool or np.ndarray
+        Emitted when the user changes the value.
+    activated : int, str
+        Emitted when the user chooses an item in the combobox.
+    currentIndexChanged : int, str
+        Emitted when the index is changed in the combobox.
+    highlighted : int, str
+        Emitted when an item in the combobox popup list is highlighted
+        by the user.
+    </string>
+               </property>
+               <property name="channel" stdset="0">
+                <string>ca://BLEN:${AREA}:${POS}:${INST}A_ACCESS</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="2" column="2" rowspan="2">
+            <widget class="QFrame" name="frame_4">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>5</height>
+              </size>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::HLine</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <property name="lineWidth">
+              <number>2</number>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="0">
+            <widget class="QGroupBox" name="groupBox_2">
+             <property name="minimumSize">
+              <size>
+               <width>400</width>
+               <height>120</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>120</height>
+              </size>
+             </property>
+             <property name="title">
+              <string>Device Readings</string>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_3">
+              <item row="0" column="0">
+               <widget class="PyDMEmbeddedDisplay" name="PyDMEmbeddedDisplay">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>60</height>
+                 </size>
+                </property>
+                <property name="toolTip">
+                 <string/>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::NoFrame</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Plain</enum>
+                </property>
+                <property name="macros" stdset="0">
+                 <string>{&quot;AREA&quot;:&quot;${AREA}&quot;,&quot;POS&quot;:&quot;${POS}&quot;,&quot;INST&quot;:&quot;${INST}&quot;}</string>
+                </property>
+                <property name="filename" stdset="0">
+                 <string>blen_facet_gap_readings_full.ui</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item row="8" column="0">
+            <layout class="QGridLayout" name="gridLayout_4">
+             <item row="0" column="1">
+              <widget class="QLabel" name="label_5">
+               <property name="text">
+                <string>TMIT (Nel)</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="label_3">
+               <property name="text">
+                <string>BPM ${BPM} Charge:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="2">
+              <widget class="QLabel" name="label_6">
+               <property name="text">
+                <string>pC</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="PyDMLabel" name="PyDMLabel">
+               <property name="toolTip">
+                <string/>
+               </property>
+               <property name="precision" stdset="0">
+                <number>0</number>
+               </property>
+               <property name="precisionFromPV" stdset="0">
+                <bool>true</bool>
+               </property>
+               <property name="channel" stdset="0">
+                <string>ca://BLEN:${AREA}:${POS}:${INST}B_TMIT</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="2">
+              <widget class="PyDMLabel" name="PyDMLabel_2">
+               <property name="toolTip">
+                <string/>
+               </property>
+               <property name="precision" stdset="0">
+                <number>1</number>
+               </property>
+               <property name="precisionFromPV" stdset="0">
+                <bool>false</bool>
+               </property>
+               <property name="channel" stdset="0">
+                <string>ca://BLEN:${AREA}:${POS}:${INST}B_TMIT_PC</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PyDMLabel</class>
+   <extends>QLabel</extends>
+   <header>pydm.widgets.label</header>
+  </customwidget>
+  <customwidget>
+   <class>PyDMRelatedDisplayButton</class>
+   <extends>QPushButton</extends>
+   <header>pydm.widgets.related_display_button</header>
+  </customwidget>
+  <customwidget>
+   <class>PyDMEmbeddedDisplay</class>
+   <extends>QFrame</extends>
+   <header>pydm.widgets.embedded_display</header>
+  </customwidget>
+  <customwidget>
+   <class>PyDMWaveformPlot</class>
+   <extends>QGraphicsView</extends>
+   <header>pydm.widgets.waveformplot</header>
+  </customwidget>
+  <customwidget>
+   <class>PyDMEnumComboBox</class>
+   <extends>QComboBox</extends>
+   <header>pydm.widgets.enum_combo_box</header>
+  </customwidget>
+  <customwidget>
+   <class>PyDMByteIndicator</class>
+   <extends>QWidget</extends>
+   <header>pydm.widgets.byte</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

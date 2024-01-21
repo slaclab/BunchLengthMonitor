@@ -1,0 +1,34 @@
+#This database handles adjusting the coeficents when the window size changes
+#0 running
+#1 calibration
+
+record(calcout, "$(P):$(INST)_CoefA$(COEF)_SAV"){
+    field(INPA, "$(P):$(INST)_CalibMode")
+    field(INPB, "$(P):$(INST)_CoefA$(COEF)")
+    field(INPC, "$(P):$(INST)_CoefA$(COEF)_SAV")
+    field(CALC, "A ? B : C")
+    field(SCAN, "1 second")
+}
+
+record(calcout, "$(P):$(INST)_NumSamp1_SAV"){
+    field(INPA, "$(P):$(INST)_CalibMode")
+    field(INPB, "$(P):$(INST)_NumSamp1_RBV")
+    field(INPC, "$(P):$(INST)_NumSamp1_SAV")
+    field(CALC, "A ? B : C")
+    field(SCAN, "1 second")
+}
+
+record(calcout, "$(P):$(INST)_Calib_Coef_A$(COEF)"){
+    field(INPA, "$(P):$(INST)_CalibMode")
+    field(INPB, "$(P):$(INST)_CoefA$(COEF)_SAV")
+    field(INPC, "$(P):$(INST)_NumSamp1_SAV")
+    field(INPD, "$(P):$(INST)_NumSamp1_RBV")
+    
+    field(CALC, "A ? 0 : B*(D/C)")
+    
+    field(OOPT, "When Non-zero")    
+    field(OUT, "$(P):$(INST)_CoefA$(COEF)")
+    field(FLNK, "$(P):$(INST)_CoefA$(COEF)")
+    
+    field(SCAN, "1 second")
+}

@@ -1,0 +1,9 @@
+#scaling for coefficent B and E to account to ln being applied
+
+file coefTransform.db
+{
+pattern {P, INST, COEF}
+
+    {$(P), $(INST), B}
+    {$(P), $(INST), E}
+}

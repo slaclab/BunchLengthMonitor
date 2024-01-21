@@ -1,0 +1,20 @@
+record(ai, "$(P):$(INST)_Coef$(COEF)LN"){
+    field(DESC, "Coefficet input")
+    field(PINI, "YES")
+}
+
+record(calcout, "$(P):$(INST)_Coef$(COEF)TF"){
+    field(INPA, "$(P):$(INST)_Coef$(COEF)LN")
+    field(CALC, "LN(A)")
+    field(OUT, "$(P):$(INST)_Coef$(COEF)")
+    field(FLNK, "$(P):$(INST)_Coef$(COEF)")
+    field(SCAN, "1 second")
+    field(PINI, "YES")
+}
+
+record(calc, "$(P):$(INST)_Coef$(COEF)RBVTF"){
+    field(INPA, "$(P):$(INST)_Coef$(COEF)RBV")
+    field(CALC, "EXP(A)")
+    field(SCAN, "1 second")
+    field(PINI, "YES")
+}

@@ -1,0 +1,9 @@
+# This database has items related to calibration of the sensor
+
+
+record(bi, "BLEN:$(AREA):$(POS):$(INST)_CalibMode"){
+    field(ZNAM, "Running")
+    field(ONAM, "Calibration")
+    field(PINI, "YES")
+}
+

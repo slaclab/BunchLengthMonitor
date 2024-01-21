@@ -1,0 +1,1133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>595</width>
+    <height>513</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Bunch Length ${INST} Equation Parameters</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_3">
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0,0">
+       <item>
+        <widget class="QLabel" name="label_12">
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
+         </property>
+         <property name="text">
+          <string>${INST}A</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QGridLayout" name="gridLayout">
+         <property name="horizontalSpacing">
+          <number>15</number>
+         </property>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>A0</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="2">
+          <widget class="PyDMLabel" name="PyDMLabel_8">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="whatsThis">
+            <string/>
+           </property>
+           <property name="precision" stdset="0">
+            <number>4</number>
+           </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
+           <property name="channel" stdset="0">
+            <string>ca://BLEN:${AREA}:${POS}:${INST}A_CoefCRBV</string>
+           </property>
+           <property name="displayFormat" stdset="0">
+            <enum>PyDMLabel::Default</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="0">
+          <widget class="QLabel" name="label_8">
+           <property name="text">
+            <string>F</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="2">
+          <widget class="PyDMLabel" name="PyDMLabel_2">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="whatsThis">
+            <string/>
+           </property>
+           <property name="precision" stdset="0">
+            <number>4</number>
+           </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
+           <property name="channel" stdset="0">
+            <string>ca://BLEN:${AREA}:${POS}:${INST}A_CoefA1RBV</string>
+           </property>
+           <property name="displayFormat" stdset="0">
+            <enum>PyDMLabel::Default</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="PyDMLineEdit" name="PyDMLineEdit_4">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="whatsThis">
+            <string/>
+           </property>
+           <property name="precision" stdset="0">
+            <number>4</number>
+           </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
+           <property name="channel" stdset="0">
+            <string>ca://BLEN:${AREA}:${POS}:${INST}A_CoefBLN</string>
+           </property>
+           <property name="displayFormat" stdset="0">
+            <enum>PyDMLineEdit::Exponential</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="2">
+          <widget class="PyDMLabel" name="PyDMLabel_10">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="whatsThis">
+            <string/>
+           </property>
+           <property name="precision" stdset="0">
+            <number>4</number>
+           </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
+           <property name="channel" stdset="0">
+            <string>ca://BLEN:${AREA}:${POS}:${INST}A_CoefIRBV</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="0">
+          <widget class="QLabel" name="label_5">
+           <property name="text">
+            <string>C</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_3">
+           <property name="text">
+            <string>Offset</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2" alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="label_14">
+           <property name="text">
+            <string>Readback</string>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="0">
+          <widget class="QLabel" name="label_7">
+           <property name="text">
+            <string>E</string>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="2">
+          <widget class="PyDMLabel" name="PyDMLabel_5">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="whatsThis">
+            <string/>
+           </property>
+           <property name="precision" stdset="0">
+            <number>4</number>
+           </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
+           <property name="channel" stdset="0">
+            <string>ca://BLEN:${AREA}:${POS}:${INST}A_CoefFRBV</string>
+           </property>
+           <property name="displayFormat" stdset="0">
+            <enum>PyDMLabel::Default</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="2">
+          <widget class="PyDMLabel" name="PyDMLabel_7">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="whatsThis">
+            <string/>
+           </property>
+           <property name="precision" stdset="0">
+            <number>4</number>
+           </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
+           <property name="channel" stdset="0">
+            <string>ca://BLEN:${AREA}:${POS}:${INST}A_CoefDRBV</string>
+           </property>
+           <property name="displayFormat" stdset="0">
+            <enum>PyDMLabel::Default</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1">
+          <widget class="PyDMLineEdit" name="PyDMLineEdit_5">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="whatsThis">
+            <string/>
+           </property>
+           <property name="precision" stdset="0">
+            <number>4</number>
+           </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
+           <property name="channel" stdset="0">
+            <string>ca://BLEN:${AREA}:${POS}:${INST}A_CoefC</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="2">
+          <widget class="PyDMLabel" name="PyDMLabel_9">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="whatsThis">
+            <string/>
+           </property>
+           <property name="precision" stdset="0">
+            <number>4</number>
+           </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
+           <property name="channel" stdset="0">
+            <string>ca://BLEN:${AREA}:${POS}:${INST}A_CoefBRBVTF</string>
+           </property>
+           <property name="displayFormat" stdset="0">
+            <enum>PyDMLabel::Exponential</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="9" column="1">
+          <widget class="PyDMLineEdit" name="PyDMLineEdit_9">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="whatsThis">
+            <string/>
+           </property>
+           <property name="precision" stdset="0">
+            <number>4</number>
+           </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
+           <property name="channel" stdset="0">
+            <string>ca://BLEN:${AREA}:${POS}:${INST}A_CoefG</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1" alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="label_13">
+           <property name="text">
+            <string>Coefficient value</string>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="2">
+          <widget class="PyDMLabel" name="PyDMLabel_6">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="whatsThis">
+            <string/>
+           </property>
+           <property name="precision" stdset="0">
+            <number>4</number>
+           </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
+           <property name="channel" stdset="0">
+            <string>ca://BLEN:${AREA}:${POS}:${INST}A_CoefERBVTF</string>
+           </property>
+           <property name="displayFormat" stdset="0">
+            <enum>PyDMLabel::Exponential</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="1">
+          <widget class="PyDMLineEdit" name="PyDMLineEdit_8">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="whatsThis">
+            <string/>
+           </property>
+           <property name="precision" stdset="0">
+            <number>4</number>
+           </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
+           <property name="channel" stdset="0">
+            <string>ca://BLEN:${AREA}:${POS}:${INST}A_CoefF</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="1">
+          <widget class="PyDMLineEdit" name="PyDMLineEdit_6">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="whatsThis">
+            <string/>
+           </property>
+           <property name="precision" stdset="0">
+            <number>4</number>
+           </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
+           <property name="channel" stdset="0">
+            <string>ca://BLEN:${AREA}:${POS}:${INST}A_CoefD</string>
+           </property>
+          </widget>
+         </item>
+         <item row="9" column="0">
+          <widget class="QLabel" name="label_9">
+           <property name="text">
+            <string>G</string>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="1">
+          <widget class="PyDMLineEdit" name="PyDMLineEdit_7">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="whatsThis">
+            <string/>
+           </property>
+           <property name="precision" stdset="0">
+            <number>4</number>
+           </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
+           <property name="channel" stdset="0">
+            <string>ca://BLEN:${AREA}:${POS}:${INST}A_CoefELN</string>
+           </property>
+           <property name="displayFormat" stdset="0">
+            <enum>PyDMLineEdit::Exponential</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2">
+          <widget class="PyDMLabel" name="PyDMLabel">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="whatsThis">
+            <string/>
+           </property>
+           <property name="precision" stdset="0">
+            <number>4</number>
+           </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
+           <property name="channel" stdset="0">
+            <string>ca://BLEN:${AREA}:${POS}:${INST}A_CoefA0RBV</string>
+           </property>
+           <property name="displayFormat" stdset="0">
+            <enum>PyDMLabel::Default</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="label_4">
+           <property name="text">
+            <string>B</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="PyDMLineEdit" name="PyDMLineEdit_3">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="whatsThis">
+            <string/>
+           </property>
+           <property name="precision" stdset="0">
+            <number>0</number>
+           </property>
+           <property name="channel" stdset="0">
+            <string>ca://BLEN:${AREA}:${POS}:${INST}A_CoefI</string>
+           </property>
+           <property name="displayFormat" stdset="0">
+            <enum>PyDMLineEdit::Default</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="0">
+          <widget class="QLabel" name="label_6">
+           <property name="text">
+            <string>D</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_2">
+           <property name="text">
+            <string>A1</string>
+           </property>
+          </widget>
+         </item>
+         <item row="9" column="2">
+          <widget class="PyDMLabel" name="PyDMLabel_4">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="whatsThis">
+            <string/>
+           </property>
+           <property name="precision" stdset="0">
+            <number>4</number>
+           </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
+           <property name="channel" stdset="0">
+            <string>ca://BLEN:${AREA}:${POS}:${INST}A_CoefGRBV</string>
+           </property>
+           <property name="displayFormat" stdset="0">
+            <enum>PyDMLabel::Default</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="PyDMLineEdit" name="PyDMLineEdit_2">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="precision" stdset="0">
+            <number>4</number>
+           </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
+           <property name="channel" stdset="0">
+            <string>ca://BLEN:${AREA}:${POS}:${INST}A_CoefA1</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="PyDMLineEdit" name="PyDMLineEdit">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="precision" stdset="0">
+            <number>4</number>
+           </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
+           <property name="channel" stdset="0">
+            <string>ca://BLEN:${AREA}:${POS}:${INST}A_CoefA0</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="Line" name="line_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QLabel" name="label_10">
+           <property name="text">
+            <string>${INST}A BLEN:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="PyDMLabel" name="PyDMLabel_3">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="precision" stdset="0">
+            <number>1</number>
+           </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
+           <property name="channel" stdset="0">
+            <string>ca://BLEN:${AREA}:${POS}:AIMAX</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="Line" name="line">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QLabel" name="label_15">
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
+         </property>
+         <property name="text">
+          <string>${INST}B</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QGridLayout" name="gridLayout_2">
+         <property name="horizontalSpacing">
+          <number>15</number>
+         </property>
+         <item row="4" column="2">
+          <widget class="PyDMLabel" name="PyDMLabel_15">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="whatsThis">
+            <string/>
+           </property>
+           <property name="precision" stdset="0">
+            <number>4</number>
+           </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
+           <property name="channel" stdset="0">
+            <string>ca://BLEN:${AREA}:${POS}:${INST}B_CoefBRBVTF</string>
+           </property>
+           <property name="displayFormat" stdset="0">
+            <enum>PyDMLabel::Exponential</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="2">
+          <widget class="PyDMLabel" name="PyDMLabel_20">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="whatsThis">
+            <string/>
+           </property>
+           <property name="precision" stdset="0">
+            <number>4</number>
+           </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
+           <property name="channel" stdset="0">
+            <string>ca://BLEN:${AREA}:${POS}:${INST}B_CoefCRBV</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="0">
+          <widget class="QLabel" name="label_24">
+           <property name="text">
+            <string>C</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="PyDMLineEdit" name="PyDMLineEdit_13">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="whatsThis">
+            <string/>
+           </property>
+           <property name="precision" stdset="0">
+            <number>4</number>
+           </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
+           <property name="channel" stdset="0">
+            <string>ca://BLEN:${AREA}:${POS}:${INST}B_CoefI</string>
+           </property>
+           <property name="displayFormat" stdset="0">
+            <enum>PyDMLineEdit::Default</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="9" column="2">
+          <widget class="PyDMLabel" name="PyDMLabel_14">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="whatsThis">
+            <string/>
+           </property>
+           <property name="precision" stdset="0">
+            <number>4</number>
+           </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
+           <property name="channel" stdset="0">
+            <string>ca://BLEN:${AREA}:${POS}:${INST}B_CoefGRBV</string>
+           </property>
+          </widget>
+         </item>
+         <item row="9" column="0">
+          <widget class="QLabel" name="label_20">
+           <property name="text">
+            <string>G</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="PyDMLineEdit" name="PyDMLineEdit_12">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="whatsThis">
+            <string/>
+           </property>
+           <property name="precision" stdset="0">
+            <number>4</number>
+           </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
+           <property name="channel" stdset="0">
+            <string>ca://BLEN:${AREA}:${POS}:${INST}B_CoefBLN</string>
+           </property>
+           <property name="displayFormat" stdset="0">
+            <enum>PyDMLineEdit::Exponential</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="2">
+          <widget class="PyDMLabel" name="PyDMLabel_13">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="whatsThis">
+            <string/>
+           </property>
+           <property name="precision" stdset="0">
+            <number>4</number>
+           </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
+           <property name="channel" stdset="0">
+            <string>ca://BLEN:${AREA}:${POS}:${INST}B_CoefIRBV</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="0">
+          <widget class="QLabel" name="label_25">
+           <property name="text">
+            <string>D</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_19">
+           <property name="text">
+            <string>A0</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="2">
+          <widget class="PyDMLabel" name="PyDMLabel_19">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="whatsThis">
+            <string/>
+           </property>
+           <property name="precision" stdset="0">
+            <number>4</number>
+           </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
+           <property name="channel" stdset="0">
+            <string>ca://BLEN:${AREA}:${POS}:${INST}B_CoefDRBV</string>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="2">
+          <widget class="PyDMLabel" name="PyDMLabel_12">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="whatsThis">
+            <string/>
+           </property>
+           <property name="precision" stdset="0">
+            <number>4</number>
+           </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
+           <property name="channel" stdset="0">
+            <string>ca://BLEN:${AREA}:${POS}:${INST}B_CoefFRBV</string>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="0">
+          <widget class="QLabel" name="label_23">
+           <property name="text">
+            <string>F</string>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="0">
+          <widget class="QLabel" name="label_16">
+           <property name="text">
+            <string>E</string>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="1">
+          <widget class="PyDMLineEdit" name="PyDMLineEdit_19">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="whatsThis">
+            <string/>
+           </property>
+           <property name="precision" stdset="0">
+            <number>4</number>
+           </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
+           <property name="channel" stdset="0">
+            <string>ca://BLEN:${AREA}:${POS}:${INST}B_CoefELN</string>
+           </property>
+           <property name="displayFormat" stdset="0">
+            <enum>PyDMLineEdit::Exponential</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_18">
+           <property name="text">
+            <string>A1</string>
+           </property>
+          </widget>
+         </item>
+         <item row="9" column="1">
+          <widget class="PyDMLineEdit" name="PyDMLineEdit_20">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="whatsThis">
+            <string/>
+           </property>
+           <property name="precision" stdset="0">
+            <number>4</number>
+           </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
+           <property name="channel" stdset="0">
+            <string>ca://BLEN:${AREA}:${POS}:${INST}B_CoefG</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="2">
+          <widget class="PyDMLabel" name="PyDMLabel_21">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="whatsThis">
+            <string/>
+           </property>
+           <property name="precision" stdset="0">
+            <number>4</number>
+           </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
+           <property name="channel" stdset="0">
+            <string>ca://BLEN:${AREA}:${POS}:${INST}B_CoefA1RBV</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1">
+          <widget class="PyDMLineEdit" name="PyDMLineEdit_22">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="whatsThis">
+            <string/>
+           </property>
+           <property name="precision" stdset="0">
+            <number>4</number>
+           </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
+           <property name="channel" stdset="0">
+            <string>ca://BLEN:${AREA}:${POS}:${INST}B_CoefC</string>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="1">
+          <widget class="PyDMLineEdit" name="PyDMLineEdit_18">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="whatsThis">
+            <string/>
+           </property>
+           <property name="precision" stdset="0">
+            <number>4</number>
+           </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
+           <property name="channel" stdset="0">
+            <string>ca://BLEN:${AREA}:${POS}:${INST}B_CoefF</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_17">
+           <property name="text">
+            <string>Offset</string>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="2">
+          <widget class="PyDMLabel" name="PyDMLabel_16">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="whatsThis">
+            <string/>
+           </property>
+           <property name="precision" stdset="0">
+            <number>4</number>
+           </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
+           <property name="channel" stdset="0">
+            <string>ca://BLEN:${AREA}:${POS}:${INST}B_CoefERBVTF</string>
+           </property>
+           <property name="displayFormat" stdset="0">
+            <enum>PyDMLabel::Exponential</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2" alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="label_28">
+           <property name="text">
+            <string>Readback</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="1">
+          <widget class="PyDMLineEdit" name="PyDMLineEdit_14">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="whatsThis">
+            <string/>
+           </property>
+           <property name="precision" stdset="0">
+            <number>4</number>
+           </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
+           <property name="channel" stdset="0">
+            <string>ca://BLEN:${AREA}:${POS}:${INST}B_CoefD</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="label_22">
+           <property name="text">
+            <string>B</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2">
+          <widget class="PyDMLabel" name="PyDMLabel_22">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="whatsThis">
+            <string/>
+           </property>
+           <property name="precision" stdset="0">
+            <number>4</number>
+           </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
+           <property name="channel" stdset="0">
+            <string>ca://BLEN:${AREA}:${POS}:${INST}B_CoefA0RBV</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="PyDMLineEdit" name="PyDMLineEdit_15">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="precision" stdset="0">
+            <number>4</number>
+           </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
+           <property name="channel" stdset="0">
+            <string>ca://BLEN:${AREA}:${POS}:${INST}B_CoefA1</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="PyDMLineEdit" name="PyDMLineEdit_11">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="precision" stdset="0">
+            <number>4</number>
+           </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
+           <property name="channel" stdset="0">
+            <string>ca://BLEN:${AREA}:${POS}:${INST}B_CoefA0</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1" alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="label_27">
+           <property name="text">
+            <string>Coefficient value</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="Line" name="line_3">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <widget class="QLabel" name="label_26">
+           <property name="text">
+            <string>${INST}B BLEN:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="PyDMLabel" name="PyDMLabel_11">
+           <property name="toolTip">
+            <string/>
+           </property>
+           <property name="precision" stdset="0">
+            <number>1</number>
+           </property>
+           <property name="precisionFromPV" stdset="0">
+            <bool>false</bool>
+           </property>
+           <property name="channel" stdset="0">
+            <string>ca://BLEN:${AREA}:${POS}:BIMAX</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="Line" name="line_4">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QGridLayout" name="gridLayout_3">
+     <item row="0" column="1">
+      <widget class="QLabel" name="label_29">
+       <property name="text">
+        <string>Set to calibration to set A0 and A1</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_21">
+       <property name="text">
+        <string>Set to calibration to set A0 and A1</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="PyDMEnumComboBox" name="PyDMEnumComboBox">
+       <property name="toolTip">
+        <string/>
+       </property>
+       <property name="channel" stdset="0">
+        <string>ca://BLEN:${AREA}:${POS}:${INST}A_CalibMode</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="PyDMEnumComboBox" name="PyDMEnumComboBox_2">
+       <property name="toolTip">
+        <string/>
+       </property>
+       <property name="channel" stdset="0">
+        <string>ca://BLEN:${AREA}:${POS}:${INST}B_CalibMode</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="Line" name="line_5">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_11">
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; text-decoration: underline;&quot;&gt;AMC${AMC} Channel 0: Pedestal Correction&lt;/span&gt;&lt;/p&gt;&lt;p&gt;ARAW&lt;span style=&quot; vertical-align:sub;&quot;&gt;AMC&lt;/span&gt; = &lt;span style=&quot; font-style:italic; text-decoration: underline;&quot;&gt;A1&lt;/span&gt;*Signal&lt;span style=&quot; vertical-align:sub;&quot;&gt;AMC&lt;/span&gt; + &lt;span style=&quot; font-style:italic; text-decoration: underline;&quot;&gt;A0&lt;/span&gt;*Pedestal&lt;span style=&quot; vertical-align:sub;&quot;&gt;AMC&lt;/span&gt; + &lt;span style=&quot; font-style:italic; text-decoration: underline;&quot;&gt;Offset&lt;/span&gt;&lt;span style=&quot; vertical-align:sub;&quot;&gt;AMC&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:12pt; text-decoration: underline;&quot;&gt;BLEN Calculation:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;BLEN&lt;span style=&quot; vertical-align:sub;&quot;&gt;AMC&lt;/span&gt; = &lt;span style=&quot; font-style:italic; text-decoration: underline;&quot;&gt;B&lt;/span&gt; * TMIT&lt;span style=&quot; font-style:italic; text-decoration: underline; vertical-align:super;&quot;&gt;C&lt;/span&gt;&lt;span style=&quot; font-style:italic; vertical-align:sub;&quot;&gt;(Nel/1000)&lt;/span&gt; * ARAW&lt;span style=&quot; text-decoration: underline; vertical-align:super;&quot;&gt;D&lt;/span&gt;&lt;span style=&quot; vertical-align:sub;&quot;&gt;AMC&lt;/span&gt; + &lt;span style=&quot; font-style:italic; text-decoration: underline;&quot;&gt;E&lt;/span&gt; * TMIT&lt;span style=&quot; font-style:italic; text-decoration: underline; vertical-align:super;&quot;&gt;F&lt;/span&gt;&lt;span style=&quot; vertical-align:sub;&quot;&gt;(Nel/1000)&lt;/span&gt;* ARAW&lt;span style=&quot; text-decoration: underline; vertical-align:super;&quot;&gt;G&lt;/span&gt;&lt;span style=&quot; vertical-align:sub;&quot;&gt;AMC&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PyDMLabel</class>
+   <extends>QLabel</extends>
+   <header>pydm.widgets.label</header>
+  </customwidget>
+  <customwidget>
+   <class>PyDMLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>pydm.widgets.line_edit</header>
+  </customwidget>
+  <customwidget>
+   <class>PyDMEnumComboBox</class>
+   <extends>QComboBox</extends>
+   <header>pydm.widgets.enum_combo_box</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>PyDMLineEdit_3</tabstop>
+  <tabstop>PyDMLineEdit_4</tabstop>
+  <tabstop>PyDMLineEdit_5</tabstop>
+  <tabstop>PyDMLineEdit_6</tabstop>
+  <tabstop>PyDMLineEdit_7</tabstop>
+  <tabstop>PyDMLineEdit_8</tabstop>
+  <tabstop>PyDMLineEdit_9</tabstop>
+  <tabstop>PyDMLineEdit_13</tabstop>
+  <tabstop>PyDMLineEdit_12</tabstop>
+  <tabstop>PyDMLineEdit_22</tabstop>
+  <tabstop>PyDMLineEdit_14</tabstop>
+  <tabstop>PyDMLineEdit_19</tabstop>
+  <tabstop>PyDMLineEdit_18</tabstop>
+  <tabstop>PyDMLineEdit_20</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

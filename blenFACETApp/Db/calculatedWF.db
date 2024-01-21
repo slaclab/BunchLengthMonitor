@@ -1,0 +1,42 @@
+# Weight function calculated from pre edge, edge, and pos edge sample amounts.
+record (acalcout, "BLEN:$(AREA):$(POS):$(INST)_SCL_WF_CLC") {
+  field(DESC, "Weight function")
+  field(CALC, "ARR(1){0,A-1} + ARR(-1){B*2,B*2+C-1}")
+  field(NELM, "2020")
+  field(INPA, "BLEN:$(AREA):$(POS):$(INST)_NumSamp0 CP")
+  field(INPB, "BLEN:$(AREA):$(POS):$(INST)_TrigDelay1 CP")
+  field(INPC, "BLEN:$(AREA):$(POS):$(INST)_NumSamp1 CP")
+}
+
+
+# Slow raw waveform
+record (waveform, "BLEN:$(AREA):$(POS):$(INST)_S_R_WF") {
+  field(DESC, "Slow raw waveform")
+  field(INP, "BLEN:$(AREA):$(POS):$(INST)_R_WF")
+  field(NELM, "2020")
+  field(FTVL, "SHORT")
+  field(SCAN, "1 second")
+}
+
+# Transform Nel/1000 to NEL
+record (calc, "BLEN:$(AREA):$(POS):$(INST)_TMIT") {
+  field(DESC, "Transform TMIT RAW to NEL")
+  field(INPA, "BLEN:$(AREA):$(POS):$(INST)_TMIT_RAW CP")
+  field(CALC, "A * 1000")
+  field(EGU,  "NEL")
+}
+
+# Transform Nel in pC
+record (calc, "BLEN:$(AREA):$(POS):$(INST)_TMIT_PC") {
+  field(DESC, "Transform Nel in pC")
+  field(INPA, "BLEN:$(AREA):$(POS):$(INST)_TMIT CP")
+  field(CALC, "A * 1.60217662e-7")
+  field(EGU,  "pC")
+}
+# Transform Nel in nC
+record (calc, "BLEN:$(AREA):$(POS):$(INST)_TMIT_NC") {
+  field(DESC, "Transform Nel in nC")
+  field(INPA, "BLEN:$(AREA):$(POS):$(INST)_TMIT CP")
+  field(CALC, "A * 1.60217662e-10")
+  field(EGU,  "nC")
+} 

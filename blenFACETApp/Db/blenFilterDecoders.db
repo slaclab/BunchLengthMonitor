@@ -1,0 +1,17 @@
+# Encode/decode bo/bi records that controls filters and read limit switch
+# status in order to send bit array data to the ATCA (bit array = integer)
+
+record(mbbiDirect, "BLEN:$(AREA):$(POS):FLT_SWT_IN_DEC") {
+    field("DESC", "Decode filter info in bits")
+    field("INP", "BLEN:$(AREA):$(POS):FLT_SWT_IN CPP")
+}
+
+record(mbbiDirect, "BLEN:$(AREA):$(POS):FLT_SWT_OUT_DEC") {
+    field("DESC", "Decode filter info out bits")
+    field("INP", "BLEN:$(AREA):$(POS):FLT_SWT_OUT CPP")
+}
+
+record(mbboDirect, "BLEN:$(AREA):$(POS):FLT_ACT_ENC") {
+    field("DESC", "Encode bits to actuate on filters")
+    field("OUT", "BLEN:$(AREA):$(POS):FLT_CNTL PP")
+}

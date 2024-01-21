@@ -1,0 +1,47 @@
+# The first part of the stream contains the header (index 0 to 27).
+# The last part of the stream contains the raw waveform (index 28 to 2047).
+# The "beam full" bit is the 83th from the dmod words in the header. As we
+# are working with 16-bit words, that corresponds to the 4th bit of the 6th
+# word AA[5,5]. So, we AND this word with 0b1000 to check if the beam is full.
+# The AVAL record field is updated only when this bit is set.
+record (acalcout, "BLEN:$(AREA):$(POS):$(INST)_R_WF_CLC") {
+  field(DESC, "Beam updated when beam full")
+  field(INAA, "BLEN:$(AREA):$(POS):$(INST)_HR_WF CP")
+  field(CALC, "AA[5,5] & 8? AA[28,2047]:BB")
+  # Saves the last value of AA in field BB. 
+  # LAA parameter is not working as last AA. It raises "invalid
+  # CALC expression".
+  field(OUT, "BLEN:$(AREA):$(POS):$(INST)_R_WF_CLC.BB")
+  field(DOPT, "Use CALC")
+  field(NELM, "2048")
+}
+
+
+# Transform an acalcout AVAL info into an waveform VAL, just to maintain
+# compatibility with previous systems. This record is fed into the asub record for a right bit shift. 
+record (waveform, "BLEN:$(AREA):$(POS):$(INST)_R_WF_RBS") {
+  field(DESC, "Waveform with beam present")
+  field(INP,  "BLEN:$(AREA):$(POS):$(INST)_R_WF_CLC.AVAL CP")
+  field(NELM, "2020")
+  field(FTVL, "SHORT")
+}
+
+# aSub record performing a right bit shift calculation. 
+record (aSub, "BLEN:$(AREA):$(POS):$(INST)_R_WF_RBS_CLC") {
+  field(SNAM, "calcRWF16")
+  field(FTA,  "SHORT")
+  field(FTVA, "SHORT")
+  field(NOA,  "2020")
+  field(NOVA, "2020")
+  field(INPA, "BLEN:$(AREA):$(POS):$(INST)_R_WF_RBS")
+  field(SCAN, "1 second")  
+}
+
+# Transform an acalcout AVAL info into an waveform VAL, just to maintain
+# compatibility with previous systems.
+record (waveform, "BLEN:$(AREA):$(POS):$(INST)_R_WF") {
+  field(DESC, "Waveform with beam present")
+  field(INP,  "BLEN:$(AREA):$(POS):$(INST)_R_WF_RBS_CLC.VALA CP")
+  field(NELM, "2020")
+  field(FTVL, "SHORT")
+}
