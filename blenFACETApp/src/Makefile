@@ -94,7 +94,7 @@ blenFACET_DBD += asyn.dbd
 blenFACET_SRCS += blenFACET_registerRecordDeviceDriver.cpp
 
 blenFACET_SRCS += blenIOCFunctions.cpp
-blenFACET_SRCS += cpswStreamBSA.cpp
+#blenFACET_SRCS += cpswStreamBSA.cpp
 blenFACET_SRCS += blenBSA.cpp
 blenFACET_SRCS += blenFcom.cpp
 blenFACET_SRCS += asubWeightXAxis.c
