@@ -1,0 +1,90 @@
+# CONFIG_SITE
+
+# Make any application-specific changes to the EPICS build
+#   configuration variables in this file.
+#
+# Host/target specific settings can be specified in files named
+#   CONFIG_SITE.$(EPICS_HOST_ARCH).Common
+#   CONFIG_SITE.Common.$(T_A)
+#   CONFIG_SITE.$(EPICS_HOST_ARCH).$(T_A)
+
+# CHECK_RELEASE controls the consistency checking of the support
+#   applications pointed to by the RELEASE* files.
+# Normally CHECK_RELEASE should be set to YES.
+# Set CHECK_RELEASE to NO to disable checking completely.
+# Set CHECK_RELEASE to WARN to perform consistency checking but
+#   continue building even if conflicts are found.
+CHECK_RELEASE = YES
+
+# Set this when you only want to compile this application
+#   for a subset of the cross-compiled target architectures
+#   that Base is built for.
+CROSS_COMPILER_TARGET_ARCHS = linuxRT-x86_64
+
+# To install files into a location other than $(TOP) define
+#   INSTALL_LOCATION here.
+#INSTALL_LOCATION=</absolute/path/to/install/top>
+
+# Set this when the IOC and build host use different paths
+#   to the install location. This may be needed to boot from
+#   a Microsoft FTP server say, or on some NFS configurations.
+#IOCS_APPL_TOP = </IOC's/absolute/path/to/install/top>
+#
+# =======================================================
+# Let's install our IOC boot products:
+# envPaths and st.cmd
+# =======================================================
+INSTALL_LOCATION_STARTUP += $(INSTALL_LOCATION)/startup
+DIRECTORY_TARGETS += $(INSTALL_LOCATION_STARTUP)
+
+# =============================
+# Build Application Statically
+# =============================
+SHARED_LIBRARIES=NO
+STATIC_BUILD=YES
+
+# =============================
+# Define the archiecture versions
+# =============================
+LINUXRT_BUILDROOT_VERSION=buildroot-2019.08
+LINUX_VERSION=rhel6
+
+# ========================================================================================================================
+# Support for CPSW
+# ========================================================================================================================
+CPSW_DEVICE_LIBRARY_PACKAGE_NAME=cpsw/deviceLibrary
+CPSW_DEVICE_LIBRARY_VERSION=R1.2.0
+CPSW_DEVICE_LIBRARY_TOP=$(PACKAGE_SITE_TOP)/$(CPSW_DEVICE_LIBRARY_PACKAGE_NAME)/$(CPSW_DEVICE_LIBRARY_VERSION)
+CPSW_DEVICE_LIBRARY_LIB = $(CPSW_DEVICE_LIBRARY_TOP)/$(PKG_ARCH)/lib
+CPSW_DEVICE_LIBRARY_INCLUDE = $(CPSW_DEVICE_LIBRARY_TOP)/$(PKG_ARCH)/include
+
+CPSW_FRAMEWORK_PACKAGE_NAME=cpsw/framework
+CPSW_FRAMEWORK_VERSION=R4.4.1
+CPSW_FRAMEWORK_TOP=$(PACKAGE_SITE_TOP)/$(CPSW_FRAMEWORK_PACKAGE_NAME)/$(CPSW_FRAMEWORK_VERSION)
+CPSW_FRAMEWORK_LIB = $(CPSW_FRAMEWORK_TOP)/$(PKG_ARCH)/lib
+CPSW_FRAMEWORK_INCLUDE = $(CPSW_FRAMEWORK_TOP)/$(PKG_ARCH)/include
+
+YAML_PACKAGE_NAME=yaml-cpp
+YAML_VERSION=yaml-cpp-0.5.3_boost-1.64.0
+YAML_TOP=$(PACKAGE_SITE_TOP)/$(YAML_PACKAGE_NAME)/$(YAML_VERSION)
+YAML_LIB= $(YAML_TOP)/$(PKG_ARCH)/lib
+YAML_INCLUDE=$(YAML_TOP)/$(PKG_ARCH)/include
+
+YAMLREADER_PACKAGE_NAME=cpsw/yamlReader
+YAMLREADER_VERSION=R1.2.0
+YAMLREADER_TOP=$(PACKAGE_SITE_TOP)/$(YAMLREADER_PACKAGE_NAME)/$(YAMLREADER_VERSION)
+YAMLREADER_LIB= $(YAMLREADER_TOP)/$(PKG_ARCH)/lib
+YAMLREADER_INCLUDE=$(YAMLREADER_TOP)/$(PKG_ARCH)/include
+
+BOOST_PACKAGE_NAME=boost
+BOOST_VERSION=1.64.0
+BOOST_TOP=$(PACKAGE_SITE_TOP)/$(BOOST_PACKAGE_NAME)/$(BOOST_VERSION)
+BOOST_LIB = $(BOOST_TOP)/$(PKG_ARCH)/lib
+BOOST_INCLUDE = $(BOOST_TOP)/$(PKG_ARCH)/include
+
+# HPS TPR API
+HPSTPR_PACKAGE_NAME=timing/hpsTpr
+HPSTPR_VERSION=R1.1.0
+HPSTPR_TOP=$(PACKAGE_SITE_TOP)/$(HPSTPR_PACKAGE_NAME)/$(HPSTPR_VERSION)
+HPSTPR_LIB=$(HPSTPR_TOP)/$(PKG_ARCH)/lib
+HPSTPR_INCLUDE=$(HPSTPR_TOP)/$(PKG_ARCH)/include

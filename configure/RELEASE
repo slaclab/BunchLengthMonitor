@@ -1,1 +1,2 @@
 -include $(TOP)/configure/RELEASE.facet
+#-include $(TOP)/configure/RELEASE.lcls
