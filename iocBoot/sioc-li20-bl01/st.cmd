@@ -10,18 +10,18 @@
 # ===========================================
 
 # Area, position, and instrument names to be used in record names
-epicsEnvSet("AREA", "B084")
-epicsEnvSet("POS", "359")
-epicsEnvSet("IOC_UNIT","BL03")
-epicsEnvSet("INST", "BZ11359")
-epicsEnvSet("ATCA_SLOT", "7")
+epicsEnvSet("AREA", "LI20")
+epicsEnvSet("POS", "3014")
+epicsEnvSet("IOC_UNIT","BL01")
+epicsEnvSet("INST", "BZ203014")
+epicsEnvSet("ATCA_SLOT", "6")
 epicsEnvSet("BLEN_ASYN_PORT", "ATCA$(ATCA_SLOT)")
 
 # Address of the FCOM network
 epicsEnvSet("FCOM_NETWORK", "224.0.0.0")
 
 # TMIT PV to read the value from, by using FCOM
-epicsEnvSet("TMIT_PV", "BPMS:LI11:358:TMIT")
+#epicsEnvSet("TMIT_PV", "BPMS:LI20:3218:TMIT")
 
 # FPGA IP address for CPSW
 epicsEnvSet("FPGA_IP", "10.0.1.10${ATCA_SLOT}")
@@ -29,11 +29,14 @@ epicsEnvSet("FPGA_IP", "10.0.1.10${ATCA_SLOT}")
 epicsEnvSet("IP_PORT_TMIT", "8195")
 
 # IOC name for IOC admin
-epicsEnvSet(IOC_NAME,"SIOC:$(AREA):BL03")
+epicsEnvSet(IOC_NAME,"SIOC:$(AREA):BL01")
 
 cd ${TOP}
 
 < iocBoot/common/blenCommon.cmd
+
+# load alias
+dbLoadRecords("iocBoot/sioc-li20-bl01/LI20.alias", "AREA=${AREA},POS=${POS}")
 
 # ===========================================
 #               ASYN MASKS
@@ -76,6 +79,8 @@ caPutLogShow(2)
 # 4 - IP address and port to send TMIT information to ATCA
 blenConfigure "BLEN:${AREA}:${POS}" "${BSA_STREAM_YAML_NAME}" "${TMIT_PV}" "${FPGA_IP}:${IP_PORT_TMIT}"
 
-dbpf ${IOC_NAME}:TCRB1:OUTPUTCONFIG FPGA
+dbpf ${IOC_NAME}:TCRB1:OUTPUTCONFIG BP
+dbpf BLEN:${AREA}:${POS}:PNEUMATIC.ZNAM "OUT"
+dbpf BLEN:${AREA}:${POS}:PNEUMATIC.ONAM "IN"
 
 < iocBoot/common/start_restore_soft.cmd

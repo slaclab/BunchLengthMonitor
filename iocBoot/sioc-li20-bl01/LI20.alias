@@ -1,0 +1,2 @@
+alias("BLEN:${AREA}:${POS}:P1FLT1_PNEU","BLEN:${AREA}:${POS}:PNEUMATIC")
+

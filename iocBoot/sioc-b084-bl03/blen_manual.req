@@ -1,4 +1,2 @@
-file "common.req" AREA=BC2B,POS=950,INST=0
-file "common.req" AREA=BC2B,POS=950,INST=1
-file "pyro.req" AREA=BC2B,POS=950,INST=0
-file "pyro.req" AREA=BC2B,POS=950,INST=1
+file "manual.req" AREA=B084,POS=359,INST=BZ11359A
+file "manual.req" AREA=B084,POS=359,INST=BZ11359B
