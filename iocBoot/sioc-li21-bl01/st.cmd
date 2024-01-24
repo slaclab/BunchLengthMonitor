@@ -1,4 +1,4 @@
-#!../../bin/linuxRT-x86_64/blen
+#!../../bin/linuxRT-x86_64/blen_FACET
 
 ## You may have to change blen to something else
 ## everywhere it appears in this file

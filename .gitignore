@@ -4,7 +4,7 @@ O.*
 *.swp
 *.swo
 *.bak
-*._
+*._*
 bin/
 cfg/
 db/
