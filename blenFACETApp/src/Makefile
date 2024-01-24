@@ -42,132 +42,132 @@ USR_LIBS_Linux += hpstpr
 #=============================
 # Build the IOC application
 ifeq ($(T_A),linuxRT-x86_64)
-   PROD_IOC = blen
-   DBD = blen.dbd
-#PROD_IOC = blen
-# blen.dbd will be created and installed
-#DBD += blen.dbd
+   PROD_IOC = blen_FACET
+   DBD = blen_FACET.dbd #Required by blen_registerRecordDeviceDriver.cpp 
+#PROD_IOC = blen_FACET
+# blen_FACET.dbd will be created and installed
+#DBD += blen_FACET.dbd
 
-# blen.dbd will be made up from these files:
-blen_DBD += blenDrv.dbd
-blen_DBD += base.dbd
-blen_DBD += devIocStats.dbd
+# blen_FACET.dbd will be made up from these files:
+blen_FACET_DBD += blenDrv.dbd
+blen_FACET_DBD += base.dbd
+blen_FACET_DBD += devIocStats.dbd
 # Include dbd files from all support applications:
-blen_DBD += caPutLog.dbd
-#blen_DBD += $(CEXP_DBDS)
+blen_FACET_DBD += caPutLog.dbd
+#blen_FACET_DBD += $(CEXP_DBDS)
 # ycpswasyn and yamlLoader 
-blen_DBD += yamlLoader.dbd
-blen_DBD += yamlDownloader.dbd
-blen_DBD += ycpswasyn.dbd
+blen_FACET_DBD += yamlLoader.dbd
+blen_FACET_DBD += yamlDownloader.dbd
+blen_FACET_DBD += ycpswasyn.dbd
 # Crossbar control
-blen_DBD += crossbarControl.dbd
+blen_FACET_DBD += crossbarControl.dbd
 # BSA
-blen_DBD += bsaCore.dbd
-blen_DBD += bsa.dbd
+blen_FACET_DBD += bsaCore.dbd
+blen_FACET_DBD += bsa.dbd
 # For calculated waveforms
-blen_DBD += calc.dbd
+blen_FACET_DBD += calc.dbd
 # For FCOM
-blen_DBD += fcomIocshSupport.dbd
-blen_DBD += fcomUtil.dbd
-blen_DBD += devFcom.dbd
-blen_DBD += drvAsynIPPort.dbd
+blen_FACET_DBD += fcomIocshSupport.dbd
+blen_FACET_DBD += fcomUtil.dbd
+blen_FACET_DBD += devFcom.dbd
+blen_FACET_DBD += drvAsynIPPort.dbd
 # For TPR Triggers
-blen_DBD += tprTriggerAsynDriver.dbd
-blen_DBD += tprPatternAsynDriver.dbd
+blen_FACET_DBD += tprTriggerAsynDriver.dbd
+blen_FACET_DBD += tprPatternAsynDriver.dbd
 
 # ================================================================================
 # The system command will be mainly used by linux hosted IOCs
 # Very useful for changing kernel thread priorities for kernel drivers
 # ================================================================================
-blen_DBD += system.dbd
+blen_FACET_DBD += system.dbd
 
-blen_DBD += asSupport.dbd
-blen_DBD += asyn.dbd
+blen_FACET_DBD += asSupport.dbd
+blen_FACET_DBD += asyn.dbd
 
 # ========================================
 # Required for Qsrv
 # ========================================
-#blen_DBD += PVAServerRegister.dbd
-#blen_DBD += qsrv.dbd
+#blen_FACET_DBD += PVAServerRegister.dbd
+#blen_FACET_DBD += qsrv.dbd
 # ========================================
 
 
-# blen_registerRecordDeviceDriver.cpp derives from blen.dbd
-blen_SRCS += blen_registerRecordDeviceDriver.cpp
+# blen_FACET_registerRecordDeviceDriver.cpp derives from blen.dbd
+blen_FACET_SRCS += blen_FACET_registerRecordDeviceDriver.cpp
 
-blen_SRCS += blenIOCFunctions.cpp
-blen_SRCS += cpswStreamBSA.cpp
-blen_SRCS += blenBSA.cpp
-blen_SRCS += blenFcom.cpp
-blen_SRCS += asubWeightXAxis.c
-blen_SRCS += asubRWF.c
+blen_FACET_SRCS += blenIOCFunctions.cpp
+blen_FACET_SRCS += cpswStreamBSA.cpp
+blen_FACET_SRCS += blenBSA.cpp
+blen_FACET_SRCS += blenFcom.cpp
+blen_FACET_SRCS += asubWeightXAxis.c
+blen_FACET_SRCS += asubRWF.c
 
 # Build the main IOC entry point on workstation OSs.
-blen_SRCS_DEFAULT += blenMain.cpp
-blen_SRCS_vxWorks += -nil-
+blen_FACET_SRCS_DEFAULT += blenMain.cpp
+blen_FACET_SRCS_vxWorks += -nil-
 
 # =====================================================
 # Link in the libraries from other EPICS modules
 # =====================================================
 # For calculated waveforms
-blen_LIBS += calc
+blen_FACET_LIBS += calc
 
 # For FCOM
-blen_LIBS += fcomUtil fcomIocshSupport fcom
-blen_LIBS += udpCommBSD 
+blen_FACET_LIBS += fcomUtil fcomIocshSupport fcom
+blen_FACET_LIBS += udpCommBSD 
 
 # Crossbar control
-blen_LIBS += crossbarControl
+blen_FACET_LIBS += crossbarControl
 
 # TPR trigger
-blen_LIBS += tprTrigger
-blen_LIBS += tprPattern
+blen_FACET_LIBS += tprTrigger
+blen_FACET_LIBS += tprPattern
 
 # BSA
-blen_LIBS += eventBsaSupport
-blen_LIBS += BsaCore
+blen_FACET_LIBS += eventBsaSupport
+blen_FACET_LIBS += BsaCore
 
 # Needed to link in iocAdmin support
-blen_LIBS += devIocStats
+blen_FACET_LIBS += devIocStats
 
 # Needed to link in autosave support
-blen_LIBS += autosave
+blen_FACET_LIBS += autosave
 
 # Needed to link caPutLog support
-blen_LIBS += caPutLog
+blen_FACET_LIBS += caPutLog
 
 # Needed to link cexpsh() support
-#blen_LIBS += $(CEXP_LIBS)
+#blen_FACET_LIBS += $(CEXP_LIBS)
 
 # Needed to link yamlLoader support
-#blen_LIBS += yamlLoader
-blen_LIBS += yamlDownloader
-blen_LIBS += ycpswasyn
-blen_LIBS += yamlLoader
+#blen_FACET_LIBS += yamlLoader
+blen_FACET_LIBS += yamlDownloader
+blen_FACET_LIBS += ycpswasyn
+blen_FACET_LIBS += yamlLoader
 
 # Add support from base/src/vxWorks if needed
-#blen_OBJS_vxWorks += $(EPICS_BASE_BIN)/vxComLibrary
+#blen_FACET_OBJS_vxWorks += $(EPICS_BASE_BIN)/vxComLibrary
 
 # Link Asyn library support.
 # Should be last for other modules that depend on asyn
-blen_LIBS += asyn
+blen_FACET_LIBS += asyn
 
 # ================================================
 # Adding Support for EPICS V4 (i.e. EPICS PVA)
 # ================================================
 # Link in the code from qsrv
-#blen_LIBS += qsrv
+#blen_FACET_LIBS += qsrv
 
 # ================================================
 # EPICS_BASE_PVA_CORE_LIBS comes from pvAccessCPP 
 # and is defined at <>/cfg/CONFIG_PVACCESS_MODULE
 # ================================================
-blen_LIBS += $(EPICS_BASE_PVA_CORE_LIBS)
+blen_FACET_LIBS += $(EPICS_BASE_PVA_CORE_LIBS)
 
 # ================================================
 
 # Finally link to the EPICS Base libraries
-blen_LIBS += $(EPICS_BASE_IOC_LIBS)
+blen_FACET_LIBS += $(EPICS_BASE_IOC_LIBS)
 
 #===========================
 endif
