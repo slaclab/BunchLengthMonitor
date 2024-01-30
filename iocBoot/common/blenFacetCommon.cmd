@@ -45,8 +45,8 @@ epicsEnvSet("DICT_FILE", "yaml/blenMR.dict")
 #               DBD LOADING
 # ===========================================
 ## Register all support components
-dbLoadDatabase("dbd/blen.dbd",0,0)
-blen_registerRecordDeviceDriver(pdbbase)
+dbLoadDatabase("dbd/blen_FACET.dbd",0,0)
+blen_FACET_registerRecordDeviceDriver(pdbbase)
 
 # ===========================================
 #              DRIVER SETUP
