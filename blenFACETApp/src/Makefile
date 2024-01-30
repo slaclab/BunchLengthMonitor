@@ -5,6 +5,7 @@ include $(TOP)/configure/CONFIG
 #  ADD MACRO DEFINITIONS AFTER THIS LINE
 #=============================
 USR_CXXFLAGS += -std=c++0x
+#USR_CXXFLAGS += -Wall -Wextra -Wpedantic -Wshadow -std=c++17 -g
 #=====================================================
 # Path to "NON EPICS" External PACKAGES: USER INCLUDES
 #======================================================
@@ -13,6 +14,7 @@ USR_INCLUDES = -I$(BOOST_INCLUDE) -I$(CPSW_FRAMEWORK_INCLUDE) -I$(YAML_INCLUDE)
 USR_INCLUDES += -I$(CPSW_DEVICE_LIBRARY_INCLUDE)
 USR_INCLUDES += -I$(YAMLREADER_INCLUDE)
 USR_INCLUDES += -I$(DEVICELIB_INCLUDE)
+USR_INCLUDES += -I$(BSA_INCLUDE)
 #=====================================================
 
 #======================================================
@@ -25,6 +27,7 @@ boost_system_DIR = $(BOOST_LIB)
 yaml-cpp_DIR = $(YAML_LIB)
 hpstpr_DIR = $(HPSTPR_LIB)
 yamlReader_DIR = $(YAMLREADER_LIB)
+bsa_DIR	= $(BSA_LIB)
 # =====================================================
 
 # ======================================================
@@ -36,20 +39,21 @@ USR_LIBS_Linux += cpsw
 USR_LIBS_Linux += yaml-cpp
 USR_LIBS_Linux += boost_system
 USR_LIBS_Linux += hpstpr
+USR_LIBS_Linux += bsa
 #======================================================
  
 
 #=============================
 # Build the IOC application
-ifeq ($(T_A),linuxRT-x86_64)
-   PROD_IOC = blen_FACET
-   DBD = blen_FACET.dbd #Required by blen_registerRecordDeviceDriver.cpp 
+PROD_IOC_linuxRT-x86_64 = blen_FACET
+PROD_IOC = $(PROD_IOC_$(T_A))
+DBD = blen_FACET.dbd #Required by blen_registerRecordDeviceDriver.cpp 
 #PROD_IOC = blen_FACET
 # blen_FACET.dbd will be created and installed
 #DBD += blen_FACET.dbd
 
 # blen_FACET.dbd will be made up from these files:
-blen_FACET_DBD += blenDrv.dbd
+blen_FACET_DBD += blenFacetDrv.dbd
 blen_FACET_DBD += base.dbd
 blen_FACET_DBD += devIocStats.dbd
 # Include dbd files from all support applications:
@@ -57,6 +61,7 @@ blen_FACET_DBD += caPutLog.dbd
 #blen_FACET_DBD += $(CEXP_DBDS)
 # ycpswasyn and yamlLoader 
 blen_FACET_DBD += yamlLoader.dbd
+blen_FACET_DBD += bsaAsynDriver.dbd
 blen_FACET_DBD += yamlDownloader.dbd
 blen_FACET_DBD += ycpswasyn.dbd
 # Crossbar control
@@ -84,6 +89,8 @@ blen_FACET_DBD += system.dbd
 blen_FACET_DBD += asSupport.dbd
 blen_FACET_DBD += asyn.dbd
 
+blen_FACET_DBD += pvxsIoc.dbd
+
 # ========================================
 # Required for Qsrv
 # ========================================
@@ -103,7 +110,7 @@ blen_FACET_SRCS += asubWeightXAxis.c
 blen_FACET_SRCS += asubRWF.c
 
 # Build the main IOC entry point on workstation OSs.
-blen_FACET_SRCS_DEFAULT += blenMain.cpp
+blen_FACET_SRCS_DEFAULT += blen_FACET_Main.cpp
 blen_FACET_SRCS_vxWorks += -nil-
 
 # =====================================================
@@ -127,6 +134,9 @@ blen_FACET_LIBS += tprPattern
 blen_FACET_LIBS += eventBsaSupport
 blen_FACET_LIBS += BsaCore
 
+blen_FACET_LIBS += cpsw
+blen_FACET_LIBS += bsaDriver
+
 # Needed to link in iocAdmin support
 blen_FACET_LIBS += devIocStats
 
@@ -145,6 +155,8 @@ blen_FACET_LIBS += yamlDownloader
 blen_FACET_LIBS += ycpswasyn
 blen_FACET_LIBS += yamlLoader
 
+blen_FACET_LIBS += pvxsIoc
+blen_FACET_LIBS += pvxs
 # Add support from base/src/vxWorks if needed
 #blen_FACET_OBJS_vxWorks += $(EPICS_BASE_BIN)/vxComLibrary
 
@@ -170,7 +182,6 @@ blen_FACET_LIBS += $(EPICS_BASE_PVA_CORE_LIBS)
 blen_FACET_LIBS += $(EPICS_BASE_IOC_LIBS)
 
 #===========================
-endif
 
 include $(TOP)/configure/RULES
 #----------------------------------------
