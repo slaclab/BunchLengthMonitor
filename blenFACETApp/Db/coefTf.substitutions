@@ -1,6 +1,6 @@
 #scaling for coefficent B and E to account to ln being applied
 
-file coefTransform.db
+file coefTransformFACET.db
 {
 pattern {P, INST, COEF}
 
