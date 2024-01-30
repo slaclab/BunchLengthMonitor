@@ -139,11 +139,11 @@ static void blen_dumpBSAStreamCallFunc(const iocshArgBuf * args)
 
 
 
-void BlenIOCFunctionsRegistrar(void)
+void BlenFacetIOCFunctionsRegistrar(void)
 {
     iocshRegister(&blenConfigureFuncDef, blenConfigureCallFunc);
     iocshRegister(&blenReportFuncDef, blenReportCallFunc);
     iocshRegister(&blen_dumpBSAStreamFuncDef, blen_dumpBSAStreamCallFunc);
 }
 
-epicsExportRegistrar(BlenIOCFunctionsRegistrar);
+epicsExportRegistrar(BlenFacetIOCFunctionsRegistrar);
