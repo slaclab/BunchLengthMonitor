@@ -85,7 +85,7 @@ DB_INSTALLS += $(CROSSBARCONTROL)/db/crossbarCtrl.db
 
 # BSA
 #DB_INSTALLS += $(EVENT)/db/bsaBLENEdef.db
-DB_INSTALLS += $(EVENT)/db/bsaATTREdef_FACET.db
+DB_INSTALLS += $(EVRCLIENT)/db/bsaATTREdef_FACET.db
 
 # Install Common databases needed by All IOCs
 # ========================================================
