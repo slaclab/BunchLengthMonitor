@@ -53,24 +53,24 @@ DB_INSTALLS += $(YCPSWASYN)/db/RegisterStream16.template
 DB_INSTALLS += $(YCPSWASYN)/db/example.substitutions
 
 # For weight function and final result waveforms
-DB += calculatedWF.db
+DB += calculatedWFFACET.db
 
 # For saving and loading yaml configuration
 DB_INSTALLS += $(YCPSWASYN)/db/saveLoadConfig.db
 
 # For automatic initialization (requires saveLoadConfig.db)
-DB_INSTALLS += $(YCPSWASYN)/db/monitorFPGAReboot.db
+DB_INSTALLS += $(YCPSWASYN)/db/monitorFPGAReboot.db #There is a facet version that we don't import??
 
 DB += blenMR.db
 DB += blenFilters.db
-DB += blenFilterDecoders.db
-DB += weightFunctionXAxis.db
-DB += streamControl.db
-DB += processRawWFHeader.db
-DB += iocMeta.db
-DB += sensCalibration.db
-DB += coefScale.db
-DB += coefTransform.db
+DB += blenFilterDecodersFACET.db
+DB += weightFunctionXAxisFACET.db
+DB += streamControlFACET.db
+DB += processRawWFHeaderFACET.db
+DB += iocMetaFACET.db
+DB += sensCalibrationFACET.db
+DB += coefScaleFACET.db
+DB += coefTransformFACET.db
 DB += coefTf.db
 
 # Install Database for tprTrigger module
