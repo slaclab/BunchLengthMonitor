@@ -17,6 +17,8 @@ USR_INCLUDES += -I$(DEVICELIB_INCLUDE)
 USR_INCLUDES += -I$(COMMONATCA_INCLUDE)
 USR_INCLUDES += -I$(HPSTPR_INCLUDE)
 USR_INCLUDES += -I$(BSA_INCLUDE)
+USR_INCLUDES += -I$(COMMONATCA_INCLUDE)
+
 #=====================================================
 
 #======================================================
@@ -44,6 +46,7 @@ USR_LIBS_Linux += boost_system
 USR_LIBS_Linux += hpstpr
 USR_LIBS_Linux += commonATCA
 USR_LIBS_Linux += bsa
+USR_LIBS_Linux += commonATCA
 #======================================================
  
 

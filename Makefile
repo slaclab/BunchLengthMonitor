@@ -3,7 +3,8 @@ TOP = .
 include $(TOP)/configure/CONFIG
 DIRS := $(DIRS) $(filter-out $(DIRS), configure)
 #DIRS := $(DIRS) $(filter-out $(DIRS), $(wildcard *App))
-DIRS += blenApp
+
+#DIRS += blenApp
 DIRS += blenFACETApp
 DIRS := $(DIRS) $(filter-out $(DIRS), $(wildcard iocBoot))
 
