@@ -14,6 +14,8 @@ USR_INCLUDES = -I$(BOOST_INCLUDE) -I$(CPSW_FRAMEWORK_INCLUDE) -I$(YAML_INCLUDE)
 USR_INCLUDES += -I$(CPSW_DEVICE_LIBRARY_INCLUDE)
 USR_INCLUDES += -I$(YAMLREADER_INCLUDE)
 USR_INCLUDES += -I$(DEVICELIB_INCLUDE)
+USR_INCLUDES += -I$(COMMONATCA_INCLUDE)
+USR_INCLUDES += -I$(HPSTPR_INCLUDE)
 USR_INCLUDES += -I$(BSA_INCLUDE)
 #=====================================================
 
@@ -28,6 +30,7 @@ yaml-cpp_DIR = $(YAML_LIB)
 hpstpr_DIR = $(HPSTPR_LIB)
 yamlReader_DIR = $(YAMLREADER_LIB)
 bsa_DIR	= $(BSA_LIB)
+commonATCA_DIR    = $(COMMONATCA_LIB)
 # =====================================================
 
 # ======================================================
@@ -39,6 +42,7 @@ USR_LIBS_Linux += cpsw
 USR_LIBS_Linux += yaml-cpp
 USR_LIBS_Linux += boost_system
 USR_LIBS_Linux += hpstpr
+USR_LIBS_Linux += commonATCA
 USR_LIBS_Linux += bsa
 #======================================================
  
@@ -124,9 +128,10 @@ blen_FACET_LIBS += fcomUtil fcomIocshSupport fcom
 blen_FACET_LIBS += udpCommBSD 
 
 # Crossbar control
-blen_FACET_LIBS += crossbarControl
+#blen_FACET_LIBS += crossbarControl
 
 # TPR trigger
+blen_FACET_LIBS += ATCACommon
 blen_FACET_LIBS += tprTrigger
 blen_FACET_LIBS += tprPattern
 
