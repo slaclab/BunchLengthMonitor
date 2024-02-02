@@ -40,6 +40,7 @@ USR_LIBS_Linux += yaml-cpp
 USR_LIBS_Linux += boost_system
 USR_LIBS_Linux += hpstpr
 USR_LIBS_Linux += bsa
+USR_LIBS_Linux += commonATCA
 #======================================================
  
 
@@ -65,7 +66,7 @@ blen_FACET_DBD += bsaAsynDriver.dbd
 blen_FACET_DBD += yamlDownloader.dbd
 blen_FACET_DBD += ycpswasyn.dbd
 # Crossbar control
-blen_FACET_DBD += crossbarControl.dbd
+######################blen_FACET_DBD += crossbarControl.dbd
 # BSA
 blen_FACET_DBD += bsaCore.dbd
 blen_FACET_DBD += bsa.dbd

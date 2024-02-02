@@ -3,9 +3,24 @@ TOP = .
 include $(TOP)/configure/CONFIG
 DIRS := $(DIRS) $(filter-out $(DIRS), configure)
 #DIRS := $(DIRS) $(filter-out $(DIRS), $(wildcard *App))
-DIRS += blenApp
+
+#ifeq ($(filter facet,$(MAKECMDGOALS)),facet)
+#    DIRS += blenFACETApp
+#else
+#    DIRS += blenApp
+#endif
+#DIRS += blenApp
 DIRS += blenFACETApp
 DIRS := $(DIRS) $(filter-out $(DIRS), $(wildcard iocBoot))
+
+#ifeq ($(filter facet,$(MAKECMDGOALS)),facet)
+#    DIRS += blenFACETApp
+#else
+#    DIRS += blenApp
+#endif
+
+#facet: DIRS += blenFACETApp
+#facet: all
 
 define DIR_template
  $(1)_DEPEND_DIRS = configure

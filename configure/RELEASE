@@ -5,6 +5,15 @@
 #       BASE_MODULE_VERSION
 #       EPICS_MODULES
 # from one of the following options
+
+lcls: 
+  -include $(TOP)/configure/RELEASE.lcls
+lcls: all
+
+facet: 
+  -include $(TOP)/configure/RELEASE.facet
+facet: all
+
 -include $(TOP)/RELEASE_SITE
 
 # ==========================================================
