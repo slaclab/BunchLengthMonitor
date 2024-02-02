@@ -15,6 +15,8 @@ USR_INCLUDES += -I$(CPSW_DEVICE_LIBRARY_INCLUDE)
 USR_INCLUDES += -I$(YAMLREADER_INCLUDE)
 USR_INCLUDES += -I$(DEVICELIB_INCLUDE)
 USR_INCLUDES += -I$(BSA_INCLUDE)
+USR_INCLUDES += -I$(COMMONATCA_INCLUDE)
+
 #=====================================================
 
 #======================================================
@@ -28,6 +30,7 @@ yaml-cpp_DIR = $(YAML_LIB)
 hpstpr_DIR = $(HPSTPR_LIB)
 yamlReader_DIR = $(YAMLREADER_LIB)
 bsa_DIR	= $(BSA_LIB)
+commonATCA_DIR    = $(COMMONATCA_LIB)
 # =====================================================
 
 # ======================================================
@@ -66,7 +69,7 @@ blen_FACET_DBD += bsaAsynDriver.dbd
 blen_FACET_DBD += yamlDownloader.dbd
 blen_FACET_DBD += ycpswasyn.dbd
 # Crossbar control
-######################blen_FACET_DBD += crossbarControl.dbd
+blen_FACET_DBD += crossbarControl.dbd
 # BSA
 blen_FACET_DBD += bsaCore.dbd
 blen_FACET_DBD += bsa.dbd
