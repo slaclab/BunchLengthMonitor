@@ -85,30 +85,30 @@ dbLoadRecords("db/blenMR.db", "AREA=${AREA}, POS=${POS}, INST=${INST}A, INST_NUM
 dbLoadRecords("db/blenMR.db", "AREA=${AREA}, POS=${POS}, INST=${INST}B, INST_NUM=B, PORT=cpsw, AMC=1")
 
 # coeficent rescaling for windown size
-dbLoadRecords("db/sensCalibration.db","AREA=${AREA}, POS=${POS}, INST=${INST}A")
-dbLoadRecords("db/sensCalibration.db","AREA=${AREA}, POS=${POS}, INST=${INST}B")
-dbLoadRecords("db/coefScale.db","P=BLEN:${AREA}:${POS}, INST=${INST}A, COEF=0")
-dbLoadRecords("db/coefScale.db","P=BLEN:${AREA}:${POS}, INST=${INST}A, COEF=1")
-dbLoadRecords("db/coefScale.db","P=BLEN:${AREA}:${POS}, INST=${INST}B, COEF=0")
-dbLoadRecords("db/coefScale.db","P=BLEN:${AREA}:${POS}, INST=${INST}B, COEF=1")
+dbLoadRecords("db/sensCalibrationFACET.db","AREA=${AREA}, POS=${POS}, INST=${INST}A")
+dbLoadRecords("db/sensCalibrationFACET.db","AREA=${AREA}, POS=${POS}, INST=${INST}B")
+dbLoadRecords("db/coefScaleFACET.db","P=BLEN:${AREA}:${POS}, INST=${INST}A, COEF=0")
+dbLoadRecords("db/coefScaleFACET.db","P=BLEN:${AREA}:${POS}, INST=${INST}A, COEF=1")
+dbLoadRecords("db/coefScaleFACET.db","P=BLEN:${AREA}:${POS}, INST=${INST}B, COEF=0")
+dbLoadRecords("db/coefScaleFACET.db","P=BLEN:${AREA}:${POS}, INST=${INST}B, COEF=1")
 
 #rescaling for coefficents B and E
 dbLoadRecords("db/coefTf.db", "P=BLEN:${AREA}:${POS}, INST=${INST}A")
 dbLoadRecords("db/coefTf.db", "P=BLEN:${AREA}:${POS}, INST=${INST}B")
 
 # Switch on/off stream data from FPGA
-dbLoadRecords("db/streamControl.db", "AREA=${AREA}, POS=${POS}, INST=${INST}")
+dbLoadRecords("db/streamControlFACET.db", "AREA=${AREA}, POS=${POS}, INST=${INST}")
 
 # Records to manipulate waveforms from detectors
-dbLoadRecords("db/calculatedWF.db", "AREA=${AREA}, POS=${POS}, INST=${INST}A")
-dbLoadRecords("db/calculatedWF.db", "AREA=${AREA}, POS=${POS}, INST=${INST}B")
-dbLoadRecords("db/processRawWFHeader.db", "AREA=${AREA}, POS=${POS}, INST=${INST}A")
-dbLoadRecords("db/processRawWFHeader.db", "AREA=${AREA}, POS=${POS}, INST=${INST}B")
-dbLoadRecords("db/weightFunctionXAxis.db", "AREA=${AREA}, POS=${POS}, INST=${INST}A")
-dbLoadRecords("db/weightFunctionXAxis.db", "AREA=${AREA}, POS=${POS}, INST=${INST}B")
+dbLoadRecords("db/calculatedWFFACET.db", "AREA=${AREA}, POS=${POS}, INST=${INST}A")
+dbLoadRecords("db/calculatedWFFACET.db", "AREA=${AREA}, POS=${POS}, INST=${INST}B")
+dbLoadRecords("db/processRawWFHeaderFACET.db", "AREA=${AREA}, POS=${POS}, INST=${INST}A")
+dbLoadRecords("db/processRawWFHeaderFACET.db", "AREA=${AREA}, POS=${POS}, INST=${INST}B")
+dbLoadRecords("db/weightFunctionXAxisFACET.db", "AREA=${AREA}, POS=${POS}, INST=${INST}A")
+dbLoadRecords("db/weightFunctionXAxisFACET.db", "AREA=${AREA}, POS=${POS}, INST=${INST}B")
 
 # Filter control
-dbLoadRecords("db/blenFilterDecoders.db", "AREA=${AREA}, POS=${POS}")
+dbLoadRecords("db/blenFilterDecodersFACET.db", "AREA=${AREA}, POS=${POS}")
 dbLoadRecords("db/blenFilters.db", "AREA=${AREA}, POS=${POS}, INST=${INST}")
 
 epicsEnvSet("PART_PV", "${AREA}:BL01")
@@ -117,7 +117,7 @@ epicsEnvSet("PART_PV", "${AREA}:BL01")
 dbLoadRecords("db/tprTrig.db",     "LOCA=${AREA}, IOC_UNIT=${IOC_UNIT}, INST=${ATCA_SLOT}, PORT=trig")
 dbLoadRecords("db/tprPattern.db", "DEV=${IOC_NAME}, PORT=pattern, LOCA=${AREA}, IOC_UNIT=${IOC_UNIT}, INST=${ATCA_SLOT}")
 dbLoadRecords("db/crossbarCtrl.db", "DEV=${IOC_NAME}, PORT=crossbar")
-dbLoadRecords("db/iocMeta.db","AREA=${AREA}, IOC_UNIT=${IOC_UNIT}")
+dbLoadRecords("db/iocMetaFACET.db","AREA=${AREA}, IOC_UNIT=${IOC_UNIT}")
 
 # BSA records
 dbLoadRecords("db/bsaATTREdef_FACET.db", "D=BLEN:${AREA}:${POS},ATTR=AIMAX,EG=fs,HO="",LO="",PR="",LNK="",AD="",I=BLEN:${AREA}:${POS}:AIMAX")

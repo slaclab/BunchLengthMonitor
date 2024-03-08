@@ -8,9 +8,15 @@ file "RegisterOut.template" { pattern
 { BLEN:$(AREA):$(POS), $(INST)_NumSamp1,    "Number of samples pos edge",     "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS0:NumSamp1 }
 {  BLEN:$(AREA):$(POS), $(INST)_TrigDelay1, "Number of samples at edge",      "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS0:TrigDelay1 }
 {  BLEN:$(AREA):$(POS), FLT_CNTL,           "Move Filters In/Out",            "NO",   "Passive",  $(PORT),    RTM:FilterCntl             }
+{ BLEN:$(AREA):$(POS), RxPolarity,          "",                               "NO",   "Passive",  $(PORT),    BSA:RxPolarity}
+{ BLEN:$(AREA):$(POS), PhaseTarget,         "",                               "NO",   "Passive",  $(PORT),    BSA:PhaseTarget}
 #{ BLEN:$(AREA):$(POS),  NoBeamEn,           "No Beam Enabled",                "NO",   "Passive",  $(PORT),    Conf:NoBeamEn }
 {  BLEN:$(AREA):$(POS), $(INST)_TMIT_T,     "Threshold to ignore TMIT",        "NO",   "Passive",  $(PORT),    Conf:TmitThreshold        }
 { BLEN:$(AREA):$(POS),  $(INST)_TMITSim,    "Enable AMC0 TMIT simulation",     "NO",   "Passive",  $(PORT),    AMC$(AMC):SENS0:TMITSim }
+{ BLEN:$(AREA):$(POS),  AppType,            "",                               "No",   "Passive",  $(PORT),    CONF:AppType}
+{ BLEN:$(AREA):$(POS),  Location,           "",                               "No",   "Passive",  $(PORT),    CONF:Location}
+{ BLEN:$(AREA):$(POS), ScratchPad,          "Register to test R/W"            "NO",   "Passive",  $(PORT),    ScratchPad }
+
 }
 
 file "RegisterOutRBV.template" { pattern
@@ -19,6 +25,8 @@ file "RegisterOutRBV.template" { pattern
 { BLEN:$(AREA):$(POS), $(INST)_NumSamp1_RBV,       "Number of samples pos edge",   "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS0:NumSamp1 }
 { BLEN:$(AREA):$(POS), $(INST)_TrigDelay1_RBV,     "Number of samples at edge",    "YES",  "1 second",  $(PORT),    AMC$(AMC):SENS0:TrigDelay1 }
 {  BLEN:$(AREA):$(POS), FLT_CNTL_RBV,              "Move Filters In/Out",          "YES",  "1 second",  $(PORT),    RTM:FilterCntl             }
+{ BLEN:$(AREA):$(POS), RxPolarityRBV,              "",                             "YES",  "1 second",  $(PORT),    BSA:RxPolarity}
+{ BLEN:$(AREA):$(POS), PhaseTargetRBV,             "",                             "YES",  "1 second",  $(PORT),    BSA:PhaseTarget}
 #{ BLEN:$(AREA):$(POS),  NoBeamEn_RBV,              "No Beam Enabled",              "YES",  ".5 second", $(PORT),    Conf:NoBeamEn }
 {  BLEN:$(AREA):$(POS), $(INST)_TMIT_T_RBV,        "Threshold to ignore TMIT",      "YES",  "1 second", $(PORT),    Conf:TmitThreshold        }
 { BLEN:$(AREA):$(POS), $(INST)_TMITSim_RBV,        "Enable AMC0 TMIT simulation",   "YES",  "1 second", $(PORT),    AMC$(AMC):SENS0:TMITSim }
@@ -27,6 +35,24 @@ file "RegisterOutRBV.template" { pattern
 # Register In
 file "RegisterIn.template" { pattern
 { P,                    R,            DESC,                         PINI,   SCAN,       PORT,    EGU  ,  PARAM         }
+{ BLEN:$(AREA):$(POS), DeviceDna,   "Xilinx Device DNA",           "YES",  "Passive",   $(PORT),  ""  ,  STAT:DeviceDna}
+{ BLEN:$(AREA):$(POS), FpgaVersion, "FPGA Firmware Version Number","YES",  "Passive",   $(PORT),  ""  ,  STAT:FpgaVersion}
+{ BLEN:$(AREA):$(POS), UpTimeCnt,   "Seconds since last reset",    "YES",  "1 second",  $(PORT),  ""  ,  STAT:UpTimeCnt}
+{ BLEN:$(AREA):$(POS), DeviceId,    "Device Identification",       "YES",  "Passive",   $(PORT),  ""  ,  STAT:DeviceId}
+{ BLEN:$(AREA):$(POS), ServerRemoteIp,  "Backplane Rem Srv IP",    "YES",  "1 second",  $(PORT),  ""  ,  CONF:ServerRemoteIp}
+{ BLEN:$(AREA):$(POS), ServerRemotePort,"Backplane Rem Srv Port",  "YES",  "1 second",  $(PORT),  ""  ,  CONF:ServerRemotePort}
+
+
+
+# BSA status
+{ BLEN:$(AREA):$(POS), SofCount,       "BSA: Start of Frame Count",              "YES",  "1 second", $(PORT),   "",   BSA:sofCount      }
+{ BLEN:$(AREA):$(POS), EofCount,       "BSA: End of Frame Count",                "YES",  "1 second", $(PORT),   "",   BSA:eofCount      }
+{ BLEN:$(AREA):$(POS), CrcErrCount,    "BSA: CRC error count",                   "YES",  "1 second", $(PORT),   "",   BSA:CrcErrCount   }
+{ BLEN:$(AREA):$(POS), RxClkCount,     "BSA: Recovered clk count /16",           "YES",  "1 second", $(PORT),   "",   BSA:RxClkCount    }
+{ BLEN:$(AREA):$(POS), RxRstCount,     "BSA: Recieve link reset count",          "YES",  "1 second", $(PORT),   "",   BSA:RxRstCount    }
+{ BLEN:$(AREA):$(POS), RxDecErrCount,  "BSA: Recieve 8b/10b decode error count", "YES",  "1 second", $(PORT),   "",   BSA:RxDecErrCount }
+{ BLEN:$(AREA):$(POS), RxDspErrCount,  "BSA: Recieve disparity error count",     "YES",  "1 second", $(PORT),   "",   BSA:RxDspErrCount }
+
 { BLEN:$(AREA):$(POS), FLT_SWT_IN,  "Filter switches IN status",   "YES",  ".1 second", $(PORT),  ""  ,  RTM:SwInsert  }
 { BLEN:$(AREA):$(POS), FLT_SWT_OUT, "Filter switches OUT status",  "YES",  ".1 second", $(PORT),  ""  ,  RTM:SwRemove  }
 { BLEN:$(AREA):$(POS), $(INST)_AmcClkFreq,  "AMC Clock frequency",         "YES",  "1 second" , $(PORT),  "Hz",  AMC$(AMC):AmcClkFreq
@@ -112,6 +138,10 @@ file "RegisterDoubleOutRBV.template" { pattern
 { BLEN:$(AREA):$(POS), $(INST)_CoefIRBV,     "Coef I",                     "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefI  }
 }
 
+file "RegisterArrayChar.template" { pattern
+{ P,        R,              DESC,                           NELM,   PINI,   SCAN,       PORT,  PARAM       }
+{ BLEN:$(AREA):$(POS), BuildStamp,  "Build Stamp",          256,       "YES",  "Passive",   $(PORT),  STAT:BuildStamp}
+}
 
 #======================================
 # Register with Stream interfaces
