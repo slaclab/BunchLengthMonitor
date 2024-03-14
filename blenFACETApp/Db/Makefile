@@ -81,7 +81,7 @@ DB_INSTALLS += $(TPRTRIGGER)/db/tprDeviceNamePV.db
 DB_INSTALLS += $(TPRPATTERN)/db/tprPattern.db
 
 # Database for crossbar control
-DB_INSTALLS += $(ATCACOMMON)/db/crossbarCtrl.db
+DB_INSTALLS += $(CROSSBARCONTROL)/db/crossbarCtrl.db
 
 # BSA
 #DB_INSTALLS += $(EVENT)/db/bsaBLENEdef.db
