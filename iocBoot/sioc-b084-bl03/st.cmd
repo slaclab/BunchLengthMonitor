@@ -1,4 +1,5 @@
-#!../../bin/linuxRT-x86_64/blen_FACET
+#!../../bin/linuxRT-x86_64/blen 
+#_FACET
 
 ## You may have to change blen to something else
 ## everywhere it appears in this file
@@ -33,7 +34,8 @@ epicsEnvSet(IOC_NAME,"SIOC:$(AREA):BL03")
 
 cd ${TOP}
 
-< iocBoot/common/blenFacetCommon.cmd
+< iocBoot/common/blenCommon.cmd 
+#FacetCommon.cmd
 
 # ===========================================
 #               ASYN MASKS

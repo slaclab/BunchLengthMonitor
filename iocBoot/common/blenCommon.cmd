@@ -29,6 +29,13 @@ blen_registerRecordDeviceDriver(pdbbase)
 #              DRIVER SETUP
 # ===========================================
 
+# YAML directory
+epicsEnvSet("YAML_DIR","$(IOC_DATA)/$(IOC)/yaml")
+
+# Yaml File
+epicsEnvSet("TOP_YAML","$(YAML_DIR)/000TopLevel.yaml")
+epicsEnvSet("YAML_CONFIG_FILE", "$(YAML_DIR)/config/defaultsGap.yaml")
+
 ## Yaml Downloader
 DownloadYamlFile("$(FPGA_IP)", "$(YAML_DIR)")
 
