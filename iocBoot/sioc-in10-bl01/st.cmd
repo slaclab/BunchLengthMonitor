@@ -14,7 +14,7 @@ epicsEnvSet("AREA", "IN10")
 epicsEnvSet("POS", "596")
 epicsEnvSet("IOC_UNIT","BL01")
 epicsEnvSet("INST", "BZ10596")
-epicsEnvSet("ATCA_SLOT", "5")
+epicsEnvSet("ATCA_SLOT", "0")
 epicsEnvSet("BLEN_ASYN_PORT", "ATCA$(ATCA_SLOT)")
 
 # Address of the FCOM network
