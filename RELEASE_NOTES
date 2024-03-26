@@ -9,6 +9,10 @@
 #  Auth: 10-May-2017 C. Ford         (caf)
 #  Rev:  dd-mmm-yyyy, Reviewer's Name    (USERNAME)
 #--------------------------------------------------------------
+R6.0.0-mergeFacet: 03/26/2024 Lukas Ho-Koziol (lujko)
+    - Version builds facet binary
+    - Updates module versions
+    - Merges Facet and LCLS files into one application
 R5.4.2: 05/10/2023 Kyle Leleux (kleleux)
     - Upgrade to bsaDriver R3.2.1
     - Implemeneted BSAS
