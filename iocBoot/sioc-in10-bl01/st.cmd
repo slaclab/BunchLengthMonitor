@@ -33,7 +33,7 @@ epicsEnvSet(IOC_NAME,"SIOC:$(AREA):BL01")
 
 cd ${TOP}
 
-< iocBoot/common/blenCommon.cmd
+< iocBoot/common/blenFacetCommon.cmd
 
 # ===========================================
 #               ASYN MASKS
