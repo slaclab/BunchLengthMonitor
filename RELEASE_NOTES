@@ -9,6 +9,8 @@
 #  Auth: 10-May-2017 C. Ford         (caf)
 #  Rev:  dd-mmm-yyyy, Reviewer's Name    (USERNAME)
 #--------------------------------------------------------------
+R7.1.0: 04/09/2024 Lukas Ho-Koziol (lujko)
+    - Updated facet tpr recorord's instance from ATCA_SLOT to 0.
 R7.0.0: 04/05/2024 Lukas Ho-Koziol (lujko)
     - Update makefile to compile both blen and blen_FACET binaries at the same time
 R6.0.1-mergeFacet: 03/26/2024 Lukas Ho-Koziol (lujko)

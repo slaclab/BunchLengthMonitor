@@ -114,8 +114,8 @@ dbLoadRecords("db/blenFilters.db", "AREA=${AREA}, POS=${POS}, INST=${INST}")
 epicsEnvSet("PART_PV", "${AREA}:BL01")
 
 # Timing crossbar, pattern, and trigger
-dbLoadRecords("db/tprTrig.db",     "LOCA=${AREA}, IOC_UNIT=${IOC_UNIT}, INST=${ATCA_SLOT}, PORT=trig")
-dbLoadRecords("db/tprPattern.db", "DEV=${IOC_NAME}, PORT=pattern, LOCA=${AREA}, IOC_UNIT=${IOC_UNIT}, INST=${ATCA_SLOT}")
+dbLoadRecords("db/tprTrig.db",     "LOCA=${AREA}, IOC_UNIT=${IOC_UNIT}, INST=0, PORT=trig")
+dbLoadRecords("db/tprPattern.db", "DEV=${IOC_NAME}, PORT=pattern, LOCA=${AREA}, IOC_UNIT=${IOC_UNIT}, INST=0")
 dbLoadRecords("db/crossbarCtrl.db", "DEV=${IOC_NAME}, PORT=crossbar")
 dbLoadRecords("db/iocMetaFACET.db","AREA=${AREA}, IOC_UNIT=${IOC_UNIT}")
 
