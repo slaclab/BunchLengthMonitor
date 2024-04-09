@@ -21,7 +21,7 @@ epicsEnvSet("BLEN_ASYN_PORT", "ATCA$(ATCA_SLOT)")
 epicsEnvSet("FCOM_NETWORK", "224.0.0.0")
 
 # TMIT PV to read the value from, by using FCOM
-#epicsEnvSet("TMIT_PV", "BPMS:LI20:3218:TMIT")
+epicsEnvSet("TMIT_PV", "BPMS:LI20:3218:TMIT")
 
 # FPGA IP address for CPSW
 epicsEnvSet("FPGA_IP", "10.0.1.10${ATCA_SLOT}")
@@ -33,7 +33,7 @@ epicsEnvSet(IOC_NAME,"SIOC:$(AREA):BL01")
 
 cd ${TOP}
 
-< iocBoot/common/blenCommon.cmd
+< iocBoot/common/blenFacetCommon.cmd
 
 # load alias
 dbLoadRecords("iocBoot/sioc-li20-bl01/LI20.alias", "AREA=${AREA},POS=${POS}")
