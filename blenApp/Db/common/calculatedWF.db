@@ -244,6 +244,17 @@ record (aSub, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):RWF_U16") {
   field(SCAN, "1 second") 
 }
 
+record (aSub, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):RWF_U16_FAST") {
+  field(DESC, "Faster raw waveform")
+  field(SNAM, "calcRWF16")
+  field(INPA, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):R_WF")
+  field(NOA,  "1024")
+  field(NOVA, "1024")
+  field(FTA,  "SHORT")
+  field(FTVA, "SHORT")
+  field(SCAN, "Passive") 
+}
+
 record (aSub, "BLEN:$(AREA):$(POS):$(AMC)$(SENS):IWF_U16") {
   field(DESC, "Slow integration window waveform")
   field(SNAM, "calcRWF16")
