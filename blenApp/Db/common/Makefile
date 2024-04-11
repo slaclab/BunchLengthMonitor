@@ -43,7 +43,7 @@ DB_INSTALLS += $(YCPSWASYN)/db/RegisterEnumMBBOut.template
 DB_INSTALLS += $(YCPSWASYN)/db/RegisterEnumMBBOutRBV.template
 DB_INSTALLS += $(YCPSWASYN)/db/RegisterCommand.template
 DB_INSTALLS += $(YCPSWASYN)/db/RegisterStream.template
-#DB_INSTALLS += $(YCPSWASYN)/db/RegisterStream16.template
+DB_INSTALLS += $(YCPSWASYN)/db/RegisterStream16.template
 
 DB_INSTALLS += $(YCPSWASYN)/db/saveLoadConfig.db
 
@@ -80,7 +80,7 @@ DB_INSTALLS += $(AUTOSAVE)/db/save_restoreStatus.db
 DB += RegDoubleIn.template
 DB += RegDoubleOut.template
 DB += RegDoubleOutRBV.template
-DB += RegisterStream16.template
+DB += RegisterStream16_override.template
 
 # Main User-visible PVs 
 # --------------------------------------------------

@@ -14,9 +14,15 @@
 
 file "RegDoubleIn.template" { pattern
 { P,        R,                DESC,                     PINI,   SCAN,         PORT,       EGU,    PREC,     PARAM          }
-{ $(P),     $(AMC):SUM,              "",               "YES",  ".5 second",  $(PORT),    "",     "2",    AMC$(AMC):SUM    }
-{ $(P),     $(AMC):IMAX,             "",               "YES",  ".5 second",  $(PORT),    "",     "2",    AMC$(AMC):IMAX   }
-{ $(P),     $(AMC):TMIT,             "",               "YES",  ".5 second",  $(PORT),    "",     "2",    AMC$(AMC):TMIT   }
+{ $(P),     $(AMC):SUM,              "",               "YES",  ".5 second",  $(PORT),    "",      "2",    AMC$(AMC):SUM                }
+{ $(P),     $(AMC):IMAX,             "",               "YES",  ".5 second",  $(PORT),    "",      "2",    AMC$(AMC):IMAX               }
+{ $(P),     $(AMC):TMIT,             "",               "YES",  ".5 second",  $(PORT),    "",      "2",    AMC$(AMC):TMIT               }
+{ $(P),     $(AMC):RAWAVERAGE00,     "",               "YES",  ".5 second",  $(PORT),    "",      "2",    AMC$(AMC):RawAverageG0adc0   }
+{ $(P),     $(AMC):RAWAVERAGE01,     "",               "YES",  ".5 second",  $(PORT),    "",      "2",    AMC$(AMC):RawAverageG0adc1   }
+{ $(P),     $(AMC):RAWAVERAGE10,     "",               "YES",  ".5 second",  $(PORT),    "",      "2",    AMC$(AMC):RawAverageG1adc0   }
+{ $(P),     $(AMC):RAWAVERAGE11,     "",               "YES",  ".5 second",  $(PORT),    "",      "2",    AMC$(AMC):RawAverageG1adc1   }
+{ $(P),     $(AMC):RAWAVERAGE20,     "",               "YES",  ".5 second",  $(PORT),    "",      "2",    AMC$(AMC):RawAverageG2adc0   }
+{ $(P),     $(AMC):RAWAVERAGE21,     "",               "YES",  ".5 second",  $(PORT),    "",      "2",    AMC$(AMC):RawAverageG2adc1   }
 }
 
 ########################################################################################################################

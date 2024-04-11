@@ -1,4 +1,4 @@
-#!../../bin/linuxRT-x86_64/blen_FACET
+#!../../bin/linuxRT-x86_64/blen
 
 ## You may have to change blen to something else
 ## everywhere it appears in this file
@@ -10,73 +10,82 @@
 # ===========================================
 
 # Area, position, and instrument names to be used in record names
-epicsEnvSet("AREA", "B084")
-epicsEnvSet("POS", "359")
-epicsEnvSet("IOC_UNIT","BL03")
-epicsEnvSet("INST", "BZ11359")
-epicsEnvSet("ATCA_SLOT", "7")
-epicsEnvSet("BLEN_ASYN_PORT", "ATCA$(ATCA_SLOT)")
+epicsEnvSet("AREA", "BC1B")
+epicsEnvSet("POS", "850")
+epicsEnvSet("INST", "BZ11B")
+epicsEnvSet("IOC_UNIT", "BL01")
+epicsEnvSet("ATCA_SLOT", "6")
+epicsEnvSet("BLEN_ASYN_PORT", "ATCA7")
+epicsEnvSet("L2MPSASYN_PORT","L2MPSASYN_PORT")
 
-# Address of the FCOM network
-epicsEnvSet("FCOM_NETWORK", "224.0.0.0")
+# YAML directory
+epicsEnvSet("YAML_DIR","$(IOC_DATA)/$(IOC)/yaml")
 
-# TMIT PV to read the value from, by using FCOM
-epicsEnvSet("TMIT_PV", "BPMS:LI11:358:TMIT")
+# Yaml File
+epicsEnvSet("TOP_YAML","$(YAML_DIR)/000TopLevel.yaml")
+epicsEnvSet("YAML_CONFIG_FILE", "$(YAML_DIR)/config/defaultsPyro.yaml")
 
-# FPGA IP address for CPSW
-epicsEnvSet("FPGA_IP", "10.0.1.10${ATCA_SLOT}")
-# Port number to send TMIT data to the FPGA
-epicsEnvSet("IP_PORT_TMIT", "8195")
+epicsEnvSet("FPGA_IP", "10.0.1.106")
 
 # IOC name for IOC admin
-epicsEnvSet(IOC_NAME,"SIOC:$(AREA):BL03")
+epicsEnvSet(IOC_NAME,"SIOC:$(AREA):$(IOC_UNIT)")
 
-cd ${TOP}
+# Which version of the Application to use - "LCLS1" or "LCLS2"
+epicsEnvSet("BLEN_VERSION", "LCLS2")
+epicsEnvSet("DICT_FILE", "yaml/blenLCLS2.dict")
 
-< iocBoot/common/blenCommon.cmd 
-#FacetCommon.cmd
+cd $(TOP)
 
-# ===========================================
-#               ASYN MASKS
-# ===========================================
+< iocBoot/common/blenCommon.cmd
 
-# ***********************************
-# * Asyn Masks for all Asyn drivers *
+# Motion control records
+dbLoadRecords("db/motionCtrl.db", "P=BLEN:$(AREA):$(POS)")
+dbLoadRecords("db/motionCtrlRB.db", "P=BLEN:$(AREA):$(POS)")
 
-#asynSetTraceMask(cpsw, -1, 9)
-#asynSetTraceMask(crossbar, -1, 9)
-#asynSetTraceMask(trig, -1, 9)
-#asynSetTraceMask(pattern, -1, 9)
+# Initialization records
+dbLoadRecords("db/initMode.db", "P=BLEN:$(AREA):$(POS), AMC=0")
+dbLoadRecords("db/initMode.db", "P=BLEN:$(AREA):$(POS), AMC=1")
+dbLoadRecords("db/initMotion.db", "P=BLEN:$(AREA):$(POS)")
 
-# ===========================================
-#               DB LOADING
-# ===========================================
+# Parse IP address
+dbLoadRecords("db/ipAddr.db", "P=BLEN:$(AREA):$(POS), SRC=ServerRemoteIp")
 
-
-# ===========================================
-#           SETUP AUTOSAVE/RESTORE
-# ===========================================
+# BPM Scale Factors:
+dbLoadRecords("db/blen_bpm_coef.db", "P=BLEN:$(AREA):$(POS), BPM0=BPMS:COL1:120, BPM1=BPMS:BC1B:440, AMC=0")
+dbLoadRecords("db/blen_bpm_coef.db", "P=BLEN:$(AREA):$(POS), BPM0=BPMS:COL1:120, BPM1=BPMS:BC1B:440, AMC=1")
 
 # ===========================================
 #               IOC INIT
 # ===========================================
+callbackSetQueueSize(12000)
 iocInit()
-
-# Enforce RTM timing
-crossbarControl "FPGA" "LCLS1"
 
 # Turn on caPutLogging:
 # Log values only on change to the iocLogServer:
-caPutLogInit("${EPICS_CA_PUT_LOG_ADDR}")
+caPutLogInit("$(EPICS_CA_PUT_LOG_ADDR)")
 caPutLogShow(2)
 
-# blenConfigure parameters:
-# 1 - Station name
-# 2 - BSA stream name must be identical to definition in yaml file
-# 3 - PV used to get TMIT from FCOM
-# 4 - IP address and port to send TMIT information to ATCA
-blenConfigure "BLEN:${AREA}:${POS}" "${BSA_STREAM_YAML_NAME}" "${TMIT_PV}" "${FPGA_IP}:${IP_PORT_TMIT}"
-
-dbpf ${IOC_NAME}:TCRB1:OUTPUTCONFIG FPGA
-
 < iocBoot/common/start_restore_soft.cmd
+
+epicsThreadSleep(20)
+# Switching to running mode to allow autosave to put values in A0 and A1 coefficients
+dbpf BLEN:${AREA}:${POS}:0:CALIBMODEINIT.PROC 1
+dbpf BLEN:${AREA}:${POS}:1:CALIBMODEINIT.PROC 1
+# Forcing the motors to process to fix mismatched readback and control values
+dbpf BLEN:${AREA}:${POS}:MOTIONINIT.PROC 1
+epicsThreadSleep(2)
+dbpf BLEN:${AREA}:${POS}:MOTIONINIT2.PROC 1
+epicsThreadSleep(2)
+dbpf BLEN:${AREA}:${POS}:MOTIONINIT3.PROC 1
+epicsThreadSleep(2)
+dbpf BLEN:${AREA}:${POS}:MOTIONINIT4.PROC 1
+epicsThreadSleep(2)
+dbpf BLEN:${AREA}:${POS}:MOTIONINIT5.PROC 1
+epicsThreadSleep(2)
+dbpf BLEN:${AREA}:${POS}:MOTIONINIT6.PROC 1
+epicsThreadSleep(2)
+dbpf BLEN:${AREA}:${POS}:MOTIONINIT7.PROC 1
+
+# Enabling MPS
+dbpf ${L2MPS_PREFIX}:THR_LOADED 1
+dbpf ${L2MPS_PREFIX}:MPS_EN 1

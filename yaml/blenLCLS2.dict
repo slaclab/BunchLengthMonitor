@@ -90,11 +90,17 @@
 /mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/FinalSum                   AMC1:BLEN
 /mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/MultResultH                AMC0:TMIT
 /mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/MultResultH                AMC1:TMIT
-/mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/RawAverageG0adc0           AMC0:RawAverageG0adc0
+/mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/RawAverageG0adc0           AMC0:RawAverageG0adc0
+/mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/RawAverageG0adc0           AMC1:RawAverageG0adc0
+/mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/RawAverageG0adc1           AMC0:RawAverageG0adc1
 /mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/RawAverageG0adc1           AMC1:RawAverageG0adc1
-/mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/RawAverageG1adc0           AMC0:RawAverageG1adc0
+/mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/RawAverageG1adc0           AMC0:RawAverageG1adc0
+/mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/RawAverageG1adc0           AMC1:RawAverageG1adc0
+/mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/RawAverageG1adc1           AMC0:RawAverageG1adc1
 /mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/RawAverageG1adc1           AMC1:RawAverageG1adc1
-/mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/RawAverageG2adc0           AMC0:RawAverageG2adc0
+/mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/RawAverageG2adc0           AMC0:RawAverageG2adc0
+/mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/RawAverageG2adc0           AMC1:RawAverageG2adc0
+/mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/RawAverageG2adc1           AMC0:RawAverageG2adc1
 /mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/RawAverageG2adc1           AMC1:RawAverageG2adc1
 
 # Intermediary calculation results
@@ -212,6 +218,8 @@
 /mmio/AppTop/AppCore/SysGen[1]/DspCoreConfig/CoefA5                  AMC1:CoefA5
 
 /mmio/AppTop/AppCore/SysGen[0]/DspCoreConfig/CoefAlf0                AMC0:CoefAlf0
+/mmio/AppTop/AppCore/SysGen[1]/DspCoreConfig/CoefAlf0                AMC1:CoefAlf0
+/mmio/AppTop/AppCore/SysGen[0]/DspCoreConfig/CoefAlf1                AMC0:CoefAlf1
 /mmio/AppTop/AppCore/SysGen[1]/DspCoreConfig/CoefAlf1                AMC1:CoefAlf1
 
 /mmio/AppTop/AppCore/SysGen[0]/DspCoreConfig/CoefB                   AMC0:CoefB

@@ -60,38 +60,42 @@ file "RegDoubleIn.template" { pattern
 
 file "RegDoubleOut.template" { pattern
 { P,              R,            DESC,                           PINI,    SCAN,       PORT,      EGU,          PARAM,        PREC }
-{ $(P),     $(AMC):CoefA0,       "Coef A0 for 1st group",      "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefA0,    5   }
-{ $(P),     $(AMC):CoefA1,       "Coef A1 for 2nd group",      "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefA1,    5   }
-{ $(P),     $(AMC):CoefA2,       "Coef A2 for 3rd group",      "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefA2,    5   }
-{ $(P),     $(AMC):CoefA3,       "Coef A3 Scale 1st group",    "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefA3,    5   }
-{ $(P),     $(AMC):CoefA4,       "Coef A4 Scale 2nd group",    "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefA4,    5   }
-{ $(P),     $(AMC):CoefA5,       "Coef A5 Scale 3rd group",    "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefA5,    5   }
-{ $(P),     $(AMC):CoefB,        "Coef B",                     "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefB,     5   }
-{ $(P),     $(AMC):CoefC,        "Coef C",                     "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefC,     5   }
-{ $(P),     $(AMC):CoefD,        "Coef D",                     "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefD,     5   }
-{ $(P),     $(AMC):CoefE,        "Coef E",                     "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefE,     5   }
-{ $(P),     $(AMC):CoefF,        "Coef F",                     "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefF,     5   }
-{ $(P),     $(AMC):CoefG,        "Coef G",                     "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefG,     5   }
-{ $(P),     $(AMC):CoefH,        "Coef H",                     "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefH,     5   }
-{ $(P),     $(AMC):CoefI,        "Coef I - Offset",            "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefI,     5   }
+{ $(P),     $(AMC):CoefA0,       "Coef A0 for 1st group",       "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefA0,    5   }
+{ $(P),     $(AMC):CoefA1,       "Coef A1 for 2nd group",       "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefA1,    5   }
+{ $(P),     $(AMC):CoefA2,       "Coef A2 for 3rd group",       "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefA2,    5   }
+{ $(P),     $(AMC):CoefA3,       "Coef A3 Scale 1st group",     "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefA3,    5   }
+{ $(P),     $(AMC):CoefA4,       "Coef A4 Scale 2nd group",     "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefA4,    5   }
+{ $(P),     $(AMC):CoefA5,       "Coef A5 Scale 3rd group",     "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefA5,    5   }
+{ $(P),     $(AMC):CoefAlf0,     "Coef Alf Scale 1st group",    "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefAlf0,  5   }
+{ $(P),     $(AMC):CoefAlf1,     "Coef Alf Scale 2nd/3rd group","YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefAlf1,  5   }
+{ $(P),     $(AMC):CoefB,        "Coef B",                      "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefB,     5   }
+{ $(P),     $(AMC):CoefC,        "Coef C",                      "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefC,     5   }
+{ $(P),     $(AMC):CoefD,        "Coef D",                      "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefD,     5   }
+{ $(P),     $(AMC):CoefE,        "Coef E",                      "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefE,     5   }
+{ $(P),     $(AMC):CoefF,        "Coef F",                      "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefF,     5   }
+{ $(P),     $(AMC):CoefG,        "Coef G",                      "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefG,     5   }
+{ $(P),     $(AMC):CoefH,        "Coef H",                      "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefH,     5   }
+{ $(P),     $(AMC):CoefI,        "Coef I - Offset",             "YES",  "Passive",   $(PORT),     "",     AMC$(AMC):CoefI,     5   }
 }
 
 file "RegDoubleOutRBV.template" { pattern
-{ P,              R,                      DESC,                PINI,     SCAN,      PORT,      EGU,          PARAM,         PREC      }
-{ $(P),     $(AMC):CoefA0RBV,    "Coef A0 for 1st group",      "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefA0,    5        }
-{ $(P),     $(AMC):CoefA1RBV,    "Coef A1 for 2nd group",      "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefA1,    5         }
-{ $(P),     $(AMC):CoefA2RBV,    "Coef A2 for 3rd group",      "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefA2,    5         }
-{ $(P),     $(AMC):CoefA3RBV,    "Coef A3 Scale 1st group",    "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefA3,    5         }
-{ $(P),     $(AMC):CoefA4RBV,    "Coef A4 Scale 2nd group",    "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefA4,    5         }
-{ $(P),     $(AMC):CoefA5RBV,    "Coef A5 Scale 3rd group",    "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefA5,    5         }
-{ $(P),     $(AMC):CoefBRBV,     "Coef B",                     "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefB,    5          }
-{ $(P),     $(AMC):CoefCRBV,     "Coef C",                     "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefC,    5          }
-{ $(P),     $(AMC):CoefDRBV,     "Coef D",                     "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefD,    5          }
-{ $(P),     $(AMC):CoefERBV,     "Coef E",                     "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefE,    5          }
-{ $(P),     $(AMC):CoefFRBV,     "Coef F",                     "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefF,    5          }
-{ $(P),     $(AMC):CoefGRBV,     "Coef G",                     "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefG,    5          }
-{ $(P),     $(AMC):CoefHRBV,     "Coef H",                     "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefH,    5          }
-{ $(P),     $(AMC):CoefIRBV,     "Coef I - Offset",            "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefI,    5          }
+{ P,              R,                      DESC,                 PINI,     SCAN,      PORT,      EGU,          PARAM,         PREC      }
+{ $(P),     $(AMC):CoefA0RBV,    "Coef A0 for 1st group",       "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefA0,    5          }
+{ $(P),     $(AMC):CoefA1RBV,    "Coef A1 for 2nd group",       "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefA1,    5          }
+{ $(P),     $(AMC):CoefA2RBV,    "Coef A2 for 3rd group",       "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefA2,    5          }
+{ $(P),     $(AMC):CoefA3RBV,    "Coef A3 Scale 1st group",     "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefA3,    5          }
+{ $(P),     $(AMC):CoefA4RBV,    "Coef A4 Scale 2nd group",     "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefA4,    5          }
+{ $(P),     $(AMC):CoefA5RBV,    "Coef A5 Scale 3rd group",     "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefA5,    5          }
+{ $(P),     $(AMC):CoefALF0RBV,  "Coef Alf Scale 1st group",    "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefAlf0,  5          }
+{ $(P),     $(AMC):CoefALF1RBV,  "Coef Alf Scale 2nd/3rd group","YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefAlf1,  5          }
+{ $(P),     $(AMC):CoefBRBV,     "Coef B",                      "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefB,     5          }
+{ $(P),     $(AMC):CoefCRBV,     "Coef C",                      "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefC,     5          }
+{ $(P),     $(AMC):CoefDRBV,     "Coef D",                      "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefD,     5          }
+{ $(P),     $(AMC):CoefERBV,     "Coef E",                      "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefE,     5          }
+{ $(P),     $(AMC):CoefFRBV,     "Coef F",                      "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefF,     5          }
+{ $(P),     $(AMC):CoefGRBV,     "Coef G",                      "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefG,     5          }
+{ $(P),     $(AMC):CoefHRBV,     "Coef H",                      "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefH,     5          }
+{ $(P),     $(AMC):CoefIRBV,     "Coef I - Offset",             "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefI,     5          }
 }
 
 #======================================
