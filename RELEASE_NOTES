@@ -9,16 +9,24 @@
 #  Auth: 10-May-2017 C. Ford         (caf)
 #  Rev:  dd-mmm-yyyy, Reviewer's Name    (USERNAME)
 #--------------------------------------------------------------
+R7.2.0: 04/12/2024 Kyle Leleux (kleleux)
+    - Adding new averaging records to support Alan's calibration (Jira: EEDSW-55)
+        - comprised of both software and firmware records
+
 R7.1.0: 04/09/2024 Lukas Ho-Koziol (lujko)
     - Updated facet tpr recorord's instance from ATCA_SLOT to 0.
+
 R7.0.0: 04/05/2024 Lukas Ho-Koziol (lujko)
     - Update makefile to compile both blen and blen_FACET binaries at the same time
+
 R6.0.1-mergeFacet: 03/26/2024 Lukas Ho-Koziol (lujko)
     - Update sioc-in10-bl01 to use blenFacetCommon.cmd instead of blenCommon.cmd
+
 R6.0.0-mergeFacet: 03/26/2024 Lukas Ho-Koziol (lujko)
     - Version builds facet binary
     - Updates module versions
     - Merges Facet and LCLS files into one application
+
 R5.4.2: 05/10/2023 Kyle Leleux (kleleux)
     - Upgrade to bsaDriver R3.2.1
     - Implemeneted BSAS
