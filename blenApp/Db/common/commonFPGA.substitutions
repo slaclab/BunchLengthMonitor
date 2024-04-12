@@ -86,8 +86,8 @@ file "RegDoubleOutRBV.template" { pattern
 { $(P),     $(AMC):CoefA3RBV,    "Coef A3 Scale 1st group",     "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefA3,    5          }
 { $(P),     $(AMC):CoefA4RBV,    "Coef A4 Scale 2nd group",     "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefA4,    5          }
 { $(P),     $(AMC):CoefA5RBV,    "Coef A5 Scale 3rd group",     "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefA5,    5          }
-{ $(P),     $(AMC):CoefALF0RBV,  "Coef Alf Scale 1st group",    "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefAlf0,  5          }
-{ $(P),     $(AMC):CoefALF1RBV,  "Coef Alf Scale 2nd/3rd group","YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefAlf1,  5          }
+{ $(P),     $(AMC):CoefAlf0RBV,  "Coef Alf Scale 1st group",    "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefAlf0,  5          }
+{ $(P),     $(AMC):CoefAlf1RBV,  "Coef Alf Scale 2nd/3rd group","YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefAlf1,  5          }
 { $(P),     $(AMC):CoefBRBV,     "Coef B",                      "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefB,     5          }
 { $(P),     $(AMC):CoefCRBV,     "Coef C",                      "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefC,     5          }
 { $(P),     $(AMC):CoefDRBV,     "Coef D",                      "YES", "1 second",  $(PORT),     "",     AMC$(AMC):CoefD,     5          }
