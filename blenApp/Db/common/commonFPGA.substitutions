@@ -50,7 +50,7 @@ file "RegDoubleIn.template" { pattern
 { $(P),     $(AMC):AddSums3,         "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):AddSums3,       5      }
 { $(P),     $(AMC):AddSums4,         "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):AddSums4,       5      }
 { $(P),     $(AMC):AddSums5,         "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):AddSums5,       5      }
-{ $(P),     $(AMC):SensPairSum,      "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):SensPairSum,    5      }
+{ $(P),     $(AMC):SENSPSUM,         "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):SensPairSum,    5      }
 { $(P),     $(AMC):BLEN,             "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):BLEN,           5      }
 }
 
