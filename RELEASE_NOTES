@@ -9,6 +9,9 @@
 #  Auth: 10-May-2017 C. Ford         (caf)
 #  Rev:  dd-mmm-yyyy, Reviewer's Name    (USERNAME)
 #--------------------------------------------------------------
+R7.2.1: 04/23/2024 Kyle Leleux (kleleux)
+    - Adding new firmware
+    - Changing SensPairSum to SENSPSUM to match BSA name
 R7.2.0: 04/12/2024 Kyle Leleux (kleleux)
     - Adding new averaging records to support Alan's calibration (Jira: EEDSW-55)
         - comprised of both software and firmware records
