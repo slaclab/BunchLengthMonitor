@@ -22,6 +22,7 @@ epicsEnvSet("FCOM_NETWORK", "224.0.0.0")
 
 # TMIT PV to read the value from, by using FCOM
 epicsEnvSet("TMIT_PV", "BPMS:LI20:3218:TMIT")
+# Use 2452 3163 Toroid
 
 # FPGA IP address for CPSW
 epicsEnvSet("FPGA_IP", "10.0.1.10${ATCA_SLOT}")
