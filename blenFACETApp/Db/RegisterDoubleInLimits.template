@@ -1,0 +1,26 @@
+#==================================================================
+# Limits for an IntField, RO, 1 element, IEEE_754 encoding 
+# register.  Record type is ai.
+#
+# Macros:
+#   P, R:
+#       PV name is "$(P):$(R)"
+#
+#   HOPR, LOPR, LOLO, LOW, HIGH, HIHI,HIHI: 
+#       Operator display limit and alarm limit fields.
+#
+#==================================================================
+
+record(ai,       "$(P):$(R)") {
+    field(HOPR,  "$(HOPR)")
+    field(LOPR,  "$(LOPR)")
+    field(LOLO,  "$(LOLO)")
+    field(LLSV,  "MAJOR")
+    field(LOW,   "$(LOW)")
+    field(LSV,   "MINOR")
+    field(HIGH,  "$(HIGH)")
+    field(HSV,   "MINOR")
+    field(HIHI,  "$(HIHI)")
+    field(HHSV,  "MAJOR")
+    info(autosaveFields, "HIHI LOLO")
+}
