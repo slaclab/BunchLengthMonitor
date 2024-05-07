@@ -46,7 +46,7 @@ cpswLoadConfigFile("$(YAML_CONFIG_FILE)", "mmio", "")
 
 # Setup BSA Driver
 # add BSA PVs
-bsaAdd("AMC0:SENSPSUM",     "uint32")
+bsaAdd("AMC0:SENSPSUM",     "int32")
 bsaAdd("AMC0:BLEN",         "uint32")
 bsaAdd("AMC0:TMITSTAT",     "uint32")
 bsaAdd("AMC0:SENSPSUMFLOAT","float32")
@@ -63,7 +63,7 @@ bsaAdd("Junk8",             "uint32")
 bsaAdd("Junk9",             "uint32")
 bsaAdd("Junk10",            "uint32")
 
-bsaAdd("AMC1:SENSPSUM",     "uint32")
+bsaAdd("AMC1:SENSPSUM",     "int32")
 bsaAdd("AMC1:BLEN",         "uint32")
 bsaAdd("AMC1:TMITSTAT",     "uint32")
 bsaAdd("AMC1:SENSPSUMFLOAT","float32")
