@@ -31,5 +31,5 @@ file "RegisterOutRBV.template" { pattern
 
 file "RegisterDoubleIn.template" { pattern
 { P,        R,                DESC,                     PINI,   SCAN,         PORT,       EGU,        PARAM                     }
-{ $(P),     $(AMC)$(SENS):RawSum,         "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):SENS$(SENS):RawSum        }
+{ $(P),     $(AMC)$(SENS):RAW,         "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):SENS$(SENS):RawSum        }
 }
