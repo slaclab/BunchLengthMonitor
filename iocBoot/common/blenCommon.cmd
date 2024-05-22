@@ -276,6 +276,8 @@ dbLoadRecords("db/bsas.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsasPort,BSAKEY=AMC0
 dbLoadRecords("db/bsas.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsasPort,BSAKEY=AMC0:SMOOTHEDFLOAT,SECN=SMOOTHEDFLOAT")
 dbLoadRecords("db/bsas.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsasPort,BSAKEY=AMC0:BLENFLOAT,SECN=BLENFLOAT")
 dbLoadRecords("db/bsas.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsasPort,BSAKEY=AMC0:BLSTATUS,SECN=BLSTATUS")
+dbLoadRecords("db/bsas.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsasPort,BSAKEY=AMC0:RAW,SECN=RAW")
+dbLoadRecords("db/bsas.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsasPort,BSAKEY=AMC0:RAWFLOAT,SECN=RAWFLOAT")
 
 #dbLoadRecords("db/bsas.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsasPort,BSAKEY=AMC1:SMOOTHED,SECN=SMOOTHED")
 #dbLoadRecords("db/bsas.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsasPort,BSAKEY=AMC1:BLEN,SECN=BLEN")
@@ -283,6 +285,8 @@ dbLoadRecords("db/bsas.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsasPort,BSAKEY=AMC0
 #dbLoadRecords("db/bsas.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsasPort,BSAKEY=AMC1:SMOOTHEDFLOAT,SECN=SMOOTHEDFLOAT")
 #dbLoadRecords("db/bsas.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsasPort,BSAKEY=AMC1:BLENFLOAT,SECN=BLENFLOAT")
 #dbLoadRecords("db/bsas.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsasPort,BSAKEY=AMC1:BLSTATUS,SECN=BLSTATUS")
+#dbLoadRecords("db/bsas.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsasPort,BSAKEY=AMC1:RAW,SECN=RAW")
+#dbLoadRecords("db/bsas.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsasPort,BSAKEY=AMC1:RAWFLOAT,SECN=RAWFLOAT")
 
 # Timing trigger
 # INST = Instance Number (for multiple instances of tprTrigger in an IOC)
