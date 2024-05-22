@@ -291,7 +291,7 @@ dbLoadRecords("db/bsas.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsasPort,BSAKEY=AMC0
 # Timing trigger
 # INST = Instance Number (for multiple instances of tprTrigger in an IOC)
 # The convention adopted is to set INST to the ATCA slot
-dbLoadRecords("db/tprTrig.db",     "LOCA=$(AREA), IOC_UNIT=$(IOC_UNIT), INST=${ATCA_SLOT}, PORT=trig")
+dbLoadRecords("db/tprTrig.db",     "LOCA=$(AREA), IOC_UNIT=$(IOC_UNIT), INST=0, PORT=trig")
 
 # **********************************************************************
 # **** Load iocAdmin databases to support IOC Health and monitoring ****
