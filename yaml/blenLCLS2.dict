@@ -84,8 +84,10 @@
 /mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/AddSums1                   AMC1:SENS0:RawSum
 /mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/AddSums1Gap                AMC0:SENS1:RawSum
 /mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/AddSums1Gap                AMC1:SENS1:RawSum
-/mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/FinalRawSum                AMC0:SensPairSum
-/mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/FinalRawSum                AMC1:SensPairSum
+/mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/FinalRawSumRaw             AMC0:FinalSumRaw
+/mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/FinalRawSumRaw             AMC1:FinalSumRaw
+/mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/FinalRawSum                AMC0:FinalSumAveraged
+/mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/FinalRawSum                AMC1:FinalSumAveraged
 /mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/FinalSum                   AMC0:BLEN
 /mmio/AppTop/AppCore/SysGen[1]/DspCoreRes/FinalSum                   AMC1:BLEN
 /mmio/AppTop/AppCore/SysGen[0]/DspCoreRes/MultResultH                AMC0:TMIT
