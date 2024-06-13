@@ -52,7 +52,7 @@ file "RegDoubleIn.template" { pattern
 { $(P),     $(AMC):AddSums5,         "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):AddSums5,         5      }
 { $(P),     $(AMC):SMOOTHED,         "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):FinalSumAveraged, 5      }
 { $(P),     $(AMC):RAW,              "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):FinalSumRaw,      5      }
-{ $(P),     $(AMC):BLEN,             "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):BLEN,             5      }
+{ $(P),     $(AMC):BLEN,             "",                       "YES",  ".5 second",  $(PORT),    "fs FWHM",  AMC$(AMC):BLEN,             5      }
 }
 
 #======================================
