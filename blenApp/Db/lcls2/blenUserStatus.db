@@ -1,4 +1,4 @@
-record(calc, "$(P):0:BLEN_USER_STATUS0")
+record(calc, "$(P):0:BLEN_USER_STATUS")
 {
     field(DESC, "0=SENSOR 0, 1=SENSOR 1, 2=User Choice")
     field(INPA, "$(P):0:BLEN PP")
@@ -12,7 +12,7 @@ record(calc, "$(P):0:BLEN_USER_STATUS0")
     field(SCAN, "1 second")
 }
 
-record(calc, "$(P):1:BLEN_USER_STATUS1")
+record(calc, "$(P):1:BLEN_USER_STATUS")
 {
     field(DESC, "0=SENSOR 0, 1=SENSOR 1, 2=User Choice")
     field(INPA, "$(P):0:BLEN PP")
