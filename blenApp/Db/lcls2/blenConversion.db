@@ -1,12 +1,12 @@
-record(calc, "$(P):BLEN_UMRMS")
+record(calc, "$(P):$(AMC):BLEN_UMRMS")
 {
     field(DESC, "X Sensor BLEN in um RMS")
-    field(INPA, "$(P):BLEN PP")
+    field(INPA, "$(P):$(AMC):BLEN PP")
     field(INPB, "2.998")
     field(INPC, "23.5")
     field(CALC, "A*B/C")
     field(EGU,  "um RMS")
-#    field(SCAN, "1 second")
+    field(SCAN, "Passive")
     field(PINI, "YES")
 }
 

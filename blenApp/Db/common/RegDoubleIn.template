@@ -18,5 +18,6 @@ record(ai,      "$(P):$(R)") {
     field(SCAN, "$(SCAN)")
     field(EGU,  "$(EGU)")
     field(PREC, "$(PREC)")
+    field(FLNK, "$(FLNK="")")
     field(INP,  "@asyn($(PORT),2)$(PARAM)")
 }

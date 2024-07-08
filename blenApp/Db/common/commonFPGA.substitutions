@@ -44,15 +44,15 @@ file "RegisterEnumBOutRBV.template" { pattern
 #======================================
 
 file "RegDoubleIn.template" { pattern
-{ P,               R,                DESC,                     PINI,       SCAN,      PORT,     EGU,            PARAM,               PREC    }
-{ $(P),     $(AMC):AddSums0,         "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):AddSums0,         5      }
-{ $(P),     $(AMC):AddSums2,         "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):AddSums2,         5      }
-{ $(P),     $(AMC):AddSums3,         "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):AddSums3,         5      }
-{ $(P),     $(AMC):AddSums4,         "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):AddSums4,         5      }
-{ $(P),     $(AMC):AddSums5,         "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):AddSums5,         5      }
-{ $(P),     $(AMC):SMOOTHED,         "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):FinalSumAveraged, 5      }
-{ $(P),     $(AMC):RAW,              "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):FinalSumRaw,      5      }
-{ $(P),     $(AMC):BLEN,             "",                       "YES",  ".5 second",  $(PORT),    "fs FWHM",  AMC$(AMC):BLEN,             5      }
+{ P,               R,                DESC,                     PINI,       SCAN,      PORT,     EGU,            PARAM,               PREC,  FLNK    }
+{ $(P),     $(AMC):AddSums0,         "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):AddSums0,         5, ""     }
+{ $(P),     $(AMC):AddSums2,         "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):AddSums2,         5, ""     }
+{ $(P),     $(AMC):AddSums3,         "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):AddSums3,         5, ""     }
+{ $(P),     $(AMC):AddSums4,         "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):AddSums4,         5, ""     }
+{ $(P),     $(AMC):AddSums5,         "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):AddSums5,         5, ""     }
+{ $(P),     $(AMC):SMOOTHED,         "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):FinalSumAveraged, 5, ""     }
+{ $(P),     $(AMC):RAW,              "",                       "YES",  ".5 second",  $(PORT),    "",         AMC$(AMC):FinalSumRaw,      5, ""     }
+{ $(P),     $(AMC):BLEN,             "",                       "YES",  ".5 second",  $(PORT),    "fs FWHM",  AMC$(AMC):BLEN,             5, $(P):$(AMC):BLEN_UMRMS     }
 }
 
 #======================================
