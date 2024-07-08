@@ -8,5 +8,6 @@ record(calc, "$(P):$(AMC):BLEN_UMRMS")
     field(EGU,  "um RMS")
     field(SCAN, "Passive")
     field(PINI, "YES")
+    field(PREC, "4")
 }
 
