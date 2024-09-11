@@ -9,6 +9,26 @@
 #  Auth: 10-May-2017 C. Ford         (caf)
 #  Rev:  dd-mmm-yyyy, Reviewer's Name    (USERNAME)
 #--------------------------------------------------------------
+
+R7.5.0: 09/11/2024 Kyle Leleux (kleleux)
+    LCLS:
+    -Implementing BLD for SC BLEN
+
+R7.4.4: 05/21/2024 Kyle Leleux (kleleux)
+    LCLS:
+    - Minor bug fixes to the blen user status and blen conversion
+
+R7.4.3: 05/21/2024 Kyle Leleux (kleleux)
+    LCLS:
+    - Changing pv name for user status for BLEN
+R7.4.2: 05/21/2024 Kyle Leleux (kleleux)
+    LCLS:
+    - Adding new records that indicate which sensor the user should use
+
+R7.4.1: 05/21/2024 Kyle Leleux (kleleux)
+    LCLS:
+    - Changing datatype for :RAW BSA value from uint32 to int32
+
 R7.4.0: 05/21/2024 Kyle Leleux (kleleux)
     LCLS:
     - Adding new firmware
