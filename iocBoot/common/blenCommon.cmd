@@ -136,6 +136,9 @@ setMpsConfigurationPath("${FACILITY_ROOT}/physics/mps_configuration/current/link
 #    Port Name)                 # the name given to this port driver
 L2MPSASYNConfig("${L2MPSASYN_PORT}")
 
+dbLoadRecords("db/mps.db","P=${L2MPS_PREFIX},PORT=${L2MPSASYN_PORT}")
+dbLoadRecords("db/mps_blen.db","P=BLEN:$(AREA):$(POS),BAY=0,PORT=${L2MPSASYN_PORT}")  # BLEN Application (Bay 0=Right, 1=Left)
+
 ## Set the MpsManager hostname and port number
 # L2MPSASYNSetManagerHost(
 #    MpsManagerHostName,   # Server hostname

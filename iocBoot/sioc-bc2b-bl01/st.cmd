@@ -17,6 +17,8 @@ epicsEnvSet("IOC_UNIT", "BL01")
 epicsEnvSet("ATCA_SLOT", "4")
 epicsEnvSet("BLEN_ASYN_PORT", "ATCA7")
 epicsEnvSet("L2MPSASYN_PORT","L2MPSASYN_PORT")
+epicsEnvSet("L2MPS_PREFIX", "MPLN:L2B:MP04:4")
+epicsEnvSet("APPID", "71")
 
 # YAML directory
 epicsEnvSet("YAML_DIR","$(IOC_DATA)/$(IOC)/yaml")

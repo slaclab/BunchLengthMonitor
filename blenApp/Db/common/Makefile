@@ -69,6 +69,9 @@ DB_INSTALLS += $(IOCADMIN)/db/iocAdminScanMon.db
 DB_INSTALLS += $(IOCADMIN)/db/iocScanMonSum.db
 DB_INSTALLS += $(IOCADMIN)/db/iocScanMon.db
 
+DB_INSTALLS += $(L2MPSASYN)/db/mps.db
+DB_INSTALLS += $(L2MPSASYN)/db/mps_blen.db
+
 IOCRELEASE_DB += iocRelease.db
 
 # Autosave 
