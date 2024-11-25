@@ -1,0 +1,15 @@
+record(bo, "$(P):TIMINGSELECT") {
+    field(DESC, "Timing Rate Selection")
+    field(ZNAM, "Fixed Rate")
+    field(ONAM, "AC Rate")
+}
+
+record(dfanout, "$(P):TIMINGPUSH"){
+    field(DESC, "Sets TPR CH. 6,8,10,13")
+    field(OMSL, "closed_loop")
+    field(DOL,  "$(P):TIMINGSELECT")
+    field(OUTA, "TPR:$(AREA):BL01:0:CH06_RATEMODE")
+    field(OUTB, "TPR:$(AREA):BL01:0:CH08_RATEMODE")
+    field(OUTC, "TPR:$(AREA):BL01:0:CH10_RATEMODE")
+    field(OUTD, "TPR:$(AREA):BL01:0:CH13_RATEMODE")
+}

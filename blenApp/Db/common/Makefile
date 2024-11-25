@@ -109,5 +109,6 @@ DB += selectStatus.db
 DB += coefScale.db
 DB += coefficientScaling.db
 DB += sensCalibration.db
+DB += timingSelection.db
 
 include $(TOP)/configure/RULES

@@ -160,6 +160,7 @@ dbLoadRecords("db/iocMeta.db", "AREA=$(AREA),IOC_UNIT=$(IOC_UNIT)")
 dbLoadRecords("db/blen.db", "P=BLEN:$(AREA):$(POS), PORT=$(BLEN_ASYN_PORT), AMC=0")
 dbLoadRecords("db/blen.db", "P=BLEN:$(AREA):$(POS), PORT=$(BLEN_ASYN_PORT), AMC=1")
 dbLoadRecords("db/blenUserStatus.db", "P=$(PREFIX)")
+dbLoadRecords("db/timingSelection.db", "P=BLEN:$(AREA):$(POS), AREA=$(AREA)")
 
 # Additional offset coefficients for AMC0, AMC1 ch1 raw data
 dbLoadRecords("db/blen_gap_coefI2.db", "P=BLEN:$(AREA):$(POS), PORT=${BLEN_ASYN_PORT}, AMC=0")
