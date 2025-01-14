@@ -2,6 +2,7 @@ record(bo, "$(P):TIMINGSELECT") {
     field(DESC, "Timing Rate Selection")
     field(ZNAM, "Fixed Rate")
     field(ONAM, "AC Rate")
+    field(SCAN, "1 second")
     field(FLNK, "$(P):TIMINGPUSH")
 }
 
