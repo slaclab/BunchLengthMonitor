@@ -1,0 +1,2 @@
+file "common.req" AREA=HTR,POS=350,INST=0
+file "common.req" AREA=HTR,POS=350,INST=1
