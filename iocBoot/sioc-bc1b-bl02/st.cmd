@@ -11,16 +11,16 @@
 
 # Area, position, and instrument names to be used in record names
 epicsEnvSet("AREA", "BC1B")
-epicsEnvSet("POS", "UNKNOWN")
+epicsEnvSet("POS", "851")
 epicsEnvSet("INST", "BZC1")
 epicsEnvSet("IOC_UNIT", "BL02")
 epicsEnvSet("ATCA_SLOT", "3")
 epicsEnvSet("BLEN_ASYN_PORT", "ATCA7")
 epicsEnvSet("L2MPSASYN_PORT","mpsPort")
-epicsEnvSet("L2MPS_PREFIX", "MPLN:L0B:MP01:4")
-epicsEnvSet("APPID", "9")
+epicsEnvSet("L2MPS_PREFIX", "MPLN:BC1B:MP02:3")
+epicsEnvSet("APPID", "396")
 
-epicsEnvSet("TEMP_IOC", "SIOC:GUNB:IM02")
+epicsEnvSet("TEMP_IOC", "SIOC:COL1:IM02")
 epicsEnvSet("TEMP_PY_SRC","$(TEMP_IOC):1:INPUT2:VALUE")
 epicsEnvSet("TEMP_NY_SRC","$(TEMP_IOC):5:INPUT2:VALUE")
 epicsEnvSet("TEMP_PX_SRC","$(TEMP_IOC):1:INPUT1:VALUE")
