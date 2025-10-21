@@ -10,7 +10,11 @@
 #  Rev:  dd-mmm-yyyy, Reviewer's Name    (USERNAME)
 #--------------------------------------------------------------
 
-R7.7.0: 09/22/2026 Kyle Leleux (kleleux)
+R7.7.1: 10/21/2025 Kyle Leleux (kleleux)
+    LCLS:
+    - Adding MAD names for bpm selection to sioc-bc1b-bl02
+
+R7.7.0: 09/22/2025 Kyle Leleux (kleleux)
     LCLS:
     - Adding new gap diode IOC sioc-bc1b-bl02
 
