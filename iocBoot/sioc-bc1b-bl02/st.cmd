@@ -83,8 +83,8 @@ dbLoadRecords("db/initMode.db", "P=BLEN:$(AREA):$(POS), AMC=0")
 dbLoadRecords("db/initMode.db", "P=BLEN:$(AREA):$(POS), AMC=1")
 
 # BPM Scale Factors:
-dbLoadRecords("db/blen_bpm_coef.db", "P=BLEN:$(AREA):$(POS), BPM0=BPMS:HTR:460, BPM1=BPMS:HTR:365, AMC=0")
-dbLoadRecords("db/blen_bpm_coef.db", "P=BLEN:$(AREA):$(POS), BPM0=BPMS:HTR:460, BPM1=BPMS:HTR:365, AMC=1")
+dbLoadRecords("db/blen_bpm_coef.db", "P=BLEN:$(AREA):$(POS), BPM0=BPMS:COL1:120, BPM1=BPMS:COL1:260, AMC=0")
+dbLoadRecords("db/blen_bpm_coef.db", "P=BLEN:$(AREA):$(POS), BPM0=BPMS:COL1:120, BPM1=BPMS:COL1:260, AMC=1")
 
 # ===========================================
 #               IOC INIT
@@ -107,8 +107,8 @@ epicsThreadSleep(20)
 # Switching to running mode to allow autosave to put values in A0 and A1 coefficients
 dbpf BLEN:${AREA}:${POS}:0:CALIBMODEINIT.PROC 1
 dbpf BLEN:${AREA}:${POS}:1:CALIBMODEINIT.PROC 1
-dbpf BLEN:${AREA}:${POS}:BpmSelect.ZNAM BPM0H08
-dbpf BLEN:${AREA}:${POS}:BpmSelect.ONAM BPM0H05
+dbpf BLEN:${AREA}:${POS}:BpmSelect.ZNAM BPMC103
+dbpf BLEN:${AREA}:${POS}:BpmSelect.ONAM BPMC104
 # Enabling MPS
 dbpf ${L2MPS_PREFIX}:THR_LOADED 1
 dbpf ${L2MPS_PREFIX}:MPS_EN 1
