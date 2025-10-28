@@ -98,14 +98,50 @@ bsasBaseName("AMC0BLENFLOAT",        "BLEN:$(AREA):$(POS):BLENFLOAT"    )
 bsasBaseName("AMC0BLSTATUS",         "BLEN:$(AREA):$(POS):BLSTATUS"     )
 bsasBaseName("AMC0RAW",              "BLEN:$(AREA):$(POS):RAW"          )
 bsasBaseName("AMC0RAWFLOAT",         "BLEN:$(AREA):$(POS):RAWFLOAT"     )
-#bsasBaseName("AMC1SMOOTHED",         "BLEN:$(AREA):$(POS):SMOOTHED"     )
-#bsasBaseName("AMC1BLEN",             "BLEN:$(AREA):$(POS):BLEN"         )
-#bsasBaseName("AMC1TMITSTAT",         "BLEN:$(AREA):$(POS):TMITSTAT"     )
-#bsasBaseName("AMC1SMOOTHEDFLOAT",    "BLEN:$(AREA):$(POS):SMOOTHEDFLOAT")
-#bsasBaseName("AMC1BLENFLOAT",        "BLEN:$(AREA):$(POS):BLENFLOAT"    )
-#bsasBaseName("AMC1BLSTATUS",         "BLEN:$(AREA):$(POS):BLSTATUS"     )
+bsasBaseName("AMC1SMOOTHED",         "BLEN:$(AREA):$(POS):SMOOTHED"     )
+bsasBaseName("AMC1BLEN",             "BLEN:$(AREA):$(POS):BLEN"         )
+bsasBaseName("AMC1TMITSTAT",         "BLEN:$(AREA):$(POS):TMITSTAT"     )
+bsasBaseName("AMC1SMOOTHEDFLOAT",    "BLEN:$(AREA):$(POS):SMOOTHEDFLOAT")
+bsasBaseName("AMC1BLENFLOAT",        "BLEN:$(AREA):$(POS):BLENFLOAT"    )
+bsasBaseName("AMC1BLSTATUS",         "BLEN:$(AREA):$(POS):BLSTATUS"     )
+bsasBaseName("AMC1RAW",              "BLEN:$(AREA):$(POS):RAW"          )
+bsasBaseName("AMC1RAWFLOAT",         "BLEN:$(AREA):$(POS):RAWFLOAT"     )
 
 bsasAsynDriverConfigure("bsasPort", "mmio/AmcCarrierCore/AmcCarrierBsa/Bsas", "${BSAS_PREFIX}:SC_DIAG0", "${BSAS_PREFIX}:SC_BSYD", "${BSAS_PREFIX}:SC_HXR", "${BSAS_PREFIX}:SC_SXR")
+
+# ===========================================
+#              BLD SETUP
+# ===========================================
+ 
+# make association with BSA channels: bldAssociateBsaChannels(<BSA port name>)
+bldAssociateBsaChannels("bsaPort")
+
+# bldAsynDriverConfigure ("<BLD  port name>", "<yaml path to BLD>", "<prefix for the PAYLOAD PV>")
+# The register path may be different from the example below. It depends
+# on the application. The example, though, will probably fit most applications.
+bldAsynDriverConfigure("bldPort", "mmio/AmcCarrierCore/AmcCarrierBsa/Bld", "${TPR_PREFIX}")
+
+# Give names for the signals that will participate on BLD.
+# These names are shown in the content of the PAYLOAD PV when someone uses
+# pvinfo ${TPR_PREFIX}:BLD_PAYLOAD
+bldChannelName("AMC0SMOOTHED",          "AMC0 SMOOTHED")
+bldChannelName("AMC0BLEN",              "AMC0 BLEN")
+bldChannelName("AMC0TMITSTAT",          "AMC0 TMIT STAT")
+bldChannelName("AMC0SMOOTHEDFLOAT",     "AMC0 SMOOTHED FLOAT")
+bldChannelName("AMC0BLENFLOAT",         "AMC0 BLEN FLOAT")
+bldChannelName("AMC0BLSTATUS",          "AMC0 BL STATUS")
+bldChannelName("AMC0RAW",               "AMC0 RAW")
+bldChannelName("AMC0RAWFLOAT",          "AMC0 RAW FLOAT")
+
+bldChannelName("AMC1SMOOTHED",          "AMC1 SMOOTHED")
+bldChannelName("AMC1BLEN",              "AMC1 BLEN")
+bldChannelName("AMC1TMITSTAT",          "AMC1 TMIT STAT")
+bldChannelName("AMC1SMOOTHEDFLOAT",     "AMC1 SMOOTHED FLOAT")
+bldChannelName("AMC1BLENFLOAT",         "AMC1 BLEN FLOAT")
+bldChannelName("AMC1BLSTATUS",          "AMC1 BL STATUS")
+bldChannelName("AMC1RAW",               "AMC1 RAW")
+bldChannelName("AMC1RAWFLOAT",          "AMC1 RAW FLOAT")
+
 
 # Driver setup for YCPSWAsyn
 # YCPSWASYNConfig(
@@ -159,7 +195,7 @@ dbLoadRecords("db/iocMeta.db", "AREA=$(AREA),IOC_UNIT=$(IOC_UNIT)")
 # main blen database - user facing PVs
 dbLoadRecords("db/blen.db", "P=BLEN:$(AREA):$(POS), PORT=$(BLEN_ASYN_PORT), AMC=0")
 dbLoadRecords("db/blen.db", "P=BLEN:$(AREA):$(POS), PORT=$(BLEN_ASYN_PORT), AMC=1")
-dbLoadRecords("db/blenUserStatus.db", "P=$(PREFIX)")
+dbLoadRecords("db/blenUserStatus.db", "P=$(PREFIX), LEN=$(LEN)")
 dbLoadRecords("db/timingSelection.db", "P=BLEN:$(AREA):$(POS), AREA=$(AREA)")
 
 # Additional offset coefficients for AMC0, AMC1 ch1 raw data
@@ -285,14 +321,48 @@ dbLoadRecords("db/bsas.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsasPort,BSAKEY=AMC0
 dbLoadRecords("db/bsas.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsasPort,BSAKEY=AMC0RAW,SECN=RAW")
 dbLoadRecords("db/bsas.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bsasPort,BSAKEY=AMC0RAWFLOAT,SECN=RAWFLOAT")
 
-#dbLoadRecords("db/bsas.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsasPort,BSAKEY=AMC1SMOOTHED,SECN=SMOOTHED")
-#dbLoadRecords("db/bsas.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsasPort,BSAKEY=AMC1BLEN,SECN=BLEN")
-#dbLoadRecords("db/bsas.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsasPort,BSAKEY=AMC1TMITSTAT,SECN=TMITSTAT")
-#dbLoadRecords("db/bsas.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsasPort,BSAKEY=AMC1SMOOTHEDFLOAT,SECN=SMOOTHEDFLOAT")
-#dbLoadRecords("db/bsas.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsasPort,BSAKEY=AMC1BLENFLOAT,SECN=BLENFLOAT")
-#dbLoadRecords("db/bsas.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsasPort,BSAKEY=AMC1BLSTATUS,SECN=BLSTATUS")
-#dbLoadRecords("db/bsas.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsasPort,BSAKEY=AMC1RAW,SECN=RAW")
-#dbLoadRecords("db/bsas.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsasPort,BSAKEY=AMC1RAWFLOAT,SECN=RAWFLOAT")
+dbLoadRecords("db/bsas.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsasPort,BSAKEY=AMC1SMOOTHED,SECN=SMOOTHED")
+dbLoadRecords("db/bsas.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsasPort,BSAKEY=AMC1BLEN,SECN=BLEN")
+dbLoadRecords("db/bsas.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsasPort,BSAKEY=AMC1TMITSTAT,SECN=TMITSTAT")
+dbLoadRecords("db/bsas.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsasPort,BSAKEY=AMC1SMOOTHEDFLOAT,SECN=SMOOTHEDFLOAT")
+dbLoadRecords("db/bsas.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsasPort,BSAKEY=AMC1BLENFLOAT,SECN=BLENFLOAT")
+dbLoadRecords("db/bsas.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsasPort,BSAKEY=AMC1BLSTATUS,SECN=BLSTATUS")
+dbLoadRecords("db/bsas.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsasPort,BSAKEY=AMC1RAW,SECN=RAW")
+dbLoadRecords("db/bsas.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bsasPort,BSAKEY=AMC1RAWFLOAT,SECN=RAWFLOAT")
+
+# BLD rate control template
+# DEV is the DEVICE:AREA:LOCAL of an IOC.
+# There's a hidden ${GLOBAL} macro that defaults to TPG:SYS0:1. This matches the
+# dev TPG in B34 and also in production. If you are using a different TPG, you
+# need to redefine ${GLOBAL} with the correct prefix of the TPG.
+# Example: dbLoadRecords("db/bldCtrl.db", "DEV=${TPR_PREFIX},PORT=bldPort,GLOBAL=TPG:B15:1")
+# Below we are using the default TPG, so we don't need to provide GLOBAL.
+dbLoadRecords("db/bldCtrl.db", "DEV=BLEN:$(AREA):$(POS), PORT=bldPort")
+
+# This database provides access to severity masks and allows enabling/disabling
+# each signal individually.
+# DEV is the DEVICE:AREA:LOCAL of an IOC.
+# SECN is used as part of the PV name. The combination of DEV and SECN macros must
+# be unique in the IOC. If you produce an identical pair of DEV and SECN more than
+# once, you will have duplicate PVs in the IOC.
+# BSAKEY must correspond with what was used with bsaAdd().
+dbLoadRecords("db/bld.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bldPort,BSAKEY=AMC0SMOOTHED,SECN=SMOOTHED")
+dbLoadRecords("db/bld.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bldPort,BSAKEY=AMC0BLEN,SECN=BLEN")
+dbLoadRecords("db/bld.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bldPort,BSAKEY=AMC0TMITSTAT,SECN=TMITSTAT")
+dbLoadRecords("db/bld.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bldPort,BSAKEY=AMC0SMOOTHEDFLOAT,SECN=SMOOTHEDFLOAT")
+dbLoadRecords("db/bld.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bldPort,BSAKEY=AMC0BLENFLOAT,SECN=BLENFLOAT")
+dbLoadRecords("db/bld.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bldPort,BSAKEY=AMC0BLSTATUS,SECN=BLSTATUS")
+dbLoadRecords("db/bld.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bldPort,BSAKEY=AMC0RAW,SECN=RAW")
+dbLoadRecords("db/bld.db", "DEV=BLEN:$(AREA):$(POS):0,PORT=bldPort,BSAKEY=AMC0RAWFLOAT,SECN=RAWFLOAT")
+ 
+dbLoadRecords("db/bld.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bldPort,BSAKEY=AMC1SMOOTHED,SECN=SMOOTHED")
+dbLoadRecords("db/bld.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bldPort,BSAKEY=AMC1BLEN,SECN=BLEN")
+dbLoadRecords("db/bld.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bldPort,BSAKEY=AMC1TMITSTAT,SECN=TMITSTAT")
+dbLoadRecords("db/bld.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bldPort,BSAKEY=AMC1SMOOTHEDFLOAT,SECN=SMOOTHEDFLOAT")
+dbLoadRecords("db/bld.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bldPort,BSAKEY=AMC1BLENFLOAT,SECN=BLENFLOAT")
+dbLoadRecords("db/bld.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bldPort,BSAKEY=AMC1BLSTATUS,SECN=BLSTATUS")
+dbLoadRecords("db/bld.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bldPort,BSAKEY=AMC1RAW,SECN=RAW")
+dbLoadRecords("db/bld.db", "DEV=BLEN:$(AREA):$(POS):1,PORT=bldPort,BSAKEY=AMC1RAWFLOAT,SECN=RAWFLOAT")
 
 # Timing trigger
 # INST = Instance Number (for multiple instances of tprTrigger in an IOC)
