@@ -19,6 +19,8 @@ epicsEnvSet("BLEN_ASYN_PORT", "ATCA7")
 epicsEnvSet("L2MPSASYN_PORT","mpsPort")
 epicsEnvSet("L2MPS_PREFIX", "MPLN:BC1B:MP02:5")
 epicsEnvSet("APPID", "44")
+# Setting the Bunch Length threshold that defines which sensor to use:
+epicsEnvSet("LEN", "11400")
 
 # YAML directory
 epicsEnvSet("YAML_DIR","$(IOC_DATA)/$(IOC)/yaml")

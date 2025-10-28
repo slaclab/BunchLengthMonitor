@@ -19,6 +19,8 @@ epicsEnvSet("BLEN_ASYN_PORT", "ATCA7")
 epicsEnvSet("L2MPSASYN_PORT","mpsPort")
 epicsEnvSet("L2MPS_PREFIX", "MPLN:L0B:MP01:4")
 epicsEnvSet("APPID", "9")
+# Setting the Bunch Length threshold that defines which sensor to use:
+epicsEnvSet("LEN", "11400")
 
 epicsEnvSet("TEMP_IOC", "SIOC:GUNB:IM02")
 epicsEnvSet("TEMP_PY_SRC","$(TEMP_IOC):1:INPUT2:VALUE")
