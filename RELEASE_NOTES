@@ -10,6 +10,12 @@
 #  Rev:  dd-mmm-yyyy, Reviewer's Name    (USERNAME)
 #--------------------------------------------------------------
 
+R7.8.0: 10/29/2025 Kyle Leleux (kleleux)
+    LCLS:
+        - Adding modularity to how the bunch length monitor decides which signal
+          (long or short) to use for the different bunch length monitors. This is
+          now defined as a macro $(LEN) in the respectively st.cmd's
+        - Re-enabling BLD in all of the BunchLengthMonitors
 R7.7.1: 10/21/2025 Kyle Leleux (kleleux)
     LCLS:
     - Adding MAD names for bpm selection to sioc-bc1b-bl02
