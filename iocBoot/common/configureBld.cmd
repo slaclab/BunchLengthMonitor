@@ -13,23 +13,23 @@ bldAsynDriverConfigure("bldPort", "mmio/AmcCarrierCore/AmcCarrierBsa/Bld", "TPR:
 # Give names for the signals that will participate on BLD.
 # These names are shown in the content of the PAYLOAD PV when someone uses
 # pvinfo ${TPR_PREFIX}:BLD_PAYLOAD
-bldChannelName("AMC0SMOOTHED",          "AMC0 SMOOTHED")
-bldChannelName("AMC0BLEN",              "AMC0 BLEN")
-bldChannelName("AMC0TMITSTAT",          "AMC0 TMIT STAT")
-bldChannelName("AMC0SMOOTHEDFLOAT",     "AMC0 SMOOTHED FLOAT")
-bldChannelName("AMC0BLENFLOAT",         "AMC0 BLEN FLOAT")
-bldChannelName("AMC0BLSTATUS",          "AMC0 BL STATUS")
-bldChannelName("AMC0RAW",               "AMC0 RAW")
-bldChannelName("AMC0RAWFLOAT",          "AMC0 RAW FLOAT")
+bldChannelName("AMC0SMOOTHED",          "AMC0SMOOTHED")
+bldChannelName("AMC0BLEN",              "AMC0BLEN")
+bldChannelName("AMC0TMITSTAT",          "AMC0TMITSTAT")
+bldChannelName("AMC0SMOOTHEDFLOAT",     "AMC0SMOOTHEDFLOAT")
+bldChannelName("AMC0BLENFLOAT",         "AMC0BLENFLOAT")
+bldChannelName("AMC0BLSTATUS",          "AMC0BLSTATUS")
+bldChannelName("AMC0RAW",               "AMC0RAW")
+bldChannelName("AMC0RAWFLOAT",          "AMC0RAWFLOAT")
 
-bldChannelName("AMC1SMOOTHED",          "AMC1 SMOOTHED")
-bldChannelName("AMC1BLEN",              "AMC1 BLEN")
-bldChannelName("AMC1TMITSTAT",          "AMC1 TMIT STAT")
-bldChannelName("AMC1SMOOTHEDFLOAT",     "AMC1 SMOOTHED FLOAT")
-bldChannelName("AMC1BLENFLOAT",         "AMC1 BLEN FLOAT")
-bldChannelName("AMC1BLSTATUS",          "AMC1 BL STATUS")
-bldChannelName("AMC1RAW",               "AMC1 RAW")
-bldChannelName("AMC1RAWFLOAT",          "AMC1 RAW FLOAT")
+bldChannelName("AMC1SMOOTHED",          "AMC1SMOOTHED")
+bldChannelName("AMC1BLEN",              "AMC1BLEN")
+bldChannelName("AMC1TMITSTAT",          "AMC1TMITSTAT")
+bldChannelName("AMC1SMOOTHEDFLOAT",     "AMC1SMOOTHEDFLOAT")
+bldChannelName("AMC1BLENFLOAT",         "AMC1BLENFLOAT")
+bldChannelName("AMC1BLSTATUS",          "AMC1BLSTATUS")
+bldChannelName("AMC1RAW",               "AMC1RAW")
+bldChannelName("AMC1RAWFLOAT",          "AMC1RAWFLOAT")
 
 # BLD rate control template
 # DEV is the DEVICE:AREA:LOCAL of an IOC.
