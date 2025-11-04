@@ -8,7 +8,7 @@ bldAssociateBsaChannels("bsaPort")
 # bldAsynDriverConfigure ("<BLD  port name>", "<yaml path to BLD>", "<prefix for the PAYLOAD PV>")
 # The register path may be different from the example below. It depends
 # on the application. The example, though, will probably fit most applications.
-bldAsynDriverConfigure("bldPort", "mmio/AmcCarrierCore/AmcCarrierBsa/Bld", "BLEN:$(AREA):$(POS)")
+bldAsynDriverConfigure("bldPort", "mmio/AmcCarrierCore/AmcCarrierBsa/Bld", "TPR:$(AREA):$(IOC_UNIT):0")
 
 # Give names for the signals that will participate on BLD.
 # These names are shown in the content of the PAYLOAD PV when someone uses
@@ -38,7 +38,7 @@ bldChannelName("AMC1RAWFLOAT",          "AMC1 RAW FLOAT")
 # need to redefine ${GLOBAL} with the correct prefix of the TPG.
 # Example: dbLoadRecords("db/bldCtrl.db", "DEV=${TPR_PREFIX},PORT=bldPort,GLOBAL=TPG:B15:1")
 # Below we are using the default TPG, so we don't need to provide GLOBAL.
-dbLoadRecords("db/bldCtrl.db", "DEV=BLEN:$(AREA):$(POS), PORT=bldPort")
+dbLoadRecords("db/bldCtrl.db", "DEV=TPR:$(AREA):$(IOC_UNIT):0, PORT=bldPort")
 
 # This database provides access to severity masks and allows enabling/disabling
 # each signal individually.
