@@ -8,7 +8,7 @@ bldAssociateBsaChannels("bsaPort")
 # bldAsynDriverConfigure ("<BLD  port name>", "<yaml path to BLD>", "<prefix for the PAYLOAD PV>")
 # The register path may be different from the example below. It depends
 # on the application. The example, though, will probably fit most applications.
-bldAsynDriverConfigure("bldPort", "mmio/AmcCarrierCore/AmcCarrierBsa/Bld", "${TPR_PREFIX}")
+bldAsynDriverConfigure("bldPort", "mmio/AmcCarrierCore/AmcCarrierBsa/Bld", "BLEN:$(AREA):$(POS)")
 
 # Give names for the signals that will participate on BLD.
 # These names are shown in the content of the PAYLOAD PV when someone uses
